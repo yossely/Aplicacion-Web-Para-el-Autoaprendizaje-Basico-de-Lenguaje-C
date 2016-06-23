@@ -1,0 +1,34 @@
+{
+  "name": "aprendac",
+  "version": "1.0.0",
+  "description": "Herramienta para el autoaprendizaje basico del lenguaje de programacion C bajo un ambiente web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C.git"
+  },
+  "keywords": [
+    "aprenda",
+    "basico",
+    "lenguaje",
+    "C",
+    "aplicacion",
+    "web"
+  ],
+  "author": "yossely mendoza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C/issues"
+  },
+  "homepage": "https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.6",
+    "gulp-webserver": "^0.9.1"
+  }
+}
