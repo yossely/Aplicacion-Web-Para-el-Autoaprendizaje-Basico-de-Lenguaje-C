@@ -1,5 +1,12 @@
 @charset "UTF-8";
-@import 'https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro';
+@font-face {
+  font-family: 'Oxygen';
+  src: url("../fonts/Oxygen/Oxygen-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"); }
+
 /* Color palette */
 /* Fonts */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -6179,8 +6186,8 @@ button.close {
     display: none !important; } }
 
 body {
-  background-image: url("../img/crossword.png");
-  padding-top: 60px; }
+  background-image: url("../img/background-image.png");
+  padding-top: 70px; }
 
 .logo {
   height: 40px;
@@ -6211,10 +6218,19 @@ body {
 .navbar-inverse {
   background-color: #114B5F;
   border-color: #114B5F; }
-  .navbar-inverse .navbar-nav > li > a {
+  .navbar-inverse .navbar-nav li a {
     color: #FFFFFF;
-    font-family: "Oxygen", sans-serif;
-    font-size: 20px; }
+    font-family: Oxygen, sans-serif;
+    font-size: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: 45px;
+    margin-left: 0px;
+    padding-bottom: 6px; }
+    .navbar-inverse .navbar-nav li a:hover {
+      border-bottom: 4px solid #E4FDE1; }
+    .navbar-inverse .navbar-nav li a.current {
+      border-bottom: 4px solid #E4FDE1; }
 
 /* center the navbar*/
 .center.navbar .nav,
@@ -6230,50 +6246,72 @@ body {
 .jumbotron {
   background-color: transparent;
   padding: 0px; }
-  .jumbotron p {
-    font-family: "Source Sans Pro", sans-serif;
+  .jumbotron p.text-explanation {
+    font-family: Source Sans Pro, sans-serif;
     font-size: 27px;
-    color: black;
-    margin: 15px; }
+    color: #000000;
+    margin: 30px;
+    padding: 0px 70px; }
 
 .quote {
-  /* &:after {
-		content : "";
-		position: absolute;
-		left    : 20%;
-		bottom  : 0;
-		height  : 1px;
-		width   : 60%; 
-		// border: 2px solid black;
-		border-radius: 4px ;
-	} */ }
+  padding: 6px 16px;
+  display: inline-block;
+  position: relative; }
+  .quote:before {
+    content: url("../img/quote-left.svg");
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; }
+  .quote:after {
+    content: url("../img/quote-right.svg");
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1; }
+  .quote p {
+    font-family: Oxygen, sans-serif;
+    font-size: 30px;
+    margin: 35px;
+    color: #000000; }
+    .quote p span {
+      color: #028090;
+      font-weight: bold; }
+  .quote .author-quote {
+    font-size: 18px;
+    font-weight: bold;
+    float: right;
+    margin-top: -70px;
+    margin-right: 65px; }
 
 .btn-green-navbar {
   padding: 0px 10px;
-  font-family: "Oxygen", sans-serif;
+  font-family: Oxygen, sans-serif;
   font-size: 22px; }
 
 .btn-green-big {
   padding: 0px 16px;
-  font-family: "Oxygen", sans-serif;
+  font-family: Oxygen, sans-serif;
   font-size: 36px;
   vertical-align: super;
   margin: 20px 10px; }
 
 .btn-blue-vistazo {
   padding: 6px 16px;
-  font-family: "Oxygen", sans-serif;
+  font-family: Oxygen, sans-serif;
   font-size: 26px; }
 
 .title-home-big {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: Source Sans Pro, sans-serif;
   font-size: 40px;
   font-weight: bold;
   color: #114B5F;
   margin-bottom: 50px; }
 
 .title-features {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: Source Sans Pro, sans-serif;
   font-size: 25px;
   font-weight: bold;
   color: #F45B69;
@@ -6293,8 +6331,15 @@ body {
     height: 40px;
     font-size: 30px; }
 
+.img-book {
+  margin: 10px; }
+
+.img-features {
+  width: 40px;
+  height: 40px; }
+
 .text-features {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: Source Sans Pro, sans-serif;
   font-size: 18px;
   color: black;
   line-height: 160%; }
@@ -6302,10 +6347,16 @@ body {
     margin: 10px; }
 
 .box-feature {
-  border-right: 2px solid #E6E6E6; }
+  border-right: 2px solid #E6E6E6;
+  /* margin-bottom: -99999px;
+  	padding-bottom: 99999px; */ }
 
 .box-feature-top {
   border-top: 2px solid #E6E6E6;
   margin-bottom: 30px; }
+
+/* .row{
+  overflow: hidden; 
+} */
 
 /*# sourceMappingURL=maps/home.css.map */

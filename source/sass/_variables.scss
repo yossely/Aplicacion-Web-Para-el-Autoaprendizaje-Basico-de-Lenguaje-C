@@ -1,4 +1,14 @@
-@import 'https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro';
+// @import 'https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro';
+
+@font-face {
+	font-family: 'Oxygen';
+	src: url('../fonts/Oxygen/Oxygen-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Source Sans Pro';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
 
 /* Color palette */
 $color_1NavyBlue: #114B5F;
@@ -8,11 +18,12 @@ $color_4BlueKing: #456990;
 $color_5Magenta: #F45B69;
 
 $color_white: #FFFFFF;
+$color_black: #000000;
 $color_green: #5FD35F;
 $color_darkGreen: #4CA94C;
 $color_darkBlueKing: #375473;
 $color_lightGray: #E6E6E6;
 
 /* Fonts */
-$font_title: 'Oxygen', sans-serif;
-$font_main: 'Source Sans Pro', sans-serif;
+$font_title: Oxygen, sans-serif;
+$font_main: Source Sans Pro, sans-serif;
