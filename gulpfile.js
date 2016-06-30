@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     webserver = require('gulp-webserver'),
     sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     typescript = require('gulp-typescript'),
     sourcemaps = require('gulp-sourcemaps'),
     tscConfig = require('./tsconfig.json');
@@ -9,10 +10,18 @@ var srcPath = 'source/',
     destPath = 'dist/';
 
 gulp.task('sass', function(){
+
+    SassOptions= {
+        precision: 8
+    };
+    autoprefixerOptions = {
+        browsers: ['Chrome >= 20','Firefox >= 24','Explorer >= 8','Opera >= 12','Safari >= 6']
+    };
     return gulp
             .src(srcPath + 'sass/**/*.scss')
             .pipe(sourcemaps.init())
-            .pipe(sass().on('error', sass.logError))
+            .pipe(sass(SassOptions).on('error', sass.logError))
+            .pipe(autoprefixer(autoprefixerOptions))
             .pipe(sourcemaps.write('./maps'))
             .pipe(gulp.dest(destPath + 'assets/css/'));
 });

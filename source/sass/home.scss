@@ -1,0 +1,128 @@
+@import "base";
+
+.navbar-inverse {
+	background-color: $color_1NavyBlue;
+	border-color: $color_1NavyBlue;
+
+	.navbar-nav {
+		> li {
+			> a {
+				color: $color_white;
+				font-family: $font_title;
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+/* center the navbar*/
+.center.navbar .nav,
+.center.navbar .nav > li {
+    float: none;
+    display: inline-block;
+    *display: inline; /* ie7 fix */
+    *zoom: 1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+}
+
+.jumbotron {
+	background-color: transparent;
+	padding: 0px;
+
+	p {
+		font-family: $font_main;
+		font-size: 27px;
+		color: black;
+		margin: 15px;
+	}
+}
+
+.quote {
+	// border-bottom-left-radius: 2px solid black;
+
+	/* &:after {
+		content : "";
+		position: absolute;
+		left    : 20%;
+		bottom  : 0;
+		height  : 1px;
+		width   : 60%; 
+		// border: 2px solid black;
+		border-radius: 4px ;
+	} */
+}
+
+.btn-green-navbar {
+	padding: 0px 10px;
+	font-family: $font_title;
+	font-size: 22px;
+}
+
+.btn-green-big {
+	padding: 0px 16px;
+	font-family: $font_title;
+	font-size: 36px;
+	vertical-align: super;
+	margin: 20px 10px;
+}
+
+.btn-blue-vistazo {
+	padding: 6px 16px;
+	font-family: $font_title;
+	font-size: 26px;
+}
+
+.title-home-big {
+	font-family: $font_main;
+	font-size: 40px;
+	font-weight: bold;
+	color: $color_1NavyBlue;
+	margin-bottom: 50px;
+}
+
+.title-features {
+	font-family: $font_main;
+	font-size: 25px;
+	font-weight: bold;
+	color: $color_5Magenta;
+
+	height  : 35px;   
+	position: relative;
+	z-index : 1;
+	display: inline-block;
+
+	&:before {
+		content : "";
+		position: absolute;
+		left    : 20%;
+		bottom  : 0;
+		height  : 1px;
+		width   : 60%; 
+		border-bottom: 4px solid $color_5Magenta;
+	}
+
+	&.history {
+		height  : 40px;
+		font-size: 30px;
+	}
+}
+
+.text-features {
+	font-family: $font_main;
+	font-size: 18px;
+	color: black;	
+	line-height: 160%;
+	
+	&.space {
+		margin: 10px;
+	}
+}
+
+.box-feature {
+    border-right: 2px solid $color_lightGray;
+}
+
+.box-feature-top {
+	border-top: 2px solid $color_lightGray;
+	margin-bottom: 30px;
+}
