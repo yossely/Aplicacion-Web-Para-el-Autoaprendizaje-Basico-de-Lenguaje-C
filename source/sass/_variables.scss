@@ -10,6 +10,12 @@
 	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
 }
 
+@font-face {
+	font-family: 'SSP Semibold';
+	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf');
+}
+
+
 /* Color palette */
 $color_1NavyBlue: #114B5F;
 $color_2DarkCyan: #028090;
@@ -27,3 +33,4 @@ $color_lightGray: #E6E6E6;
 /* Fonts */
 $font_title: Oxygen, sans-serif;
 $font_main: Source Sans Pro, sans-serif;
+$font_main_semibold: SSP Semibold, sans-serif;
