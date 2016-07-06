@@ -3,6 +3,7 @@
 
 
 $color_explanation: #5da7a6;
+$color_explanation_darker: #4A8685;
 
 .unit-title {
 	font-family: $font_title;
@@ -18,6 +19,7 @@ $color_explanation: #5da7a6;
 }
 
 
+/* Sections style tabs */
 .nav-justified.sections > li > a,
 .nav-justified.sections > li > a:hover,
 .nav-justified.sections > li > a:focus {
@@ -82,4 +84,115 @@ $color_explanation: #5da7a6;
 	&.exercises-pane {
 		background-color: $color_5Magenta;
 	}
+}
+
+
+/* Buttons 'Next' and 'Previous' inside explanation*/
+
+/* General button style (reset) */
+.btn-explanation {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-explanation:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn-explanation:before {
+	font-family: 'fontawesome';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon-arrow-right:before {
+	content: "\f061";	
+}
+
+.icon-arrow-left:before {
+	content: "\f060";	
+}
+
+/* Button explanation */
+.btn-explanation {
+	border-radius: 50px;
+	border: 3px solid #fff;
+	color: #fff;
+	overflow: hidden;
+}
+
+.btn-explanation:active {
+	border-color: $color_1NavyBlue;
+	color: $color_1NavyBlue;
+}
+
+.btn-explanation:hover {
+	background: $color_explanation_darker;
+}
+
+.btn-explanation:before {
+	position: absolute;
+	height: 100%;
+	font-size: 125%;
+	line-height: 3.5;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-explanation:active:before {
+	color: $color_1NavyBlue;
+}
+
+
+/* Button -next */
+.btn-explanation-next:before {
+	left: 70%;
+	opacity: 0;
+	top: 0;
+}
+
+.btn-explanation-next:hover:before {
+	left: 80%;
+	opacity: 1;
+}
+
+/* Button -previous */
+.btn-explanation-previous:before {
+	left: 30%;
+	opacity: 0;
+	top: 0;
+}
+
+.btn-explanation-previous:hover:before {
+	left: 10%;
+	opacity: 1;
 }

@@ -15,6 +15,13 @@
   font-family: 'SourceSansPro_Semibold';
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf"); }
 
+@font-face {
+  font-family: 'fontawesome';
+  src: url("../fonts/font-awesome/FontAwesome.otf");
+  src: url("../fonts/font-awesome/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/font-awesome/fontawesome-webfont.woff") format("woff"), url("../fonts/font-awesome/fontawesome-webfont.ttf") format("truetype"), url("../fonts/font-awesome/fontawesome-webfont.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /* Color palette */
 /* Fonts */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
@@ -6295,6 +6302,7 @@ body {
   font-size: 16px;
   padding: 2px 7px; }
 
+/* Sections style tabs */
 .nav-justified.sections > li > a,
 .nav-justified.sections > li > a:hover,
 .nav-justified.sections > li > a:focus {
@@ -6352,5 +6360,99 @@ body {
     background-color: #028090; }
   .tab-pane.exercises-pane {
     background-color: #F45B69; }
+
+/* Buttons 'Next' and 'Previous' inside explanation*/
+/* General button style (reset) */
+.btn-explanation {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.btn-explanation:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+/* Pseudo elements for icons */
+.btn-explanation:before {
+  font-family: 'fontawesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-arrow-right:before {
+  content: "\f061"; }
+
+.icon-arrow-left:before {
+  content: "\f060"; }
+
+/* Button explanation */
+.btn-explanation {
+  border-radius: 50px;
+  border: 3px solid #fff;
+  color: #fff;
+  overflow: hidden; }
+
+.btn-explanation:active {
+  border-color: #114B5F;
+  color: #114B5F; }
+
+.btn-explanation:hover {
+  background: #4A8685; }
+
+.btn-explanation:before {
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.btn-explanation:active:before {
+  color: #114B5F; }
+
+/* Button -next */
+.btn-explanation-next:before {
+  left: 70%;
+  opacity: 0;
+  top: 0; }
+
+.btn-explanation-next:hover:before {
+  left: 80%;
+  opacity: 1; }
+
+/* Button -previous */
+.btn-explanation-previous:before {
+  left: 30%;
+  opacity: 0;
+  top: 0; }
+
+.btn-explanation-previous:hover:before {
+  left: 10%;
+  opacity: 1; }
 
 /*# sourceMappingURL=maps/styles.css.map */

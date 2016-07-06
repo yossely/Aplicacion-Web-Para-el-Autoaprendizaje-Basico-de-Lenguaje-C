@@ -20,6 +20,16 @@
 	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf');
 }
 
+@font-face {
+	font-family: 'fontawesome';
+	src:url('../fonts/font-awesome/FontAwesome.otf');
+	src:url('../fonts/font-awesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/font-awesome/fontawesome-webfont.woff') format('woff'),
+		url('../fonts/font-awesome/fontawesome-webfont.ttf') format('truetype'),
+		url('../fonts/font-awesome/fontawesome-webfont.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 /* Color palette */
 $color_1NavyBlue: #114B5F;
