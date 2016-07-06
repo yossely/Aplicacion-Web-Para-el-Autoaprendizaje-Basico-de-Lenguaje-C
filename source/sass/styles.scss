@@ -6,6 +6,8 @@ $color_explanation: #5DA7A6;
 $color_explanation_darker: #4A8685;
 $color_lightGray: #F4F1F0;
 $color_lightGrayDarker: #C3C1C0;
+$color_olive: #aa8800;
+$color_cyan: #37C8AB;
 
 .unit-title {
 	font-family: $font_title;
@@ -75,7 +77,7 @@ $color_lightGrayDarker: #C3C1C0;
 
 	border: 3px solid $color_1NavyBlue;
     border-top: none;
-	height: 500px;
+	height: 650px;
 
 	&.explanation-pane {
 		background-color: $color_explanation;
@@ -212,14 +214,14 @@ $color_lightGrayDarker: #C3C1C0;
 	color: $color_lightGray;
 	width: 80%;
 
-	& > h3,
-	& > button.btn-continue-box {
+	h3,
+	button.btn-continue-box {
 		margin-top: 10px;
 		font-family: $font_main;
 		font-size: 24px;		
 	}
 
-	& > button.btn-continue-box { 
+	button.btn-continue-box { 
 		background-color: $color_lightGray;
 		color: $color_1NavyBlue;
 		padding: 0px 5px;	
@@ -231,3 +233,90 @@ $color_lightGrayDarker: #C3C1C0;
 	
 }
 
+/* Problem data */
+
+.problem-data-box {
+	background-color: $color_3Aquamarine;
+	border: 2px solid $color_1NavyBlue;
+	margin: 10px 20px;
+	color: $color_black;
+	h3 {
+		font-family: $font_title;
+		font-size: 28px;
+		text-align: center;
+		color: $color_black;
+		margin-top: 10px;
+	}
+
+	p {
+		font-family: $font_main;
+		font-size: 18px;
+		
+	    height: 250px;
+	    overflow-y: scroll;
+		overflow-x: hidden;
+
+		.key_words {
+			color: $color_olive;
+			font-weight: bold;
+		}
+	}
+}
+
+/* hr used as separator line between statement and data*/
+hr {
+    border: 0;
+    height: 2px;
+    margin: 0;
+    margin-top: 10px;
+    background: #333;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from($color_lightGrayDarker), to($color_lightGrayDarker), color-stop(50%, #646262));
+}
+
+/* Table of data */
+
+.problem-data-table { 
+	height: 250px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100%;
+
+	table {
+		font-family: $font_main;
+		font-size: 18px;
+		margin: 10px 5px;
+		border-collapse: collapse;
+		border: 1px solid $color_lightGray;
+		border-bottom: 2px solid #00cccc;
+		background-color: $color_white;
+		width: 97%;
+
+		tr {
+			&:hover {
+			background: $color_lightGray;
+				td {
+					color: $color_black;
+				}
+			}
+		}
+
+		th, td {
+			width: 50%;
+			color: #626262;
+			border: 1px solid $color_lightGray;
+			padding: 5px 10px;
+			border-collapse: collapse;
+		}
+
+		th {
+			background: $color_cyan;
+			color: $color_white;
+			text-transform: uppercase;
+			font-weight: bold;
+
+			&.last {
+				border-right: none;
+			}
+		}
+	}
+}

@@ -54,10 +54,10 @@
 
 		<div class="row">
 			<ul class="nav nav-tabs nav-justified sections">
-				<li role="presentation" class="active explanation-tab">
+				<li role="presentation" class="explanation-tab">
 					<a href="#explanation" class="explanation" aria-controls="explanation" role="tab" data-toggle="tab">Explicación</a>
 				</li>
-				<li role="presentation" class="example-tab">
+				<li role="presentation" class="active example-tab">
 					<a href="#example" class="example" aria-controls="example" role="tab" data-toggle="tab">Ejemplo</a>
 				</li>
 				<li role="presentation" class="exercises-tab">
@@ -67,7 +67,7 @@
 			
 			<!-- Content of each section -->
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active explanation-pane" id="explanation">
+				<div role="tabpanel" class="tab-pane explanation-pane" id="explanation">
 					<div>
 						<button class="btn-explanation btn-explanation-next icon-arrow-right">Siguiente</button>
 					</div>
@@ -85,7 +85,73 @@
 					</div>
 					
 				</div>
-				<div role="tabpanel" class="tab-pane example-pane" id="example">Ejemplo</div>
+				<div role="tabpanel" class="tab-pane active example-pane" id="example">
+					<div class="row">
+						<div class="col-md-4 problem-data-box">
+							<div class="row">
+								<div class="col-md-12 problem-statement">
+									<h3>Enunciado</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est <span class="key_words">voluptate</span> sequi quos ut odio adipisci fugit dolor dolore excepturi molestias <span class="key_words">consequuntur</span>, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis <span class="key_words">suscipit</span>, ratione animi!
+										Lorem ipsum dolor sit amet, <span class="key_words">consectetur</span> adipisicing elit. Est voluptate sequi quos ut odio adipisci fugit dolor dolore <span class="key_words">excepturi</span> molestias consequuntur, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis suscipit, ratione animi!
+									</p>
+								</div>
+							</div>
+							<hr />
+							<div class="row">
+								<div class="col-md-12">
+									<h3>Datos</h3>
+									
+									<div class="problem-data-table">
+									<table>
+										<thead>
+											<tr>
+												<th>Entrada</th>
+												<th>Salida</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Item</td>
+												<td>Item</td>
+											</tr>
+											<tr>
+												<td>Item</td>
+												<td>Item</td>
+											</tr>
+											<tr>
+												<td>Item</td>
+												<td>Item</td>
+											</tr>
+											<tr>
+												<td>Item</td>
+												<td>Item</td>
+											</tr>
+											<tr>
+												<td>Item</td>
+												<td>Item</td>
+											</tr>
+											<tr>
+												<td>Item</td>
+												<td>Item</td>
+											</tr>
+										</tbody>
+									</table>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7"> <!-- with col-md-8 jumps to the next line -->
+							<div class="row">
+								<div class="col-md-12">Code Editor</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10">Console</div>
+								<div class="col-md-2">Continue</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div role="tabpanel" class="tab-pane exercises-pane" id="exercises">Ejercicios</div>
 			</div>
 		</div>

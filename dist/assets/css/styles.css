@@ -6353,7 +6353,7 @@ body {
 .tab-pane {
   border: 3px solid #114B5F;
   border-top: none;
-  height: 500px; }
+  height: 650px; }
   .tab-pane.explanation-pane {
     background-color: #5DA7A6; }
   .tab-pane.example-pane {
@@ -6465,16 +6465,80 @@ body {
   text-align: center;
   color: #F4F1F0;
   width: 80%; }
-  .continue-box > h3,
-  .continue-box > button.btn-continue-box {
+  .continue-box h3,
+  .continue-box button.btn-continue-box {
     margin-top: 10px;
     font-family: SourceSansPro, sans-serif;
     font-size: 24px; }
-  .continue-box > button.btn-continue-box {
+  .continue-box button.btn-continue-box {
     background-color: #F4F1F0;
     color: #114B5F;
     padding: 0px 5px; }
-    .continue-box > button.btn-continue-box:hover {
+    .continue-box button.btn-continue-box:hover {
       background-color: #C3C1C0; }
+
+/* Problem data */
+.problem-data-box {
+  background-color: #E4FDE1;
+  border: 2px solid #114B5F;
+  margin: 10px 20px;
+  color: #000000; }
+  .problem-data-box h3 {
+    font-family: Oxygen, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #000000;
+    margin-top: 10px; }
+  .problem-data-box p {
+    font-family: SourceSansPro, sans-serif;
+    font-size: 18px;
+    height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden; }
+    .problem-data-box p .key_words {
+      color: #aa8800;
+      font-weight: bold; }
+
+/* hr used as separator line between statement and data*/
+hr {
+  border: 0;
+  height: 2px;
+  margin: 0;
+  margin-top: 10px;
+  background: #333;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#C3C1C0), to(#C3C1C0), color-stop(50%, #646262)); }
+
+/* Table of data */
+.problem-data-table {
+  height: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%; }
+  .problem-data-table table {
+    font-family: SourceSansPro, sans-serif;
+    font-size: 18px;
+    margin: 10px 5px;
+    border-collapse: collapse;
+    border: 1px solid #F4F1F0;
+    border-bottom: 2px solid #00cccc;
+    background-color: #FFFFFF;
+    width: 97%; }
+    .problem-data-table table tr:hover {
+      background: #F4F1F0; }
+      .problem-data-table table tr:hover td {
+        color: #000000; }
+    .problem-data-table table th, .problem-data-table table td {
+      width: 50%;
+      color: #626262;
+      border: 1px solid #F4F1F0;
+      padding: 5px 10px;
+      border-collapse: collapse; }
+    .problem-data-table table th {
+      background: #37C8AB;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      font-weight: bold; }
+      .problem-data-table table th.last {
+        border-right: none; }
 
 /*# sourceMappingURL=maps/styles.css.map */
