@@ -2,8 +2,10 @@
 @import "navbar_main";
 
 
-$color_explanation: #5da7a6;
+$color_explanation: #5DA7A6;
 $color_explanation_darker: #4A8685;
+$color_lightGray: #F4F1F0;
+$color_lightGrayDarker: #C3C1C0;
 
 .unit-title {
 	font-family: $font_title;
@@ -196,3 +198,36 @@ $color_explanation_darker: #4A8685;
 	left: 10%;
 	opacity: 1;
 }
+
+
+/* Continue boxes */
+
+.continue-box {
+	background-color: $color_1NavyBlue;
+	border-radius: 6px;
+	padding: 10px 5px;
+	margin-bottom: 10px;
+	position: relative;
+	text-align: center;
+	color: $color_lightGray;
+	width: 80%;
+
+	& > h3,
+	& > button.btn-continue-box {
+		margin-top: 10px;
+		font-family: $font_main;
+		font-size: 24px;		
+	}
+
+	& > button.btn-continue-box { 
+		background-color: $color_lightGray;
+		color: $color_1NavyBlue;
+		padding: 0px 5px;	
+
+		&:hover {
+			background-color: $color_lightGrayDarker;	
+		}
+	}
+	
+}
+

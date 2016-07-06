@@ -6317,8 +6317,8 @@ body {
   .nav-justified.sections > li > a.explanation,
   .nav-justified.sections > li > a:hover.explanation,
   .nav-justified.sections > li > a:focus.explanation {
-    background-color: #5da7a6;
-    border-top: 3px solid #5da7a6; }
+    background-color: #5DA7A6;
+    border-top: 3px solid #5DA7A6; }
   .nav-justified.sections > li > a.example,
   .nav-justified.sections > li > a:hover.example,
   .nav-justified.sections > li > a:focus.example {
@@ -6340,7 +6340,7 @@ body {
   .nav-justified.sections > li.active > a.explanation,
   .nav-justified.sections > li.active > a:hover.explanation,
   .nav-justified.sections > li.active > a:focus.explanation {
-    border-bottom: 3px solid #5da7a6; }
+    border-bottom: 3px solid #5DA7A6; }
   .nav-justified.sections > li.active > a.example,
   .nav-justified.sections > li.active > a:hover.example,
   .nav-justified.sections > li.active > a:focus.example {
@@ -6355,7 +6355,7 @@ body {
   border-top: none;
   height: 500px; }
   .tab-pane.explanation-pane {
-    background-color: #5da7a6; }
+    background-color: #5DA7A6; }
   .tab-pane.example-pane {
     background-color: #028090; }
   .tab-pane.exercises-pane {
@@ -6454,5 +6454,27 @@ body {
 .btn-explanation-previous:hover:before {
   left: 10%;
   opacity: 1; }
+
+/* Continue boxes */
+.continue-box {
+  background-color: #114B5F;
+  border-radius: 6px;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  position: relative;
+  text-align: center;
+  color: #F4F1F0;
+  width: 80%; }
+  .continue-box > h3,
+  .continue-box > button.btn-continue-box {
+    margin-top: 10px;
+    font-family: SourceSansPro, sans-serif;
+    font-size: 24px; }
+  .continue-box > button.btn-continue-box {
+    background-color: #F4F1F0;
+    color: #114B5F;
+    padding: 0px 5px; }
+    .continue-box > button.btn-continue-box:hover {
+      background-color: #C3C1C0; }
 
 /*# sourceMappingURL=maps/styles.css.map */
