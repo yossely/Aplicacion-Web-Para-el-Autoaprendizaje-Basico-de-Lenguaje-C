@@ -17,7 +17,7 @@
 			</div>
 
 			<div class="navbar-inner">
-				<div class="container ">
+				<div class="container-fluid">
 					<ul class="nav navbar-nav pull-right progressbar">
 						<li class="completed"><a href="#"></a></li>
 						<li class="completed"><a href="#"></a></li>
@@ -47,23 +47,38 @@
 			<div class="col-md-10">
 				<h1 class="unit-title">2.1 Lorem ipsum dolor sit amet.</h1>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 center">
 				<button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
 			</div>
 		</div>
 
 		<div class="row">
 			<ul class="nav nav-tabs nav-justified sections">
-				<li role="presentation" class="active explanation-tab"><a href="#explanation" aria-controls="explanation" role="tab" data-toggle="tab">Explicación</a></li>
-				<li role="presentation" class="example-tab"><a href="#example" aria-controls="example" role="tab" data-toggle="tab">Ejemplo</a></li>
-				<li role="presentation" class="exercises-tab"><a href="#exercises" aria-controls="exercises" role="tab" data-toggle="tab">Ejercicios</a></li>
+				<li role="presentation" class="active explanation-tab">
+					<a href="#explanation" class="explanation" aria-controls="explanation" role="tab" data-toggle="tab">Explicación</a>
+				</li>
+				<li role="presentation" class="example-tab">
+					<a href="#example" class="example" aria-controls="example" role="tab" data-toggle="tab">Ejemplo</a>
+				</li>
+				<li role="presentation" class="exercises-tab">
+					<a href="#exercises" class="exercises" aria-controls="exercises" role="tab" data-toggle="tab">Ejercicios</a>
+				</li>
 			</ul>
 			
 			<!-- Content of each section -->
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="explanation">Explicación</div>
-				<div role="tabpanel" class="tab-pane" id="example">Ejemplo</div>
-				<div role="tabpanel" class="tab-pane" id="exercises">Ejercicios</div>
+				<div role="tabpanel" class="tab-pane active explanation-pane" id="explanation">
+					<!-- <div>
+						Explicación 1
+						<button>Siguiente</button>
+					</div>
+					<div>
+						Explicación 2
+						<button>Anterior</button>
+					</div> -->
+				</div>
+				<div role="tabpanel" class="tab-pane example-pane" id="example">Ejemplo</div>
+				<div role="tabpanel" class="tab-pane exercises-pane" id="exercises">Ejercicios</div>
 			</div>
 		</div>
 

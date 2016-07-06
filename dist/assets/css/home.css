@@ -4,11 +4,15 @@
   src: url("../fonts/Oxygen/Oxygen-Regular.ttf"); }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Oxygen_Bold';
+  src: url("../fonts/Oxygen/Oxygen-Bold.ttf"); }
+
+@font-face {
+  font-family: 'SourceSansPro';
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"); }
 
 @font-face {
-  font-family: 'SSP Semibold';
+  font-family: 'SourceSansPro_Semibold';
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf"); }
 
 /* Color palette */
@@ -6256,7 +6260,7 @@ body {
   background-color: transparent;
   padding: 0px; }
   .jumbotron p.text-explanation {
-    font-family: Source Sans Pro, sans-serif;
+    font-family: SourceSansPro, sans-serif;
     font-size: 27px;
     color: #000000;
     margin: 30px;
@@ -6308,14 +6312,14 @@ body {
   font-size: 26px; }
 
 .title-home-big {
-  font-family: Source Sans Pro, sans-serif;
+  font-family: SourceSansPro, sans-serif;
   font-size: 40px;
   font-weight: bold;
   color: #114B5F;
   margin-bottom: 50px; }
 
 .title-features {
-  font-family: Source Sans Pro, sans-serif;
+  font-family: SourceSansPro, sans-serif;
   font-size: 25px;
   font-weight: bold;
   color: #F45B69;
@@ -6343,7 +6347,7 @@ body {
   height: 40px; }
 
 .text-features {
-  font-family: Source Sans Pro, sans-serif;
+  font-family: SourceSansPro, sans-serif;
   font-size: 18px;
   color: black;
   line-height: 160%; }

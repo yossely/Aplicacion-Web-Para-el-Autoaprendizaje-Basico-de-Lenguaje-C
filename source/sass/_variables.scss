@@ -6,12 +6,17 @@
 }
 
 @font-face {
-	font-family: 'Source Sans Pro';
+	font-family: 'Oxygen_Bold';
+	src: url('../fonts/Oxygen/Oxygen-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'SourceSansPro';
 	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
 }
 
 @font-face {
-	font-family: 'SSP Semibold';
+	font-family: 'SourceSansPro_Semibold';
 	src: url('../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf');
 }
 
@@ -32,5 +37,6 @@ $color_lightGray: #E6E6E6;
 
 /* Fonts */
 $font_title: Oxygen, sans-serif;
-$font_main: Source Sans Pro, sans-serif;
-$font_main_semibold: SSP Semibold, sans-serif;
+$font_title_bold: Oxygen_Bold, sans-serif;
+$font_main: SourceSansPro, sans-serif;
+$font_main_semibold: SourceSansPro_Semibold, sans-serif;

@@ -4,11 +4,15 @@
   src: url("../fonts/Oxygen/Oxygen-Regular.ttf"); }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Oxygen_Bold';
+  src: url("../fonts/Oxygen/Oxygen-Bold.ttf"); }
+
+@font-face {
+  font-family: 'SourceSansPro';
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"); }
 
 @font-face {
-  font-family: 'SSP Semibold';
+  font-family: 'SourceSansPro_Semibold';
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf"); }
 
 /* Color palette */
@@ -6261,11 +6265,11 @@ body {
     color: #F45B69;
     margin-left: 10px; }
   .unit p {
-    font-family: Source Sans Pro, sans-serif;
+    font-family: SourceSansPro, sans-serif;
     font-size: 17px;
     color: #000000; }
   .unit p.lesson-number {
-    font-family: SSP Semibold, sans-serif;
+    font-family: SourceSansPro_Semibold, sans-serif;
     color: #114B5F; }
 
 .lesson {

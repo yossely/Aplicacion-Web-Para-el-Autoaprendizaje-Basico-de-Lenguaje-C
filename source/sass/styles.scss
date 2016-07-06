@@ -1,6 +1,9 @@
 @import "base";
 @import "navbar_main";
 
+
+$color_explanation: #5da7a6;
+
 .unit-title {
 	font-family: $font_title;
 	font-size: 30px;
@@ -14,17 +17,69 @@
 	padding: 2px 7px;
 }
 
-.sections > li{
-	border: 2px solid $color_1NavyBlue;
-	border-bottom: none;
-	font-family: $font_title;
-	font-size: 16px;
-	font-weight: bold;
-	text-transform: uppercase;
-	
 
-	&.explanation-tab > a{
-		color: $color_white;
+.nav-justified.sections > li > a,
+.nav-justified.sections > li > a:hover,
+.nav-justified.sections > li > a:focus {
+	font-family: $font_title_bold;
+	font-size: 18px;
+	color: $color_white;
+	text-transform: uppercase;
+	padding: 5px 15px;
+	border: 0;
+	border-bottom: 3px solid $color_1NavyBlue;
+	border-radius: 0px;
+
+	&.explanation {
+		background-color: $color_explanation;
+		border-top: 3px solid $color_explanation;
+	}
+
+	&.example {
 		background-color: $color_2DarkCyan;
+		border-top: 3px solid $color_2DarkCyan;
+	}
+
+	&.exercises {
+		background-color: $color_5Magenta;
+		border-top: 3px solid $color_5Magenta;
+	}
+}
+
+.nav-justified.sections > li.active > a,
+.nav-justified.sections > li.active > a:hover,
+.nav-justified.sections > li.active > a:focus {
+	padding: 5px 15px;
+	border: 0;
+	border: 3px solid $color_1NavyBlue;
+    border-bottom: none;
+
+    &.explanation {
+		border-bottom: 3px solid $color_explanation;
+	}
+
+	&.example {
+		border-bottom: 3px solid $color_2DarkCyan;
+	}
+
+	&.exercises {
+		border-bottom: 3px solid $color_5Magenta;
+	}
+}
+
+.tab-pane {
+
+	border: 3px solid $color_1NavyBlue;
+    border-top: none;
+	height: 500px;
+
+	&.explanation-pane {
+		background-color: $color_explanation;
+	}
+	&.example-pane {
+		background-color: $color_2DarkCyan;
+	}	
+	&.exercises-pane {
+		background-color: $color_5Magenta;
 	}
 }
