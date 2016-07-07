@@ -6,8 +6,18 @@ $color_explanation: #5DA7A6;
 $color_explanation_darker: #4A8685;
 $color_lightGray: #F4F1F0;
 $color_lightGrayDarker: #C3C1C0;
-$color_olive: #aa8800;
+$color_olive: #AA8800;
 $color_cyan: #37C8AB;
+$color_console: #374548;
+
+/* Expand the container to the entire page width */
+.container-fluid{
+	padding-right: 0px;
+	.row {
+		margin-right: 0px;	
+	}
+}
+
 
 .unit-title {
 	font-family: $font_title;
@@ -205,14 +215,25 @@ $color_cyan: #37C8AB;
 /* Continue boxes */
 
 .continue-box {
-	background-color: $color_1NavyBlue;
+	
 	border-radius: 6px;
 	padding: 10px 5px;
 	margin-bottom: 10px;
 	position: relative;
 	text-align: center;
 	color: $color_lightGray;
-	width: 80%;
+
+	&.explanation-continue-box {
+		background-color: $color_1NavyBlue;
+		width: 80%;
+	}
+
+	&.example-continue-box {
+		background-color: $color_5Magenta;
+		width: 95%;
+		margin-right: -15%;
+		float: right;
+	}
 
 	h3,
 	button.btn-continue-box {
@@ -240,6 +261,8 @@ $color_cyan: #37C8AB;
 	border: 2px solid $color_1NavyBlue;
 	margin: 10px 20px;
 	color: $color_black;
+	padding-right: 0px;
+
 	h3 {
 		font-family: $font_title;
 		font-size: 28px;
@@ -318,5 +341,24 @@ hr {
 				border-right: none;
 			}
 		}
+	}
+}
+
+/* Console */
+
+.console {
+	background-color: $color_console;
+	border: 1px solid $color_3Aquamarine;
+	color: $color_white;
+	width: 120%;
+	height: 250px;
+
+	p {
+		font-family: $font_main;
+		font-size: 16px;
+		margin: 5px;
+		height: 240px;
+	    overflow-y: scroll;
+		overflow-x: hidden;
 	}
 }
