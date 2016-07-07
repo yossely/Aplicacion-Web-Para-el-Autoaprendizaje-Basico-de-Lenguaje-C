@@ -139,9 +139,36 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-7"> <!-- with col-md-8 jumps to the next line -->
+						<div class="col-md-7 problem-code-box"> <!-- with col-md-8 jumps to the next line -->
 							<div class="row">
-								<div class="col-md-12">Code Editor</div>
+								<div class="col-md-12">
+									<div class="row">
+									<button class="btn btn-sm btn-green btn-run-code icon-arrow-run" id="btn-run-code">RUN</button>
+									<pre id="editor">
+	#include "stdio.h"
+	int main()
+	{
+		int first, second, add, subtract, multiply;
+		float divide;
+
+		printf("Enter two integers\n");
+		scanf("%d%d", &first, &second);
+
+		add = first + second;
+		subtract = first - second;
+		multiply = first * second;
+		divide = first / (float)second;   //typecasting
+
+		printf("Sum = %d\n",add);
+		printf("Difference = %d\n",subtract);
+		printf("Multiplication = %d\n",multiply);
+		printf("Division = %.2f\n",divide);
+
+		return 0;
+	}
+									</pre>
+									</div>
+								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-9">
@@ -168,5 +195,8 @@
 	
 	<script src="assets/js/bootstrap/jquery-2.2.4.js"></script>
 	<script src="assets/js/bootstrap/tab.js"></script>
+	<script src="assets/js/ace-editor/ace.js"></script>
+
+	<script src="assets/js/editor.js"></script>
 </body>
 </html>

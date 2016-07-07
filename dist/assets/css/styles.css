@@ -6476,7 +6476,8 @@ body {
     background-color: #F45B69;
     width: 95%;
     margin-right: -15%;
-    float: right; }
+    float: right;
+    margin-top: 10%; }
   .continue-box h3,
   .continue-box button.btn-continue-box {
     margin-top: 10px;
@@ -6493,7 +6494,7 @@ body {
 .problem-data-box {
   background-color: #E4FDE1;
   border: 2px solid #114B5F;
-  margin: 10px 20px;
+  margin: 10px 10px 10px 20px;
   color: #000000;
   padding-right: 0px; }
   .problem-data-box h3 {
@@ -6554,6 +6555,9 @@ hr {
       .problem-data-table table th.last {
         border-right: none; }
 
+.problem-code-box {
+  padding-left: 15px; }
+
 /* Console */
 .console {
   background-color: #374548;
@@ -6568,5 +6572,52 @@ hr {
     height: 240px;
     overflow-y: scroll;
     overflow-x: hidden; }
+
+/* Editor */
+#editor {
+  margin: 10px 0px;
+  height: 365px;
+  width: 113%; }
+
+/* .btn-explanation {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-explanation:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+} */
+.btn-run-code {
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 10;
+  margin-top: 20px;
+  margin-left: 98%; }
+  .btn-run-code:after {
+    font-family: 'fontawesome';
+    content: "\f04b";
+    margin-left: 5px;
+    padding-right: 0px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

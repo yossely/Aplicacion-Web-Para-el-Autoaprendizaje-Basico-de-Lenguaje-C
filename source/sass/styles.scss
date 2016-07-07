@@ -233,6 +233,7 @@ $color_console: #374548;
 		width: 95%;
 		margin-right: -15%;
 		float: right;
+		margin-top: 10%;
 	}
 
 	h3,
@@ -259,7 +260,7 @@ $color_console: #374548;
 .problem-data-box {
 	background-color: $color_3Aquamarine;
 	border: 2px solid $color_1NavyBlue;
-	margin: 10px 20px;
+	margin: 10px 10px 10px 20px;
 	color: $color_black;
 	padding-right: 0px;
 
@@ -344,8 +345,13 @@ hr {
 	}
 }
 
-/* Console */
 
+
+.problem-code-box {
+	padding-left: 15px;
+}
+
+/* Console */
 .console {
 	background-color: $color_console;
 	border: 1px solid $color_3Aquamarine;
@@ -362,3 +368,63 @@ hr {
 		overflow-x: hidden;
 	}
 }
+
+
+/* Editor */
+
+#editor {
+	margin: 10px 0px;
+	height: 365px;
+	width: 113%;
+}
+
+
+
+/* .btn-explanation {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-explanation:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+} */
+
+
+
+.btn-run-code {
+
+	font-size: 16px;
+	font-weight: bold;
+	position:absolute;
+	z-index:10;
+	margin-top: 20px;
+	margin-left: 98%;
+
+	&:after {
+		font-family: 'fontawesome';
+		content: "\f04b";	
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+}
+
