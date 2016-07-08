@@ -13,6 +13,8 @@ $color_console: #374548;
 $color_exercise_continue_box: #E1E6E2;
 $color_circle_exercise_number: #808080;
 
+$color_expected-output-tab: #883044;
+
 /* Expand the container to the entire page width */
 .container-fluid{
 	padding-right: 0px;
@@ -90,7 +92,7 @@ $color_circle_exercise_number: #808080;
 
 	border: 3px solid $color_1NavyBlue;
     border-top: none;
-	height: 650px;
+	height: auto;
 
 	&.explanation-pane {
 		background-color: $color_explanation;
@@ -236,7 +238,7 @@ $color_circle_exercise_number: #808080;
 		width: 95%;
 		margin-right: -15%;
 		float: right;
-		margin-top: 10%;
+		margin-top: 35%;
 	}
 
 	h3,
@@ -262,7 +264,7 @@ $color_circle_exercise_number: #808080;
 		width: 95%;
 		margin-right: -15%;
 		float: right;
-		margin-top: 10%;
+		margin-top: 35%;
 
 		h3 {
 			font-size: 20px;
@@ -300,7 +302,7 @@ $color_circle_exercise_number: #808080;
 		font-family: $font_main;
 		font-size: 18px;
 		
-	    height: 250px;
+	    height: 264px;
 	    overflow-y: scroll;
 		overflow-x: hidden;
 
@@ -324,10 +326,9 @@ hr {
 /* Table of data */
 
 .problem-data-table { 
-	height: 250px;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	height: auto;
 	width: 100%;
+	margin-bottom: 10px;
 
 	table {
 		font-family: $font_main;
@@ -382,6 +383,7 @@ hr {
 	color: $color_white;
 	width: 120%;
 	height: 250px;
+	margin-bottom: 10px;
 
 	p {
 		font-family: $font_main;
@@ -397,7 +399,7 @@ hr {
 /* Editor */
 
 .code-editor {
-	margin: 10px 0px;
+	margin: 10px 0px 0px 0px;
 	height: 365px;
 	width: 113%;
 }
@@ -484,5 +486,118 @@ hr {
 			width: 100%;
 			height: 100%;
 		}
+	}
+}
+
+.tips-output-box {
+	width: 120%;
+	display: inline-flex;
+
+	h4 {
+		width: 15%;
+		margin: 0px;
+		font-family: $font_title;
+		font-size: 20px;
+		font-weight: bold;
+		color: $color_white;
+		margin-bottom: 8px;
+	}
+
+	ul {
+		margin-left: 65%;
+		list-style: none;
+		margin-bottom: 0px;
+	}
+
+	li {
+		height: auto;
+		width: auto;
+		display: inline-block;
+		
+		border-top-right-radius: 15%;
+		border-top-left-radius: 15%;
+		
+		&.tips {
+			background-color: $color_2DarkCyan;
+			&:hover {
+				background-color: #026673;
+			}
+			img {
+				width: 20px;
+			}
+		}
+	
+		&.expected-output {
+			margin-left: 5px;
+			background-color: $color_expected-output-tab;
+			&:hover {
+				background-color: #6D2636;
+			}
+			img {
+				width: 30px;
+			}
+			
+		}
+
+		img {
+			height: 20px;
+			margin: 5px;
+		}
+	}
+
+	a {
+		font-family: $font_title;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.expected-output-console {
+	display: block;
+	position: absolute;
+	height: auto;
+	width: 500px;
+	background-color: #808080;
+	border-radius: 5px;
+	
+	h5, p {
+		height: auto;
+		font-family: $font_main;
+		color: $color_white;
+	}
+
+	h5 {
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin: 5px;
+	}
+
+	p {
+		background-color: #333333;
+		margin: 0px 5px 5px 5px;
+		padding: 5px;
+	}
+
+}
+
+.close-window-x {
+	color: $color_white;
+	font: 14px/100% arial, sans-serif;
+	position: absolute;
+	right: 5px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #fff;
+	top: 5px;
+
+	&:hover {
+		text-decoration: none;
+		color: $color_1NavyBlue;
+	}
+
+	&:after {
+	  content: '✖'; /* UTF-8 symbol */
 	}
 }
