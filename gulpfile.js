@@ -9,6 +9,17 @@ var gulp = require('gulp'),
 var srcPath = 'source/',
     destPath = 'dist/';
 
+gulp.task('copy', function(){
+    // Tooltip library
+    gulp.src('node_modules/hint.css/hint.min.css')
+        .pipe(gulp.dest(destPath + 'assets/css/hint.css'));
+
+    // Bootstrap tabs
+    return gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js')
+        .pipe(gulp.dest(destPath + 'assets/js/bootstrap'));
+
+});
+
 gulp.task('sass', function(){
 
     SassOptions= {
@@ -49,4 +60,4 @@ gulp.task('webserver', function(){
         }));
 });
 
-gulp.task('default', ['sass', 'typescript', 'watch', 'webserver']);
+gulp.task('default', ['copy', 'sass', 'typescript', 'watch', 'webserver']);
