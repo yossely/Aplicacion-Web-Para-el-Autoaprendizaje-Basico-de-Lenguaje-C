@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top ">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="index.html">
 					<img class="logo" alt="AprendaC" src="assets/img/logo-name.svg">
 				</a>
 			</div>
@@ -57,10 +57,10 @@
 				<li role="presentation" class="explanation-tab">
 					<a href="#explanation" class="explanation" aria-controls="explanation" role="tab" data-toggle="tab">Explicación</a>
 				</li>
-				<li role="presentation" class="active example-tab">
+				<li role="presentation" class="example-tab">
 					<a href="#example" class="example" aria-controls="example" role="tab" data-toggle="tab">Ejemplo</a>
 				</li>
-				<li role="presentation" class="exercises-tab">
+				<li role="presentation" class="active exercises-tab">
 					<a href="#exercises" class="exercises" aria-controls="exercises" role="tab" data-toggle="tab">Ejercicios</a>
 				</li>
 			</ul>
@@ -85,7 +85,8 @@
 					</div>
 					
 				</div>
-				<div role="tabpanel" class="tab-pane active example-pane" id="example">
+				<!-- Example -->
+				<div role="tabpanel" class="tab-pane example-pane" id="example">
 					<div class="row">
 						<div class="col-md-4 problem-data-box">
 							<div class="row">
@@ -144,7 +145,7 @@
 								<div class="col-md-12">
 									<div class="row">
 									<button class="btn btn-sm btn-green btn-run-code icon-arrow-run" id="btn-run-code">RUN</button>
-									<pre id="editor">
+									<pre class="code-editor" id="editor">
 	#include "stdio.h"
 	int main()
 	{
@@ -187,7 +188,115 @@
 						</div>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane exercises-pane" id="exercises">Ejercicios</div>
+				<!-- Exercises -->
+				<div role="tabpanel" class="tab-pane active exercises-pane" id="exercises">
+					<div class="row">
+						<div class="col-md-4 problem-data-box">
+							<div class="row">
+								<div class="col-md-12">
+									<h3>Enunciado</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est <span class="key_words">voluptate</span> sequi quos ut odio adipisci fugit dolor dolore excepturi molestias <span class="key_words">consequuntur</span>, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis <span class="key_words">suscipit</span>, ratione animi!
+										Lorem ipsum dolor sit amet, <span class="key_words">consectetur</span> adipisicing elit. Est voluptate sequi quos ut odio adipisci fugit dolor dolore <span class="key_words">excepturi</span> molestias consequuntur, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis suscipit, ratione animi!
+									</p>
+								</div>
+							</div>
+							<hr />
+							<div class="row">
+								<div class="col-md-12">
+									<h3>Datos</h3>									
+									<div class="problem-data-table">
+										<table>
+											<thead>
+												<tr>
+													<th>Entrada</th>
+													<th>Salida</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item</td>
+													<td>Item</td>
+												</tr>
+												<tr>
+													<td>Item</td>
+													<td>Item</td>
+												</tr>
+												<tr>
+													<td>Item</td>
+													<td>Item</td>
+												</tr>
+												<tr>
+													<td>Item</td>
+													<td>Item</td>
+												</tr>
+												<tr>
+													<td>Item</td>
+													<td>Item</td>
+												</tr>
+												<tr>
+													<td>Item</td>
+													<td>Item</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7 problem-code-box"> <!-- with col-md-8 jumps to the next line -->
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+									<button class="btn btn-sm btn-green btn-run-code icon-arrow-run" id="btn-run-code-exercise1">RUN</button>
+									<pre class="code-editor" id="editor-exercise1">
+#include "stdio.h"
+ 
+int main()
+{
+   int n, sum = 0, c, value;
+ 
+   printf("Enter the number of integers you want to add\n");
+   scanf("%d", &n);
+ 
+   printf("Enter %d integers\n",n);
+ 
+   for (c = 1; c <= n; c++)
+   {
+      scanf("%d", &value);
+      sum = sum + value;
+   }
+ 
+   printf("Sum of entered integers = %d\n",sum);
+ 
+   return 0;
+}
+									</pre>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-9">
+									<div class="row console">
+										<p>> Hola Mundo! <br> > Lista la consola, con overflow y todo :)</p>
+									</div>
+								</div>
+								<div class="col-md-3 col-md-push-1">
+									<div class="continue-box exercise-continue-box">
+										<ul class="excercises-number">
+											<li><a href="#"></a></li>
+											<li class="current"><a href="#"></a></li>
+											<li><a href="#"></a></li>
+										</ul>
+										<h3>¡Continua con otro ejercicio!</h3>
+										<button type="button" href="main.html" class="btn btn-green btn-green-continue-box">Continuar</button>
+										<h3>o sigue con</h3>
+										<button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 

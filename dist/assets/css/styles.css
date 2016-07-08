@@ -6489,6 +6489,21 @@ body {
     padding: 0px 5px; }
     .continue-box button.btn-continue-box:hover {
       background-color: #C3C1C0; }
+  .continue-box.exercise-continue-box {
+    background-color: #E1E6E2;
+    color: #114B5F;
+    width: 95%;
+    margin-right: -15%;
+    float: right;
+    margin-top: 10%; }
+    .continue-box.exercise-continue-box h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px; }
+    .continue-box.exercise-continue-box .btn-green-continue-box {
+      font-family: SourceSansPro, sans-serif;
+      font-size: 24px;
+      padding: 0px 7px; }
 
 /* Problem data */
 .problem-data-box {
@@ -6574,39 +6589,11 @@ hr {
     overflow-x: hidden; }
 
 /* Editor */
-#editor {
+.code-editor {
   margin: 10px 0px;
   height: 365px;
   width: 113%; }
 
-/* .btn-explanation {
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	background: none;
-	cursor: pointer;
-	padding: 25px 80px;
-	display: inline-block;
-	margin: 15px 30px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.btn-explanation:after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-} */
 .btn-run-code {
   font-size: 16px;
   font-weight: bold;
@@ -6619,5 +6606,56 @@ hr {
     content: "\f04b";
     margin-left: 5px;
     padding-right: 0px; }
+
+.excercises-number {
+  counter-reset: step;
+  margin-top: 5px;
+  padding: 0px 20px;
+  text-align: center;
+  margin-bottom: 45px; }
+  .excercises-number:before {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 80%;
+    height: 1px;
+    width: 45%;
+    border-bottom: 1px solid #000000; }
+  .excercises-number li {
+    list-style-type: none;
+    width: 33%;
+    float: left;
+    font-family: Oxygen, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #E1E6E2;
+    /* Circles */
+    /* Circle on completed exercise */
+    /* Circle con current exercise */ }
+    .excercises-number li:before {
+      width: 25px;
+      height: 25px;
+      content: counter(step);
+      counter-increment: step;
+      line-height: 23px;
+      display: block;
+      text-align: center;
+      margin: 0 20px 10px auto;
+      border-radius: 50%;
+      background-color: #808080; }
+    .excercises-number li.completed:before {
+      content: url("../img/check-round.svg");
+      background-color: #028090; }
+    .excercises-number li.current:before {
+      background-color: #028090; }
+    .excercises-number li > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
 
 /*# sourceMappingURL=maps/styles.css.map */

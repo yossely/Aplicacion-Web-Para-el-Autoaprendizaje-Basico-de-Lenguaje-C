@@ -10,6 +10,9 @@ $color_olive: #AA8800;
 $color_cyan: #37C8AB;
 $color_console: #374548;
 
+$color_exercise_continue_box: #E1E6E2;
+$color_circle_exercise_number: #808080;
+
 /* Expand the container to the entire page width */
 .container-fluid{
 	padding-right: 0px;
@@ -252,6 +255,27 @@ $color_console: #374548;
 			background-color: $color_lightGrayDarker;	
 		}
 	}
+
+	&.exercise-continue-box {
+		background-color: $color_exercise_continue_box;
+		color: $color_1NavyBlue;
+		width: 95%;
+		margin-right: -15%;
+		float: right;
+		margin-top: 10%;
+
+		h3 {
+			font-size: 20px;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+
+		.btn-green-continue-box {
+			font-family: $font_main;
+			font-size: 24px;
+			padding: 0px 7px;
+		}
+	}
 	
 }
 
@@ -372,43 +396,11 @@ hr {
 
 /* Editor */
 
-#editor {
+.code-editor {
 	margin: 10px 0px;
 	height: 365px;
 	width: 113%;
 }
-
-
-
-/* .btn-explanation {
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-	color: inherit;
-	background: none;
-	cursor: pointer;
-	padding: 25px 80px;
-	display: inline-block;
-	margin: 15px 30px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.btn-explanation:after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-} */
-
 
 
 .btn-run-code {
@@ -428,3 +420,69 @@ hr {
 	}
 }
 
+
+.excercises-number {
+	counter-reset: step;
+	margin-top: 5px;
+	padding: 0px 20px;
+	text-align: center;
+	margin-bottom: 45px;
+
+	&:before {
+		content : "";
+		position: absolute;
+		left: 25%;
+		bottom: 80%;
+		height: 1px;
+		width: 45%;
+		border-bottom: 1px solid $color_black;
+	}
+
+	li {
+		list-style-type: none;
+		width: 33%;
+		float: left;
+		font-family: $font_title;
+		font-size: 13px;
+		font-weight: bold;
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		color: $color_exercise_continue_box;
+
+		/* Circles */
+		&:before {
+			width: 25px;
+			height: 25px;
+			content: counter(step);
+			counter-increment: step;
+			line-height: 23px;
+			display: block;
+			text-align: center;
+			margin: 0 20px 10px auto;
+			border-radius: 50%;
+			background-color: $color_circle_exercise_number;
+		}
+
+		
+		/* Circle on completed exercise */
+		&.completed:before {
+			content: url('../img/check-round.svg');
+			background-color: $color_2DarkCyan;
+		}
+
+		/* Circle con current exercise */
+		&.current:before {
+			background-color: $color_2DarkCyan;
+		}
+
+		
+		> a {
+		    position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
