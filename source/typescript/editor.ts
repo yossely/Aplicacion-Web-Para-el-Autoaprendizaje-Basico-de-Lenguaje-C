@@ -1,3 +1,5 @@
+/// <reference path="../../typings/globals/ace/index.d.ts" />;
+
 var editor = ace.edit("editor"); //editor is the 'id' attribute for the 'pre' element
 editor.setTheme("ace/theme/clouds");
 editor.session.setMode("ace/mode/c_cpp");

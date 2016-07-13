@@ -15,7 +15,10 @@ gulp.task('copy', function(){
         .pipe(gulp.dest(destPath + 'assets/css/hint.css'));
 
     // Bootstrap tabs
-    return gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js')
+    return gulp.src(['node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+                     'node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+                     'node_modules/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+                     'node_modules/bootstrap-sass/assets/javascripts/bootstrap/popover.js'])
         .pipe(gulp.dest(destPath + 'assets/js/bootstrap'));
 
 });
