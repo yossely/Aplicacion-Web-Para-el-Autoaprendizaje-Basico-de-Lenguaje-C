@@ -1,0 +1,54 @@
+@import "base";
+@import "navbar_home";
+
+
+$light-gray: #ececec;
+
+.unit {
+	margin-bottom: 30px;	
+
+	h1 {
+		font-family: $font_title;
+		font-size: 24px;
+		font-weight: bold;
+		color: $color_5Magenta;
+		margin-left: 10px;
+	}
+
+	p {
+		font-family: $font_main;
+		font-size: 17px;
+		color: $color_black;
+	}
+
+	p.lesson-number {
+		font-family: $font_main_semibold;
+		color: $color_1NavyBlue;
+	}
+}
+
+.lesson {
+	background-color: $light-gray;
+	margin: 5px 10px;
+	position: relative;
+
+	& > div[class*="col-"] {
+		padding-right: 0px;
+		padding-left: 10px;
+		padding-top: 5px;
+	}
+
+	&:hover {
+		background-color: $color_2DarkCyan;
+		& > div > p {color: white;}
+	}
+}
+
+/* Make div row lesson clickable */
+a.fill-div {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
