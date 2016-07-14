@@ -3,6 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/niveles.css">
+
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="assets/js/angular2/shim.min.js"></script>
+
+    <script src="assets/js/angular2/zone.js"></script>
+    <script src="assets/js/angular2/Reflect.js"></script>
+    <script src="assets/js/angular2/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="assets/js/systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
 	<title>Aprenda C</title>
 </head>
 <body>
@@ -31,6 +45,7 @@
 
 	<div class="container">
 		<!-- div.row*3>div.col-md-6*2>h1.unit>lorem5+div.row.lesson*2>div.col-md-2>h3>Leccion+div.col-md-10>p>lorem16 -->
+		<my-app>Loading...</my-app>
 
 		<div class="row">
 			<div class="col-md-6 unit">

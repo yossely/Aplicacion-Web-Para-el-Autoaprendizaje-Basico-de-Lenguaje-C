@@ -14,6 +14,15 @@ gulp.task('copy', function(){
     gulp.src('node_modules/hint.css/hint.min.css')
         .pipe(gulp.dest(destPath + 'assets/css/hint.css'));
 
+    // Angular 2
+    gulp.src([
+            'node_modules/core-js/client/shim.min.js',
+            'node_modules/zone.js/dist/zone.js',
+            'node_modules/reflect-metadata/Reflect.js',
+            'node_modules/systemjs/dist/system.src.js'
+            ])
+        .pipe(gulp.dest(destPath + 'assets/js/angular2'));
+
     // Bootstrap tabs
     return gulp.src(['node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
                      'node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
@@ -41,6 +50,12 @@ gulp.task('sass', function(){
 });
 
 gulp.task('typescript', function(){
+    gulp.src('systemjs.config.ts')
+        .pipe(sourcemaps.init())
+        .pipe(typescript(tscConfig.compilerOptions))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(destPath + 'assets/js/'));
+
     return gulp
             .src(srcPath + 'typescript/**/*.ts')
             .pipe(sourcemaps.init())
@@ -51,6 +66,7 @@ gulp.task('typescript', function(){
 
 gulp.task('watch', function() { //Keep watching when files change then execute the respective tasks
   gulp.watch(srcPath + 'typescript/**/*.ts', ['typescript']);
+  gulp.watch('systemjs.config.ts', ['typescript']);
   gulp.watch(srcPath + 'sass/**/*.scss', ['sass']);
   /*gulp.watch(appSrc + '** /*.html', ['html']);*/
 });
