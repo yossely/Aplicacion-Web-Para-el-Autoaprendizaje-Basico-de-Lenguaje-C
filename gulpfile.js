@@ -16,10 +16,11 @@ gulp.task('copy', function(){
 
     // Angular 2
     gulp.src([
-            'node_modules/core-js/client/shim.min.js',
-            'node_modules/zone.js/dist/zone.js',
-            'node_modules/reflect-metadata/Reflect.js',
-            'node_modules/systemjs/dist/system.src.js'
+            'node_modules/es6-shim/es6-shim.js',
+            'node_modules/angular2/bundles/angular2-polyfills.js',
+            'node_modules/systemjs/dist/system.src.js',
+            'node_modules/rxjs/bundles/Rx.js',
+            'node_modules/angular2/bundles/angular2.dev.js'
             ])
         .pipe(gulp.dest(destPath + 'assets/js/angular2'));
 
