@@ -1,1 +1,14 @@
-<h1>HOLAAA</h1>
+<div class="row">
+	<div class="col-md-6 unit" *ngFor="let unit of units" >
+		<h1>{{unit.title}}</h1>
+		<div class="row lesson" *ngFor="let lesson of unit.lesson">
+			<div class="col-md-2">
+				<p class="lesson-number">Lección {{lesson.number}}:</p>
+			</div>
+			<div class="col-md-10">
+				<p>{{lesson.content}}</p>
+			</div>
+			<a href="main.html" class="fill-div"></a>
+		</div>
+	</div>
+</div>

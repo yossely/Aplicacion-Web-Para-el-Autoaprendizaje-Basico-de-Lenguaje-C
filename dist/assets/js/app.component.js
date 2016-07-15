@@ -10,6 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('angular2/core');
 let AppComponent = class AppComponent {
+    constructor() {
+        this.units = units_content;
+    }
 };
 AppComponent = __decorate([
     core_1.Component({
@@ -19,5 +22,41 @@ AppComponent = __decorate([
     __metadata('design:paramtypes', [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+var units_content = [
+    {
+        'title': 'Unidad I. Donec fringilla arcu tortor, at.',
+        'lesson': [
+            {
+                'number': 1,
+                'content': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'number': 2,
+                'content': 'Donec semper nisl risus, ac. '
+            },
+            {
+                'number': 3,
+                'content': 'Sed tellus sem, vulputate ac. '
+            },
+        ]
+    },
+    {
+        'title': 'Unidad II. Donec fringilla arcu tortor, at.',
+        'lesson': [
+            {
+                'number': 1,
+                'content': 'Lorem ipsum dolor sit amet'
+            },
+            {
+                'number': 2,
+                'content': 'Donec semper nisl risus, ac. '
+            },
+            {
+                'number': 3,
+                'content': 'Sed tellus sem, vulputate ac. '
+            },
+        ]
+    }
+];
 
 //# sourceMappingURL=maps/app.component.js.map
