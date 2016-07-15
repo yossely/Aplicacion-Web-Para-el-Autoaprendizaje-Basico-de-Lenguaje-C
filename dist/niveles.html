@@ -6,24 +6,31 @@
 
     <!-- 1. Load libraries -->
     <!-- Polyfill(s) for older browsers -->
+    <script src="assets/js/angular2/angular2-polyfills.js"></script>
     <script src="assets/js/angular2/es6-shim.js"></script>
 
-    <script src="assets/js/angular2/angular2-polyfills.js"></script>
     <script src="assets/js/angular2/system.src.js"></script>
+	<script>
+		//configure system loader
+		System.config({defaultJSExtensions: true});
+	    /* //did not work :/ don't know why
+	    System.config({
+      		packages: {
+	      		'assets/js': {
+	      			format: 'register',
+	      			defaultExtension: 'js'
+	      		}
+	      	}
+      	});*/
+	</script>
+
     <script src="assets/js/angular2/Rx.js"></script>
     <script src="assets/js/angular2/angular2.dev.js"></script>
 
     <script>
-      System.config({
-      	packages: {
-      		js: {
-      			format: 'register',
-      			defaultExtension: 'js'
-      		}
-      	}
-      });
-      System.import('assets/js/boot.js')
-      		.then(null, console.error.bind(console));
+      	//bootstrap the Angular2 application
+      	System.import('assets/js/boot.js')
+      		  .then(null, console.error.bind(console));
     </script>
 
 	<title>Aprenda C</title>
