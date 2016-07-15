@@ -4,6 +4,9 @@
   "description": "Herramienta para el autoaprendizaje basico del lenguaje de programacion C bajo un ambiente web",
   "main": "index.js",
   "scripts": {
+    "web-app": "gulp",
+    "desktop-app": "electron ./dist/main.js",
+    "build": "gulp copy sass typescript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +30,7 @@
   "devDependencies": {
     "angular2": "^2.0.0-beta.17",
     "bootstrap-sass": "^3.3.6",
+    "electron-prebuilt": "^1.2.7",
     "es6-shim": "^0.35.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",

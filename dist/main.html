@@ -326,6 +326,9 @@ int main()
 		</div>
 	</div>
 	
+	<!-- Insert this line above script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	
 	<script src="assets/js/bootstrap/jquery-2.2.4.js"></script>
 	<script src="assets/js/bootstrap/tab.js"></script>
 	
@@ -338,5 +341,9 @@ int main()
 	<script src="assets/js/bootstrap/carousel.js"></script>
 	<script src="assets/js/bootstrap/popover.js"></script>
 	<script src="assets/js/tips.js"></script>
+
+	<!-- Insert this line after script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
+	<script>if (window.module) module = window.module;</script>
+
 </body>
 </html>
