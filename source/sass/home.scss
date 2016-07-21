@@ -1,5 +1,4 @@
-@import "base";
-@import "navbar_home";
+@import "variables";
 
 $color_lightGray: #E6E6E6;
 
@@ -23,7 +22,7 @@ $color_lightGray: #E6E6E6;
     position: relative;
 
     &:before { 
-	    content: url('../img/quote-left.svg');
+	    content: url('assets/img/quote-left.svg');
 	    font-weight: bold;
 	    position:absolute;
 	    top:0;
@@ -32,7 +31,7 @@ $color_lightGray: #E6E6E6;
 	} 
 
 	&:after { 
-	    content: url('../img/quote-right.svg');
+	    content: url('assets/img/quote-right.svg');
 	    font-weight: bold;
 	    position: absolute;
 	    top: 0; 

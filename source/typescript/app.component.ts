@@ -1,47 +1,15 @@
-import { Component } from 'angular2/core';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { NavbarComponent } from './navbar.component';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'assets/partials/nivel.html'
+	selector: 'my-app',
+	template: 
+		`<fnd-menu></fnd-menu>
+		<router-outlet></router-outlet>`,
+  	directives: [ROUTER_DIRECTIVES, NavbarComponent]
 })
 
-export class AppComponent { 
-	units = units_content;
+export class AppComponent {
+	
 }
-
-var units_content = [
-	{
-		'title' : 'Unidad I. Donec fringilla arcu tortor, at.',
-		'lesson': [
-			{
-				'number': 1,
-				'content': 'Lorem ipsum dolor sit amet'
-			},
-			{
-				'number': 2,
-				'content': 'Donec semper nisl risus, ac. '
-			},
-			{
-				'number': 3,
-				'content': 'Sed tellus sem, vulputate ac. '
-			},
-		]
-	},
-	{
-		'title' : 'Unidad II. Donec fringilla arcu tortor, at.',
-		'lesson': [
-			{
-				'number': 1,
-				'content': 'Lorem ipsum dolor sit amet'
-			},
-			{
-				'number': 2,
-				'content': 'Donec semper nisl risus, ac. '
-			},
-			{
-				'number': 3,
-				'content': 'Sed tellus sem, vulputate ac. '
-			},
-		]
-	}
-];

@@ -13,14 +13,13 @@ gulp.task('copy', function(){
     // Tooltip library
     gulp.src('node_modules/hint.css/hint.min.css')
         .pipe(gulp.dest(destPath + 'assets/css/hint.css'));
-
-    // Angular 2
+        
+    // @angular
     gulp.src([
-            'node_modules/es6-shim/es6-shim.js',
-            'node_modules/angular2/bundles/angular2-polyfills.js',
-            'node_modules/systemjs/dist/system.src.js',
-            'node_modules/rxjs/bundles/Rx.js',
-            'node_modules/angular2/bundles/angular2.dev.js'
+            'node_modules/core-js/client/shim.min.js',
+            'node_modules/zone.js/dist/zone.js',
+            'node_modules/reflect-metadata/Reflect.js',
+            'node_modules/systemjs/dist/system.src.js'
             ])
         .pipe(gulp.dest(destPath + 'assets/js/angular2'));
 
@@ -73,10 +72,10 @@ gulp.task('watch', function() { //Keep watching when files change then execute t
 });
 
 gulp.task('webserver', function(){
-    gulp.src(destPath)
+    gulp.src('.')
         .pipe(webserver({
             livereload: true,
-            open: true
+            open: false     //don't open the browser (in my case I don't want this 'cause it does not open firefox developer)
         }));
 });
 
