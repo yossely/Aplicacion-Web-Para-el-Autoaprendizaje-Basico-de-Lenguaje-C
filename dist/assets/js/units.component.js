@@ -16,8 +16,8 @@ let UnitsComponent = class UnitsComponent {
 };
 UnitsComponent = __decorate([
     core_1.Component({
-        styleUrls: ['assets/css/niveles.css'],
-        templateUrl: './assets/partials/nivel.html'
+        styleUrls: ['dist/assets/css/niveles.css'],
+        templateUrl: 'dist/assets/partials/nivel.html'
     }), 
     __metadata('design:paramtypes', [])
 ], UnitsComponent);

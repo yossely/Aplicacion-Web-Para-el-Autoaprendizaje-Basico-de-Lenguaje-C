@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Oxygen';
-  src: url("assets/fonts/Oxygen/Oxygen-Regular.ttf"); }
+  src: url("dist/assets/fonts/Oxygen/Oxygen-Regular.ttf"); }
 
 @font-face {
   font-family: 'Oxygen_Bold';
-  src: url("assets/fonts/Oxygen/Oxygen-Bold.ttf"); }
+  src: url("dist/assets/fonts/Oxygen/Oxygen-Bold.ttf"); }
 
 @font-face {
   font-family: 'SourceSansPro';
-  src: url("assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"); }
+  src: url("dist/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"); }
 
 @font-face {
   font-family: 'SourceSansPro_Semibold';
-  src: url("assets/fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf"); }
+  src: url("dist/assets/fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf"); }
 
 @font-face {
   font-family: 'fontawesome';

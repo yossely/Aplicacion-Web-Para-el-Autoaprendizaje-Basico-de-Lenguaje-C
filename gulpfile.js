@@ -50,11 +50,6 @@ gulp.task('sass', function(){
 });
 
 gulp.task('typescript', function(){
-    gulp.src('systemjs.config.ts')
-        .pipe(sourcemaps.init())
-        .pipe(typescript(tscConfig.compilerOptions))
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(destPath + 'assets/js/'));
 
     return gulp
             .src(srcPath + 'typescript/**/*.ts')

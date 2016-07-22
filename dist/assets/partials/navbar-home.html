@@ -1,4 +1,5 @@
-<nav class="navbar navbar-inverse navbar-fixed-top center">
+<!-- Navbar home -->
+<nav *ngIf="!query" class="navbar navbar-inverse navbar-fixed-top center">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand" [routerLink]="['/']">
@@ -11,11 +12,45 @@
 				<a type="button" href="main.html" class="btn btn-green btn-green-navbar navbar-btn pull-right">Comenzar</a>
 				<ul class="nav navbar-nav pull-right">
 					<li><a [routerLink]="['/home']" [routerLinkActive]="['current']" >Inicio</a></li>
-					<li><a [routerLink]="['/niveles']" [routerLinkActive]="['current']" >Niveles</a></li>
+					<li><a [routerLink]="['/niveles']" [routerLinkActive]="['current']" (click)="showNavbarMain()" >Niveles</a></li>
 					<li><a href="#">Acerca de Lenguaje C</a></li>
 			    </ul>
 			</div>
 	    </div>
 		
+	</div>
+</nav>
+
+<!-- Navbar main -->
+<nav *ngIf="query" class="navbar navbar-inverse navbar-fixed-top ">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" (click)="showNavbarMain()" [routerLink]="['/']">
+				<img class="logo" alt="AprendaC" src="assets/img/logo-name.svg">
+			</a>
+		</div>
+
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav pull-right progressbar">
+					<li class="completed"><a class="hint--bottom-right hint--medium" aria-label="Lektion eins" href="#"></a></li>
+					<li class="completed"><a class="hint--bottom hint--medium" aria-label="Lektion zwei" href="#"></a></li>
+					<li class="completed"><a class="hint--bottom hint--medium" aria-label="Lektion drei" href="#"></a></li>
+					<li class="completed"><a class="hint--bottom hint--medium" aria-label="Lektion vier" href="#"></a></li>
+					<li class="current"><a class="hint--bottom hint--medium" aria-label="Lektion fünf" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion sechs" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion sieben" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion acht" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion neun" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion zehn" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion elf" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion zwolf" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion dreizehn" href="#"></a></li>
+					<li><a class="hint--bottom hint--medium" aria-label="Lektion vierzehn" href="#"></a></li>
+					<li><a class="hint--bottom-left hint--medium" aria-label="Lektion fünfzehn" href="#"></a></li>
+			    </ul>
+			</div>
+	    </div>
+			
 	</div>
 </nav>

@@ -3,8 +3,9 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
 @Component({
-	styleUrls: ['./assets/css/home.css'],
-    templateUrl: './assets/partials/home.html',
+	styleUrls: ['dist/assets/css/home.css'],
+    templateUrl: 'dist/assets/partials/home.html',
+    // template: '<h1>Ich bin Home</h1>',
     directives: [ROUTER_DIRECTIVES]
 })
 

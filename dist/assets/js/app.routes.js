@@ -1,11 +1,10 @@
 "use strict";
 const router_1 = require('@angular/router');
-const home_component_1 = require('./home.component');
-const units_component_1 = require('./units.component');
+const home_routes_1 = require('./home-routes');
+const main_routes_1 = require('./main-routes');
 const routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: home_component_1.HomeComponent },
-    { path: 'niveles', component: units_component_1.UnitsComponent }
+    ...home_routes_1.homeRoutes,
+    ...main_routes_1.mainRoutes
 ];
 exports.appRouterProviders = [
     router_1.provideRouter(routes)

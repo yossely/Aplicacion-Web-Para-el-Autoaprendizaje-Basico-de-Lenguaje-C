@@ -10,31 +10,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-var router;
+const common_1 = require('@angular/common');
 var currentRoute;
-// currentRoute = router.routerState.toString();
-// console.log(currentRoute);
-// var currentRoute:string;
 currentRoute = '/home';
 function getNavbarStylePath() {
     var navbar_style;
     if (currentRoute == '/home')
-        navbar_style = 'assets/css/navbar_home.css';
+        navbar_style = 'dist/assets/css/navbar_home.css';
     else if (currentRoute == '/niveles') {
-        navbar_style = 'assets/css/navbar_main.css';
+        navbar_style = 'dist/assets/css/navbar_main.css';
     }
     return navbar_style;
 }
 function getNavbarTemplatePath() {
     var navbar_template;
     if (currentRoute == '/home')
-        navbar_template = 'assets/partials/navbar-home.html';
+        navbar_template = 'dist/assets/partials/navbar-home.html';
     else if (currentRoute == '/niveles') {
-        navbar_template = 'assets/partials/navbar-main.html';
+        navbar_template = 'dist/assets/partials/navbar-main.html';
     }
     return navbar_template;
 }
 let NavbarComponent = class NavbarComponent {
+    constructor(location) {
+        this.query = false;
+        // router.changes.subscribe(() => {
+        //   console.log(this.location.path());
+        // });
+        console.log("hello");
+        console.log(location.path());
+        // console.log(router.routerState.snapshot.url);
+    }
+    showNavbarMain() {
+        this.query = !this.query;
+    }
+    routeIsActive(routePath) {
+        return this.router.url == routePath;
+    }
     ngOnInit() { }
 };
 NavbarComponent = __decorate([
@@ -45,7 +57,7 @@ NavbarComponent = __decorate([
         directives: [router_1.ROUTER_DIRECTIVES],
         templateUrl: getNavbarTemplatePath()
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [common_1.Location])
 ], NavbarComponent);
 exports.NavbarComponent = NavbarComponent;
 

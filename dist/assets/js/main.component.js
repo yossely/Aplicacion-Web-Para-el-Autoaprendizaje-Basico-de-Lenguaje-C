@@ -10,17 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-let HomeComponent = class HomeComponent {
+let MainComponent = class MainComponent {
 };
-HomeComponent = __decorate([
+MainComponent = __decorate([
     core_1.Component({
-        styleUrls: ['dist/assets/css/home.css'],
-        templateUrl: 'dist/assets/partials/home.html',
-        // template: '<h1>Ich bin Home</h1>',
+        styleUrls: ['dist/assets/css/styles.css'],
+        templateUrl: 'dist/assets/partials/main.html',
+        // template: '<h1>Ich bin Main</h1>',
         directives: [router_1.ROUTER_DIRECTIVES]
     }), 
     __metadata('design:paramtypes', [])
-], HomeComponent);
-exports.HomeComponent = HomeComponent;
+], MainComponent);
+exports.MainComponent = MainComponent;
 
-//# sourceMappingURL=maps/home.component.js.map
+//# sourceMappingURL=maps/main.component.js.map

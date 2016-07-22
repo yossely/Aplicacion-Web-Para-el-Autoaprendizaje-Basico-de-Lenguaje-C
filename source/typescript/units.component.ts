@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-	styleUrls: ['assets/css/niveles.css'],
-    templateUrl: './assets/partials/nivel.html'
+	styleUrls: ['dist/assets/css/niveles.css'],
+    templateUrl: 'dist/assets/partials/nivel.html'
+    // template: '<h1>Ich bin Niveles</h1>'
 })
 
 export class UnitsComponent {

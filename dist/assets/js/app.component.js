@@ -10,15 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-const navbar_component_1 = require('./navbar.component');
+// import { NavbarComponent } from './navbar.component';
 let AppComponent = class AppComponent {
 };
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: `<fnd-menu></fnd-menu>
+        template: `<h1>AprendaC</h1>
+		    <nav>
+				<a routerLink="/home" routerLinkActive="active">Home</a>
+				<a routerLink="/niveles" routerLinkActive="active">Niveles</a>
+				<a routerLink="/main" routerLinkActive="active">Main</a>
+			</nav>
+		<!-- <fnd-menu></fnd-menu> -->
 		<router-outlet></router-outlet>`,
-        directives: [router_1.ROUTER_DIRECTIVES, navbar_component_1.NavbarComponent]
+        directives: [router_1.ROUTER_DIRECTIVES /*, NavbarComponent*/]
     }), 
     __metadata('design:paramtypes', [])
 ], AppComponent);
