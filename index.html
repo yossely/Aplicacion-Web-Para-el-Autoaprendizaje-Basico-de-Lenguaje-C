@@ -7,6 +7,14 @@
 	<link rel="stylesheet" href="dist/assets/css/normalize.css">
 	<link rel="stylesheet" href="dist/assets/css/base.css">
 
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> -->
+    
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome/font-awesome.css"> -->
+
+    <!-- Tooltips library -->
+    <link rel="stylesheet" href="dist/assets/css/hint.css/hint.min.css">
+
     <!-- 1. Load libraries -->
  	<!-- Polyfill(s) for older browsers -->
     <script src="dist/assets/js/angular2/shim.min.js"></script>
@@ -24,6 +32,24 @@
 <body>
 
 	<my-app></my-app>
+    
+    <!-- Insert this line above script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    
+    <script src="dist/assets/js/bootstrap/jquery-2.2.4.js"></script>
+    <script src="dist/assets/js/bootstrap/tab.js"></script>
+    
+    <!-- Ace editor -->
+    <script src="dist/assets/js/ace-editor/ace.js"></script>
+    <script src="dist/assets/js/editor.js"></script>
 
+    <!-- Tips -->
+    <script src="dist/assets/js/bootstrap/tooltip.js"></script>
+    <script src="dist/assets/js/bootstrap/carousel.js"></script>
+    <script src="dist/assets/js/bootstrap/popover.js"></script>
+    <script src="dist/assets/js/tips.js"></script>
+
+    <!-- Insert this line after script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
+    <script>if (window.module) module = window.module;</script>
 </body>
 </html>

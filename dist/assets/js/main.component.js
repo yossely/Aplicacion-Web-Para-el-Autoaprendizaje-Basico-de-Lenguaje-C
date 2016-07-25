@@ -10,14 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
+const navbar_main_component_1 = require('./navbar-main.component');
 let MainComponent = class MainComponent {
 };
 MainComponent = __decorate([
     core_1.Component({
-        styleUrls: ['dist/assets/css/styles.css'],
-        templateUrl: 'dist/assets/partials/main.html',
-        // template: '<h1>Ich bin Main</h1>',
-        directives: [router_1.ROUTER_DIRECTIVES]
+        // styleUrls: ['dist/assets/css/styles.css'],
+        // templateUrl: 'dist/assets/partials/main.html',
+        template: `<h1>I'm main</h1>
+		<fnd-menu></fnd-menu>
+		<a routerLink="/main/2">2</a>
+		<a routerLink="/main">null</a>
+		<router-outlet></router-outlet>`,
+        directives: [router_1.ROUTER_DIRECTIVES, navbar_main_component_1.NavbarMainComponent]
     }), 
     __metadata('design:paramtypes', [])
 ], MainComponent);

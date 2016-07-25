@@ -60,13 +60,13 @@ $light_green: #5fd35f;
 
 		/* Circle on completed lesson */
 		&.completed:before {
-			content: url('../img/check-round.svg');
+			content: url('dist/assets/img/check-round.svg');
 			background-color: $color_2DarkCyan;
 		}
 
 		/* Circle con current lesson */
 		&.current:before {
-			content: url('../img/arrow-current.svg');
+			content: url('dist/assets/img/arrow-current.svg');
 			background-color: $light_green;
 		}
 

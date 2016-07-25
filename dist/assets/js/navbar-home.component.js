@@ -10,18 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-const navbar_home_component_1 = require('./navbar-home.component');
-let AppComponent = class AppComponent {
+let NavbarHomeComponent = class NavbarHomeComponent {
 };
-AppComponent = __decorate([
+NavbarHomeComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: `<fnd-menu></fnd-menu>
-		<router-outlet></router-outlet>`,
-        directives: [router_1.ROUTER_DIRECTIVES, navbar_home_component_1.NavbarHomeComponent]
+        selector: 'fnd-menu',
+        encapsulation: core_1.ViewEncapsulation.None,
+        styleUrls: ['dist/assets/css/navbar_home.css'],
+        directives: [router_1.ROUTER_DIRECTIVES],
+        templateUrl: 'dist/assets/partials/navbar-home.html'
     }), 
     __metadata('design:paramtypes', [])
-], AppComponent);
-exports.AppComponent = AppComponent;
+], NavbarHomeComponent);
+exports.NavbarHomeComponent = NavbarHomeComponent;
 
-//# sourceMappingURL=maps/app.component.js.map
+//# sourceMappingURL=maps/navbar-home.component.js.map

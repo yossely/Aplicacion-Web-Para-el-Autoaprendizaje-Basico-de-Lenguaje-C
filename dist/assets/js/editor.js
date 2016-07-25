@@ -1,4 +1,7 @@
 /// <reference path="../../typings/globals/ace/index.d.ts" />;
+// var btn_begin = document.getElementById('btn-begin');
+// btn_begin.onclick = function (){
+// alert("sndoasd");
 var editor = ace.edit("editor"); //editor is the 'id' attribute for the 'pre' element
 editor.setTheme("ace/theme/clouds");
 editor.session.setMode("ace/mode/c_cpp");
@@ -17,5 +20,6 @@ var btn_run_code = document.getElementById('btn-run-code-exercise1');
 btn_run_code.onclick = function () {
     console.log(editor_exercise1.getValue());
 };
+// } 
 
 //# sourceMappingURL=maps/editor.js.map

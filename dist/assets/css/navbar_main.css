@@ -70,10 +70,10 @@
     .progressbar li:first-child:after {
       content: none; }
     .progressbar li.completed:before {
-      content: url("../img/check-round.svg");
+      content: url("dist/assets/img/check-round.svg");
       background-color: #028090; }
     .progressbar li.current:before {
-      content: url("../img/arrow-current.svg");
+      content: url("dist/assets/img/arrow-current.svg");
       background-color: #5fd35f; }
     .progressbar li.completed + li:after {
       border-top: 2px dashed #028090; }

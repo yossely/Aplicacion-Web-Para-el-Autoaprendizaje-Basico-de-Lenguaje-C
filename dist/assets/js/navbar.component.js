@@ -12,7 +12,7 @@ const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
 const common_1 = require('@angular/common');
 var currentRoute;
-currentRoute = '/home';
+currentRoute = '/niveles';
 function getNavbarStylePath() {
     var navbar_style;
     if (currentRoute == '/home')
