@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "web-app": "gulp",
-    "desktop-app": "electron ./dist/main.js",
+    "desktop-app": "electron main.js",
     "build": "gulp copy sass typescript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -16,7 +16,6 @@ HomeComponent = __decorate([
     core_1.Component({
         styleUrls: ['dist/assets/css/home.css'],
         templateUrl: 'dist/assets/partials/home.html',
-        // template: '<h1>Ich bin Home</h1>',
         directives: [router_1.ROUTER_DIRECTIVES]
     }), 
     __metadata('design:paramtypes', [])

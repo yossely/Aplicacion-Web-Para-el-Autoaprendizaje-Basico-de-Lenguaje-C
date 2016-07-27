@@ -1,5 +1,3 @@
-<!-- <navbar-home>Cargando navbar...</navbar-home> -->
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 unit" *ngFor="let unit of units" >
@@ -11,7 +9,7 @@
 				<div class="col-md-10">
 					<p>{{lesson.content}}</p>
 				</div>
-				<a href="{{lesson.url}}" class="fill-div"></a>
+				<a [routerLink]="['/unidad/', unit.number, 'leccion/', lesson.number]" class="fill-div"></a>
 			</div>
 		</div>
 	</div>

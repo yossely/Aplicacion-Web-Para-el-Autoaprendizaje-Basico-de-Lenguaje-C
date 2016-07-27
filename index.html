@@ -41,15 +41,19 @@
     
     <!-- Ace editor -->
     <script src="dist/assets/js/ace-editor/ace.js"></script>
-    <script src="dist/assets/js/editor.js"></script>
 
     <!-- Tips -->
     <script src="dist/assets/js/bootstrap/tooltip.js"></script>
     <script src="dist/assets/js/bootstrap/carousel.js"></script>
     <script src="dist/assets/js/bootstrap/popover.js"></script>
-    <script src="dist/assets/js/tips.js"></script>
+    <!-- <script src="dist/assets/js/tips.js"></script> -->
 
     <!-- Insert this line after script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
     <script>if (window.module) module = window.module;</script>
 </body>
+
+    <script>
+        // You can also require other files to run in this process
+        require('./renderer.js');
+    </script>
 </html>
