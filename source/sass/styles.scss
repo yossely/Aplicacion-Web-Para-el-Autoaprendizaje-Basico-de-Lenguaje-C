@@ -91,6 +91,7 @@ $color_expected-output-tab: #883044;
 
 	border: 3px solid $color_1NavyBlue;
     border-top: none;
+    min-height: 450px;
 	height: auto;
 
 	&.explanation-pane {
@@ -104,6 +105,10 @@ $color_expected-output-tab: #883044;
 	}
 }
 
+
+.pager-navegator {
+	margin-top: 10%;
+}
 
 /* Buttons 'Next' and 'Previous' inside explanation*/
 
@@ -164,6 +169,7 @@ $color_expected-output-tab: #883044;
 	border: 3px solid #fff;
 	color: #fff;
 	overflow: hidden;
+	margin-top: 70%;
 }
 
 .btn-explanation:active {

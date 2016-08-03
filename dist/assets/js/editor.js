@@ -10,10 +10,6 @@ class MyEditor {
         this.editor.session.setMode("ace/mode/c_cpp");
         document.getElementById(this.divId).style.fontSize = '14px';
         document.getElementById(this.divId).style.backgroundColor = '#E4FDE1';
-        var btn_run_code = document.getElementById('btn-run-code');
-        btn_run_code.onclick = function () {
-            console.log(this.editor.getValue());
-        };
     }
 }
 exports.MyEditor = MyEditor;

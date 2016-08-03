@@ -6,6 +6,6 @@ export interface Lesson {
 	title: string; //short title
 	content: string; //content to display on /niveles
 	explanations: Explanation[];
-	// example: Problem;
+	example: Problem;
 	// exercises: Problem[];
 }

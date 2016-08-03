@@ -11,20 +11,21 @@
 
 	<div class="row">
 		<ul class="nav nav-tabs nav-justified sections">
-			<li role="presentation" class="active explanation-tab">
-				<a href="#explanation" class="explanation" aria-controls="explanation" role="tab" data-toggle="tab">Explicación</a>
+			<li role="presentation" class="active explanation-tab"  id="explanation-tab">
+				<a href="#explanation-pane" class="explanation" aria-controls="explanation-pane" role="tab" data-toggle="tab">Explicación</a>
 			</li>
-			<li role="presentation" class="example-tab">
-				<a href="#example" class="example" aria-controls="example" role="tab" data-toggle="tab">Ejemplo</a>
+			<li role="presentation" class="example-tab" id="example-tab">
+				<a href="#example-pane" class="example" aria-controls="example-pane" role="tab" data-toggle="tab">Ejemplo</a>
 			</li>
-			<li role="presentation" class="exercises-tab">
-				<a href="#exercises" class="exercises" aria-controls="exercises" role="tab" data-toggle="tab">Ejercicios</a>
+			<li role="presentation" class="exercises-tab" id="exercises-tab">
+				<a href="#exercises-pane" class="exercises" aria-controls="exercises-pane" role="tab" data-toggle="tab">Ejercicios</a>
 			</li>
 		</ul>
 		
 		<!-- Content of each section -->
-		<div class="tab-content">			
-			<div role="tabpanel" class="tab-pane active explanation-pane" id="explanation">
+		<div class="tab-content">
+			<!-- Explanation -->			
+			<div role="tabpanel" class="tab-pane active explanation-pane" id="explanation-pane">
 
 				<div *ngFor="let explanation of lesson?.explanations; 
 								let index = index; 
@@ -37,34 +38,32 @@
 					Am I first? {{first}} <br />
 					Am I last? {{last}} <br />
 
-					<div *ngIf="!first">
-						<button class="btn-explanation btn-explanation-previous icon-arrow-left" (click)="previousExplanation(index)">Anterior</button>
-					</div>
-					<div *ngIf="!last">
-						<button class="btn-explanation btn-explanation-next icon-arrow-right" (click)="nextExplanation(index)">Siguiente</button>
-					</div>
-					<div *ngIf="last" class="row">
-						<div class="col-md-2 col-md-push-1">
-							<div class="continue-box explanation-continue-box">
+					<div class="row pager-navegator">
+						<div class="col-md-2">
+							<button *ngIf="!first" class="btn-explanation btn-explanation-previous icon-arrow-left" (click)="previousExplanation(index)">Anterior</button>
+						</div>
+						<div class="col-md-2 col-md-push-7">
+							<button *ngIf="!last" class="btn-explanation btn-explanation-next icon-arrow-right" (click)="nextExplanation(index)">Siguiente</button>
+						</div>
+						<div class="col-md-2 col-md-push-6">
+							<div *ngIf="last" class="continue-box explanation-continue-box">
 								<img src="dist/assets/img/consoleC-box.svg" alt="consoleC">
 								<h3>¡Continua con el ejemplo!</h3>
-								<button class="btn btn-sm btn-continue-box">Continuar</button>
+								<button class="btn btn-sm btn-continue-box" (click)="continueSectionButton('explanation')">Continuar</button>
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				
+				</div>			
 			</div>
 			<!-- Example -->
-			<div role="tabpanel" class="tab-pane example-pane" id="example">
+			<div role="tabpanel" class="tab-pane example-pane" id="example-pane">
 				<div class="row">
 					<div class="col-md-4 problem-data-box">
 						<div class="row">
 							<div class="col-md-12">
 								<h3>Enunciado</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est <span class="key_words">voluptate</span> sequi quos ut odio adipisci fugit dolor dolore excepturi molestias <span class="key_words">consequuntur</span>, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis <span class="key_words">suscipit</span>, ratione animi!
-									Lorem ipsum dolor sit amet, <span class="key_words">consectetur</span> adipisicing elit. Est voluptate sequi quos ut odio adipisci fugit dolor dolore <span class="key_words">excepturi</span> molestias consequuntur, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis suscipit, ratione animi!
+								<!-- <span class="key_words">suscipit</span> -->
+								<p>{{lesson?.example?.statement}}
 								</p>
 							</div>
 						</div>
@@ -116,28 +115,10 @@
 							<div class="col-md-12">
 								<div class="row">
 								<button class="btn btn-sm btn-green btn-run-code icon-arrow-run" id="btn-run-code">RUN</button>
+								<!-- Bug: The code doesn't want to bind inside the editor :( -->
 								<pre class="code-editor" id="editor">
-#include "stdio.h"
-int main()
-{
-	int first, second, add, subtract, multiply;
-	float divide;
-
-	printf("Enter two integers\n");
-	scanf("%d%d", &first, &second);
-
-	add = first + second;
-	subtract = first - second;
-	multiply = first * second;
-	divide = first / (float)second;   //typecasting
-
-	printf("Sum = %d\n",add);
-	printf("Difference = %d\n",subtract);
-	printf("Multiplication = %d\n",multiply);
-	printf("Division = %.2f\n",divide);
-
-	return 0;
-}
+int examplito; //:)
+{{lesson?.example?.code}}
 								</pre>
 								</div>
 							</div>
@@ -155,7 +136,7 @@ int main()
 								<div class="continue-box example-continue-box">
 									<img src="dist/assets/img/arrow-right-box.svg" alt="consoleC">
 									<h3>¡Continua con el ejercicio!</h3>
-									<button class="btn btn-sm btn-continue-box">Continuar</button>
+									<button class="btn btn-sm btn-continue-box" (click)="continueSectionButton('example')">Continuar</button>
 								</div>
 							</div>
 						</div>
@@ -163,7 +144,7 @@ int main()
 				</div>
 			</div>
 			<!-- Exercises -->
-			<div role="tabpanel" class="tab-pane exercises-pane" id="exercises">
+			<div role="tabpanel" class="tab-pane exercises-pane" id="exercises-pane">
 				<div class="row">
 					<div class="col-md-4 problem-data-box">
 						<div class="row">

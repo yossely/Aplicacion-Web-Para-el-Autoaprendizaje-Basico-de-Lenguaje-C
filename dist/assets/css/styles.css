@@ -153,6 +153,7 @@
 .tab-pane {
   border: 3px solid #114B5F;
   border-top: none;
+  min-height: 450px;
   height: auto; }
   .tab-pane.explanation-pane {
     background-color: #5DA7A6; }
@@ -160,6 +161,9 @@
     background-color: #028090; }
   .tab-pane.exercises-pane {
     background-color: #F45B69; }
+
+.pager-navegator {
+  margin-top: 10%; }
 
 /* Buttons 'Next' and 'Previous' inside explanation*/
 /* General button style (reset) */
@@ -213,7 +217,8 @@
   border-radius: 50px;
   border: 3px solid #fff;
   color: #fff;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 70%; }
 
 .btn-explanation:active {
   border-color: #114B5F;

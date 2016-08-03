@@ -59,7 +59,12 @@ export class LessonComponent implements OnInit, OnDestroy, AfterViewInit{
 
 	    this.editor_exercise1 = new MyEditor("editor-exercise1");
 	    this.editor_exercise1.InitializeEditor();
-	    console.log('exercise-1 editor ready');	    
+	    console.log('exercise-1 editor ready');	
+
+	    var btn_run_code = document.getElementById('btn-run-code');
+		btn_run_code.addEventListener('click',()=>{
+			console.log(this.editor.editor.getValue());
+		}); 
 
 	    /*
 	    $(function(e:any) {
@@ -119,35 +124,54 @@ export class LessonComponent implements OnInit, OnDestroy, AfterViewInit{
   	}
 
   	nextExplanation(index){
-  		console.log(index);
+  		var ExpId: number;
+  		ExpId = +index;
 
-  		var currExpId: number;
-  		currExpId = +index;
-
-  		var currExp = document.getElementById("explanation-"+currExpId);
+  		// current Explanation
+  		var currExp = document.getElementById("explanation-"+ExpId);
   		currExp.style.display = 'none';
 
-  		var nxtExpId: number;
-  		nxtExpId = +index;
-  		nxtExpId++;
-  		var nxtExp = document.getElementById("explanation-"+nxtExpId);
+  		// next Explanation
+  		ExpId++;
+  		var nxtExp = document.getElementById("explanation-"+ExpId);
   		nxtExp.style.display = 'block';
   	}
 
   	previousExplanation(index){
-  		console.log(index);
+  		var ExpId: number;
+  		ExpId = +index;
 
-  		var currExpId: number;
-  		currExpId = +index;
-
-  		var currExp = document.getElementById("explanation-"+currExpId);
+  		// current Explanation
+  		var currExp = document.getElementById("explanation-"+ExpId);
   		currExp.style.display = 'none';
 
-  		var nxtExpId: number;
-  		nxtExpId = +index;
-  		nxtExpId--;
-  		var nxtExp = document.getElementById("explanation-"+nxtExpId);
+  		// Previous Explanation
+  		ExpId--;
+  		var nxtExp = document.getElementById("explanation-"+ExpId);
   		nxtExp.style.display = 'block';
+  	}
+
+  	continueSectionButton(currentSection, currentExercise?){
+  		var sections:string [];
+  		sections = ['explanation','example','exercises'];
+
+  		var index:number;
+  		index = sections.indexOf(currentSection);
+
+  		//remove active class to current section tab and pane
+  		var currSectionTab = document.getElementById(sections[index]+'-tab');
+  		currSectionTab.classList.remove('active');
+
+  		var currSectionPane = document.getElementById(sections[index]+'-pane');
+  		currSectionPane.classList.remove('active');
+  		
+  		//add active class to next section tab and pane
+  		var nxtSectionTab = document.getElementById(sections[index+1]+'-tab');
+  		nxtSectionTab.classList.add('active');
+
+  		var nxtSectionPane = document.getElementById(sections[index+1]+'-pane');
+  		nxtSectionPane.classList.add('active');
+
   	}
 
 }
