@@ -61,7 +61,6 @@ gulp.task('typescript', function(){
 
 gulp.task('watch', function() { //Keep watching when files change then execute the respective tasks
   gulp.watch(srcPath + 'typescript/**/*.ts', ['typescript']);
-  gulp.watch('systemjs.config.ts', ['typescript']);
   gulp.watch(srcPath + 'sass/**/*.scss', ['sass']);
   /*gulp.watch(appSrc + '** /*.html', ['html']);*/
 });

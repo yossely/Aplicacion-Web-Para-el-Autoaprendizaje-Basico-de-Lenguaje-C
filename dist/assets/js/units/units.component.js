@@ -10,18 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
-const navbar_home_component_1 = require('./home/navbar-home.component');
-let AppComponent = class AppComponent {
+const units_service_1 = require('./units.service');
+let UnitsComponent = class UnitsComponent {
+    constructor(unitsService) {
+        this.unitsService = unitsService;
+    }
+    ngOnInit() {
+        this.unitsService.getUnits()
+            .subscribe(result => {
+            this.units = result;
+            console.log('Units ready ');
+            console.log(this.units);
+        });
+    }
 };
-AppComponent = __decorate([
+UnitsComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: `<fnd-menu></fnd-menu>
-		<router-outlet></router-outlet>`,
-        directives: [router_1.ROUTER_DIRECTIVES, navbar_home_component_1.NavbarHomeComponent]
+        styleUrls: ['dist/assets/css/niveles.css'],
+        templateUrl: 'dist/assets/partials/nivel.html',
+        providers: [units_service_1.UnitsService],
+        directives: [router_1.ROUTER_DIRECTIVES]
     }), 
-    __metadata('design:paramtypes', [])
-], AppComponent);
-exports.AppComponent = AppComponent;
+    __metadata('design:paramtypes', [units_service_1.UnitsService])
+], UnitsComponent);
+exports.UnitsComponent = UnitsComponent;
 
-//# sourceMappingURL=maps/app.component.js.map
+//# sourceMappingURL=../maps/units/units.component.js.map

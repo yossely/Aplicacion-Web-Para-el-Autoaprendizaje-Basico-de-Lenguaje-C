@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { NavbarHomeComponent } from './navbar-home.component';
+import { NavbarHomeComponent } from './home/navbar-home.component';
 
 @Component({
 	selector: 'my-app',
