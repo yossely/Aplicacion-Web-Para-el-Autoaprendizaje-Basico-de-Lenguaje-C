@@ -1,0 +1,36 @@
+<!-- Problem. Inside of it, we'll find:
+        - Statement
+        - Data Table
+        - Code editor 
+        - Output Console
+        - Tips and expected output
+-->
+<problem-outlet [problem]="selectedExercise" [isOnExercises]="true"></problem-outlet>
+
+<!-- Section to Navigate between the exercises of the lesson and go to the next section too-->
+<div class="row">
+<div class="col-md-2 col-md-push-10">
+    <div class="nav-section-box nav-exercise">
+        <ul class="excercises-number">
+            <li *ngFor="let exercise of exercises; 
+                        let index = index; " [class.current]="exercise.active">
+                <a (click)="selectExercise(index)"></a>
+            </li>
+        </ul>
+        <div *ngIf="!isSelectedExerciseLast">
+            <h3>¡Continua con otro ejercicio!</h3>
+            <button type="button" href="#" class="btn btn-green btn-green-nav-exercise"
+                    (click)="nextExercise()">
+                Continuar
+            </button>
+            <h3>o sigue con</h3>
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+        </div>
+        <div *ngIf="isSelectedExerciseLast">
+            <h3>¿Listo?</h3>
+            <p>Si has terminado con los ejercicios, ¡Sigue aprendiendo nuevos temas!</p>
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+        </div>
+    </div>
+</div>
+</div>

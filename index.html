@@ -1,59 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<base href="/">
-	<!-- <script>document.write('<base href="' + document.location + '" />');</script> -->
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="dist/assets/css/normalize.css">
-	<link rel="stylesheet" href="dist/assets/css/base.css">
+    <!-- Angular 2 routing expects you to have a base element 
+        This element enables the HTML 5 history.pushState api that let’s Angular 2 provide “HTML5 style” 
+        URLs (as opposed to using # prefixed ones)
+    -->
+    <base href="/">
 
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> -->
+    <title>AprendaC 2.0</title>
     
-    <!-- Font Awesome -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/font-awesome/font-awesome.css"> -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+
+    <!-- Bootstrap to use it with ng2-bootstrap node module -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Tooltips library -->
-    <link rel="stylesheet" href="dist/assets/css/hint.css/hint.min.css">
+    <link rel="stylesheet" href="assets/css/hint.css/hint.min.css">
 
     <!-- 1. Load libraries -->
- 	<!-- Polyfill(s) for older browsers -->
-    <script src="dist/assets/js/angular2/shim.min.js"></script>
-    <script src="dist/assets/js/angular2/zone.js"></script>
-    <script src="dist/assets/js/angular2/Reflect.js"></script>
-    <script src="dist/assets/js/angular2/system.src.js"></script>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+        System.import('app').catch(function(err){ console.error(err); });
     </script>
-    
-	<title>Aprenda C</title>
 </head>
+<!-- 3. Display the application -->
 <body>
+    <my-app>Loading...</my-app>
 
-	<my-app></my-app>
-    
-    <!-- Insert this line above script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-    
-    <script src="dist/assets/js/bootstrap/jquery-2.2.4.js"></script>
-    <script src="dist/assets/js/bootstrap/tab.js"></script>
+
+    <!-- Bootstrap jquery and tab.js -->
+    <script src="assets/js/bootstrap/jquery-2.2.4.js"></script>
+    <script src="assets/js/bootstrap/tab.js"></script>
     
     <!-- Ace editor -->
-    <script src="dist/assets/js/ace-editor/ace.js"></script>
+    <!-- <script src="assets/js/ace-editor/ace.js"></script> -->
 
     <!-- Tips -->
-    <script src="dist/assets/js/bootstrap/tooltip.js"></script>
-    <script src="dist/assets/js/bootstrap/carousel.js"></script>
-    <script src="dist/assets/js/bootstrap/popover.js"></script>
-    <!-- <script src="dist/assets/js/tips.js"></script> -->
-
-    <!-- Insert this line after script imports (Needed for electron to recognize jquery and I think that all 3rd party libraries)-->
-    <script>if (window.module) module = window.module;</script>
+    <!-- <script src="assets/js/bootstrap/tooltip.js"></script>
+    <script src="assets/js/bootstrap/carousel.js"></script>
+    <script src="assets/js/bootstrap/popover.js"></script> -->
+    <!-- <script src="assets/js/tips.js"></script> -->
 </body>
-
-    <script>
-        // You can also require other files to run in this process
-        require('./renderer.js');
-    </script>
 </html>

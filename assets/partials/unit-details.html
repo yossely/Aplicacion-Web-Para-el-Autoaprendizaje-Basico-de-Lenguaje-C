@@ -1,0 +1,21 @@
+<section *ngIf="unit">
+    <h2>You selected: {{unit.title}}</h2>
+    <h3>Description</h3>
+    <label for="title">Title: </label>
+    
+    <form #unitForm="ngForm" (ngSubmit)="saveUnitDetails()">
+        <input type="text" name="title" required 
+            [(ngModel)]="unit.title" #title="ngModel">
+        <!-- Validation message -->
+        <div [hidden]="title.valid || title.pristine" class="error">
+            Name is required my good lady!
+        </div>
+
+        <button type="submit" 
+                [disabled]="!unitForm.form.valid">
+            Save
+        </button>
+    </form>
+
+</section>
+<button (click)="goToUnitsList()">Back to units list</button>

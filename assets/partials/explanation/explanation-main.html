@@ -1,0 +1,26 @@
+<h1>Welcome to the explanation</h1>
+<h2>{{expMsg}}</h2>
+<explanation-content [explanation]="selectedExplanation"></explanation-content>
+
+<div class="row">
+    <div class="col-md-2">
+        <!-- <button *ngIf="!first" class="btn-explanation btn-explanation-previous icon-arrow-left" (click)="previousExplanation(index)">Anterior</button> -->
+        <button *ngIf="!isSelectedExplanationFirst" class="btn-explanation btn-explanation-previous icon-arrow-left" (click)="previousExplanation()">Anterior</button>
+    </div>
+    <div class="col-md-2 col-md-push-7">
+        <!-- <button *ngIf="!last" class="btn-explanation btn-explanation-next icon-arrow-right" (click)="nextExplanation(index)">Siguiente</button> -->
+        <button *ngIf="!isSelectedExplanationLast" class="btn-explanation btn-explanation-next icon-arrow-right" (click)="nextExplanation()">Siguiente</button>
+    </div>
+    <div class="col-md-2 col-md-push-6">
+        <div *ngIf="isSelectedExplanationLast" class="nav-section-box nav-explanations">
+            <img src="assets/img/consoleC-box.svg" alt="consoleC">
+            <h3>¡Continua con el ejemplo!</h3>
+            <!-- <button class="btn btn-sm btn-nav-section-box" (click)="continueSectionButton('explanation')">Continuar</button> -->
+            <button class="btn btn-sm btn-nav-section-box" (click)="nextSection()">Continuar</button>
+        </div>
+    </div>
+</div>
+
+
+
+
