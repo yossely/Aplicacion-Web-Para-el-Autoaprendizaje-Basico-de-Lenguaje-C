@@ -7,5 +7,5 @@ export interface Lesson {
 	content: string; //content to display on /niveles
 	explanations: Explanation[];
 	example: Problem;
-	// exercises: Problem[];
+	exercises: Problem[];
 }

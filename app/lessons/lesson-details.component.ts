@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Response } from '@angular/http';
 
@@ -13,26 +13,28 @@ import { Lesson } from '../data_structure/lesson';
     styleUrls: ['assets/css/lesson-details.css'],
     templateUrl: 'assets/partials/lesson.html'
 })
-export class LessonDetailsComponent implements OnInit, OnDestroy, AfterViewInit{
+export class LessonDetailsComponent implements OnInit, OnDestroy{
 
+    // Subscription to the route params observable to detect the changes and update the content of this component
     paramsSub: any;
-    // paramsSub: Observable<Lesson>;
 
-    private sub: any;
     private id_unit: number;
     private id_lesson: number;
     private lesson: Lesson;
 
+    // This array represents the sections tabs of the lessons and is created to be able to manipulate them in the components
     public sectionsTabs:Array<any>;
 
     constructor (private _unitsService: UnitsService,
                  private route: ActivatedRoute,
                  private router: Router){}
 
+    /**
+     * Lifecycle hook ngOnInit. 
+     * It's called when the route has been resolved and matches with this component
+     * Here we can use ActivatedRoute
+     */
     ngOnInit(){
-        // It's called when the route has been resolved and matches with this component
-        // Here we can use ActivatedRoute
-
         // Initialize sectionsTabs array
         this.sectionsTabs = [
                 {
@@ -66,11 +68,11 @@ export class LessonDetailsComponent implements OnInit, OnDestroy, AfterViewInit{
                     return this._unitsService.getLesson(this.id_unit,this.id_lesson);
                 })
             .subscribe(
-                lesson    => this.lesson = lesson,        // Happy path
-                error     => console.log('error mija'),   // Error path
-                ()        => console.log('onComplete')    // onComplete
+                lesson    => this.lesson = lesson,                            // Happy path
+                error     => console.log('Error on retrieving lessons'),      // Error path
+                ()        => console.log('Retrieving lessons completed')      // onComplete
             );
-    }
+    }// ngOnInit end
 
     /*goToUnitsList(){
         let unitId = this.unit ? this.unit._id : null;
@@ -92,101 +94,6 @@ export class LessonDetailsComponent implements OnInit, OnDestroy, AfterViewInit{
             });
     }*/
 
-    ngAfterViewInit() {
-        // At this point in time the DOM of your component is complete
-        /*this.editor = new MyEditor("editor");
-        this.editor.InitializeEditor();
-        console.log('example editor ready');
-
-        this.editor_exercise1 = new MyEditor("editor-exercise1");
-        this.editor_exercise1.InitializeEditor();
-        console.log('exercise-1 editor ready');    
-
-        var btn_run_code = document.getElementById('btn-run-code');
-        btn_run_code.addEventListener('click',()=>{
-            console.log(this.editor.editor.getValue());
-        }); */
-
-        /*
-        $(function(e:any) {
-          e.preventDefault;
-          
-          // initialize carousel in the lower input / popover (html is inside js)  
-          $('.tips-tab').popover({
-            html: true,
-            trigger: "click",
-            placement: "top",
-            content: "" +
-              '<div id="tips-carousel" class="carousel slide" data-interval="true">' +
-              '<!-- Indicators -->' +
-                  '<div class="carousel-inner">' +
-                      '<div class="item active">' +
-                          '<p><img src="dist/assets/img/bulb.svg" alt="">1st Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>' +
-                      '</div>' +
-                      '<div class="item">' +
-                          '<p><img src="dist/assets/img/bulb.svg" alt="">2nd Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>' +
-                      '</div>' +
-                      '<div class="item">' +
-                          '<p><img src="dist/assets/img/bulb.svg" alt="">3rd Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>' +
-                      '</div>' +
-                  '</div>' +
-                  '<!-- Close x -->' +
-                  '<a class="close-window-x" href="#"></a>' +
-                  '<!-- Controls -->' +
-                  '<a class="left carousel-control" href="#tips-carousel" data-slide="prev">' +
-                      '<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>' +
-                  '</a>' +
-                  '<a class="right carousel-control" href="#tips-carousel" data-slide="next">' +
-                      '<i class="fa fa-chevron-circle-right"></i>' +
-                  '</a>' +
-              '</div>' +
-              '<!-- End Carousel -->'
-          });
-
-          // initialize carousel in the lower input / popover 
-          $('.tips-tab').on('shown.bs.popover', function() {
-            $('#tips-carousel').carousel({
-              interval: 0  //this had 2000 at the beginning
-            });
-          });
-
-          // close previously opened popovers by clicking outside them
-          $(document).on('click', function(e:any) {
-            $('a').each(function() {
-              if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-                $(this).popover('hide');
-              }
-            });
-          });  
-
-        });
-        */
-
-    }
-
-
-    continueSectionButton(currentSection, currentExercise?){
-        var sections:string [];
-        sections = ['explanation','example','exercises'];
-
-        var index:number;
-        index = sections.indexOf(currentSection);
-
-        //remove active class to current section tab and pane
-        var currSectionTab = document.getElementById(sections[index]+'-tab');
-        currSectionTab.classList.remove('active');
-
-        var currSectionPane = document.getElementById(sections[index]+'-pane');
-        currSectionPane.classList.remove('active');
-
-        //add active class to next section tab and pane
-        var nxtSectionTab = document.getElementById(sections[index+1]+'-tab');
-        nxtSectionTab.classList.add('active');
-
-        var nxtSectionPane = document.getElementById(sections[index+1]+'-pane');
-        nxtSectionPane.classList.add('active');
-
-    }
 
     /**
      * On Destroy component

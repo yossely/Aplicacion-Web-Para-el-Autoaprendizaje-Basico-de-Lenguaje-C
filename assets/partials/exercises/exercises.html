@@ -12,7 +12,7 @@
 <div class="col-md-2 col-md-push-10">
     <div class="nav-section-box nav-exercise">
         <ul class="excercises-number">
-            <li *ngFor="let exercise of exercises; 
+            <li *ngFor="let exercise of exercisesSelectorCircles; 
                         let index = index; " [class.current]="exercise.active">
                 <a (click)="selectExercise(index)"></a>
             </li>

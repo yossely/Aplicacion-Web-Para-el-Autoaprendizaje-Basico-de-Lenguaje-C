@@ -16,7 +16,7 @@ export class UnitsService{
     }
 
     getAll(): Observable<Unit[]>{
-        console.log('GET request to: ',this.baseUrl);
+        // console.log('GET request to: ',this.baseUrl);
         let units$ = this._http
             .get(`${this.baseUrl}/content`, {headers: this.getHeaders()})
             .map(mapUnits);
@@ -136,13 +136,14 @@ function mapLesson(response:Response): Lesson{
  * @return {Leson}        The Lesson with all the data loaded
  */
 function toLesson(result:any): Lesson{
-    console.log('before convert it toLesson - result: ',result);
+    // console.log('before convert it toLesson - result: ',result);
     let lesson = <Lesson>({
         _id: result._id,
         title: result.title,
         content: result.content,
         explanations: result.explanations,
-        example: result.example
+        example: result.example,
+        exercises: result.exercises
     });
     console.log('Parsed lesson:', lesson);
     return lesson;

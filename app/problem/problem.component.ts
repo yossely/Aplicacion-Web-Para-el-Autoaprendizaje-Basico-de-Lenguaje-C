@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { Problem } from '../data_structure/problem';
 
 @Component({
     selector: 'problem-outlet',
@@ -8,15 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProblemComponent implements OnInit{
     
-    @Input() problem: string;
+    @Input() problem: Problem;
+    
     @Input() isOnExercises: boolean;
 
 
     constructor(){}
 
     ngOnInit(){
-        
-        // this.problem = 'Im the problem dude';
         
     }
 

@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div *ngIf="lesson" class="row">
         <!-- TABS -->
         <tabset [justified]="true" class="lesson-sections">
             <tab customClass="explanation-tab" 
@@ -17,7 +17,7 @@
                  [active]="sectionsTabs[0].active" >
                 <div class="tab-pane explanation-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
-                    <explanation-outlet [sectionsTabs]="sectionsTabs"></explanation-outlet>
+                    <explanation-outlet [sectionsTabs]="sectionsTabs" [explanations]="lesson?.explanations"></explanation-outlet>
                 </div>
             </tab>
             <tab customClass="example-tab" 
@@ -25,7 +25,7 @@
                  [active]="sectionsTabs[1].active" >
                 <div class="tab-pane example-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
-                    <example-outlet [sectionsTabs]="sectionsTabs"></example-outlet>
+                    <example-outlet [sectionsTabs]="sectionsTabs" [example]="lesson?.example"></example-outlet>
                 </div>
             </tab>
             <tab customClass="exercises-tab" 
@@ -33,7 +33,7 @@
                  [active]="sectionsTabs[2].active" >
                 <div class="tab-pane exercises-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
-                    <exercises-outlet></exercises-outlet>
+                    <exercises-outlet [exercises]="lesson?.exercises"></exercises-outlet>
                 </div>
             </tab>
         </tabset>

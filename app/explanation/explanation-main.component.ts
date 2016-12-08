@@ -1,37 +1,45 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChange } from '@angular/core';
 
+import { Explanation } from '../data_structure/explanation';
 
 @Component({
     selector: 'explanation-outlet',
     styleUrls: ['assets/css/explanation-main.css'],
     templateUrl: 'assets/partials/explanation/explanation-main.html'
 })
-export class ExplanationMainComponent implements OnInit{
+export class ExplanationMainComponent implements OnInit, OnChanges{
     
     // This is the array to manipulate and navigate to the next section: 'Example' tab
     @Input() sectionsTabs: Array<any>;
-
-    allExplanation: string[];
     
-    selectedExplanation: string;
+    @Input() explanations: Array<Explanation>;
+
+    
+    selectedExplanation: Explanation;
+    
     selectedExplanationIndex: number;
 
     isSelectedExplanationFirst: boolean;
     isSelectedExplanationLast: boolean;
+
+    // Indicates if this component has been initialized or not
+    hasBeenInit: boolean = false;
 
 
     constructor(){}
 
     ngOnInit(){
         
-        this.allExplanation = ['Explanation Eins', 'Explanation Zwei', 'Explanation Drei'];
-        
-        // The first time init this componenet, the selected explanation will be the first
+        // The first time init this component, the selected explanation will be the first
         this.selectedExplanationIndex = 0;
-        this.selectedExplanation = this.allExplanation[this.selectedExplanationIndex];
+        
+        this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
 
         // Check if the selected explanation is first or last
         this.navigationButtonsConditions();
+
+        // Mark this component as initialized
+        this.hasBeenInit = true;
     }
 
     /**
@@ -54,7 +62,7 @@ export class ExplanationMainComponent implements OnInit{
          *       True -> Yes, it is
          *       False -> No, it isn't
          */
-        this.isSelectedExplanationLast = (this.selectedExplanationIndex === (this.allExplanation.length -1));
+        this.isSelectedExplanationLast = (this.selectedExplanationIndex === (this.explanations.length -1));
     }
 
     /**
@@ -62,7 +70,8 @@ export class ExplanationMainComponent implements OnInit{
      */
     previousExplanation(){
         this.selectedExplanationIndex--;
-        this.selectedExplanation = this.allExplanation[this.selectedExplanationIndex];
+        
+        this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
         
         this.navigationButtonsConditions();
     }
@@ -72,7 +81,8 @@ export class ExplanationMainComponent implements OnInit{
      */
     nextExplanation(){
         this.selectedExplanationIndex++;
-        this.selectedExplanation = this.allExplanation[this.selectedExplanationIndex];
+        
+        this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
 
         this.navigationButtonsConditions();
     }
@@ -84,6 +94,29 @@ export class ExplanationMainComponent implements OnInit{
     nextSection(){
         this.sectionsTabs[1].active = true;
         this.sectionsTabs[0].active = false;
+    }
+
+    /**
+     * Angular calls its ngOnChanges method whenever it detects changes to input properties of the component (or directive)
+     * 
+     * param {SimpleChange} changes 
+     *         Represents a basic change from a previous to a new value.
+     */
+    ngOnChanges(changes: {[propKey: string]: SimpleChange}){
+        // console.log('explanations changed', changes);
+        
+        /**
+         * If this component has already been initialized and changes, update the selected explanation
+         *
+         * This condition is needed because the first time this lifecycle hook is called is before the ngOnInit hook and then, 
+         * the properties of this component has not been set yet.
+         */
+        if( this.hasBeenInit ) {
+            this.selectedExplanationIndex = 0;
+            this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
+            // Check if the selected explanation is first or last
+            this.navigationButtonsConditions();
+        }
     }
 
 }

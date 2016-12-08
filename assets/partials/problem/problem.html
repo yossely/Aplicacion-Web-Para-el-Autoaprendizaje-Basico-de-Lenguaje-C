@@ -12,12 +12,7 @@
             <div class="col-md-12">
                 <h3>Enunciado</h3>
                 <!-- <span class="key_words">suscipit</span> -->
-                <!-- <p>{{lesson?.example?.statement}}
-                </p> -->
-                <p> I'm the problem baby: {{problem}}
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est <span class="key_words">voluptate</span> sequi quos ut odio adipisci fugit dolor dolore excepturi molestias <span class="key_words">consequuntur</span>, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis <span class="key_words">suscipit</span>, ratione animi!
-                    Lorem ipsum dolor sit amet, <span class="key_words">consectetur</span> adipisicing elit. Est voluptate sequi quos ut odio adipisci fugit dolor dolore <span class="key_words">excepturi</span> molestias consequuntur, nesciunt amet quisquam, atque maiores porro quidem deserunt error ipsum repellendus ipsam nostrum! Tempora, blanditiis ratione nihil vero praesentium perspiciatis. Optio dolor voluptate dicta, nisi quis suscipit, ratione animi!
-                </p>
+                <p>{{problem?.statement}}</p>
             </div>
         </div>
         <hr />
@@ -73,6 +68,7 @@
                     <!-- Bug: The code doesn't want to bind inside the editor :( -->
                     <pre class="code-editor" id="editor">
                         <!-- CODE -->
+                        {{problem.code}}
                     </pre>
                 </div>
             </div>
