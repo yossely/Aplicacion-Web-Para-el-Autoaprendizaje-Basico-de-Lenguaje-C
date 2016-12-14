@@ -20,6 +20,12 @@ import { ProblemComponent }  from '../problem/problem.component';
 import { NavbarLessonsComponent }  from './navbar-lessons.component';
 
 /**
+ * Imports needed to create and configure Ace Code Editor 
+ */
+import 'brace';
+import { AceEditorComponent } from 'ng2-ace-editor';
+
+/**
  * Routes provided by feature modules (unitsModule) will be combined together into their imported module's 
  * routes (AppModule) by the router. This allows us to continue defining our feature module routes without 
  * modifying our main route configuration.
@@ -43,7 +49,8 @@ import { UnitsService } from './units.service';
         ExplanationContentComponent,
         ExampleComponent,
         ExercisesComponent,
-        ProblemComponent
+        ProblemComponent,
+        AceEditorComponent
     ],
     providers: [
         UnitsService

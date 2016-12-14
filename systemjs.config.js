@@ -25,8 +25,15 @@
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
       // ng2-bootstrap (angular2 bootstrap components)
-      'moment': 'node_modules/moment/moment.js',
-      'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+      'moment': 'npm:moment/moment.js',
+      'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+      // ng2-ace-editor
+      'ng2-ace-editor': 'npm:ng2-ace-editor',
+      'brace': 'npm:brace',
+      'w3c-blob': 'npm:w3c-blob/index.js',
+      'buffer': 'npm:buffer/index.js',
+      'base64-js': 'npm:base64-js/index.js',
+      'ieee754': 'npm:ieee754/index.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -39,6 +46,14 @@
       },
       'angular-in-memory-web-api': {
         main: './index.js',
+        defaultExtension: 'js'
+      },
+      'ng2-ace-editor':{
+        main: 'ng2-ace-editor',
+        defaultExtension: 'js'
+      },
+      'brace': {
+        main: 'index',
         defaultExtension: 'js'
       }
     }

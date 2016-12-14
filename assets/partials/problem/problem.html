@@ -64,12 +64,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <button class="btn btn-sm btn-green btn-run-code icon-arrow-run" id="btn-run-code">RUN</button>
-                    <!-- Bug: The code doesn't want to bind inside the editor :( -->
-                    <pre class="code-editor" id="editor">
-                        <!-- CODE -->
-                        {{problem.code}}
-                    </pre>
+                    <button id="btn-run-code"
+                            class="btn btn-sm btn-green btn-run-code icon-arrow-run"
+                            (click)="executeCode()">RUN</button>
+                    <ace-editor 
+                        #editor
+                        class="code-editor"
+                        [text]="problem.code" 
+                        (textChanged)="onChangeCodeInsideEditor($event)">
+                    </ace-editor>
                 </div>
             </div>
         </div>

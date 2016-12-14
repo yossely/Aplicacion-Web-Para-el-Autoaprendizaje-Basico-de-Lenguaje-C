@@ -39,7 +39,7 @@ jsonfile.readFile('database/original_database.json', function(err, content) {
         // newDoc is the newly inserted document, including its _id
         // newDoc has no key called notToBeSaved since its value was undefined
     });
-})*/
+});*/
 // ----------------------------- GENERATE DATABASE FILE OFF ------------------------------
 
 // ------------------------------------- ROUTE ON -----------------------------------------
@@ -82,7 +82,7 @@ app.get('/unit/:unitId/lesson/:lessonId', function (req, res) {
         
         // Get and return only the lesson object that fits the query filter
         var requestedLesson = docs.lessons.find( lesson => lesson._id === requestedLessonId);
-        console.log('the one that I want: ', requestedLesson);
+        // console.log('the one that I want: ', requestedLesson);
         res.send(JSON.stringify(requestedLesson));
     });
 

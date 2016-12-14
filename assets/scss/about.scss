@@ -14,99 +14,10 @@ $color_circle_exercise_number: #808080;
 
 $color_expected-output-tab: #883044;
 
-h1 {
-    color: $color_expected-output-tab;
-}
 
 .container-fluid {
     padding-right: 0px; 
-}
-.container-fluid .row {
-    margin-right: 0px; 
-}
-
-/* Sections style tabs */
-tabset.lesson-sections{
-    width: 100%;
-    height: 600px;
-}
-
-:host /deep/ li.nav-item,
-:host /deep/ li.nav-item,
-:host /deep/ li.nav-item {
-    
-    > a,
-      a:hover,
-      a:focus {
-        font-family: $font_title_bold;
-        font-size: 18px;
-        color: $color_white;
-        text-transform: uppercase;
-        padding: 5px 15px;
-        border: 0;
-        border-bottom: 3px solid $color_1NavyBlue;
-        border-radius: 0px;
-    }
-
-    
-
-    &.explanation-tab > a {
-        background-color: $color_explanation;
-        border-top: 3px solid $color_explanation;
-    }
-
-    &.example-tab > a {
-        background-color: $color_2DarkCyan;
-        border-top: 3px solid $color_2DarkCyan;
-    }
-
-    &.exercises-tab > a {
-        background-color: $color_5Magenta;
-        border-top: 3px solid $color_5Magenta;
-    }
-}
-
-
-:host /deep/ li.nav-item.active,
-:host /deep/ li.nav-item.active,
-:host /deep/ li.nav-item.active {
-    
-    > a,
-      a:hover,
-      a:focus {
-        padding: 5px 15px;
-        border: 0;
-        border: 3px solid $color_1NavyBlue;
-        border-bottom: none;
-    }
-
-    &.explanation-tab > a {
-        border-bottom: 3px solid $color_explanation;
-    }
-
-    &.example-tab > a {
-        border-bottom: 3px solid $color_2DarkCyan;
-    }
-
-    &.exercises-tab > a {
-        border-bottom: 3px solid $color_5Magenta;
-    }
-}
-
-:host /deep/ .tab-pane {
-
-    border: 2px solid $color_1NavyBlue;
-    border-top: none;
-    min-height: 450px;
-    height: auto;
-
-    &.explanation-pane {
-        background-color: $color_explanation;
-    }
-    &.example-pane {
-        background-color: $color_2DarkCyan;
-    }   
-    &.exercises-pane {
-        background-color: $color_5Magenta;
+    .row {
+        margin-right: 0px; 
     }
 }
