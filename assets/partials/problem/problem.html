@@ -1,0 +1,106 @@
+<!-- Problem. Inside of this, we'll find:
+        - Statement
+        - Data Table
+        - Code editor 
+        - Output Console
+        - Tips and expected output
+-->
+<div class="row">
+    <div class="col-md-4 problem-data-box">
+        <!-- Problem STATEMENT -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Enunciado</h3>
+                <!-- <span class="key_words">suscipit</span> -->
+                <p>{{problem?.statement}}</p>
+            </div>
+        </div>
+        <hr />
+        <!-- Problem DATA TABLE -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos</h3>                                  
+                <div class="problem-data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Entrada</th>
+                                <th>Salida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Item</td>
+                                <td>Item</td>
+                            </tr>
+                            <tr>
+                                <td>Item</td>
+                                <td>Item</td>
+                            </tr>
+                            <tr>
+                                <td>Item</td>
+                                <td>Item</td>
+                            </tr>
+                            <tr>
+                                <td>Item</td>
+                                <td>Item</td>
+                            </tr>
+                            <tr>
+                                <td>Item</td>
+                                <td>Item</td>
+                            </tr>
+                            <tr>
+                                <td>Item</td>
+                                <td>Item</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7 problem-code-box"> <!-- Note: with col-md-8 jumps to the next line -->
+        <!-- Problem CODE EDITOR -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <button id="btn-run-code"
+                            class="btn btn-sm btn-green btn-run-code icon-arrow-run"
+                            (click)="executeCode()">RUN</button>
+                    <ace-editor 
+                        #editor
+                        class="code-editor"
+                        [text]="problem.code" 
+                        (textChanged)="onChangeCodeInsideEditor($event)">
+                    </ace-editor>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Problem TIPS AND EXPECTED OUTPUT-->
+                <div class="row tips-output-box">
+                    <h4>Salida</h4>
+                    <div *ngIf="isOnExercises" class="expected-output-console">
+                        <h5>Salida Esperada</h5>
+                        <a class="close-window-x" href="#"></a>
+                        <p>> Lorem ipsum dolor sit amet, consectetur adipisicing elit. In impedit quae vero deleniti, ab quam deserunt maxime consectetur at repellendus fugit delectus quidem quibusdam, sapiente aspernatur autem earum nihil voluptate!</p>      
+                    </div>
+                    <ul *ngIf="isOnExercises">
+                        <li class="tips">
+                            <a class="hint--left hint--small tips-tab"  aria-label="tips" ><img src="assets/img/tips.svg" alt="Tips"></a>
+                        </li>
+                        <li class="expected-output">                                                
+                            <a class="hint--right hint--small" aria-label="solución" type="button"><img src="assets/img/expected-output.svg" alt="Salida"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Problem OUTPUT CONSOLE-->
+                <div class="row console">
+                    <p>> Hola Mundo! <br> > Lista la consola, con overflow y todo :)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

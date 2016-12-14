@@ -1,0 +1,141 @@
+@import "variables";
+
+$color_lightGray: #E6E6E6;
+
+.jumbotron {
+	background-color: transparent;
+	padding: 0px;
+
+	p.text-explanation {
+		font-family: $font_main;
+		font-size: 27px;
+		color: $color_black;
+		margin: 30px;
+		padding: 0px 70px;
+	}
+}
+
+
+.quote {
+    padding: 6px 16px;
+    display: inline-block;
+    position: relative;
+
+    &:before { 
+	    content: url('assets/img/quote-left.svg');
+	    font-weight: bold;
+	    position:absolute;
+	    top:0;
+	    left: 0;
+	    z-index: -1;
+	} 
+
+	&:after { 
+	    content: url('assets/img/quote-right.svg');
+	    font-weight: bold;
+	    position: absolute;
+	    top: 0; 
+	    right: 0;
+	    z-index: -1;
+	}
+
+    p {
+    	font-family: $font_title;
+    	font-size: 30px;
+		margin: 35px;
+		color: $color_black;
+
+		span {
+			color: $color_2DarkCyan;
+			font-weight: bold;
+		}
+    }
+
+    .author-quote {
+    	font-size: 18px;
+    	font-weight: bold;
+    	float: right;
+    	margin-top: -70px;
+    	margin-right: 65px;
+    }
+}
+
+.btn-green-big {
+	padding: 0px 16px;
+	font-family: $font_title;
+	font-size: 36px;
+	vertical-align: super;
+	margin: 20px 10px;
+}
+
+.btn-blue-vistazo {
+	padding: 6px 16px;
+	font-family: $font_title;
+	font-size: 26px;
+}
+
+.title-home-big {
+	font-family: $font_main;
+	font-size: 40px;
+	font-weight: bold;
+	color: $color_1NavyBlue;
+	margin-bottom: 50px;
+}
+
+.title-features {
+	font-family: $font_main;
+	font-size: 25px;
+	font-weight: bold;
+	color: $color_5Magenta;
+
+	height  : 35px;   
+	position: relative;
+	z-index : 1;
+	display: inline-block;
+
+	&:before {
+		content : "";
+		position: absolute;
+		left    : 20%;
+		bottom  : 0;
+		height  : 1px;
+		width   : 60%; 
+		border-bottom: 4px solid $color_5Magenta;
+	}
+
+	&.history {
+		height  : 40px;
+		font-size: 30px;
+	}
+}
+
+.img-book {
+	margin: 10px;
+}
+
+.img-features {
+	width: 40px;
+	height: 40px;
+}
+
+.text-features {
+	font-family: $font_main;
+	font-size: 18px;
+	color: black;	
+	line-height: 160%;
+	
+	&.space {
+		margin: 10px;
+	}
+}
+
+.box-feature {
+    border-right: 2px solid $color_lightGray;
+    /* margin-bottom: -99999px;
+  	padding-bottom: 99999px; */
+}
+
+.box-feature-top {
+	border-top: 2px solid $color_lightGray;
+	margin-bottom: 30px;
+}

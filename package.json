@@ -1,13 +1,20 @@
 {
   "name": "aprendac",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Herramienta para el autoaprendizaje basico del lenguaje de programacion C bajo un ambiente web",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "web-app": "gulp",
-    "desktop-app": "electron main.js",
-    "build": "gulp copy sass typescript",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "typings install",
+    "typings": "typings",
+    "start:dev": "npm run dev:all && concurrently \"npm run watch:scss\" \"npm run watch:tsc\" \"lite-server -c ./app/bs-config.json\" \"nodemon ./server.js\" ",
+    "dev:all": "npm run dev:scss && npm run dev:tsc",
+    "dev:tsc": "tsc",
+    "watch:tsc": "nodemon --ext ts -x \"npm run dev:tsc\"",
+    "dev:scss": "node-sass --indent-type space --indent-width 4 -r assets/scss/ -o assets/css/",
+    "watch:scss": "nodemon --ext scss -x \"npm run dev:scss\"",
+    "build:all": "npm run build:tsc && npm run build:scss",
+    "build:tsc": "echo \"Compile and minify the ts files\"",
+    "build:scss": "node-sass --output-style compressed assets/scss -o assets/css"
   },
   "repository": {
     "type": "git",
@@ -27,34 +34,35 @@
     "url": "https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C/issues"
   },
   "homepage": "https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C#readme",
-  "devDependencies": {
-    "@angular/common": "^2.0.0-rc.4",
-    "@angular/compiler": "^2.0.0-rc.4",
-    "@angular/core": "^2.0.0-rc.4",
-    "@angular/forms": "^0.2.0",
-    "@angular/http": "^2.0.0-rc.4",
-    "@angular/platform-browser": "^2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.4",
-    "@angular/router": "^3.0.0-beta.2",
-    "@angular/router-deprecated": "^2.0.0-rc.2",
-    "@angular/upgrade": "^2.0.0-rc.4",
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "@angular/upgrade": "2.0.0",
+    "angular2-in-memory-web-api": "0.0.20",
+    "bootstrap": "^3.3.6",
+    "buffer": "^5.0.1",
     "core-js": "^2.4.1",
-
-    "reflect-metadata": "^0.1.2",
-    "rxjs": "^5.0.0-beta.6",
-    "systemjs": "^0.19.31",
-    "zone.js": "^0.6.12",
-    
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.13.6",
-    "gulp-webserver": "^0.9.1",
-
-    "bootstrap-sass": "^3.3.6",
-    "electron-prebuilt": "^1.2.7",
-    "hint.css": "^2.3.1",
-    "typings": "^1.3.1" 
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "jsonfile": "^2.4.0",
+    "nedb": "^1.8.0",
+    "ng2-ace-editor": "^0.1.3",
+    "ng2-bootstrap": "^1.1.16",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.23"
+  },
+  "devDependencies": {
+    "concurrently": "^2.2.0",
+    "lite-server": "^2.2.2",
+    "node-sass": "^3.13.0",
+    "typings": "^1.3.2"
   }
 }

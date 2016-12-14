@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="unit-title">{{id_unit}}.{{id_lesson}} {{lesson?.title}}</h1>
+        </div>
+        <div class="col-md-2 center">
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+        </div>
+    </div>
+
+    <div *ngIf="lesson" class="row">
+        <!-- TABS -->
+        <tabset [justified]="true" class="lesson-sections">
+            <tab customClass="explanation-tab" 
+                 [heading]="sectionsTabs[0].heading"
+                 [active]="sectionsTabs[0].active" >
+                <div class="tab-pane explanation-pane">
+                    <br> <!-- Needs to be here or a blank line appear :/ -->
+                    <explanation-outlet [sectionsTabs]="sectionsTabs" [explanations]="lesson?.explanations"></explanation-outlet>
+                </div>
+            </tab>
+            <tab customClass="example-tab" 
+                 [heading]="sectionsTabs[1].heading"
+                 [active]="sectionsTabs[1].active" >
+                <div class="tab-pane example-pane">
+                    <br> <!-- Needs to be here or a blank line appear :/ -->
+                    <example-outlet [sectionsTabs]="sectionsTabs" [example]="lesson?.example"></example-outlet>
+                </div>
+            </tab>
+            <tab customClass="exercises-tab" 
+                 [heading]="sectionsTabs[2].heading"
+                 [active]="sectionsTabs[2].active" >
+                <div class="tab-pane exercises-pane">
+                    <br> <!-- Needs to be here or a blank line appear :/ -->
+                    <exercises-outlet [exercises]="lesson?.exercises"></exercises-outlet>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

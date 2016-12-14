@@ -1,0 +1,45 @@
+@import "variables";
+@import "normalize";
+
+// @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+	background-image: url('../img/background-image.png');
+	padding-top: 65px;
+}
+
+:host /deep/ .logo{
+	height: 40px;
+	width: 200px;
+	margin-top: -10px;
+}
+
+:host /deep/ .center {
+    text-align: center;
+}
+
+:host /deep/ .same-line {
+	display: inline-block;
+	float: center;
+}
+
+:host /deep/ .btn-green {
+	background-color: $color_green;
+	color: $color_white;
+
+	&:hover {
+		background-color: $color_darkGreen;
+		color: $color_white;		
+	}
+}
+
+:host /deep/ .btn-blue {
+	background-color: $color_4BlueKing;
+	color: $color_white;
+
+	&:hover {
+		background-color: $color_darkBlueKing;
+		color: $color_white;		
+	}
+}
+

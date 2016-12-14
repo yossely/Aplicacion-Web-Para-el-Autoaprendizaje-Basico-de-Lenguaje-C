@@ -1,0 +1,19 @@
+<!-- Problem. Inside of it, we'll find:
+        - Statement
+        - Data Table
+        - Code editor 
+        - Output Console
+        - Tips and expected output
+-->
+<problem-outlet [problem]="example"></problem-outlet>
+
+<!-- Section to Navigate to the next section (Exercises)-->
+<div class="row">
+    <div class="col-md-2 col-md-push-10">
+        <div class="nav-section-box nav-example">
+            <img src="assets/img/arrow-right-box.svg" alt="consoleC">
+            <h3>¡Continua con el ejercicio!</h3>
+            <button class="btn btn-sm btn-nav-section-box" (click)="nextSection()">Continuar</button>
+        </div>
+    </div>
+</div>
