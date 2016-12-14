@@ -1,0 +1,52 @@
+/* Expected Output Console */
+
+.expected-output-console {
+    position: absolute;
+    height: auto;
+    width: 500px;
+    background-color: #808080;
+    border-radius: 5px;
+
+    // To debug
+    display: none;
+    margin-top:30px;
+    
+    h5, p {
+        height: auto;
+        font-family: $font_main;
+        color: $color_white;
+    }
+
+    h5 {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    p {
+        background-color: #333333;
+        margin: 0px 5px 5px 5px;
+        padding: 5px;
+    }
+
+}
+
+.close-window-x {
+    color: $color_white;
+    font: 14px/100% arial, sans-serif;
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 $color_white;
+    top: 5px;
+
+    &:hover {
+        text-decoration: none;
+        color: $color_1NavyBlue;
+    }
+
+    &:after {
+      content: '✖'; /* UTF-8 symbol */
+    }
+}

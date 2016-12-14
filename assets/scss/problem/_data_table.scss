@@ -1,0 +1,49 @@
+/* Table of data */
+
+$color_lightGray: #F4F1F0;
+$color_cyan: #37C8AB;
+
+.problem-data-table { 
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+
+    table {
+        font-family: $font_main;
+        font-size: 18px;
+        margin: 10px 5px;
+        border-collapse: collapse;
+        border: 1px solid $color_lightGray;
+        border-bottom: 2px solid #00cccc;
+        background-color: $color_white;
+        width: 97%;
+
+        tr {
+            &:hover {
+            background: $color_lightGray;
+                td {
+                    color: $color_black;
+                }
+            }
+        }
+
+        th, td {
+            width: 50%;
+            color: #626262;
+            border: 1px solid $color_lightGray;
+            padding: 5px 10px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: $color_cyan;
+            color: $color_white;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            &.last {
+                border-right: none;
+            }
+        }
+    }
+}

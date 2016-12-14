@@ -1,0 +1,57 @@
+/* Tips */
+
+#tips-carousel {
+    background-color: $color_2DarkCyan;
+    width: 220px;
+    height: auto;
+
+    img {
+        width: 25px;
+        height: 25px;
+        margin-top: -10px;
+    }
+
+    p { 
+        font-family: $font_main;
+        font-size: 15px;
+        color: $color_3Aquamarine;
+        margin: 10px 25px;
+    }
+}
+
+.carousel-control {
+    opacity: 1;
+    
+    i {
+        width: 0;
+        color: $color_3Aquamarine;
+    }
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    top: 45px;
+    color: #f4f1f0;
+    background-image: none !important;
+}
+
+.carousel-control.left {
+    margin-left: -15px;
+}
+
+.carousel-control.right {
+    margin-right: 5px;
+}
+
+.popover {
+    border-radius: none !important;
+    background-color: $color_2DarkCyan;
+}
+
+.popover-content {
+    padding: 0px 0px;
+}
+
+.popover.top > .arrow::after {
+    border-top-color: $color_2DarkCyan;
+}

@@ -23,12 +23,15 @@ export class ProblemComponent implements OnInit, AfterViewInit{
      */
     @ViewChild('editor') editor;
 
-    text: string;
+    codeEditorOptions: any;
 
     constructor(){}
 
     ngOnInit(){
-        // this.options = {maxLines: 10, printMargin: true};
+        this.codeEditorOptions = {
+                displayIndentGuides: true,
+                printMargin: true
+            };
     }
 
     onChangeCodeInsideEditor(code){
@@ -46,5 +49,7 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         this.editor.setTheme("clouds");
         this.editor.setMode("c_cpp"); 
         this.editor.getEditor().$blockScrolling = Infinity;
+
+        console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
     }
 }

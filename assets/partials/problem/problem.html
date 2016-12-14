@@ -70,7 +70,8 @@
                     <ace-editor 
                         #editor
                         class="code-editor"
-                        [text]="problem.code" 
+                        [text]="problem.code"
+                        [options]="codeEditorOptions" 
                         (textChanged)="onChangeCodeInsideEditor($event)">
                     </ace-editor>
                 </div>

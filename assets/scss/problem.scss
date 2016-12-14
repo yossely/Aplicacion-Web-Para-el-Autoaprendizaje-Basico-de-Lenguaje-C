@@ -1,12 +1,14 @@
 @import "variables";
+@import "./problem/data_table";
+@import "./problem/editor";
+@import "./problem/console";
+@import "./problem/tips";
+@import "./problem/expected_output_console";
 
 $color_explanation: #5DA7A6;
 $color_explanation_darker: #4A8685;
-$color_lightGray: #F4F1F0;
 $color_lightGrayDarker: #C3C1C0;
 $color_olive: #AA8800;
-$color_cyan: #37C8AB;
-$color_console: #374548;
 
 $color_exercise_continue_box: #E1E6E2;
 $color_circle_exercise_number: #808080;
@@ -44,7 +46,7 @@ $color_expected-output-tab: #883044;
     }
 }
 
-/* hr used as separator line between statement and data*/
+/* hr used as separator line between statement and data table*/
 hr {
     border: 0;
     height: 2px;
@@ -54,108 +56,13 @@ hr {
     background: -webkit-gradient(linear, 0 0, 100% 0, from($color_lightGrayDarker), to($color_lightGrayDarker), color-stop(50%, #646262));
 }
 
-/* Table of data */
-
-.problem-data-table { 
-    height: auto;
-    width: 100%;
-    margin-bottom: 10px;
-
-    table {
-        font-family: $font_main;
-        font-size: 18px;
-        margin: 10px 5px;
-        border-collapse: collapse;
-        border: 1px solid $color_lightGray;
-        border-bottom: 2px solid #00cccc;
-        background-color: $color_white;
-        width: 97%;
-
-        tr {
-            &:hover {
-            background: $color_lightGray;
-                td {
-                    color: $color_black;
-                }
-            }
-        }
-
-        th, td {
-            width: 50%;
-            color: #626262;
-            border: 1px solid $color_lightGray;
-            padding: 5px 10px;
-            border-collapse: collapse;
-        }
-
-        th {
-            background: $color_cyan;
-            color: $color_white;
-            text-transform: uppercase;
-            font-weight: bold;
-
-            &.last {
-                border-right: none;
-            }
-        }
-    }
-}
-
-
 
 .problem-code-box {
     padding-left: 15px;
 }
 
-/* Console */
-.console {
-    background-color: $color_console;
-    border: 1px solid $color_3Aquamarine;
-    color: $color_white;
-    width: 120%;
-    height: 250px;
-    margin-bottom: 10px;
 
-    p {
-        font-family: $font_main;
-        font-size: 16px;
-        margin: 5px;
-        height: 240px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-}
-
-
-/* Editor */
-
-.code-editor {
-    background-color: #E4FDE1;
-    font-size: 14px;
-    margin: 10px 0px 0px 0px;
-    height: 365px;
-    width: 113%;
-}
-
-
-.btn-run-code {
-
-    font-size: 16px;
-    font-weight: bold;
-    position:absolute;
-    z-index:10;
-    margin-top: 20px;
-    margin-left: 98%;
-
-    &:after {
-        font-family: 'fontawesome';
-        content: "\f04b";   
-        margin-left: 5px;
-        padding-right: 0px;
-    }
-}
-
-
+/* Tips and Expected Output box that holds each tab */
 .tips-output-box {
     width: 120%;
     display: inline-flex;
@@ -219,113 +126,4 @@ hr {
         text-align: center;
         text-transform: uppercase;
     }
-}
-
-.expected-output-console {
-    position: absolute;
-    height: auto;
-    width: 500px;
-    background-color: #808080;
-    border-radius: 5px;
-
-    // To debug
-    display: none;
-    margin-top:30px;
-    
-    h5, p {
-        height: auto;
-        font-family: $font_main;
-        color: $color_white;
-    }
-
-    h5 {
-        font-size: 15px;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin: 5px;
-    }
-
-    p {
-        background-color: #333333;
-        margin: 0px 5px 5px 5px;
-        padding: 5px;
-    }
-
-}
-
-.close-window-x {
-    color: $color_white;
-    font: 14px/100% arial, sans-serif;
-    position: absolute;
-    right: 5px;
-    text-decoration: none;
-    text-shadow: 0 1px 0 $color_white;
-    top: 5px;
-
-    &:hover {
-        text-decoration: none;
-        color: $color_1NavyBlue;
-    }
-
-    &:after {
-      content: '✖'; /* UTF-8 symbol */
-    }
-}
-
-/* Tips */
-
-#tips-carousel {
-    background-color: $color_2DarkCyan;
-    width: 220px;
-    height: auto;
-
-    img {
-        width: 25px;
-        height: 25px;
-        margin-top: -10px;
-    }
-
-    p { 
-        font-family: $font_main;
-        font-size: 15px;
-        color: $color_3Aquamarine;
-        margin: 10px 25px;
-    }
-}
-
-.carousel-control {
-    opacity: 1;
-    
-    i {
-        width: 0;
-        color: $color_3Aquamarine;
-    }
-}
-
-.carousel-control.left,
-.carousel-control.right {
-    top: 45px;
-    color: #f4f1f0;
-    background-image: none !important;
-}
-
-.carousel-control.left {
-    margin-left: -15px;
-}
-
-.carousel-control.right {
-    margin-right: 5px;
-}
-
-.popover {
-    border-radius: none !important;
-    background-color: $color_2DarkCyan;
-}
-
-.popover-content {
-    padding: 0px 0px;
-}
-
-.popover.top > .arrow::after {
-    border-top-color: $color_2DarkCyan;
 }
