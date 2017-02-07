@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import { Unit } from '../data_structure/unit';
@@ -57,9 +57,45 @@ export class UnitsService{
                 .put(`${this.baseUrl}/unit/${unit._id}`, JSON.stringify(unit), {headers: this.getHeaders()});
     }
 
+    compileCCode(c_code: string): Observable<string>{
+        console.log('need to compile this C program: ',c_code);
+
+        // let params  = new URLSearchParams();
+        // let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: this.getHeaders() }); // Create a request option
+
+
+        // params.set('cCode', c_code);
+
+        // POST - Submits data to be processed to a specified resource
+        let cCode$ = this._http
+            .post(`${this.baseUrl}/unit/1/lesson/1/compileCCode`, 
+                    {
+                        c_code
+                    }
+                )
+            .map(mapCCode);
+
+        return cCode$;
+    }
+
 }
 
 //-------------------------- FUNCTIONS ON --------------------------
+
+function mapCCode(response:Response): string{
+    console.log('response from mapCCode: ',response);
+    return response.json();
+}
+
+function toCCode(result: any): string {
+    // body...
+    let cCodeCompiled = result.code;
+    console.log('result from toCCode: ',result, cCodeCompiled);
+    return cCodeCompiled;
+}
+
+
 /**
  * Parse the Http response to a Unit object
  * 

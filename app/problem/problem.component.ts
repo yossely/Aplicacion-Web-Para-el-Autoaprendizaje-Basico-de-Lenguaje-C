@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
+import { UnitsService } from '../lessons/units.service';
 import { Problem } from '../data_structure/problem';
 
 import 'brace';
@@ -17,6 +19,12 @@ export class ProblemComponent implements OnInit, AfterViewInit{
     
     @Input() isOnExercises: boolean;
 
+    cCompiledScriptUrl: string;
+    cCompiledScriptId: string;
+
+    isCompiling: boolean;
+
+
     /**
      * @param {selector} 'editor' 
      *            selector - the directive type or the name used for querying.
@@ -25,21 +33,45 @@ export class ProblemComponent implements OnInit, AfterViewInit{
 
     codeEditorOptions: any;
 
-    constructor(){}
+    constructor(private _unitsService: UnitsService){}
 
     ngOnInit(){
         this.codeEditorOptions = {
                 displayIndentGuides: true,
                 printMargin: true
             };
+
+        this.cCompiledScriptUrl = 'http://localhost:3000/user_code_folder/test.js';
+        this.cCompiledScriptId = 'cCompiledScript';
+
+        this.isCompiling = false;
     }
 
     onChangeCodeInsideEditor(code){
         console.log('on change code inside editor: ',code);
     }
 
-    executeCode(){
+    runCCode(){
+
+        this.isCompiling = true;
+
         console.log('execute code: ', this.editor.getEditor().getValue());
+        
+        this._unitsService.compileCCode(this.editor.getEditor().getValue())
+                           .subscribe(
+                                data => {
+                                    console.log('From the get compileCode: ',data);
+                                }, //Bind to view
+                                err => {
+                                    // Log errors if any
+                                    console.log('Error compiling the C Code: ',err);
+                                },
+                                () => {
+                                    // this.isCompiling = false;
+                                    console.log('C code compiled successfully');
+                                    // load the script and attach it to the document
+                                    this.loadCCompiledScript();
+                                });
     }
 
     /**
@@ -51,5 +83,26 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         this.editor.getEditor().$blockScrolling = Infinity;
 
         console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
+    }
+
+    loadCCompiledScript(){
+        console.log('preparing to load...');
+        
+        // Check if the script is already in the document, if so, remove it
+        var oldCScript = document.getElementById(this.cCompiledScriptId);
+        if(oldCScript) {
+            oldCScript.parentNode.removeChild(oldCScript);
+            console.log('old script Removed');
+        }
+
+        // Create and append C Compiled Script to the document
+        let cScript = document.createElement('script');
+        cScript.id = this.cCompiledScriptId;
+        cScript.src = this.cCompiledScriptUrl;
+        cScript.type = 'text/javascript';
+        cScript.async = true;
+        cScript.charset = 'utf-8';
+        document.getElementsByTagName('head')[0].appendChild(cScript);
+        console.log('C Compiled script added');
     }
 }

@@ -33,6 +33,16 @@ body {
 	}
 }
 
+:host /deep/ .btn-orange {
+	background-color: $color_orange;
+	color: $color_white;
+
+	&:hover {
+		background-color: $color_darkOrange;
+		color: $color_white;		
+	}
+}
+
 :host /deep/ .btn-blue {
 	background-color: $color_4BlueKing;
 	color: $color_white;

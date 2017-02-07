@@ -64,9 +64,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
+                    <button class="btn btn-sm btn-orange btn-compiling-code" *ngIf="isCompiling" disabled="true">
+                        <i class="fa fa-spinner fa-spin"></i>
+                        Compilando
+                    </button>
                     <button id="btn-run-code"
                             class="btn btn-sm btn-green btn-run-code icon-arrow-run"
-                            (click)="executeCode()">RUN</button>
+                            *ngIf="!isCompiling"
+                            (click)="runCCode()">RUN</button>
                     <ace-editor 
                         #editor
                         class="code-editor"
