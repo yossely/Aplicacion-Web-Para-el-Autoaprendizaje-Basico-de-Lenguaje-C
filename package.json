@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "typings install",
     "typings": "typings",
-    "start:dev": "npm run dev:all && concurrently \"npm run watch:scss\" \"npm run watch:tsc\" \"lite-server -c ./app/bs-config.json\" \"nodemon ./server.js\" ",
+    "start:dev": "npm run dev:all && concurrently \"npm run watch:scss\" \"npm run watch:tsc\" \"lite-server -c ./app/bs-config.json\" \"nodemon ./server.js --ignore user_code_folder\" ",
     "dev:all": "npm run dev:scss && npm run dev:tsc",
     "dev:tsc": "tsc",
     "watch:tsc": "nodemon --ext ts -x \"npm run dev:tsc\"",
@@ -45,6 +45,7 @@
     "@angular/router": "3.0.0",
     "@angular/upgrade": "2.0.0",
     "angular2-in-memory-web-api": "0.0.20",
+    "body-parser": "^1.16.0",
     "bootstrap": "^3.3.6",
     "buffer": "^5.0.1",
     "core-js": "^2.4.1",
