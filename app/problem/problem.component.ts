@@ -24,6 +24,8 @@ export class ProblemComponent implements OnInit, AfterViewInit{
 
     isCompiling: boolean;
 
+    consoleElementId: string;
+
 
     /**
      * @param {selector} 'editor' 
@@ -45,6 +47,8 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         this.cCompiledScriptId = 'cCompiledScript';
 
         this.isCompiling = false;
+
+        this.consoleElementId = 'console';
     }
 
     onChangeCodeInsideEditor(code){
@@ -67,8 +71,12 @@ export class ProblemComponent implements OnInit, AfterViewInit{
                                     console.log('Error compiling the C Code: ',err);
                                 },
                                 () => {
-                                    // this.isCompiling = false;
+                                    this.isCompiling = false;
                                     console.log('C code compiled successfully');
+                                    
+                                    // Clean console text before runnning the code
+                                    this.cleanConsole();
+
                                     // load the script and attach it to the document
                                     this.loadCCompiledScript();
                                 });
@@ -83,6 +91,18 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         this.editor.getEditor().$blockScrolling = Infinity;
 
         console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
+
+    }
+
+    cleanConsole(){
+        var consoleElement = document.getElementById(this.consoleElementId);
+
+        // consoleElement.innerHTML = '';
+
+        while (consoleElement.firstChild) {
+            console.log('child to remove from console: ',consoleElement.firstChild);
+            consoleElement.removeChild(consoleElement.firstChild);
+        }
     }
 
     loadCCompiledScript(){
@@ -105,4 +125,5 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         document.getElementsByTagName('head')[0].appendChild(cScript);
         console.log('C Compiled script added');
     }
+
 }
