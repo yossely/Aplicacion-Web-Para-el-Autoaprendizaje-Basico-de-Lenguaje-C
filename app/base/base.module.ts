@@ -27,7 +27,7 @@ import { BaseRoutingModule } from './base-routing.module';
     imports: [
         CommonModule,
         FormsModule,
-        TabsModule,
+        TabsModule.forRoot(),
         BaseRoutingModule
     ],
     declarations: [
