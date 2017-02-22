@@ -3,6 +3,7 @@ import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
 
+import { MarkdownModule } from 'angular2-markdown';
 
 /**
  * There can be only one owner for a declared component.
@@ -38,8 +39,9 @@ import { UnitsService } from './units.service';
     imports: [
         CommonModule,
         FormsModule,
-        TabsModule,
-        lessonsRoutingModule
+        TabsModule.forRoot(),
+        lessonsRoutingModule,
+        MarkdownModule
     ],
     declarations: [
         LessonDetailsComponent,

@@ -27,6 +27,10 @@
       // ng2-bootstrap (angular2 bootstrap components)
       'moment': 'npm:moment/moment.js',
       'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+      // angular2-markdown
+      'angular2-markdown': 'npm:angular2-markdown',
+      'marked':'npm:marked/lib',
+      'prismjs':'npm:prismjs',
       // ng2-ace-editor
       'ng2-ace-editor': 'npm:ng2-ace-editor',
       'brace': 'npm:brace',
@@ -55,6 +59,18 @@
       'brace': {
         main: 'index',
         defaultExtension: 'js'
+      },
+      'angular2-markdown': { 
+        main: 'bundles/index.js', 
+        defaultExtension: 'js' 
+      },
+      'marked': { 
+        main: 'marked.js', 
+        defaultExtension: 'js' 
+      },
+      'prismjs': { 
+        main: 'prism.js', 
+        defaultExtension: 'js' 
       }
     }
   });
