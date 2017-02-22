@@ -1,7 +1,7 @@
 /node_modules
 /typings
 npm-debug.log
-/assets/css
+/assets/css/*.css
 /app/**/*.js
 /app/**/*.js.map
 /*.js
