@@ -3,7 +3,6 @@ import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
 
-import { MarkdownModule } from 'angular2-markdown';
 
 /**
  * There can be only one owner for a declared component.
@@ -34,14 +33,14 @@ import { AceEditorComponent } from 'ng2-ace-editor';
 import { lessonsRoutingModule } from './lessons-routing.module';
 
 import { UnitsService } from './units.service';
+import { MarkdownParserService } from '../markdown/markdown-parser.service';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         TabsModule.forRoot(),
-        lessonsRoutingModule,
-        MarkdownModule
+        lessonsRoutingModule
     ],
     declarations: [
         LessonDetailsComponent,
@@ -55,7 +54,8 @@ import { UnitsService } from './units.service';
         AceEditorComponent
     ],
     providers: [
-        UnitsService
+        UnitsService,
+        MarkdownParserService
     ]
 })
 export class LessonsModule {}

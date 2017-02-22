@@ -2,6 +2,11 @@ import { Component, Input, OnInit, OnChanges, SimpleChange } from '@angular/core
 
 import { Explanation } from '../data_structure/explanation';
 
+import { MarkdownParserService } from '../markdown/markdown-parser.service';
+
+// import 'prismjs/prism';
+
+
 @Component({
     selector: 'explanation-outlet',
     styleUrls: ['assets/css/explanation-main.css'],
@@ -12,80 +17,32 @@ export class ExplanationMainComponent implements OnInit, OnChanges{
     // This is the array to manipulate and navigate to the next section: 'Example' tab
     @Input() sectionsTabs: Array<any>;
     
-    @Input() explanations: Array<Explanation>;
+    @Input() explanation: string;
 
-    
-    selectedExplanation: Explanation;
-    
-    selectedExplanationIndex: number;
+    mdText: string;
 
-    isSelectedExplanationFirst: boolean;
-    isSelectedExplanationLast: boolean;
-
-    // Indicates if this component has been initialized or not
-    hasBeenInit: boolean = false;
-
-
-    constructor(){}
+    constructor(private md: MarkdownParserService){}
 
     ngOnInit(){
-        
-        // The first time init this component, the selected explanation will be the first
-        this.selectedExplanationIndex = 0;
-        
-        this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
 
-        // Check if the selected explanation is first or last
-        this.navigationButtonsConditions();
+        this.mdText = "# Angular 2 Markdown" + "\n"+
+                      "** You is important ... ** You too" + "\n"+
+                      "## Setup"  + "\n"+
+                        
+                      "\`\`\`c"  + "\n"+
+                          "#include <stdio.h>"  + "\n"+
+                      "\`\`\`" + "\n"+
+                      "First Header | Second Header"  + "\n"+
+                      "------------ | -------------"  + "\n"+
+                      "Content from cell 1 | Content from cell 2"  + "\n"+
+                      "Content in the first column | Content in the second column"  + "\n";
+        
+        this.mdText = this.md.convert(this.mdText);
+        // console.log(this.mdText);
 
-        // Mark this component as initialized
-        this.hasBeenInit = true;
+        // console.log('prism: ',Prism);
     }
 
-    /**
-     * Set the two conditions to show correctly the navigation buttons in the explanation section.
-     * This makes possible to display the 'Previous', 'Next' and 'Next Section' buttons depending on the selected 
-     * explanation.
-     */
-    navigationButtonsConditions(){
-        /**
-         * Is the selected explanation the FIRST one?
-         * @type {Boolean}
-         *       True -> Yes, it is
-         *       False -> No, it isn't
-         */
-        this.isSelectedExplanationFirst = (this.selectedExplanationIndex === 0);
-
-        /**
-         * Is the selected explanation the LAST one?
-         * @type {Boolean}
-         *       True -> Yes, it is
-         *       False -> No, it isn't
-         */
-        this.isSelectedExplanationLast = (this.selectedExplanationIndex === (this.explanations.length -1));
-    }
-
-    /**
-     * Navigate to the PREVIOUS explanation
-     */
-    previousExplanation(){
-        this.selectedExplanationIndex--;
-        
-        this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
-        
-        this.navigationButtonsConditions();
-    }
-    
-    /**
-     * Navigate to the NEXT explanation
-     */
-    nextExplanation(){
-        this.selectedExplanationIndex++;
-        
-        this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
-
-        this.navigationButtonsConditions();
-    }
     
     /**
      * Go to the next section, in this case 'Example'
@@ -104,19 +61,6 @@ export class ExplanationMainComponent implements OnInit, OnChanges{
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
         // console.log('explanations changed', changes);
-        
-        /**
-         * If this component has already been initialized and changes, update the selected explanation
-         *
-         * This condition is needed because the first time this lifecycle hook is called is before the ngOnInit hook and then, 
-         * the properties of this component has not been set yet.
-         */
-        if( this.hasBeenInit ) {
-            this.selectedExplanationIndex = 0;
-            this.selectedExplanation = this.explanations[this.selectedExplanationIndex];
-            // Check if the selected explanation is first or last
-            this.navigationButtonsConditions();
-        }
     }
 
 }

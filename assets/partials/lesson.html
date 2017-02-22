@@ -17,7 +17,7 @@
                  [active]="sectionsTabs[0].active" >
                 <div class="tab-pane explanation-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
-                    <explanation-outlet [sectionsTabs]="sectionsTabs" [explanations]="lesson?.explanations"></explanation-outlet>
+                    <explanation-outlet [sectionsTabs]="sectionsTabs" [explanation]="lesson?.explanation"></explanation-outlet>
                 </div>
             </tab>
             <tab customClass="example-tab" 

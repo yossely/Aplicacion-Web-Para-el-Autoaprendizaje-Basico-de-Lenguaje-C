@@ -177,7 +177,7 @@ function toLesson(result:any): Lesson{
         _id: result._id,
         title: result.title,
         content: result.content,
-        explanations: result.explanations,
+        explanation: result.explanation,
         example: result.example,
         exercises: result.exercises
     });

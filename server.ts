@@ -10,7 +10,7 @@ var Datastore = require('nedb');
 // Persistent datastore with automatic loading
 var unitsDB = new Datastore(
                 {
-                    filename: 'database/units.database',
+                    filename: 'database/one_explanation_database.database',
                     autoload: true
                 }
             );
@@ -39,11 +39,11 @@ var bodyParser = require('body-parser');
 // ----------------------------- GENERATE DATABASE FILE ON -------------------------------
 /*var new_db = new Datastore(
                 {
-                    filename: 'database/no_spaces_database.database',
+                    filename: 'database/one_explanation_database.database',
                     autoload: true
                 }
             );
-jsonfile.readFile('database/original_database.json', function(err, content) {
+jsonfile.readFile('database/one_explanation_database.json', function(err, content) {
     console.log('content from JSON file',content);
     new_db.insert(content, function (err, newDoc) {   // Callback is optional
         // newDoc is the newly inserted document, including its _id

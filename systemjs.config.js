@@ -27,8 +27,7 @@
       // ng2-bootstrap (angular2 bootstrap components)
       'moment': 'npm:moment/moment.js',
       'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
-      // angular2-markdown
-      'angular2-markdown': 'npm:angular2-markdown',
+      // markdown
       'marked':'npm:marked/lib',
       'prismjs':'npm:prismjs',
       // ng2-ace-editor
@@ -59,10 +58,6 @@
       'brace': {
         main: 'index',
         defaultExtension: 'js'
-      },
-      'angular2-markdown': { 
-        main: 'bundles/index.js', 
-        defaultExtension: 'js' 
       },
       'marked': { 
         main: 'marked.js', 
