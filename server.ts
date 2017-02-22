@@ -86,7 +86,7 @@ app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
 
     console.log('lets compile this C Code: ',cCode );
 
-    fs.writeFile("user_code_folder/test.c", cCode, function(err) {
+    fs.writeFile("user_code_folder/user_code.c", cCode, function(err) {
         // Error creating and writing into .c file
         if(err) {
             res.send(JSON.stringify('Error on compiling C Code... (creating and writing into .c file)'));
@@ -97,10 +97,10 @@ app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
         console.log("The file was saved successfully!");
 
         // var emsc = spawn('emcc',['user_code_folder/test.c','-o','user_code_folder/test.js']);
-        var emsc = spawn('emcc',['user_code_folder/test.c',
+        var emsc = spawn('emcc',['user_code_folder/user_code.c',
                                  '--pre-js','user_code_folder/module_configuration.js',
                                  '--post-js','user_code_folder/console_behavior.js',
-                                 '-o','user_code_folder/test.js']);
+                                 '-o','user_code_folder/user_code_compiled.js']);
         emsc.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
         });
@@ -123,9 +123,9 @@ app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
 
 
 // GET - return the JS file that contains the user C Code compiled.
-app.get('/user_code_folder/test.js', function (req, res) {
+app.get('/user_code_folder/user_code_compiled.js', function (req, res) {
     // res.send(JSON.stringify('alert test file'));
-    res.sendFile(path.join(__dirname, '/user_code_folder','test.js'));
+    res.sendFile(path.join(__dirname, '/user_code_folder','user_code_compiled.js'));
     // res.sendFile(path.join(__dirname, '/user_code_folder','alert_test.js'));
 
 });

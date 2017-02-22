@@ -43,7 +43,7 @@ export class ProblemComponent implements OnInit, AfterViewInit{
                 printMargin: true
             };
 
-        this.cCompiledScriptUrl = 'http://localhost:3000/user_code_folder/test.js';
+        this.cCompiledScriptUrl = 'http://localhost:3000/user_code_folder/user_code_compiled.js';
         this.cCompiledScriptId = 'cCompiledScript';
 
         this.isCompiling = false;
