@@ -134,12 +134,12 @@
 
     p, ul {
         font-family: $font_main;
-        font-size: 17px;
+        font-size: 20px;
     }
 
     pre {
         height: auto;
-        width: 80%;
+        display: inline-block; /* To make width no longer than its content  */
     }
 
     h1, h2, h3, h4, h5, h6 {
