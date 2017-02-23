@@ -49,6 +49,15 @@ export class UnitsService{
         return lesson$;
     }
 
+    getExplanationText(explanationFile: string): Observable<string>{
+        let explanation$ = this._http
+            .get(`/database/explanations/${explanationFile}`, {headers: this.getHeaders()})
+            .map(mapExplanation)
+            .catch(handleError);
+
+        return explanation$;
+    }
+
     save(unit: Unit) : Observable<Response>{
         // this won't actually work because the StarWars API doesn't 
         // is read-only. But it would look like this:
@@ -86,13 +95,6 @@ export class UnitsService{
 function mapCCode(response:Response): string{
     console.log('response from mapCCode: ',response);
     return response.json();
-}
-
-function toCCode(result: any): string {
-    // body...
-    let cCodeCompiled = result.code;
-    console.log('result from toCCode: ',result, cCodeCompiled);
-    return cCodeCompiled;
 }
 
 
@@ -158,7 +160,7 @@ function toUnit(result:any): Unit{
  * @return {Lesson}              The Lesson got from the Http request
  */
 function mapLesson(response:Response): Lesson{
-
+    // console.log("mapLesson response: ",response);
     // Transform the response to an Unit object
     return toLesson(response.json());
 }
@@ -177,13 +179,29 @@ function toLesson(result:any): Lesson{
         _id: result._id,
         title: result.title,
         content: result.content,
-        explanation: result.explanation,
+        explanationFileName: result.explanation,
         example: result.example,
         exercises: result.exercises
     });
-    console.log('Parsed lesson:', lesson);
+    // console.log('Parsed lesson:', lesson);
     return lesson;
 }
+
+
+/**
+ * Parse the Http response to a string object
+ * 
+ * @param  {Response} response 
+ *         Http Response
+ *         
+ * @return {string}              The Explanation text got from the Http request
+ */
+function mapExplanation(response:Response): string{
+    // console.log("mapExplanation response: ",response);
+    // Transform the response to an Unit object
+    return response.text();
+}
+
 
 /**
  * This function will handle the error of the GET request if exists

@@ -23,8 +23,6 @@ var app = express();
 var cors = require('cors');
 app.use(cors()); 
 
-// var jsonfile = require('jsonfile');
-
 // File System API
 var fs = require('fs');
 
@@ -35,22 +33,6 @@ const spawn = require('child_process').spawn;
 var bodyParser = require('body-parser');
 
 // --------------------------------- VARIABLES INIT OFF ----------------------------------
-
-// ----------------------------- GENERATE DATABASE FILE ON -------------------------------
-/*var new_db = new Datastore(
-                {
-                    filename: 'database/one_explanation_database.database',
-                    autoload: true
-                }
-            );
-jsonfile.readFile('database/one_explanation_database.json', function(err, content) {
-    console.log('content from JSON file',content);
-    new_db.insert(content, function (err, newDoc) {   // Callback is optional
-        // newDoc is the newly inserted document, including its _id
-        // newDoc has no key called notToBeSaved since its value was undefined
-    });
-});*/
-// ----------------------------- GENERATE DATABASE FILE OFF ------------------------------
 
 // ------------------------------------- ROUTE ON -----------------------------------------
 app.use('/app', express.static(path.resolve(__dirname, 'app')));
@@ -128,6 +110,16 @@ app.get('/user_code_folder/user_code_compiled.js', function (req, res) {
     res.sendFile(path.join(__dirname, '/user_code_folder','user_code_compiled.js'));
     // res.sendFile(path.join(__dirname, '/user_code_folder','alert_test.js'));
 
+});
+
+
+// GET - return the Markdown file that contains the explanation text
+app.get('/database/explanations/:lessonFile', function (req, res) {
+    // res.send(JSON.stringify('alert test file'));
+    // res.sendFile(path.join(__dirname, '/user_code_folder','user_code_compiled.js'));
+    var requestedLessonFile = req.params.lessonFile;
+    console.log('GET lesson md file!! ',requestedLessonFile);
+    res.sendFile(path.join(__dirname, '/database/explanations',requestedLessonFile));
 });
 
 

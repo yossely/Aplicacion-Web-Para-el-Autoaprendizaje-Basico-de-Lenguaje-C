@@ -24,25 +24,12 @@ export class ExplanationMainComponent implements OnInit, OnChanges{
     constructor(private md: MarkdownParserService){}
 
     ngOnInit(){
-
-        this.mdText = "# Angular 2 Markdown" + "\n"+
-                      "** You is important ... ** You too" + "\n"+
-                      "## Setup"  + "\n"+
-                        
-                      "\`\`\`c"  + "\n"+
-                          "#include <stdio.h>"  + "\n"+
-                      "\`\`\`" + "\n"+
-                      "First Header | Second Header"  + "\n"+
-                      "------------ | -------------"  + "\n"+
-                      "Content from cell 1 | Content from cell 2"  + "\n"+
-                      "Content in the first column | Content in the second column"  + "\n";
         
-        this.mdText = this.md.convert(this.mdText);
+        this.mdText = this.md.convert(this.explanation);
         // console.log(this.mdText);
 
         // console.log('prism: ',Prism);
     }
-
     
     /**
      * Go to the next section, in this case 'Example'
@@ -60,7 +47,8 @@ export class ExplanationMainComponent implements OnInit, OnChanges{
      *         Represents a basic change from a previous to a new value.
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
-        // console.log('explanations changed', changes);
+        console.log('explanation must changed', changes);
+        this.mdText = this.md.convert(this.explanation);
     }
 
 }

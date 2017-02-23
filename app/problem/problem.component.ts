@@ -52,7 +52,7 @@ export class ProblemComponent implements OnInit, AfterViewInit{
     }
 
     onChangeCodeInsideEditor(code){
-        console.log('on change code inside editor: ',code);
+        // console.log('on change code inside editor: ',code);
     }
 
     runCCode(){

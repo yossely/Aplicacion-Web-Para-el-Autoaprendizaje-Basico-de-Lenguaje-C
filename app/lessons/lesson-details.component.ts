@@ -21,6 +21,7 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
     private id_unit: number;
     private id_lesson: number;
     private lesson: Lesson;
+    private tempLesson: Lesson;
 
     // This array represents the sections tabs of the lessons and is created to be able to manipulate them in the components
     public sectionsTabs:Array<any>;
@@ -68,9 +69,19 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
                     return this._unitsService.getLesson(this.id_unit,this.id_lesson);
                 })
             .subscribe(
-                lesson    => this.lesson = lesson,                            // Happy path
-                error     => console.log('Error on retrieving lessons'),      // Error path
-                ()        => console.log('Retrieving lessons completed')      // onComplete
+                lesson    => { this.tempLesson = lesson;
+                                this._unitsService.getExplanationText(this.tempLesson.explanationFileName)
+                                    .subscribe(
+                                        explanationText => {
+                                                                this.tempLesson.explanation = explanationText;
+                                                                this.lesson = this.tempLesson;
+                                                            },
+                                        error           => console.log('Error retrieving explanation text ',error),
+                                        ()              => console.log('Retrieving explanation text completed')
+                                    ); 
+                             },                                            // Happy path
+                error     => console.log('Error retrieving lessons'),      // Error path
+                ()        => console.log('Retrieving lessons completed')   // onComplete - never happening don't know why
             );
     }// ngOnInit end
 

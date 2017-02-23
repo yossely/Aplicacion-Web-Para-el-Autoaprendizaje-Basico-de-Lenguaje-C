@@ -126,3 +126,24 @@
 }
 
 /*--------------------------- EXPLANATION NAVIGATION BUTTONS OFF ---------------------------*/
+
+/*------------------------------- EXPLANATION CONTENT BOX ON --------------------------------*/
+
+:host /deep/ .explanation-content-box{
+    padding: 20px 20px 10px 30px;
+
+    p, ul {
+        font-family: $font_main;
+        font-size: 17px;
+    }
+
+    pre {
+        height: auto;
+        width: 80%;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font_title;
+    }
+}
+/*------------------------------- EXPLANATION CONTENT BOX OFF -------------------------------*/
