@@ -67,8 +67,11 @@ export class ProblemComponent implements OnInit, AfterViewInit{
                                     console.log('From the get compileCode: ',data);
                                 }, //Bind to view
                                 err => {
+                                    this.isCompiling = false;
                                     // Log errors if any
                                     console.log('Error compiling the C Code: ',err);
+                                    // Show error messages on my console
+                                    this.showCompileErrorOnConsole(err.text());
                                 },
                                 () => {
                                     this.isCompiling = false;
@@ -124,6 +127,15 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         cScript.charset = 'utf-8';
         document.getElementsByTagName('head')[0].appendChild(cScript);
         console.log('C Compiled script added');
+    }
+
+    showCompileErrorOnConsole(errorMessage){
+        console.log('errorMessage to show in my console: ',errorMessage);
+
+        var consoleElement = document.getElementById(this.consoleElementId);
+
+        var newText = document.createTextNode("ERROR: " + errorMessage + "\n");
+        consoleElement.appendChild(newText);
     }
 
 }

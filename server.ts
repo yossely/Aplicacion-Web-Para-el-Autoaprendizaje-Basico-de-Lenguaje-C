@@ -83,21 +83,41 @@ app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
                                  '--pre-js','user_code_folder/module_configuration.js',
                                  '--post-js','user_code_folder/console_behavior.js',
                                  '-o','user_code_folder/user_code_compiled.js']);
+        
         emsc.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
         });
 
-        emsc.stderr.on('data', (data) => {
+        emsc.stderr.on('data', (error) => {
             /* ToDo: 
                 - Handle the emcc error and return a custom message to the user */
             
-            // Http 500 - Internal Server Error (For now)
-            res.status(500).end();
-            console.log(`Error on compiling C Code with emcc, stderr: ${data}`);
+            /**
+             * IF the header hasn't been sent, set the code of the header
+             * This condition is needed because headers can't be modified after sent 
+             */
+            if(!res.headersSent){
+                // Http 500 - Internal Server Error (For now)
+                res.writeHead(500);
+            }
+            // Send piece of error (each line invokes this error callback function)
+            res.write(error);
+
+            console.log(`Error on compiling C Code with emcc, stderr: ${error}`);
+            console.log('Piece of error printed!================================');
         });
 
-        emsc.on('close', (data) => {
-            res.send(JSON.stringify('C Code compiled successfully, now load the JS'));
+        emsc.on('close', (code) => {
+            
+            // Error (piece) already sent
+            if(res.headersSent){
+                res.end();
+            }
+            else{
+                // Compilation completed successfully!
+                res.send(JSON.stringify('C Code compiled successfully, now load the JS')); 
+            }
+
             console.log('finish');
         });
     }); 

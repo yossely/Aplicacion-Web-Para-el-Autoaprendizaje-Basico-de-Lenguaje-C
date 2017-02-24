@@ -17,8 +17,13 @@
 }
 
 @font-face {
-	font-family: 'SourceSansPro_Semibold';
+	font-family: 'SourceCodePro';
 	src: url('assets/fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf');
+}
+
+@font-face {
+	font-family: 'SourceSansPro_Semibold';
+	src: url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 }
 
 @font-face {
@@ -32,11 +37,14 @@
 	font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 /*----------------- BASIC FONTS -----------------*/
 $font_title: Oxygen, sans-serif;
 $font_title_bold: Oxygen_Bold, sans-serif;
 $font_main: SourceSansPro, sans-serif;
 $font_main_semibold: SourceSansPro_Semibold, sans-serif;
+$font_console: 'Source Code Pro', monospace;
 
 /*----------------------------------- FONTS OFF ----------------------------------*/
 
