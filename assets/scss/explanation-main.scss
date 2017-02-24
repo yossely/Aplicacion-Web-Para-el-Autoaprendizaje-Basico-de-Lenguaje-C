@@ -122,6 +122,7 @@
 /* Navigate to the next section box */
 .nav-explanations {
     background-color: $color_1NavyBlue;
+    margin-top: 30px;
     width: 80%;
 }
 
@@ -130,16 +131,17 @@
 /*------------------------------- EXPLANATION CONTENT BOX ON --------------------------------*/
 
 :host /deep/ .explanation-content-box{
-    padding: 20px 20px 10px 30px;
+    padding: 20px 10px 20px 40px;
 
     p, ul {
         font-family: $font_main;
-        font-size: 20px;
+        font-size: 22px;
     }
 
     pre {
         height: auto;
         display: inline-block; /* To make width no longer than its content  */
+        font-size: 16px;
     }
 
     h1, h2, h3, h4, h5, h6 {
