@@ -133,16 +133,6 @@ app.get('/user_code_folder/user_code_compiled.js', function (req, res) {
 });
 
 
-// GET - return the Markdown file that contains the explanation text
-app.get('/database/explanations/:lessonFile', function (req, res) {
-    // res.send(JSON.stringify('alert test file'));
-    // res.sendFile(path.join(__dirname, '/user_code_folder','user_code_compiled.js'));
-    var requestedLessonFile = req.params.lessonFile;
-    console.log('GET lesson md file!! ',requestedLessonFile);
-    res.sendFile(path.join(__dirname, '/database/explanations',requestedLessonFile));
-});
-
-
 // GET - return the specified lessson that belongs to the specified unit
 app.get('/unit/:unitId/lesson/:lessonId', function (req, res) {
 

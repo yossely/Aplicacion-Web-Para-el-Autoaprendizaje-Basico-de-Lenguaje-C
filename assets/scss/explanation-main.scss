@@ -138,6 +138,12 @@
         font-size: 22px;
     }
 
+    table {
+        font-family: $font_main;
+        font-size: 20px;
+        margin: 15px;
+    }
+
     pre {
         height: auto;
         display: inline-block; /* To make width no longer than its content  */

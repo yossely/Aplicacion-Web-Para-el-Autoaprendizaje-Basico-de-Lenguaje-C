@@ -49,15 +49,6 @@ export class UnitsService{
         return lesson$;
     }
 
-    getExplanationText(explanationFile: string): Observable<string>{
-        let explanation$ = this._http
-            .get(`/database/explanations/${explanationFile}`, {headers: this.getHeaders()})
-            .map(mapExplanation)
-            .catch(handleError);
-
-        return explanation$;
-    }
-
     save(unit: Unit) : Observable<Response>{
         // this won't actually work because the StarWars API doesn't 
         // is read-only. But it would look like this:
@@ -132,6 +123,7 @@ function mapUnits(response:Response): Unit[]{
     return response.json().map(toUnit)
 }
 
+
 /**
  * Parse an object of any type to a Unit object
  * 
@@ -165,6 +157,7 @@ function mapLesson(response:Response): Lesson{
     return toLesson(response.json());
 }
 
+
 /**
  * Parse an object of any type to a Lesson object
  * 
@@ -179,27 +172,12 @@ function toLesson(result:any): Lesson{
         _id: result._id,
         title: result.title,
         content: result.content,
-        explanationFileName: result.explanation,
+        explanation: result.explanation,
         example: result.example,
         exercises: result.exercises
     });
     // console.log('Parsed lesson:', lesson);
     return lesson;
-}
-
-
-/**
- * Parse the Http response to a string object
- * 
- * @param  {Response} response 
- *         Http Response
- *         
- * @return {string}              The Explanation text got from the Http request
- */
-function mapExplanation(response:Response): string{
-    // console.log("mapExplanation response: ",response);
-    // Transform the response to an Unit object
-    return response.text();
 }
 
 
