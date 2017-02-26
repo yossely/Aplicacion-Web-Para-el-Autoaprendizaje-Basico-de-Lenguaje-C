@@ -75,7 +75,7 @@
                     <ace-editor 
                         #editor
                         class="code-editor"
-                        [text]="problem.code"
+                        [(text)]="problem.code"
                         [options]="codeEditorOptions" 
                         (textChanged)="onChangeCodeInsideEditor($event)">
                     </ace-editor>
@@ -102,8 +102,7 @@
                     </ul>
                 </div>
                 <!-- Problem OUTPUT CONSOLE-->
-                <textarea class="row console" id="console">
-                </textarea>
+                <textarea class="row console" [id]="problem.consoleId" [(ngModel)]="problem.consoleOutput">{{problem.consoleOutput}}</textarea>
             </div>
         </div>
     </div>

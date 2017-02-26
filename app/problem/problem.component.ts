@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, Input, OnInit, ViewChild, AfterViewInit, OnChanges, SimpleChange, 
+         NgZone, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { UnitsService } from '../lessons/units.service';
@@ -13,7 +14,7 @@ import 'brace/mode/c_cpp';
     styleUrls: ['assets/css/problem.css'],
     templateUrl: 'assets/partials/problem/problem.html'
 })
-export class ProblemComponent implements OnInit, AfterViewInit{
+export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy{
     
     @Input() problem: Problem;
     
@@ -26,6 +27,8 @@ export class ProblemComponent implements OnInit, AfterViewInit{
 
     consoleElementId: string;
 
+    compileCCodeSubscription: any;
+
 
     /**
      * @param {selector} 'editor' 
@@ -35,8 +38,10 @@ export class ProblemComponent implements OnInit, AfterViewInit{
 
     codeEditorOptions: any;
 
-    constructor(private _unitsService: UnitsService){}
+    constructor(private _unitsService: UnitsService,
+                private _ngZone: NgZone){ }
 
+    
     ngOnInit(){
         this.codeEditorOptions = {
                 displayIndentGuides: true,
@@ -48,41 +53,78 @@ export class ProblemComponent implements OnInit, AfterViewInit{
 
         this.isCompiling = false;
 
-        this.consoleElementId = 'console';
+        console.log("current problem: ",this.problem.consoleId);
+
     }
 
+
+    /**
+     * Expose publicly the method appendConsoleText to be able to call it from the JS obtained from
+     * emcc compilation process
+     *
+     *     Specifically expose the zone object to run the method appendConsoleText from outside the
+     *     angular application
+     *
+     *  @ref: http://stackoverflow.com/a/35297044/5932537
+     */
+    setWindowCurrentProblemRef(){
+        (<any>window).currentProblemRef = {
+                zone:                this._ngZone,
+                appendConsoleTextFn: (newValue) => this.appendConsoleText(newValue),
+                /*This property is for debug purposes*/
+                consoleId: this.problem.consoleId
+            };
+    }
+
+
+    /**
+     * Perform XXXXX when the code inside Ace Editor change
+     *
+     *     -TODO: probably save the code into the database or something...
+     * 
+     * @param {string} code New code inside the Ace Editor
+     */
     onChangeCodeInsideEditor(code){
         // console.log('on change code inside editor: ',code);
     }
 
+    
+    /**
+     * Send the http request through the service to compile the C Code into JS
+     */
     runCCode(){
 
+        /**
+         * Set current problem reference in the window object JUST before compile the C code to set the 
+         * correct problem (example, exercice-1, exercice-2 or exercice-3)
+         */
+        this.setWindowCurrentProblemRef();
+
+        // Variable to show the 'Compiling' message instead of the 'Run' button on the Ace Editor
         this.isCompiling = true;
-
-        console.log('execute code: ', this.editor.getEditor().getValue());
         
-        this._unitsService.compileCCode(this.editor.getEditor().getValue())
-                           .subscribe(
-                                data => {
-                                    console.log('From the get compileCode: ',data);
-                                }, //Bind to view
-                                err => {
-                                    this.isCompiling = false;
-                                    // Log errors if any
-                                    console.log('Error compiling the C Code: ',err);
-                                    // Show error messages on my console
-                                    this.showCompileErrorOnConsole(err.text());
-                                },
-                                () => {
-                                    this.isCompiling = false;
-                                    console.log('C code compiled successfully');
-                                    
-                                    // Clean console text before runnning the code
-                                    this.cleanConsole();
+        this.compileCCodeSubscription = this._unitsService.compileCCode(this.editor.getEditor().getValue())
+                                       .subscribe(
+                                            data => {
+                                                console.log('From the get compileCode: ',data);
+                                            }, //Bind to view
+                                            err => {
+                                                this.isCompiling = false;
+                                                // Log errors if any
+                                                console.log('Error compiling the C Code: ',err);
+                                                // Show error messages on my console
+                                                this.showCompileErrorOnConsole(err.text());
+                                            },
+                                            () => {
+                                                this.isCompiling = false;
+                                                console.log('C code compiled successfully');
 
-                                    // load the script and attach it to the document
-                                    this.loadCCompiledScript();
-                                });
+                                                this.cleanConsole();
+                                                
+                                                // load the script and attach it to the document
+                                                this.loadCCompiledScript();
+                                            }
+                                        );
     }
 
     /**
@@ -97,17 +139,42 @@ export class ProblemComponent implements OnInit, AfterViewInit{
 
     }
 
-    cleanConsole(){
-        var consoleElement = document.getElementById(this.consoleElementId);
-
-        // consoleElement.innerHTML = '';
-
-        while (consoleElement.firstChild) {
-            console.log('child to remove from console: ',consoleElement.firstChild);
-            consoleElement.removeChild(consoleElement.firstChild);
-        }
+    /**
+     * Angular calls its ngOnChanges method whenever it detects changes to input properties of the component (or directive)
+     * 
+     * param {SimpleChange} changes 
+     *         Represents a basic change from a previous to a new value.
+     */
+    ngOnChanges(changes: {[propKey: string]: SimpleChange}){
+        console.log('problem changed', changes);
+        console.log(this.problem.consoleOutput);        
     }
 
+
+    /**
+     * Clean the console (removes all text) before adding the C Compiled code into the webpage
+     */
+    cleanConsole(){
+        this.problem.consoleOutput = '';
+    }
+
+
+    /**
+     * Append new text in the console text
+     *
+     * This method will be called outside the angular app, specifically in the module_configuration.js
+     * 
+     * @param {string} newValue The new text to be appended at the end of the consoleOutput
+     */
+    appendConsoleText(newValue: string){
+        this.problem.consoleOutput += newValue;
+        console.log("this is the new output: ", this.problem.consoleOutput);
+    }
+
+
+    /**
+     * Loads the C Compiled code script into the web page
+     */
     loadCCompiledScript(){
         console.log('preparing to load...');
         
@@ -129,13 +196,29 @@ export class ProblemComponent implements OnInit, AfterViewInit{
         console.log('C Compiled script added');
     }
 
-    showCompileErrorOnConsole(errorMessage){
-        console.log('errorMessage to show in my console: ',errorMessage);
 
-        var consoleElement = document.getElementById(this.consoleElementId);
+    /**
+     * Show the error message got from the http request from the C code compilation process 
+     * 
+     * @param {string} errorMessage Error message text from the compilation process
+     */
+    showCompileErrorOnConsole(errorMessage: string){
+        // console.log('errorMessage to show in my console: ',errorMessage);
+        console.log('Error to show in console with id: ',this.consoleElementId);
 
-        var newText = document.createTextNode("ERROR: " + errorMessage + "\n");
-        consoleElement.appendChild(newText);
+        this.problem.consoleOutput = errorMessage;
+    }
+
+
+    /**
+     * Cleanup just before Angular destroys the component. 
+     * Unsubscribe observables and detach event handlers to avoid memory leaks. 
+     */
+    ngOnDestroy(){
+
+        (<any>window).currentProblemRef = null;
+
+        this.compileCCodeSubscription.unsubscribe();
     }
 
 }

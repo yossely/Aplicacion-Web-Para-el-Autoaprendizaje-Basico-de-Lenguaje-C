@@ -81,7 +81,13 @@ app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
         // var emsc = spawn('emcc',['user_code_folder/test.c','-o','user_code_folder/test.js']);
         var emsc = spawn('emcc',['user_code_folder/user_code.c',
                                  '--pre-js','user_code_folder/module_configuration.js',
-                                 '--post-js','user_code_folder/console_behavior.js',
+                                  /*
+                                  * TODO: Program console behavior in the textarea that represent the console
+                                  *       This behavior will be in the console_behavior.js file
+                                  *       
+                                  *       Currently commented because the functionality is not build!!
+                                  */
+                                 // '--post-js','user_code_folder/console_behavior.js', 
                                  '-o','user_code_folder/user_code_compiled.js']);
         
         emsc.stdout.on('data', (data) => {

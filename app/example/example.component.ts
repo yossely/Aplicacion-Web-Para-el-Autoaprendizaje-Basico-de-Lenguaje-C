@@ -21,7 +21,7 @@ export class ExampleComponent implements OnInit, AfterViewInit{
 
     ngOnInit(){
         
-        this.exampleProblem = 'Im the example problem baby';
+        this.example.consoleOutput = 'Example output';
         
     }
 

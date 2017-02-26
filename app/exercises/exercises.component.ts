@@ -40,7 +40,11 @@ export class ExercisesComponent implements OnInit, OnChanges{
             }
         ];
 
-        // The first time init this componenet, the selected Exercise will be the first
+        for (var i = 0; i < this.exercises.length; i++) {
+            this.exercises[i].consoleOutput = `Console output initiated from exercise ${i+1}`;
+        }
+
+        // The first time init this component, the selected Exercise will be the first
         this.selectedExerciseIndex = 0;
         this.selectedExercise = this.exercises[this.selectedExerciseIndex];
 

@@ -68,7 +68,7 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
                     return this._unitsService.getLesson(this.id_unit,this.id_lesson);
                 })
             .subscribe(
-                lesson    => this.lesson = lesson,                                            // Happy path
+                lesson    => this.initializeLesson(lesson),                // Happy path
                 error     => console.log('Error retrieving lessons'),      // Error path
                 ()        => console.log('Retrieving lessons completed')   // onComplete - never happening don't know why
             );
@@ -94,6 +94,23 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
             });
     }*/
 
+    /**
+     * Initialize lesson with the object got from the http request
+     * Create console Id for each problem (example and exercices)
+     * 
+     * @param {Lesson} lesson  Lesson got from the http request
+     */
+    initializeLesson(lesson: Lesson){
+        this.lesson = lesson;
+
+        this.lesson.example.consoleId = "console-example";
+
+        for (var i = 0; i < this.lesson.exercises.length; i++) {
+            this.lesson.exercises[i].consoleId = `console-exercise-${i+1}`;
+        }
+        
+        console.log("lesson ready! ",this.lesson);
+    }
 
     /**
      * On Destroy component

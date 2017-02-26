@@ -7,7 +7,7 @@
 // Indicates how many characters the user can delete
 var allowCharacterDeleted = 0;
 
-var consoleElement = document.getElementById('console');
+var consoleElement = document.getElementById('console-exercise-1');
 
 consoleElement.addEventListener('keyup',function(keyPressed){
     /* Note:
