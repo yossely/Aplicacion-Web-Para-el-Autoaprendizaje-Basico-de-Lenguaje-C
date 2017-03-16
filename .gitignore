@@ -6,3 +6,7 @@ npm-debug.log
 /app/**/*.js.map
 /*.js
 /*.js.map
+
+/user_code_folder/user_code.c
+/user_code_folder/user_code_compiled.js
+/user_code_folder/user_code_compiled.js.mem
