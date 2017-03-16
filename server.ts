@@ -78,7 +78,10 @@ app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
 
         console.log("The file was saved successfully!");
 
-        // var emsc = spawn('emcc',['user_code_folder/test.c','-o','user_code_folder/test.js']);
+        /**
+         * Complete emcc command:
+         *     emcc -O2 --pre-js user_code_folder/module_configuration.js user_code_folder/user_code.c -o user_code_folder/user_code_compiled.js
+         */
         var emsc = spawn('emcc',['user_code_folder/user_code.c',
                                  '--pre-js','user_code_folder/module_configuration.js',
                                   /*
@@ -139,14 +142,21 @@ app.get('/user_code_folder/user_code_compiled.js', function (req, res) {
 });
 
 
-// GET - return the specified lessson that belongs to the specified unit
+// GET - return the .mem file correspondent to the JS file that contains the user C Code compiled.
+app.get('/user_code_compiled.js.mem', function (req, res) {
+    // This file is generated when optimizing the compiling process with Emscripten (-O2)
+    res.sendFile(path.join(__dirname, '/user_code_folder','user_code_compiled.js.mem'));
+});
+
+
+// GET - return the specified lesson that belongs to the specified unit
 app.get('/unit/:unitId/lesson/:lessonId', function (req, res) {
 
     var requestedUnitId = parseInt(req.params.unitId);
-    console.log('GET unit with _id: ',requestedUnitId);
-
     var requestedLessonId = parseInt(req.params.lessonId);
-    console.log('GET lesson with _id: ',requestedLessonId);
+
+    console.log('GET lesson with _id: ',requestedLessonId, 
+                ' from the unit with _id: ',requestedUnitId);
 
     unitsDB.findOne({ _id: requestedUnitId, "lessons._id":requestedLessonId }, function (err, docs) {
         // the findOne function returns only an object, not an array
