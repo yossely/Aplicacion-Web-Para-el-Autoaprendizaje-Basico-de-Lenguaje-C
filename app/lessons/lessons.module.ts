@@ -33,6 +33,7 @@ import { AceEditorComponent } from 'ng2-ace-editor';
 import { lessonsRoutingModule } from './lessons-routing.module';
 
 import { UnitsService } from './units.service';
+import { ErrorHandlingService } from '../problem/error-handling.service';
 import { MarkdownParserService } from '../markdown/markdown-parser.service';
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MarkdownParserService } from '../markdown/markdown-parser.service';
     ],
     providers: [
         UnitsService,
-        MarkdownParserService
+        MarkdownParserService,
+        ErrorHandlingService
     ]
 })
 export class LessonsModule {}

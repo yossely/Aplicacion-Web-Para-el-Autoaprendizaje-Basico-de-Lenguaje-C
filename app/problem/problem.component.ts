@@ -3,6 +3,7 @@ import { Component, Input, OnInit, ViewChild, AfterViewInit, OnChanges, SimpleCh
 import { Observable } from 'rxjs/Observable';
 
 import { UnitsService } from '../lessons/units.service';
+import { ErrorHandlingService } from './error-handling.service';
 import { Problem } from '../data_structure/problem';
 
 import 'brace';
@@ -39,7 +40,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     codeEditorOptions: any;
 
     constructor(private _unitsService: UnitsService,
-                private _ngZone: NgZone){ }
+                private _ngZone: NgZone,
+                private _errorHandlingService: ErrorHandlingService){ }
 
     
     ngOnInit(){
@@ -206,7 +208,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         // console.log('errorMessage to show in my console: ',errorMessage);
         console.log('Error to show in console with id: ',this.consoleElementId);
 
-        this.problem.consoleOutput = errorMessage;
+        this.problem.consoleOutput = this._errorHandlingService.removeNeedlessInformation(errorMessage);
     }
 
 
