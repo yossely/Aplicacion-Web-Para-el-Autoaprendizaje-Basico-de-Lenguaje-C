@@ -2,12 +2,12 @@
 [
     {
         "_id": 1,
-        "title" : "Unidad I. Donec fringilla arcu tortor, at.",
+        "title" : "Unidad I. Estructura básica de lenguaje C",
         "lessons": [
             {
                 "_id": 1,
-                "title": "Nuestro primer programa",
-                "content": "1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nobis dolorem consequatur rerum consectetur ullam blanditiis eos distinctio!",
+                "title": "Nuestro primer programa en C",
+                "content": "Estructura básica de un programa en C, librerías en C, función principal main, sentencias, directiva #include y comentarios.",
                 "explanation": '''
                                Vamos a hacer el típico programa para empezar a conocer nuestro lenguaje, este es el ejemplo del “¡Hola Mundo!”
                                ```c
@@ -73,7 +73,7 @@
             {
                 "_id": 2,
                 "title": "Variables",
-                "content": "2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat optio unde accusamus quibusdam, est laudantium!",
+                "content": "Declaración de una variable, identificadores, asignación de valores en una variable, tipos de datos y operadores matemáticos básicos.",
                 "explanation": '''
                                Para usar una variable en C, primero ésta debe ser **declarada**, es decir, debemos describir a la variable **ANTES** de usarla. Lenguaje C tiene varios tipos de datos, pero los más básicos son:
 
@@ -152,7 +152,7 @@
             {
                 "_id": 3,
                 "title": "Imprimir y leer información con printf  y scanf",
-                "content": "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum in magni accusamus nesciunt ipsa saepe ipsum temporibus veritatis doloremque animi.",
+                "content": "Imprimir valores enteros y decimales en la consola con printf. Solicitar y guardar valores enteros y decimales en variables con scanf.",
                 "explanation": '''
                                # Imprimir y leer información con printf  y scanf
                                Ya vimos cómo imprimir valores de tipo `float`, ahora, para imprimir un valor de tipo `int`, debemos reemplazar el `%f` por `%d` de la siguiente manera:
@@ -218,12 +218,12 @@
     },
     {
         "_id": 2,
-        "title" : "Unidad II. Donec fringilla arcu tortor, at.",
+        "title" : "Unidad II. Toma de decisiones",
         "lessons": [
             {
                 "_id": 1,
                 "title": "Sentencia de selección: If",
-                "content": "4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tempora saepe assumenda quaerat neque tempore aspernatur vero ipsam nisi fugit!",
+                "content": "Estructura de la condición if. Evaluar condiciones con los operadores relacionales, de igualdad y lógicos. Reglas de precedencia de los operadores.",
                 "explanation": '''
                                Se les llama sentencias de selección porque permiten seleccionar y ejecutar cierta porción de código dependiendo de alguna condición (evaluando una expresión). La primera sentencia que veremos se denomina `if` y su forma más simple es:
                                ```c
@@ -306,7 +306,7 @@
             {
                 "_id": 2,
                 "title": "Cláusula else",
-                "content": "5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus error numquam nesciunt, quam illo veniam dolores ea libero!",
+                "content": "Estructura y uso de la cláusula else",
                 "explanation": '''
                                # Cláusula `else`
                                En algunas oportunidades es útil ejecutar ciertas instrucciones si *NO* se cumple una condición `if`, para estos casos existe la cláusula `else`:
@@ -364,7 +364,7 @@
             {
                 "_id": 3,
                 "title": "Sentencia de selección: switch",
-                "content": "6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam dicta, dolorem atque, aut earum minima quas!",
+                "content": "Estructura de la sentencia switch. Elementos que componen la sentencia: case, break y default. Algunas condiciones del switch.",
                 "explanation": '''
                                A menudo necesitaremos comparar una expresión contra una serie de valores para ver con cuál coincide y con base en esa coincidencia ejecutar un bloque de instrucciones u otro. Para estas situaciones tenemos la sentencia `switch`
                                Veamos un ejemplo práctico: si queremos mostrar un indicador (Excelente, bueno, regular o malo) basados en el valor introducido por el usuario (4, 3, 2 o 1 respectivamente), la sentencia `switch` es:
@@ -439,12 +439,12 @@
     },
     {
         "_id": 3,
-        "title" : "Unidad III. Donec fringilla arcu tortor, at.",
+        "title" : "Unidad III. Ciclos: while, do-while y for",
         "lessons": [
             {
                 "_id": 1,
                 "title": "Ciclos: while",
-                "content": "7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tempora saepe assumenda quaerat neque tempore aspernatur vero ipsam nisi fugit!",
+                "content": "Definición de ciclos, estructura y uso del ciclo while. ",
                 "explanation": '''
                                Un ciclo es una sentencia que se encarga de ejecutar repetidamente las instrucciones que se encuentran dentro del cuerpo del ciclo. En C, cada ciclo tiene una expresión de control. **ANTES** de cada ejecución del cuerpo del ciclo (a esto se le llama *iteración*), la expresión de control es evaluada y si el resultado es verdadero, el ciclo continúa su ejecución.
                                
@@ -515,7 +515,7 @@
             {
                 "_id": 2,
                 "title": "Ciclos: do-while",
-                "content": "8 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus error numquam nesciunt, quam illo veniam dolores ea libero!",
+                "content": "Estructura y uso del ciclo do-while. Diferencia entre el ciclo while y do-while.",
                 "explanation": '''
                                El ciclo `do-while` es básicamente una sentencia `while` cuya expresión de control es evaluada **DESPUÉS** de cada ejecución del cuerpo del ciclo. La sentencia `do-while` tiene la forma:
                                ```c
@@ -588,7 +588,7 @@
             {
                 "_id": 3,
                 "title": "Ciclos: for",
-                "content": "9 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam dicta, dolorem atque, aut earum minima quas!",
+                "content": "Estructura del ciclo for. ¿Cuándo y cómo utilizarlo?",
                 "explanation": '''
                                El último ciclo de lenguaje C se denomina `for` y su estructura es la siguiente:
                                ```c
@@ -601,7 +601,7 @@
                                 - La *expresion2* es la **expresión de control**, es decir, se evalúa expresion2 y si resulta verdadero (1) se ejecuta la iteración, de lo contrario se detiene el ciclo
                                 - La *expresion3* es la operación que se ejecuta al **FINAL** de cada iteración.
                                
-                               Con esto en mente, vamos a crear un ciclo for para imprimir una cuenta regresiva desde 10 hasta 1:
+                               El ciclo for se emplea cuando se tiene la certeza de la **cantidad de iteraciones** que se desea tener. Con esto en mente, vamos a crear un ciclo for para imprimir una cuenta regresiva desde 10 hasta 1:
                                ```c
                                int i;
                                for (i = 10; i > 0; i--)
@@ -658,12 +658,12 @@
     },
     {
         "_id": 4,
-        "title" : "Unidad VI. Donec fringilla arcu tortor, at.",
+        "title" : "Unidad VI. Contadores, acumuladores, vectores y strings",
         "lessons": [
             {
                 "_id": 1,
                 "title": "Contadores y Acumuladores",
-                "content": "10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tempora saepe assumenda quaerat neque tempore aspernatur vero ipsam nisi fugit!",
+                "content": "Aumentar o disminuir valores progresivamente dentro de los ciclos. Acumular valores y guardarlos en una variable. Operadores abreviados para incrementar, disminuir y acumular valores.",
                 "explanation": '''
                                Muchas veces, en el cuerpo de los ciclos necesitemos aumentar o disminuir progresivamente algún valor (**contador**) o tal vez sumar valores en alguna variable y mostrar el total al final (**acumulador**), para estos casos existen operadores que nos ayudan a simplificar expresiones. Si tenemos:
                                ```c
@@ -720,7 +720,7 @@
             {
                 "_id": 2,
                 "title": "Arreglos: vectores",
-                "content": "11 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus error numquam nesciunt, quam illo veniam dolores ea libero!",
+                "content": "Definición de arreglos. Declaración de un vector. Condiciones en los arreglos. Acceso a los elementos de un vector. Asignación de valores en un vector.",
                 "explanation": '''
                                Un arreglo es una estructura que contiene un número X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión, se denomina arreglo unidimensional o vector.
                                Para declarar un vector debemos especificar el tipo de dato de los elementos que vamos a guardar y la cantidad de elementos, por ejemplo:
@@ -795,7 +795,7 @@
             {
                 "_id": 3,
                 "title": "Strings",
-                "content": "12 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam dicta, dolorem atque, aut earum minima quas!",
+                "content": "Declaración de strings. Asignación de valores en un string. Imprimir en la consola strings con printf y puts. Leer y guardar valores en un string con scanf y gets.",
                 "explanation": '''
                                Para crear y utilizar una cadena de caracteres (*string*) en lenguaje C, usamos dos características que ya vimos: tipo de dato `char` (caracter) y un vector (arreglo unidimensional). Digamos que necesitamos un variable capaz de almacenar un máximo(puede ser menos) de 10 caracteres:
                                ```c
@@ -881,12 +881,12 @@
     },
     {
         "_id": 5,
-        "title" : "Unidad V. Donec fringilla arcu tortor, at.",
+        "title" : "Unidad V. Funciones, matrices y operaciones con strings",
         "lessons": [
             {
                 "_id": 1,
                 "title": "Funciones",
-                "content": "13 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tempora saepe assumenda quaerat neque tempore aspernatur vero ipsam nisi fugit!",
+                "content": "Definición y uso de una función. Estructura de una función en lenguaje C. Llamado de una función.",
                 "explanation": '''
                                Una función es una serie de instrucciones agrupadas por los signos `{ }`, con un nombre y pueden o no, retornar un valor. Las funciones nos permiten dividir nuestro programa en piezas pequeñas más fácil de modificar y reutilizar bloques de código, es decir, escribimos la función una vez y la usamos las veces necesarias.
 
@@ -957,7 +957,7 @@
             {
                 "_id": 2,
                 "title": "Arreglos: matrices",
-                "content": "14 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus error numquam nesciunt, quam illo veniam dolores ea libero!",
+                "content": "Declaración e inicialización de una matriz. Acceso a los elementos de una matriz. Recorrer cada elementos de una matriz utilizando el ciclo for.",
                 "explanation": '''
                                Veamos cómo declarar un arreglo bidimensional o matriz::
                                ```c
@@ -1043,7 +1043,7 @@
             {
                 "_id": 3,
                 "title": "Operaciones con strings (strcpy, strlen, strcat y strcmp)",
-                "content": "15 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam dicta, dolorem atque, aut earum minima quas!",
+                "content": "Librería string.h. Copiar strings, calcular la longitud de un string, concatenar strings y comparar strings.",
                 "explanation": '''
                                Los arreglos tienen algunas restricciones, por ejemplo, no es posible copiar un arreglo en otro con el operador de asignación `=`, ni comparar si dos vectores son iguales con el operador `==` 
                                ### ERROR
@@ -1141,12 +1141,12 @@
     },
     {
         "_id": 6,
-        "title" : "Unidad VI. Donec fringilla arcu tortor, at.",
+        "title" : "Unidad VI. Estructuras y Punteros",
         "lessons": [
             {
                 "_id": 1,
                 "title": "Estructuras",
-                "content": "16 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tempora saepe assumenda quaerat neque tempore aspernatur vero ipsam nisi fugit!",
+                "content": "Definición y uso de las estructuras en lenguaje C. Creación e inicialización de una variable usando una estructura. Acceso a los miembros de una estructura.",
                 "explanation": '''
                                Las estructuras son la elección adecuada cuando necesitamos guardar una serie de datos relacionados entre sí de alguna manera, por ejemplo, supongamos que deseamos llevar el registro de un producto dentro de un almacén, este producto posee un código (número entero), nombre (cadena de caracteres), un precio (número decimal) y una cantidad (número entero).  
                                ```c
@@ -1247,7 +1247,7 @@
             {
                 "_id": 2,
                 "title": "Vectores de estructuras, estructura dentro de estructura (Carga y recorrido)",
-                "content": "17 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus error numquam nesciunt, quam illo veniam dolores ea libero!",
+                "content": "Combinación de vectores y estructuras. Manejo de estructuras con vectores. Manejo de vectores de estructuras.",
                 "explanation": '''
                                Estructura y arreglos pueden ser combinados sin ninguna restricción, lo que implica que los arreglos pueden tener estructuras como elementos y las estructuras pueden tener arreglos y otras estructuras como miembros.
                                
@@ -1280,14 +1280,14 @@
                                scanf("%s",est1.nombre.primer_apellido);
                                
                                printf("Ingrese la cedula del estudiante\n");
-                               scanf("%d",&est1.nombre.cedula);
+                               scanf("%d",&est1.cedula);
                                
                                printf("Ingrese las notas parciales:\n");
                                
                                for (int i = 0; i < 3; ++i)
                                {
                                    printf("Parcial %d: \n",i+1);
-                                   scanf("%f",&est1.nombre.notas_parciales[i]);
+                                   scanf("%f",&est1.notas_parciales[i]);
                                }
                                ```
                                Al crear una estructura estamos declarando un nuevo tipo de dato, con el cual es posible crear arreglos como ya hemos estudiado. Si tenemos que llevar el registro de 20 estudiantes (en lugar de 1):
