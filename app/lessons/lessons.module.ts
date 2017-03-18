@@ -18,6 +18,7 @@ import { ExampleComponent }  from '../example/example.component';
 import { ExercisesComponent }  from '../exercises/exercises.component';
 import { ProblemComponent }  from '../problem/problem.component';
 import { NavbarLessonsComponent }  from './navbar-lessons.component';
+import { UserProgressComponent }  from './user-progress.component';
 
 /**
  * Imports needed to create and configure Ace Code Editor 
@@ -52,7 +53,8 @@ import { MarkdownParserService } from '../markdown/markdown-parser.service';
         ExampleComponent,
         ExercisesComponent,
         ProblemComponent,
-        AceEditorComponent
+        AceEditorComponent,
+        UserProgressComponent
     ],
     providers: [
         UnitsService,

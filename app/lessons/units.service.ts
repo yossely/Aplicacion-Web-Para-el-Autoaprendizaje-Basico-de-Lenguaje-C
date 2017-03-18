@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import 'rxjs/Rx';
 
 import { Unit } from '../data_structure/unit';
 import { Lesson } from '../data_structure/lesson';
-import 'rxjs/Rx';
+import { Progress } from '../data_structure/progress';
 
 @Injectable()
 export class UnitsService{
@@ -13,6 +14,8 @@ export class UnitsService{
 
     constructor(private _http: Http){
         this.baseUrl = "http://localhost:3000";
+
+        this.getUnitIdLessonIdLessonTitle();
     }
 
     getAll(): Observable<Unit[]>{
@@ -47,6 +50,25 @@ export class UnitsService{
             .catch(handleError);
 
         return lesson$;
+    }
+
+    getUnitIdLessonIdLessonTitle(): Observable<Progress>{
+        let progress$ = this._http
+            .get(`${this.baseUrl}/content`, {headers: this.getHeaders()})
+            .flatMap( res => res.json() )
+            .flatMap( (unit:any) => {
+                return unit.lessons.map( (lesson:any) => {
+                    return <Progress>({
+                            unitId: unit._id,
+                            lessonId: lesson._id,
+                            lessonTitle: lesson.title,
+                            isCompleted: false,
+                            isCurrent: false
+                        });
+                });
+            });
+        
+        return progress$;
     }
 
     save(unit: Unit) : Observable<Response>{
@@ -98,7 +120,6 @@ function mapCCode(response:Response): string{
  * @return {Unit}              The Unit got from the Http request
  */
 function mapUnit(response:Response): Unit{
-
     // Transform the response to an Unit object
     return toUnit(response.json());
 }
