@@ -4,8 +4,8 @@
         <div class="col-md-10">
             <h1 class="unit-title">{{id_unit}}.{{id_lesson}} {{lesson?.title}}</h1>
         </div>
-        <div class="col-md-2 center">
-            <button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+        <div *ngIf="!_userProgressService.isCurrentLessonLast()" class="col-md-2 center">
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">Siguiente Lección</button>
         </div>
     </div>
 

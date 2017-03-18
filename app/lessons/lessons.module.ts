@@ -36,6 +36,7 @@ import { lessonsRoutingModule } from './lessons-routing.module';
 import { UnitsService } from './units.service';
 import { ErrorHandlingService } from '../problem/error-handling.service';
 import { MarkdownParserService } from '../markdown/markdown-parser.service';
+import { UserProgressService } from './user-progress.service';
 
 @NgModule({
     imports: [
@@ -59,7 +60,8 @@ import { MarkdownParserService } from '../markdown/markdown-parser.service';
     providers: [
         UnitsService,
         MarkdownParserService,
-        ErrorHandlingService
+        ErrorHandlingService,
+        UserProgressService
     ]
 })
 export class LessonsModule {}

@@ -1,5 +1,5 @@
-<ul *ngIf="_currentUserProgress" class="nav navbar-nav pull-right progressbar">
-    <li *ngFor="let lesson of _currentUserProgress;
+<ul *ngIf="this._userProgressService.getCurrentUserProgress()" class="nav navbar-nav pull-right progressbar">
+    <li *ngFor="let lesson of this._userProgressService.getCurrentUserProgress();
                 let isFirst = first;
                 let isLast = last;" 
         [ngClass]="{'current': lesson.isCurrent, 'completed': lesson.isCompleted}" >

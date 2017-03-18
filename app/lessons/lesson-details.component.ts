@@ -7,6 +7,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { UnitsService } from './units.service';
 import { Lesson } from '../data_structure/lesson';
+import { UserProgressService } from './user-progress.service';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
 
     constructor (private _unitsService: UnitsService,
                  private route: ActivatedRoute,
-                 private router: Router){}
+                 private router: Router,
+                 private _userProgressService:UserProgressService){}
 
     /**
      * Lifecycle hook ngOnInit. 
@@ -35,6 +37,7 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
      * Here we can use ActivatedRoute
      */
     ngOnInit(){
+
         // Initialize sectionsTabs array
         this.sectionsTabs = [
                 {
@@ -110,6 +113,13 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
         }
         
         console.log("lesson ready! ",this.lesson);
+    }
+
+    /**
+     * Navigate to the next lesson when the user clicks on 'Siguiente Leccion' button
+     */
+    nextLesson(){
+        this.router.navigate([this._userProgressService.getNextLessonRouterLink()]);
     }
 
     /**

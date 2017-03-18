@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, OnChanges, SimpleChange } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { UserProgressService } from '../lessons/user-progress.service';
 import { Problem } from '../data_structure/problem';
 
 @Component({
@@ -24,7 +26,8 @@ export class ExercisesComponent implements OnInit, OnChanges{
 
 
 
-    constructor(){}
+    constructor(private router: Router, 
+                private _userProgressService: UserProgressService){}
 
     ngOnInit(){
 
@@ -85,6 +88,13 @@ export class ExercisesComponent implements OnInit, OnChanges{
     }
     
     nextSection(){}
+
+    /**
+     * Navigate to the next lesson when the user clicks on 'Siguiente Leccion' button
+     */
+    nextLesson(){
+        this.router.navigate([this._userProgressService.getNextLessonRouterLink()]);
+    }
 
     /**
      * Angular calls its ngOnChanges method whenever it detects changes to input properties of the component (or directive)

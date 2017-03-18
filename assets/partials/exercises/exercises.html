@@ -24,12 +24,16 @@
                 Continuar
             </button>
             <h3>o sigue con</h3>
-            <button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">
+                Siguiente Lección
+            </button>
         </div>
         <div *ngIf="isSelectedExerciseLast">
             <h3>¿Listo?</h3>
             <p>Si has terminado con los ejercicios, ¡Sigue aprendiendo nuevos temas!</p>
-            <button class="btn btn-blue btn-sm btn-blue-next-lesson" href="#" role="button">Siguiente Lección</button>
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">
+                Siguiente Lección
+            </button>
         </div>
     </div>
 </div>
