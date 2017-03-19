@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
@@ -13,9 +13,10 @@ import { Unit } from '../data_structure/unit';
     styleUrls: ['assets/css/content.css'],
     templateUrl: 'assets/partials/content.html'
 })
-export class ContentComponent implements OnInit{
+export class ContentComponent implements OnInit, OnDestroy{
         
-    unitsObs: Observable<Unit[]>;
+    unitsObs: any;
+
     private selectedId: number;
 
     units: Unit[] = [];
@@ -35,9 +36,7 @@ export class ContentComponent implements OnInit{
                 this.selectedId = +params['id_unit'];
                 return this._unitsService.getAll();
             }
-         );
-
-        this.unitsObs.subscribe(
+         ).subscribe(
             u     => this.units = u,         // Happy path
             error => this.errorMsg = error,  // Error path
             ()    => this.isLoading = false  // onComplete
@@ -46,6 +45,10 @@ export class ContentComponent implements OnInit{
 
     isSelected(unit: Unit){
         return unit._id === this.selectedId;
+    }
+
+    ngOnDestroy(){
+        this.unitsObs.unsubscribe();
     }
 
 }

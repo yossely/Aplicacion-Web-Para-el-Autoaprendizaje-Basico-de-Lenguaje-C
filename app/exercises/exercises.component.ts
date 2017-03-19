@@ -120,23 +120,8 @@ export class ExercisesComponent implements OnInit, OnChanges{
 
         /**
          * TODO: 
-         *     - Initialize code editor
          *     - Initialize tips and expected output
          */
-
-        // At this point in time the DOM of your component is complete
-        /*this.editor = new MyEditor("editor");
-        this.editor.InitializeEditor();
-        console.log('example editor ready');
-
-        this.editor_exercise1 = new MyEditor("editor-exercise1");
-        this.editor_exercise1.InitializeEditor();
-        console.log('exercise-1 editor ready');    
-
-        var btn_run_code = document.getElementById('btn-run-code');
-        btn_run_code.addEventListener('click',()=>{
-            console.log(this.editor.editor.getValue());
-        }); */
 
         /*
         $(function(e:any) {

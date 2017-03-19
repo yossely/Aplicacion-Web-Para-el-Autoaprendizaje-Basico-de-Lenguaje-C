@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
@@ -14,9 +14,9 @@ import { UserProgressService } from './user-progress.service';
     styleUrls: ['assets/css/navbar_lessons.css'],
     templateUrl: 'assets/partials/user-progress.html' 
 })
-export class UserProgressComponent implements OnInit{
+export class UserProgressComponent implements OnInit, OnDestroy{
 
-    progressObs: Observable<Progress>;
+    progressObs: any;
 
     constructor(
         private _unitsService:UnitsService,
@@ -44,16 +44,20 @@ export class UserProgressComponent implements OnInit{
          */
         if(!this._userProgressService.isProgressInitialized()) {
 
-            this.progressObs = this._unitsService.getUnitIdLessonIdLessonTitle();
-
-            this.progressObs.subscribe(
-                progress => {
-                    this._userProgressService.addNewLessonProgress(progress);
-                },                                // Happy path
-                error    => console.log('Error getting units in user progress component: ',error),      // Error path
-                ()       => this._userProgressService.updateProgress()   // onComplete
-            );
+            this.progressObs = this._unitsService
+                                   .getUnitIdLessonIdLessonTitle()
+                                   .subscribe(
+                                        progress => {
+                                            this._userProgressService.addNewLessonProgress(progress);
+                                        },                                // Happy path
+                                        error    => console.log('Error getting units in user progress component: ',error),      // Error path
+                                        ()       => this._userProgressService.updateProgress()   // onComplete
+                                    );
         }
+    }
+
+    ngOnDestroy(){
+        this.progressObs.unsubscribe();
     }    
 
 }
