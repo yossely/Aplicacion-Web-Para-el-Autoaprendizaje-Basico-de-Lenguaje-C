@@ -41,7 +41,7 @@ export class UserProgressService {
 
         this._currentUserProgress.push(newLessonProgress);
 
-        console.log('and the progress is: ',this._currentUserProgress);
+        // console.log('and the progress is: ',this._currentUserProgress);
     }
 
     
@@ -133,7 +133,7 @@ export class UserProgressService {
                                         + '/lesson/' + this._currentUserProgress[currentLessonIndex+1].lessonId;
         }
         
-        console.log('next lesson url: ',this._nextLessonRouterLink);
+        // console.log('next lesson url: ',this._nextLessonRouterLink);
     }
 
 

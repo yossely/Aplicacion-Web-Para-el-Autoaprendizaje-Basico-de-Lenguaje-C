@@ -43,10 +43,6 @@ export class ExercisesComponent implements OnInit, OnChanges{
             }
         ];
 
-        for (var i = 0; i < this.exercises.length; i++) {
-            this.exercises[i].consoleOutput = `Console output initiated from exercise ${i+1}`;
-        }
-
         // The first time init this component, the selected Exercise will be the first
         this.selectedExerciseIndex = 0;
         this.selectedExercise = this.exercises[this.selectedExerciseIndex];
@@ -104,6 +100,13 @@ export class ExercisesComponent implements OnInit, OnChanges{
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
         console.log('exercises changed', changes);
+
+        /**
+         * Initialize console output for every exercice when lesson changed
+         */
+        for (var i = 0; i < this.exercises.length; i++) {
+            this.exercises[i].consoleOutput = `Console output initiated from exercise ${i+1}`;
+        }
         
         /**
          * If this component has already been initialized and changes, update the selected exercise

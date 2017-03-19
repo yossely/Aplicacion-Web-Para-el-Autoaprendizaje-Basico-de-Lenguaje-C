@@ -57,9 +57,6 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.isCompiling = false;
 
         this.originalCode = this.problem.code;
-
-        console.log("current problem: ",this.problem.consoleId);
-
     }
 
 
@@ -140,7 +137,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.editor.setMode("c_cpp"); 
         this.editor.getEditor().$blockScrolling = Infinity;
 
-        console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
+        // console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
 
     }
 
@@ -152,7 +149,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
         console.log('problem changed', changes);
-        console.log(this.problem.consoleOutput);        
+        // console.log(this.problem.consoleOutput);        
     }
 
 

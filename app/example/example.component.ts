@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, OnChanges } from '@angular/core';
 
 import { Problem } from '../data_structure/problem';
 
@@ -7,7 +7,7 @@ import { Problem } from '../data_structure/problem';
     styleUrls: ['assets/css/example.css'],
     templateUrl: 'assets/partials/example/example.html'
 })
-export class ExampleComponent implements OnInit, AfterViewInit{
+export class ExampleComponent implements OnInit, AfterViewInit, OnChanges{
     
     // This is the array to manipulate and navigate to the next section: 'Example' tab
     @Input() sectionsTabs: Array<any>;
@@ -21,8 +21,6 @@ export class ExampleComponent implements OnInit, AfterViewInit{
 
     ngOnInit(){
         
-        this.example.consoleOutput = 'Example output';
-        
     }
 
     /**
@@ -34,6 +32,11 @@ export class ExampleComponent implements OnInit, AfterViewInit{
         this.sectionsTabs[1].active = false;
     }
 
+    ngOnChanges(){
+        // Initialize console output for the example when lesson changed
+        this.example.consoleOutput = 'Example output';
+    }
+
     /**
      * Lifecycle hook.
      * Angular calls this hook after it creates a component's child views
@@ -41,7 +44,6 @@ export class ExampleComponent implements OnInit, AfterViewInit{
     ngAfterViewInit() {
         /**
          * TODO:
-         *     - Initialize code editor
          *     - Implement the step by step solution of the example problem
          */
         

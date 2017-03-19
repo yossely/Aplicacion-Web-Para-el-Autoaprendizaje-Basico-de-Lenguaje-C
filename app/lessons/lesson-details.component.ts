@@ -77,6 +77,16 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
             );
     }// ngOnInit end
 
+    public selectSection(selectedTab: number){
+
+        this.sectionsTabs.map( (tab, index) => {
+            if(index == selectedTab)
+                tab.active = true;
+            else
+                tab.active = false;
+        });
+    }
+
     /*goToUnitsList(){
         let unitId = this.unit ? this.unit._id : null;
          
@@ -111,6 +121,8 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
         for (var i = 0; i < this.lesson.exercises.length; i++) {
             this.lesson.exercises[i].consoleId = `console-exercise-${i+1}`;
         }
+
+        this.selectSection(0);
         
         console.log("lesson ready! ",this.lesson);
     }

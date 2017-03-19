@@ -14,7 +14,8 @@
         <tabset [justified]="true" class="lesson-sections">
             <tab customClass="explanation-tab" 
                  [heading]="sectionsTabs[0].heading"
-                 [active]="sectionsTabs[0].active" >
+                 [active]="sectionsTabs[0].active" 
+                 (select)="selectSection(0)">
                 <div class="tab-pane explanation-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
                     <explanation-outlet [sectionsTabs]="sectionsTabs" [explanation]="lesson?.explanation"></explanation-outlet>
@@ -22,7 +23,8 @@
             </tab>
             <tab customClass="example-tab" 
                  [heading]="sectionsTabs[1].heading"
-                 [active]="sectionsTabs[1].active" >
+                 [active]="sectionsTabs[1].active" 
+                 (select)="selectSection(1)">
                 <div class="tab-pane example-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
                     <example-outlet [sectionsTabs]="sectionsTabs" [example]="lesson?.example"></example-outlet>
@@ -30,7 +32,8 @@
             </tab>
             <tab customClass="exercises-tab" 
                  [heading]="sectionsTabs[2].heading"
-                 [active]="sectionsTabs[2].active" >
+                 [active]="sectionsTabs[2].active" 
+                 (select)="selectSection(2)">
                 <div class="tab-pane exercises-pane">
                     <br> <!-- Needs to be here or a blank line appear :/ -->
                     <exercises-outlet [exercises]="lesson?.exercises"></exercises-outlet>
