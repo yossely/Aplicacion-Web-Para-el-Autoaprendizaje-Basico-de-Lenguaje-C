@@ -90,17 +90,19 @@
                 <!-- Problem TIPS AND EXPECTED OUTPUT-->
                 <div class="row tips-output-box">
                     <h4>Salida</h4>
-                    <div *ngIf="isOnExercises" class="expected-output-console">
+                    <div *ngIf="isOnExercises" class="expected-output-console" [hidden]="isExpectedOutputHidden">
                         <h5>Salida Esperada</h5>
-                        <a class="close-window-x" href="#"></a>
-                        <p>> Lorem ipsum dolor sit amet, consectetur adipisicing elit. In impedit quae vero deleniti, ab quam deserunt maxime consectetur at repellendus fugit delectus quidem quibusdam, sapiente aspernatur autem earum nihil voluptate!</p>      
+                        <a class="close-window-x" (click)="showHideExpectedOutput()"></a>
+                        <div class="expected-ouput-content">
+                            <p>{{problem.expectedOutput}}</p>      
+                        </div>
                     </div>
                     <ul *ngIf="isOnExercises">
-                        <li class="tips">
-                            <a class="hint--left hint--small tips-tab"  aria-label="tips" ><img src="assets/img/tips.svg" alt="Tips"></a>
-                        </li>
-                        <li class="expected-output">                                                
-                            <a class="hint--right hint--small" aria-label="solución" type="button"><img src="assets/img/expected-output.svg" alt="Salida"></a>
+                        <li class="expected-output" [ngClass]="{'expected-output-on': !isExpectedOutputHidden}">                                                
+                            <a class="hint--left hint--medium" aria-label="solución" type="button"
+                                (click)="showHideExpectedOutput()">
+                                <img src="assets/img/expected-output.svg" alt="Salida">
+                            </a>
                         </li>
                     </ul>
                 </div>

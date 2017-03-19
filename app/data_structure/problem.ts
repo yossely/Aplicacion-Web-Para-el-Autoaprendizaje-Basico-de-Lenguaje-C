@@ -3,4 +3,5 @@ export interface Problem {
 	code: string;
     consoleId: string;
     consoleOutput: string;
+    expectedOutput: string;
 }

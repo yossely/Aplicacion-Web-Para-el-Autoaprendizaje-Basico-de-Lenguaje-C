@@ -78,7 +78,7 @@ hr {
     }
 
     ul {
-        margin-left: 65%;
+        margin-left: 72%;
         list-style: none;
         margin-bottom: 0px;
     }
@@ -111,6 +111,10 @@ hr {
                 width: 30px;
             }
             
+        }
+
+        &.expected-output-on {
+            background-color: #6D2636;
         }
 
         img {

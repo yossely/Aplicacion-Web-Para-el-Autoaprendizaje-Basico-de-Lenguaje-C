@@ -32,6 +32,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     originalCode: string;
 
+    isExpectedOutputHidden: boolean;
+
     /**
      * @param {selector} 'editor' 
      *            selector - the directive type or the name used for querying.
@@ -148,6 +150,9 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      *         Represents a basic change from a previous to a new value.
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
+
+        this.isExpectedOutputHidden = true;
+
         console.log('problem changed', changes);
         // console.log(this.problem.consoleOutput);        
     }
@@ -217,6 +222,10 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      */
     restoreOriginalCode(){
         this.problem.code = this.originalCode;
+    }
+
+    showHideExpectedOutput(){
+        this.isExpectedOutputHidden = !this.isExpectedOutputHidden;
     }
 
 
