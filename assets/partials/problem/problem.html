@@ -72,6 +72,9 @@
                             class="btn btn-sm btn-green btn-run-code icon-arrow-run"
                             *ngIf="!isCompiling"
                             (click)="runCCode()">RUN</button>
+                    <button class="btn btn-sm btn-blue btn-reset-code" (click)="restoreOriginalCode()">
+                        <i class="fa fa-refresh"></i>
+                    </button>
                     <ace-editor 
                         #editor
                         class="code-editor"

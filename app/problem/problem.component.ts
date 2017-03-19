@@ -30,6 +30,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     compileCCodeSubscription: any;
 
+    originalCode: string;
 
     /**
      * @param {selector} 'editor' 
@@ -54,6 +55,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.cCompiledScriptId = 'cCompiledScript';
 
         this.isCompiling = false;
+
+        this.originalCode = this.problem.code;
 
         console.log("current problem: ",this.problem.consoleId);
 
@@ -209,6 +212,14 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         console.log('Error to show in console with id: ',this.consoleElementId);
 
         this.problem.consoleOutput = this._errorHandlingService.removeNeedlessInformation(errorMessage);
+    }
+
+
+    /**
+     * Restore the original code of the problem if needed
+     */
+    restoreOriginalCode(){
+        this.problem.code = this.originalCode;
     }
 
 
