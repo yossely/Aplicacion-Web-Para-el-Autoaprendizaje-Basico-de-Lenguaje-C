@@ -220,7 +220,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         (<any>window).currentProblemRef = null;
 
-        this.compileCCodeSubscription.unsubscribe();
+        if(this.compileCCodeSubscription)
+            this.compileCCodeSubscription.unsubscribe();
     }
 
 }

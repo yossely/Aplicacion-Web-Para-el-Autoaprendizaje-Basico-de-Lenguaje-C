@@ -38,15 +38,22 @@ export class UserProgressComponent implements OnInit{
 
         });
 
-        this.progressObs = this._unitsService.getUnitIdLessonIdLessonTitle();
+        /**
+         * Prevent initializing again the user progress if the user leaves the lesson component and back 
+         * again in the same 'session' (without reloading the page)
+         */
+        if(!this._userProgressService.isProgressInitialized()) {
 
-        this.progressObs.subscribe(
-            progress => {
-                this._userProgressService.addNewLessonProgress(progress);
-            },                                // Happy path
-            error    => console.log('Error getting units in user progress component: ',error),      // Error path
-            ()       => this._userProgressService.updateProgress()   // onComplete
-        );
+            this.progressObs = this._unitsService.getUnitIdLessonIdLessonTitle();
+
+            this.progressObs.subscribe(
+                progress => {
+                    this._userProgressService.addNewLessonProgress(progress);
+                },                                // Happy path
+                error    => console.log('Error getting units in user progress component: ',error),      // Error path
+                ()       => this._userProgressService.updateProgress()   // onComplete
+            );
+        }
     }    
 
 }
