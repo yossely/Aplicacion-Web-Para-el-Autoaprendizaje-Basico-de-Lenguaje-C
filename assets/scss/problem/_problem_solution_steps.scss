@@ -1,0 +1,26 @@
+.problem-steps-solution{
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+
+    i{
+        cursor: pointer;
+        margin-top: 80px;
+    }
+
+    label{
+        color: $color_2DarkCyan;
+        font-family: $font_title_bold;
+        font-size: 26px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.step-content{
+    color: $color_black;
+    font-family: $font_main;
+    font-size: 18px;
+    height: 264px;
+}

@@ -16,45 +16,29 @@
             </div>
         </div>
         <hr />
-        <!-- Problem DATA TABLE -->
-        <div class="row">
+        <!-- Problem Solution Steps on Example -->
+        <div *ngIf="!isOnExercises" class="row">
             <div class="col-md-12">
-                <h3>Datos</h3>                                  
-                <div class="problem-data-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Entrada</th>
-                                <th>Salida</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                            <tr>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                            <tr>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                            <tr>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                            <tr>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                            <tr>
-                                <td>Item</td>
-                                <td>Item</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h3>Solución paso a paso</h3>
+                <div class="problem-steps-solution">
+                   <div class="row">
+                        <div class="col-md-1">
+                            <i *ngIf="!isCurrentStepFirst" 
+                                (click)="previousStepExample()"
+                                class="fa fa-arrow-circle-left fa-2x"></i>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="step-content">
+                                <label>{{currentStepIndex + 1}}</label>
+                                {{currentStep}}
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <i *ngIf="!isCurrentStepLast" 
+                                (click)="nextStepExample()"
+                                class="fa fa-arrow-circle-right fa-2x"></i>
+                        </div>
+                   </div>
                 </div>
             </div>
         </div>

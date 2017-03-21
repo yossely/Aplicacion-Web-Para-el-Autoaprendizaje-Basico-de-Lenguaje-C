@@ -36,7 +36,12 @@
                             int main(){ 
                                 return 1; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -126,7 +131,12 @@
                             int main(){ 
                                 return 2; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -200,7 +210,12 @@
                             int main(){ 
                                 return 3; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -298,7 +313,12 @@
                             int main(){ 
                                 return 4; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -365,7 +385,12 @@
                             int main(){ 
                                 return 5; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -448,7 +473,12 @@
                             int main(){ 
                                 return 6; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -534,7 +564,12 @@
                             int main(){ 
                                 return 7; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -616,7 +651,12 @@
                             int main(){ 
                                 return 8; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -694,7 +734,12 @@
                             int main(){ 
                                 return 9; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -766,7 +811,12 @@
                             int main(){ 
                                 return 10; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -850,7 +900,12 @@
                             int main(){ 
                                 return 11; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -944,7 +999,12 @@
                             int main(){ 
                                 return 12; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -1030,7 +1090,12 @@
                             int main(){ 
                                 return 13; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -1125,7 +1190,12 @@
                             int main(){ 
                                 return 14; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -1231,7 +1301,12 @@
                             int main(){ 
                                 return 15; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -1347,7 +1422,12 @@
                             int main(){ 
                                 return 16; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -1475,7 +1555,12 @@
                             int main(){ 
                                 return 17; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {
@@ -1530,7 +1615,12 @@
                             int main(){ 
                                 return 18; 
                             }
-                            '''
+                            ''',
+                    "solutionSteps": [
+                        "Primer paso",
+                        "Segundo paso",
+                        "Tercer paso"
+                    ]
                 },
                 "exercises": [
                     {

@@ -34,6 +34,11 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     isExpectedOutputHidden: boolean;
 
+    currentStep: string;
+    currentStepIndex: number;
+    isCurrentStepFirst: boolean;
+    isCurrentStepLast: boolean;
+
     /**
      * @param {selector} 'editor' 
      *            selector - the directive type or the name used for querying.
@@ -48,6 +53,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     
     ngOnInit(){
+
         this.codeEditorOptions = {
                 displayIndentGuides: true,
                 printMargin: true
@@ -59,6 +65,19 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.isCompiling = false;
 
         this.originalCode = this.problem.code;
+    }
+
+
+    /**
+     * Initialize the current solution step to show the first one
+     */
+    initializeStepsOnExample(){
+
+        this.currentStepIndex = 0;
+        this.currentStep = this.problem.solutionSteps[this.currentStepIndex];
+
+        this.isCurrentStepLast = false;
+        this.isCurrentStepFirst = true;
     }
 
 
@@ -153,6 +172,10 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         this.isExpectedOutputHidden = true;
 
+        // Everytime the problem changes, initialize the solution steps to show the first one
+        if(!this.isOnExercises)
+            this.initializeStepsOnExample();
+
         console.log('problem changed', changes);
         // console.log(this.problem.consoleOutput);        
     }
@@ -224,8 +247,55 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.problem.code = this.originalCode;
     }
 
+
+    /**
+     * Show or hide the expected output for an exercise
+     */
     showHideExpectedOutput(){
         this.isExpectedOutputHidden = !this.isExpectedOutputHidden;
+    }
+
+
+    /**
+     * Show the next solution step in an example
+     */
+    nextStepExample(){
+        this.currentStepIndex++;
+        
+        this.currentStep = this.problem.solutionSteps[this.currentStepIndex];
+
+        this.setStepFirstLast();
+    }
+
+
+    /**
+     * Show the previous solution step in an example
+     */
+    previousStepExample(){
+        this.currentStepIndex--;
+        
+        this.currentStep = this.problem.solutionSteps[this.currentStepIndex];
+
+        this.setStepFirstLast();
+    }
+
+
+    /**
+     * Check if the current solution step is the first or last one and set the correspondent boolean variables
+     */
+    setStepFirstLast(){
+
+        if(this.currentStepIndex === 0)
+            this.isCurrentStepFirst = true;
+        else
+            this.isCurrentStepFirst = false;
+
+        if(this.currentStepIndex === (this.problem.solutionSteps.length-1))
+            this.isCurrentStepLast = true;
+        else
+            this.isCurrentStepLast = false;
+
+        console.log('curr index: ', this.currentStepIndex);
     }
 
 
