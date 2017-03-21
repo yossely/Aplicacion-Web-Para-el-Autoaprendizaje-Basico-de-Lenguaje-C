@@ -45,6 +45,10 @@ $color_expected-output-tab: #883044;
             font-weight: bold;
         }
     }
+
+    p.long-text{
+        height: 593px;
+    }
 }
 
 /* hr used as separator line between statement and data table*/

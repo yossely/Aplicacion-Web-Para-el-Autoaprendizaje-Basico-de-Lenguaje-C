@@ -12,10 +12,11 @@
             <div class="col-md-12">
                 <h3>Enunciado</h3>
                 <!-- <span class="key_words">suscipit</span> -->
-                <p>{{problem?.statement}}</p>
+                <p [ngClass]="{'long-text': isOnExercises}">{{problem?.statement}}</p>
             </div>
         </div>
-        <hr />
+        <!-- 593px -->
+        <hr *ngIf="!isOnExercises"/>
         <!-- Problem Solution Steps on Example -->
         <div *ngIf="!isOnExercises" class="row">
             <div class="col-md-12">
