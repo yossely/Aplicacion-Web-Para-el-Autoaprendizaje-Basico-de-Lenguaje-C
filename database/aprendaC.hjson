@@ -15,6 +15,7 @@
 
                                int main()
                                { 
+                                   /*Comentario: Imprimir en pantalla ¡Hola Mundo!*/
                                    printf("¡Hola Mundo!"); 
                                    return 0;
                                }
@@ -24,7 +25,8 @@
                                 - En la línea 1 estamos incluyendo información de la _librería_ en C de entrada y salida, esta librería nos proporciona funciones para imprimir en pantalla (salida) información y para solicitar (entrada) información del usuario.
                                 - Luego, en la línea 3, tenemos nuestra **función principal** llamada `main`, todo el código que queremos que se ejecute debe ir dentro de esta función.
                                 - Por ahora, nuestro main muestra el mensaje “¡Hola Mundo!” usando la función `printf`, esta función pertenece a la librería `stdio.h` que hemos incluido en la primera línea y con ella podemos imprimir en pantalla lo que necesitemos de manera sencilla. La función printf ahora solo imprime una cadena de caracteres, que están encerrados con los signos `" "`
-                                - La línea 6 de nuestro main indica que el programa retorna 0 al sistema operativo cuando termina la ejecución. 
+                                - En lenguaje C es posible escribir comentarios que faciliten la comprensión y legibilidad de un programa, en la línea 5 se observa que un comentario se tiene la forma `/* Comentario ... */`
+                                - La línea 7 de nuestro main indica que el programa retorna 0 al sistema operativo cuando termina la ejecución. 
                                 - Observemos 3 características importantes aquí: la directiva `#include <stdio.h>` no termina en ningún caracter especial, nuestro `main` agrupa las dos instrucciones que queremos ejecutar con los signos `{ }` y cada una de las instrucciones termina en `;` 
 
                                ### ¡Vamos a poner esto en acción con el ejemplo!
@@ -193,7 +195,7 @@
                                printf("mitad de 6 es %d y 6/4 equivale a %.2f\n", 6/mitad, 6.0f/4.0f);
                                ```
                                Vamos a notar algo muy importante en este tipo de instrucciones, en la posición del `%d` se mostrará el valor de la expresión `6/mitad` ya que es la **primera** expresión que se encuentra, en la posición del `%.2f` se mostrará el valor de la expresión 6.0f/4.0f ya que es la **segunda** expresión. Esto implica que la cantidad de variables o expresiones debe ser igual a la cantidad de %d o %f que se tengan.
-                               El `%.2f` indica la cantidad de decimales que deseamos imprimir en pantalla del valor obtenido de la expresión `6.0f/4.0f`
+                               El `.2` en `%.2f` indica la cantidad de decimales que deseamos imprimir en pantalla del valor obtenido de la expresión `6.0f/4.0f`
 
                                Para permitir que el usuario ingrese información y usarla en nuestro programa usaremos la función `scanf` también perteneciente a la librería `stdio.h`, veamos:
                                ```c
