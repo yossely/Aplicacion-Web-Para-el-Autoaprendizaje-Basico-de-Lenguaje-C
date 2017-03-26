@@ -9,7 +9,7 @@
                 "title": "Nuestro primer programa en C",
                 "content": "Estructura básica de un programa en C, librerías en C, función principal main, sentencias, directiva #include y comentarios.",
                 "explanation": '''
-                               Vamos a hacer el típico programa para empezar a conocer nuestro lenguaje, este es el ejemplo del “¡Hola Mundo!”
+                               Vamos a hacer el típico programa para empezar a conocer nuestro lenguaje, este es el ejemplo del "¡Hola Mundo!"
                                ```c
                                #include <stdio.h> 
 
@@ -24,7 +24,7 @@
 
                                 - En la línea 1 estamos incluyendo información de la _librería_ en C de entrada y salida, esta librería nos proporciona funciones para imprimir en pantalla (salida) información y para solicitar (entrada) información del usuario.
                                 - Luego, en la línea 3, tenemos nuestra **función principal** llamada `main`, todo el código que queremos que se ejecute debe ir dentro de esta función.
-                                - Por ahora, nuestro main muestra el mensaje “¡Hola Mundo!” usando la función `printf`, esta función pertenece a la librería `stdio.h` que hemos incluido en la primera línea y con ella podemos imprimir en pantalla lo que necesitemos de manera sencilla. La función printf ahora solo imprime una cadena de caracteres, que están encerrados con los signos `" "`
+                                - Por ahora, nuestro main muestra el mensaje "¡Hola Mundo!" usando la función `printf`, esta función pertenece a la librería `stdio.h` que hemos incluido en la primera línea y con ella podemos imprimir en pantalla lo que necesitemos de manera sencilla. La función printf ahora solo imprime una cadena de caracteres, que están encerrados con los signos `" "`
                                 - En lenguaje C es posible escribir comentarios que faciliten la comprensión y legibilidad de un programa, en la línea 5 se observa que un comentario se tiene la forma `/* Comentario ... */`
                                 - La línea 7 de nuestro main indica que el programa retorna 0 al sistema operativo cuando termina la ejecución. 
                                 - Observemos 3 características importantes aquí: la directiva `#include <stdio.h>` no termina en ningún caracter especial, nuestro `main` agrupa las dos instrucciones que queremos ejecutar con los signos `{ }` y cada una de las instrucciones termina en `;` 
@@ -32,57 +32,90 @@
                                ### ¡Vamos a poner esto en acción con el ejemplo!
                                ''',
                 "example": {
-                    "statement": "1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores esse quo dicta, neque deleniti fugiat deserunt aliquam! Hic omnis distinctio natus amet doloremque tempore officia laudantium pariatur, optio debitis sequi doloribus id, at earum atque repellendus voluptatem fuga, autem vel quas voluptatibus officiis quasi? Omnis placeat tempora tenetur quam eveniet, error totam minima, consequuntur accusantium labore ducimus soluta alias. Dicta quae voluptas ad tempore quas, placeat ratione aliquam repellat molestiae laboriosam sed iste qui. Vero rerum corrupti nihil cum quisquam?",
+                    "statement": '''
+                                 Aquí encontraremos el enunciado del problema que necesitamos resolver, es decir, se describen en detalle los datos que se conocen del problema y lo que debemos obtener como resultado. Basándonos en los requerimientos descritos construimos nuestro programa. En este primer ejemplo necesitamos un programa en C que imprima en pantalla la oración "¡Hola Mundo!".
+                                 ''',
                     "code": '''
+                            /* Incluir libreria stdio.h */
                             #include <stdio.h> 
-                            int main(){ 
-                                return 1; 
+
+                            /* Funcion principal main */
+                            int main()
+                            { 
+                                /*Imprimir en pantalla la oracion ¡Hola Mundo!*/
+                                printf("¡Hola Mundo!"); 
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Incluimos la librería stdio.h que contiene la función printf para imprimir en pantalla cadenas de caracteres.
+                        ''',
+                        '''
+                        Declaramos la función principal (main), recordemos que esta función debe estar presente en todo programa.
+                        ''',
+                        '''
+                        Imprimimos en pantalla la oración "¡Hola Mundo!” con la función printf.
+                        ''',
+                        '''
+                        Ahora vamos a compilar y ejecutar nuestro programa haciendo click en el botón RUN que se encuentra en la esquina superior derecha del editor de código y visualizamos la salida del programa en la consola que está debajo del editor.
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "1.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolore dolor reprehenderit itaque obcaecati eveniet! Quisquam tempora doloremque illo quidem, dolor mollitia reiciendis quam atque doloribus sint, laboriosam excepturi dolorem voluptate dolore sunt inventore sit modi aut magnam ea fugiat? Illum aspernatur soluta odit accusantium culpa dolore architecto, iste sapiente. Quidem earum esse dolor architecto rem sed illum amet, modi ullam dolore ipsa aliquid ut eum adipisci harum eveniet quo, id, veniam quia, facilis consequatur doloremque. Eius, rerum soluta excepturi quia, fugit voluptas nisi officia rem accusamus impedit consectetur dignissimos? Eligendi sapiente aperiam impedit laudantium deserunt cupiditate, ex delectus ipsa!",
+                        "statement": '''
+                                     Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: "¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){
-                                    printf("uno"); 
-                                    return 1 ; 
+
+                                int main()
+                                { 
+                                    /* Hacer: 
+                                        - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                          '''
                     },
                     {
-                        "statement": "1.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis assumenda saepe ratione illo molestiae magni ipsa quaerat, quia ipsam facere quibusdam nesciunt aliquam velit error, praesentium, placeat culpa ea! Non, illo deserunt iste reprehenderit dolor, quod dicta rem nobis eum totam incidunt ipsa quis quam nostrum voluptatum vel eveniet, similique eligendi debitis autem. Aperiam libero, molestiae dolores voluptas laboriosam enim eaque. Ullam enim itaque, delectus expedita sunt vitae iusto facere optio eum nostrum ratione recusandae asperiores esse harum corporis, magnam et atque error illum dolorem, dolores veniam tenetur odio labore ipsum! Neque ad amet quam optio sapiente aliquid facere ipsa?",
+                        "statement": '''
+                                     Incluya la librería necesaria para utilizar la función printf en el siguiente programa en C.
+                                     ''',
+                        "code": '''
+                                /* Hacer: 
+                                        - Incluir la libreria stdio.h */ 
+
+                                int main()
+                                { 
+                                    printf("¡Libreria incluida con exito!"); 
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > ¡Libreria incluida con exito!
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Retorne el valor 0 al final de la función principal para indicar que ha terminado con éxito la ejecución del siguiente programa en C.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){
-                                    printf("dos"); 
-                                    return 2 ; 
+
+                                int main()
+                                {
+                                    printf("¡Programa finalizado con exito!"); 
+                                    /* Hacer: 
+                                        - Retornar el valor 0 */ 
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
-                    },
-                    {
-                        "statement": "1.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem labore nobis, earum possimus repellendus deserunt temporibus optio ex vero necessitatibus. Aut unde quasi vitae distinctio quisquam dignissimos! Laboriosam molestias dolorem commodi quas necessitatibus voluptatem eos quam impedit, minus beatae blanditiis, atque delectus, recusandae nam. Eum rerum delectus repellat voluptas voluptatum at qui vel harum, molestias sed soluta provident earum praesentium obcaecati est exercitationem commodi reiciendis tempora deleniti saepe distinctio quibusdam voluptates culpa necessitatibus? Officiis at repudiandae, sequi est doloremque labore ratione! Adipisci laborum consequuntur qui magni vero aut cum? Earum est, recusandae sed repudiandae sapiente quod quia! Sunt, labore, rerum!",
-                        "code": '''
-                                int main(){
-                                    printf("tres"); 
-                                    return 3 ; 
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > ¡Programa finalizado con exito!
+                                          '''
                     }
                 ]
             },
@@ -127,55 +160,133 @@
                                En lenguaje C los operadores matemáticos tienen **reglas de precedencia**, las cuales indican que la multiplicación y división se resuelven primero y la suma y la resta después. La expresión que calcula el precio final también puede expresarse sin `( )` que agrupen `precio*descuento`, el resultado sería el mismo, pero para expresiones como `12 * 3 / 4` tal vez sea necesario usar `( )` para que la expresión se resuelva según nuestros requerimientos.
                                ''',
                 "example": {
-                    "statement": "2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero iure voluptas facere aspernatur illo reiciendis, illum rem placeat? Ea est ipsa explicabo quis libero possimus, quam iste quibusdam eius, maxime at expedita iusto dolore? Ab, perspiciatis, sapiente! Fuga adipisci quos velit earum ipsam voluptates numquam perferendis eum odit alias nostrum neque cumque, nesciunt aut labore reprehenderit consectetur necessitatibus ratione tenetur facere quia tempore magnam, id architecto. Recusandae corporis ipsum fugiat repudiandae natus, quidem temporibus rem harum, voluptates labore facilis tempora?",
+                    "statement": '''
+                                 La empresa de envío de paquetes Rapidash requiere calcular y mostrar el volumen y peso volumétrico de un paquete cuyas dimensiones son 14.4 cm de alto x 20.1 cm de largo x 15.7 cm de ancho. 
+
+                                 Nota:
+                                 - El volumen de un paquete se calcula multiplicando el alto por largo y por ancho del cuerpo. 
+                                 - El peso volumétrico refleja la densidad de un paquete y se calcula con la fórmula: alto*largo*ancho/5000.
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 2; 
+
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias */
+                                float alto = 14.4f, largo = 20.1f, ancho = 15.7f, volumen, peso_volumetrico; 
+                                /* Calculo del volumen */
+                                volumen = alto*largo*ancho;
+                                /* Calculo del peso volumetrico */
+                                peso_volumetrico = alto*largo*ancho/5000;
+                                /*Imprimir en pantalla el volumen del paquete*/
+                                printf("Volumen del paquete: %f\n", volumen);
+                                /*Imprimir en pantalla el peso volumetrico del paquete*/
+                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Declaramos las variables que vamos a utilizar: tres para guardar las dimensiones del paquete (alto, largo y ancho respectivamente), una para guardar el volumen y otra para guardar el peso volumétrico del paquete.
+                        ''',
+                        '''
+                        Calculamos el volumen del paquete multiplicando las dimensiones del mismo y guardamos el valor en la variable creada en el paso anterior.
+                        ''',
+                        '''
+                        Calculamos el peso volumétrico del paquete aplicando la fórmula especificada en el enunciado y guardamos en valor en la respectiva variable creada en el primer paso.
+                        ''',
+                        '''
+                        Para imprimir en pantalla el valor de una variable de tipo float, insertamos un %f en el lugar donde queremos que se muestre el valor dentro de la oración y al final de la oración indicamos cuál variable es la que contiene dicho valor. Con esto imprimimos el volumen y peso volumétrico del paquete. (Línea 12)
+                        ''',
+                        '''
+                        Notemos que al final de la primera oración que imprimimos en pantalla tenemos un \n, este caracter indica que se desea imprimir un salto de línea al final de la oración, por esta razón la segunda oración ("Peso volumétrico del paquete: 0.908842") es impresa en la siguiente línea
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "2.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis id, repellendus corporis, sequi consectetur rerum tempore veniam cupiditate accusamus illum earum molestias ab sit. Cumque omnis ab minima nisi quos obcaecati amet molestiae perspiciatis est provident officia vitae, harum minus aliquam sapiente dolore iusto fuga deleniti exercitationem dicta doloremque soluta? Nulla alias harum quo, vero quas ipsum fugiat. Tenetur veritatis minus magni, ullam cumque esse soluta officiis nulla enim possimus aut cupiditate aliquid temporibus et natus, iure ea necessitatibus consequatur voluptas sed alias, molestiae. Alias nihil voluptate libero, animi in molestiae, asperiores suscipit voluptatibus et, amet ad dignissimos ullam dolorum.",
+                        "statement": '''
+                                     Juan necesita hacer un programa en C para calcular la nota promedio de sus tres parciales, sabiendo que cada nota es 45.7, 70.3, y 85.2 respectivamente, calcular y mostrar el promedio de sus notas.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 2.1 ; 
+
+                                int main()
+                                {
+                                    /* Declarar: 
+                                        - 3 variables de tipo float y asignarle los valores de cada nota
+                                        - 1 variable de tipo float para guardar el valor del promedio 
+                                    */ 
+                                    
+                                    /* Calcular el promedio de las notas y guardar el resultado en la respectiva variable */
+                                    
+                                    /*Imprimir en pantalla la nota promedio de los 3 parciales*/
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > La nota promedio de los tres parciales es: 67.066666 puntos
+                                          '''
                     },
                     {
-                        "statement": "2.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla alias quae vitae quibusdam, nisi fuga eveniet esse unde provident sint, quidem itaque harum animi ullam magni. Inventore quisquam, vero officia ipsam odio obcaecati, quod laboriosam, perferendis quae earum voluptatum, repudiandae reprehenderit! Placeat id voluptas reprehenderit, accusamus rem ipsum commodi quae deleniti suscipit quam minima debitis omnis ea. Minima, corrupti consequatur magnam sequi expedita sed atque explicabo ullam labore libero optio dignissimos, maiores incidunt dolor. Sint fugit ipsam est, labore laudantium reiciendis, inventore vero repellendus incidunt totam, iure commodi itaque recusandae quidem amet exercitationem? Dignissimos deleniti nesciunt porro ex, minus laborum!",
+                        "statement": '''
+                                     En una tienda de mascotas hay un descuento del 30% en toda la mercancía, un cliente ha escogido tres productos de 23.4, 34 y 12.5 unidades monetarias cada uno, se requiere calcular y mostrar el precio total de la compra y el precio final después de haber aplicado el descuento.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 2.2 ; 
+
+                                int main()
+                                {
+                                    /* Declarar: 
+                                        - 3 variables y asignarles el precio de cada producto 
+                                        - 1 variable para guardar el valor del descuento
+                                        - 2 variables para guardar el precio total y el precio con descuento
+                                    */ 
+
+                                    /* Calcular y guardar el precio total y el precio con descuento */
+                                    
+                                    /*Imprimir en pantalla el precio total*/
+
+                                    /*Imprimir en pantalla el precio con descuento*/
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > El precio total de la compra es: 69.900002 unidades monetarias
+                                          > Aplicando el descuento, el precio final es: 48.930000 unidades monetarias
+                                          '''
                     },
                     {
-                        "statement": "2.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempora nisi, ab dolores placeat atque voluptates error, eaque odit, iusto nobis non ratione temporibus! Sint perspiciatis ex magnam! Temporibus earum excepturi nemo accusantium unde cumque cum, atque sit vitae corporis totam id similique quidem esse asperiores blanditiis illum officiis deserunt dignissimos repudiandae doloremque praesentium soluta eos nulla ducimus. Voluptatem quo nam ex voluptatibus eius esse ipsam molestias expedita, dolorum corporis debitis, saepe nihil nemo dolores voluptatum ad fugiat labore vitae recusandae eligendi cumque libero odio. Est sit, omnis ab voluptatem esse, tempora nesciunt iste ipsa cumque hic dolorum! Quaerat, magni!",
+                        "statement": '''
+                                     Escriba un programa en C que calcule el volumen de una esfera de 10 metros de radio con la fórmula v = 4/3*π*r^3. 
+
+                                     Tips: 
+                                     - Escriba la fracción 4/3 de la forma 4.0f/3.0f, es decir de tipo float
+                                     - En lenguaje C no existe operador exponencial, por lo que la expresión r^3 se calcula multiplicando r tres veces por sí mismo.
+                                     - Utilice paréntesis ( ) si necesita agrupar operaciones matemáticas al aplicar la fórmula
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 2.3 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar: 
+                                        - 1 variable y asignarle el radio de la esfera
+                                        - 1 variable para guardar el valor del volumen de la esfera
+                                    */ 
+                                    
+                                    /* Calcular y guardar el volumen aplicando la formula */
+                                    
+                                    /*Imprimir en pantalla el volumen*/
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > El volumen de la esfera es: 4188.666992
+                                          '''
                     }
                 ]
             },
@@ -206,55 +317,140 @@
                                 - Vemos un nuevo operador `&` en esta instrucción, con este operador obtenemos la dirección de la variable que precede, esto con el fin de indicar a la función `scanf` **dónde** debe guardar el valor que acaba de leer.
                                ''',
                 "example": {
-                    "statement": "3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium sint alias dolorem eveniet unde vel, perferendis, ut ea mollitia maiores cupiditate. Nostrum itaque soluta recusandae consequuntur veritatis a placeat, voluptate natus omnis cupiditate inventore incidunt eligendi, velit nulla error quas suscipit laborum! Adipisci ab aspernatur, officiis quo recusandae architecto temporibus cupiditate illo animi enim asperiores voluptatibus, quos, et doloremque consequatur. Debitis optio adipisci esse vitae possimus illo ipsam voluptatibus, dolor, mollitia beatae quidem praesentium architecto eaque, amet harum ex veritatis!",
+                    "statement": '''
+                                 Vamos a mejorar el ejemplo anterior, permitiendo que el usuario ingrese una por una las dimensiones del paquete a enviar para luego calcular con ellas el volumen y el peso volumétrico del paquete.
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 3; 
+                            
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias SIN ASIGNACION de valores*/
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+                                
+                                /* Solicitud de cada dimension */
+                                printf("Ingrese las dimensiones del paquete\n");
+                                printf("Alto:");
+                                scanf("%f",&alto);
+                                printf("Largo:");
+                                scanf("%f",&largo);
+                                printf("Ancho:");
+                                scanf("%f",&ancho);
+
+                                /* Calculo del volumen */
+                                volumen = alto*largo*ancho;
+                                /* Calculo del peso volumetrico */
+                                peso_volumetrico = alto*largo*ancho/5000;
+                                /*Imprimir en pantalla el volumen del paquete*/
+                                printf("Volumen del paquete: %f\n", volumen);
+                                /*Imprimir en pantalla el peso volumetrico del paquete*/
+                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Ya no es necesario asignar los valores de las dimensiones cuando estamos declarando las variables.
+                        ''',
+                        '''
+                        Mostramos un mensaje solicitando el alto del paquete y luego guardamos el valor en la variable correspondiente. De igual forma solicitamos las dos dimensiones restantes.
+                        ''',
+                        '''
+                        El volumen y peso volumétrico del paquete se calcula de la misma manera que el ejemplo anterior.
+                        ''',
+                        '''
+                        Por último imprimimos en pantalla los valores calculados.
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "3.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, illum aliquid minima vitae dicta, incidunt molestiae facilis mollitia itaque consequatur impedit nisi ut eligendi deserunt ipsum facere quo perferendis nobis aut cum voluptates repellat nulla, unde pariatur! Animi beatae eveniet ipsum asperiores, molestias expedita et mollitia provident numquam sint explicabo eaque commodi hic officia soluta, alias atque maiores sapiente sed. Cum nulla quos ea eaque, laborum excepturi. Debitis in, molestiae molestias, provident quis tempora, ut sed praesentium iste possimus nesciunt commodi assumenda ipsam exercitationem atque error enim obcaecati? Assumenda eius sequi blanditiis ullam consectetur perferendis doloremque reiciendis, harum quisquam expedita.",
+                        "statement": '''
+                                     Escribir un programa que solicite al usuario ingresar una cantidad de dinero, luego mostrar esta cantidad con un impuesto de 12% añadido. Por ejemplo, si el usuario ingresa 345.23 la salida será 386.658. 
+                                     
+                                     Nota: Se requiere que los valores decimales sean mostrados con 3 decimales.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 3.1 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar las variables para guardar el monto y el porcentaje del impuesto */
+                                   
+                                    /* Solicitar el monto al usuario */
+
+                                    /* Calcular el monto con el impuesto añadido */
+
+                                    /* Mostrar en pantalla el monto con el impuesto añadido */
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el monto: 345.23
+                                          > Con el impuesto añadido:  386.658
+                                          '''
                     },
                     {
-                        "statement": "3.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit vitae voluptates saepe ad. Ipsum voluptatibus consectetur architecto odit nulla minima vel expedita veniam sequi quasi, soluta in minus dolor tempora veritatis explicabo obcaecati aperiam ex debitis earum id. Atque rerum error minus incidunt, assumenda! Mollitia dignissimos ad, quia voluptates animi saepe a, aut quis, fugit omnis possimus quae aperiam, ratione? Nobis explicabo est nisi sequi repellat tempora enim nesciunt corporis assumenda, aut consequuntur minima animi vel ullam optio, laudantium fugit dicta pariatur alias perspiciatis cupiditate. Quis, sequi, accusantium! Eos facilis et sed incidunt! Natus nam impedit commodi officia enim. Dignissimos.",
+                        "statement": '''
+                                     Escriba un programa que solicite un valor para ‘x’ y lo evalúe en la siguiente función polinómica: 5x^3 - x^2 +7x - 6. 
+                                     
+                                     Nota: 
+                                     - El valor de ‘x’ siempre será un número entero.
+                                     - Recuerde que C no tiene operador exponencial, así que es necesario multiplicar ‘x’ por sí misma tantas veces como lo indique el exponente, por ejemplo, x*x representa ‘x’ al cuadrado.
+                                     - Utilice los ( ) para agrupar cuando lo considere necesario.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 3.2 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar las variables enteras para guardar el valor de x y el resultado de la funcion */
+                                   
+                                    /* Solicitar el monto al usuario */
+
+                                    /* Evaluar la funcion polinomica */
+
+                                    /* Mostrar en pantalla el resultado de la forma: 
+                                            Al evaluar la función con x = VALOR_DE_X el resultado es: VALOR_DE_RESULTADO
+                                    */
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el valor de x: 4
+                                          > Al evaluar la función con x = 4 el resultado es: 326
+                                          '''
                     },
                     {
-                        "statement": "3.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fugiat, reiciendis debitis, beatae culpa inventore laborum iste autem error amet harum. Deleniti sequi, saepe ex ea eos pariatur autem. Libero fuga perspiciatis temporibus fugit ea aliquid labore nostrum excepturi, ex pariatur odit facilis ipsam quas harum, in culpa reprehenderit amet dolore numquam mollitia quia minima! Est odit cum placeat veritatis maxime libero beatae aliquid, eos nemo, facilis et nobis recusandae ratione officiis voluptatem! Veritatis eos voluptate sint blanditiis placeat facilis saepe voluptatibus, in quisquam, excepturi ab perspiciatis nesciunt fuga officia sunt incidunt. Minima totam dolorum nesciunt ex, quia eos perspiciatis!",
+                        "statement": '''
+                                     Escriba un programa que solicite una temperatura en grados Fahrenheit y luego imprima en pantalla la temperatura equivalente en grados Celsius. 
+                                     
+                                     Nota: para convertir grados Fahrenheit a Celsius se emplea la fórmula °C = (°F  -  32)*5/9. 
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 3.3 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar las variables para guardar las temperaturas en Fahrenheit 
+                                        y Celsius
+                                    */ 
+                                    
+                                    /* Solicitar la temperatura en grados Fahrenheit */
+
+                                    /* Transformar la temperatura de Fahrenheit a Celsius */
+
+                                    /* Imprimir en pantalla la temperatura equivalente en Celsius */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese la temperatura en Fahrenheit: 325.13
+                                          > Temperatura equivalente en Celsius: 162.85
+                                          '''
                     }
                 ]
             }
@@ -309,55 +505,159 @@
                                Por ejemplo, en la expresión `x < y && y == z` primero se evalúa si x es menor que y, luego si y es igual que z y por último se verifica que las dos condiciones anteriores tienen como resultado verdadero. Algunos programadores utilizan *paréntesis* para agrupar las condiciones y que sean más legibles: `(x < y) && (y == z)`
                                ''',
                 "example": {
-                    "statement": "4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto nemo ab totam neque ut, laudantium earum cupiditate atque esse est dolorem reiciendis unde consectetur temporibus commodi, inventore? Magni quidem qui, libero deleniti suscipit sint, voluptatem nisi ea, veritatis commodi animi minima porro debitis velit totam nihil temporibus unde blanditiis laborum earum iure praesentium. Qui, iure fugiat vitae rerum magni sit culpa ipsa recusandae sapiente sint vel cumque, maiores nisi, officia adipisci omnis odit. Soluta ratione eveniet tempore eius rerum.",
+                    "statement": '''
+                                 Continuando con el ejemplo de la empresa de envío de paquetes Rapidash, se requiere mostrar el tipo de paquete de acuerdo a su peso volumétrico, para esto la empresa establece tres categorías: 
+                                 - Grande (peso volumétrico mayor o igual que 10)
+                                 - Mediano (peso volumétrico mayor que 5 y menor que 10) 
+                                 - Pequeño (peso volumétrico menor o igual que 5)
+                                 
+                                 Vamos a escribir las instrucciones necesarias para evaluar y clasificar un paquete con base en las dimensiones ingresadas por el usuario.
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 4; 
+                            
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias SIN ASIGNACION de valores*/
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+                                
+                                /* Solicitud de cada dimension */
+                                printf("Ingrese las dimensiones del paquete\n");
+                                printf("Alto:");
+                                scanf("%f",&alto);
+                                printf("Largo:");
+                                scanf("%f",&largo);
+                                printf("Ancho:");
+                                scanf("%f",&ancho);
+
+                                /* Calculo del volumen  y peso volumetrico*/
+                                volumen = alto*largo*ancho;
+                                peso_volumetrico = alto*largo*ancho/5000;
+
+                                /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                printf("Volumen del paquete: %f\n", volumen);
+                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                /* Clasificacion del paquete segun su peso volumetrico */
+                                if ( peso_volumetrico >= 10.0f )
+                                {
+                                    printf("El paquete es grande\n");
+                                }
+                                if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                {
+                                    printf("El paquete es mediano\n");
+                                }
+                                if ( peso_volumetrico <= 5 )
+                                {
+                                    printf("El paquete es pequeño\n");
+                                }
+
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Ya con las dimensiones solicitadas y el peso volumétrico calculado en la lección anterior, nos enfocamos en construir las condiciones necesarias que clasifican un paquete.
+                        ''',
+                        '''
+                        La primera condición evalúa si el peso volumétrico es mayor o igual (>=) que 10.0, de ser así se imprime en pantalla un mensaje que indique al usuario que el paquete entra en la categoría Grande.
+                        ''',
+                        '''
+                        En la segunda condición evaluamos un rango (entre 5.0 y 10.0) e imprimimos el mensaje correspondiente. Seguidamente se construye la última condición de la misma manera que las anteriores.
+                        ''',
+                        '''
+                        Notemos que cada condición toma en cuenta si se incluye o no en el rango el valor especificado por cada clasificación, por ejemplo, en la primera condición se usa >= en lugar de >
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "4.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi aut qui voluptates voluptatem commodi nihil ad ipsam sint. Alias perferendis modi illo, nisi ullam similique sequi mollitia autem, obcaecati ab, reprehenderit quidem esse ut laboriosam. Quod eveniet sint nam, libero dolor incidunt obcaecati nisi, possimus nemo adipisci sapiente quidem magni beatae nihil laborum ab sed officia consequatur asperiores vitae quo rem odio assumenda? Voluptates expedita voluptatibus, doloremque assumenda, quos iusto aliquid asperiores, incidunt officiis velit consectetur nobis mollitia excepturi reprehenderit dignissimos maiores necessitatibus exercitationem consequatur fugit quia nulla. Quisquam culpa explicabo quaerat dolor magni dolorum vitae eligendi vel maxime in?",
+                        "statement": '''
+                                     En el banco Golduck es posible realizar transferencias de dinero, según el monto de la transferencia se aplica una comisión de tasa fija más una tasa porcentual de la siguiente manera:
+                                     - Si el monto es menor que 5000 la comisión será de 30 + 1.7%
+                                     - Si el monto es mayor o igual que 5000 y menor que 30000 la comisión será de 56 + 0.66%
+                                     - Si el monto es mayor o igual que 30000 y menor que 100000 la comisión será de 100 + 0.34%
+                                     - Si el monto es mayor o igual que 100000 la comisión será de 155 + 0.09%
+                                     
+                                     Se requiere escribir un programa que solicite al usuario el monto de la transferencia que desea realizar, evaluar y calcular la comisión que le corresponde según el monto e imprimir en pantalla el monto total con la comisión añadida.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 4.1 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias*/
+                                    
+                                    /* Solicitar el monto a transferir */
+
+                                    /* Calcular la comision segun el monto a transferir*/
+                                    
+                                    /* Imprimir el monto final con la comision previamente calculada */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el monto de la transferencia: 6500
+                                          > El monto total por la transferencia de 6500.00 es de 6598.90
+                                          '''
                     },
                     {
-                        "statement": "4.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus soluta obcaecati magni eveniet, optio cupiditate quia necessitatibus veritatis sapiente culpa iure perspiciatis consectetur maxime dicta eius, voluptas beatae omnis qui. Accusamus eligendi debitis quos a! Non vitae cupiditate veritatis veniam eveniet sed quo impedit atque vero eos enim molestiae adipisci reiciendis, sint fugiat ex ipsam doloribus laudantium, deleniti sapiente dolore fuga mollitia dignissimos. Dignissimos ab in aspernatur ullam tempora quidem at modi, consectetur praesentium assumenda perspiciatis corrupti placeat minima quam reprehenderit architecto autem iste qui deleniti vel, veritatis, impedit corporis facilis? Quibusdam veniam sequi quidem, soluta nesciunt esse, maiores ratione!",
+                        "statement": '''
+                                     Escriba un programa para permitir que un usuario ingrese un número entero e indicar si ese número es par o impar.
+                                     
+                                     Tip: recuerde la función del operador %
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 4.2 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias*/
+                                    
+                                    /* Solicitar el numero entero */
+
+                                    /* Clasificacion de numero: PAR o IMPAR */
+                                    /* Tip: utilice el operador % */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese un numero entero: 5
+                                          > El numero es impar
+                                          '''
                     },
                     {
-                        "statement": "4.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium tenetur voluptatibus doloremque, expedita iste cupiditate, possimus voluptate quibusdam excepturi adipisci iure soluta animi. Dignissimos ipsa veritatis expedita officiis alias quaerat, voluptatem a saepe quidem repudiandae nesciunt voluptas maxime quisquam, molestias magnam praesentium ea minus, reprehenderit hic atque ducimus doloribus illum. Ducimus libero perferendis ullam deleniti dignissimos nisi debitis quasi sequi sint numquam magni obcaecati, aliquid labore esse enim omnis magnam aut nam soluta non ratione optio ea placeat delectus blanditiis! Omnis sunt vero distinctio eligendi ipsa corporis blanditiis earum inventore repellat reiciendis. Adipisci, exercitationem enim error, assumenda accusantium placeat architecto.",
+                        "statement": '''
+                                     Complete el siguiente programa para que solicite la edad del usuario e indique en qué etapa de su edad biológica se encuentra según la siguiente clasificación:
+                                     - Niño: de 5 a 12 años
+                                     - Adolescente: de 13 a 19 años
+                                     - Adulto Joven: de 20 a 24 años
+                                     - Adulto: de 25 a 55 años
+                                     - Adulto mayor: de 56 años en adelante
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 4.3 ; 
+                                
+                                int main()
+                                {
+                                    /* Declaracion de las variables necesarias*/
+                                    int edad; 
+                                    
+                                    /* Solicitud de la edad del usuario */
+                                    printf("Ingrese su edad: ");
+                                    scanf("%d",&edad);
+
+                                    /* Clasificar el usuario segun su edad */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese su edad: 25
+                                          > Usted es un Adulto
+                                          '''
                     }
                 ]
             },
@@ -381,55 +681,161 @@
                                La sentencia `else` siempre va ligada con una sentencia `if`, ya que es la **contraparte** de la sentencia `if`, es decir, las instrucciones dentro de la cláusula `else` se ejecutan cuando al evaluar la expresión de la sentencia `if`, resulta **0** (falso)
                                ''',
                 "example": {
-                    "statement": "5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore illum, repudiandae perspiciatis, maxime corrupti laborum minus harum unde deserunt quasi doloribus quidem veritatis delectus ea dolor! Nemo nam dolorem quibusdam repellat delectus saepe consectetur, porro unde nobis, quia ad earum asperiores iure expedita illum nihil? Delectus tempore mollitia aspernatur, sapiente hic dolor officiis soluta quisquam maiores tenetur illo laborum fugiat, officia quidem fuga voluptatem iste asperiores architecto eaque vero deleniti! Nostrum tempore eligendi facilis numquam obcaecati ad. Fuga, quia, eum?",
+                    "statement": '''
+                                 Vamos a optimizar el programa del ejemplo visto en la lección anterior con el uso de la cláusula else. Recordemos las tres categorías establecidas por la empresa Rapidash: 
+                                 - Grande (peso volumétrico mayor o igual que 10), 
+                                 - Mediano (peso volumétrico mayor que 5 y menor que 10) 
+                                 - Pequeño (peso volumétrico menor o igual que 5)
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 5; 
+                            
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias SIN ASIGNACION de valores*/
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+                                
+                                /* Solicitud de cada dimension */
+                                printf("Ingrese las dimensiones del paquete\n");
+                                printf("Alto:");
+                                scanf("%f",&alto);
+                                printf("Largo:");
+                                scanf("%f",&largo);
+                                printf("Ancho:");
+                                scanf("%f",&ancho);
+
+                                /* Calculo del volumen  y peso volumetrico*/
+                                volumen = alto*largo*ancho;
+                                peso_volumetrico = alto*largo*ancho/5000;
+
+                                /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                printf("Volumen del paquete: %f\n", volumen);
+                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                if ( peso_volumetrico >= 10.0f )
+                                {
+                                    printf("El paquete es grande\n");
+                                }
+                                else{
+                                    if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                    {
+                                        printf("El paquete es mediano\n");
+                                    }
+                                    else{
+                                        printf("El paquete es pequeño\n");
+                                    }  
+                                }
+                                
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Haremos uso de instrucciones if-else anidados, es decir, evaluamos si el peso volumétrico es mayor o igual que 10, si resulta verdadero se imprime el mensaje correspondiente y NO se evalúan las demás condiciones.
+                        ''',
+                        '''
+                        En caso de no cumplir con la primera condición, se evalúa si el peso volumétrico se encuentra entre 5 y 10, si el resultado es verdadero se imprime el mensaje correspondiente; en caso contrario el paquete se ubica en la tercera categoría (por descarte).
+                        ''',
+                        '''
+                        De esta manera ahorramos tiempo de ejecución al evitar evaluar condiciones que son excluyentes entre sí cuando se ha cumplido alguna de ellas.
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "5.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum minus adipisci quos quo est, natus quisquam consequatur nemo, asperiores unde ullam expedita! Nam totam neque sunt dolorum sequi facere suscipit id placeat minima nihil veritatis voluptates, quod numquam aliquam! Provident libero deleniti nostrum, ullam. Quod hic earum provident ipsam rerum quisquam, iusto nemo praesentium eius. Error at fugit veritatis architecto nemo saepe expedita, adipisci labore consectetur sequi cum id! Praesentium a sapiente nam deleniti suscipit sint minus eius, ipsam unde temporibus nemo, officia quod doloremque aut, tempora. Omnis dolor iusto temporibus dicta, consequatur odio, sunt impedit repellendus dolorem error. Laborum!",
+                        "statement": '''
+                                     Un estudiante desea saber el equivalente de su calificación en literal (A, B, C, D y F) conociendo los puntos obtenidos en una asignatura, por lo tanto se requiere escribir un programa en C que solicite la nota (siempre será un número entero) e indique la calificación equivalente según las siguientes condiciones:
+                                     - A: 90-100
+                                     - B: 80-89
+                                     - C: 70-79
+                                     - D: 60-69
+                                     - F: 0-59
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 5.1 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar una variable para guardar la nota de la asignatura*/
+                                    
+                                    /* Solicitar la nota */
+
+                                    /* Condiciones IF-ELSE para evaluar e indicar el literal correspondiente */
+                                    
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese la nota de la asignatura: 96
+                                          > Calificacion obtenida: A
+                                          '''
                     },
                     {
-                        "statement": "5.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dolorum officia dolorem obcaecati ducimus quibusdam et eos, mollitia illo ipsam eum distinctio cumque atque fugiat, quae tempora natus asperiores. Unde eveniet, a obcaecati quae fugiat molestias distinctio numquam animi, iste. Et voluptate, ea eveniet fuga mollitia enim magnam aliquid voluptas fugiat laudantium, nesciunt itaque ex obcaecati, inventore quos minima, commodi incidunt! Nobis dolore, laboriosam ipsam voluptatibus libero quas aliquam iure totam facere, quisquam possimus, dolorum distinctio dolor quis tempora sint ipsum a consectetur sapiente ea odit enim nulla. Architecto amet ducimus suscipit porro dolore neque officiis qui tempora modi est.",
+                        "statement": '''
+                                     Escriba un programa que solicite tres números enteros e indique cuál es el mayor y el menor número entre ellos. Nota: Intente utilizar la menor cantidad de condiciones (if-else) posibles
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 5.2 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar: 
+                                        - 3 variables para guardar cada numero
+                                        - 1 variable para guardar el numero menor
+                                        - 1 variable para guardar el numero mayor */
+                                    
+                                    /* Solicitar los tres numeros a evaluar */
+
+                                    /* Condiciones IF-ELSE para hallar el menor y mayor numero de los tres valores ingresados */
+                                    
+                                    /* Imprimir en pantalla el menor y mayor numero */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese los 3 numeros a evaluar:
+                                          > 45
+                                          > 21
+                                          > 68
+                                          > El numero mayor es 68
+                                          > El numero menor es 45
+                                          '''
                     },
                     {
-                        "statement": "5.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, excepturi, amet! Non laboriosam est natus veniam ut cum at velit blanditiis, incidunt error dolores doloremque dolorum repudiandae. Repudiandae commodi labore est consequuntur harum natus impedit, consequatur autem vitae aspernatur numquam accusamus quibusdam. Rem consectetur veritatis, quaerat tempora quis dolor eligendi ullam quae unde quo ipsa obcaecati animi, explicabo adipisci vel molestiae! Non adipisci sint aperiam eligendi, minus, quis impedit perspiciatis facere soluta asperiores labore quas tempora aspernatur at nobis quasi pariatur quibusdam iure. Minima sapiente fugiat tempore vero facere, a aliquid amet architecto ea dolor. Possimus a dolorem nemo iure.",
+                        "statement": '''
+                                     Imprimir en pantalla la ciudad correspondiente a un código de área ingresado por el usuario sabiendo que:
+                                     - 229 es Buenos Aires
+                                     - 404 es Cartagena
+                                     - 470 es Cartagena
+                                     - 706 es Quito
+                                     - 762 es Quito
+                                     - 770 es Cartagena
+                                     - 912 es Buenos Aires
+                                     Si el usuario ingresa un código de área que no está en la lista se debe imprimir un mensaje de error.
+                                     
+                                     Nota: Con 3 condiciones if es suficiente.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 5.3 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar una variable para manejar el codigo de area */
+                                    
+                                    /* Solicitar el codigo de area */
+
+                                    /* Condiciones IF-ELSE para indicar la ciudad correspondiente */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el codigo de area: 912
+                                          > Buenos Aires
+                                          '''
                     }
                 ]
             },
@@ -469,55 +875,214 @@
                                 - El orden para definir los casos no importa, esto implica por ejemplo que el caso *default* no necesariamente va al final.
                                ''',
                 "example": {
-                    "statement": "6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum inventore, asperiores obcaecati. Doloribus reiciendis, enim ea! Ex amet nulla perspiciatis, ipsum quas voluptas, at ea cum, mollitia deserunt molestias nesciunt, autem debitis nam commodi? Cumque mollitia excepturi fugit veniam at id atque cupiditate tempora reprehenderit quibusdam iure, aliquid neque aperiam pariatur perferendis iste quo debitis nisi dolore dignissimos autem facere repellendus magni. Obcaecati similique alias reiciendis dolores esse, possimus in, odit cumque, dicta id suscipit? Eligendi laboriosam accusantium, dicta cupiditate.",
+                    "statement": '''
+                                 Sigamos con el ejemplo de la empresa Rapidash, esta vez la empresa define la tarifa correspondiente a cada plazo del tiempo de entrega de un paquete de la siguiente manera:
+                                 - Entrega en 1 día, el costo será 1250 
+                                 - Entrega en 2 días, el costo será 1000 
+                                 - Entrega en 3 días, el costo será 300
+                                 
+                                 Vamos a codificar las instrucciones necesarias para solicitar el tiempo de entrega que desea el usuario para un paquete. Luego evaluar, clasificar e informar la tarifa aplicada al plazo ingresado por el usuario.
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 6; 
+                            
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+                                
+                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                int tiempo_entrega_dias;
+
+                                /* Solicitud de cada dimension */
+                                printf("Ingrese las dimensiones del paquete\n");
+                                printf("Alto:");
+                                scanf("%f",&alto);
+                                printf("Largo:");
+                                scanf("%f",&largo);
+                                printf("Ancho:");
+                                scanf("%f",&ancho);
+
+                                /* Calculo del volumen  y peso volumetrico*/
+                                volumen = alto*largo*ancho;
+                                peso_volumetrico = alto*largo*ancho/5000;
+
+                                /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                printf("Volumen del paquete: %f\n", volumen);
+                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                if ( peso_volumetrico >= 10.0f )
+                                {
+                                    printf("El paquete es grande\n");
+                                }
+                                else{
+                                    if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                    {
+                                        printf("El paquete es mediano\n");
+                                    }
+                                    else{
+                                        printf("El paquete es pequeño\n");
+                                    }  
+                                }
+
+                                /* Solicitud del tiempo de entrega */
+                                printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                scanf("%d",&tiempo_entrega_dias);
+
+                                /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
+                                    elegido por el usuario
+                                 */
+                                switch(tiempo_entrega_dias){
+                                    case 1:
+                                        printf("La tarifa es 1250\n");
+                                        break;
+                                    case 2:
+                                        printf("La tarifa es 1000\n");
+                                        break;
+                                    case 3:
+                                        printf("La tarifa es 300\n");
+                                        break;
+                                }
+                                
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Declaramos una variable de tipo entero para guardar el tiempo de entrega ingresado por el usuario. (Línea 9)
+                        ''',
+                        '''
+                        Luego, en las líneas 44 y 45 solicitamos el tiempo de entrega y guardamos el valor en la variable creada en el paso anterior.
+                        ''',
+                        '''
+                        A partir de la línea 50 encontramos la sentencia switch, la cual evalúa el tiempo de entrega (especificado en días), lo compara con los valores definidos en cada case (1 2 y 3) y cuando coincida con alguno de ellos se imprime el mensaje de la tarifa correspondiente.
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "6.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi voluptate natus, itaque molestiae veniam numquam autem maxime quaerat laudantium mollitia quas, placeat officiis expedita quibusdam doloribus aperiam sed animi iste harum quam blanditiis. Molestias hic assumenda expedita optio repellendus aliquam consequatur asperiores dolorum ad quaerat. Blanditiis cumque quis doloremque labore tempore mollitia nesciunt earum alias impedit ab optio sunt veritatis tempora velit illum quas, minima molestias. Deserunt consequatur magnam optio! Magnam voluptatem dolores nihil totam tenetur in autem fugiat commodi, rerum iste quam voluptatum laudantium adipisci, sunt ratione, eligendi natus. Consequatur odio molestiae in sunt ea, dolores exercitationem rerum dignissimos!",
+                        "statement": '''
+                                     Un Boy Scout quiere aprender el código morse y decide empezar por los dígitos. Se requiere hacer un programa en C que dado un dígito muestre su correspondiente código morse. A continuación se muestran los dígitos del 0 al 9 en código morse:
+                                     - 0    _ _ _ _ _ 
+                                     - 1    . _ _ _ _ 
+                                     - 2    . . _ _ _
+                                     - 3    . . . _ _
+                                     - 4    . . . . _ 
+                                     - 5    . . . . . 
+                                     - 6    _ . . . .
+                                     - 7    _ _ . . .
+                                     - 8    _ _ _ . . 
+                                     - 9    _ _ _ _ .
+                                     Si un usuario introduce un dígito fuera del rango especificado (0-9) se debe mostrar el mensaje “El digito ingresado no se encuentra entre 0 y 9”
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 6.1 ; 
+                                
+                                int main()
+                                {    
+                                    /* Declarar la variable entera para guardar el digito */
+
+                                    /* Solicitar el digito */
+
+                                    /* Evaluar, clasificar y mostrar el codigo morse correspondiente al digito 
+                                        Nota: Recuerde mostrar el mensaje de error si el digito no se encuentra entre 0 y 9
+                                    */
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese un digito del 0 al 9: 3
+                                          > . . . _ _
+                                          '''
                     },
                     {
-                        "statement": "6.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi tempore dolore, corrupti perspiciatis facere laudantium provident, possimus incidunt sint quas. Corporis fuga eligendi blanditiis nobis amet explicabo deserunt eius beatae ab tenetur harum aliquam deleniti commodi quaerat, quam velit a est officia voluptatem ducimus, ipsam impedit. Corporis eaque voluptatem illum nemo nesciunt reiciendis, asperiores tempora necessitatibus dolore, quo sint molestias voluptas amet iusto quasi a hic officiis nihil praesentium ut consequuntur ipsam nisi aspernatur dolorum? Unde corporis sint assumenda incidunt dolores, eius, nesciunt alias reprehenderit recusandae facere voluptate fugiat excepturi voluptatem laudantium maiores voluptatum ex, quis consequuntur provident, non enim!",
+                        "statement": '''
+                                     Se necesita un programa en C que solicite al usuario dos números decimales y permita sumar, restar, multiplicar o dividir esos valores según una opción ingresada por el usuario. Las opciones se pueden mostrar de la siguiente manera:
+                                     - 1: Sumar
+                                     - 2: Restar
+                                     - 3: Multiplicar
+                                     - 4: Dividir
+                                     
+                                     El flujo del programa sería: solicitar dos valores decimales, mostrar opciones disponibles, guardar opción ingresada, evaluar la opción y aplicar la operación correspondiente mostrando el resultado de la misma. 
+                                     
+                                     En caso de que el usuario ingrese una opción que no está disponible se debe mostrar el mensaje "La opcion OPCION no esta disponible"
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 6.2 ; 
+                                
+                                int main()
+                                {    
+                                    /* Declarar las variables para guardar los dos numeros decimales 
+                                        y la variable para guardar la opcion del cliente*/
+                                    
+
+                                    /* Solicitar los numeros decimales */
+
+
+                                    /* Imprimir las opciones disponibles en forma de menu */
+
+                                    
+                                    /* Solicitar la opcion deseada */
+
+
+                                    /* Evaluar la opcion ingresada y sumar, restar, multiplicar o dividir segun sea
+                                        el caso, mostrando el resultado de la operacion aplicada 
+
+                                        Nota: Recuerde mostrar el mensaje de error si la opcion ingresada no esta disponible */
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese dos numeros decimales:
+                                          > Numero 1: 6.4
+                                          > Numero 2: 2
+                                          > Las opciones disponibles son:
+                                          > 1: Sumar
+                                          > 2: Restar
+                                          > 3: Multiplicar
+                                          > 4: Dividir
+                                          > Ingrese la opcion deseada: 4
+                                          > La division de los dos valores es 3.20
+                                          '''
                     },
                     {
-                        "statement": "6.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum officia minus quo, aliquam error quos iste? Porro illo error, nulla ullam quo aspernatur vero obcaecati voluptatibus! Harum reprehenderit nemo doloribus incidunt, in, quasi tempore corrupti, excepturi voluptate, consectetur sit. Sunt ex voluptates, illum laborum dolorum quae ipsa. Ipsam alias ex sunt. A earum quia, animi, facere cum odit amet voluptate voluptatibus, sequi quam molestias excepturi corrupti voluptas dolorum est perferendis quo dicta veritatis labore? A repellendus, minima assumenda laboriosam ab at, dolor perspiciatis nihil quos ullam quidem, consequuntur enim et odio nesciunt dignissimos rem magnam! Eum aspernatur molestias accusamus, dolores!",
+                        "statement": '''
+                                     Escriba un programa en C que solicite la fecha en formato 31-3-17, es decir, solicitar el dia, luego el mes y por último el año. Después de recolectar esta información mostrar la misma fecha pero de la forma “31 de marzo del año 2017”
+                                     
+                                     Tip: Imprima la fecha final por partes, es decir, primero “31 de”, luego convierte 03 a “marzo” y por último “del año 2017”.
+                                     
+                                     Nota: En lenguaje C el nombre o identificador de una variable no puede contener el caracter ñ
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 6.3 ; 
+                                
+                                int main()
+                                {    
+                                    /* Declarar las variables de tipo entero para dia, mes y ano */
+
+                                    /* Solicitar y guardar dia, mes y ano */
+
+                                    /* Imprimir la primera parte de la fecha final "DIA de " */
+
+                                    /* Evaluar, clasificar e imprimir el nombre del mes correspondiente 
+                                        al numero de mes ingresado */
+                                    
+
+                                    /* Imprimir la ultima parte de la fecha final " del ano 20ANO" */
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese la fecha:
+                                          > Dia: 31
+                                          > Mes: 3
+                                          > Ano: 17
+                                          > 31 de marzo del año 2017
+                                          '''
                     }
                 ]
             }
@@ -560,55 +1125,224 @@
                                > **Nota:** El cuerpo del ciclo puede que no sea ejecutado ni una vez, ya que la expresión de control es evaluada ANTES de cada iteración (incluída la primera)
                                ''',
                 "example": {
-                    "statement": "7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat unde cumque, a libero obcaecati soluta tenetur nemo, quae nulla quam, modi minima aspernatur tempore molestias iusto neque perferendis velit ipsam recusandae adipisci? Tempora dolores quos, quae quasi laboriosam aut in quia molestiae et fuga hic? Maxime perferendis optio numquam explicabo nobis obcaecati, recusandae consectetur nemo doloribus voluptatem voluptatum porro velit ratione deleniti, commodi quasi, ipsum culpa excepturi nisi, beatae voluptatibus vel sapiente. Voluptas ut iusto odit officiis tempora, unde dignissimos!",
+                    "statement": '''
+                                 La empresa de envíos Rapidash utiliza camionetas para transportar sus paquetes; el peso volumétrico disponible en la última camioneta que saldrá hoy es de 28.3, por esta razón la empresa necesita que su programa acepte nuevos paquetes mientras haya espacio disponible. 
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 7; 
+                            
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+                                
+                                /* Declaracion e inicializacion del peso disponible en la camioneta*/
+                                float peso_disponible = 28.3f;
+
+                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                int tiempo_entrega_dias;
+
+                                /* Mientras el peso disponible sea mayor que 0.0 se solicitan los datos de un nuevo paquete */
+                                while(peso_disponible > 0.0f){
+
+                                    /* Solicitud de cada dimension */
+                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    printf("Alto:");
+                                    scanf("%f",&alto);
+                                    printf("Largo:");
+                                    scanf("%f",&largo);
+                                    printf("Ancho:");
+                                    scanf("%f",&ancho);
+
+                                    /* Calculo del volumen  y peso volumetrico*/
+                                    volumen = alto*largo*ancho;
+                                    peso_volumetrico = alto*largo*ancho/5000;
+
+                                    /* Actualizar el peso volumetrico disponible en la camioneta, es decir, restar el peso 
+                                        volumetrico del paquete actual al peso disponible */
+                                    peso_disponible = peso_disponible - peso_volumetrico;
+
+                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    printf("Volumen del paquete: %f\n", volumen);
+                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                    if ( peso_volumetrico >= 10.0f )
+                                    {
+                                        printf("El paquete es grande\n");
+                                    }
+                                    else{
+                                        if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                        {
+                                            printf("El paquete es mediano\n");
+                                        }
+                                        else{
+                                            printf("El paquete es pequeño\n");
+                                        }  
+                                    }
+
+                                    /* Solicitud del tiempo de entrega */
+                                    printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    scanf("%d",&tiempo_entrega_dias);
+
+                                    /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
+                                        elegido por el usuario
+                                     */
+                                    switch(tiempo_entrega_dias){
+                                        case 1:
+                                            printf("La tarifa es 1250\n");
+                                            break;
+                                        case 2:
+                                            printf("La tarifa es 1000\n");
+                                            break;
+                                        case 3:
+                                            printf("La tarifa es 300\n");
+                                            break;
+                                    }
+                                }
+
+                                /* Indicar que el espacio se ha agotado y el programa ha terminado*/
+                                printf("***Espacio de la camioneta agotado\n");
+                                
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Declaramos e inicializamos una variable de tipo float para manejar el peso volumétrico disponible en la camioneta.
+                        ''',
+                        '''
+                        Vamos a utilizar el ciclo while para evaluar si existe espacio disponible en la camioneta, es decir, si el peso volumétrico disponible es mayor que 0.0. Línea 15.
+                        ''',
+                        '''
+                        Luego ubicamos todas las instrucciones creadas en las lecciones anteriores dentro del cuerpo del ciclo, es decir, la solicitud y cálculo del volumen, peso volumétrico y tarifa del paquete a enviar se ubican dentro de las { } del while.
+                        ''',
+                        '''
+                        Ahora actualizamos la variable que se evalúa en la expresión de control (peso_disponible) restándole el peso volumétrico del paquete actual, de esta manera vamos disminuyendo el peso disponible de la camioneta. Este paso es muy importante porque si no se actualiza la variable evaluada en la expresión de control creamos un ciclo while infinito.
+                        ''',
+                        '''
+                        Por último mostramos el mensaje "***Espacio de la camioneta agotado" fuera del ciclo while para indicar que hemos terminado. (Línea 74)
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "7.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur vitae, id libero corporis quaerat. Soluta accusantium veritatis consectetur consequatur praesentium neque eaque eveniet aliquid, iure iste iusto. Minus totam impedit, mollitia nesciunt ab architecto labore temporibus iste. Impedit magnam non ipsum, quia nulla iure, soluta nemo repudiandae quo temporibus ad deserunt architecto ea eius, voluptate fugiat deleniti? Dignissimos cupiditate suscipit aut blanditiis facilis, sequi hic distinctio necessitatibus praesentium, odio, provident delectus magnam minus commodi repellat tempora cum! Voluptas beatae officia quos adipisci illum eveniet error ab quas nostrum enim aut quidem dolor, alias minus perferendis unde praesentium delectus iusto laboriosam!",
+                        "statement": '''
+                                     Complete el siguiente programa para imprimir una tabla de números enteros junto a sus cuadrados. El programa primero debe solicitar al usuario un número entero (n), luego se imprimen n cantidad de líneas, donde cada una tendrá un número entre 1 y n junto a su cuadrado.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 7.1 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar 
+                                        - 1 variable entera para guardar el NUMERO 
+                                        - 1 variable que ira contando desde 1 hasta NUMERO */
+                                    int n, numero_actual = 1;
+
+                                    /* Solicitar el numero */
+
+                                    /* Crear el ciclo while que vaya desde 1 hasta NUMERO (incluyendo NUMERO) */
+                                    while(){
+
+                                        /* Imprimir el numero actual y su cuadrado
+                                            Ej.  2  4 
+                                        */
+                                        
+                                        /* Actualizar el numero actual al siguiente */
+                                    }
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el numero: 5
+                                          > 1  1
+                                          > 2  4
+                                          > 3  9
+                                          > 4  16
+                                          > 5  25
+                                          '''
                     },
                     {
-                        "statement": "7.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo consequatur modi, excepturi ea error, maxime eos accusantium laudantium quae hic soluta, sequi adipisci dolor ad praesentium saepe perspiciatis. Nostrum alias perferendis sequi, necessitatibus cumque molestiae, blanditiis assumenda, veritatis placeat libero, molestias quam quidem? Molestias numquam nobis, sint quisquam voluptas porro itaque natus aliquam quasi, non inventore consectetur voluptate perferendis. Obcaecati, distinctio iure rerum non laboriosam quia ad nihil deleniti aperiam dicta, consectetur? Inventore et, rem repudiandae quis repellendus, minima consequatur eos temporibus sunt voluptatibus dolorem, accusamus at velit sit corporis ipsum! Reprehenderit officiis voluptatem sint, quis rem eaque sequi deleniti.",
+                        "statement": '''
+                                     Escriba un programa que solicite un número par entero (n) al usuario e imprima los números pares desde n hasta 0, es decir, de manera descendiente. Si el usuario ingresa un número impar se debe mostrar el mensaje error “Lo siento, el numero ingresado es impar”.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 7.2 ; 
+                                
+                                int main()
+                                {
+                                    /* Declarar una variable entera para guardar el NUMERO */
+
+
+                                    /* Solicitar el numero */
+
+
+                                    /* Hacer:
+                                        - Verificar que el numero sea par 
+                                        - Si el numero es par imprimir los numeros pares desde NUMERO hasta 0
+                                            Nota: Recuerde actualizar la variable que evalue en la condicion del ciclo while 
+                                                  dentro del ciclo
+                                        - Si el numero es impar imprimir el mensaje "Lo siento, el numero ingresado es impar" 
+                                    */
+                                   
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese un numero par: 8
+                                          > 8
+                                          > 6
+                                          > 4
+                                          > 2
+                                          > 0
+                                          '''
                     },
                     {
-                        "statement": "7.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quisquam nobis dolores omnis fuga quae perferendis molestias quod eius magni! Saepe totam voluptates unde sint, amet repellendus nemo, laudantium architecto mollitia quam aspernatur deleniti excepturi molestias rem optio consequuntur nesciunt ab. Culpa vero quisquam nulla ducimus nisi odio atque deleniti quam id distinctio earum voluptate velit consectetur nam consequuntur, amet vel aut neque necessitatibus odit laudantium error quas impedit quaerat? Reiciendis facere illo repellat mollitia, odit nihil, commodi, quisquam nam autem deleniti explicabo sequi laborum alias harum aspernatur quis. Quo ipsum delectus ex obcaecati mollitia possimus, sint quaerat. Voluptate, nisi?",
+                        "statement": '''
+                                     Desarrollar un programa para llevar y mantener el saldo de una cuenta bancaria. El programa debe ofrecer al usuario un menú de opciones: vaciar la cuenta, crédito para la cuenta(+), débito desde la cuenta(-), mostrar el saldo actual y salir del programa. Las opciones son representadas por los números enteros 0, 1, 2, 3 y 4 respectivamente. Al comenzar el programa se debe mostrar el saldo inicial de la cuenta (0.0)
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 7.3 ; 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias para guardar el saldo de la cuenta, el monto de las
+                                        transacciones (credito o debito) y la opcion del usuario */
+
+                                    /* Mostrar el menu de opciones */
+
+                                    /* Hacer:
+                                        - Solicitar la opcion del usuario mientras no escoja "Salir" (4)
+                                        - Evaluar la opcion del usuario y aplicar las instrucciones correspondientes segun la opcion 
+                                    */
+                                   
+                                    
+                                    /* Imprimir el mensaje de "Programa finalizado" */ 
+
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Opciones del programa
+                                          > 0: Vaciar cuenta
+                                          > 1: Credito
+                                          > 2: Debito
+                                          > 3: Saldo actual
+                                          > 4: Salir
+                                          > El saldo actual es: 0.00
+                                          > Opcion: 1
+                                          > Ingrese el monto del credito: 32.2
+                                          > Opcion: 2
+                                          > Ingrese el monto del debito: 2.3
+                                          > Opcion: 3
+                                          > El saldo actual es: 29.90
+                                          > Opcion: 4
+                                          > Programa finalizado
+                                          '''
                     }
                 ]
             },
@@ -647,55 +1381,214 @@
                                ```
                                ''',
                 "example": {
-                    "statement": "8 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eaque molestias, saepe. Necessitatibus dolorum dolorem vel incidunt fuga ad ea accusamus, quas est eligendi, commodi debitis, et consectetur illum! Adipisci quo explicabo maxime, provident delectus officia saepe corrupti enim eligendi accusamus possimus aperiam beatae reprehenderit iste cum repudiandae aliquid, id, quasi, quas aut. Error quidem, alias labore ea accusantium ipsam, consequatur aperiam ut doloribus laudantium? Reprehenderit autem fuga laborum consectetur explicabo odio nisi possimus cumque enim, corporis voluptatum illo magni.",
+                    "statement": '''
+                                 La empresa de envíos esta vez desea asegurar el registro de al menos un paquete y luego, basándose en la misma condición del ejemplo en la lección anterior continuar con el registro de los demás paquetes. Recordemos que la condición es registrar paquetes mientras haya espacio en la camioneta que saldrá hoy, teniendo como peso volumétrico disponible 28.3
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 8; 
+
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+                                
+                                /* Declaracion e inicializacion del peso disponible en la camioneta*/
+                                float peso_disponible = 28.3f;
+
+                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                int tiempo_entrega_dias;
+
+                                /* Asegurar el registro de al menos un paquete con el ciclo do-while */
+                                do{
+
+                                    /* Solicitud de cada dimension */
+                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    printf("Alto:");
+                                    scanf("%f",&alto);
+                                    printf("Largo:");
+                                    scanf("%f",&largo);
+                                    printf("Ancho:");
+                                    scanf("%f",&ancho);
+
+                                    /* Calculo del volumen  y peso volumetrico*/
+                                    volumen = alto*largo*ancho;
+                                    peso_volumetrico = alto*largo*ancho/5000;
+
+                                    /* Actualizar el peso volumetrico disponible en la camioneta, es decir, restar el peso 
+                                        volumetrico del paquete actual al peso disponible */
+                                    peso_disponible = peso_disponible - peso_volumetrico;
+
+                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    printf("Volumen del paquete: %f\n", volumen);
+                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                    if ( peso_volumetrico >= 10.0f )
+                                    {
+                                        printf("El paquete es grande\n");
+                                    }
+                                    else{
+                                        if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                        {
+                                            printf("El paquete es mediano\n");
+                                        }
+                                        else{
+                                            printf("El paquete es pequeño\n");
+                                        }  
+                                    }
+
+                                    /* Solicitud del tiempo de entrega */
+                                    printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    scanf("%d",&tiempo_entrega_dias);
+
+                                    /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
+                                        elegido por el usuario
+                                     */
+                                    switch(tiempo_entrega_dias){
+                                        case 1:
+                                            printf("La tarifa es 1250\n");
+                                            break;
+                                        case 2:
+                                            printf("La tarifa es 1000\n");
+                                            break;
+                                        case 3:
+                                            printf("La tarifa es 300\n");
+                                            break;
+                                    }
+                                /* Condicion para repetir el ciclo: mientras el peso disponible sea mayor que 0.0 */
+                                }while(peso_disponible > 0.0f);
+
+                                /* Indicar que el espacio se ha agotado y el programa ha terminado*/
+                                printf("***Espacio de la camioneta agotado\n");
+                                
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Para aplicar las nuevas condiciones de la empresa usamos el ciclo do-while, de esta manera nos aseguramos que al menos un paquete sea registrado.
+                        ''',
+                        '''
+                        El la línea 15 cambiamos la sentencia while por el do, todas las instrucciones que están ubicadas dentro del ciclo seguirán estando dentro del mismo.
+                        ''',
+                        '''
+                        Luego al final del ciclo, en la línea 72, ubicamos la condición que indica cuándo repetir el ciclo, en este caso es mientras el peso_disponible sea mayor que 0.0
+                        ''',
+                        '''
+                        Recordemos siempre actualizar la variable que está siendo evaluada en la condición del ciclo (línea 32).
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "8.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quod velit sequi, atque obcaecati numquam iusto. Vitae deleniti labore vero, architecto quam! Omnis velit rem, et doloribus aliquid, iusto. Placeat totam vitae soluta architecto reprehenderit quam doloribus minus sint eum ab aperiam dolorem illo eos, dignissimos cum, dolor deleniti ratione amet unde quas vero iste accusamus. Possimus doloremque, aspernatur laborum, facere eligendi sint quisquam assumenda, unde dolorem, accusantium nihil ex culpa optio quibusdam odit molestiae nostrum fugiat expedita numquam? Accusantium, quaerat obcaecati commodi aliquid temporibus dolor atque cumque, maxime placeat, hic quam nam aliquam delectus expedita, laborum sit ducimus ex?",
+                        "statement": '''
+                                     Escriba un programa que permita ingresar una serie de números hasta que el usuario ingrese 0, luego calcular y mostrar el promedio de dichos números.
+
+                                     Nota: los números pueden ser enteros o decimales.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 8.1 ; 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias */
+                                    
+
+                                    /* Hacer:
+                                        - Solicitar numero por numero 
+                                        - Sumar cada numero y guardar el resultado en una variable
+                                        - Contar la cantidad de numeros
+                                    */
+                                    
+                                    
+                                    /* Calcular el promedio*/
+                                    
+
+                                    /* Imprimir el promedio de los numeros ingresados */
+                                    
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Introduzca un numero: 32
+                                          > Introduzca un numero: 43.2
+                                          > Introduzca un numero: 45
+                                          > Introduzca un numero: 15.7          
+                                          > Introduzca un numero: 0
+                                          > El promedio de los numeros ingresados es 27.18
+                                          '''
                     },
                     {
-                        "statement": "8.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et maiores nesciunt quidem libero repellat, consectetur necessitatibus reiciendis eos officia, laudantium tempora eveniet earum. Velit accusantium, magnam fugiat, tempora repellat neque dolorem? Quidem adipisci iusto voluptatibus porro rerum ab voluptatem cumque quo iure exercitationem laboriosam, at eos reiciendis sit quae sapiente, enim ut eius vitae. Hic aperiam sit consectetur libero, atque, debitis magni a distinctio laboriosam ea sapiente dolore itaque. Recusandae est nobis temporibus obcaecati similique cumque libero quae asperiores, dicta! Accusamus molestiae, fugit eveniet dignissimos vel enim nemo odit architecto, quisquam sequi tempore animi saepe porro a id similique possimus.",
+                        "statement": '''
+                                     Escriba un programa que solicite al usuario ingresar un número entero, luego imprimir dicho número con sus dígitos invertidos.
+
+                                     Tip: Recuerde que la función del operador % es retornar el residuo de una división.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 8.2 ; 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias */
+
+                                    /* Solicitar el numero entero*/
+
+                                    /* Imprimir el numero introducido con sus digitos invertidos 
+                                        Tip: Puede utilizar el operador %
+                                    */
+                                   
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Introduzca un numero entero: 23456
+                                          > 65432
+                                          '''
                     },
                     {
-                        "statement": "8.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos sit perferendis cum nihil, obcaecati quisquam eos necessitatibus nostrum harum porro expedita eaque eum ipsam dolor sunt ad iste enim, incidunt temporibus voluptate! Molestiae porro excepturi saepe fuga libero, delectus quibusdam quae repellat non ipsam laboriosam sunt dolorem odio eius eaque aperiam itaque quas veritatis maxime nulla autem. Doloremque quo cumque deleniti, perspiciatis veniam inventore architecto enim, qui optio iure sint expedita accusamus sunt dolore dolorum quae non mollitia. Tenetur unde ex quo, sit obcaecati nostrum facere sed, eveniet magni cumque natus provident quisquam quod praesentium dicta labore, laboriosam necessitatibus ipsum.",
+                        "statement": '''
+                                     Escriba un programa que encuentre el número más grande en una serie de números ingresada por el usuario. El programa debe solicitar los números uno por uno. La serie culmina cuando el usuario ingresa 0 o un número negativo. Al finalizar, el programa debe imprimir el número positivo más grande de la serie introducida.
+
+                                     Nota: Los números no son necesariamente enteros.
+
+                                     Tip: Declare e inicialice una variable con un número muy pequeño (cero por ejemplo) para empezar a comparar con los números introducidos y encontrar el mayor.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 8.3 ; 
+
+                                int main()
+                                {
+                                    /* Declarar 
+                                        - Una variable para guardar cada numero introducido  
+                                        - Una variable con un valor muy pequeño para comparar con los numeros introducidos 
+                                          y encontrar el mayor */
+
+
+                                    /* Hacer:
+                                        - Un ciclo que solicite numero por numero 
+                                        - Comparar si el numero ingresado es el mayor
+                                        - Detener el ciclo cuando el numero ingresado sea 0 o negativo
+                                    */
+
+                                    
+                                    /* Imprimir el numero mas grande de la serie ingresada */
+
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Introduzca un numero: 53.4
+                                          > Introduzca un numero: 23
+                                          > Introduzca un numero: 17.2
+                                          > Introduzca un numero: 60.5
+                                          > Introduzca un numero: 58.1
+                                          > Introduzca un numero: 43
+                                          > Introduzca un numero: 0
+                                          > El numero mas grande es 60.50
+                                          '''
                     }
                 ]
             },
@@ -730,55 +1623,222 @@
                                 - Al **finalizar** cada iteración decrementar el valor de i en 1 
                                ''',
                 "example": {
-                    "statement": "9 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci soluta aspernatur voluptatem rerum velit temporibus perspiciatis libero, nobis saepe! Sed perferendis voluptates quibusdam recusandae, quidem modi numquam unde iusto aperiam. Excepturi laudantium officiis, necessitatibus reiciendis incidunt fugiat veritatis voluptate! Perspiciatis, nesciunt, quis. Accusamus similique minus ut soluta. Quae, obcaecati esse nobis distinctio laudantium! Asperiores corrupti illum, quis, labore rerum facere aperiam aspernatur aut libero. Quae possimus sunt similique eius debitis adipisci eos architecto amet alias accusamus natus magni maiores, quibusdam!",
+                    "statement": '''
+                                 Volviendo a nuestro ejemplo de la empresa de envíos, supongamos esta vez que la empresa desea registrar sólo 3 paquetes en lo que resta del día. Vamos a modificar el programa en C para solicitar, calcular y mostrar el volumen, peso volumétrico y costo de envío de solo 3 paquetes. Al finalizar el registro de los paquetes se requiere imprimir el mensaje "Registro de los 3 paquetes completado con exito". 
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 9; 
+
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                float alto, largo, ancho, volumen, peso_volumetrico; 
+
+                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                int i, tiempo_entrega_dias;
+
+                                /* Registrar exactamente 3 paquetes 
+                                    - Iteraciones:
+                                          i = 0
+                                          i = 1
+                                          i = 2
+
+                                    - Recuerde que al final de cada iteración se aplica la operacion ++i, la cual 
+                                    incrementa la i en 1, es decir, equivale a escribir i = i+1
+                                    - Cuando i = 3 no cumple la condicion de i < 3 entonces termina el ciclo.
+                                */
+                                for (i = 0; i < 3; ++i)
+                                {
+                                    /* Solicitud de cada dimension */
+                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    printf("Alto:");
+                                    scanf("%f",&alto);
+                                    printf("Largo:");
+                                    scanf("%f",&largo);
+                                    printf("Ancho:");
+                                    scanf("%f",&ancho);
+
+                                    /* Calculo del volumen  y peso volumetrico*/
+                                    volumen = alto*largo*ancho;
+                                    peso_volumetrico = alto*largo*ancho/5000;
+
+                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    printf("Volumen del paquete: %f\n", volumen);
+                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                    if ( peso_volumetrico >= 10.0f )
+                                    {
+                                        printf("El paquete es grande\n");
+                                    }
+                                    else{
+                                        if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                        {
+                                            printf("El paquete es mediano\n");
+                                        }
+                                        else{
+                                            printf("El paquete es pequeño\n");
+                                        }  
+                                    }
+
+                                    /* Solicitud del tiempo de entrega */
+                                    printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    scanf("%d",&tiempo_entrega_dias);
+
+                                    /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
+                                        elegido por el usuario
+                                     */
+                                    switch(tiempo_entrega_dias){
+                                        case 1:
+                                            printf("La tarifa es 1250\n");
+                                            break;
+                                        case 2:
+                                            printf("La tarifa es 1000\n");
+                                            break;
+                                        case 3:
+                                            printf("La tarifa es 300\n");
+                                            break;
+                                    }
+                                }
+
+                                /* Imprimir mensaje de registro completado */
+                                printf("\nRegistro de los 3 paquetes completado con exito\n");
+                                
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        En este caso conocemos exactamente la cantidad de paquetes a registrar (3) por lo que un ciclo for se ajusta a las condiciones del problema.
+                        ''',
+                        '''
+                        Creamos la variable entera que manejaremos en el ciclo for, en este caso la llamaremos i. (Línea 9)
+                        ''',
+                        '''
+                        En la línea 21 declaramos el ciclo for cuyas expresiones indican: primero inicializamos la variable i en 0, segundo repetir el ciclo mientras i sea menor que 3 y por último incrementar el valor de i en 1 al finalizar cada iteración.
+                        ''',
+                        '''
+                        Después del ciclo for, fuera del mismo, imprimimos el mensaje que indica haber registrado los 3 paquetes de manera exitosa. (Línea 76)
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "9.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum et, velit amet eveniet maxime? Aliquid, mollitia voluptatem iste officia, hic quia modi et sapiente, inventore deleniti, velit sint eligendi! Quaerat impedit illum enim tenetur assumenda quibusdam aspernatur, minima ullam nobis libero sed earum. Similique temporibus totam, sunt atque sequi asperiores blanditiis quibusdam eaque natus quod dicta eum, illo, non? Quis quos vel, quod doloribus. Nisi modi, vitae ipsam laudantium optio velit cupiditate voluptates labore dolorum perferendis quisquam expedita nesciunt minus aut enim assumenda explicabo itaque praesentium odit neque id, hic iste excepturi! Sint nihil corporis rem soluta, inventore possimus odit.",
+                        "statement": '''
+                                     Escriba un programa que imprima la tabla de multiplicar de un número entero ingresado por el usuario. La tabla de multiplicar debe ir desde 1 hasta 10.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 9.1 ; 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias*/
+
+
+                                    /* Solicitar el numero entero */
+
+
+                                    /* Imprimir la tabla de multiplicar del numero ingresado desde 1 a 10 */
+                                    
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese un numero entero: 5
+                                          > 1 x 5 = 5
+                                          > 2 x 5 = 10
+                                          > 3 x 5 = 15
+                                          > 4 x 5 = 20
+                                          > 5 x 5 = 25
+                                          > 6 x 5 = 30
+                                          > 7 x 5 = 35
+                                          > 8 x 5 = 40
+                                          > 9 x 5 = 45
+                                          > 10 x 5 = 50
+                                          '''
                     },
                     {
-                        "statement": "9.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, dolores eum natus dicta vitae temporibus tempora tempore porro eius repellendus sint laborum, reprehenderit iure, consequatur magnam minima qui aliquam assumenda commodi. Et corporis cupiditate quisquam quos quis a asperiores ipsam amet ipsa, dolor, enim at consequuntur architecto beatae suscipit hic accusantium sit? Laboriosam debitis, qui quibusdam officiis dignissimos reprehenderit mollitia reiciendis vitae harum. Maiores dicta provident quisquam eveniet veritatis nesciunt voluptatum dolores! Numquam dolores, inventore quis dicta, aliquam nisi obcaecati! Voluptatibus a voluptates temporibus ut deleniti fugiat odio repudiandae in nesciunt nostrum tempora qui odit, aut consectetur, doloribus aliquam exercitationem.",
+                        "statement": '''
+                                     Se necesita un programa que calcule el factorial de un número entero ingresado por el usuario. 
+                                     Recuerde que para calcular el factorial de número, por ejemplo 5, es 5! = 5 * 4 * 3 * 2 * 1 = 120
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 9.2 ; 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias*/
+
+
+                                    /* Solicitar el numero entero */
+                                    
+
+                                    /* Calcular el factorial del numero ingresado */
+                                    
+                                    
+                                    /* Imprimir el resultado de la forma "NUMERO! = RESULTADO" */
+                                    
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese un numero entero: 5
+                                          > 5! = 120
+                                          '''
                     },
                     {
-                        "statement": "9.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet alias quidem eum, commodi ducimus dolore blanditiis laboriosam minima dicta id culpa hic iure atque corrupti dolor reprehenderit. Necessitatibus suscipit labore numquam quod culpa nulla nemo nobis accusamus ipsum esse quos ut aliquid excepturi, ea commodi doloremque voluptates dolor tenetur officiis voluptatibus veritatis saepe, sapiente dolore. Aliquam accusamus at voluptates dolorum in officia, illum hic dolores dolorem placeat sapiente repellat eum sunt nulla itaque quidem ex aliquid! Commodi quos id debitis, animi nemo consequuntur saepe minus. Iusto vel harum ipsam, quidem dolorem qui eius tempore inventore ratione minus, esse natus nisi.",
+                        "statement": '''
+                                     Complete el siguiente programa para imprimir un mes como en un calendario. El usuario ingresa la cantidad de días del mes y el día de la semana en el cual empieza dicho mes.
+
+                                     Tip: 
+                                     - El programa no es tan difícil como parece. La parte más importante es un ciclo for con la variable i que vaya desde 1 hasta la cantidad de días del mes, imprimiendo cada valor de i. Dentro del ciclo, habrá una sentencia if que evalúe si i es el último día de la semana, de ser así se imprime un salto de línea \n.
+                                     - Al igual que salto de línea (\n) existe la opción de imprimir con la función printf una tabulación (\t)
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 9.3 ; 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias para controlar las iteraciones del ciclo, 
+                                        guardar la cantidad de dias que tiene el mes y el primer dia de la semana de ese mes */
+
+
+                                    /* Solicitar la cantidad de dias del mes y el primer dia (1=Lun, 7=Dom) */
+                                    
+
+                                    /* Mostrar la inicial de los días de la semana:
+                                        Nota: Observe el uso de \t para imprimir un espacio (tabulacion) entre cada inicial, 
+                                                con este \t todas las letras quedan separadas por el mismo espacio.
+                                    */
+                                    printf("\nL\tM\tX\tJ\tV\tS\tD\n");
+                                    
+                                    /* Imprimir la cantidad de espacios en blanco segun el primer dia de la semana que ha 
+                                        indicado el usuario */
+                                    
+
+                                    /* Imprimir los dias de la semana 
+                                        Nota: Recuerde imprimir un salto de linea (\n) al final de la semana, es decir, cada
+                                                7 dias 
+                                    */
+                                   
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el numero de dias del mes: 31
+                                          > Ingrese el primer dia de la semana (1=Lun, 7=Dom): 6
+                                          >
+                                          > L   M   X   J   V   S   D
+                                                              1   2   
+                                          > 3   4   5   6   7   8   9   
+                                          > 10  11  12  13  14  15  16  
+                                          > 17  18  19  20  21  22  23  
+                                          > 24  25  26  27  28  29  30  
+                                          > 31
+                                          '''
                     }
                 ]
             }
@@ -807,55 +1867,265 @@
                                 - El operador `+=` se aplica de la misma manera con los demás operadores matemáticos `-=`, `*=`, `/=`, `%=`
                                ''',
                 "example": {
-                    "statement": "10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dolorum temporibus et ipsum maiores delectus ratione quidem, magnam rerum voluptatem illo. Soluta eius veritatis magnam maiores, distinctio quae deserunt natus, pariatur suscipit temporibus doloribus ut blanditiis corporis! Nulla dolorum, assumenda non et consectetur illum cumque dolorem iste enim ipsam aliquid sequi adipisci labore minus consequatur deleniti obcaecati aliquam rerum exercitationem vitae, necessitatibus rem nemo laudantium quam. Eligendi quisquam, ea a velit molestias, soluta quidem et, aliquid ad voluptatibus maiores debitis!",
+                    "statement": '''
+                                 La empresa de envíos Rapidash decide que el precio de un paquete se calcule de acuerdo a su categoría (pequeño, mediano, grande) y al tiempo de entrega elegido por el cliente (1, 2 o 3 días) como se muestra a continuación:
+                                 - Paquete grande: 2196.43
+                                 - Paquete mediano: 1523.86
+                                 - Paquete pequeño: 1018.73
+
+                                 - Tiempo de entrega 1 día: 1250
+                                 - Tiempo de entrega 2 días: 1000
+                                 - Tiempo de entrega 3 días: 300
+
+                                 Así pues, enviar un paquete mediano en 2 días tendrá un costo de 1523.86 + 1000 = 2523.86. La empresa desea visualizar el costo del envío de cada paquete registrado. También se requiere contar y mostrar la cantidad de paquetes enviados en un día, sumar y mostrar el costo de todos los paquetes enviados.
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 10; 
+
+                            int main()
+                            {
+                                /* Declaracion de las variables necesarias para las dimensiones del paquete, guardar el
+                                    calculo del costo del paquete actual y del costo total por el envio de los paquetes del dia
+                                */
+                                float alto, largo, ancho, volumen, peso_volumetrico, 
+                                      costo_paquete_actual,
+                                      costo_total_todos_paquetes = 0.0f; 
+
+                                /* Declaracion de variables enteras 
+                                    - Una para guardar el tiempo de entrega que escoja el cliente
+                                    - Una para guardar la respuesta a la pregunta ¿Otro paquetes? (1:Si, 0:No)
+                                    - Una para contar la cantidad de paquetes registrados en el dia
+                                */
+                                int tiempo_entrega_dias, respuesta, cantidad_paquetes = 0;
+
+                                /* Registro de paquetes hasta que la respuesta sea 0 (No mas paquetes)
+                                    - Contar cada paquete registrado
+                                    - Sumar cada costo de un paquete y guardar el resultado en costo_total_todos_paquetes
+                                */
+                                do{
+                                    /* Solicitud de cada dimension */
+                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    printf("Alto:");
+                                    scanf("%f",&alto);
+                                    printf("Largo:");
+                                    scanf("%f",&largo);
+                                    printf("Ancho:");
+                                    scanf("%f",&ancho);
+
+                                    /* Calculo del volumen  y peso volumetrico*/
+                                    volumen = alto*largo*ancho;
+                                    peso_volumetrico = alto*largo*ancho/5000;
+
+                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    printf("Volumen del paquete: %f\n", volumen);
+                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+
+                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE 
+                                       Calculo del precio del paquete actual segun su categoria
+                                    */
+                                    if ( peso_volumetrico >= 10.0f )
+                                    {
+                                        printf("El paquete es grande\n");
+                                        costo_paquete_actual=2196.43f;
+                                    }
+                                    else{
+                                        if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
+                                        {
+                                            printf("El paquete es mediano\n");
+                                            costo_paquete_actual=1523.86f;
+                                        }
+                                        else{
+                                            printf("El paquete es pequeño\n");
+                                            costo_paquete_actual=1018.73f;
+                                        }  
+                                    }
+
+                                    /* Solicitud del tiempo de entrega */
+                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    scanf("%d",&tiempo_entrega_dias);
+
+                                    /* Evaluar, informar la tarifa correspondiente al tiempo de entrega
+                                        elegido por el usuario y sumar el costo al costo_paquete_actual
+                                     */
+                                    switch(tiempo_entrega_dias){
+                                        case 1:
+                                            printf("La tarifa es 1250\n");
+                                            costo_paquete_actual+=1250.0f;
+                                            break;
+                                        case 2:
+                                            printf("La tarifa es 1000\n");
+                                            costo_paquete_actual+=1000.0f;
+                                            break;
+                                        case 3:
+                                            printf("La tarifa es 300\n");
+                                            costo_paquete_actual+=300.0f;
+                                            break;
+                                    }
+
+                                    /* Actualizar el contador de paquetes */
+                                    cantidad_paquetes++;
+
+                                    /* Actualizar la suma (acumulador) del costo de todos los paquetes registrados */
+                                    costo_total_todos_paquetes+=costo_paquete_actual;
+
+                                    /* Mostrar el costo del paquete acutal */
+                                    printf("El envio del paquete #%d es %.2f\n", cantidad_paquetes, costo_paquete_actual);
+
+                                    /* Preguntar si hay otro paquete*/
+                                    printf("\n¿Hay otro paquete por registrar (1:Si, 0:No)? \n");
+                                    scanf("%d",&respuesta);
+                                }while(respuesta == 1);
+
+                                /* Imprimir la cantidad de paquetes registrados en el dia y costo total por el 
+                                    envio de los mismos */
+                                printf("\nHoy se registraron %d paquetes con un costo total de %.2f\n",cantidad_paquetes, costo_total_todos_paquetes);
+                                
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Empezamos por definir el ciclo que manejará las iteraciones del programa, en este caso un ciclo do-while se adapta a los requerimientos.
+                        ''',
+                        '''
+                        Declaramos una variable para guardar el costo del envío del paquete que se esté registrando (línea 9), al clasificar el paquete según su peso volumétrico asignamos el costo correspondiente. Luego al definir el tiempo de entrega sumamos el monto al costo del paquete actual.
+                        ''',
+                        '''
+                        Declaramos una variable para contar la cantidad de paquetes registrados en un día (línea 17) e incrementamos su valor dentro del ciclo do-while (línea 84).
+                        ''',
+                        '''
+                        Declaramos e inicializamos una variable para sumar el costo total de todos los envíos del día (línea 10) y vamos acumulando el costo de cada paquete (línea 87).
+                        ''',
+                        '''
+                        Se imprime el costo del paquete actual en cada iteración (línea 90).
+                        ''',
+                        '''
+                        Para repetir el proceso de registro de un paquete, preguntamos si hay otro paquete pendiente, guardamos la respuesta (1:Si, 0:No) en una variable entera (declarada en la línea 17) y evaluamos en la condición while: sí la respuesta es igual a 1, entonces se repite el ciclo do-while.
+                        ''',
+                        '''
+                        Al finalizar el ciclo do-while (cuando no hay más paquetes) se imprime la cantidad de paquetes registrados en el día y el costo total del envío de los mismo.
+                        '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "10.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ullam accusamus explicabo quibusdam doloremque necessitatibus modi, architecto odio sunt optio esse, itaque, vero incidunt dolor, veritatis eius perferendis voluptates porro ipsa consequuntur fugit debitis. Ducimus officiis ex, facere numquam delectus magnam hic, asperiores dicta maxime id quo exercitationem quae totam eos iste, ipsa error quis dignissimos necessitatibus accusamus ut! Ab sint natus ex ipsum dolores assumenda, libero eius! Repellendus molestias ab sint minima illum officiis harum non nobis repellat eos reprehenderit consectetur, blanditiis perferendis sequi nostrum ut officia voluptates. Mollitia id sit praesentium, maxime atque adipisci hic, maiores possimus dicta.",
+                        "statement": '''
+                                     Una ONG se encarga de realizar jornadas de vacunación en las escuelas primarias. Cada día empiezan con 1000 vacunas. Necesitan un programa que controle las entregas realizadas en cada escuela y avise si el inventario baja a menos de 200 unidades para regresar al centro principal y tomar más vacunas. Cuando el inventario se está agotando (menos de 200 vacunas) se debe mostrar cuántas escuelas fueron visitadas y la cantidad de vacunas restantes.
+
+                                     Nota: Las escuelas visitadas no van a tener más de 200 alumnos.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 10.1 ; 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Hacer:
+                                        - Visitar escuelas mientras hayan mas de 200 vacunas el inventario
+                                        - Contar cada escuela visitada
+                                        - Actualizar la cantidad de vacunas (disminuir)
+                                    */
+                                    
+
+                                    /* Imprimir la cantidad de vacunas restantes cuando el inventario está bajo */
+                                    
+
+                                    /* Imprimir la cantidad de de escuelas visitadas */
+                                    
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese la cantidad de alumnos en la escuela: 200
+                                          > Ingrese la cantidad de alumnos en la escuela: 134
+                                          > Ingrese la cantidad de alumnos en la escuela: 168
+                                          > Ingrese la cantidad de alumnos en la escuela: 200
+                                          > Ingrese la cantidad de alumnos en la escuela: 198
+                                          > Inventario bajo, quedan 100 vacunas
+                                          > En total se visitaron 5 escuelas
+                                          '''
                     },
                     {
-                        "statement": "10.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et necessitatibus hic aspernatur rerum unde quo ipsum, deleniti numquam modi porro. Odio obcaecati reprehenderit ex repellendus nemo voluptas distinctio sapiente nam harum corporis nostrum rerum molestias delectus, recusandae et debitis, veniam aspernatur consectetur. Corrupti porro praesentium, dolore eum laudantium eligendi tempora odio, hic officia vel vitae? Error voluptatem obcaecati et, nostrum, magnam deserunt consequuntur cumque suscipit vero quisquam velit numquam recusandae at beatae voluptate voluptas sint, quas dolore eius ea ut asperiores voluptates minima. Et atque odit culpa, earum provident reiciendis, labore cumque harum dolore voluptatem dignissimos, voluptates corporis aliquam suscipit.",
+                        "statement": '''
+                                     Escriba un programa que permita contar los números pares existentes dentro de un rango ingresado por el usuario. El flujo del programa sería: solicitar al usuario los números enteros (a y b) que delimitan el rango, codificar un ciclo que vaya desde a hasta b, contar y sumar los números pares. Por último mostrar la cantidad de números pares encontrados y la suma de ellos.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 10.2 ; 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+
+
+                                    /* Solicitar los numeros enteros que delimitan el rango */
+
+                                    /* Contruir un ciclo que vaya desde a hasta b 
+                                       Contar la cantidad de numeros pares que se encuentran dentro del rango
+                                       Sumar los numeros pares que se encuentran dentro del rango
+                                    */
+
+
+                                    /* Imprimir la cantidad de numeros pares dentro del rango y la suma de ellos */
+                                    
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese los numeros enteros que delimitan el rango
+                                          > a: 1
+                                          > b: 10
+                                          > Existen 4 numeros pares dentro del rango y su suma es 20
+                                          '''
                     },
                     {
-                        "statement": "10.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos saepe ipsa a adipisci ab itaque rem aspernatur laudantium. Sed necessitatibus voluptates voluptas voluptatibus quos repudiandae temporibus assumenda iste laborum ab, culpa odit veniam natus tenetur eum consequatur quaerat tempore deleniti. Mollitia totam accusamus cumque voluptas reiciendis in architecto eveniet blanditiis optio, porro nihil numquam, provident vero rem assumenda nostrum aut minima. Nam, distinctio, eveniet. Suscipit sit odio dignissimos quidem accusantium ratione incidunt deleniti. Commodi nesciunt, ipsam eveniet recusandae! At totam corporis itaque quidem ad iure necessitatibus consequuntur ipsam dolorum mollitia esse beatae officia nisi, quod quas facere sint officiis reiciendis!",
+                        "statement": '''
+                                     Se requiere un programa en C capaz de registrar temperaturas en ºF. Se necesita transformar cada temperatura a ºC, contar la cantidad de temperaturas positivas y negativas, calcular y mostrar el promedio de las temperaturas positivas y negativas. El programa le permitirá al usuario ingresar tantas temperaturas como sea necesario.
+
+                                     Nota: Para transformar una temperatura de ºF a ºC se utiliza la fórmula: °C = (°F  -  32)*5/9.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 10.3 ; 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+
+
+                                    /* Hacer:
+                                        - Solicitar cada temperatura en ºF
+                                        - Transformar la temperatura a ºC
+                                        - Contar y sumar cada temperatura positiva y negativa por separado
+                                        - Preguntar si hay otra temperatura por registrar (1:Si, 0:No)
+                                    */
+                                    
+
+                                    /* Imprimir la cantidad de temperaturas positivas y el promedio de ellas en ºC */
+                                    
+
+                                    /* Imprimir la cantidad de temperaturas negativas y el promedio de ellas en ºC */
+                                    
+                                    
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese la temperatura (ºF): 12.4
+                                          > ¿Hay otra temperatura por registrar (1:Si, 0:No)? 1
+                                          > Ingrese la temperatura (ºF): 43.5
+                                          > ¿Hay otra temperatura por registrar (1:Si, 0:No)? 1
+                                          > Ingrese la temperatura (ºF): 5.67
+                                          > ¿Hay otra temperatura por registrar (1:Si, 0:No)? 1
+                                          > Ingrese la temperatura (ºF): 432.1
+                                          > ¿Hay otra temperatura por registrar (1:Si, 0:No)? 1
+                                          > Ingrese la temperatura (ºF): 67.45
+                                          > ¿Hay otra temperatura por registrar (1:Si, 0:No)? 0
+                                          > Existen 3 temperaturas positivas y su promedio es 82.79ºC
+                                          > Existen 2 temperaturas positivas y su promedio es -12.76ºC
+                                          '''
                     }
                 ]
             },
@@ -904,9 +2174,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1003,9 +2279,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1094,9 +2376,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1194,9 +2482,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1305,9 +2599,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1426,9 +2726,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1559,9 +2865,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
@@ -1619,9 +2931,15 @@
                             }
                             ''',
                     "solutionSteps": [
-                        "Primer paso",
-                        "Segundo paso",
-                        "Tercer paso"
+                        '''
+                        Primer paso
+                        ''',
+                        '''
+                        Segundo paso
+                        ''',
+                        '''
+                        Tercer paso
+                        '''
                     ]
                 },
                 "exercises": [
