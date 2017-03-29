@@ -2255,10 +2255,10 @@
                                
                                Existen otras dos funciones para imprimir y leer strings:
                                ```c
-                               gets(mes);
+                               fgets(mes, 11, stdin);
                                puts(mes);
                                ```
-                               Cuya principal diferencia es que `gets` no omite los espacios en blanco al leer una cadena de caracteres y `puts` solo imprime strings (cadena de caracteres) y siempre agrega el caracter de nueva linea `\n` al final de la impresión. 
+                               La función `fgets` recibe 3 parámetros: la **variable** string donde se guardará la data, el **tamaño** de esta variable y de dónde conseguirá la data (**`stdin`** hace referencia a la entrada de datos que ya conocemos, la consola). La principal diferencia de `fgets` es que no omite los espacios en blanco al leer una cadena de caracteres. Por su parte, `puts` solo imprime strings (cadena de caracteres) y siempre agrega el caracter de nueva línea \n al final de la impresión. 
                                
                                Como un string es un vector de caracteres, podemos acceder a cada caracter, es decir, a cada elemento a través de un índice de la siguiente manera:
                                ```c
