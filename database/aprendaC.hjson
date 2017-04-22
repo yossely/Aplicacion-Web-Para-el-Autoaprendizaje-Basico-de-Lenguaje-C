@@ -4923,66 +4923,497 @@
             {
                 "_id": 3,
                 "title": "Punteros",
-                "content": "18 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam dicta, dolorem atque, aut earum minima quas!",
+                "content": "Definición, uso y manejo de punteros. Punteros como parámetros de una función para modificar el valor de una variable.",
                 "explanation": ''' 
-                               # Falto yo :'( 
+                               Los punteros, como su nombre lo indica, *apuntan* a ubicaciones en memoria. Imaginemos una fila de cajas de seguridad (cajas fuertes) de varios tamaños en un banco. Cada caja tendrá un número asociado para facilitar su búsqueda. Estos números son como las direcciones en memoria de las variables en nuestros programas. Supongamos que tenemos un objeto de gran valor en una de las cajas, pero decidimos colocar la ubicación real en otra caja más pequeña que solo guarde una tarjeta con el número de la caja que contiene el objeto valioso, es decir, la caja con la tarjeta estaría guardando la ubicación de otra caja; lo que sería equivalente a un puntero. 
+
+                               ####  Imagen
+
+                               En las computadoras, los **punteros** son solo variables que guardan **direcciones de memoria**, usualmente las direcciones de otras variables. Una vez se tenga la dirección de memoria de una variable, es posible ir a esa dirección y obtener la información almacenada en la misma. Los punteros son una característica muy poderosa al programar, digamos que necesitamos pasar una variable que almacena mucha información a una función, es mucho más sencillo pasar su dirección que copiar cada pedazo de dicha información. 
+
+                               Para declarar un puntero se debe indicar el tipo de variables al que puede apuntar y su nombre debe ser precedido por un asterisco (*) 
+                               ```c
+                               int *p; /* Apunta solo a variables de tipo int */
+                               float *q; /* Apunta solo a variables de tipo float */
+                               char *r; /* Apunta solo a variables de tipo char */
+                               ```
+                               Es crucial inicializar un puntero antes de utilizarlo, con el operador & obtenemos la dirección de una variable:
+                               ```c
+                               int x=18, *p; 
+                               p = &x; /* p 'apunta' a x */
+                               ```
+                               Una vez p apunte a x, podemos usar el operador * para acceder al valor almacenado en x
+                               ```c
+                               printf("Valor de x: %d\n",*p);
+                               ```
+                               Mientras p apunte a x, *p es un alias de x. Así pues *p no solo tiene el mismo valor de x, sino que al cambiar el valor de *p también cambiamos el valor de x. En este ejemplo podemos observar el valor de p y de x al ser manipulado con *p y con x:
+                               ```c
+                               int x=18, *p;
+
+                               p = &x; /* Inicializamos el puntero, ahora p 'apunta' a x */
+
+                               printf("Valor de x: %d\n", x); /* Valor de x: 18 */
+                               printf("Valor de *p: %d\n", *p); /* Valor de *p: 18 */
+
+                               x = 9; /* Modificamos el valor de x a través de x */
+
+                               printf("Valor de x: %d\n", x); /* Valor de x: 9 */
+                               printf("Valor de *p: %d\n", *p); /* Valor de *p: 9 */
+
+                               *p = 100; /* Modificamos el valor de x a través de *p */
+
+                               printf("Valor de x: %d\n", x); /* Valor de x: 100 */
+                               printf("Valor de *p: %d\n", *p); /* Valor de *p: 100 */
+                               ```
+                               Si queremos modificar el valor de una variable dentro de una función podemos utilizar punteros, pasando la dirección en memoria de dicha variable como parámetro en la función y modificando su valor con el operador *  de la siguiente manera:
+                               ```c
+                               #include <stdio.h> 
+
+                               /* Recibe por parámetro un puntero, es decir, espera la dirección en
+                               memoria de una variable de tipo int */
+                               void modificar_valor(int *p){
+                                   *p = 100;
+                               }
+
+                               int main()
+                               {
+                                   int x=18;
+                                   
+                                   /* Valor inicial de x */
+                                   printf("Valor de x: %d\n", x); /* Valor de x: 18 */
+                                   
+                                   /* Pasamos por parámetro la dirección de memoria de la variable 
+                                   que queremos modificar */
+                                   modificar_valor(&x);
+
+                                   /* Valor de x después de ser modificado dentro de la función */
+                                   printf("Valor de x: %d\n", x); /* Valor de x: 100 */
+
+                                   return 0;
+                               }
+                               ```
                                ''',
                 "example": {
-                    "statement": "18 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum quisquam molestias, cumque illo nisi, natus quidem libero earum optio reiciendis magni a, placeat possimus atque accusamus maiores consectetur voluptas ipsa adipisci veniam. Magnam autem quasi dolorum fugiat officiis provident quibusdam atque eaque dolores! Nesciunt delectus sunt, totam, quidem vel perferendis eligendi reprehenderit quam? Adipisci accusamus beatae libero nesciunt voluptas, perspiciatis magnam eos! Architecto cupiditate laudantium laboriosam optio minima error, recusandae officia necessitatibus inventore accusantium qui in nisi blanditiis soluta voluptates!",
+                    "statement": '''
+                                 Vamos a optimizar el programa que hemos construido para la empresa de envíos Rapidash utilizando punteros. Crearemos funciones para recibir por parámetro punteros y modificar la información de cada paquete, de esta manera nos quedará un código más legible y escalable. 
+
+                                 Las funciones a crear son:
+                                 - Cálculo y asignación del volumen y peso volumétrico en los miembros y en la posición correspondiente del vector 'paquetes'
+                                 - Asignar categoría y retornar precio del paquete según el peso volumétrico
+                                 - Solicitar y guardar la ciudad de origen y destino
+                                 - Solicitar y confirmar el correo electrónico del usuario
+                                 - Buscar el menor volúmen y el mayor peso volumétrico de los paquetes registrados
+                                 ''',
                     "code": '''
                             #include <stdio.h> 
-                            int main(){ 
-                                return 18; 
+                            #include <string.h> 
+
+                            /* Declaracion de la estructura 'paquete' */
+                            typedef struct
+                            {
+                                float volumen;
+                                float peso_volumetrico;
+                                char categoria[25];
+                                int tiempo_entrega_dias;
+                                char ciudad_origen[30];
+                                char ciudad_destino[30];
+                                char correo_usuario[40];
+                                float precio;
+                            }paquete;
+
+
+                            /**
+                             * Calcular y asignación del volúmen y peso volumetrico de un paquete 
+                             * dadas sus dimensiones
+                             * @param  alto     Alto del paquete
+                             * @param  largo    Largo del paquete
+                             * @param  ancho    Ancho del paquete
+                             * @param  *v       Puntero que 'apunta' al miembro 'volumen' de un paquete
+                             * @param  *pv      Puntero que 'apunta' al miembro 'peso_volumetrico' de un paquete
+                             */
+                            void volumen_y_peso_volumetrico(float alto, float largo, float ancho, float *v, float *pv){
+                                *v = alto*largo*ancho;
+                                *pv = alto*largo*ancho/5000;
+                            }
+
+                            /**
+                             * Asignar categoría y retornar precio del paquete según el peso volumétrico
+                             * @param  peso_vol     Peso volumetrico del paquete
+                             * @param  *cat         Puntero que 'apunta' al miembro 'categoria' de un paquete
+                             * @return              Precio según peso volumétrico del paquete
+                             */
+                            float categoria_y_precio(float peso_vol, char *cat){
+                                if ( peso_vol >= 10.0f )
+                                {
+                                    strcpy(cat,"Grandes");
+                                    return 2196.43f;
+                                }
+                                else{
+                                    if ( (peso_vol > 5)&&(peso_vol < 10.0f) )
+                                    {
+                                        strcpy(cat,"Medianos");
+                                        return 1523.86f;
+                                    }
+                                    else{
+                                        strcpy(cat,"Pequeños");
+                                        return 1018.73f;
+                                    }  
+                                }
+                            }
+
+                            /**
+                             * Solicitar y guardar la ciudad de origen y destino
+                             * @param  *origen  Puntero que 'apunta' al miembro 'ciudad_origen' de un paquete
+                             * @param  *destino Puntero que 'apunta' al miembro 'ciudad_destino' de un paquete
+                             */
+                            void solicitar_guardar_origen_destino(char *origen, char *destino){
+                                printf("Ingrese la ciudad de origen: ");
+                                scanf("%s",origen);
+                                printf("Ingrese la ciudad de destino: ");
+                                scanf("%s",destino);
+                            }
+
+                            /**
+                             * Solicitar y confirmar el correo electronico del usuario
+                             * @param  *correo  Puntero que 'apunta' al miembro 'correo_usuario' de un paquete
+                             */
+                            void solicitar_confirmar_correo(char *correo){
+                                char confirmacion_correo[40];
+
+                                do{
+                                    printf("Ingrese el correo electronico: ");
+                                    scanf("%s",correo);
+                                    printf("Confirmacion del correo electronico: ");
+                                    scanf("%s",confirmacion_correo);
+                                }while(strcmp(correo,confirmacion_correo)!=0);
+                            } 
+
+
+                            /**
+                             * Obtener el menor volumen y mayor peso volumétrico de todos los paquetes registrados
+                             * @param  *menor_v     Puntero que 'apunta' a la variable que guarda el menor volumen de 
+                             *                      todos los paquetes
+                             * @param  *mayor_pv    Puntero que 'apunta' a la variable que guarda el mayor peso_volumetrico 
+                             *                      de todos los paquetes
+                             */
+                            void obtener_menorv_mayorpv(int cantidad_p, paquete *p,float *menor_v, float *mayor_pv){
+                                int i;
+                                for(i = 0; i < cantidad_p; i++)
+                                {
+                                    /* Guardar el menor volumen de los paquetes registrados */
+                                    if (p[i].volumen < *menor_v)
+                                    {
+                                        *menor_v = p[i].volumen;
+                                    }
+
+                                    /* Guardar el mayor peso volumétrico de los paquetes registrados */
+                                    if (p[i].peso_volumetrico > *mayor_pv)
+                                    {
+                                        *mayor_pv = p[i].peso_volumetrico;
+                                    }
+                                }
+                            }     
+
+
+                            /**
+                             * Calcular y retornar el precio segun el plazo de entrega 
+                             * @param  dias Plazo de entrega expresado en dias
+                             * @return      Precio segun plazo de entrego
+                             */
+                            float precio_segun_plazo(int dias)
+                            {
+                                switch(dias){
+                                    case 1:
+                                        return 1250.0f;
+                                        break;
+                                    case 2:
+                                        return 1000.0f;
+                                        break;
+                                    case 3:
+                                        return 300.0f;
+                                        break;
+                                }
+                            }
+
+                            /**
+                             * Mostrar un mensaje resumen del envio de un paquete
+                             */
+                            void mostrar_mensaje_resumen(paquete p){
+                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumetrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
+                                    p.categoria, p.ciudad_origen, p.ciudad_destino, p.tiempo_entrega_dias, p.precio );
+                            }
+
+                            int main()
+                            {
+                                /* Declaracion de las variables tipo decimal para
+                                    - Guardar dimensiones de cada paquete (alto, largo y ancho)
+                                    - Guardar volumen promedio de los paquetes
+                                    - Guardar el menor volumen registrado durante el día
+                                    - Guardar el peso volumétrico promedio de los paquetes
+                                    - Guardar el mayor peso volumétrico registrado durante el día 
+                                    - Guardar el precio total de los envíos registrado durante el día */
+                                float alto, largo, ancho, volumen_promedio=0.0f, menor_volumen=99999999.9f, peso_volumetrico_promedio=0.0f,
+                                      mayor_peso_volumetrico=-1.0f, precio_total=0.0f;
+
+                                /* Declaracion de una variable para guardar la cantidad de paquetes a registrar en el día */
+                                int cantidad_paquetes = 5, i;
+
+                                /* Declaramos un vector cuyo tipo será la nueva estructura 'paquete' */
+                                paquete paquetes[cantidad_paquetes];
+
+                                /* Registrar los paquetes indicados por día (en este caso 5) */
+                                for(i = 0; i < cantidad_paquetes; i++){
+                                    /* Solicitud de cada dimension */
+                                    printf("\n**Informacion del paquete actual\n");
+                                    printf("-Alto:");
+                                    scanf("%f",&alto);
+                                    printf("-Largo:");
+                                    scanf("%f",&largo);
+                                    printf("-Ancho:");
+                                    scanf("%f",&ancho);
+
+                                    /* Calculo y asignacion del volumen y peso volumetrico en los miembros y en la posicion 
+                                        correspondiente del vector 'paquetes'  */
+                                    volumen_y_peso_volumetrico(alto, largo, ancho, &paquetes[i].volumen, &paquetes[i].peso_volumetrico);
+                                    
+                                    /* Asignar categoría y precio del paquete según el peso volumétrico */
+                                    paquetes[i].precio = categoria_y_precio(paquetes[i].peso_volumetrico, paquetes[i].categoria);
+
+                                    /* Solicitud del tiempo de entrega */
+                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3): ");
+                                    scanf("%d",&paquetes[i].tiempo_entrega_dias);
+
+                                    /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
+                                        y sumar el costo al miembro precio de la estructura paquete_acutal
+                                     */
+                                    paquetes[i].precio+=precio_segun_plazo(paquetes[i].tiempo_entrega_dias);
+
+                                    /* Solicitar y guardar la ciudad de origen y destino */
+                                    solicitar_guardar_origen_destino(paquetes[i].ciudad_origen,paquetes[i].ciudad_destino);
+
+                                    /* Solicitar y confirmar el correo electronico del usuario */
+                                    solicitar_confirmar_correo(paquetes[i].correo_usuario);
+                                }
+
+                                /* Determinar el menor volúmen y el mayor peso volumétrico de los paquetes registrados */
+                                obtener_menorv_mayorpv(cantidad_paquetes, paquetes, &menor_volumen, &mayor_peso_volumetrico);
+
+                                for(i = 0; i < cantidad_paquetes; i++)
+                                {
+                                    /* Mostrar el mensaje resumen del paquete actual */
+                                    mostrar_mensaje_resumen(paquetes[i]);
+
+                                    /* Sumar el volumen de cada paquete para calcular el promedio */
+                                    volumen_promedio+=paquetes[i].volumen;
+
+                                    /* Sumar el peso volumétrico de cada paquete para calcular el promedio */
+                                    peso_volumetrico_promedio+=paquetes[i].peso_volumetrico;
+
+                                    /* Sumar el precio de todos los paquetes registrados */
+                                    precio_total+=paquetes[i].precio;
+                                }
+
+                                /* Mostrar la información solicitada en el enunciado */
+                                printf("El volumen promedio de los paquetes es: %.2f\n", volumen_promedio/cantidad_paquetes);
+                                printf("El menor volumen registrado durante el día es: %.2f\n", menor_volumen);
+                                printf("El peso volumétrico promedio de los paquetes es: %.2f\n", peso_volumetrico_promedio/cantidad_paquetes);
+                                printf("El mayor peso volumétrico registrado durante el día es: %.2f\n", mayor_peso_volumetrico);
+                                printf("El precio total de los envíos registrados durante el día es: %.2f\n", precio_total);
+
+
+                                printf("\nPrograma finalizado con exito\n");
+                                  
+                                return 0;
                             }
                             ''',
                     "solutionSteps": [
                         '''
-                        Primer paso
+                        La primera función (línea 27) recibirá por parámetros las 3 dimensiones del paquete que se está registrando actualmente y además recibirá dos punteros de tipo float, para manejar el volumen y peso_volumetrico correspondientes a dicho paquete.
                         ''',
                         '''
-                        Segundo paso
+                        Para enviar las direcciones en memoria como parámetro en el llamado de la función anterior utilizamos el operador & (línea 91), de esta manera los punteros apuntarán a los miembros volumen y peso_volumétrico del paquete actual. 
                         ''',
                         '''
-                        Tercer paso
+                        La función que asigna categoría y retorna el precio de un paquete según su peso volumétrico recibe por parámetro el peso volumétrico y un puntero para modificar la categoría del paquete (línea 38). 
+                        ''',
+                        '''
+                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 121, no necesitamos utilizar el operador & al pasar por parámetros el miembro ‘categoría’ de un paquete. (Recordemos que ‘categoría’ es un string, es decir, un vector de caracteres)
+                        ''',
+                        '''
+                        Para solicitar y guardar la ciudad de origen y destino creamos una función (línea 62) que reciba por parámetro los punteros que necesitamos: origen y destino del paquete actual, los cuales son enviados sin utilizar el operador & (línea 144), porque los nombres de las variables hacen referencia al primer elemento de las mismas(string, vector de caracteres). 
+                        ''',
+                        '''
+                        La cuarta función (línea 73) es muy parecida a la función anterior, recibe por parámetro el puntero del correo electrónico del usuario y se hace el proceso de confirmación dentro de la misma función.
+                        ''',
+                        '''
+                        Para buscar el menor volúmen y el mayor peso volumétrico de los paquetes registrados creamos una función que reciba por parámetro la cantidad de paquetes registrados, un puntero del vector con la información de los paquetes y los punteros de las variables menor_volumen y mayor_peso_volumetrico. 
+                        ''',
+                        '''
+                        En el llamado de función anterior (línea 192) podemos notar que para enviar el puntero del vector de paquetes no utilizamos el operador & (ya el nombre de la variable apunta al primer paquete del vector), en cambio, para los punteros de las variables menor_volumen y mayor_peso_volumetrico si usamos el operador &.
                         '''
                     ]
                 },
                 "exercises": [
                     {
-                        "statement": "18.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic id quae, debitis accusamus officia aspernatur sed fugit modi quia accusantium illo, dolore labore ducimus soluta temporibus perferendis expedita pariatur reprehenderit ut incidunt quidem. Dolorem, architecto, quod. Totam nobis aliquam veritatis dolores cumque dolorem tempora earum nisi deserunt eveniet vero impedit veniam pariatur rerum, ad, sit, distinctio corrupti velit dicta. Dolorem similique vel hic est harum dignissimos, ullam quia vitae laboriosam sapiente sed, quod reiciendis! Quasi earum non quisquam optio repellat voluptatum aliquid, nostrum, temporibus quis labore aspernatur provident ullam accusamus, distinctio. Blanditiis nesciunt ipsa numquam, deserunt, odio nemo asperiores error!",
+                        "statement": '''
+                                     Escriba un programa en lenguaje C para determinar el menor y mayor número entero en un vector de números enteros utilizando una función de tipo void (vacío). 
+
+                                     El programa debe solicitar al usuario diez números enteros y almacenarlos en un vector, luego se determina y muestra el menor y mayor número de los números ingresados por el usuario.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 18.1 ; 
+
+                                /**
+                                 * Obtener el menor y mayor número entero del vector 'v'
+                                 * @param  cantidad_numeros     Cantidad de números enteros del vector v
+                                 * @param  *v                   Puntero que 'apunta' al vector que guarda los números enteros
+                                 * @param  *menor               Puntero que 'apunta' a la variable que guarda el menor número entero
+                                 * @param  *mayor               Puntero que 'apunta' a la variable que guarda el mayor número entero
+                                 */
+                                void obtener_menor_mayor(int cantidad_numeros, int *v, int *menor, int *mayor){
+                                    int i;
+                                    /* Recorrer el vector y determinar el menor y mayor número entero 
+                                        Nota: Recuerde que para modificar el valor al que apunta un puntero se utiliza
+                                              el operador * (asterisco)
+                                    */
+                                    for(i = 0; i < cantidad_numeros; i++)
+                                    {
+                                        
+                                    }
+                                }     
+
+                                int main()
+                                {
+                                    /* Declarar e inicializar las funciones necesarias */
+                                    
+                                    
+                                    /* Solicitar los diez números enteros */
+                                    printf("Ingrese los diez números enteros\n");
+
+
+                                    /* Llamar la función que obtiene el menor y mayor número entero */
+                                    
+
+                                    /* Mostrar el menor y mayor número obtenido */
+                                    
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese los diez números enteros
+                                          > Ingrese el 1º número: 34
+                                          > Ingrese el 2º número: 25
+                                          > Ingrese el 3º número: 65
+                                          > Ingrese el 4º número: 23
+                                          > Ingrese el 5º número: 6464
+                                          > Ingrese el 6º número: 23
+                                          > Ingrese el 7º número: 21
+                                          > Ingrese el 8º número: 1
+                                          > Ingrese el 9º número: 4325
+                                          > Ingrese el 10º número: 5
+                                          >
+                                          > El menor número es: 1
+                                          > El mayor número es: 6464
+                                          '''
                     },
                     {
-                        "statement": "18.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore laborum molestias, amet cumque facere optio dolores obcaecati provident adipisci corrupti quis fuga dolorum ad nobis. Ratione ex provident, adipisci totam maiores, culpa tenetur blanditiis, inventore nam ea sapiente quae optio nisi. Ea quia dicta quos voluptatum incidunt consequatur vero, libero quidem omnis eligendi, ullam minima, aliquid quis dolor minus eius. Possimus atque aut voluptates, non laboriosam ut reprehenderit sint dolorum debitis facilis fugiat impedit, unde libero quae praesentium esse obcaecati! Iste unde distinctio voluptatum tenetur facere consequuntur. Perspiciatis vel laudantium inventore architecto, fugiat doloribus velit laborum expedita nihil sequi. Earum?",
+                        "statement": '''
+                                     Escriba la siguiente función en lenguaje C:
+                                     void intercambiar(int *p, int *q)
+
+                                     Para intercambiar el valor de dos variables de tipo int dadas las direcciones en memoria de dichas variables:
+                                     intercambiar(&variable_uno, &variable_dos);
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 18.2 ; 
+
+                                /* Crear una función para intercambiar los valores de dos números enteros*/
+                                     
+
+                                int main()
+                                {
+                                    /* Declarar las funciones necesarias */
+                                    
+                                    
+                                    /* Solicitar los dos números enteros */
+                                    
+
+                                    /* Llamar la función que intercambia los valores de dos números enteros */
+                                    
+
+                                    /* Mostrar el menor y mayor número obtenido */
+                                    
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el primer número entero: 34
+                                          > Ingrese el segundo número entero: 76
+                                          > El primer número ahora es: 76
+                                          > El segundo número ahora es: 34
+                                          '''
                     },
                     {
-                        "statement": "18.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, velit voluptatem libero qui soluta nulla tenetur quas provident officiis, quibusdam impedit, quidem unde obcaecati quo. Tempore itaque, modi dolor expedita quis. Praesentium est sequi harum nemo commodi nulla ad molestiae, deserunt sunt accusamus vel quo enim minus accusantium atque adipisci similique optio nisi ducimus mollitia, voluptatem maiores fuga odio ut! Accusantium rem neque eaque, incidunt! Officia, minus numquam architecto inventore adipisci, maiores nihil quos consequatur quod quibusdam nam veniam nobis! Esse nam quo nihil ullam, quae ea corrupti modi velit delectus aliquam tempora amet consequuntur, quam, quia corporis repellat. Quos.",
+                        "statement": '''
+                                     Codifique la función separar_tiempo, donde segundos_total representa la cantidad de segundos transcurridos desde la medianoche y los punteros *hr, *min y *seg apuntan a las variables enteros que guardarán el tiempo en horas(0-23), minutos(0-59) y segundos(0-59) equivalente a los segundos contados desde la medianoche.
+
+                                     Utilice la estructura tiempo para guardar la información necesaria. Defina una función que reciba el tiempo por parámetro y lo imprima en formato hh:mm:ss. Añada el dígito 0 si las horas, minutos o segundos son menores que 10.
+                                     ''',
                         "code": '''
                                 #include <stdio.h> 
-                                int main(){ 
-                                    return 18.3 ; 
+
+                                /* Estructura para agrupar la información del tiempo hh:mm:ss */
+                                typedef struct
+                                {
+                                    int horas;
+                                    int minutos;
+                                    int segundos;
+                                    int segundos_medianoche;
+                                }tiempo;
+
+
+                                /* Completar la función separar_tiempo para transforme los segundos contados desde la medianoche 
+                                    a hh:mm:ss*/
+                                /**
+                                 * Transformar un tiempo de segundos contados desde la medianoche a hh:mm:ss
+                                 * @param  segundos_medianoche  Segundos contados desde la medianoche
+                                 * @param  *hr                  Puntero que 'apunta' a la variable que guarda las horas
+                                 * @param  *min                 Puntero que 'apunta' a la variable que guarda los minutos
+                                 * @param  *seg                 Puntero que 'apunta' a la variable que guarda los segundos
+                                 */
+                                void separar_tiempo(int segundos_total, int *hr, int *min, int *seg){
+                                    
+                                    
+                                }
+
+                                /* Definir una función que reciba el tiempo por parámetro y lo imprima en formato hh:mm:ss 
+                                   Nota: Añadir el digito 0 si las horas, minutos o segundos son menores que 10
+                                */
+                                    
+
+                                int main()
+                                {
+                                    /* Declaración de la variable tiempo */
+                                    tiempo t;
+
+                                    /* Solicitar el tiempo expresado en segundos desde la medianoche */
+                                    
+
+                                    /* Llamar la función separar_tiempo */
+                                    
+
+                                    /* Imprimir el tiempo equivalente en hh:mm:ss */
+                                    
+
+                                    return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                           > !Hola Mundo!
-                                           '''
+                                          > Ingrese el tiempo expresado en segundos desde la medianoche: 45776
+                                          > El tiempo equivalente es: 12:42:56
+                                          '''
                     }
                 ]
             }
