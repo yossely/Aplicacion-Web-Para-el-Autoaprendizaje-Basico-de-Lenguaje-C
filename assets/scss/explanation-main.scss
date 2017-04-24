@@ -2,6 +2,8 @@
 
 /*----------------------------------- LOCAL VARIABLES ON -----------------------------------*/
 
+$table_body_background: #eeeeee;
+$table_body_font_color: #6f6f6f;
 
 /*----------------------------------- LOCAL VARIABLES OFF ----------------------------------*/
 
@@ -142,6 +144,17 @@
         font-family: $font_main;
         font-size: 20px;
         margin: 15px;
+
+        th {
+            background-color: $color_green;
+            color: $color_white;
+            padding: 10px 15px;
+        }
+        td {
+            background-color: $table_body_background;
+            color: $table_body_font_color;
+            padding: 5px 15px;
+        }
     }
 
     pre {
