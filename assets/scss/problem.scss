@@ -16,6 +16,8 @@ $color_circle_exercise_number: #808080;
 
 $color_expected-output-tab: #883044;
 
+$color_comments_editor: #7D7B7B;
+
 /* Problem data */
 .problem-data-box {
     background-color: $color_3Aquamarine;
@@ -134,5 +136,11 @@ hr {
         font-weight: bold;
         text-align: center;
         text-transform: uppercase;
+    }
+}
+
+:host /deep/ .code-editor {
+    .ace_comment{
+        color: $color_comments_editor;
     }
 }
