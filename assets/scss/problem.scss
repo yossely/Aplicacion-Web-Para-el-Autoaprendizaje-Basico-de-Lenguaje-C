@@ -34,7 +34,7 @@ $color_comments_editor: #7D7B7B;
         margin-top: 10px;
     }
 
-    p {
+    pre {
         font-family: $font_main;
         font-size: 18px;
         
@@ -42,13 +42,18 @@ $color_comments_editor: #7D7B7B;
         overflow-y: scroll;
         overflow-x: hidden;
 
+        width: 410px;
+        white-space: pre-line;
+        background: none;
+        border: none;
+
         .key_words {
             color: $color_olive;
             font-weight: bold;
         }
     }
 
-    p.long-text{
+    pre.long-text{
         height: 593px;
     }
 }
