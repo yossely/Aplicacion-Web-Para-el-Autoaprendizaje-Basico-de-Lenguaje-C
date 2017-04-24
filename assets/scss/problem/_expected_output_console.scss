@@ -9,13 +9,14 @@
 
     margin-top: -35%;
     margin-left: 10%;
+    z-index: 999;
 
     .expected-ouput-content {
         height: 167px; 
         overflow-y: auto;
     }
     
-    h5, p {
+    h5, pre {
         font-family: $font_main;
         color: $color_white;
     }
@@ -28,9 +29,11 @@
         margin: 5px;
     }
 
-    p {
+    pre {
         min-height: 97%;
         background-color: #333333;
+        border: none;
+        border-radius: 0px;
         margin: 0px 5px 5px 5px;
         padding: 5px;
     }
