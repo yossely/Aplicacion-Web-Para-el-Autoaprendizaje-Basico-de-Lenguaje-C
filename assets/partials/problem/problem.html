@@ -57,7 +57,7 @@
                             class="btn btn-sm btn-green btn-run-code icon-arrow-run"
                             *ngIf="!isCompiling"
                             (click)="runCCode()">RUN</button>
-                    <button class="btn btn-sm btn-blue btn-reset-code" (click)="restoreOriginalCode()">
+                    <button class="btn btn-sm btn-blue btn-reset-code hint--medium hint--bottom-left" aria-label="RESTAURAR CÓDIDO ORIGINAL" (click)="restoreOriginalCode()">
                         <i class="fa fa-refresh"></i>
                     </button>
                     <ace-editor 
