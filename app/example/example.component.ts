@@ -34,7 +34,7 @@ export class ExampleComponent implements OnInit, AfterViewInit, OnChanges{
 
     ngOnChanges(){
         // Initialize console output for the example when lesson changed
-        this.example.consoleOutput = 'Example output';
+        this.example.consoleOutput = '>';
     }
 
     /**

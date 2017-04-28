@@ -105,7 +105,7 @@ export class ExercisesComponent implements OnInit, OnChanges{
          * Initialize console output for every exercice when lesson changed
          */
         for (var i = 0; i < this.exercises.length; i++) {
-            this.exercises[i].consoleOutput = `Console output initiated from exercise ${i+1}`;
+            this.exercises[i].consoleOutput = '>';
         }
         
         /**
