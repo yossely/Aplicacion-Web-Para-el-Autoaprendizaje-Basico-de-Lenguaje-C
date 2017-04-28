@@ -1,31 +1,16 @@
 // @import 'https://fonts.googleapis.com/css?family=Oxygen|Source+Sans+Pro';
 
 /*----------------------------------- FONTS ON -----------------------------------*/
-@font-face {
-	font-family: 'Oxygen';
-	src: url('assets/fonts/Oxygen/Oxygen-Regular.ttf');
-}
 
-@font-face {
-	font-family: 'Oxygen_Bold';
-	src: url('assets/fonts/Oxygen/Oxygen-Bold.ttf');
-}
+/*----------------- BASIC FONTS -----------------*/
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700|Source+Code+Pro|Source+Sans+Pro:400,600');
 
-@font-face {
-	font-family: 'SourceSansPro';
-	src: url('assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
-}
+$font_title: 'Oxygen', sans-serif;
+$font_main: 'Source Sans Pro', sans-serif;
+$font_console: 'Source Code Pro', monospace;
 
-@font-face {
-	font-family: 'SourceCodePro';
-	src: url('assets/fonts/Source_Sans_Pro/SourceSansPro-Semibold.ttf');
-}
 
-@font-face {
-	font-family: 'SourceSansPro_Semibold';
-	src: url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-}
-
+/*----------------- FONTAWESOME -----------------*/
 @font-face {
 	font-family: 'fontawesome';
 	src:url('assets/css/font-awesome/fonts/FontAwesome.otf');
@@ -36,15 +21,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-
-/*----------------- BASIC FONTS -----------------*/
-$font_title: Oxygen, sans-serif;
-$font_title_bold: Oxygen_Bold, sans-serif;
-$font_main: SourceSansPro, sans-serif;
-$font_main_semibold: SourceSansPro_Semibold, sans-serif;
-$font_console: 'Source Code Pro', monospace;
 
 /*----------------------------------- FONTS OFF ----------------------------------*/
 

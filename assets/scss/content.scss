@@ -20,7 +20,8 @@ $light-gray: #ececec;
 	}
 
 	p.lesson-number {
-		font-family: $font_main_semibold;
+		font-family: $font_main;
+		font-weight: 600;
 		color: $color_1NavyBlue;
 	}
 }

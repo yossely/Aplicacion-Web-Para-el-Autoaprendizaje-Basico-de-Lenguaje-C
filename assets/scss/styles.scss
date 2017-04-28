@@ -50,8 +50,9 @@ tabset.lesson-sections{
     > a,
       a:hover,
       a:focus {
-        font-family: $font_title_bold;
+        font-family: $font_title;
         font-size: 18px;
+        font-weight: 700;
         color: $color_white;
         text-transform: uppercase;
         padding: 5px 15px;
