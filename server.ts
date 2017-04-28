@@ -63,7 +63,7 @@ app.get('/content', function (req: express.Request, res: express.Response){
 
 // POST - create a .c file with the user C Code and compile it into JS with emcc
 // POST method is used to submits data to be processed to a specified resource
-app.post('/unit/:unitId/lesson/:lessonId/compileCCode', function (req, res) {
+app.post('/compileCCode', function (req, res) {
     var cCode: String = req.body.c_code;
 
     console.log('lets compile this C Code: ',cCode );
