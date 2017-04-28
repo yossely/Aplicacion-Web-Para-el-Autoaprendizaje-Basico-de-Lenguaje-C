@@ -2139,7 +2139,9 @@
                                ```c
                                int vector[10];
                                ```
-                               ####  Imagen
+                               
+                               ![Visualización de un vector](assets/img/array-image-lesson11.svg "Arreglos: vectores")
+
                                De aquí podemos observar:
                                
                                 - Para acceder a un elemento en particular, escribimos el nombre de nuestro vector e indicamos el **índice** al que necesitamos acceder
@@ -2439,7 +2441,9 @@
                                ```c
                                char mes[11]="Octubre";
                                ```
-                               ####  Imagen
+                               
+                               ![Visualización de un string](assets/img/strings-image-lesson12.svg "Strings")
+
                                También es posible declarar un string sin precisar su tamaño, en este caso el compilador se encarga de calcularlo:
                                ```c
                                char mes[]="Septiembre";
@@ -3078,12 +3082,18 @@
                                float matriz[5][9];
                                ```
                                 Aquí tenemos una matriz de tipo `float`, tiene 5 filas y 9 columnas. Recordemos que los índices de los arreglos comienzan por 0, por lo tanto nuestra matriz luce:
-                               ####  Imagen
+                               
+                               ![Visualización de una matriz](assets/img/array-image-lesson14.svg "Arreglos: matrices")
+
                                Para acceder a un elemento debemos especificar las coordenadas de la forma `matriz[fila][columna]`, es decir, si queremos acceder al elemento ubicado en la fila 3, columna 6, escribimos `matriz[3][6]`
                                
-                               Consideremos por ejemplo, inicializar un arreglo para usar como una matriz identidad
-                               ####  Imagen
-                               Necesitamos visitar cada elemento, un par de ciclos `for` resulta perfecto, uno para recorrer cada fila y otro para recorrer cada columna:
+                               Consideremos por ejemplo, inicializar un arreglo de 10x10 para usar como una matriz identidad
+
+                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1’s en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0’s en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
+                               
+                               ![Matriz Identidad](assets/img/identity-array-image-lesson14.svg "Matriz Identidad")
+                               
+                               Necesitamos visitar cada elemento de la matriz, un par de ciclos `for` resulta perfecto, uno para recorrer cada fila y otro para recorrer cada columna:
                                ```c
                                for (fila = 0; fila < 10; ++fila)
                                {
@@ -3862,7 +3872,9 @@
                                ```c  
                                producto prod = { .nombre="la la", .codigo=123, .cantidad=2, .precio=23.23f};
                                ```
-                               ### Imagen
+                               
+                               ![Estructura producto](assets/img/structure-image-lesson16.svg "Estructura producto")
+
                                Para **acceder** a cada miembro usamos el operador `.` (punto), por ejemplo, si queremos imprimir todos los valores de un producto:
                                ```c  
                                printf("Codigo: %d\n",prod.codigo);
@@ -4927,7 +4939,7 @@
                 "explanation": ''' 
                                Los punteros, como su nombre lo indica, *apuntan* a ubicaciones en memoria. Imaginemos una fila de cajas de seguridad (cajas fuertes) de varios tamaños en un banco. Cada caja tendrá un número asociado para facilitar su búsqueda. Estos números son como las direcciones en memoria de las variables en nuestros programas. Supongamos que tenemos un objeto de gran valor en una de las cajas, pero decidimos colocar la ubicación real en otra caja más pequeña que solo guarde una tarjeta con el número de la caja que contiene el objeto valioso, es decir, la caja con la tarjeta estaría guardando la ubicación de otra caja; lo que sería equivalente a un puntero. 
 
-                               ####  Imagen
+                               ![Punteros](assets/img/pointer-image-lesson18.svg "Punteros")
 
                                En las computadoras, los **punteros** son solo variables que guardan **direcciones de memoria**, usualmente las direcciones de otras variables. Una vez se tenga la dirección de memoria de una variable, es posible ir a esa dirección y obtener la información almacenada en la misma. Los punteros son una característica muy poderosa al programar, digamos que necesitamos pasar una variable que almacena mucha información a una función, es mucho más sencillo pasar su dirección que copiar cada pedazo de dicha información. 
 
