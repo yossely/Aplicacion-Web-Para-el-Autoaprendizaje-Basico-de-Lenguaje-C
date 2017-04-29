@@ -22,8 +22,8 @@
                                ```
                                Estudiemos el significado de las instrucciones presentes en nuestro programa: 
 
-                                - En la línea 1 estamos incluyendo información de la _librería_ en C de entrada y salida, esta librería nos proporciona funciones para imprimir en pantalla (salida) información y para solicitar (entrada) información del usuario.
-                                - Luego, en la línea 3, tenemos nuestra **función principal** llamada `main`, todo el código que queremos que se ejecute debe ir dentro de esta función.
+                                - En la línea 1 estamos incluyendo información de la _librería_ `stdio` (standard input and output), esta librería nos proporciona funciones para imprimir en pantalla (salida) información y para solicitar (entrada) información del usuario.
+                                - Luego, tenemos nuestra **función principal** llamada `main`, todo el código que queremos que se ejecute debe ir dentro de esta función.
                                 - Por ahora, nuestro main muestra el mensaje "¡Hola Mundo!" usando la función `printf`, esta función pertenece a la librería `stdio.h` que hemos incluido en la primera línea y con ella podemos imprimir en pantalla lo que necesitemos de manera sencilla. La función printf ahora solo imprime una cadena de caracteres, que están encerrados con los signos `" "`
                                 - En lenguaje C es posible escribir comentarios que faciliten la comprensión y legibilidad de un programa, en la línea 5 se observa que un comentario se tiene la forma `/* Comentario ... */`
                                 - La línea 7 de nuestro main indica que el programa retorna 0 al sistema operativo cuando termina la ejecución. 
@@ -295,7 +295,6 @@
                 "title": "Imprimir y leer información con printf  y scanf",
                 "content": "Imprimir valores enteros y decimales en la consola con printf. Solicitar y guardar valores enteros y decimales en variables con scanf.",
                 "explanation": '''
-                               # Imprimir y leer información con printf  y scanf
                                Ya vimos cómo imprimir valores de tipo `float`, ahora, para imprimir un valor de tipo `int`, debemos reemplazar el `%f` por `%d` de la siguiente manera:
                                ```c
                                printf("mitad de 6 es %d\n", 6/2);
@@ -502,7 +501,7 @@
                                <code>&#124;&#124;</code> | OR lógico
                                
                                Al evaluar una expresión se produce como resultado un **0** (falso) o **1** (verdadero). Estos operadores también tienen *reglas de precedencia* las cuales indican que primero se resuelven los operadores relacionales, luego los de igualdad y por último los lógicos.
-                               Por ejemplo, en la expresión `x < y && y == z` primero se evalúa si x es menor que y, luego si y es igual que z y por último se verifica que las dos condiciones anteriores tienen como resultado verdadero. Algunos programadores utilizan *paréntesis* para agrupar las condiciones y que sean más legibles: `(x < y) && (y == z)`
+                               Por ejemplo, en la expresión `x < y && y == z` primero se evalúa si *x* es menor que *y*, luego si *y* es igual que *z* y por último se verifica que las dos condiciones anteriores tienen como resultado verdadero. Algunos programadores utilizan *paréntesis* para agrupar las condiciones y que sean más legibles: `(x < y) && (y == z)`
                                ''',
                 "example": {
                     "statement": '''
@@ -666,7 +665,6 @@
                 "title": "Cláusula else",
                 "content": "Estructura y uso de la cláusula else",
                 "explanation": '''
-                               # Cláusula `else`
                                En algunas oportunidades es útil ejecutar ciertas instrucciones si *NO* se cumple una condición `if`, para estos casos existe la cláusula `else`:
                                ```c
                                if (/* condicion */)
@@ -868,7 +866,7 @@
                                De aquí que:
                                
                                 - La expresión a comparar en la sentencia `switch` puede ser **ÚNICAMENTE** de tipo `int`.
-                                - Cada caso `case` evalúa si valor coincide con un valor constante, el cual puede ser una expresión pero no puede contener variables, es decir, puede ser `5` ó `5+10` pero **no** `5+n`
+                                - Cada caso `case` evalúa si *valor* coincide con un valor constante, el cual puede ser una expresión pero no puede contener variables, es decir, puede ser `5` ó `5+10` pero **no** `5+n`
                                 - Después de definir cada caso, vienen las instrucciones a ejecutar si coincide con el mismo, no se requiere `{ }` para agrupar estas instrucciones. Por lo general, la última instrucción de cada caso es `break;` que indica detener el proceso de evaluar si el valor dentro de `switch` coincide con los casos restantes y se continúa con la siguiente instrucción o sentencia que esté después del `switch`
                                 - No está permitido definir el mismo caso dos veces.
                                 - Si *valor* no coincide con ninguna de los casos listados, entonces las instrucciones dentro del caso `default` son ejecutadas.
@@ -1097,9 +1095,9 @@
                 "title": "Ciclos: while",
                 "content": "Definición de ciclos, estructura y uso del ciclo while. ",
                 "explanation": '''
-                               Un ciclo es una sentencia que se encarga de ejecutar repetidamente las instrucciones que se encuentran dentro del cuerpo del ciclo. En C, cada ciclo tiene una expresión de control. **ANTES** de cada ejecución del cuerpo del ciclo (a esto se le llama *iteración*), la expresión de control es evaluada y si el resultado es verdadero, el ciclo continúa su ejecución.
+                               Un ciclo es una sentencia que se encarga de ejecutar repetidamente las instrucciones que se encuentran dentro del cuerpo del ciclo. En C, cada ciclo tiene una expresión de control. Dicha expresión de control es evaluada **ANTES** de cada ejecución del cuerpo del ciclo (a esto se le llama *iteración*) y si el resultado es verdadero, el ciclo continúa su ejecución.
                                
-                               El primer ciclo que veremos se denomina `while`, tiene la siguiente estructura:
+                               El primer ciclo que veremos se denomina `while` y tiene la siguiente estructura:
                                ```c
                                while(/* expresion */){
                                    // Instrucciones
@@ -1108,7 +1106,7 @@
                                La expresión dentro de los paréntesis `( )` de la sentencia `while` es la **expresión de control**, es aquella que se evalúa y si resulta verdadero se ejecutan las instrucciones que están dentro del cuerpo del ciclo (iteración). Si queremos hacer un ciclo que imprima los números del 1 al 10:
                                ```c
                                int numero = 1;
-                               while(numero < 10){
+                               while(numero <= 10){
                                    printf("%d\n", numero);
                                    numero = numero+1;
                                }
@@ -1118,11 +1116,11 @@
                                 - Se imprime el numero 1 y luego se incrementa el valor de *numero* a 2
                                 - Se evalúa nuevamente la condición *numero* < 10 ? → Verdadero (1)
                                 - Se imprime el numero 2 y luego se incrementa el valor de *numero* a 3
-                                - Así sucesivamente hasta que *numero* es igual a 10 
-                                - Se evalúa la condición *numero* < 10 ? → Falso (0)
+                                - Así sucesivamente hasta que *numero* es igual a 11 
+                                - Se evalúa la condición *numero* < 11 ? → Falso (0)
                                 - Se sale del ciclo, es decir, se detienen las iteraciones y se continúa con la siguiente instrucción que esté después del `while`
                                
-                               > **Nota:** El cuerpo del ciclo puede que no sea ejecutado ni una vez, ya que la expresión de control es evaluada ANTES de cada iteración (incluída la primera)
+                               > **Nota:** El cuerpo del ciclo puede que no sea ejecutado ni una vez, ya que la expresión de control es evaluada **ANTES** de cada iteración (incluída la primera)
                                ''',
                 "example": {
                     "statement": '''
@@ -1608,7 +1606,7 @@
                                 - La *expresion2* es la **expresión de control**, es decir, se evalúa expresion2 y si resulta verdadero (1) se ejecuta la iteración, de lo contrario se detiene el ciclo
                                 - La *expresion3* es la operación que se ejecuta al **FINAL** de cada iteración.
                                
-                               El ciclo for se emplea cuando se tiene la certeza de la **cantidad de iteraciones** que se desea tener. Con esto en mente, vamos a crear un ciclo for para imprimir una cuenta regresiva desde 10 hasta 1:
+                               El ciclo `for` se emplea cuando se tiene la certeza de la **cantidad de iteraciones** que se desea tener. Con esto en mente, vamos a crear un ciclo for para imprimir una cuenta regresiva desde 10 hasta 1:
                                ```c
                                int i;
                                for (i = 10; i > 0; i--)
@@ -1616,11 +1614,11 @@
                                    printf("%d\n",i);
                                }
                                ```
-                               En la línea 5 declaramos la variable que vamos a usar en el ciclo, luego las expresiones del ciclo nos indican:
+                               En la primera línea declaramos la variable que vamos a usar en el ciclo, luego las expresiones del ciclo nos indican:
                                
                                 - Inicializar la variable con un valor de 10 **ANTES** de empezar las iteraciones
-                                - **Repetir** la instrucción printf("%d\n",i); **mientras** i sea mayor que 0  
-                                - Al **finalizar** cada iteración decrementar el valor de i en 1 
+                                - **Repetir** la instrucción `printf("%d\n",i);` **mientras** *i* sea mayor que 0  
+                                - Al **finalizar** cada iteración decrementar el valor de *i* en 1 
                                ''',
                 "example": {
                     "statement": '''
@@ -1857,13 +1855,13 @@
                                ```c
                                int i=0;
                                ```
-                                - `i++;`    → se usa el valor viejo (0) en la instrucción actual y al finalizar, el operador ++ incrementa en 1 el valor guardado en i:
+                                - `i++;`    → se usa el valor viejo (0) en la instrucción actual y al finalizar, el operador ++ incrementa en 1 el valor guardado en *i*:
                                  - `printf("%d\n", i++);` → imprime 0
-                                - `++i;`     → se incrementa en 1 el valor guardado en i ANTES de ser usado en la instrucción actual:
+                                - `++i;`     → se incrementa en 1 el valor guardado en *i* **ANTES** de ser usado en la instrucción actual:
                                  - `printf("%d\n", ++i);` → imprime 1
-                                - `i--;`    → se usa el valor viejo (0) en la instrucción actual y al finalizar, el operador -- decrementa en 1 el valor guardado en i
-                                - `--i;`     → se decrementa en 1 el valor guardado en i ANTES de ser usado en la instrucción actual
-                                - `i+=6;`     → el operador += equivale a tomar el valor que hay en i, sumarle 6 y guardar el resultado nuevamente en i. Con esto podemos crear acumuladores de la forma: `acumulador += nuevoValor;` donde se toma el valor que hay en *acumulador*, se suma el *nuevoValor* y se guarda el resultado nuevamente en la variable *acumulador*.
+                                - `i--;`    → se usa el valor viejo (0) en la instrucción actual y al finalizar, el operador `--` decrementa en 1 el valor guardado en *i*
+                                - `--i;`     → se decrementa en 1 el valor guardado en *i* **ANTES** de ser usado en la instrucción actual
+                                - `i+=6;`     → el operador `+=` equivale a tomar el valor que hay en *i*, sumarle 6 y guardar el resultado nuevamente en *i*. Con esto podemos crear acumuladores de la forma: `acumulador += nuevoValor;` donde se toma el valor que hay en *acumulador*, se suma el *nuevoValor* y se guarda el resultado nuevamente en la variable *acumulador*.
                                 - El operador `+=` se aplica de la misma manera con los demás operadores matemáticos `-=`, `*=`, `/=`, `%=`
                                ''',
                 "example": {
@@ -2134,7 +2132,7 @@
                 "title": "Arreglos: vectores",
                 "content": "Definición de arreglos. Declaración de un vector. Condiciones en los arreglos. Acceso a los elementos de un vector. Asignación de valores en un vector.",
                 "explanation": '''
-                               Un arreglo es una estructura que contiene un número X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión, se denomina arreglo unidimensional o vector.
+                               Un arreglo es una estructura que contiene una cantidad X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión, se denomina arreglo unidimensional o vector.
                                Para declarar un vector debemos especificar el tipo de dato de los elementos que vamos a guardar y la cantidad de elementos, por ejemplo:
                                ```c
                                int vector[10];
@@ -2145,19 +2143,20 @@
                                De aquí podemos observar:
                                
                                 - Para acceder a un elemento en particular, escribimos el nombre de nuestro vector e indicamos el **índice** al que necesitamos acceder
-                                - Los índices para acceder a cada elemento *siempre empiezan* por **0**, en este vector de 10 elementos, el primer elemento se accede con el índice 0, el segundo con el índice 1, … y el elemento 10 se accede con el índice 9
+                                - Los índices para acceder a cada elemento *siempre empiezan* por **0**, en este vector de 10 elementos, el primer elemento se accede con el índice 0, el segundo con el índice 1, … y el décimo elemento se accede con el índice 9
+                               
                                En general si un vector es declarado de tipo `int` entonces cada elemento será tratado como si fuera una variable de tipo `int`, por lo tanto, podemos ejecutar las mismas operaciones que ya hemos aplicado a las variables tipo `int`:
                                ```c
                                int vector[10];
-                               
+
                                /*Asigna el valor en la quinta 
                                    posicion (indice 4) de vector */
                                vector[4] = 0; 
-                               
+
                                /*Guarda un valor entero en la tercera 
                                    posicion (indice 2) de vector */
                                scanf("%d",&vector[2]);
-                               
+
                                for (i = 0; i < 10; i++)
                                {
                                    /*Imprime en pantalla todos los elementos
@@ -2467,7 +2466,10 @@
                                
                                Como un string es un vector de caracteres, podemos acceder a cada caracter, es decir, a cada elemento a través de un índice de la siguiente manera:
                                ```c
+                               /* Obtener el cuarto caracter de la variable mes*/
                                char c = mes[3];
+
+                               /* Imprimir caracter por caracter de la variable mes */
                                printf("Deletreo: \n");
                                for (int i = 0; i < 11; ++i)
                                {
@@ -2723,7 +2725,7 @@
                 "title": "Funciones",
                 "content": "Definición y uso de una función. Estructura de una función en lenguaje C. Llamado de una función.",
                 "explanation": '''
-                               Una función es una serie de instrucciones agrupadas por los signos `{ }`, con un nombre y pueden o no, retornar un valor. Las funciones nos permiten dividir nuestro programa en piezas pequeñas más fácil de modificar y reutilizar bloques de código, es decir, escribimos la función una vez y la usamos las veces necesarias.
+                               Una función es una serie de instrucciones agrupadas por los signos `{ }`, tiene un nombre y pueden o no, retornar un valor. Las funciones nos permiten dividir nuestro programa en piezas pequeñas más fácil de modificar y reutilizar bloques de código, es decir, escribimos la función una vez y la usamos las veces necesarias.
 
                                Si en nuestro programa debemos calcular en varias oportunidades el promedio de dos números, podemos escribir una función para calcular y retornar el promedio:
                                ```c
@@ -2736,15 +2738,15 @@
                                ```
                                 - Se define el tipo de dato que retorna la función, en este caso es `int`. Puede ser cualquier tipo de dato (`float`, `char`, etc) y en caso de no retornar ningún valor, será de tipo `void` (vacío).
                                 - Se escoge el nombre de la función (*promedio*)
-                                - Las funciones pueden recibir *parámetros o argumentos*, ubicados dentro de los `( )` y separados por coma `,`. Debemos especificar el tipo de datos de cada parámetro. En este caso los valores recibidos serán guardados en las variables *valor1* y *valor2* respectivamente, con ellas podemos realizar las operaciones que hemos aplicados a variables de tipo `int`.
+                                - Las funciones pueden recibir *parámetros o argumentos*, ubicados dentro de los `( )` y separados por coma `,`. Debemos especificar el tipo de datos de cada parámetro. En este caso los valores recibidos serán guardados en las variables *valor1* y *valor2* respectivamente, con ellas podemos realizar las operaciones que hemos aplicado a variables de tipo `int`.
                                 - Se escriben las instrucciones que queremos que se ejecuten al llamar a esta función. En este caso se declara la variable *promedio* y se le asigna el valor resultante de la expresión `(valor1+valor2)/2`
-                                - Se retorna el valor de la variable promedio, notemos que esta variable es del mismo tipo que especificamos al declarar la función, es decir, int.
+                                - Se retorna el valor de la variable promedio, notemos que esta variable es del mismo tipo que especificamos al declarar la función, es decir, `int`.
                                 - Las funciones se declaran **antes** de la función principal `main`
                                
                                Para llamar la función escribimos el nombre de la función seguido de los parámetros que requiere la misma:
                                ```c
                                int x = 3, y = 5;
-                               int resultado = promedio(3,5);
+                               int resultado = promedio(x,y);
                                ```
                                Observemos que:
                                
@@ -3109,7 +3111,7 @@
                                    }
                                }
                                ```
-                               Para inicializar una matriz especificamos los elementos de cada fila con la ayuda de `{ }` de la siguiente manera:
+                               Para inicializar una matriz podemos especificar los elementos de cada fila con la ayuda de `{ }` de la siguiente manera:
                                ```c
                                int matriz[4][6] = {{1,1,0,1,0,1},
                                                    {0,0,1,1,0,0},
@@ -3485,7 +3487,7 @@
                                    
                                    ```c
                                    char string1[10] = "prueba",
-                                       string2[10];
+                                        string2[10];
                                    strcpy(string2,string1);
                                    // string2 = "prueba"
                                    ```
@@ -3494,7 +3496,7 @@
                                    
                                    ```c
                                    char cadena[10] = "prueba";
-                                       int longitud = strlen(cadena);
+                                   int longitud = strlen(cadena);
                                    // longitud = 6
                                    ```
                                - strcat → `strcat(string1, string2);` 
@@ -3502,9 +3504,9 @@
                                    
                                    ```c
                                    char cadena1[20] = "¡Hola ",
-                                       cadena2[10] = "mundo!";
-                                       strcat(cadena1, cadena2);
-                                       // cadena1 = "¡Hola mundo!"
+                                        cadena2[10] = "mundo!";
+                                   strcat(cadena1, cadena2);
+                                   // cadena1 = "¡Hola mundo!"
                                    ```
                                - strcmp → `strcmp(string1, string2);` 
                                  - **Compara** las cadenas de caracteres *string1* y *string2*, devuelve un valor menor que, igual que o mayor que 0 si string1 es menor que, igual que o mayor que string2
@@ -3513,10 +3515,10 @@
                                    if (strcmp(cadena1,cadena2) == 0)
                                        // cadena1 es igual que cadena2 ??
                                    
-                                       if (strcmp(cadena1,cadena2) < 0)
+                                   if (strcmp(cadena1,cadena2) < 0)
                                        // cadena1 es menor que cadena2 ??
                                    
-                                       if (strcmp(cadena1,cadena2) > 0)
+                                   if (strcmp(cadena1,cadena2) > 0)
                                        // cadena1 es mayor que cadena2 ??
                                    ```
                                ''',
@@ -3865,7 +3867,7 @@
                                ```c
                                producto prod;
                                ```
-                               Podemos **inicializar** una variable del tipo creado en la misma instrucción de declaración, la única restricción es que los valores deben aparecer en el mismo orden que han sido declarados o especificar cada miembro con el operador `.` (punto) seguido del nombre:
+                               Podemos **inicializar** una variable del tipo creado en la misma instrucción de declaración, la única restricción es que los valores deben aparecer en el mismo orden que han sido declarados o debemos especificar cada miembro con el operador `.` (punto) seguido del nombre:
                                ```c
                                producto prod = {123, "la la", 23.23f, 2}; 
                                ```
@@ -4308,7 +4310,7 @@
                 "explanation": '''
                                Estructura y arreglos pueden ser combinados sin ninguna restricción, lo que implica que los arreglos pueden tener estructuras como elementos y las estructuras pueden tener arreglos y otras estructuras como miembros.
                                
-                               Tener una estructura dentro de otra es útil en casos como: Se desea llevar el registro de estudiantes inscritos en una asignatura, para esto se requiere guardar el nombre completo del estudiante, la cédula de identidad y las notas de los 3 parciales:  
+                               Tener una estructura dentro de otra es útil en casos como el siguiente: Se desea llevar el registro de estudiantes inscritos en una asignatura, para esto se requiere guardar el nombre completo del estudiante, la cédula de identidad y las notas de los 3 parciales:  
                                ```c
                                typedef struct
                                {
@@ -4324,7 +4326,7 @@
                                    float notas_parciales[3];
                                }estudiante;
                                ```
-                               Vemos que primero hemos creado la estructura `nombre\_completo`, compuesta por *primer\_nombre* y *primer\_apellido* (strings). Luego creamos la estructura `estudiante`, la cual contiene un nombre (de tipo `nombre\_completo`), la cédula y un vector de 3 elementos para guardar las notas de cada parcial. 
+                               Vemos que primero hemos creado la estructura `nombre_completo`, compuesta por *primer\_nombre* y *primer\_apellido* (strings). Luego creamos la estructura `estudiante`, la cual contiene un nombre (de tipo `nombre_completo`), la cédula y un vector de 3 elementos para guardar las notas de cada parcial. 
                                
                                Para crear y utilizar una variable de tipo estudiante:
                                ```c
@@ -4949,16 +4951,16 @@
                                float *q; /* Apunta solo a variables de tipo float */
                                char *r; /* Apunta solo a variables de tipo char */
                                ```
-                               Es crucial inicializar un puntero antes de utilizarlo, con el operador & obtenemos la dirección de una variable:
+                               Es crucial inicializar un puntero antes de utilizarlo, con el operador `&` obtenemos la dirección de una variable:
                                ```c
                                int x=18, *p; 
                                p = &x; /* p 'apunta' a x */
                                ```
-                               Una vez p apunte a x, podemos usar el operador * para acceder al valor almacenado en x
+                               Una vez *p* apunte a *x*, podemos usar el operador `*` para acceder al valor almacenado en *x*
                                ```c
                                printf("Valor de x: %d\n",*p);
                                ```
-                               Mientras p apunte a x, *p es un alias de x. Así pues *p no solo tiene el mismo valor de x, sino que al cambiar el valor de *p también cambiamos el valor de x. En este ejemplo podemos observar el valor de p y de x al ser manipulado con *p y con x:
+                               Mientras *p* apunte a *x*, *p es un alias de x*. Así pues *p* no solo tiene el mismo valor de *x*, sino que al cambiar el valor de *p* también cambiamos el valor de *x*. En este ejemplo podemos observar el valor de *p* y de *x* al ser manipulado con `*p` y con `x`:
                                ```c
                                int x=18, *p;
 
@@ -4977,7 +4979,7 @@
                                printf("Valor de x: %d\n", x); /* Valor de x: 100 */
                                printf("Valor de *p: %d\n", *p); /* Valor de *p: 100 */
                                ```
-                               Si queremos modificar el valor de una variable dentro de una función podemos utilizar punteros, pasando la dirección en memoria de dicha variable como parámetro en la función y modificando su valor con el operador *  de la siguiente manera:
+                               Si queremos modificar el valor de una variable dentro de una función podemos utilizar punteros, pasando la dirección en memoria de dicha variable como parámetro en la función y modificando su valor con el operador `*` de la siguiente manera:
                                ```c
                                #include <stdio.h> 
 
