@@ -35,6 +35,7 @@ import { lessonsRoutingModule } from './lessons-routing.module';
 
 import { UnitsService } from './units.service';
 import { ErrorHandlingService } from '../problem/error-handling.service';
+import { CheckPrintfService } from '../problem/check-printf.service';
 import { MarkdownParserService } from '../markdown/markdown-parser.service';
 import { UserProgressService } from './user-progress.service';
 
@@ -61,6 +62,7 @@ import { UserProgressService } from './user-progress.service';
         UnitsService,
         MarkdownParserService,
         ErrorHandlingService,
+        CheckPrintfService,
         UserProgressService
     ]
 })

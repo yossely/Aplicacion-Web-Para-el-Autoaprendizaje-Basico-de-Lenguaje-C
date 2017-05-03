@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { UnitsService } from '../lessons/units.service';
 import { ErrorHandlingService } from './error-handling.service';
+import { CheckPrintfService } from './check-printf.service';
 import { Problem } from '../data_structure/problem';
 
 import 'brace';
@@ -49,7 +50,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     constructor(private _unitsService: UnitsService,
                 private _ngZone: NgZone,
-                private _errorHandlingService: ErrorHandlingService){ }
+                private _errorHandlingService: ErrorHandlingService,
+                private _checkPrintfService: CheckPrintfService){ }
 
     
     ngOnInit(){
@@ -125,8 +127,10 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         // Variable to show the 'Compiling' message instead of the 'Run' button on the Ace Editor
         this.isCompiling = true;
+
+        var cCode = this._checkPrintfService.fixPrintfSentences(this.editor.getEditor().getValue());
         
-        this.compileCCodeSubscription = this._unitsService.compileCCode(this.editor.getEditor().getValue())
+        this.compileCCodeSubscription = this._unitsService.compileCCode(cCode)
                                        .subscribe(
                                             data => {
                                                 console.log('From the get compileCode: ',data);
@@ -185,12 +189,13 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      * Clean the console (removes all text) before adding the C Compiled code into the webpage
      */
     cleanConsole(){
+        document.getElementById(this.problem.consoleId).innerHTML = '';
         this.problem.consoleOutput = '';
     }
 
 
     /**
-     * Append new text in the console text
+     * Append new text to the console text property of the current problem
      *
      * This method will be called outside the angular app, specifically in the module_configuration.js
      * 
@@ -198,7 +203,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      */
     appendConsoleText(newValue: string){
         this.problem.consoleOutput += newValue;
-        console.log("this is the new output: ", this.problem.consoleOutput);
+        // console.log("this is the new output: ", this.problem.consoleOutput);
     }
 
 
