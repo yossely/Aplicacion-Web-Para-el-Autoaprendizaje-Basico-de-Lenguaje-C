@@ -19,8 +19,8 @@ export class CheckPrintfService{
             return occurrencesOriginal.indexOf(item) == pos;
         });
 
-        console.log(occurrencesOriginal);
-        console.log(uniqueOcurrences);
+        console.log('occurrencesOriginal: ', occurrencesOriginal);
+        console.log('uniqueOcurrences: ', uniqueOcurrences);
 
         /* Get the wrong occurrences and fixe them */
         var wrongOccurrences = [], fixedOccurrences = [];
@@ -42,14 +42,12 @@ export class CheckPrintfService{
         console.log('all correct: ',fixedOccurrences);
 
         /* Replace the wrong occurrences with the fixed ones in the cCode */
-        var cCodeFixed;
-
         for (var i = 0; i < fixedOccurrences.length; i++) {
-            cCodeFixed = cCode.replace(wrongOccurrences[i],fixedOccurrences[i]);
-            cCode = cCodeFixed;
+            cCode = cCode.replace(wrongOccurrences[i],fixedOccurrences[i]);
         }
 
-        return cCodeFixed;
+        console.log('cCode fixed: ',cCode);
+        return cCode;
     }
 
     /**
