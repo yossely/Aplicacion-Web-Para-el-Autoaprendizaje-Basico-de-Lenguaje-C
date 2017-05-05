@@ -36,13 +36,13 @@
                                  Aquí encontraremos el enunciado del problema que necesitamos resolver, es decir, se describen en detalle los datos que se conocen del problema y lo que debemos obtener como resultado. Basándonos en los requerimientos descritos construimos nuestro programa. En este primer ejemplo necesitamos un programa en C que imprima en pantalla la oración "¡Hola Mundo!".
                                  ''',
                     "code": '''
-                            /* Incluir libreria stdio.h */
+                            /* Incluir librería stdio.h */
                             #include <stdio.h> 
 
-                            /* Funcion principal main */
+                            /* Función principal main */
                             int main()
                             { 
-                                /*Imprimir en pantalla la oracion ¡Hola Mundo!*/
+                                /*Imprimir en pantalla la oración ¡Hola Mundo!*/
                                 printf("¡Hola Mundo!"); 
                                 return 0;
                             }
@@ -87,16 +87,16 @@
                                      ''',
                         "code": '''
                                 /* Hacer: 
-                                        - Incluir la libreria stdio.h */ 
+                                        - Incluir la librería stdio.h */ 
 
                                 int main()
                                 { 
-                                    printf("¡Libreria incluida con exito!"); 
+                                    printf("¡Librería incluida con éxito!"); 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > ¡Libreria incluida con exito!
+                                          > ¡Librería incluida con éxito!
                                           '''
                     },
                     {
@@ -108,13 +108,13 @@
 
                                 int main()
                                 {
-                                    printf("¡Programa finalizado con exito!"); 
+                                    printf("¡Programa finalizado con éxito!"); 
                                     /* Hacer: 
                                         - Retornar el valor 0 */ 
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > ¡Programa finalizado con exito!
+                                          > ¡Programa finalizado con éxito!
                                           '''
                     }
                 ]
@@ -172,16 +172,16 @@
 
                             int main()
                             {
-                                /* Declaracion de las variables necesarias */
+                                /* Declaración de las variables necesarias */
                                 float alto = 14.4f, largo = 20.1f, ancho = 15.7f, volumen, peso_volumetrico; 
-                                /* Calculo del volumen */
+                                /* Cálculo del volumen */
                                 volumen = alto*largo*ancho;
-                                /* Calculo del peso volumetrico */
+                                /* Cálculo del peso volumétrico */
                                 peso_volumetrico = alto*largo*ancho/5000;
                                 /*Imprimir en pantalla el volumen del paquete*/
                                 printf("Volumen del paquete: %f\n", volumen);
-                                /*Imprimir en pantalla el peso volumetrico del paquete*/
-                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                /*Imprimir en pantalla el peso volumétrico del paquete*/
+                                printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
                                 return 0;
                             }
                             ''',
@@ -226,7 +226,7 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > La nota promedio de los tres parciales es: 67.066666 puntos
+                                          > La nota promedio de los tres parciales es: 67.066667 puntos
                                           '''
                     },
                     {
@@ -254,8 +254,8 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > El precio total de la compra es: 69.900002 unidades monetarias
-                                          > Aplicando el descuento, el precio final es: 48.930000 unidades monetarias
+                                          > El precio total de la compra es: 69.900000 unidades monetarias
+                                          > Aplicando el descuento, el precio final es: 48.929999 unidades monetarias
                                           '''
                     },
                     {
@@ -263,7 +263,7 @@
                                      Escriba un programa en C que calcule el volumen de una esfera de 10 metros de radio con la fórmula v = 4/3*π*r^3. 
 
                                      Tips: 
-                                     - Escriba la fracción 4/3 de la forma 4.0f/3.0f, es decir de tipo float
+                                     - Escriba la fracción 4/3 de la forma 4.0f/3.0f, es decir, de tipo float
                                      - En lenguaje C no existe operador exponencial, por lo que la expresión r^3 se calcula multiplicando r tres veces por sí mismo.
                                      - Utilice paréntesis ( ) si necesita agrupar operaciones matemáticas al aplicar la fórmula
                                      ''',
@@ -285,7 +285,7 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > El volumen de la esfera es: 4188.666992
+                                          > El volumen de la esfera es: 4188.666791
                                           '''
                     }
                 ]
@@ -324,10 +324,10 @@
                             
                             int main()
                             {
-                                /* Declaracion de las variables necesarias SIN ASIGNACION de valores*/
+                                /* Declaración de las variables necesarias SIN ASIGNACION de valores*/
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
                                 
-                                /* Solicitud de cada dimension */
+                                /* Solicitud de cada dimensión */
                                 printf("Ingrese las dimensiones del paquete\n");
                                 printf("Alto:");
                                 scanf("%f",&alto);
@@ -336,14 +336,14 @@
                                 printf("Ancho:");
                                 scanf("%f",&ancho);
 
-                                /* Calculo del volumen */
+                                /* Cálculo del volumen */
                                 volumen = alto*largo*ancho;
-                                /* Calculo del peso volumetrico */
+                                /* Cálculo del peso volumetrico */
                                 peso_volumetrico = alto*largo*ancho/5000;
                                 /*Imprimir en pantalla el volumen del paquete*/
                                 printf("Volumen del paquete: %f\n", volumen);
-                                /*Imprimir en pantalla el peso volumetrico del paquete*/
-                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                /*Imprimir en pantalla el peso volumétrico del paquete*/
+                                printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
                                 return 0;
                             }
                             ''',
@@ -355,7 +355,7 @@
                         Mostramos un mensaje solicitando el alto del paquete y luego guardamos el valor en la variable correspondiente. De igual forma solicitamos las dos dimensiones restantes.
                         ''',
                         '''
-                        El volumen y peso volumétrico del paquete se calcula de la misma manera que el ejemplo anterior.
+                        El volumen y peso volumétrico del paquete se calcula de la misma manera que en el ejemplo anterior.
                         ''',
                         '''
                         Por último imprimimos en pantalla los valores calculados.
@@ -392,11 +392,11 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que solicite un valor para ‘x’ y lo evalúe en la siguiente función polinómica: 5x^3 - x^2 +7x - 6. 
+                                     Escriba un programa que solicite un valor para 'x' y lo evalúe en la siguiente función polinómica: 5x^3 - x^2 +7x - 6. 
                                      
                                      Nota: 
-                                     - El valor de ‘x’ siempre será un número entero.
-                                     - Recuerde que C no tiene operador exponencial, así que es necesario multiplicar ‘x’ por sí misma tantas veces como lo indique el exponente, por ejemplo, x*x representa ‘x’ al cuadrado.
+                                     - El valor de 'x' siempre será un número entero.
+                                     - Recuerde que C no tiene operador exponencial, así que es necesario multiplicar 'x' por sí misma tantas veces como lo indique el exponente, por ejemplo, x*x representa 'x' al cuadrado.
                                      - Utilice los ( ) para agrupar cuando lo considere necesario.
                                      ''',
                         "code": '''
@@ -404,11 +404,11 @@
                                 
                                 int main()
                                 {
-                                    /* Declarar las variables enteras para guardar el valor de x y el resultado de la funcion */
+                                    /* Declarar las variables enteras para guardar el valor de x y el resultado de la función */
                                    
                                     /* Solicitar el monto al usuario */
 
-                                    /* Evaluar la funcion polinomica */
+                                    /* Evaluar la funcion polinómica */
 
                                     /* Mostrar en pantalla el resultado de la forma: 
                                             Al evaluar la función con x = VALOR_DE_X el resultado es: VALOR_DE_RESULTADO
@@ -517,10 +517,10 @@
                             
                             int main()
                             {
-                                /* Declaracion de las variables necesarias SIN ASIGNACION de valores*/
+                                /* Declaración de las variables necesarias SIN ASIGNACION de valores*/
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
                                 
-                                /* Solicitud de cada dimension */
+                                /* Solicitud de cada dimensión */
                                 printf("Ingrese las dimensiones del paquete\n");
                                 printf("Alto:");
                                 scanf("%f",&alto);
@@ -529,15 +529,15 @@
                                 printf("Ancho:");
                                 scanf("%f",&ancho);
 
-                                /* Calculo del volumen  y peso volumetrico*/
+                                /* Cálculo del volumen  y peso volumétrico*/
                                 volumen = alto*largo*ancho;
                                 peso_volumetrico = alto*largo*ancho/5000;
 
-                                /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                 printf("Volumen del paquete: %f\n", volumen);
-                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
 
-                                /* Clasificacion del paquete segun su peso volumetrico */
+                                /* Clasificación del paquete según su peso volumétrico */
                                 if ( peso_volumetrico >= 10.0f )
                                 {
                                     printf("El paquete es grande\n");
@@ -578,7 +578,7 @@
                                      - Si el monto es mayor o igual que 30000 y menor que 100000 la comisión será de 100 + 0.34%
                                      - Si el monto es mayor o igual que 100000 la comisión será de 155 + 0.09%
                                      
-                                     Se requiere escribir un programa que solicite al usuario el monto de la transferencia que desea realizar, evaluar y calcular la comisión que le corresponde según el monto e imprimir en pantalla el monto total con la comisión añadida.
+                                     Se requiere escribir un programa que solicite al usuario el monto de la transferencia que desea realizar, luego evaluar y calcular la comisión que le corresponde según el monto e imprimir en pantalla el monto total con la comisión añadida.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -589,9 +589,9 @@
                                     
                                     /* Solicitar el monto a transferir */
 
-                                    /* Calcular la comision segun el monto a transferir*/
+                                    /* Calcular la comisión segun el monto a transferir*/
                                     
-                                    /* Imprimir el monto final con la comision previamente calculada */
+                                    /* Imprimir el monto final con la comisión previamente calculada */
 
                                     return 0;
                                 }
@@ -614,17 +614,17 @@
                                 {
                                     /* Declarar las variables necesarias*/
                                     
-                                    /* Solicitar el numero entero */
+                                    /* Solicitar el número entero */
 
-                                    /* Clasificacion de numero: PAR o IMPAR */
+                                    /* Clasificacion de número: PAR o IMPAR */
                                     /* Tip: utilice el operador % */
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese un numero entero: 5
-                                          > El numero es impar
+                                          > Ingrese un número entero: 5
+                                          > El número es impar
                                           '''
                     },
                     {
@@ -648,7 +648,7 @@
                                     printf("Ingrese su edad: ");
                                     scanf("%d",&edad);
 
-                                    /* Clasificar el usuario segun su edad */
+                                    /* Clasificar el usuario según su edad */
 
                                     return 0;
                                 }
@@ -690,10 +690,10 @@
                             
                             int main()
                             {
-                                /* Declaracion de las variables necesarias SIN ASIGNACION de valores*/
+                                /* Declaración de las variables necesarias SIN ASIGNACION de valores*/
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
                                 
-                                /* Solicitud de cada dimension */
+                                /* Solicitud de cada dimensión */
                                 printf("Ingrese las dimensiones del paquete\n");
                                 printf("Alto:");
                                 scanf("%f",&alto);
@@ -702,15 +702,15 @@
                                 printf("Ancho:");
                                 scanf("%f",&ancho);
 
-                                /* Calculo del volumen  y peso volumetrico*/
+                                /* Cálculo del volumen  y peso volumétrico*/
                                 volumen = alto*largo*ancho;
                                 peso_volumetrico = alto*largo*ancho/5000;
 
-                                /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                 printf("Volumen del paquete: %f\n", volumen);
                                 printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
 
-                                /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                /* Clasificación del paquete según su peso volumétrico con IF-ELSE*/
                                 if ( peso_volumetrico >= 10.0f )
                                 {
                                     printf("El paquete es grande\n");
@@ -767,12 +767,13 @@
                                 ''',
                         "expectedOutput": ''' 
                                           > Ingrese la nota de la asignatura: 96
-                                          > Calificacion obtenida: A
+                                          > Calificación obtenida: A
                                           '''
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que solicite tres números enteros e indique cuál es el mayor y el menor número entre ellos. Nota: Intente utilizar la menor cantidad de condiciones (if-else) posibles
+                                     Escriba un programa que solicite tres números enteros e indique cuál es el mayor y el menor número entre ellos. 
+                                     Nota: Intente utilizar la menor cantidad de condiciones (if-else) posibles
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -780,26 +781,26 @@
                                 int main()
                                 {
                                     /* Declarar: 
-                                        - 3 variables para guardar cada numero
-                                        - 1 variable para guardar el numero menor
-                                        - 1 variable para guardar el numero mayor */
+                                        - 3 variables para guardar cada número
+                                        - 1 variable para guardar el número menor
+                                        - 1 variable para guardar el número mayor */
                                     
-                                    /* Solicitar los tres numeros a evaluar */
+                                    /* Solicitar los tres números a evaluar */
 
-                                    /* Condiciones IF-ELSE para hallar el menor y mayor numero de los tres valores ingresados */
+                                    /* Condiciones IF-ELSE para hallar el menor y mayor número de los tres valores ingresados */
                                     
-                                    /* Imprimir en pantalla el menor y mayor numero */
+                                    /* Imprimir en pantalla el menor y mayor número */
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese los 3 numeros a evaluar:
+                                          > Ingrese los 3 números a evaluar:
                                           > 45
                                           > 21
                                           > 68
-                                          > El numero mayor es 68
-                                          > El numero menor es 45
+                                          > El número mayor es 68
+                                          > El número menor es 45
                                           '''
                     },
                     {
@@ -821,9 +822,9 @@
                                 
                                 int main()
                                 {
-                                    /* Declarar una variable para manejar el codigo de area */
+                                    /* Declarar una variable para manejar el código de área */
                                     
-                                    /* Solicitar el codigo de area */
+                                    /* Solicitar el código de área */
 
                                     /* Condiciones IF-ELSE para indicar la ciudad correspondiente */
 
@@ -831,7 +832,7 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese el codigo de area: 912
+                                          > Ingrese el código de área: 912
                                           > Buenos Aires
                                           '''
                     }
@@ -886,13 +887,13 @@
                             
                             int main()
                             {
-                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                /* Declaración de las variables necesarias para las dimensiones del paquete */
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
                                 
-                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                /* Declaración de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
                                 int tiempo_entrega_dias;
 
-                                /* Solicitud de cada dimension */
+                                /* Solicitud de cada dimensión */
                                 printf("Ingrese las dimensiones del paquete\n");
                                 printf("Alto:");
                                 scanf("%f",&alto);
@@ -901,15 +902,15 @@
                                 printf("Ancho:");
                                 scanf("%f",&ancho);
 
-                                /* Calculo del volumen  y peso volumetrico*/
+                                /* Cálculo del volumen  y peso volumétrico*/
                                 volumen = alto*largo*ancho;
                                 peso_volumetrico = alto*largo*ancho/5000;
 
-                                /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                 printf("Volumen del paquete: %f\n", volumen);
-                                printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
 
-                                /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                /* Clasificación del paquete segun su peso volumétrico con IF-ELSE*/
                                 if ( peso_volumetrico >= 10.0f )
                                 {
                                     printf("El paquete es grande\n");
@@ -925,7 +926,7 @@
                                 }
 
                                 /* Solicitud del tiempo de entrega */
-                                printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                printf("\nIngrese el tiempo de entrega en días (1, 2 o 3):\n");
                                 scanf("%d",&tiempo_entrega_dias);
 
                                 /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
@@ -954,7 +955,7 @@
                         Luego, en las líneas 44 y 45 solicitamos el tiempo de entrega y guardamos el valor en la variable creada en el paso anterior.
                         ''',
                         '''
-                        A partir de la línea 50 encontramos la sentencia switch, la cual evalúa el tiempo de entrega (especificado en días), lo compara con los valores definidos en cada case (1 2 y 3) y cuando coincida con alguno de ellos se imprime el mensaje de la tarifa correspondiente.
+                        A partir de la línea 50 encontramos la sentencia switch, la cual evalúa el tiempo de entrega (especificado en días), lo compara con los valores definidos en cada case (1 2 y 3) y cuando coincida con alguno de ellos se imprime el mensaje con la tarifa correspondiente.
                         '''
                     ]
                 },
@@ -979,19 +980,19 @@
                                 
                                 int main()
                                 {    
-                                    /* Declarar la variable entera para guardar el digito */
+                                    /* Declarar la variable entera para guardar el dígito */
 
-                                    /* Solicitar el digito */
+                                    /* Solicitar el dígito */
 
-                                    /* Evaluar, clasificar y mostrar el codigo morse correspondiente al digito 
-                                        Nota: Recuerde mostrar el mensaje de error si el digito no se encuentra entre 0 y 9
+                                    /* Evaluar, clasificar y mostrar el código morse correspondiente al dígito 
+                                        Nota: Recuerde mostrar el mensaje de error si el dígito no se encuentra entre 0 y 9
                                     */
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese un digito del 0 al 9: 3
+                                          > Ingrese un dígito del 0 al 9: 3
                                           > . . . _ _
                                           '''
                     },
@@ -1005,45 +1006,45 @@
                                      
                                      El flujo del programa sería: solicitar dos valores decimales, mostrar opciones disponibles, guardar opción ingresada, evaluar la opción y aplicar la operación correspondiente mostrando el resultado de la misma. 
                                      
-                                     En caso de que el usuario ingrese una opción que no está disponible se debe mostrar el mensaje "La opcion OPCION no esta disponible"
+                                     En caso de que el usuario ingrese una opción que no está disponible se debe mostrar el mensaje "La opción OPCION no esta disponible"
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
                                 
                                 int main()
                                 {    
-                                    /* Declarar las variables para guardar los dos numeros decimales 
-                                        y la variable para guardar la opcion del cliente*/
+                                    /* Declarar las variables para guardar los dos números decimales 
+                                        y la variable para guardar la opción del cliente*/
                                     
 
-                                    /* Solicitar los numeros decimales */
+                                    /* Solicitar los números decimales */
 
 
-                                    /* Imprimir las opciones disponibles en forma de menu */
+                                    /* Imprimir las opciones disponibles en forma de menú */
 
                                     
-                                    /* Solicitar la opcion deseada */
+                                    /* Solicitar la opción deseada */
 
 
-                                    /* Evaluar la opcion ingresada y sumar, restar, multiplicar o dividir segun sea
-                                        el caso, mostrando el resultado de la operacion aplicada 
+                                    /* Evaluar la opción ingresada y sumar, restar, multiplicar o dividir según sea
+                                        el caso, mostrando el resultado de la operación aplicada 
 
-                                        Nota: Recuerde mostrar el mensaje de error si la opcion ingresada no esta disponible */
+                                        Nota: Recuerde mostrar el mensaje de error si la opción ingresada no está disponible */
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
                                           > Ingrese dos numeros decimales:
-                                          > Numero 1: 6.4
-                                          > Numero 2: 2
+                                          > Número 1: 6.4
+                                          > Número 2: 2
                                           > Las opciones disponibles son:
                                           > 1: Sumar
                                           > 2: Restar
                                           > 3: Multiplicar
                                           > 4: Dividir
-                                          > Ingrese la opcion deseada: 4
-                                          > La division de los dos valores es 3.20
+                                          > Ingrese la opción deseada: 4
+                                          > La división de los dos valores es 3.20
                                           '''
                     },
                     {
@@ -1059,17 +1060,17 @@
                                 
                                 int main()
                                 {    
-                                    /* Declarar las variables de tipo entero para dia, mes y ano */
+                                    /* Declarar las variables de tipo entero para día, mes y año */
 
-                                    /* Solicitar y guardar dia, mes y ano */
+                                    /* Solicitar y guardar día, mes y año */
 
                                     /* Imprimir la primera parte de la fecha final "DIA de " */
 
                                     /* Evaluar, clasificar e imprimir el nombre del mes correspondiente 
-                                        al numero de mes ingresado */
+                                        al número de mes ingresado */
                                     
 
-                                    /* Imprimir la ultima parte de la fecha final " del ano 20ANO" */
+                                    /* Imprimir la última parte de la fecha final " del año 20ANO" */
                                     
                                     return 0;
                                 }
@@ -1131,19 +1132,19 @@
                             
                             int main()
                             {
-                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                /* Declaración de las variables necesarias para las dimensiones del paquete */
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
                                 
-                                /* Declaracion e inicializacion del peso disponible en la camioneta*/
+                                /* Declaración e inicialización del peso disponible en la camioneta*/
                                 float peso_disponible = 28.3f;
 
-                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                /* Declaración de la variable entera que guardará el TIEMPO DE ENTREGA del paquete */
                                 int tiempo_entrega_dias;
 
                                 /* Mientras el peso disponible sea mayor que 0.0 se solicitan los datos de un nuevo paquete */
                                 while(peso_disponible > 0.0f){
 
-                                    /* Solicitud de cada dimension */
+                                    /* Solicitud de cada dimensión */
                                     printf("\nIngrese las dimensiones del paquete\n");
                                     printf("Alto:");
                                     scanf("%f",&alto);
@@ -1152,19 +1153,19 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo del volumen  y peso volumetrico*/
+                                    /* Calculo del volumen  y peso volumétrico*/
                                     volumen = alto*largo*ancho;
                                     peso_volumetrico = alto*largo*ancho/5000;
 
-                                    /* Actualizar el peso volumetrico disponible en la camioneta, es decir, restar el peso 
-                                        volumetrico del paquete actual al peso disponible */
+                                    /* Actualizar el peso volumétrico disponible en la camioneta, es decir, restar el peso 
+                                        volumétrico del paquete actual al peso disponible */
                                     peso_disponible = peso_disponible - peso_volumetrico;
 
-                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                     printf("Volumen del paquete: %f\n", volumen);
-                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                    printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
 
-                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                    /* Clasificación del paquete según su peso volumétrico con IF-ELSE*/
                                     if ( peso_volumetrico >= 10.0f )
                                     {
                                         printf("El paquete es grande\n");
@@ -1180,7 +1181,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("\nIngrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
@@ -1216,7 +1217,7 @@
                         Luego ubicamos todas las instrucciones creadas en las lecciones anteriores dentro del cuerpo del ciclo, es decir, la solicitud y cálculo del volumen, peso volumétrico y tarifa del paquete a enviar se ubican dentro de las { } del while.
                         ''',
                         '''
-                        Ahora actualizamos la variable que se evalúa en la expresión de control (peso_disponible) restándole el peso volumétrico del paquete actual, de esta manera vamos disminuyendo el peso disponible de la camioneta. Este paso es muy importante porque si no se actualiza la variable evaluada en la expresión de control creamos un ciclo while infinito.
+                        Ahora actualizamos la variable que se evalúa en la expresión de control (peso_disponible) restándole el peso volumétrico del paquete actual, de esta manera vamos disminuyendo el peso disponible de la camioneta. Este paso es muy importante porque si no se actualiza la variable evaluada en la expresión de control creamos un ciclo while infinito. (Línea 32)
                         ''',
                         '''
                         Por último mostramos el mensaje "***Espacio de la camioneta agotado" fuera del ciclo while para indicar que hemos terminado. (Línea 74)
@@ -1238,23 +1239,23 @@
                                         - 1 variable que ira contando desde 1 hasta NUMERO */
                                     int n, numero_actual = 1;
 
-                                    /* Solicitar el numero */
+                                    /* Solicitar el número */
 
                                     /* Crear el ciclo while que vaya desde 1 hasta NUMERO (incluyendo NUMERO) */
                                     while(){
 
-                                        /* Imprimir el numero actual y su cuadrado
+                                        /* Imprimir el número actual y su cuadrado
                                             Ej.  2  4 
                                         */
                                         
-                                        /* Actualizar el numero actual al siguiente */
+                                        /* Actualizar el número actual al siguiente */
                                     }
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese el numero: 5
+                                          > Ingrese el número: 5
                                           > 1  1
                                           > 2  4
                                           > 3  9
@@ -1264,7 +1265,8 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que solicite un número par entero (n) al usuario e imprima los números pares desde n hasta 0, es decir, de manera descendiente. Si el usuario ingresa un número impar se debe mostrar el mensaje error “Lo siento, el numero ingresado es impar”.
+                                     Escriba un programa que solicite un número par entero (n) al usuario e imprima los números pares desde n hasta 0, es decir, de manera descendiente. 
+                                     Si el usuario ingresa un número impar se debe mostrar el mensaje error “Lo siento, el número ingresado es impar”.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1274,15 +1276,15 @@
                                     /* Declarar una variable entera para guardar el NUMERO */
 
 
-                                    /* Solicitar el numero */
+                                    /* Solicitar el número */
 
 
                                     /* Hacer:
-                                        - Verificar que el numero sea par 
-                                        - Si el numero es par imprimir los numeros pares desde NUMERO hasta 0
-                                            Nota: Recuerde actualizar la variable que evalue en la condicion del ciclo while 
+                                        - Verificar que el número sea par 
+                                        - Si el número es par imprimir los números pares desde NUMERO hasta 0
+                                            Nota: Recuerde actualizar la variable que evalúe en la condición del ciclo while 
                                                   dentro del ciclo
-                                        - Si el numero es impar imprimir el mensaje "Lo siento, el numero ingresado es impar" 
+                                        - Si el número es impar imprimir el mensaje "Lo siento, el número ingresado es impar" 
                                     */
                                    
 
@@ -1290,7 +1292,7 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese un numero par: 8
+                                          > Ingrese un número par: 8
                                           > 8
                                           > 6
                                           > 4
@@ -1308,13 +1310,13 @@
                                 int main()
                                 {
                                     /* Declarar las variables necesarias para guardar el saldo de la cuenta, el monto de las
-                                        transacciones (credito o debito) y la opcion del usuario */
+                                        transacciones (crédito o débito) y la opción del usuario */
 
                                     /* Mostrar el menu de opciones */
 
                                     /* Hacer:
-                                        - Solicitar la opcion del usuario mientras no escoja "Salir" (4)
-                                        - Evaluar la opcion del usuario y aplicar las instrucciones correspondientes segun la opcion 
+                                        - Solicitar la opción del usuario mientras no escoja "Salir" (4)
+                                        - Evaluar la opción del usuario y aplicar las instrucciones correspondientes según la opción 
                                     */
                                    
                                     
@@ -1327,18 +1329,18 @@
                         "expectedOutput": ''' 
                                           > Opciones del programa
                                           > 0: Vaciar cuenta
-                                          > 1: Credito
-                                          > 2: Debito
+                                          > 1: Crédito
+                                          > 2: Débito
                                           > 3: Saldo actual
                                           > 4: Salir
                                           > El saldo actual es: 0.00
-                                          > Opcion: 1
-                                          > Ingrese el monto del credito: 32.2
-                                          > Opcion: 2
-                                          > Ingrese el monto del debito: 2.3
-                                          > Opcion: 3
+                                          > Opción: 1
+                                          > Ingrese el monto del crédito: 32.2
+                                          > Opción: 2
+                                          > Ingrese el monto del débito: 2.3
+                                          > Opción: 3
                                           > El saldo actual es: 29.90
-                                          > Opcion: 4
+                                          > Opción: 4
                                           > Programa finalizado
                                           '''
                     }
@@ -1387,20 +1389,20 @@
 
                             int main()
                             {
-                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                /* Declaración de las variables necesarias para las dimensiones del paquete */
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
                                 
-                                /* Declaracion e inicializacion del peso disponible en la camioneta*/
+                                /* Declaración e inicialización del peso disponible en la camioneta*/
                                 float peso_disponible = 28.3f;
 
-                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                /* Declaración de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
                                 int tiempo_entrega_dias;
 
                                 /* Asegurar el registro de al menos un paquete con el ciclo do-while */
                                 do{
 
-                                    /* Solicitud de cada dimension */
-                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    /* Solicitud de cada dimensión */
+                                    printf("Ingrese las dimensiones del paquete\n");
                                     printf("Alto:");
                                     scanf("%f",&alto);
                                     printf("Largo:");
@@ -1408,19 +1410,19 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo del volumen  y peso volumetrico*/
+                                    /* Cálculo del volumen  y peso volumétrico*/
                                     volumen = alto*largo*ancho;
                                     peso_volumetrico = alto*largo*ancho/5000;
 
-                                    /* Actualizar el peso volumetrico disponible en la camioneta, es decir, restar el peso 
-                                        volumetrico del paquete actual al peso disponible */
+                                    /* Actualizar el peso volumétrico disponible en la camioneta, es decir, restar el peso 
+                                        volumétrico del paquete actual al peso disponible */
                                     peso_disponible = peso_disponible - peso_volumetrico;
 
-                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                     printf("Volumen del paquete: %f\n", volumen);
-                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                    printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
 
-                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                    /* Clasificación del paquete según su peso volumétrico con IF-ELSE*/
                                     if ( peso_volumetrico >= 10.0f )
                                     {
                                         printf("El paquete es grande\n");
@@ -1436,7 +1438,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("\nIngrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
@@ -1453,7 +1455,7 @@
                                             printf("La tarifa es 300\n");
                                             break;
                                     }
-                                /* Condicion para repetir el ciclo: mientras el peso disponible sea mayor que 0.0 */
+                                /* Condición para repetir el ciclo: mientras el peso disponible sea mayor que 0.0 */
                                 }while(peso_disponible > 0.0f);
 
                                 /* Indicar que el espacio se ha agotado y el programa ha terminado*/
@@ -1493,28 +1495,28 @@
                                     
 
                                     /* Hacer:
-                                        - Solicitar numero por numero 
-                                        - Sumar cada numero y guardar el resultado en una variable
-                                        - Contar la cantidad de numeros
+                                        - Solicitar número por número 
+                                        - Sumar cada número y guardar el resultado en una variable
+                                        - Contar la cantidad de números
                                     */
                                     
                                     
                                     /* Calcular el promedio*/
                                     
 
-                                    /* Imprimir el promedio de los numeros ingresados */
+                                    /* Imprimir el promedio de los números ingresados */
                                     
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Introduzca un numero: 32
-                                          > Introduzca un numero: 43.2
-                                          > Introduzca un numero: 45
-                                          > Introduzca un numero: 15.7          
-                                          > Introduzca un numero: 0
-                                          > El promedio de los numeros ingresados es 27.18
+                                          > Introduzca un número: 32
+                                          > Introduzca un número: 43.2
+                                          > Introduzca un número: 45
+                                          > Introduzca un número: 15.7          
+                                          > Introduzca un número: 0
+                                          > El promedio de los números ingresados es 27.18
                                           '''
                     },
                     {
@@ -1530,9 +1532,9 @@
                                 {
                                     /* Declarar las variables necesarias */
 
-                                    /* Solicitar el numero entero*/
+                                    /* Solicitar el número entero*/
 
-                                    /* Imprimir el numero introducido con sus digitos invertidos 
+                                    /* Imprimir el número introducido con sus dígitos invertidos 
                                         Tip: Puede utilizar el operador %
                                     */
                                    
@@ -1541,7 +1543,7 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Introduzca un numero entero: 23456
+                                          > Introduzca un número entero: 23456
                                           > 65432
                                           '''
                     },
@@ -1559,33 +1561,33 @@
                                 int main()
                                 {
                                     /* Declarar 
-                                        - Una variable para guardar cada numero introducido  
-                                        - Una variable con un valor muy pequeño para comparar con los numeros introducidos 
+                                        - Una variable para guardar cada número introducido  
+                                        - Una variable con un valor muy pequeño para comparar con los números introducidos 
                                           y encontrar el mayor */
 
 
                                     /* Hacer:
-                                        - Un ciclo que solicite numero por numero 
-                                        - Comparar si el numero ingresado es el mayor
-                                        - Detener el ciclo cuando el numero ingresado sea 0 o negativo
+                                        - Un ciclo que solicite número por número 
+                                        - Comparar si el número ingresado es el mayor
+                                        - Detener el ciclo cuando el número ingresado sea 0 o negativo
                                     */
 
                                     
-                                    /* Imprimir el numero mas grande de la serie ingresada */
+                                    /* Imprimir el número mas grande de la serie ingresada */
 
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Introduzca un numero: 53.4
-                                          > Introduzca un numero: 23
-                                          > Introduzca un numero: 17.2
-                                          > Introduzca un numero: 60.5
-                                          > Introduzca un numero: 58.1
-                                          > Introduzca un numero: 43
-                                          > Introduzca un numero: 0
-                                          > El numero mas grande es 60.50
+                                          > Introduzca un número: 53.4
+                                          > Introduzca un número: 23
+                                          > Introduzca un número: 17.2
+                                          > Introduzca un número: 60.5
+                                          > Introduzca un número: 58.1
+                                          > Introduzca un número: 43
+                                          > Introduzca un número: 0
+                                          > El número mas grande es 60.50
                                           '''
                     }
                 ]
@@ -1622,17 +1624,18 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Volviendo a nuestro ejemplo de la empresa de envíos, supongamos esta vez que la empresa desea registrar sólo 3 paquetes en lo que resta del día. Vamos a modificar el programa en C para solicitar, calcular y mostrar el volumen, peso volumétrico y costo de envío de solo 3 paquetes. Al finalizar el registro de los paquetes se requiere imprimir el mensaje "Registro de los 3 paquetes completado con exito". 
+                                 Volviendo a nuestro ejemplo de la empresa de envíos, supongamos esta vez que la empresa desea registrar sólo 3 paquetes en lo que resta del día. Vamos a modificar el programa en C para solicitar, calcular y mostrar el volumen, peso volumétrico y costo de envío de solo 3 paquetes. 
+                                 Al finalizar el registro de los paquetes se requiere imprimir el mensaje "Registro de los 3 paquetes completado con éxito". 
                                  ''',
                     "code": '''
                             #include <stdio.h> 
 
                             int main()
                             {
-                                /* Declaracion de las variables necesarias para las dimensiones del paquete */
+                                /* Declaración de las variables necesarias para las dimensiones del paquete */
                                 float alto, largo, ancho, volumen, peso_volumetrico; 
 
-                                /* Declaracion de la variable entera que guardara el TIEMPO DE ENTREGA del paquete */
+                                /* Declaración de la variable entera que guardará el TIEMPO DE ENTREGA del paquete */
                                 int i, tiempo_entrega_dias;
 
                                 /* Registrar exactamente 3 paquetes 
@@ -1641,14 +1644,14 @@
                                           i = 1
                                           i = 2
 
-                                    - Recuerde que al final de cada iteración se aplica la operacion ++i, la cual 
+                                    - Recuerde que al final de cada iteración se aplica la operación ++i, la cual 
                                     incrementa la i en 1, es decir, equivale a escribir i = i+1
-                                    - Cuando i = 3 no cumple la condicion de i < 3 entonces termina el ciclo.
+                                    - Cuando i = 3 no cumple la condición de i < 3 entonces termina el ciclo.
                                 */
                                 for (i = 0; i < 3; ++i)
                                 {
-                                    /* Solicitud de cada dimension */
-                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    /* Solicitud de cada dimensión */
+                                    printf("Ingrese las dimensiones del paquete\n");
                                     printf("Alto:");
                                     scanf("%f",&alto);
                                     printf("Largo:");
@@ -1656,15 +1659,15 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo del volumen  y peso volumetrico*/
+                                    /* Cálculo del volumen  y peso volumétrico*/
                                     volumen = alto*largo*ancho;
                                     peso_volumetrico = alto*largo*ancho/5000;
 
-                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                     printf("Volumen del paquete: %f\n", volumen);
-                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                    printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
 
-                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE*/
+                                    /* Clasificación del paquete según su peso volumétrico con IF-ELSE*/
                                     if ( peso_volumetrico >= 10.0f )
                                     {
                                         printf("El paquete es grande\n");
@@ -1680,7 +1683,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("\nIngrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("\nIngrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar, clasificar e informar la tarifa correspondiente al tiempo de entrega
@@ -1700,7 +1703,7 @@
                                 }
 
                                 /* Imprimir mensaje de registro completado */
-                                printf("\nRegistro de los 3 paquetes completado con exito\n");
+                                printf("\nRegistro de los 3 paquetes completado con éxito\n");
                                 
                                 return 0;
                             }
@@ -1713,7 +1716,7 @@
                         Creamos la variable entera que manejaremos en el ciclo for, en este caso la llamaremos i. (Línea 9)
                         ''',
                         '''
-                        En la línea 21 declaramos el ciclo for cuyas expresiones indican: primero inicializamos la variable i en 0, segundo repetir el ciclo mientras i sea menor que 3 y por último incrementar el valor de i en 1 al finalizar cada iteración.
+                        En la línea 21 declaramos el ciclo for, sus expresiones indican: primero inicializamos la variable i en 0, segundo repetir el ciclo mientras i sea menor que 3 y por último incrementar el valor de i en 1 al finalizar cada iteración.
                         ''',
                         '''
                         Después del ciclo for, fuera del mismo, imprimimos el mensaje que indica haber registrado los 3 paquetes de manera exitosa. (Línea 76)
@@ -1733,17 +1736,17 @@
                                     /* Declarar las variables necesarias*/
 
 
-                                    /* Solicitar el numero entero */
+                                    /* Solicitar el número entero */
 
 
-                                    /* Imprimir la tabla de multiplicar del numero ingresado desde 1 a 10 */
+                                    /* Imprimir la tabla de multiplicar del número ingresado desde 1 a 10 */
                                     
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese un numero entero: 5
+                                          > Ingrese un número entero: 5
                                           > 1 x 5 = 5
                                           > 2 x 5 = 10
                                           > 3 x 5 = 15
@@ -1769,10 +1772,10 @@
                                     /* Declarar las variables necesarias*/
 
 
-                                    /* Solicitar el numero entero */
+                                    /* Solicitar el número entero */
                                     
 
-                                    /* Calcular el factorial del numero ingresado */
+                                    /* Calcular el factorial del número ingresado */
                                     
                                     
                                     /* Imprimir el resultado de la forma "NUMERO! = RESULTADO" */
@@ -1782,7 +1785,7 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese un numero entero: 5
+                                          > Ingrese un número entero: 5
                                           > 5! = 120
                                           '''
                     },
@@ -1800,25 +1803,25 @@
                                 int main()
                                 {
                                     /* Declarar las variables necesarias para controlar las iteraciones del ciclo, 
-                                        guardar la cantidad de dias que tiene el mes y el primer dia de la semana de ese mes */
+                                        guardar la cantidad de días que tiene el mes y el primer día de la semana de ese mes */
 
 
-                                    /* Solicitar la cantidad de dias del mes y el primer dia (1=Lun, 7=Dom) */
+                                    /* Solicitar la cantidad de días del mes y el primer día (1=Lun, 7=Dom) */
                                     
 
                                     /* Mostrar la inicial de los días de la semana:
-                                        Nota: Observe el uso de \t para imprimir un espacio (tabulacion) entre cada inicial, 
+                                        Nota: Observe el uso de \t para imprimir un espacio (tabulación) entre cada inicial, 
                                                 con este \t todas las letras quedan separadas por el mismo espacio.
                                     */
                                     printf("\nL\tM\tX\tJ\tV\tS\tD\n");
                                     
-                                    /* Imprimir la cantidad de espacios en blanco segun el primer dia de la semana que ha 
+                                    /* Imprimir la cantidad de espacios en blanco según el primer día de la semana que ha 
                                         indicado el usuario */
                                     
 
-                                    /* Imprimir los dias de la semana 
+                                    /* Imprimir los días de la semana 
                                         Nota: Recuerde imprimir un salto de linea (\n) al final de la semana, es decir, cada
-                                                7 dias 
+                                                7 días 
                                     */
                                    
                                     
@@ -1826,8 +1829,8 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese el numero de dias del mes: 31
-                                          > Ingrese el primer dia de la semana (1=Lun, 7=Dom): 6
+                                          > Ingrese el número de días del mes: 31
+                                          > Ingrese el primer día de la semana (1=Lun, 7=Dom): 6
                                           >
                                           > L   M   X   J   V   S   D
                                                               1   2   
@@ -1882,27 +1885,27 @@
 
                             int main()
                             {
-                                /* Declaracion de las variables necesarias para las dimensiones del paquete, guardar el
-                                    calculo del costo del paquete actual y del costo total por el envio de los paquetes del dia
+                                /* Declaración de las variables necesarias para las dimensiones del paquete, guardar el
+                                    calculo del costo del paquete actual y del costo total por el envío de los paquetes del día
                                 */
                                 float alto, largo, ancho, volumen, peso_volumetrico, 
                                       costo_paquete_actual,
                                       costo_total_todos_paquetes = 0.0f; 
 
-                                /* Declaracion de variables enteras 
+                                /* Declaración de variables enteras 
                                     - Una para guardar el tiempo de entrega que escoja el cliente
                                     - Una para guardar la respuesta a la pregunta ¿Otro paquetes? (1:Si, 0:No)
-                                    - Una para contar la cantidad de paquetes registrados en el dia
+                                    - Una para contar la cantidad de paquetes registrados en el día
                                 */
                                 int tiempo_entrega_dias, respuesta, cantidad_paquetes = 0;
 
-                                /* Registro de paquetes hasta que la respuesta sea 0 (No mas paquetes)
+                                /* Registro de paquetes hasta que la respuesta sea 0 (No más paquetes)
                                     - Contar cada paquete registrado
                                     - Sumar cada costo de un paquete y guardar el resultado en costo_total_todos_paquetes
                                 */
                                 do{
-                                    /* Solicitud de cada dimension */
-                                    printf("\nIngrese las dimensiones del paquete\n");
+                                    /* Solicitud de cada dimensión */
+                                    printf("Ingrese las dimensiones del paquete\n");
                                     printf("Alto:");
                                     scanf("%f",&alto);
                                     printf("Largo:");
@@ -1910,16 +1913,16 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo del volumen  y peso volumetrico*/
+                                    /* Calculo del volumen  y peso volumétrico*/
                                     volumen = alto*largo*ancho;
                                     peso_volumetrico = alto*largo*ancho/5000;
 
-                                    /* Imprimir en pantalla el volumen y peso volumetrico del paquete */
+                                    /* Imprimir en pantalla el volumen y peso volumétrico del paquete */
                                     printf("Volumen del paquete: %f\n", volumen);
-                                    printf("Peso volumetrico del paquete: %f\n", peso_volumetrico);
+                                    printf("Peso volumétrico del paquete: %f\n", peso_volumetrico);
 
-                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE 
-                                       Calculo del precio del paquete actual segun su categoria
+                                    /* Clasificación del paquete según su peso volumétrico con IF-ELSE 
+                                       Cálculo del precio del paquete actual según su categoría
                                     */
                                     if ( peso_volumetrico >= 10.0f )
                                     {
@@ -1939,7 +1942,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar, informar la tarifa correspondiente al tiempo de entrega
@@ -1967,15 +1970,15 @@
                                     costo_total_todos_paquetes+=costo_paquete_actual;
 
                                     /* Mostrar el costo del paquete acutal */
-                                    printf("El envio del paquete #%d es %.2f\n", cantidad_paquetes, costo_paquete_actual);
+                                    printf("El envío del paquete #%d es %.2f\n", cantidad_paquetes, costo_paquete_actual);
 
                                     /* Preguntar si hay otro paquete*/
                                     printf("\n¿Hay otro paquete por registrar (1:Si, 0:No)? \n");
                                     scanf("%d",&respuesta);
                                 }while(respuesta == 1);
 
-                                /* Imprimir la cantidad de paquetes registrados en el dia y costo total por el 
-                                    envio de los mismos */
+                                /* Imprimir la cantidad de paquetes registrados en el día y costo total por el 
+                                    envío de los mismos */
                                 printf("\nHoy se registraron %d paquetes con un costo total de %.2f\n",cantidad_paquetes, costo_total_todos_paquetes);
                                 
                                 return 0;
@@ -2058,25 +2061,25 @@
                                     /* Declarar de las variables necesarias */
 
 
-                                    /* Solicitar los numeros enteros que delimitan el rango */
+                                    /* Solicitar los números enteros que delimitan el rango */
 
                                     /* Contruir un ciclo que vaya desde a hasta b 
-                                       Contar la cantidad de numeros pares que se encuentran dentro del rango
-                                       Sumar los numeros pares que se encuentran dentro del rango
+                                       Contar la cantidad de números pares que se encuentran dentro del rango
+                                       Sumar los números pares que se encuentran dentro del rango
                                     */
 
 
-                                    /* Imprimir la cantidad de numeros pares dentro del rango y la suma de ellos */
+                                    /* Imprimir la cantidad de números pares dentro del rango y la suma de ellos */
                                     
 
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese los numeros enteros que delimitan el rango
+                                          > Ingrese los números enteros que delimitan el rango
                                           > a: 1
                                           > b: 10
-                                          > Existen 4 numeros pares dentro del rango y su suma es 20
+                                          > Existen 4 números pares dentro del rango y su suma es 20
                                           '''
                     },
                     {
@@ -2235,7 +2238,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -2554,7 +2557,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -2909,7 +2912,7 @@
                                     precios_paquetes[i]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[i]);
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3):\n");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3):\n");
                                     scanf("%d",&tiempo_entrega_dias);
 
                                     /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -3273,7 +3276,7 @@
                                         precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
 
                                         /* Solicitud del tiempo de entrega */
-                                        printf("Ingrese el tiempo de entrega en dias (1, 2 o 3): ");
+                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
                                         scanf("%d",&tiempo_entrega_dias[filas][columnas]);
 
                                         /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -3677,7 +3680,7 @@
                                         precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
 
                                         /* Solicitud del tiempo de entrega */
-                                        printf("Ingrese el tiempo de entrega en dias (1, 2 o 3): ");
+                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
                                         scanf("%d",&tiempo_entrega_dias[filas][columnas]);
 
                                         /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -4044,7 +4047,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3): ");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
                                     scanf("%d",&paquete_actual.tiempo_entrega_dias);
 
                                     /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -4515,7 +4518,7 @@
                                     }
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3): ");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
                                     scanf("%d",&paquetes[i].tiempo_entrega_dias);
 
                                     /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
@@ -5194,7 +5197,7 @@
                                     paquetes[i].precio = categoria_y_precio(paquetes[i].peso_volumetrico, paquetes[i].categoria);
 
                                     /* Solicitud del tiempo de entrega */
-                                    printf("Ingrese el tiempo de entrega en dias (1, 2 o 3): ");
+                                    printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
                                     scanf("%d",&paquetes[i].tiempo_entrega_dias);
 
                                     /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
