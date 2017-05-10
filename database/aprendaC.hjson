@@ -2175,17 +2175,17 @@
 
                                  El flujo del programa será: registrar los 3 paquetes y guardar su respectiva información, luego mostrar un menú de opciones donde el usuario seleccione el paquete que desea consultar y mostrar el volumen, peso volumétrico y precio de dicho paquete. 
 
-                                 Una de las opciones en el menú será Salir del sistema (opción 0) para finalizar el programa. 
+                                 Una de las opciones en el menú será "Salir del sistema" (opción 0) para finalizar el programa. 
                                  ''',
                     "code": '''
                             #include <stdio.h> 
 
                             int main()
                             {
-                                /* Declaracion de las variables de tipo decimal:
+                                /* Declaración de las variables de tipo decimal:
                                     - 3 variables para guardar dimensiones del paquete actual
                                     - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
-                                    - 1 vector de 3 posiciones para guardar el peso volumetrico de cada paquete
+                                    - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
                                     - 1 vector de 3 posiciones para guardar el precio de cada paquete 
                                 */
                                 float alto, largo, ancho, 
@@ -2193,17 +2193,17 @@
                                       pesos_volumetricos[3], 
                                       precios_paquetes[3]; 
 
-                                /* Declaracion de variables enteras 
+                                /* Declaración de variables enteras 
                                     - Una para manejar las iteraciones del ciclo for
                                     - Una para guardar el tiempo de entrega que escoja el cliente
-                                    - Una para asignar la cantidad de paquetes que se registraran
-                                    - Una para guardar la opcion del menu escogida por el usario
+                                    - Una para asignar la cantidad de paquetes que se registrarán
+                                    - Una para guardar la opción del menu escogida por el usario
                                 */
                                 int i, tiempo_entrega_dias, cantidad_paquetes = 3, opcion;
 
                                 /* Registro de los 3 paquetes */
                                 for(i=0; i<cantidad_paquetes; i++){
-                                    /* Solicitud de cada dimension */
+                                    /* Solicitud de cada dimensión */
                                     printf("\nIngrese las dimensiones del paquete\n");
                                     printf("Alto:");
                                     scanf("%f",&alto);
@@ -2212,13 +2212,13 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de los 
+                                    /* Cálculo y asignación del volumen y peso volumétrico en cada posición de los 
                                         vectores volumenes y pesos_volumetricos respectivamente */
                                     volumenes[i] = alto*largo*ancho;
                                     pesos_volumetricos[i] = alto*largo*ancho/5000;
                                     
-                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE 
-                                       Calculo del precio del paquete actual segun su categoria
+                                    /* Clasificación del paquete según su peso volumétrico con IF-ELSE 
+                                       Cálculo del precio del paquete actual segun su categoria
                                     */
                                     if ( pesos_volumetricos[i] >= 10.0f )
                                     {
@@ -2257,27 +2257,27 @@
                                     }
                                 }
 
-                                /* Mostrar el menu de opciones disponibles */
-                                printf("\nMenu de opciones\n");
-                                printf("1:Mostrar informacion del paquete #1\n");
-                                printf("2:Mostrar informacion del paquete #2\n");
-                                printf("3:Mostrar informacion del paquete #3\n");
+                                /* Mostrar el menú de opciones disponibles */
+                                printf("\nMenú de opciones\n");
+                                printf("1:Mostrar información del paquete #1\n");
+                                printf("2:Mostrar información del paquete #2\n");
+                                printf("3:Mostrar información del paquete #3\n");
                                 printf("0:Salir del sistema\n");
 
                                 /* Guardar la opcion */
-                                printf("-Opcion: ");
+                                printf("-Opción: ");
                                 scanf("%d",&opcion);
 
                                 while(opcion != 0){
-                                    /* Mostrar el volumen, peso volumetrico y precio del paquete correspondiente 
-                                        Nota: Recuerde que el indice para acceder 
+                                    /* Mostrar el volumen, peso volumétrico y precio del paquete correspondiente 
+                                        Nota: Recuerde que los índices de un vector comienzan en 0
                                     */
-                                    printf("\n**Informacion del paquete #%d\n", opcion);
+                                    printf("\n**Información del paquete #%d\n", opcion);
                                     printf("Volumen: %f\n", volumenes[opcion-1]);
-                                    printf("Peso volumetrico: %f\n", pesos_volumetricos[opcion-1]);
+                                    printf("Peso volumétrico: %f\n", pesos_volumetricos[opcion-1]);
                                     printf("Precio: %f\n", precios_paquetes[opcion-1]);
 
-                                    /* Solicitar una nueva opcion al finalizar cada iteracion del ciclo while */
+                                    /* Solicitar una nueva opción al finalizar cada iteración del ciclo while */
                                     printf("-Opcion: ");
                                     scanf("%d",&opcion);
                                 }
@@ -2302,7 +2302,7 @@
                         Al finalizar con el registro de los 3 paquetes mostramos el menú de opciones disponibles para permitir que el usuario indique el paquete que desea imprimir en pantalla. (Líneas 81 - 89)
                         ''',
                         '''
-                        El menú de opciones estará disponible mientras el usuario ingrese una opción diferente a la de Salir del sistema (Opción 0) por lo que un ciclo while se convierte en el apropiado para este caso. Dentro de este ciclo se muestra la información del paquete seleccionado, usando como índice de cada vector la opción introducida por el usuario menos 1.
+                        El menú de opciones estará disponible mientras el usuario ingrese una opción diferente a la de Salir del sistema (Opción 0) por lo que un ciclo while se convierte en el apropiado para este caso. Dentro de este ciclo se muestra la información del paquete seleccionado, usando como índice de cada vector la opción introducida por el usuario restándole 1.
                         ''',
                         '''
                         Recordemos que las posiciones de los vectores empiezan en 0, lo que implica que para acceder a la información del primer paquete debemos utilizar el índice 0, para el segundo paquete el índice 1 y para el tercero el índice 2.
@@ -2312,7 +2312,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Desarrolle un programa en C para solicitar al usuario 10 número enteros para luego imprimir en pantalla los mismo números pero en orden inverso.
+                                     Desarrolle un programa en C para solicitar al usuario 10 números enteros para luego imprimir en pantalla los mismo números pero en orden inverso.
 
                                      Tip: Utilice un ciclo que solicite y guarde los números enteros en un vector y otro ciclo que recorra el mismo vector desde la última posición a la primera para imprimir cada número en orden inverso.
                                      ''',
@@ -2322,36 +2322,39 @@
                                 int main()
                                 {
                                     /* Declarar las variables necesarias para las iteraciones de los ciclos y para
-                                        guardar los diez numeros */
+                                        guardar los diez números */
 
 
-                                    /* Solicite y guarde los diez numeros en cada posicion del vector declarado */
+                                    /* Solicite y guarde los diez números en cada posición del vector declarado */
 
 
-                                    /* Muestre los numeros guardados en el vector en orden inverso */
+                                    /* Muestre los números guardados en el vector en orden inverso */
 
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Numero: 1
-                                          > Numero: 2
-                                          > Numero: 3
-                                          > Numero: 4
-                                          > Numero: 5
-                                          > Numero: 6
-                                          > Numero: 7
-                                          > Numero: 8
-                                          > Numero: 9
-                                          > Numero: 10
+                                          > Número: 1
+                                          > Número: 2
+                                          > Número: 3
+                                          > Número: 4
+                                          > Número: 5
+                                          > Número: 6
+                                          > Número: 7
+                                          > Número: 8
+                                          > Número: 9
+                                          > Número: 10
                                           >
-                                          > Los numeros en orden inverso son: 10 9 8 7 6 5 4 3 2 1
+                                          > Los números en orden inverso son: 10 9 8 7 6 5 4 3 2 1
                                           '''
                     },
                     {
                         "statement": '''
-                                     Diseñe un programa en lenguaje C que le permita a un usuario ingresar 10 números, luego determinar e informar si la primera posición es positiva, si el número de la cuarta posición es impar y si la última posición es diferente de cero.
+                                     Diseñe un programa en lenguaje C que le permita a un usuario ingresar 10 números, luego determinar e informar si
+                                     -La primera posición es positiva.
+                                     -El número de la cuarta posición es impar.
+                                     -La última posición es diferente de cero.
 
                                      Nota: los números siempre serán valores enteros.
                                      ''',
@@ -2361,10 +2364,10 @@
                                 int main()
                                 {
                                     /* Declarar las variables necesarias para las iteraciones del ciclo y para
-                                        guardar los diez numeros */
+                                        guardar los diez números */
                                     
 
-                                    /* Calcule los 38 numeros restantes de la serie */
+                                    /* Calcule los 38 números restantes de la serie */
                                     
 
                                     /* Verifique si la primera posición es positiva */
@@ -2374,23 +2377,23 @@
                                     
 
 
-                                    /* Verifique si la ultima posición es diferente de cero */
+                                    /* Verifique si la última posición es diferente de cero */
                                     
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Numero: -3
-                                          > Numero: 2
-                                          > Numero: -7
-                                          > Numero: 9
-                                          > Numero: 5
-                                          > Numero: 4
-                                          > Numero: 2
-                                          > Numero: -2
-                                          > Numero: 1
-                                          > Numero: 0
+                                          > Número: -3
+                                          > Número: 2
+                                          > Número: -7
+                                          > Número: 9
+                                          > Número: 5
+                                          > Número: 4
+                                          > Número: 2
+                                          > Número: -2
+                                          > Número: 1
+                                          > Número: 0
                                           > La primera posición no es positiva
                                           > La cuarta posición es impar
                                           > La última posición no es diferente de cero
@@ -2408,16 +2411,16 @@
                                 int main()
                                 {
                                     /* Declarar las variables necesarias para las iteraciones de los ciclos y para
-                                        guardar los diez numeros */
+                                        guardar los diez números */
                                     
 
                                     /* Asignar los dos primeros valores individualmente */
                                     
 
-                                    /* Calcule los 38 numeros restantes de la serie */
+                                    /* Calcule los 38 números restantes de la serie */
                                     
 
-                                    /* Muestre los numeros de la serie Fibonacci previamente calculados */
+                                    /* Muestre los números de la serie Fibonacci previamente calculados */
                                     
                                     
                                     return 0;
@@ -2484,19 +2487,19 @@
                     "statement": '''
                                  Se necesita complementar el programa de la empresa Rapidash para solicitar al usuario la cuidad de origen y destino del paquete, permitiendo corregirlas si no fueron ingresadas correctamente. 
 
-                                 Para este ejemplo se le preguntará al usuario la cantidad de paquete que desea registrar, se solicitan las dimensiones de cada paquete y el tiempo de entrega para calcular el volumen, peso volumétrico y precio del mismo. Luego se solicita la ciudad de origen y destino del paquete permitiendo que que el usuario corrija las ciudades en caso de indicar que no ha sido ingresadas correctamente. 
+                                 Para este ejemplo se le preguntará al usuario la cantidad de paquetes que desea registrar, se solicitan las dimensiones de cada paquete y el tiempo de entrega para calcular el volumen, peso volumétrico y precio del mismo. Luego se solicita la ciudad de origen y destino del paquete permitiendo que que el usuario corrija las ciudades en caso de indicar que no ha sido ingresadas correctamente. 
 
-                                 Después de solicitar y calcular toda la información de un paquete se debe mostrar un resumen del envío del mismo de la forma: El paquete #NUMERO con volumen VOLUMEN y peso volumétrico PESO_VOLUMETRICO será enviado desde CIUDAD_ORIGEN hasta CIUDAD_DESTINO con un costo de PRECIO
+                                 Después de solicitar y calcular toda la información de un paquete se debe mostrar un resumen del envío de la forma: El paquete #NUMERO con volumen VOLUMEN y peso volumétrico PESO_VOLUMETRICO será enviado desde CIUDAD_ORIGEN hasta CIUDAD_DESTINO con un costo de PRECIO
                                  ''',
                     "code": '''
                             #include <stdio.h> 
 
                             int main()
                             {
-                                /* Declaracion de las variables de tipo decimal:
+                                /* Declaración de las variables de tipo decimal:
                                     - 3 variables para guardar dimensiones del paquete actual
                                     - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
-                                    - 1 vector de 3 posiciones para guardar el peso volumetrico de cada paquete
+                                    - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
                                     - 1 vector de 3 posiciones para guardar el precio de cada paquete 
                                 */
                                 float alto, largo, ancho, 
@@ -2504,11 +2507,11 @@
                                       pesos_volumetricos[3], 
                                       precios_paquetes[3]; 
 
-                                /* Declaracion de variables string para guardar la ciudad de origen y destino de
+                                /* Declaración de variables string para guardar la ciudad de origen y destino de
                                     un paquete */
                                 char ciudad_origen[31], ciudad_destino[31];
 
-                                /* Declaracion de variables enteras 
+                                /* Declaración de variables enteras 
                                     - Una para manejar las iteraciones del ciclo for
                                     - Una para guardar el tiempo de entrega que escoja el cliente
                                     - Una para manejar la respuesta de si las ciudades introducidas son correctas o no (1:Si, 0:No)
@@ -2522,7 +2525,7 @@
 
                                 /* Registro de cantidad indicada de paquetes */
                                 for(i=0; i<cantidad_paquetes; i++){
-                                    /* Solicitud de cada dimension */
+                                    /* Solicitud de cada dimensión */
                                     printf("\nIngrese las dimensiones del paquete #%d\n",i+1);
                                     printf("Alto:");
                                     scanf("%f",&alto);
@@ -2531,13 +2534,13 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de los 
+                                    /* Cálculo y asignación del volumen y peso volumétrico en cada posición de los 
                                         vectores volumenes y pesos_volumetricos respectivamente */
                                     volumenes[i] = alto*largo*ancho;
                                     pesos_volumetricos[i] = alto*largo*ancho/5000;
                                     
-                                    /* Clasificacion del paquete segun su peso volumetrico con IF-ELSE 
-                                       Calculo del precio del paquete actual segun su categoria
+                                    /* Clasificación del paquete segun su peso volumétrico con IF-ELSE 
+                                       Cálculo del precio del paquete actual segun su categoría
                                     */
                                     if ( pesos_volumetricos[i] >= 10.0f )
                                     {
@@ -2577,10 +2580,10 @@
 
                                     /* Solicitar y verficar la ciudad de origen y destino del paquete */
                                     do{
-                                        printf("¿Cual es la ciudad de origen? ");
+                                        printf("¿Cuál es la ciudad de origen? ");
                                         scanf("%s",ciudad_origen);
 
-                                        printf("¿Cual es la ciudad de destino? ");
+                                        printf("¿Cuál es la ciudad de destino? ");
                                         scanf("%s",ciudad_destino);
 
                                         printf("¿Las ciudades introducidas son correctas (1:Si, 0:No)? ");
@@ -2647,7 +2650,7 @@
                     },
                     {
                         "statement": '''
-                                     Diseñe un programa en C para permitir que el usuario ingrese una oración de máximo 30 caracteres, luego el usuario indicará qué parte de la oración desea imprimir a través de índices. Estos índices son números enteros que indican el inicio y fin de la porción de la oración que desea imprimir.
+                                     Diseñe un programa en C para permitir que el usuario ingrese una oración de máximo 50 caracteres, luego el usuario indicará qué parte de la oración desea imprimir a través de índices. Estos índices son números enteros que indican el inicio y fin de la porción de la oración que desea imprimir.
 
                                      Nota: Recuerde que la función scanf omite los espacios en blanco de una oración, por lo que es conveniente que utilice la función fgets para guardar la oración ingresada por el usuario.
                                      ''',
@@ -2656,11 +2659,11 @@
 
                                 int main()
                                 {
-                                    /* Declarar las variables necesarias guardar el oracion del usuario y los valores 
-                                        que señalan el inicio y final de la porcíón que desea imprimir */
+                                    /* Declarar las variables necesarias guardar el oración del usuario y los valores 
+                                        que señalan el inicio y final de la porción que desea imprimir */
                                     
 
-                                    /* Solicitar la oracion que desea revisar */
+                                    /* Solicitar la oración que desea revisar */
                                     
 
                                     /* Imprimir los caracteres que se encuentran dentro del rango inicio-final 
@@ -2682,7 +2685,7 @@
                     },
                     {
                         "statement": '''
-                                     Desarrolle un programa en C que permita ingresar una oración y reemplazar todas las vocales por el caracter ‘a’ en toda la oración. Por último se debe imprimir la oración después del proceso de reemplazo. 
+                                     Desarrolle un programa en C que permita ingresar una oración y reemplazar todas las vocales por el caracter 'a' en toda la oración. Por último se debe imprimir la oración después del proceso de reemplazo. 
 
                                      Nota: 
                                      - La oración tendrá un máximo de 30 caracteres.
@@ -2694,16 +2697,16 @@
 
                                 int main()
                                 {
-                                    /* Declarar la variable string para guardar el oracion ingresada */
+                                    /* Declarar la variable string para guardar el oración ingresada */
                                     
 
-                                    /* Solicitar la oracion que desea procesar (usando fgets) */
+                                    /* Solicitar la oración que desea procesar (usando fgets) */
                                     
 
-                                    /* Recorrer y reemplazar en la oracion las vocales por el caracter 'a' */
+                                    /* Recorrer y reemplazar en la oración las vocales por el caracter 'a' */
                                     
                                     
-                                    /* Imprimir la oracion despues de reemplazar  */
+                                    /* Imprimir la oración después de reemplazar  */
                                     
 
                                     return 0;
@@ -2758,10 +2761,10 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Hasta los momentos, el programa que hemos creado para la empresa Rapidash tiene todas las instrucciones dentro de la función principal main. Vamos a mejorar el programa utilizando funciones para sea más fácil de entender y modificar. Crearemos las siguientes funciones para:
+                                 Hasta los momentos, el programa que hemos creado para la empresa Rapidash tiene todas las instrucciones dentro de la función principal main. Vamos a mejorar el programa utilizando funciones para que sea más fácil de entender y modificar. Crearemos las siguientes funciones para:
                                  - Calcular y retornar el volumen de un paquete dadas sus dimensiones.
                                  - Calcular y retornar el peso volumétrico de un paquete dadas sus dimensiones.
-                                 - Mostrar la categoría de un paquete según su peso volumétrico y retornar el precio que corresponde a dicha categoría.
+                                 - Mostrar la categoría de un paquete según su peso volumétrico y retornar el precio que corresponde según la categoría.
                                  - Calcular y retornar el precio de un envío según su plazo de entrega.
                                  - Solicitar y verificar la ciudad de origen y destino de un paquete.
 
@@ -2783,11 +2786,11 @@
                             }
 
                             /**
-                             * Calcular el peso volumetrico de un paquete dadas sus dimensiones
+                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
                              * @param  alto  Alto del paquete
                              * @param  largo Largo del paquete
                              * @param  ancho Ancho del paquete
-                             * @return       Peso Volumetrico del paquete
+                             * @return       Peso Volumétrico del paquete
                              */
                             float calcular_peso_volumetrico(float alto, float largo, float ancho)
                             {
@@ -2797,8 +2800,8 @@
                             /**
                              * Mostrar la categoría de un paquete según su peso volumétrico y 
                              * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumetrico del paquete
-                             * @return                  Precio segun la categoria
+                             * @param  peso_volumetrico Peso Volumétrico del paquete
+                             * @return                  Precio según la categoria
                              */
                             float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
                             {
@@ -2821,9 +2824,9 @@
                             }
 
                             /**
-                             * Calcular y retornar el precio segun el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en dias
-                             * @return      Precio segun plazo de entrego
+                             * Calcular y retornar el precio según el plazo de entrega 
+                             * @param  dias Plazo de entrega expresado en días
+                             * @return      Precio según plazo de entrego
                              */
                             float precio_segun_plazo(int dias)
                             {
@@ -2837,6 +2840,9 @@
                                     case 3:
                                         return 300.0f;
                                         break;
+                                    default:
+                                        return 0.0f;
+                                        break;
                                 }
                             }
 
@@ -2845,7 +2851,7 @@
                              */
                             void solicitar_ciudad_origen_destino()
                             {
-                                /* Declaracion de variables string para guardar la ciudad de origen y destino de
+                                /* Declaración de variables string para guardar la ciudad de origen y destino de
                                     un paquete */
                                 char ciudad_origen[31], ciudad_destino[31];
 
@@ -2854,10 +2860,10 @@
                                 int opcion;
 
                                 do{
-                                    printf("¿Cual es la ciudad de origen? ");
+                                    printf("¿Cuál es la ciudad de origen? ");
                                     scanf("%s",ciudad_origen);
 
-                                    printf("¿Cual es la ciudad de destino? ");
+                                    printf("¿Cuál es la ciudad de destino? ");
                                     scanf("%s",ciudad_destino);
 
                                     printf("¿Las ciudades introducidas son correctas (1:Si, 0:No)? ");
@@ -2870,10 +2876,10 @@
 
                             int main()
                             {
-                                /* Declaracion de las variables de tipo decimal:
+                                /* Declaración de las variables de tipo decimal:
                                     - 3 variables para guardar dimensiones del paquete actual
                                     - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
-                                    - 1 vector de 3 posiciones para guardar el peso volumetrico de cada paquete
+                                    - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
                                     - 1 vector de 3 posiciones para guardar el precio de cada paquete 
                                 */
                                 float alto, largo, ancho, 
@@ -2881,7 +2887,7 @@
                                       pesos_volumetricos[3], 
                                       precios_paquetes[3]; 
 
-                                /* Declaracion de variables enteras 
+                                /* Declaración de variables enteras 
                                     - Una para manejar las iteraciones del ciclo for
                                     - Una para guardar el tiempo de entrega que escoja el cliente
                                     - Una para guardar la cantidad de paquetes que desea registrar el usario
@@ -2894,7 +2900,7 @@
 
                                 /* Registro de la cantidad indicada de paquetes */
                                 for(i=0; i<cantidad_paquetes; i++){
-                                    /* Solicitud de cada dimension */
+                                    /* Solicitud de cada dimensión */
                                     printf("\nIngrese las dimensiones del paquete #%d\n",i+1);
                                     printf("Alto:");
                                     scanf("%f",&alto);
@@ -2903,12 +2909,12 @@
                                     printf("Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de los 
+                                    /* Cálculo y asignación del volumen y peso volumétrico en cada posición de los 
                                         vectores volumenes y pesos_volumetricos respectivamente */
                                     volumenes[i] = calcular_volumen(alto,largo,ancho);
                                     pesos_volumetricos[i] = calcular_peso_volumetrico(alto,largo,ancho);
                                     
-                                    /* Categoria y precio segun el peso volumetrico de un paquete */
+                                    /* Categoría y precio segun el peso volumétrico de un paquete */
                                     precios_paquetes[i]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[i]);
 
                                     /* Solicitud del tiempo de entrega */
@@ -2923,7 +2929,7 @@
                                     /* Solicitar y verficar la ciudad de origen y destino del paquete */
                                     solicitar_ciudad_origen_destino();
 
-                                    /* Completar el mensaje resumen del envio del paquete*/
+                                    /* Completar el mensaje resumen del envío del paquete*/
                                     printf("con un costo de %.2f\n", precios_paquetes[i]);
                                 }
 
@@ -2938,19 +2944,19 @@
                         Declaramos las 5 funciones necesarias antes de la función principal. La primera y la segunda funciones reciben por parámetros las dimensiones de un paquete, retornando el volumen y peso volumétrico del mismo calculados con las expresiones alto*largo*ancho y alto*largo*ancho/5000 respectivamente. Las funciones son declaradas de tipo float porque retornan valores decimales.
                         ''',
                         '''
-                        La siguiente función (línea 33) recibe por parámetro el peso volumétrico de un paquete y utilizando sentencias de selección if-else mostramos la categoría del paquete y retornamos el precio que corresponde a dicha categoría. 
+                        La siguiente función (línea 33) recibe por parámetro el peso volumétrico de un paquete y utilizando sentencias de selección if-else mostramos la categoría del paquete y retornamos el precio que corresponde según cada categoría. 
                         ''',
                         '''
-                        La función precio_segun_plazo (línea 58) es declarada de tipo float porque retorna el precio de un paquete al evaluar el tiempo de entrega recibido por parámetro expresado en días.
+                        La función precio_segun_plazo (línea 58) es declarada de tipo float porque retorna el precio de un paquete al evaluar el tiempo de entrega recibido por parámetro expresado en días. Notemos que especificamos el caso por defecto dentro de la sentencia switch, esto se hace porque es necesario retornar un valor decimal tras haber declarado la función de tipo float.
                         ''',
                         '''
                         Declaramos la última función de tipo void porque no retorna ningún valor. Dentro de la función declaramos las variables que necesitamos para solicitar la ciudad de origen y destino. Por últimos mostramos un mensaje con el origen y destino de un paquete.
                         ''',
                         '''
-                        Ahora veamos cómo utilizamos las funciones en la función principal (main), en las líneas 138 y 139 llamamos a las funciones calcular_volumen y calcular_peso_volumetrico pasando por parámetros las dimensiones solicitadas (líneas 128-134) y asignamos el valor que retornan en los vectores volumenes y pesos_volumetricos respectivamente. 
+                        Ahora veamos cómo utilizamos las funciones en la función principal (main), en las líneas 138 y 139 llamamos a las funciones calcular_volumen y calcular_peso_volumetrico pasando por parámetros las dimensiones solicitadas y asignamos el valor que retornan en los vectores volumenes y pesos_volumetricos respectivamente. 
                         ''',
                         '''
-                        Para calcular el precio de cada paquete primero utilizamos la función mostrar_categoria_paquete_calcular_precio con el peso volumétrico del paquete como parámetro y la función precio_segun_plazo con el tiempo de entrega indicado por el usuario.
+                        Para calcular el precio de cada paquete primero utilizamos la función mostrar_categoria_paquete_calcular_precio (línea 142) con el peso volumétrico del paquete como parámetro y luego la función precio_segun_plazo (línea 151) con el tiempo de entrega indicado por el usuario.
                         ''',
                         '''
                         Por último llamamos la función solicitar_ciudad_origen_destino en la línea 154 para solicitar la ciudad de origen y destino del paquete y  mostrar una parte del mensaje resumen del envío de dicho paquete (línea 98). Luego completamos el mensaje con el precio del paquete (línea 157).
@@ -2960,32 +2966,32 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa en C que solicite tres números a, b y c, calcular y mostrar sus promedios, tomando un par de números a la vez, es decir, primero mostrar el promedio entre a y b, luego entre b y c y luego entre a y c.
+                                     Escriba un programa en C que solicite tres números a, b y c, calcular y mostrar sus promedios tomando un par de números a la vez, es decir, primero mostrar el promedio entre a y b, luego entre b y c y luego entre a y c.
 
                                      Nota: los números pueden ser decimales
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
 
-                                /* Declarar una funcion para calcular y retornar el promedio entre dos 
-                                    numeros decimales */
+                                /* Declarar una función para calcular y retornar el promedio entre dos 
+                                    números decimales */
 
                                 int main()
                                 {
-                                    /* Declarar las variables necesarias para guardar los numeros */
+                                    /* Declarar las variables necesarias para guardar los números */
                                     
 
-                                    /* Solicitar los tres numeros */
+                                    /* Solicitar los tres números */
                                      
 
-                                    /* Mostrar los promedios de cada par de numeros */
+                                    /* Mostrar los promedios de cada par de números */
                                     
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese los numeros
+                                          > Ingrese los números
                                           > a: 32.2
                                           > b: 43.4
                                           > c: 21.4
@@ -3001,38 +3007,38 @@
                         "code": '''
                                 #include <stdio.h> 
 
-                                /* Declarar una funcion para evaluar y mostrar si el numero ingresado
+                                /* Declarar una función para evaluar y mostrar si el número ingresado
                                     es divisible entre 2, 3 y/o 5 */
 
 
                                 int main()
                                 {
-                                    /* Declarar una variable entera para guardar el numero */
+                                    /* Declarar una variable entera para guardar el número */
                                     
 
-                                    /* Solicitar un numero entero mientras el usuario no ingrese 0 y evaluar
-                                        cada numero ingresado */
+                                    /* Solicitar un número entero mientras el usuario no ingrese 0 y evaluar
+                                        cada número ingresado */
                                     
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          >  *Ingrese un numero entero: 10
-                                          >     -El numero es divisible entre 2
-                                          >     -El numero es divisible entre 5
-                                          > *Ingrese un numero entero: 15
-                                          >     -El numero es divisible entre 3
-                                          >     -El numero es divisible entre 5
-                                          > *Ingrese un numero entero: 16
-                                          >     -El numero es divisible entre 2
-                                          > *Ingrese un numero entero: 18  
-                                          >     -El numero es divisible entre 2
-                                          >     -El numero es divisible entre 3
-                                          > *Ingrese un numero entero: 0
-                                          >     -El numero es divisible entre 2
-                                          >     -El numero es divisible entre 3
-                                          >     -El numero es divisible entre 5
+                                          >  *Ingrese un número entero: 10
+                                          >     -El número es divisible entre 2
+                                          >     -El número es divisible entre 5
+                                          > *Ingrese un número entero: 15
+                                          >     -El número es divisible entre 3
+                                          >     -El número es divisible entre 5
+                                          > *Ingrese un número entero: 16
+                                          >     -El número es divisible entre 2
+                                          > *Ingrese un número entero: 18  
+                                          >     -El número es divisible entre 2
+                                          >     -El número es divisible entre 3
+                                          > *Ingrese un número entero: 0
+                                          >     -El número es divisible entre 2
+                                          >     -El número es divisible entre 3
+                                          >     -El número es divisible entre 5
                                           '''
                     },
                     {
@@ -3042,37 +3048,37 @@
                         "code": '''
                                 #include <stdio.h> 
 
-                                /* Declarar una funcion para calcular y retornar la cantidad de digitos de un 
-                                    numero entero */
+                                /* Declarar una función para calcular y retornar la cantidad de dígitos de un 
+                                    número entero */
 
 
-                                /* Declarar una funcion para obtener el digito de la posicion indicada
+                                /* Declarar una función para obtener el dígito de la posición indicada
                                     por el usuario */
 
 
                                 int main()
                                 {
-                                    /* Declarar las variables necesarias para guardas el numero entero y la posicion
-                                        del digito deseado */
+                                    /* Declarar las variables necesarias para guardar el número entero y la posición
+                                        del dígito deseado */
                                     
 
-                                    /* Solicitar el numero entero y la posicion del digito deseado */
+                                    /* Solicitar el número entero y la posición del dígito deseado */
                                     
                                     
-                                    /* Mostrar la cantidad de digitos del numero ingresado */
+                                    /* Mostrar la cantidad de dígitos del número ingresado */
                                     
 
-                                    /* Mostrar el digito en la posicion indicada por el usuario */
+                                    /* Mostrar el dígito en la posición indicada por el usuario */
                                     
                                     
                                     return 0;
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese un numero entero: 3829
+                                          > Ingrese un número entero: 3829
                                           > Ingrese la posición del dígito deseado: 3
-                                          > La cantidad de digitos del numero es 4
-                                          > El digito en la posición 3 es 8
+                                          > La cantidad de dígitos del número es 4
+                                          > El digito en la posición #3 es 8
                                           '''
                     }
                 ]
@@ -3156,11 +3162,11 @@
                             }
 
                             /**
-                             * Calcular el peso volumetrico de un paquete dadas sus dimensiones
+                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
                              * @param  alto  Alto del paquete
                              * @param  largo Largo del paquete
                              * @param  ancho Ancho del paquete
-                             * @return       Peso Volumetrico del paquete
+                             * @return       Peso Volumétrico del paquete
                              */
                             float calcular_peso_volumetrico(float alto, float largo, float ancho)
                             {
@@ -3170,8 +3176,8 @@
                             /**
                              * Mostrar la categoría de un paquete según su peso volumétrico y 
                              * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumetrico del paquete
-                             * @return                  Precio segun la categoria
+                             * @param  peso_volumetrico Peso Volumétrico del paquete
+                             * @return                  Precio según la categoría
                              */
                             float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
                             {
@@ -3194,9 +3200,9 @@
                             }
 
                             /**
-                             * Calcular y retornar el precio segun el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en dias
-                             * @return      Precio segun plazo de entrego
+                             * Calcular y retornar el precio según el plazo de entrega 
+                             * @param  dias Plazo de entrega expresado en días
+                             * @return      Precio según plazo de entrego
                              */
                             float precio_segun_plazo(int dias)
                             {
@@ -3210,21 +3216,24 @@
                                     case 3:
                                         return 300.0f;
                                         break;
+                                    default:
+                                        return 0.0f;
+                                        break;
                                 }
                             }
 
 
                             int main()
                             {
-                                /* Declaracion de las variables de tipo decimal:
+                                /* Declaración de las variables de tipo decimal:
                                     - 3 variables para guardar dimensiones del paquete actual
                                     - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias 
-                                    - 1 matriz de tipo decimal para guardar el peso volumetrico de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias
+                                        por día durante cuatro (4) días 
+                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
+                                        por día durante cuatro (4) días
                                     - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias
-                                    - Las variables necesarias para mostrar las estadísticas requeridas (promedios)
+                                        por día durante cuatro (4) días
+                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
                                 */
                                 float alto, largo, ancho, 
                                       volumenes[4][2], 
@@ -3236,29 +3245,29 @@
                                       precio_total=0.0f;
 
 
-                                /* Declaracion de variables enteras 
+                                /* Declaración de variables enteras 
                                     - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias
-                                    - Una para indicar la cantidad de dias
-                                    - Una para indicar la cantidad de paquetes a registrar por dias
+                                        por día durante cuatro (4) días
+                                    - Una para indicar la cantidad de días
+                                    - Una para indicar la cantidad de paquetes a registrar por días
                                     - Una para recorrer las filas de la matriz 'precios' en un ciclo for
                                     - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
                                 */
                                 int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
 
-                                /* Registrar los 8 paquetes (2 paquetes por dia durante 4 dias)*/
+                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
 
                                 /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
-                                    tiene 4 filas que representan la cantidad de dias */
+                                    tiene 4 filas que representan la cantidad de días */
                                 for(filas=0; filas<cantidad_dias; filas++){
 
-                                    printf("\nIngrese los paquetes del dia #%d\n",filas+1);
+                                    printf("Ingrese los paquetes del día #%d\n",filas+1);
                                     
                                     /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
                                         tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
                                     for (columnas = 0; columnas < paquetes_por_dia; columnas++)
                                     {
-                                        /* Solicitud de cada dimension */
+                                        /* Solicitud de cada dimensión */
                                         printf("**Paquete %d\n",columnas+1);
                                         printf("-Alto:");
                                         scanf("%f",&alto);
@@ -3267,12 +3276,12 @@
                                         printf("-Ancho:");
                                         scanf("%f",&ancho);
 
-                                        /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de las 
+                                        /* Cálculo y asignación del volumen y peso volumétrico en cada posición de las 
                                             matrices volumenes y pesos_volumetricos respectivamente */
                                         volumenes[filas][columnas] = calcular_volumen(alto,largo,ancho);
                                         pesos_volumetricos[filas][columnas] = calcular_peso_volumetrico(alto,largo,ancho);
                                         
-                                        /* Categoria y precio segun el peso volumetrico de un paquete */
+                                        /* Categoría y precio según el peso volumétrico de un paquete */
                                         precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
 
                                         /* Solicitud del tiempo de entrega */
@@ -3287,11 +3296,11 @@
 
                                 }
 
-                                /* Calcular las estadísticas requeridas en el enunciado */
+                                /* Calcular las estadísticas solicitadas en el enunciado */
                                 printf("\nDatos estadisticos de los envios registrados\n\n");    
                                 for(filas=0; filas<cantidad_dias; filas++){
                                     
-                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo dia (ciclo de las filas) */
+                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
                                     precio_total_por_dia=0.0f;
                                     for (columnas = 0; columnas < paquetes_por_dia; columnas++)
                                     {
@@ -3308,11 +3317,11 @@
                                     precio_total+=precio_total_por_dia;
                                 }
 
-                                /* Mostrar precio total y precio promedio durante los 4 dias */
-                                printf("Volumen promedio de los 4 dias: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Peso volumétrico promedio de los 4 dias: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Precio total de los 4 dias: %.2f\n", precio_total);
-                                printf("Precio promedio de los 4 dias: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
+                                /* Mostrar precio total y precio promedio durante los 4 días */
+                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Precio total de los 4 días: %.2f\n", precio_total);
+                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
                                 
                                 return 0;
                             }
@@ -3325,20 +3334,29 @@
                         Creamos dos ciclos for anidados para recorrer las filas y columnas de cada matriz. Las iteraciones del ciclo externo hacen referencia a los 4 días y las del ciclo interno a los 2 paquetes por día. De esta manera iremos registrando los dos paquetes del día 1, luego del día 2, después del día 3 y por último del día 4.
                         ''',
                         '''
-                        Recordemos que para acceder a los elementos de un arreglo utilizamos índices (comenzando en 0), por lo tanto, para guardar cada valor en las matrices lo hacemos dentro de los ciclos for y de la forma [filas][columnas]; por ejemplo, para guardar los valores del segundo paquete del tercer día los índices serán [1][2].
+                        Recordemos que para acceder a los elementos de un arreglo utilizamos índices (comenzando en 0), por lo tanto, para guardar cada valor en las matrices lo hacemos dentro de los ciclos for y de la forma [filas][columnas]; por ejemplo, para guardar los valores del segundo paquete del tercer día los índices serán [2][1].
                         ''',
                         '''
-                        Luego, para calcular y mostrar los datos solicitados en el enunciado debemos recorrer nuevamente las matrices que contienen la información de cada paquete e ir acumulando los valores necesarios. Por ejemplo, para calcular el volumen promedio durante los 4 días, sumamos el volumen de cada uno de los paquetes (línea 154) y una vez finalizados los ciclos dividimos la sumatoria entre la cantidad de paquetes registrados en los 4 días.
+                        Luego, para calcular y mostrar los datos solicitados en el enunciado debemos recorrer nuevamente las matrices que contienen la información de cada paquete e ir acumulando los valores necesarios. Por ejemplo, para calcular el volumen promedio durante los 4 días, sumamos el volumen de cada uno de los paquetes (línea 155) y una vez finalizados los ciclos dividimos la sumatoria entre la cantidad de paquetes registrados en los 4 días (línea 169).
                         '''
                     ]
                 },
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa que llene una matriz entera de 3x3 dimensiones y muestre su transpuesta. La matriz transpuesta se obtiene al intercambiar filas por columnas ordenadamente.
-                                     A = 2    3    0          T = 2    1    3
-                                         1    2    0              3    2    5
-                                         3    5    6              0    0    6
+                                     Escriba un programa que llene una matriz entera de dimensión 3x3 y muestre su transpuesta. La matriz transpuesta se obtiene al intercambiar filas por columnas ordenadamente.
+
+                                     Observe el siguiente ejemplo, donde A es la matriz original y T es la matriz transpuesta de A:
+
+                                     A 
+                                     2----3----0          
+                                     1----2----0              
+                                     3----5----6              
+
+                                     T 
+                                     2----1----3
+                                     3----2----5
+                                     0----0----6
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -3374,10 +3392,16 @@
                                           >  *Columna #1: 7
                                           >  *Columna #2: 8
                                           >  *Columna #3: 9
-                                          > **Matriz inicial**       **Matriz transpuesta**
-                                          > 1    2    3                     1    4    7   
-                                          > 4    5    6                     2    5    8   
-                                          > 7    8    9                     3    6    9
+                                          >
+                                          > **Matriz inicial**       
+                                          > 1    2    3                       
+                                          > 4    5    6                       
+                                          > 7    8    9      
+                                          >              
+                                          > **Matriz transpuesta**
+                                          > 1    4    7 
+                                          > 2    5    8 
+                                          > 3    6    9
                                           '''
                     },
                     {
@@ -3394,13 +3418,13 @@
                                     /* Declarar las variables necesarias (Tip: solo necesita variables de tipo int) */
                                     
 
-                                    /* Solicitar el numero entero */
+                                    /* Solicitar el número entero */
                                     
 
-                                    /* Dividir el numero digito a digito e ir marcando la ocurrencia de cada digito */
+                                    /* Dividir el número dígito a dígito e ir marcando la ocurrencia de cada dígito */
                                     
 
-                                    /* Imprimir en pantalla cada digito junto a su ocurrencia */
+                                    /* Imprimir en pantalla cada dígito junto a su ocurrencia */
                                     
 
                                     return 0;
@@ -3422,26 +3446,26 @@
 
                                 int main()
                                 {
-                                    /* Declaracion de las variables de tipo decimal:
-                                        - 1 matriz para guardar las dos lecturas de los tres dias a evaluar
+                                    /* Declaración de las variables de tipo decimal:
+                                        - 1 matriz para guardar las dos lecturas de los tres días a evaluar
                                         - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
-                                        - 1 vector de 3 posiciones para guardar el peso volumetrico de cada paquete
+                                        - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
                                         - 1 vector de 3 posiciones para guardar el precio de cada paquete 
                                     */
                                     
 
-                                    /* Declaracion de variables enteras 
+                                    /* Declaración de variables enteras 
                                         - Una para recorrer las filas de la matriz en un ciclo for
                                         - Una para recorrer las columnas de la matriz en un ciclo for
-                                        - Una para guardar la cantidad de dias a evaluar
-                                        - Una para guardar las lecturas de temperatura por dia
+                                        - Una para guardar la cantidad de días a evaluar
+                                        - Una para guardar las lecturas de temperatura por día
                                     */
 
 
                                     /* Registrar las temperaturas */
                                     
 
-                                    /* Calcular y mostrar el promedio de temperaturas por dia y durante los tres dias*/
+                                    /* Calcular y mostrar el promedio de temperaturas por día y durante los tres días*/
                                     
                                     
                                     return 0;
@@ -3527,7 +3551,7 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Continuando con el ejemplo de la lección anterior, la empresa Rapidash desea, al momento de registrar el envío de un paquete, solicitar el correo electrónico del usuario dos veces con la intención de confirmar el mismo.  
+                                 Continuando con el ejemplo de la lección anterior, la empresa Rapidash ahora desea al momento de registrar el envío de un paquete, solicitar el correo electrónico del usuario dos veces con la intención de confirmar el mismo.  
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -3546,11 +3570,11 @@
                             }
 
                             /**
-                             * Calcular el peso volumetrico de un paquete dadas sus dimensiones
+                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
                              * @param  alto  Alto del paquete
                              * @param  largo Largo del paquete
                              * @param  ancho Ancho del paquete
-                             * @return       Peso Volumetrico del paquete
+                             * @return       Peso Volumétrico del paquete
                              */
                             float calcular_peso_volumetrico(float alto, float largo, float ancho)
                             {
@@ -3560,8 +3584,8 @@
                             /**
                              * Mostrar la categoría de un paquete según su peso volumétrico y 
                              * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumetrico del paquete
-                             * @return                  Precio segun la categoria
+                             * @param  peso_volumetrico Peso Volumétrico del paquete
+                             * @return                  Precio según la categoría
                              */
                             float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
                             {
@@ -3584,9 +3608,9 @@
                             }
 
                             /**
-                             * Calcular y retornar el precio segun el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en dias
-                             * @return      Precio segun plazo de entrego
+                             * Calcular y retornar el precio según el plazo de entrega 
+                             * @param  dias Plazo de entrega expresado en días
+                             * @return      Precio según plazo de entrega
                              */
                             float precio_segun_plazo(int dias)
                             {
@@ -3600,35 +3624,37 @@
                                     case 3:
                                         return 300.0f;
                                         break;
+                                    default:
+                                        return 0.0f;
+                                        break;
                                 }
                             }
 
                             /**
-                             * Solicitar el correo electronico a un usuario dos veces con la intención
-                             * de verificar[solicitar_confirmar_correo description]
+                             * Solicitar y confirmar el correo electrónico de un usuario 
                              */
                             void solicitar_confirmar_correo(){
                                 char correo[40], confirmacion_correo[40];
 
                                 do{
-                                    printf("Ingrese el correo electronico: ");
+                                    printf("Ingrese el correo electrónico: ");
                                     scanf("%s",correo);
-                                    printf("Confirmacion del correo electronico: ");
+                                    printf("Confirmación del correo electrónico: ");
                                     scanf("%s",confirmacion_correo);
                                 }while(strcmp(correo,confirmacion_correo)!=0);
                             }
 
                             int main()
                             {
-                                /* Declaracion de las variables de tipo decimal:
+                                /* Declaración de las variables de tipo decimal:
                                     - 3 variables para guardar dimensiones del paquete actual
                                     - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias 
-                                    - 1 matriz de tipo decimal para guardar el peso volumetrico de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias
+                                        por día durante cuatro (4) días 
+                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
+                                        por día durante cuatro (4) días
                                     - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias
-                                    - Las variables necesarias para mostrar las estadísticas requeridas (promedios)
+                                        por día durante cuatro (4) días
+                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
                                 */
                                 float alto, largo, ancho, 
                                       volumenes[4][2], 
@@ -3640,23 +3666,23 @@
                                       precio_total=0.0f;
 
 
-                                /* Declaracion de variables enteras 
+                                /* Declaración de variables enteras 
                                     - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
-                                        por dia durante cuatro (4) dias
-                                    - Una para indicar la cantidad de dias
-                                    - Una para indicar la cantidad de paquetes a registrar por dias
+                                        por día durante cuatro (4) días
+                                    - Una para indicar la cantidad de días
+                                    - Una para indicar la cantidad de paquetes a registrar por días
                                     - Una para recorrer las filas de la matriz 'precios' en un ciclo for
                                     - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
                                 */
                                 int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
 
-                                /* Registrar los 8 paquetes (2 paquetes por dia durante 4 dias)*/
+                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
 
                                 /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
-                                    tiene 4 filas que representan la cantidad de dias */
+                                    tiene 4 filas que representan la cantidad de días */
                                 for(filas=0; filas<cantidad_dias; filas++){
 
-                                    printf("\nIngrese los paquetes del dia #%d\n",filas+1);
+                                    printf("\nIngrese los paquetes del día #%d\n",filas+1);
                                     
                                     /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
                                         tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
@@ -3671,12 +3697,12 @@
                                         printf("-Ancho:");
                                         scanf("%f",&ancho);
 
-                                        /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de las 
+                                        /* Calculo y asignación del volumen y peso volumétrico en cada posición de las 
                                             matrices volumenes y pesos_volumetricos respectivamente */
                                         volumenes[filas][columnas] = calcular_volumen(alto,largo,ancho);
                                         pesos_volumetricos[filas][columnas] = calcular_peso_volumetrico(alto,largo,ancho);
                                         
-                                        /* Categoria y precio segun el peso volumetrico de un paquete */
+                                        /* Categoría y precio según el peso volumétrico de un paquete */
                                         precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
 
                                         /* Solicitud del tiempo de entrega */
@@ -3688,17 +3714,17 @@
                                          */
                                         precios[filas][columnas]+=precio_segun_plazo(tiempo_entrega_dias[filas][columnas]);
 
-                                        /* Solicitar y confirmar el correo electronico del usuario */
+                                        /* Solicitar y confirmar el correo electrónico del usuario */
                                         solicitar_confirmar_correo();
                                     }
 
                                 }
 
-                                /* Calcular las estadísticas requeridas en el enunciado */
+                                /* Calcular las estadísticas solicitadas en el enunciado */
                                 printf("\nDatos estadisticos de los envios registrados\n\n");    
                                 for(filas=0; filas<cantidad_dias; filas++){
                                     
-                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo dia (ciclo de las filas) */
+                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
                                     precio_total_por_dia=0.0f;
                                     for (columnas = 0; columnas < paquetes_por_dia; columnas++)
                                     {
@@ -3708,18 +3734,18 @@
                                         precio_total_por_dia+=precios[filas][columnas];
                                     }
 
-                                    /* Mostrar las estadísticas requeridas por día */
+                                    /* Mostrar las estadísticas solicitadas por día */
                                     printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
                                     printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
 
                                     precio_total+=precio_total_por_dia;
                                 }
 
-                                /* Mostrar precio total y precio promedio durante los 4 dias */
-                                printf("Volumen promedio de los 4 dias: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Peso volumétrico promedio de los 4 dias: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Precio total de los 4 dias: %.2f\n", precio_total);
-                                printf("Precio promedio de los 4 dias: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
+                                /* Mostrar precio total y precio promedio durante los 4 días */
+                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Precio total de los 4 días: %.2f\n", precio_total);
+                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
                                 
                                 return 0;
                             }
@@ -3729,19 +3755,19 @@
                         Recordemos incluir la librería string.h para tener acceso a la función que nos permite comparar strings. (Línea 2)
                         ''',
                         '''
-                        Creamos una función para solicitar y confirmar el correo electrónico del usuario (Línea 78), dentro de esta función declaramos dos variables strings para guardar el correo y la confirmación del correo respectivamente. Luego, utilizando un ciclo do-while solicitamos y verificamos el correo electrónico ingresado por el usuario hasta que ambos coinciden.
+                        Creamos una función para solicitar y confirmar el correo electrónico del usuario (Línea 81), dentro de esta función declaramos dos variables strings para guardar el correo y la confirmación del correo respectivamente. Luego, utilizando un ciclo do-while solicitamos y verificamos el correo electrónico ingresado por el usuario hasta que ambos coinciden.
                         ''',
                         '''
-                        Finalmente llamamos la función dentro del ciclo que solicita los datos de cada paquete. (Línea 160)
+                        Finalmente llamamos la función dentro del ciclo que solicita los datos de cada paquete. (Línea 163)
                         '''
                     ]
                 },
                 "exercises": [
                     {
                         "statement": '''
-                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo, si el usuario ingresa ‘notas.txt’ el programa deberá guardar ‘notas’ en una variable llamada NOMBRE y ‘txt’ en una variable llamada EXTENSION.
+                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa ‘notas.txt’ el programa deberá guardar ‘notas’ en una variable llamada NOMBRE y ‘txt’ en una variable llamada EXTENSION.
 
-                                      Nota: El nombre del archivo completo no tendrá más de 40 caracteres.
+                                     Nota: El nombre del archivo completo no tendrá más de 40 caracteres.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -3752,7 +3778,7 @@
                                     /* Declarar de las variables necesarias */
                                     
 
-                                    /* Solicitar el nombre del archivo completo (con extension incluida) */
+                                    /* Solicitar el nombre del archivo completo (con extensión incluida) */
                                     
 
                                     /* Extraer y guardar el nombre y la extensión del archivo en dos variables de tipo string */
@@ -3772,7 +3798,7 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa en C que permita construir la dirección de una página web con base en el dominio y archivo principal indicado por el usuario, es decir, el usuario ingresa dominio.com e index.html y el programa debe construir la url completa de la forma https://www.dominio.com/index.html. 
+                                     Escriba un programa en C que permita construir la dirección de una página web con base en el dominio y archivo principal indicado por el usuario, es decir, el usuario ingresa dominio.com e index.html y el programa debe construir la url completa de la forma https://dominio.com/index.html. 
 
                                      Nota: Tanto el dominio como el nombre del archivo principal no tendrán más de 40 caracteres.
                                      ''',
@@ -3934,7 +3960,7 @@
                             #include <stdio.h> 
                             #include <string.h> 
 
-                            /* Declaracion de la estructura 'paquete' */
+                            /* Declaración de la estructura 'paquete' */
                             typedef struct
                             {
                                 float volumen;
@@ -3960,11 +3986,11 @@
                             }
 
                             /**
-                             * Calcular el peso volumetrico de un paquete dadas sus dimensiones
+                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
                              * @param  alto  Alto del paquete
                              * @param  largo Largo del paquete
                              * @param  ancho Ancho del paquete
-                             * @return       Peso Volumetrico del paquete
+                             * @return       Peso Volumétrico del paquete
                              */
                             float calcular_peso_volumetrico(float alto, float largo, float ancho)
                             {
@@ -3972,9 +3998,9 @@
                             }
 
                             /**
-                             * Calcular y retornar el precio segun el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en dias
-                             * @return      Precio segun plazo de entrego
+                             * Calcular y retornar el precio según el plazo de entrega 
+                             * @param  dias Plazo de entrega expresado en días
+                             * @return      Precio según plazo de entrego
                              */
                             float precio_segun_plazo(int dias)
                             {
@@ -3988,23 +4014,26 @@
                                     case 3:
                                         return 300.0f;
                                         break;
+                                    default:
+                                        return 0.0f;
+                                        break;
                                 }
                             }
 
                             /**
-                             * Mostrar un mensaje resumen del envio de un paquete
+                             * Mostrar un mensaje resumen del envío de un paquete
                              */
                             void mostrar_mensaje_resumen(paquete p){
-                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumetrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
+                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumétrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
                                     p.categoria, p.ciudad_origen, p.ciudad_destino, p.tiempo_entrega_dias, p.precio );
                             }
 
                             int main()
                             {
-                                /* Declaracion de 3 variables tipo decimal para guardar dimensiones del paquete actual */
+                                /* Declaración de 3 variables tipo decimal para guardar dimensiones del paquete actual */
                                 float alto, largo, ancho;
 
-                                /* Declaracion de una variable para guardar la opción de si hay otro paquete o no
+                                /* Declaración de una variable para guardar la opción de si hay otro paquete o no
                                     y así registrar tantos paquetes como el usuario necesite */
                                 int otro_paquete;
 
@@ -4014,8 +4043,8 @@
 
                                 /* Registrar paquetes hasta que el usuario indique que no hay mas paquetes */
                                 do{
-                                    /* Solicitud de cada dimension */
-                                    printf("\n**Informacion del paquete actual\n");
+                                    /* Solicitud de cada dimensión */
+                                    printf("\n**Información del paquete actual\n");
                                     printf("-Alto:");
                                     scanf("%f",&alto);
                                     printf("-Largo:");
@@ -4023,8 +4052,8 @@
                                     printf("-Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de las 
-                                        matrices volumenes y pesos_volumetricos respectivamente */
+                                    /* Cálculo y asignación del volumen y peso volumétrico en cada miembro de la variable 
+                                        paquete_actual (.volumen y .pesos_volumetrico respectivamente) */
                                     paquete_actual.volumen = calcular_volumen(alto,largo,ancho);
                                     paquete_actual.peso_volumetrico = calcular_peso_volumetrico(alto,largo,ancho);
                                     
@@ -4078,7 +4107,7 @@
                                     scanf("%d",&otro_paquete);
                                 }while(otro_paquete!=0);
 
-                                printf("\nPrograma finalizado con exito\n");
+                                printf("\nPrograma finalizado con éxito\n");
                                   
                                 return 0;
                             }
@@ -4088,13 +4117,13 @@
                         Creamos un nuevo tipo de dato (estructura) al que llamaremos ‘paquete’ con todas las variables que guardarán la información asociada a un paquete. (Línea 5)
                         ''',
                         '''
-                        Declaramos una variable de tipo ‘paquete’ llamada ‘paquete actual’ (línea 79) para guardar la información de cada paquete durante el proceso de registro de los mismos. Para este proceso utilizamos un ciclo do-while que nos permite registrar paquetes hasta que el usuario decida detener las iteraciones.
+                        Declaramos una variable de tipo ‘paquete’ llamada ‘paquete actual’ (línea 82) para guardar la información de cada paquete durante el proceso de registro de los mismos. Para este proceso utilizamos un ciclo do-while que nos permite registrar paquetes hasta que el usuario decida detener las iteraciones.
                         ''',
                         '''
-                        Dentro del ciclo do-while vamos solicitando y asignando la información de cada paquete. Recordemos que para acceder a cada miembro de la estructura con el operador ‘.’ y todas las operaciones que conocemos hasta ahora se pueden aplicar de la misma forma a cada miembro según su tipo de dato.
+                        Dentro del ciclo do-while vamos solicitando y asignando la información de cada paquete. Recordemos que para acceder a cada miembro de la estructura utilizamos el operador '.' y todas las operaciones que conocemos hasta ahora se pueden aplicar de la misma forma a cada miembro según su tipo de dato.
                         ''',
                         '''
-                        Para mostrar el mensaje resumen de cada paquete construimos una función (línea 64) que recibe por parámetro una variable de tipo paquete e imprime el mensaje deseado. Después de tener la información de cada paquete llamamos la función mostrar_mensaje_resumen pasando por parámetro el paquete_actual. (Línea 142)
+                        Para mostrar el mensaje resumen de cada paquete construimos una función (línea 67) que recibe por parámetro una variable de tipo paquete e imprime el mensaje deseado. Después de tener la información de cada paquete llamamos la función mostrar_mensaje_resumen pasando por parámetro el paquete_actual. (Línea 145)
                         '''
                     ]
                 },
@@ -4143,11 +4172,11 @@
                                 ''',
                         "expectedOutput": ''' 
                                           > **Primera Fecha
-                                          > -Dia: 1
+                                          > -Día: 1
                                           > -Mes: 7
                                           > -Año: 2016
                                           > **Segunda Fecha
-                                          > -Dia: 2
+                                          > -Día: 2
                                           > -Mes: 7
                                           > -Año: 2016
                                           > La fecha 01/07/2016 es menor que la fecha 02/07/2016
@@ -4195,22 +4224,20 @@
                                 }
                                 ''',
                         "expectedOutput": ''' 
-                                          > Ingrese los segundos desde la medianoche: -3464
-                                          > Ingrese los segundos desde la medianoche: 86400
                                           > Ingrese los segundos desde la medianoche: 24752
                                           > El tiempo expresado de la forma 06:52:32 es equivalente a los 24752 segundos contados desde la medianoche
                                           '''
                     },
                     {
                         "statement": '''
-                                     Complete el siguiente programa para realizar operaciones sobre la estructura llamada ‘color’ declarada en la línea 5. Defina funciones para:
+                                     Complete el siguiente programa para realizar operaciones sobre la estructura 'color' declarada en la línea 5. Defina funciones para:
                                      - Generar una estructura de tipo color con base en los valores especificados por el usuario: red, green y blue. Si algún valor es menor que 0, el miembro correspondiente deberá ser 0. Si algún valor es mayor que 255 el miembro correspondiente deberá ser 255.
                                      - Retornar el valor del miembro ‘red’ en una estructura de tipo color.
                                      - Indicar si dos colores son iguales, dos colores son iguales si todos sus miembros (red, green y blue) son exactamente iguales.
                                      - Generar y retornar una estructura de tipo color que represente una versión más clara de un color que reciba por parámetro. Para obtener el color más claro se divide cada miembro se entre 0.7 y el resultado es truncado a un número entero. Hay tres casos especiales:
-                                         - Si todos los miembros del color inicial son cero (0) entonces todos los miembros del color resultante tendrán como valor 3. 
-                                         - Si alguno de los miembros del color inicial es mayor que 0 y menor que 3, debe ser reemplazado por 3 antes de dividirlo entre 0.7.
-                                         - Si al dividir entre 0.7 el resultado es mayor que 255, el valor de ese miembro en el color resultante será reducido a 255.
+                                         1) Si todos los miembros del color inicial son cero (0) entonces todos los miembros del color resultante tendrán como valor 3. 
+                                         2) Si alguno de los miembros del color inicial es mayor que 0 y menor que 3, debe ser reemplazado por 3 antes de dividirlo entre 0.7.
+                                         3) Si al dividir entre 0.7 el resultado es mayor que 255, el valor de ese miembro en el color resultante será reducido a 255.
                                      - Generar y retornar una estructura de tipo color que represente una versión más oscura de un color que reciba por parámetro. Para obtener el color más oscuro se multiplica cada miembro por 0.5 y el resultado es truncado a un número entero. 
                                      - Imprimir de manera ordenada un color, pudiendo visualizar el valor de cada uno de sus miembros.
 
@@ -4219,7 +4246,7 @@
                         "code": '''
                                 #include <stdio.h> 
 
-                                /* Declarar una estructura para agrupar la información del tiempo hh:mm:ss */
+                                /* Declarar una estructura para agrupar la información de un color */
                                 typedef struct
                                 {
                                     int red;
@@ -4259,10 +4286,11 @@
                                 {
                                     /* Declarar las variables necesarias */
 
-                                    /* Solicitar los valores del primer color y generar la estructura correspondiente*/
+                                    
+                                    /* Solicitar los valores del primer color y generar la estructura correspondiente */
                                     
 
-                                    /* Solicitar los valores del segundo color y generar la estructura correspondiente*/
+                                    /* Solicitar los valores del segundo color y generar la estructura correspondiente */
                                     
 
                                     /* Visualizar el miembro red de los dos colores */
@@ -4400,7 +4428,7 @@
                             #include <stdio.h> 
                             #include <string.h> 
 
-                            /* Declaracion de la estructura 'paquete' */
+                            /* Declaración de la estructura 'paquete' */
                             typedef struct
                             {
                                 float volumen;
@@ -4426,11 +4454,11 @@
                             }
 
                             /**
-                             * Calcular el peso volumetrico de un paquete dadas sus dimensiones
+                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
                              * @param  alto  Alto del paquete
                              * @param  largo Largo del paquete
                              * @param  ancho Ancho del paquete
-                             * @return       Peso Volumetrico del paquete
+                             * @return       Peso Volumétrico del paquete
                              */
                             float calcular_peso_volumetrico(float alto, float largo, float ancho)
                             {
@@ -4438,9 +4466,9 @@
                             }
 
                             /**
-                             * Calcular y retornar el precio segun el plazo de entrega 
+                             * Calcular y retornar el precio según el plazo de entrega 
                              * @param  dias Plazo de entrega expresado en dias
-                             * @return      Precio segun plazo de entrego
+                             * @return      Precio según plazo de entrego
                              */
                             float precio_segun_plazo(int dias)
                             {
@@ -4454,20 +4482,23 @@
                                     case 3:
                                         return 300.0f;
                                         break;
+                                    default:
+                                        return 0.0f;
+                                        break;
                                 }
                             }
 
                             /**
-                             * Mostrar un mensaje resumen del envio de un paquete
+                             * Mostrar un mensaje resumen del envío de un paquete
                              */
                             void mostrar_mensaje_resumen(paquete p){
-                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumetrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
+                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumétrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
                                     p.categoria, p.ciudad_origen, p.ciudad_destino, p.tiempo_entrega_dias, p.precio );
                             }
 
                             int main()
                             {
-                                /* Declaracion de las variables tipo decimal para
+                                /* Declaración de las variables tipo decimal para
                                     - Guardar dimensiones de cada paquete (alto, largo y ancho)
                                     - Guardar volumen promedio de los paquetes
                                     - Guardar el menor volumen registrado durante el día
@@ -4477,7 +4508,7 @@
                                 float alto, largo, ancho, volumen_promedio=0.0f, menor_volumen=99999999.9f, peso_volumetrico_promedio=0.0f,
                                       mayor_peso_volumetrico=-1.0f, precio_total=0.0f;
 
-                                /* Declaracion de una variable para guardar la cantidad de paquetes a registrar en el día */
+                                /* Declaración de una variable para guardar la cantidad de paquetes a registrar en el día */
                                 int cantidad_paquetes = 5, i;
 
                                 /* Declaramos un vector cuyo tipo será la nueva estructura 'paquete' */
@@ -4485,8 +4516,8 @@
 
                                 /* Registrar los paquetes indicados por día (en este caso 5) */
                                 for(i = 0; i < cantidad_paquetes; i++){
-                                    /* Solicitud de cada dimension */
-                                    printf("\n**Informacion del paquete actual\n");
+                                    /* Solicitud de cada dimensión */
+                                    printf("\n**Información del paquete actual\n");
                                     printf("-Alto:");
                                     scanf("%f",&alto);
                                     printf("-Largo:");
@@ -4494,8 +4525,8 @@
                                     printf("-Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo y asignacion del volumen y peso volumetrico en cada posicion de las 
-                                        matrices volumenes y pesos_volumetricos respectivamente */
+                                    /* Cálculo y asignación del volumen y peso volumétrico en los miembros y en la posición 
+                                        correspondiente del vector 'paquetes'  */
                                     paquetes[i].volumen = calcular_volumen(alto,largo,ancho);
                                     paquetes[i].peso_volumetrico = calcular_peso_volumetrico(alto,largo,ancho);
                                     
@@ -4532,13 +4563,13 @@
                                     printf("Ingrese la ciudad de destino: ");
                                     scanf("%s",paquetes[i].ciudad_destino);
 
-                                    /* Solicitar y confirmar el correo electronico del usuario */
+                                    /* Solicitar y confirmar el correo electrónico del usuario */
                                     char confirmacion_correo[40];
 
                                     do{
-                                        printf("Ingrese el correo electronico: ");
+                                        printf("Ingrese el correo electrónico: ");
                                         scanf("%s",paquetes[i].correo_usuario);
-                                        printf("Confirmacion del correo electronico: ");
+                                        printf("Confirmación del correo electrónico: ");
                                         scanf("%s",confirmacion_correo);
                                     }while(strcmp(paquetes[i].correo_usuario,confirmacion_correo)!=0);
                                 }
@@ -4578,68 +4609,70 @@
                                 printf("El precio total de los envíos registrados durante el día es: %.2f\n", precio_total);
 
 
-                                printf("\nPrograma finalizado con exito\n");
+                                printf("\nPrograma finalizado con éxito\n");
                                   
                                 return 0;
                             }
                             ''',
                     "solutionSteps": [
                         '''
-                        Declaramos una variable que indique la cantidad de paquetes que serán registrados en el día (línea 75). Como el enunciado del ejemplo nos indica la cantidad de paquetes a registrar podemos utilizar un ciclo for, por lo tanto declaramos una variable que maneje las iteraciones de dicho ciclo for.
+                        Declaramos una variable que indique la cantidad de paquetes que serán registrados en el día (línea 85). Como el enunciado del ejemplo nos indica la cantidad de paquetes a registrar podemos utilizar un ciclo for, por lo tanto declaramos una variable que maneje las iteraciones de dicho ciclo for.
                         ''',
                         '''
-                        Recordemos que tenemos un nuevo tipo de dato declarado como una estructura en la línea 5, con este tipo de dato es posible declarar vectores como ya hemos visto anteriormente. En la línea 78 estamos declarando un vector de tipo ‘paquete‘ que tendrá 5 posiciones, es decir, 5 paquetes. 
+                        Recordemos que tenemos un nuevo tipo de dato declarado como una estructura en la línea 5, con este tipo de dato es posible declarar vectores como ya hemos visto anteriormente. En la línea 88 estamos declarando un vector de tipo ‘paquete‘ que tendrá 5 posiciones, es decir, 5 paquetes. 
                         ''',
                         '''
-                        Dentro del ciclo for declarado en la línea 82 solicitamos, calculamos y guardamos la información de cada paquete. Al finalizar el proceso de registro de paquetes declaramos otro ciclo for que recorra el vector de paquetes con la información previamente cargada para mostrar el mensaje resumen de cada paquete y calcular la información que nos solicitan en el enunciado.
+                        Dentro del ciclo for declarado en la línea 91 solicitamos, calculamos y guardamos la información de cada paquete. Al finalizar el proceso de registro de paquetes declaramos otro ciclo for que recorra el vector de paquetes con la información previamente cargada para mostrar el mensaje resumen de cada paquete y calcular la información que nos solicitan en el enunciado.
                         ''',
                         '''
-                        Finalmente mostramos toda la información que hemos calculado (líneas 175-179): volumen promedio, menor volumen, peso volumétrico promedio, mayor peso volumétrico y precio total de los 5 paquetes registrados.
+                        Finalmente mostramos toda la información que hemos calculado (líneas 178-182): volumen promedio, menor volumen, peso volumétrico promedio, mayor peso volumétrico y precio total de los 5 paquetes registrados.
                         '''
                     ]
                 },
                 "exercises": [
                     {
                         "statement": '''
-                                     La agencia de telecomunicaciones Zapdos desea ofrecer un programa a sus clientes para buscar los códigos de área a nivel internacional ofrecidos por la misma. Se requiere completar el siguiente programa en lenguaje C que solicite el código de área al usuario y lo busque en el vector codigos_paises. Si el código se encuentra registrado, el programa debe imprimir el país correspondiente; si no, el programa debería imprimir un mensaje de error. La lista de países junto a su código es la siguiente:
+                                     La agencia de telecomunicaciones Zapdos desea ofrecer un programa a sus clientes para buscar los códigos de área a nivel internacional ofrecidos por la misma. Se requiere completar el siguiente programa en lenguaje C que solicite el código de área al usuario y lo busque en el vector codigos_paises. Si el código se encuentra registrado, el programa debe imprimir el país correspondiente; si no, el programa debería imprimir un mensaje de error. 
+
+                                     La lista de países junto a su código es la siguiente:
                                      País                 Código
-                                     Argentina              54
-                                     Bangladesh             880
-                                     Brazil                 55
-                                     Burma (Myanmar)        95
-                                     China                  86
-                                     Colombia               57
-                                     Congo, Dem. Rep. of    243
-                                     Egypt                  20
-                                     Ethiopia               251
-                                     France                 33
-                                     Germany                49
-                                     India                  91
-                                     Indonesia              62
-                                     Iran                   98
-                                     Italy                  39
-                                     Japan                  81
-                                     Mexico                 52
-                                     Nigeria                234
-                                     Pakistan               92
-                                     Philippines            63
-                                     Poland                 48
-                                     Russia                 7
-                                     South Africa           27
-                                     South Korea            82
-                                     Spain                  34
-                                     Sudan                  249
-                                     Thailand               66
-                                     Turkey                 90
-                                     Ukraine                380
-                                     United Kingdom         44
-                                     United States          1
-                                     Vietnam                8
+                                     Argentina..............54
+                                     Bangladesh.............880
+                                     Brazil.................55
+                                     Burma (Myanmar)........95
+                                     China..................86
+                                     Colombia...............57
+                                     Congo, Dem. Rep. of....243
+                                     Egypt..................20
+                                     Ethiopia...............251
+                                     France.................33
+                                     Germany................49
+                                     India..................91
+                                     Indonesia..............62
+                                     Iran...................98
+                                     Italy..................39
+                                     Japan..................81
+                                     Mexico.................52
+                                     Nigeria................234
+                                     Pakistan...............92
+                                     Philippines............63
+                                     Poland.................48
+                                     Russia.................7
+                                     South Africa...........27
+                                     South Korea............82
+                                     Spain..................34
+                                     Sudan..................249
+                                     Thailand...............66
+                                     Turkey.................90
+                                     Ukraine................380
+                                     United Kingdom.........44
+                                     United States..........1
+                                     Vietnam................8
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
 
-                                /* Estructura para agrupar la información del tiempo */
+                                /* Estructura para agrupar la información de cada país */
                                 typedef struct
                                 {
                                     char pais[80];
@@ -4656,7 +4689,7 @@
                                         recorrer el vector de códigos de área) */
                                     int cantidad_codigos_disp = 32;
                                     
-                                    /* Declarar un vector de codigo_area y completar la asignación de la información de cada uno */
+                                    /* Declarar un vector de tipo codigo_area y completar la asignación de la información de cada uno */
                                     codigo_area codigos_paises[] = { {"Argentina", 54}, {"Bangladesh", 880},
                                                                      {"Brazil", 55}, {"Burma (Myanmar)", 95}
                                                                    };
@@ -4667,7 +4700,7 @@
                                     printf("Países Disponibles\n");
                                     
 
-                                    /* Solicitar el código de áreada deseado por el usuario */
+                                    /* Solicitar el código de área deseado por el usuario */
                                     
                                     
                                     /* Buscar si el código de área ingresado por el usuario está disponible */
@@ -4681,38 +4714,38 @@
                                 ''',
                         "expectedOutput": ''' 
                                           > Países Disponibles
-                                          > 1-Argentina             54
-                                          > 2-Bangladesh            880
-                                          > 3-Brazil                55
-                                          > 4-Burma (Myanmar)       95
-                                          > 5-China                 86
-                                          > 6-Colombia              57
-                                          > 7-Congo, Dem. Rep. of   243
-                                          > 8-Egypt                 20
-                                          > 9-Ethiopia              251
-                                          > 10-France               33
-                                          > 11-Germany              49
-                                          > 12-India                91
-                                          > 13-Indonesia            62
-                                          > 14-Iran                 98
-                                          > 15-Italy                39
-                                          > 16-Japan                81
-                                          > 17-Mexico               52
-                                          > 18-Nigeria              234
-                                          > 19-Pakistan             92
-                                          > 20-Philippines          63
-                                          > 21-Poland               48
-                                          > 22-Russia               7
-                                          > 23-South Africa         27
-                                          > 24-South Korea          82
-                                          > 25-Spain                34
-                                          > 26-Sudan                249
-                                          > 27-Thailand             66
-                                          > 28-Turkey               90
-                                          > 29-Ukraine              380
-                                          > 30-United Kingdom       44
-                                          > 31-United States        1
-                                          > 32-Vietnam              84
+                                          > Argentina             54
+                                          > Bangladesh            880
+                                          > Brazil                55
+                                          > Burma (Myanmar)       95
+                                          > China                 86
+                                          > Colombia              57
+                                          > Congo, Dem. Rep. of   243
+                                          > Egypt                 20
+                                          > Ethiopia              251
+                                          > France                33
+                                          > Germany               49
+                                          > India                 91
+                                          > Indonesia             62
+                                          > Iran                  98
+                                          > Italy                 39
+                                          > Japan                 81
+                                          > Mexico                52
+                                          > Nigeria               234
+                                          > Pakistan              92
+                                          > Philippines           63
+                                          > Poland                48
+                                          > Russia                7
+                                          > South Africa          27
+                                          > South Korea           82
+                                          > Spain                 34
+                                          > Sudan                 249
+                                          > Thailand              66
+                                          > Turkey                90
+                                          > Ukraine               380
+                                          > United Kingdom        44
+                                          > United States         1
+                                          > Vietnam               84
                                           > Ingrese el código de área deseado: 39
                                           > El país correspondiente al código de área 39 es Italy
                                           '''
@@ -4720,19 +4753,19 @@
                     {
                         "statement": '''
                                      La siguiente información muestra los vuelos diarios desde una ciudad a otra ofrecidos por la aerolínea Moltres:
-                                     Hora Partida         Hora Llegada
-                                     8:00am               10:16am
-                                     9:43am               11:52am
-                                     11:19am              1:31pm
-                                     12:47pm              3:00pm
-                                     2:00pm               4:08pm
-                                     3:45pm               5:55pm
-                                     7:00pm               9:20pm
-                                     9:45pm               11:58pm
+                                     Hora Partida - Hora Llegada
+                                     8:00am - 10:16am
+                                     9:43am - 11:52am
+                                     11:19am - 1:31pm
+                                     12:47pm - 3:00pm
+                                     2:00pm - 4:08pm
+                                     3:45pm - 5:55pm
+                                     7:00pm - 9:20pm
+                                     9:45pm - 11:58pm
 
                                      Complete el siguiente programa en lenguaje C para permitir que un usuario ingrese el tiempo (expresado en horas y minutos usando formato 24 horas) y luego el programa le muestre la hora de partida y de llegada para el vuelo cuya hora de partida es la más cercana al tiempo ingresado por el usuario.
 
-                                     Tip: Convierta los tiempos en minutos transcurridos desde la medianoche para facilitar la comparación de las horas. De esta manera al ingresar 13:15 equivale a 13*60 + 15 = 795 minutos desde la medianoche y la hora de partida del vuelo más cercana es 12:47 pm (767 minutos desde la medianoche)
+                                     Tip: Convierta los tiempos en minutos transcurridos desde la medianoche para facilitar la comparación de las horas. De esta manera al ingresar 13:15 equivale a 13*60 + 15 = 795 minutos desde la medianoche y la hora de partida del vuelo más cercano es 12:47 pm (767 minutos desde la medianoche)
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4754,14 +4787,14 @@
                                 }vuelo;
 
 
-                                /* Generar vuelo partiendo del tiempo de partida y de llegada */
-                                vuelo generar_vuelo(int hora_partida, int minutos_partida, int hora_llegada, int minutos_llegada){
-
-                                }
-
                                 /* Obtener minutos transcurridos desde la medianoche segun hh:mm */
                                 int obtener_minutos_medianoche(int horas, int minutos){
                                     
+                                }
+
+                                /* Generar vuelo partiendo del tiempo de partida y de llegada */
+                                vuelo generar_vuelo(int hora_partida, int minutos_partida, int hora_llegada, int minutos_llegada){
+
                                 }
 
                                 /* Imprimir información del vuelo (hora de partida y hora de llegada) ordenadamente */
@@ -4783,7 +4816,7 @@
                                     printf("Vuelos Disponibles\n");
                                     
 
-                                    /* Declarar las variables para guardar el tiempo de un usuario */
+                                    /* Declarar las variables para guardar el tiempo deseado por un usuario */
                                     
 
                                     /* Solicitar el tiempo al usuario (horas y minutos expresado en 24 horas) */
@@ -4800,14 +4833,14 @@
                                 ''',
                         "expectedOutput": ''' 
                                           > Vuelos Disponibles
-                                          > 1-Hora partida: 8:0      Hora llegada: 10:16
-                                          > 2-Hora partida: 9:43     Hora llegada: 11:52
-                                          > 3-Hora partida: 11:19    Hora llegada: 13:31
-                                          > 4-Hora partida: 12:47    Hora llegada: 15:0
-                                          > 5-Hora partida: 14:0     Hora llegada: 16:8
-                                          > 6-Hora partida: 15:45    Hora llegada: 17:55
-                                          > 7-Hora partida: 19:0     Hora llegada: 21:20
-                                          > 8-Hora partida: 21:45    Hora llegada: 11:58
+                                          > Hora partida: 8:0      Hora llegada: 10:16
+                                          > Hora partida: 9:43     Hora llegada: 11:52
+                                          > Hora partida: 11:19    Hora llegada: 13:31
+                                          > Hora partida: 12:47    Hora llegada: 15:0
+                                          > Hora partida: 14:0     Hora llegada: 16:8
+                                          > Hora partida: 15:45    Hora llegada: 17:55
+                                          > Hora partida: 19:0     Hora llegada: 21:20
+                                          > Hora partida: 21:45    Hora llegada: 11:58
                                           > Ingrese el tiempo deseado, Horas: 15
                                           > Ingrese el tiempo deseado, Minutos: 27
                                           > Con una diferencia de 18 minutos, el vuelo más cercano es el 5, cuya información es la siguiente:
@@ -4832,11 +4865,11 @@
 
                                      El programa debe ofrecer un menú con las siguientes opciones:
                                      1. Imprimir tabla de artículos: donde se muestre la información del inventario en forma de tabla.
-                                     2. Buscar artículo por código: 
-                                     3. Registrar venta de un artículo:
-                                     4. Calcular y mostrar las ganancias obtenidas con las ventas de un artículo en específico:
-                                     5. Calcular y mostrar las ganancias obtenidas con las ventas de todos los artículos: 
-                                     6. Finalizar programa
+                                     2. Buscar artículo por código: solicitar el código de un artículo y si existe mostrar la información asociada al mismo (nombre, precio, cantidad y vendidos), de no existir se debe mostrar el mensaje "El artículo con código CODIGO no existe en el almacén".
+                                     3. Registrar venta de un artículo: solicitar el código del artículo y la cantidad vendida para registrar la venta del mismo.
+                                     4. Calcular y mostrar las ganancias obtenidas con las ventas de un artículo en específico: solicitar el código del artículo que desea consultar y mostrar el total de ganancias obtenidas con las ventas del mismo.
+                                     5. Calcular y mostrar las ganancias obtenidas con las ventas de todos los artículos.
+                                     6. Finalizar programa.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4854,7 +4887,7 @@
 
                                 /**
                                  * Función para imprimir toda la información de un artículo
-                                 * @param a Artículo a imprimir
+                                 * @param a   Artículo a imprimir
                                  */
                                 void imprimir_articulo(articulo a){
                                     printf("%d \t\t %s \t\t %.2f \t\t %d\t\t %d\n", a.codigo, a.nombre, a.precio, a.cantidad, a.vendidos);
@@ -4870,7 +4903,7 @@
                                                               {7324, "Teclado Alám.", 25.3, 30, 0}¡
                                                             };
 
-                                    /* Mostrar el menu de opciones disponibles */
+                                    /* Mostrar el menú de opciones disponibles */
                                     
                                     
                                     /* Solicitar la opción deseada */
@@ -4894,16 +4927,16 @@
                                           > 6. Finalizar programa
                                           > Ingrese la opción deseada: 1
                                           > Código       Nombre          Precio      Disponible      Vendidos
-                                          > 4223         HD 500GB        87.12       25      0
-                                          > 7324         Teclado Alám.       25.30       30      0
-                                          > 1923         Mouse Inalám.       10.20       30      0
-                                          > 9201         Microfono       17.65       17      0
-                                          > 6945         Cornetas 2:1        65.78       20      0
-                                          > 3291         CPU Core i3         99.40       15      0
-                                          > 6025         Monitor 16''        81.67       15      0
-                                          > 7342         Tarjeta Video       82.35       25      0
-                                          > 1569         Pendrive 32GB       10.50       40      0
-                                          > 8327         Cable USB       8.34        50      0
+                                          > 4223         HD 500GB        87.12       25              0
+                                          > 7324         Teclado Alám.   25.30       30              0
+                                          > 1923         Mouse Inalám.   10.20       30              0
+                                          > 9201         Microfono       17.65       17              0
+                                          > 6945         Cornetas 2:1    65.78       20              0
+                                          > 3291         CPU Core i3     99.40       15              0
+                                          > 6025         Monitor 16''    81.67       15              0
+                                          > 7342         Tarjeta Video   82.35       25              0
+                                          > 1569         Pendrive 32GB   10.50       40              0
+                                          > 8327         Cable USB       8.34        50              0
                                           >
                                           > Ingrese la opción deseada: 2
                                           > Ingrese el código del artículo a buscar: 313
@@ -4912,7 +4945,7 @@
                                           > Ingrese la opción deseada: 2
                                           > Ingrese el código del artículo a buscar: 9201
                                           > Código       Nombre          Precio          Disponible          Vendidos
-                                          > 9201         Microfono       17.65       17      0
+                                          > 9201         Microfono       17.65           17                  0
                                           >
                                           > Ingrese la opción deseada: 3
                                           > Ingrese el código del artículo vendido: 7324
@@ -5025,7 +5058,7 @@
                             #include <stdio.h> 
                             #include <string.h> 
 
-                            /* Declaracion de la estructura 'paquete' */
+                            /* Declaración de la estructura 'paquete' */
                             typedef struct
                             {
                                 float volumen;
@@ -5040,7 +5073,7 @@
 
 
                             /**
-                             * Calcular y asignación del volúmen y peso volumetrico de un paquete 
+                             * Calcular y asignar del volúmen y peso volumétrico de un paquete 
                              * dadas sus dimensiones
                              * @param  alto     Alto del paquete
                              * @param  largo    Largo del paquete
@@ -5055,7 +5088,7 @@
 
                             /**
                              * Asignar categoría y retornar precio del paquete según el peso volumétrico
-                             * @param  peso_vol     Peso volumetrico del paquete
+                             * @param  peso_vol     Peso volumétrico del paquete
                              * @param  *cat         Puntero que 'apunta' al miembro 'categoria' de un paquete
                              * @return              Precio según peso volumétrico del paquete
                              */
@@ -5091,16 +5124,16 @@
                             }
 
                             /**
-                             * Solicitar y confirmar el correo electronico del usuario
+                             * Solicitar y confirmar el correo electrónico del usuario
                              * @param  *correo  Puntero que 'apunta' al miembro 'correo_usuario' de un paquete
                              */
                             void solicitar_confirmar_correo(char *correo){
                                 char confirmacion_correo[40];
 
                                 do{
-                                    printf("Ingrese el correo electronico: ");
+                                    printf("Ingrese el correo electrónico: ");
                                     scanf("%s",correo);
-                                    printf("Confirmacion del correo electronico: ");
+                                    printf("Confirmación del correo electrónico: ");
                                     scanf("%s",confirmacion_correo);
                                 }while(strcmp(correo,confirmacion_correo)!=0);
                             } 
@@ -5133,9 +5166,9 @@
 
 
                             /**
-                             * Calcular y retornar el precio segun el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en dias
-                             * @return      Precio segun plazo de entrego
+                             * Calcular y retornar el precio según el plazo de entrega 
+                             * @param  dias Plazo de entrega expresado en días
+                             * @return      Precio según plazo de entrego
                              */
                             float precio_segun_plazo(int dias)
                             {
@@ -5149,20 +5182,23 @@
                                     case 3:
                                         return 300.0f;
                                         break;
+                                    default:
+                                        return 0.0f;
+                                        break;
                                 }
                             }
 
                             /**
-                             * Mostrar un mensaje resumen del envio de un paquete
+                             * Mostrar un mensaje resumen del envío de un paquete
                              */
                             void mostrar_mensaje_resumen(paquete p){
-                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumetrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
+                                printf("El usuario %s ha registrado un paquete con volumen %.2f, peso volumétrico %.2f y categoría %s. El paquete será enviado desde %s hasta %s en %d días por un precio de %.2f.\n",p.correo_usuario, p.volumen, p.peso_volumetrico, 
                                     p.categoria, p.ciudad_origen, p.ciudad_destino, p.tiempo_entrega_dias, p.precio );
                             }
 
                             int main()
                             {
-                                /* Declaracion de las variables tipo decimal para
+                                /* Declaración de las variables tipo decimal para
                                     - Guardar dimensiones de cada paquete (alto, largo y ancho)
                                     - Guardar volumen promedio de los paquetes
                                     - Guardar el menor volumen registrado durante el día
@@ -5172,7 +5208,7 @@
                                 float alto, largo, ancho, volumen_promedio=0.0f, menor_volumen=99999999.9f, peso_volumetrico_promedio=0.0f,
                                       mayor_peso_volumetrico=-1.0f, precio_total=0.0f;
 
-                                /* Declaracion de una variable para guardar la cantidad de paquetes a registrar en el día */
+                                /* Declaración de una variable para guardar la cantidad de paquetes a registrar en el día */
                                 int cantidad_paquetes = 5, i;
 
                                 /* Declaramos un vector cuyo tipo será la nueva estructura 'paquete' */
@@ -5180,8 +5216,8 @@
 
                                 /* Registrar los paquetes indicados por día (en este caso 5) */
                                 for(i = 0; i < cantidad_paquetes; i++){
-                                    /* Solicitud de cada dimension */
-                                    printf("\n**Informacion del paquete actual\n");
+                                    /* Solicitud de cada dimensión */
+                                    printf("\n**Información del paquete actual\n");
                                     printf("-Alto:");
                                     scanf("%f",&alto);
                                     printf("-Largo:");
@@ -5189,7 +5225,7 @@
                                     printf("-Ancho:");
                                     scanf("%f",&ancho);
 
-                                    /* Calculo y asignacion del volumen y peso volumetrico en los miembros y en la posicion 
+                                    /* Cálculo y asignación del volumen y peso volumétrico en los miembros y en la posicion 
                                         correspondiente del vector 'paquetes'  */
                                     volumen_y_peso_volumetrico(alto, largo, ancho, &paquetes[i].volumen, &paquetes[i].peso_volumetrico);
                                     
@@ -5208,7 +5244,7 @@
                                     /* Solicitar y guardar la ciudad de origen y destino */
                                     solicitar_guardar_origen_destino(paquetes[i].ciudad_origen,paquetes[i].ciudad_destino);
 
-                                    /* Solicitar y confirmar el correo electronico del usuario */
+                                    /* Solicitar y confirmar el correo electrónico del usuario */
                                     solicitar_confirmar_correo(paquetes[i].correo_usuario);
                                 }
 
@@ -5238,7 +5274,7 @@
                                 printf("El precio total de los envíos registrados durante el día es: %.2f\n", precio_total);
 
 
-                                printf("\nPrograma finalizado con exito\n");
+                                printf("\nPrograma finalizado con éxito\n");
                                   
                                 return 0;
                             }
@@ -5248,16 +5284,16 @@
                         La primera función (línea 27) recibirá por parámetros las 3 dimensiones del paquete que se está registrando actualmente y además recibirá dos punteros de tipo float, para manejar el volumen y peso_volumetrico correspondientes a dicho paquete.
                         ''',
                         '''
-                        Para enviar las direcciones en memoria como parámetro en el llamado de la función anterior utilizamos el operador & (línea 91), de esta manera los punteros apuntarán a los miembros volumen y peso_volumétrico del paquete actual. 
+                        Para enviar las direcciones en memoria como parámetro en el llamado de la función anterior utilizamos el operador & (línea 173), de esta manera los punteros apuntarán a los miembros volumen y peso_volumétrico del paquete actual. 
                         ''',
                         '''
                         La función que asigna categoría y retorna el precio de un paquete según su peso volumétrico recibe por parámetro el peso volumétrico y un puntero para modificar la categoría del paquete (línea 38). 
                         ''',
                         '''
-                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 121, no necesitamos utilizar el operador & al pasar por parámetros el miembro ‘categoría’ de un paquete. (Recordemos que ‘categoría’ es un string, es decir, un vector de caracteres)
+                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 176, no necesitamos utilizar el operador & al pasar por parámetros el miembro ‘categoría’ de un paquete. (Recordemos que ‘categoría’ es un string, es decir, un vector de caracteres)
                         ''',
                         '''
-                        Para solicitar y guardar la ciudad de origen y destino creamos una función (línea 62) que reciba por parámetro los punteros que necesitamos: origen y destino del paquete actual, los cuales son enviados sin utilizar el operador & (línea 144), porque los nombres de las variables hacen referencia al primer elemento de las mismas(string, vector de caracteres). 
+                        Para solicitar y guardar la ciudad de origen y destino creamos una función (línea 62) que reciba por parámetro los punteros que necesitamos: origen y destino del paquete actual, los cuales son enviados sin utilizar el operador & (línea 188), porque los nombres de las variables hacen referencia al primer elemento de las mismas(string, vector de caracteres). 
                         ''',
                         '''
                         La cuarta función (línea 73) es muy parecida a la función anterior, recibe por parámetro el puntero del correo electrónico del usuario y se hace el proceso de confirmación dentro de la misma función.
@@ -5266,7 +5302,7 @@
                         Para buscar el menor volúmen y el mayor peso volumétrico de los paquetes registrados creamos una función que reciba por parámetro la cantidad de paquetes registrados, un puntero del vector con la información de los paquetes y los punteros de las variables menor_volumen y mayor_peso_volumetrico. 
                         ''',
                         '''
-                        En el llamado de función anterior (línea 192) podemos notar que para enviar el puntero del vector de paquetes no utilizamos el operador & (ya el nombre de la variable apunta al primer paquete del vector), en cambio, para los punteros de las variables menor_volumen y mayor_peso_volumetrico si usamos el operador &.
+                        En el llamado de función anterior (línea 195) podemos notar que para enviar el puntero del vector de paquetes no utilizamos el operador & (ya el nombre de la variable apunta al primer paquete del vector), en cambio, para los punteros de las variables menor_volumen y mayor_peso_volumetrico si usamos el operador &.
                         '''
                     ]
                 },
@@ -5374,7 +5410,7 @@
                     },
                     {
                         "statement": '''
-                                     Codifique la función separar_tiempo, donde segundos_total representa la cantidad de segundos transcurridos desde la medianoche y los punteros *hr, *min y *seg apuntan a las variables enteros que guardarán el tiempo en horas(0-23), minutos(0-59) y segundos(0-59) equivalente a los segundos contados desde la medianoche.
+                                     Codifique la función separar_tiempo, donde segundos_total representa la cantidad de segundos transcurridos desde la medianoche y los punteros *hr, *min y *seg apuntan a las variables enteras que guardarán el tiempo en horas(0-23), minutos(0-59) y segundos(0-59) equivalente a los segundos contados desde la medianoche.
 
                                      Utilice la estructura tiempo para guardar la información necesaria. Defina una función que reciba el tiempo por parámetro y lo imprima en formato hh:mm:ss. Añada el dígito 0 si las horas, minutos o segundos son menores que 10.
                                      ''',
