@@ -663,7 +663,7 @@
             {
                 "_id": 2,
                 "title": "Cláusula else",
-                "content": "Estructura y uso de la cláusula else",
+                "content": "Definición, estructura y casos de uso de la cláusula else en conjunto con la sentencia if",
                 "explanation": '''
                                En algunas oportunidades es útil ejecutar ciertas instrucciones si *NO* se cumple una condición `if`, para estos casos existe la cláusula `else`:
                                ```c
@@ -1094,7 +1094,7 @@
             {
                 "_id": 1,
                 "title": "Ciclos: while",
-                "content": "Definición de ciclos, estructura y uso del ciclo while. ",
+                "content": "Definición de ciclos. Estructura y uso del ciclo while en lenguaje C.",
                 "explanation": '''
                                Un ciclo es una sentencia que se encarga de ejecutar repetidamente las instrucciones que se encuentran dentro del cuerpo del ciclo. En C, cada ciclo tiene una expresión de control. Dicha expresión de control es evaluada **ANTES** de cada ejecución del cuerpo del ciclo (a esto se le llama *iteración*) y si el resultado es verdadero, el ciclo continúa su ejecución.
                                
@@ -1595,7 +1595,7 @@
             {
                 "_id": 3,
                 "title": "Ciclos: for",
-                "content": "Estructura del ciclo for. ¿Cuándo y cómo utilizarlo?",
+                "content": "Estructura del ciclo for. Significado de cada una de sus sentencias. ¿Cuándo y cómo utilizarlo?",
                 "explanation": '''
                                El último ciclo de lenguaje C se denomina `for` y su estructura es la siguiente:
                                ```c
@@ -2485,7 +2485,7 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Se necesita complementar el programa de la empresa Rapidash para solicitar al usuario la cuidad de origen y destino del paquete, permitiendo corregirlas si no fueron ingresadas correctamente. 
+                                 Se necesita complementar el programa de la empresa Rapidash para solicitar al usuario la ciudad de origen y destino del paquete, permitiendo corregirlas si no fueron ingresadas correctamente. 
 
                                  Para este ejemplo se le preguntará al usuario la cantidad de paquetes que desea registrar, se solicitan las dimensiones de cada paquete y el tiempo de entrega para calcular el volumen, peso volumétrico y precio del mismo. Luego se solicita la ciudad de origen y destino del paquete permitiendo que que el usuario corrija las ciudades en caso de indicar que no ha sido ingresadas correctamente. 
 
