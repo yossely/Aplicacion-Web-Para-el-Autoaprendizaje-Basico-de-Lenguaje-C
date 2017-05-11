@@ -46,6 +46,7 @@ $color_comments_editor: #7D7B7B;
         white-space: pre-line;
         background: none;
         border: none;
+        word-break: normal;
 
         .key_words {
             color: $color_olive;
