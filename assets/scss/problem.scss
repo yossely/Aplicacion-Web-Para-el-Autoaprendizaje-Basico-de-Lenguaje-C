@@ -34,7 +34,7 @@ $color_comments_editor: #7D7B7B;
         margin-top: 10px;
     }
 
-    pre {
+    div.problem-statement {
         font-family: $font_main;
         font-size: 18px;
         
@@ -54,7 +54,7 @@ $color_comments_editor: #7D7B7B;
         }
     }
 
-    pre.long-text{
+    div.problem-statement.long-text{
         height: 593px;
     }
 }

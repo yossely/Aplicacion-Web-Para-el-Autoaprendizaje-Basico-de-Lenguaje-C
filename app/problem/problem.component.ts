@@ -7,6 +7,8 @@ import { ErrorHandlingService } from './error-handling.service';
 import { CheckPrintfService } from './check-printf.service';
 import { Problem } from '../data_structure/problem';
 
+import { MarkdownParserService } from '../markdown/markdown-parser.service';
+
 import 'brace';
 import 'brace/theme/clouds';
 import 'brace/mode/c_cpp';
@@ -51,7 +53,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     constructor(private _unitsService: UnitsService,
                 private _ngZone: NgZone,
                 private _errorHandlingService: ErrorHandlingService,
-                private _checkPrintfService: CheckPrintfService){ }
+                private _checkPrintfService: CheckPrintfService,
+                private md: MarkdownParserService){ }
 
     
     ngOnInit(){
@@ -173,6 +176,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      *         Represents a basic change from a previous to a new value.
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
+        // convert the problem's statement into markdown 
+        this.problem.statement = this.md.convert(this.problem.statement);
 
         this.isExpectedOutputHidden = true;
 

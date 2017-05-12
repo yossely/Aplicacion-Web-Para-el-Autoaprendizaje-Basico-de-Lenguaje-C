@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <h3>Enunciado</h3>
                 <!-- <span class="key_words">suscipit</span> -->
-                <pre [ngClass]="{'long-text': isOnExercises}">{{problem?.statement}}</pre>
+                <div class="problem-statement" [ngClass]="{'long-text': isOnExercises}" [innerHtml]="problem?.statement"></div>
             </div>
         </div>
         <!-- 593px -->
