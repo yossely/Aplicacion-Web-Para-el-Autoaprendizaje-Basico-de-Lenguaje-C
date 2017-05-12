@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>Enunciado</h3>
-                <!-- <span class="key_words">suscipit</span> -->
-                <div class="problem-statement" [ngClass]="{'long-text': isOnExercises}" [innerHtml]="problem?.statement"></div>
+                <!-- md.convert(problem.statement) this sentence convert the statement markdown into html elements -->
+                <div class="problem-statement" [ngClass]="{'long-text': isOnExercises}" [innerHtml]="md.convert(problem.statement)"></div>
             </div>
         </div>
         <!-- 593px -->

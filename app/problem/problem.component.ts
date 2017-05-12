@@ -176,8 +176,6 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      *         Represents a basic change from a previous to a new value.
      */
     ngOnChanges(changes: {[propKey: string]: SimpleChange}){
-        // convert the problem's statement into markdown 
-        this.problem.statement = this.md.convert(this.problem.statement);
 
         this.isExpectedOutputHidden = true;
 
