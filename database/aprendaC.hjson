@@ -1089,7 +1089,7 @@
     },
     {
         "_id": 3,
-        "title" : "Unidad III. Ciclos: while, do-while y for",
+        "title" : "Unidad III. Ciclos: while, do-while y for.  Contadores y acumuladores.",
         "lessons": [
             {
                 "_id": 1,
@@ -1842,15 +1842,9 @@
                                           '''
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "_id": 4,
-        "title" : "Unidad VI. Contadores, acumuladores, vectores y strings",
-        "lessons": [
+            },
             {
-                "_id": 1,
+                "_id": 4,
                 "title": "Contadores y Acumuladores",
                 "content": "Aumentar o disminuir valores progresivamente dentro de los ciclos. Acumular valores y guardarlos en una variable. Operadores abreviados para incrementar, disminuir y acumular valores.",
                 "explanation": '''
@@ -2129,13 +2123,19 @@
                                           '''
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "_id": 4,
+        "title" : "Unidad VI. Arreglos: vectores y matrices. Strings y operaciones con strings.",
+        "lessons": [
             {
-                "_id": 2,
+                "_id": 1,
                 "title": "Arreglos: vectores",
                 "content": "Definición de arreglos. Declaración de un vector. Condiciones en los arreglos. Acceso a los elementos de un vector. Asignación de valores en un vector.",
                 "explanation": '''
-                               Un arreglo es una estructura que contiene una cantidad X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión, se denomina arreglo unidimensional o vector.
+                               Un arreglo es una estructura que contiene una cantidad X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión y se denomina arreglo unidimensional o vector.
                                Para declarar un vector debemos especificar el tipo de dato de los elementos que vamos a guardar y la cantidad de elementos, por ejemplo:
                                ```c
                                int vector[10];
@@ -2433,6 +2433,366 @@
                 ]
             },
             {
+                "_id": 2,
+                "title": "Arreglos: matrices",
+                "content": "Declaración e inicialización de una matriz. Acceso a los elementos de una matriz. Recorrer cada elementos de una matriz utilizando el ciclo for.",
+                "explanation": '''
+                               Veamos cómo declarar un arreglo bidimensional o matriz:
+                               ```c
+                               float matriz[5][9];
+                               ```
+                                Aquí tenemos una matriz de tipo `float`, tiene 5 filas y 9 columnas. Recordemos que los índices de los arreglos comienzan por 0, por lo tanto nuestra matriz luce:
+                               
+                               ![Visualización de una matriz](assets/img/array-image-lesson14.svg "Arreglos: matrices")
+
+                               Para acceder a un elemento debemos especificar las coordenadas de la forma `matriz[fila][columna]`, es decir, si queremos acceder al elemento ubicado en la fila 3, columna 6, escribimos `matriz[3][6]`
+                               
+                               Consideremos por ejemplo, inicializar un arreglo de 5x5 para usar como una matriz identidad
+
+                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1’s en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0’s en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
+                               
+                               ![Matriz Identidad](assets/img/identity-array-image-lesson14.svg "Matriz Identidad")
+                               
+                               Necesitamos visitar cada elemento de la matriz, un par de ciclos `for` resulta perfecto, uno para recorrer cada fila y otro para recorrer cada columna:
+                               ```c
+                               for (fila = 0; fila < 10; ++fila)
+                               {
+                                   for (columna = 0; columna < 10; ++columna)
+                                   {
+                                       // Si estamos en la diagonal principal, asignar valor 1.0f
+                                       if (fila == columna)
+                                       {
+                                           matriz[fila][columna]=1.0f;
+                                       }else{
+                                           matriz[fila][columna]=0.0f;
+                                       }
+                                   }
+                               }
+                               ```
+                               Para inicializar una matriz podemos especificar los elementos de cada fila con la ayuda de `{ }` de la siguiente manera:
+                               ```c
+                               int matriz[4][6] = {{1,1,0,1,0,1},
+                                                   {0,0,1,1,0,0},
+                                                   {0,1,1,0}};
+                               ```
+                               Al no inicializar algún elemento, este tendrá como valor 0. En este ejemplo las últimas dos columnas de la 3º fila y la 4º fila completa tendrán 0.
+                               
+                               También podemos *omitir* los `{ }` y escribir todos los elementos separados solo por comas, una vez el compilador encuentre suficientes valores para llenar una fila, empieza con la siguiente:
+                               ```c
+                               int matriz[4][6] = {1,1,0,1,0,1,
+                                                   0,0,1,1,0,0,
+                                                   0,1,1,0};
+                               ```
+                               De la misma manera se completan los elementos faltantes con el valor 0.
+                               ''',
+                "example": {
+                    "statement": '''
+                                 La empresa Rapidash va a recibir dos (2) paquetes por día durante cuatro (4) días y desea registrar el volumen, peso volumétrico, tiempo de entrega y el precio del envío de cada uno. Al finalizar con el proceso de registro de los paquetes se requiere:
+                                 - Calcular y mostrar el volumen promedio de los paquetes durante los cuatro días.
+                                 - Calcular y mostrar el peso volumétrico promedio de los paquetes durante los cuatro días.
+                                 - Calcular y mostrar el precio total de los envíos por día.
+                                 - Calcular y mostrar el precio total de los envíos durante los cuatro días.
+                                 - Calcular y mostrar el precio promedio de los envíos por día.
+                                 - Calcular y mostrar el precio promedio de los envíos durante los cuatro días.
+                                 ''',
+                    "code": '''
+                            #include <stdio.h> 
+
+                            int main()
+                            {
+                                /* Declaración de las variables de tipo decimal:
+                                    - 3 variables para guardar dimensiones del paquete actual
+                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
+                                        por día durante cuatro (4) días 
+                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
+                                */
+                                float alto, largo, ancho, 
+                                      volumenes[4][2], 
+                                      pesos_volumetricos[4][2], 
+                                      precios[4][2],
+                                      volumen_promedio=0.0f,
+                                      peso_volumetrico_promedio=0.0f,
+                                      precio_total_por_dia=0.0f,
+                                      precio_total=0.0f;
+
+
+                                /* Declaración de variables enteras 
+                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Una para indicar la cantidad de días
+                                    - Una para indicar la cantidad de paquetes a registrar por días
+                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
+                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
+                                */
+                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
+
+                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
+
+                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
+                                    tiene 4 filas que representan la cantidad de días */
+                                for(filas=0; filas<cantidad_dias; filas++){
+
+                                    printf("Ingrese los paquetes del día #%d\n",filas+1);
+                                    
+                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
+                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        /* Solicitud de cada dimensión */
+                                        printf("**Paquete %d\n",columnas+1);
+                                        printf("-Alto:");
+                                        scanf("%f",&alto);
+                                        printf("-Largo:");
+                                        scanf("%f",&largo);
+                                        printf("-Ancho:");
+                                        scanf("%f",&ancho);
+
+                                        /* Cálculo y asignación del volumen y peso volumétrico en cada posición de las 
+                                            matrices volumenes y pesos_volumetricos respectivamente */
+                                        volumenes[filas][columnas] = alto*largo*ancho;
+                                        pesos_volumetricos[filas][columnas] = alto*largo*ancho/5000;
+                                        
+                                        /* Categoría y precio según el peso volumétrico de un paquete */
+                                        if ( pesos_volumetricos[filas][columnas] >= 10.0f )
+                                        {
+                                            printf("El paquete es grande\n");
+                                            precios[filas][columnas] = 2196.43f;
+                                        }
+                                        else{
+                                            if ( (pesos_volumetricos[filas][columnas] > 5)&&(pesos_volumetricos[filas][columnas] < 10.0f) )
+                                            {
+                                                printf("El paquete es mediano\n");
+                                                precios[filas][columnas] = 1523.86f;
+                                            }
+                                            else{
+                                                printf("El paquete es pequeño\n");
+                                                precios[filas][columnas] = 1018.73f;
+                                            }  
+                                        }
+
+                                        /* Solicitud del tiempo de entrega */
+                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
+                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
+
+                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
+                                            y sumar el costo a la matriz precios[filas][columnas]
+                                         */
+                                        switch(tiempo_entrega_dias[filas][columnas]){
+                                            case 1:
+                                                precios[filas][columnas] += 1250.0f;
+                                                break;
+                                            case 2:
+                                                precios[filas][columnas] += 1000.0f;
+                                                break;
+                                            case 3:
+                                                precios[filas][columnas] += 300.0f;
+                                                break;   
+                                        }
+
+                                    }
+
+                                }
+
+                                /* Calcular las estadísticas solicitadas en el enunciado */
+                                printf("\nDatos estadisticos de los envios registrados\n\n");    
+                                for(filas=0; filas<cantidad_dias; filas++){
+                                    
+                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
+                                    precio_total_por_dia=0.0f;
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        volumen_promedio+=volumenes[filas][columnas];
+                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
+
+                                        precio_total_por_dia+=precios[filas][columnas];
+                                    }
+
+                                    /* Mostrar las estadísticas requeridas por día */
+                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
+                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
+
+                                    precio_total+=precio_total_por_dia;
+                                }
+
+                                /* Mostrar precio total y precio promedio durante los 4 días */
+                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Precio total de los 4 días: %.2f\n", precio_total);
+                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
+                                
+                                return 0;
+                            }
+                            ''',
+                    "solutionSteps": [
+                        '''
+                        Declaramos las matrices necesarias para guardar el volumen, peso volumétrico, tiempo de entrega y precio del envío de cada paquete registrado, todas de tipo decimal menos el tiempo de entrega, el cual es de tipo entero. Todas las matrices tienen como dimensiones 4 filas y 2 columnas, representando los 4 días y 2 paquetes por día respectivamente.
+                        ''',
+                        '''
+                        Creamos dos ciclos for anidados para recorrer las filas y columnas de cada matriz. Las iteraciones del ciclo externo hacen referencia a los 4 días y las del ciclo interno a los 2 paquetes por día. De esta manera iremos registrando los dos paquetes del día 1, luego del día 2, después del día 3 y por último del día 4.
+                        ''',
+                        '''
+                        Recordemos que para acceder a los elementos de un arreglo utilizamos índices (comenzando en 0), por lo tanto, para guardar cada valor en las matrices lo hacemos dentro de los ciclos for y de la forma [filas][columnas]; por ejemplo, para guardar los valores del segundo paquete del tercer día los índices serán [2][1].
+                        ''',
+                        '''
+                        Luego, para calcular y mostrar los datos solicitados en el enunciado debemos recorrer nuevamente las matrices que contienen la información de cada paquete e ir acumulando los valores necesarios. Por ejemplo, para calcular el volumen promedio durante los 4 días, sumamos el volumen de cada uno de los paquetes (línea 155) y una vez finalizados los ciclos dividimos la sumatoria entre la cantidad de paquetes registrados en los 4 días (línea 169).
+                        '''
+                    ]
+                },
+                "exercises": [
+                    {
+                        "statement": '''
+                                     Escriba un programa que llene una matriz entera de dimensión 3x3 y muestre su transpuesta. La matriz transpuesta se obtiene al intercambiar filas por columnas ordenadamente.
+
+                                     Observe el siguiente ejemplo, donde A es la matriz original y T es la matriz transpuesta de A:
+
+                                     A 
+                                     2----3----0          
+                                     1----2----0              
+                                     3----5----6              
+
+                                     T 
+                                     2----1----3
+                                     3----2----5
+                                     0----0----6
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+
+                                int main()
+                                {
+                                    /* Declarar las matrices: inicial y transpuesta, de dimensiones 3x3 */
+                                    
+
+                                    /* Solicitar los valores de la matriz inicial */
+                                    
+
+                                    /* Hallar la matriz transpuesta */
+                                    
+
+                                    /* Mostrar la matriz inicial junto a la matriz transpuesta */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese los valores de la matriz inicial (por filas)
+                                          > Fila #1
+                                          >  *Columna #1: 1
+                                          >  *Columna #2: 2
+                                          >  *Columna #3: 3
+                                          > Fila #2
+                                          >  *Columna #1: 4
+                                          >  *Columna #2: 5
+                                          >  *Columna #3: 6
+                                          > Fila #3
+                                          >  *Columna #1: 7
+                                          >  *Columna #2: 8
+                                          >  *Columna #3: 9
+                                          >
+                                          > **Matriz inicial**       
+                                          > 1    2    3                       
+                                          > 4    5    6                       
+                                          > 7    8    9      
+                                          >              
+                                          > **Matriz transpuesta**
+                                          > 1    4    7 
+                                          > 2    5    8 
+                                          > 3    6    9
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Diseñe un programa en C que registre la ocurrencia de cada dígito en un número entero. De esta manera, si un usuario ingresa el número 2327 se debe mostrar que el dígito 2 tiene dos ocurrencias, los dígitos 3 y 7 tiene una y los demás no tienen ninguna ocurrencia. Mostrar estas ocurrencias en una tabla de la forma:
+                                     0    1    2    3    4    5    6    7    8    9
+                                     0    0    2    1    0    0    0    1    0    0
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias (Tip: solo necesita variables de tipo int) */
+                                    
+
+                                    /* Solicitar el número entero */
+                                    
+
+                                    /* Dividir el número dígito a dígito e ir marcando la ocurrencia de cada dígito */
+                                    
+
+                                    /* Imprimir en pantalla cada dígito junto a su ocurrencia */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese un numero entero: 43827723
+                                          > Ocurrencias:
+                                          > 0    1    2    3    4    5    6    7    8    9    
+                                          > 0    0    2    2    1    0    0    2    1    0
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Una empresa acaba de adquirir una nueva máquina de secado y necesita estudiar el comportamiento de la misma para encontrar su configuración ideal. Para esto la empresa desea llevar el registro de temperaturas durante tres (3) días. Cada día se tomará la temperatura dos (2) veces. Escriba un programa que permita guardar las temperaturas de estos días, calcular el promedio de cada día y el promedio de estos tres días.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+
+                                int main()
+                                {
+                                    /* Declaración de las variables de tipo decimal:
+                                        - 1 matriz para guardar las dos lecturas de los tres días a evaluar
+                                        - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
+                                        - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
+                                        - 1 vector de 3 posiciones para guardar el precio de cada paquete 
+                                    */
+                                    
+
+                                    /* Declaración de variables enteras 
+                                        - Una para recorrer las filas de la matriz en un ciclo for
+                                        - Una para recorrer las columnas de la matriz en un ciclo for
+                                        - Una para guardar la cantidad de días a evaluar
+                                        - Una para guardar las lecturas de temperatura por día
+                                    */
+
+
+                                    /* Registrar las temperaturas */
+                                    
+
+                                    /* Calcular y mostrar el promedio de temperaturas por día y durante los tres días*/
+                                    
+                                    
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese las temperatura del dia #1
+                                          > 1º: 32.3
+                                          > 2º: 41.5
+                                          >
+                                          > Ingrese las temperatura del dia #2
+                                          > 1º: 34.2
+                                          > 2º: 54.6
+                                          >
+                                          > Ingrese las temperatura del dia #3
+                                          > 1º: 12.3
+                                          > 2º: 24.5
+                                          > La temperatura promedio del 1º dia es 36.90
+                                          > La temperatura promedio del 2º dia es 44.40
+                                          > La temperatura promedio del 3º dia es 18.40
+                                          > La temperatura promedio de los tres días es 66.47
+                                          '''
+                    }
+                ]
+            },
+            {
                 "_id": 3,
                 "title": "Strings",
                 "content": "Declaración de strings. Asignación de valores en un string. Imprimir en la consola strings con printf y puts. Leer y guardar valores en un string con scanf y gets.",
@@ -2693,7 +3053,6 @@
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
-                                #include <stdlib.h>
 
                                 int main()
                                 {
@@ -2719,12 +3078,336 @@
                                           '''
                     }
                 ]
+            },
+            {
+                "_id": 4,
+                "title": "Operaciones con strings (strcpy, strlen, strcat y strcmp)",
+                "content": "Librería string.h. Copiar strings, calcular la longitud de un string, concatenar strings y comparar strings.",
+                "explanation": '''
+                               Los arreglos tienen algunas restricciones, por ejemplo, no es posible copiar un arreglo en otro con el operador de asignación `=`, ni comparar si dos vectores son iguales con el operador `==` 
+                               ### ERROR
+                               ```c
+                               char string1[10] = "cadena 1";
+                               char string2[10];
+                               string2 = string1;
+                               ```
+                               ### ERROR
+                               ```c
+                               if(string1 == string2)...
+                               ```
+                               Afortunadamente, en C tenemos la librería `string.h` que nos proporciona funciones para conseguir lo que necesitamos:
+                               
+                               - strcpy → `strcpy(string2, string1);` 
+                                 - **Copia** el contenido de la variable *string1* en la variable *string2*
+                                   
+                                   ```c
+                                   char string1[10] = "prueba",
+                                        string2[10];
+                                   strcpy(string2,string1);
+                                   // string2 = "prueba"
+                                   ```
+                               - strlen → `strlen(string);` 
+                                 - Calcula y devuelve la **longitud** (`int`) de la variable *string*
+                                   
+                                   ```c
+                                   char cadena[10] = "prueba";
+                                   int longitud = strlen(cadena);
+                                   // longitud = 6
+                                   ```
+                               - strcat → `strcat(string1, string2);` 
+                                 - **Añade** el contenido de la variable *string2* al final del contenido en la variable *string1*
+                                   
+                                   ```c
+                                   char cadena1[20] = "¡Hola ",
+                                        cadena2[10] = "mundo!";
+                                   strcat(cadena1, cadena2);
+                                   // cadena1 = "¡Hola mundo!"
+                                   ```
+                               - strcmp → `strcmp(string1, string2);` 
+                                 - **Compara** las cadenas de caracteres *string1* y *string2*, devuelve un valor menor que, igual que o mayor que 0 si string1 es menor que, igual que o mayor que string2
+                                   
+                                   ```c
+                                   if (strcmp(cadena1,cadena2) == 0)
+                                       // cadena1 es igual que cadena2 ??
+                                   
+                                   if (strcmp(cadena1,cadena2) < 0)
+                                       // cadena1 es menor que cadena2 ??
+                                   
+                                   if (strcmp(cadena1,cadena2) > 0)
+                                       // cadena1 es mayor que cadena2 ??
+                                   ```
+                               ''',
+                "example": {
+                    "statement": '''
+                                 Continuando con el ejemplo de la lección anterior, la empresa Rapidash ahora desea al momento de registrar el envío de un paquete, solicitar el correo electrónico del usuario dos veces con la intención de confirmar el mismo.  
+                                 ''',
+                    "code": '''
+                            #include <stdio.h> 
+                            #include <string.h> 
+
+                            int main()
+                            {
+                                /* Declaración de las variables de tipo decimal:
+                                    - 3 variables para guardar dimensiones del paquete actual
+                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
+                                        por día durante cuatro (4) días 
+                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
+                                */
+                                float alto, largo, ancho, 
+                                      volumenes[4][2], 
+                                      pesos_volumetricos[4][2], 
+                                      precios[4][2],
+                                      volumen_promedio=0.0f,
+                                      peso_volumetrico_promedio=0.0f,
+                                      precio_total_por_dia=0.0f,
+                                      precio_total=0.0f;
+
+
+                                /* Declaración de variables enteras 
+                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Una para indicar la cantidad de días
+                                    - Una para indicar la cantidad de paquetes a registrar por días
+                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
+                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
+                                */
+                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
+
+                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
+
+                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
+                                    tiene 4 filas que representan la cantidad de días */
+                                for(filas=0; filas<cantidad_dias; filas++){
+
+                                    printf("\nIngrese los paquetes del día #%d\n",filas+1);
+                                    
+                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
+                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        /* Solicitud de cada dimension */
+                                        printf("**Paquete %d\n",columnas+1);
+                                        printf("-Alto:");
+                                        scanf("%f",&alto);
+                                        printf("-Largo:");
+                                        scanf("%f",&largo);
+                                        printf("-Ancho:");
+                                        scanf("%f",&ancho);
+
+                                        /* Calculo y asignación del volumen y peso volumétrico en cada posición de las 
+                                            matrices volumenes y pesos_volumetricos respectivamente */
+                                        volumenes[filas][columnas] = alto*largo*ancho;
+                                        pesos_volumetricos[filas][columnas] = alto*largo*ancho/5000;
+                                        
+                                        /* Categoría y precio según el peso volumétrico de un paquete */
+                                        if ( pesos_volumetricos[filas][columnas] >= 10.0f )
+                                        {
+                                            printf("El paquete es grande\n");
+                                            precios[filas][columnas] = 2196.43f;
+                                        }
+                                        else{
+                                            if ( (pesos_volumetricos[filas][columnas] > 5)&&(pesos_volumetricos[filas][columnas] < 10.0f) )
+                                            {
+                                                printf("El paquete es mediano\n");
+                                                precios[filas][columnas] = 1523.86f;
+                                            }
+                                            else{
+                                                printf("El paquete es pequeño\n");
+                                                precios[filas][columnas] = 1018.73f;
+                                            }  
+                                        }
+
+                                        /* Solicitud del tiempo de entrega */
+                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
+                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
+
+                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
+                                            y sumar el costo a la matriz precios[filas][columnas]
+                                         */
+                                        switch(tiempo_entrega_dias[filas][columnas]){
+                                            case 1:
+                                                precios[filas][columnas] += 1250.0f;
+                                                break;
+                                            case 2:
+                                                precios[filas][columnas] += 1000.0f;
+                                                break;
+                                            case 3:
+                                                precios[filas][columnas] += 300.0f;
+                                                break;
+                                        }
+
+                                        /* Solicitar y confirmar el correo electrónico del usuario */
+                                        char correo[40], confirmacion_correo[40];
+
+                                        do{
+                                            printf("Ingrese el correo electrónico: ");
+                                            scanf("%s",correo);
+                                            printf("Confirmación del correo electrónico: ");
+                                            scanf("%s",confirmacion_correo);
+                                        }while(strcmp(correo,confirmacion_correo)!=0);
+                                    }
+
+                                }
+
+                                /* Calcular las estadísticas solicitadas en el enunciado */
+                                printf("\nDatos estadisticos de los envios registrados\n\n");    
+                                for(filas=0; filas<cantidad_dias; filas++){
+                                    
+                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
+                                    precio_total_por_dia=0.0f;
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        volumen_promedio+=volumenes[filas][columnas];
+                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
+
+                                        precio_total_por_dia+=precios[filas][columnas];
+                                    }
+
+                                    /* Mostrar las estadísticas solicitadas por día */
+                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
+                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
+
+                                    precio_total+=precio_total_por_dia;
+                                }
+
+                                /* Mostrar precio total y precio promedio durante los 4 días */
+                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Precio total de los 4 días: %.2f\n", precio_total);
+                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
+                                
+                                return 0;
+                            }
+                            ''',
+                    "solutionSteps": [
+                        '''
+                        Recordemos incluir la librería string.h para tener acceso a la función que nos permite comparar strings. (Línea 2)
+                        ''',
+                        '''
+                        Creamos una función para solicitar y confirmar el correo electrónico del usuario (Línea 81), dentro de esta función declaramos dos variables strings para guardar el correo y la confirmación del correo respectivamente. Luego, utilizando un ciclo do-while solicitamos y verificamos el correo electrónico ingresado por el usuario hasta que ambos coinciden.
+                        ''',
+                        '''
+                        Finalmente llamamos la función dentro del ciclo que solicita los datos de cada paquete. (Línea 163)
+                        '''
+                    ]
+                },
+                "exercises": [
+                    {
+                        "statement": '''
+                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa ‘notas.txt’ el programa deberá guardar ‘notas’ en una variable llamada NOMBRE y ‘txt’ en una variable llamada EXTENSION.
+
+                                     Nota: El nombre del archivo completo no tendrá más de 40 caracteres.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+                                #include <string.h> 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Solicitar el nombre del archivo completo (con extensión incluida) */
+                                    
+
+                                    /* Extraer y guardar el nombre y la extensión del archivo en dos variables de tipo string */
+                                    
+
+                                    /* Mostrar el nombre y la extensión del archivo */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese el nombre del archivo: hola.txt
+                                          > Nombre: hola
+                                          > Extension: txt
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Escriba un programa en C que permita construir la dirección de una página web con base en el dominio y archivo principal indicado por el usuario, es decir, el usuario ingresa dominio.com e index.html y el programa debe construir la url completa de la forma https://dominio.com/index.html. 
+
+                                     Nota: Tanto el dominio como el nombre del archivo principal no tendrán más de 40 caracteres.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+                                #include <string.h> 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Solicitar el dominio y el nombre del archivo principal */
+                                    
+
+                                    /* Construir la URL completa */
+                                    
+
+                                    /* Mostrar la URL completa */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese el dominio: aprendac.com
+                                          > Ingrese el nombre del archivo principal: index.html
+                                          > Url: https://aprendac.com/index.html
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Desarrolle un programa que encuentre la palabra más pequeña y más grande en una serie de palabras, es decir, después de que el usuario ingresa las palabras, el programa determinará cuál palabra se encuentra primero y cuál se encuentra de última si se listaran en orden alfabético. El programa se detendrá cuando el usuario ingrese una palabra de 4 letras. 
+
+                                     Nota:
+                                     -Asuma que ninguna palabra tiene más de 20 caracteres
+                                     -Utilice dos string para llevar un registro de la palabra más pequeña y más grande introducida hasta el momento. 
+                                     -Cada vez que el usuario ingrese una palabra, compare si ésta es menor que la más pequeña registrada hasta los momentos, de ser así, copie la nueva palabra en la variable correspondiente.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+                                #include <string.h> 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Solicitar palabras hasta que la palabra introducida tenga 4 letras */
+                                    
+                                    
+                                    /* Mostrar la palabra más pequeña y la más grande */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese una palabra: dos
+                                          > Ingrese una palabra: zapato
+                                          > Ingrese una palabra: rueda
+                                          > Ingrese una palabra: cambio
+                                          > Ingrese una palabra: estado
+                                          > Ingrese una palabra: gato
+                                          >
+                                          > Palabra más pequeña: cambio
+                                          > Palabra más grande: zapato
+                                          '''
+                    }
+                ]
             }
         ]
     },
     {
         "_id": 5,
-        "title" : "Unidad V. Funciones, matrices y operaciones con strings",
+        "title" : "Unidad V. Funciones, estructuras y punteros",
         "lessons": [
             {
                 "_id": 1,
@@ -3085,799 +3768,6 @@
             },
             {
                 "_id": 2,
-                "title": "Arreglos: matrices",
-                "content": "Declaración e inicialización de una matriz. Acceso a los elementos de una matriz. Recorrer cada elementos de una matriz utilizando el ciclo for.",
-                "explanation": '''
-                               Veamos cómo declarar un arreglo bidimensional o matriz:
-                               ```c
-                               float matriz[5][9];
-                               ```
-                                Aquí tenemos una matriz de tipo `float`, tiene 5 filas y 9 columnas. Recordemos que los índices de los arreglos comienzan por 0, por lo tanto nuestra matriz luce:
-                               
-                               ![Visualización de una matriz](assets/img/array-image-lesson14.svg "Arreglos: matrices")
-
-                               Para acceder a un elemento debemos especificar las coordenadas de la forma `matriz[fila][columna]`, es decir, si queremos acceder al elemento ubicado en la fila 3, columna 6, escribimos `matriz[3][6]`
-                               
-                               Consideremos por ejemplo, inicializar un arreglo de 10x10 para usar como una matriz identidad
-
-                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1’s en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0’s en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
-                               
-                               ![Matriz Identidad](assets/img/identity-array-image-lesson14.svg "Matriz Identidad")
-                               
-                               Necesitamos visitar cada elemento de la matriz, un par de ciclos `for` resulta perfecto, uno para recorrer cada fila y otro para recorrer cada columna:
-                               ```c
-                               for (fila = 0; fila < 10; ++fila)
-                               {
-                                   for (columna = 0; columna < 10; ++columna)
-                                   {
-                                       // Si estamos en la diagonal principal, asignar valor 1.0f
-                                       if (fila == columna)
-                                       {
-                                           matriz[fila][columna]=1.0f;
-                                       }else{
-                                           matriz[fila][columna]=0.0f;
-                                       }
-                                   }
-                               }
-                               ```
-                               Para inicializar una matriz podemos especificar los elementos de cada fila con la ayuda de `{ }` de la siguiente manera:
-                               ```c
-                               int matriz[4][6] = {{1,1,0,1,0,1},
-                                                   {0,0,1,1,0,0},
-                                                   {0,1,1,0}};
-                               ```
-                               Al no inicializar algún elemento, este tendrá como valor 0. En este ejemplo las últimas dos columnas de la 3º fila y la 4º fila completa tendrán 0.
-                               
-                               También podemos *omitir* los `{ }` y escribir todos los elementos separados solo por comas, una vez el compilador encuentre suficientes valores para llenar una fila, empieza con la siguiente:
-                               ```c
-                               int matriz[4][6] = {1,1,0,1,0,1,
-                                                   0,0,1,1,0,0,
-                                                   0,1,1,0};
-                               ```
-                               De la misma manera se completan los elementos faltantes con el valor 0.
-                               ''',
-                "example": {
-                    "statement": '''
-                                 La empresa Rapidash va a recibir dos (2) paquetes por día durante cuatro (4) días y desea registrar el volumen, peso volumétrico, tiempo de entrega y el precio del envío de cada uno. Al finalizar con el proceso de registro de los paquetes se requiere:
-                                 - Calcular y mostrar el volumen promedio de los paquetes durante los cuatro días.
-                                 - Calcular y mostrar el peso volumétrico promedio de los paquetes durante los cuatro días.
-                                 - Calcular y mostrar el precio total de los envíos por día.
-                                 - Calcular y mostrar el precio total de los envíos durante los cuatro días.
-                                 - Calcular y mostrar el precio promedio de los envíos por día.
-                                 - Calcular y mostrar el precio promedio de los envíos durante los cuatro días.
-                                 ''',
-                    "code": '''
-                            #include <stdio.h> 
-
-                            /**
-                             * Calcular el volumen de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Volumen del paquete
-                             */
-                            float calcular_volumen(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho;
-                            }
-
-                            /**
-                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Peso Volumétrico del paquete
-                             */
-                            float calcular_peso_volumetrico(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho/5000;
-                            }
-
-                            /**
-                             * Mostrar la categoría de un paquete según su peso volumétrico y 
-                             * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumétrico del paquete
-                             * @return                  Precio según la categoría
-                             */
-                            float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
-                            {
-                                if ( peso_volumetrico >= 10.0f )
-                                {
-                                    printf("El paquete es grande\n");
-                                    return 2196.43f;
-                                }
-                                else{
-                                    if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
-                                    {
-                                        printf("El paquete es mediano\n");
-                                        return 1523.86f;
-                                    }
-                                    else{
-                                        printf("El paquete es pequeño\n");
-                                        return 1018.73f;
-                                    }  
-                                }
-                            }
-
-                            /**
-                             * Calcular y retornar el precio según el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en días
-                             * @return      Precio según plazo de entrego
-                             */
-                            float precio_segun_plazo(int dias)
-                            {
-                                switch(dias){
-                                    case 1:
-                                        return 1250.0f;
-                                        break;
-                                    case 2:
-                                        return 1000.0f;
-                                        break;
-                                    case 3:
-                                        return 300.0f;
-                                        break;
-                                    default:
-                                        return 0.0f;
-                                        break;
-                                }
-                            }
-
-
-                            int main()
-                            {
-                                /* Declaración de las variables de tipo decimal:
-                                    - 3 variables para guardar dimensiones del paquete actual
-                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
-                                        por día durante cuatro (4) días 
-                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
-                                */
-                                float alto, largo, ancho, 
-                                      volumenes[4][2], 
-                                      pesos_volumetricos[4][2], 
-                                      precios[4][2],
-                                      volumen_promedio=0.0f,
-                                      peso_volumetrico_promedio=0.0f,
-                                      precio_total_por_dia=0.0f,
-                                      precio_total=0.0f;
-
-
-                                /* Declaración de variables enteras 
-                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Una para indicar la cantidad de días
-                                    - Una para indicar la cantidad de paquetes a registrar por días
-                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
-                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
-                                */
-                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
-
-                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
-
-                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
-                                    tiene 4 filas que representan la cantidad de días */
-                                for(filas=0; filas<cantidad_dias; filas++){
-
-                                    printf("Ingrese los paquetes del día #%d\n",filas+1);
-                                    
-                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
-                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        /* Solicitud de cada dimensión */
-                                        printf("**Paquete %d\n",columnas+1);
-                                        printf("-Alto:");
-                                        scanf("%f",&alto);
-                                        printf("-Largo:");
-                                        scanf("%f",&largo);
-                                        printf("-Ancho:");
-                                        scanf("%f",&ancho);
-
-                                        /* Cálculo y asignación del volumen y peso volumétrico en cada posición de las 
-                                            matrices volumenes y pesos_volumetricos respectivamente */
-                                        volumenes[filas][columnas] = calcular_volumen(alto,largo,ancho);
-                                        pesos_volumetricos[filas][columnas] = calcular_peso_volumetrico(alto,largo,ancho);
-                                        
-                                        /* Categoría y precio según el peso volumétrico de un paquete */
-                                        precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
-
-                                        /* Solicitud del tiempo de entrega */
-                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
-                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
-
-                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
-                                            y sumar el costo a la matriz precios[filas][columnas]
-                                         */
-                                        precios[filas][columnas]+=precio_segun_plazo(tiempo_entrega_dias[filas][columnas]);
-                                    }
-
-                                }
-
-                                /* Calcular las estadísticas solicitadas en el enunciado */
-                                printf("\nDatos estadisticos de los envios registrados\n\n");    
-                                for(filas=0; filas<cantidad_dias; filas++){
-                                    
-                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
-                                    precio_total_por_dia=0.0f;
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        volumen_promedio+=volumenes[filas][columnas];
-                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
-
-                                        precio_total_por_dia+=precios[filas][columnas];
-                                    }
-
-                                    /* Mostrar las estadísticas requeridas por día */
-                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
-                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
-
-                                    precio_total+=precio_total_por_dia;
-                                }
-
-                                /* Mostrar precio total y precio promedio durante los 4 días */
-                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Precio total de los 4 días: %.2f\n", precio_total);
-                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
-                                
-                                return 0;
-                            }
-                            ''',
-                    "solutionSteps": [
-                        '''
-                        Declaramos las matrices necesarias para guardar el volumen, peso volumétrico, tiempo de entrega y precio del envío de cada paquete registrado, todas de tipo decimal menos el tiempo de entrega, el cual es de tipo entero. Todas las matrices tienen como dimensiones 4 filas y 2 columnas, representando los 4 días y 2 paquetes por día respectivamente.
-                        ''',
-                        '''
-                        Creamos dos ciclos for anidados para recorrer las filas y columnas de cada matriz. Las iteraciones del ciclo externo hacen referencia a los 4 días y las del ciclo interno a los 2 paquetes por día. De esta manera iremos registrando los dos paquetes del día 1, luego del día 2, después del día 3 y por último del día 4.
-                        ''',
-                        '''
-                        Recordemos que para acceder a los elementos de un arreglo utilizamos índices (comenzando en 0), por lo tanto, para guardar cada valor en las matrices lo hacemos dentro de los ciclos for y de la forma [filas][columnas]; por ejemplo, para guardar los valores del segundo paquete del tercer día los índices serán [2][1].
-                        ''',
-                        '''
-                        Luego, para calcular y mostrar los datos solicitados en el enunciado debemos recorrer nuevamente las matrices que contienen la información de cada paquete e ir acumulando los valores necesarios. Por ejemplo, para calcular el volumen promedio durante los 4 días, sumamos el volumen de cada uno de los paquetes (línea 155) y una vez finalizados los ciclos dividimos la sumatoria entre la cantidad de paquetes registrados en los 4 días (línea 169).
-                        '''
-                    ]
-                },
-                "exercises": [
-                    {
-                        "statement": '''
-                                     Escriba un programa que llene una matriz entera de dimensión 3x3 y muestre su transpuesta. La matriz transpuesta se obtiene al intercambiar filas por columnas ordenadamente.
-
-                                     Observe el siguiente ejemplo, donde A es la matriz original y T es la matriz transpuesta de A:
-
-                                     A 
-                                     2----3----0          
-                                     1----2----0              
-                                     3----5----6              
-
-                                     T 
-                                     2----1----3
-                                     3----2----5
-                                     0----0----6
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-
-                                int main()
-                                {
-                                    /* Declarar las matrices: inicial y transpuesta, de dimensiones 3x3 */
-                                    
-
-                                    /* Solicitar los valores de la matriz inicial */
-                                    
-
-                                    /* Hallar la matriz transpuesta */
-                                    
-
-                                    /* Mostrar la matriz inicial junto a la matriz transpuesta */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese los valores de la matriz inicial (por filas)
-                                          > Fila #1
-                                          >  *Columna #1: 1
-                                          >  *Columna #2: 2
-                                          >  *Columna #3: 3
-                                          > Fila #2
-                                          >  *Columna #1: 4
-                                          >  *Columna #2: 5
-                                          >  *Columna #3: 6
-                                          > Fila #3
-                                          >  *Columna #1: 7
-                                          >  *Columna #2: 8
-                                          >  *Columna #3: 9
-                                          >
-                                          > **Matriz inicial**       
-                                          > 1    2    3                       
-                                          > 4    5    6                       
-                                          > 7    8    9      
-                                          >              
-                                          > **Matriz transpuesta**
-                                          > 1    4    7 
-                                          > 2    5    8 
-                                          > 3    6    9
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Diseñe un programa en C que registre la ocurrencia de cada dígito en un número entero. De esta manera, si un usuario ingresa el número 2327 se debe mostrar que el dígito 2 tiene dos ocurrencias, los dígitos 3 y 7 tiene una y los demás no tienen ninguna ocurrencia. Mostrar estas ocurrencias en una tabla de la forma:
-                                     0    1    2    3    4    5    6    7    8    9
-                                     0    0    2    1    0    0    0    1    0    0
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-
-                                int main()
-                                {
-                                    /* Declarar las variables necesarias (Tip: solo necesita variables de tipo int) */
-                                    
-
-                                    /* Solicitar el número entero */
-                                    
-
-                                    /* Dividir el número dígito a dígito e ir marcando la ocurrencia de cada dígito */
-                                    
-
-                                    /* Imprimir en pantalla cada dígito junto a su ocurrencia */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese un numero entero: 43827723
-                                          > Ocurrencias:
-                                          > 0    1    2    3    4    5    6    7    8    9    
-                                          > 0    0    2    2    1    0    0    2    1    0
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Una empresa acaba de adquirir una nueva máquina de secado y necesita estudiar el comportamiento de la misma para encontrar su configuración ideal. Para esto la empresa desea llevar el registro de temperaturas durante tres (3) días. Cada día se tomará la temperatura dos (2) veces. Escriba un programa que permita guardar las temperaturas de estos días, calcular el promedio de cada día y el promedio de estos tres días.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-
-                                int main()
-                                {
-                                    /* Declaración de las variables de tipo decimal:
-                                        - 1 matriz para guardar las dos lecturas de los tres días a evaluar
-                                        - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
-                                        - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
-                                        - 1 vector de 3 posiciones para guardar el precio de cada paquete 
-                                    */
-                                    
-
-                                    /* Declaración de variables enteras 
-                                        - Una para recorrer las filas de la matriz en un ciclo for
-                                        - Una para recorrer las columnas de la matriz en un ciclo for
-                                        - Una para guardar la cantidad de días a evaluar
-                                        - Una para guardar las lecturas de temperatura por día
-                                    */
-
-
-                                    /* Registrar las temperaturas */
-                                    
-
-                                    /* Calcular y mostrar el promedio de temperaturas por día y durante los tres días*/
-                                    
-                                    
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese las temperatura del dia #1
-                                          > 1º: 32.3
-                                          > 2º: 41.5
-                                          >
-                                          > Ingrese las temperatura del dia #2
-                                          > 1º: 34.2
-                                          > 2º: 54.6
-                                          >
-                                          > Ingrese las temperatura del dia #3
-                                          > 1º: 12.3
-                                          > 2º: 24.5
-                                          > La temperatura promedio del 1º dia es 36.90
-                                          > La temperatura promedio del 2º dia es 44.40
-                                          > La temperatura promedio del 3º dia es 18.40
-                                          > La temperatura promedio de los tres días es 66.47
-                                          '''
-                    }
-                ]
-            },
-            {
-                "_id": 3,
-                "title": "Operaciones con strings (strcpy, strlen, strcat y strcmp)",
-                "content": "Librería string.h. Copiar strings, calcular la longitud de un string, concatenar strings y comparar strings.",
-                "explanation": '''
-                               Los arreglos tienen algunas restricciones, por ejemplo, no es posible copiar un arreglo en otro con el operador de asignación `=`, ni comparar si dos vectores son iguales con el operador `==` 
-                               ### ERROR
-                               ```c
-                               char string1[10] = "cadena 1";
-                               char string2[10];
-                               string2 = string1;
-                               ```
-                               ### ERROR
-                               ```c
-                               if(string1 == string2)...
-                               ```
-                               Afortunadamente, en C tenemos la librería `string.h` que nos proporciona funciones para conseguir lo que necesitamos:
-                               
-                               - strcpy → `strcpy(string2, string1);` 
-                                 - **Copia** el contenido de la variable *string1* en la variable *string2*
-                                   
-                                   ```c
-                                   char string1[10] = "prueba",
-                                        string2[10];
-                                   strcpy(string2,string1);
-                                   // string2 = "prueba"
-                                   ```
-                               - strlen → `strlen(string);` 
-                                 - Calcula y devuelve la **longitud** (`int`) de la variable *string*
-                                   
-                                   ```c
-                                   char cadena[10] = "prueba";
-                                   int longitud = strlen(cadena);
-                                   // longitud = 6
-                                   ```
-                               - strcat → `strcat(string1, string2);` 
-                                 - **Añade** el contenido de la variable *string2* al final del contenido en la variable *string1*
-                                   
-                                   ```c
-                                   char cadena1[20] = "¡Hola ",
-                                        cadena2[10] = "mundo!";
-                                   strcat(cadena1, cadena2);
-                                   // cadena1 = "¡Hola mundo!"
-                                   ```
-                               - strcmp → `strcmp(string1, string2);` 
-                                 - **Compara** las cadenas de caracteres *string1* y *string2*, devuelve un valor menor que, igual que o mayor que 0 si string1 es menor que, igual que o mayor que string2
-                                   
-                                   ```c
-                                   if (strcmp(cadena1,cadena2) == 0)
-                                       // cadena1 es igual que cadena2 ??
-                                   
-                                   if (strcmp(cadena1,cadena2) < 0)
-                                       // cadena1 es menor que cadena2 ??
-                                   
-                                   if (strcmp(cadena1,cadena2) > 0)
-                                       // cadena1 es mayor que cadena2 ??
-                                   ```
-                               ''',
-                "example": {
-                    "statement": '''
-                                 Continuando con el ejemplo de la lección anterior, la empresa Rapidash ahora desea al momento de registrar el envío de un paquete, solicitar el correo electrónico del usuario dos veces con la intención de confirmar el mismo.  
-                                 ''',
-                    "code": '''
-                            #include <stdio.h> 
-                            #include <string.h> 
-
-                            /**
-                             * Calcular el volumen de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Volumen del paquete
-                             */
-                            float calcular_volumen(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho;
-                            }
-
-                            /**
-                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Peso Volumétrico del paquete
-                             */
-                            float calcular_peso_volumetrico(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho/5000;
-                            }
-
-                            /**
-                             * Mostrar la categoría de un paquete según su peso volumétrico y 
-                             * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumétrico del paquete
-                             * @return                  Precio según la categoría
-                             */
-                            float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
-                            {
-                                if ( peso_volumetrico >= 10.0f )
-                                {
-                                    printf("El paquete es grande\n");
-                                    return 2196.43f;
-                                }
-                                else{
-                                    if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
-                                    {
-                                        printf("El paquete es mediano\n");
-                                        return 1523.86f;
-                                    }
-                                    else{
-                                        printf("El paquete es pequeño\n");
-                                        return 1018.73f;
-                                    }  
-                                }
-                            }
-
-                            /**
-                             * Calcular y retornar el precio según el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en días
-                             * @return      Precio según plazo de entrega
-                             */
-                            float precio_segun_plazo(int dias)
-                            {
-                                switch(dias){
-                                    case 1:
-                                        return 1250.0f;
-                                        break;
-                                    case 2:
-                                        return 1000.0f;
-                                        break;
-                                    case 3:
-                                        return 300.0f;
-                                        break;
-                                    default:
-                                        return 0.0f;
-                                        break;
-                                }
-                            }
-
-                            /**
-                             * Solicitar y confirmar el correo electrónico de un usuario 
-                             */
-                            void solicitar_confirmar_correo(){
-                                char correo[40], confirmacion_correo[40];
-
-                                do{
-                                    printf("Ingrese el correo electrónico: ");
-                                    scanf("%s",correo);
-                                    printf("Confirmación del correo electrónico: ");
-                                    scanf("%s",confirmacion_correo);
-                                }while(strcmp(correo,confirmacion_correo)!=0);
-                            }
-
-                            int main()
-                            {
-                                /* Declaración de las variables de tipo decimal:
-                                    - 3 variables para guardar dimensiones del paquete actual
-                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
-                                        por día durante cuatro (4) días 
-                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
-                                */
-                                float alto, largo, ancho, 
-                                      volumenes[4][2], 
-                                      pesos_volumetricos[4][2], 
-                                      precios[4][2],
-                                      volumen_promedio=0.0f,
-                                      peso_volumetrico_promedio=0.0f,
-                                      precio_total_por_dia=0.0f,
-                                      precio_total=0.0f;
-
-
-                                /* Declaración de variables enteras 
-                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Una para indicar la cantidad de días
-                                    - Una para indicar la cantidad de paquetes a registrar por días
-                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
-                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
-                                */
-                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
-
-                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
-
-                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
-                                    tiene 4 filas que representan la cantidad de días */
-                                for(filas=0; filas<cantidad_dias; filas++){
-
-                                    printf("\nIngrese los paquetes del día #%d\n",filas+1);
-                                    
-                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
-                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        /* Solicitud de cada dimension */
-                                        printf("**Paquete %d\n",columnas+1);
-                                        printf("-Alto:");
-                                        scanf("%f",&alto);
-                                        printf("-Largo:");
-                                        scanf("%f",&largo);
-                                        printf("-Ancho:");
-                                        scanf("%f",&ancho);
-
-                                        /* Calculo y asignación del volumen y peso volumétrico en cada posición de las 
-                                            matrices volumenes y pesos_volumetricos respectivamente */
-                                        volumenes[filas][columnas] = calcular_volumen(alto,largo,ancho);
-                                        pesos_volumetricos[filas][columnas] = calcular_peso_volumetrico(alto,largo,ancho);
-                                        
-                                        /* Categoría y precio según el peso volumétrico de un paquete */
-                                        precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
-
-                                        /* Solicitud del tiempo de entrega */
-                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
-                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
-
-                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
-                                            y sumar el costo a la matriz precios[filas][columnas]
-                                         */
-                                        precios[filas][columnas]+=precio_segun_plazo(tiempo_entrega_dias[filas][columnas]);
-
-                                        /* Solicitar y confirmar el correo electrónico del usuario */
-                                        solicitar_confirmar_correo();
-                                    }
-
-                                }
-
-                                /* Calcular las estadísticas solicitadas en el enunciado */
-                                printf("\nDatos estadisticos de los envios registrados\n\n");    
-                                for(filas=0; filas<cantidad_dias; filas++){
-                                    
-                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
-                                    precio_total_por_dia=0.0f;
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        volumen_promedio+=volumenes[filas][columnas];
-                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
-
-                                        precio_total_por_dia+=precios[filas][columnas];
-                                    }
-
-                                    /* Mostrar las estadísticas solicitadas por día */
-                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
-                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
-
-                                    precio_total+=precio_total_por_dia;
-                                }
-
-                                /* Mostrar precio total y precio promedio durante los 4 días */
-                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Precio total de los 4 días: %.2f\n", precio_total);
-                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
-                                
-                                return 0;
-                            }
-                            ''',
-                    "solutionSteps": [
-                        '''
-                        Recordemos incluir la librería string.h para tener acceso a la función que nos permite comparar strings. (Línea 2)
-                        ''',
-                        '''
-                        Creamos una función para solicitar y confirmar el correo electrónico del usuario (Línea 81), dentro de esta función declaramos dos variables strings para guardar el correo y la confirmación del correo respectivamente. Luego, utilizando un ciclo do-while solicitamos y verificamos el correo electrónico ingresado por el usuario hasta que ambos coinciden.
-                        ''',
-                        '''
-                        Finalmente llamamos la función dentro del ciclo que solicita los datos de cada paquete. (Línea 163)
-                        '''
-                    ]
-                },
-                "exercises": [
-                    {
-                        "statement": '''
-                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa ‘notas.txt’ el programa deberá guardar ‘notas’ en una variable llamada NOMBRE y ‘txt’ en una variable llamada EXTENSION.
-
-                                     Nota: El nombre del archivo completo no tendrá más de 40 caracteres.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-                                #include <string.h> 
-
-                                int main()
-                                {
-                                    /* Declarar de las variables necesarias */
-                                    
-
-                                    /* Solicitar el nombre del archivo completo (con extensión incluida) */
-                                    
-
-                                    /* Extraer y guardar el nombre y la extensión del archivo en dos variables de tipo string */
-                                    
-
-                                    /* Mostrar el nombre y la extensión del archivo */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese el nombre del archivo: hola.txt
-                                          > Nombre: hola
-                                          > Extension: txt
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Escriba un programa en C que permita construir la dirección de una página web con base en el dominio y archivo principal indicado por el usuario, es decir, el usuario ingresa dominio.com e index.html y el programa debe construir la url completa de la forma https://dominio.com/index.html. 
-
-                                     Nota: Tanto el dominio como el nombre del archivo principal no tendrán más de 40 caracteres.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-                                #include <string.h> 
-
-                                int main()
-                                {
-                                    /* Declarar de las variables necesarias */
-                                    
-
-                                    /* Solicitar el dominio y el nombre del archivo principal */
-                                    
-
-                                    /* Construir la URL completa */
-                                    
-
-                                    /* Mostrar la URL completa */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese el dominio: aprendac.com
-                                          > Ingrese el nombre del archivo principal: index.html
-                                          > Url: https://aprendac.com/index.html
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Desarrolle un programa que encuentre la palabra más pequeña y más grande en una serie de palabras, es decir, después de que el usuario ingresa las palabras, el programa determinará cuál palabra se encuentra primero y cuál se encuentra de última si se listaran en orden alfabético. El programa se detendrá cuando el usuario ingrese una palabra de 4 letras. 
-
-                                     Nota:
-                                     -Asuma que ninguna palabra tiene más de 20 caracteres
-                                     -Utilice dos string para llevar un registro de la palabra más pequeña y más grande introducida hasta el momento. 
-                                     -Cada vez que el usuario ingrese una palabra, compare si ésta es menor que la más pequeña registrada hasta los momentos, de ser así, copie la nueva palabra en la variable correspondiente.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-                                #include <string.h> 
-
-                                int main()
-                                {
-                                    /* Declarar de las variables necesarias */
-                                    
-
-                                    /* Solicitar palabras hasta que la palabra introducida tenga 4 letras */
-                                    
-                                    
-                                    /* Mostrar la palabra más pequeña y la más grande */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese una palabra: dos
-                                          > Ingrese una palabra: zapato
-                                          > Ingrese una palabra: rueda
-                                          > Ingrese una palabra: cambio
-                                          > Ingrese una palabra: estado
-                                          > Ingrese una palabra: gato
-                                          >
-                                          > Palabra más pequeña: cambio
-                                          > Palabra más grande: zapato
-                                          '''
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "_id": 6,
-        "title" : "Unidad VI. Estructuras y Punteros",
-        "lessons": [
-            {
-                "_id": 1,
                 "title": "Estructuras",
                 "content": "Definición y uso de las estructuras en lenguaje C. Creación e inicialización de una variable usando una estructura. Acceso a los miembros de una estructura.",
                 "explanation": '''
@@ -4335,7 +4225,7 @@
                 ]
             },
             {
-                "_id": 2,
+                "_id": 3,
                 "title": "Vectores de estructuras, estructura dentro de estructura (Carga y recorrido)",
                 "content": "Combinación de vectores y estructuras. Manejo de estructuras con vectores. Manejo de vectores de estructuras.",
                 "explanation": '''
@@ -4971,7 +4861,7 @@
                 ]
             },
             {
-                "_id": 3,
+                "_id": 4,
                 "title": "Punteros",
                 "content": "Definición, uso y manejo de punteros. Punteros como parámetros de una función para modificar el valor de una variable.",
                 "explanation": ''' 
