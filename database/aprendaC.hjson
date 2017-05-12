@@ -55,7 +55,7 @@
                         Declaramos la función principal (main), recordemos que esta función debe estar presente en todo programa.
                         ''',
                         '''
-                        Imprimimos en pantalla la oración "¡Hola Mundo!” con la función printf.
+                        Imprimimos en pantalla la oración "¡Hola Mundo!" con la función printf.
                         ''',
                         '''
                         Ahora vamos a compilar y ejecutar nuestro programa haciendo click en el botón RUN que se encuentra en la esquina superior derecha del editor de código y visualizamos la salida del programa en la consola que está debajo del editor.
@@ -973,7 +973,7 @@
                                      - 7    _ _ . . .
                                      - 8    _ _ _ . . 
                                      - 9    _ _ _ _ .
-                                     Si un usuario introduce un dígito fuera del rango especificado (0-9) se debe mostrar el mensaje “El digito ingresado no se encuentra entre 0 y 9”
+                                     Si un usuario introduce un dígito fuera del rango especificado (0-9) se debe mostrar el mensaje "El digito ingresado no se encuentra entre 0 y 9"
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1049,9 +1049,9 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa en C que solicite la fecha en formato 31-3-17, es decir, solicitar el dia, luego el mes y por último el año. Después de recolectar esta información mostrar la misma fecha pero de la forma “31 de marzo del año 2017”
+                                     Escriba un programa en C que solicite la fecha en formato 31-3-17, es decir, solicitar el dia, luego el mes y por último el año. Después de recolectar esta información mostrar la misma fecha pero de la forma "31 de marzo del año 2017"
                                      
-                                     Tip: Imprima la fecha final por partes, es decir, primero “31 de”, luego convierte 03 a “marzo” y por último “del año 2017”.
+                                     Tip: Imprima la fecha final por partes, es decir, primero "31 de", luego convierte 03 a "marzo" y por último "del año 2017".
                                      
                                      Nota: En lenguaje C el nombre o identificador de una variable no puede contener el caracter ñ
                                      ''',
@@ -1266,7 +1266,7 @@
                     {
                         "statement": '''
                                      Escriba un programa que solicite un número par entero (n) al usuario e imprima los números pares desde n hasta 0, es decir, de manera descendiente. 
-                                     Si el usuario ingresa un número impar se debe mostrar el mensaje error “Lo siento, el número ingresado es impar”.
+                                     Si el usuario ingresa un número impar se debe mostrar el mensaje error "Lo siento, el número ingresado es impar".
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1372,7 +1372,7 @@
                                
                                printf("El numero tiene %d digito(s)\n", digitos);
                                ```
-                               Si usamos un ciclo `while` en lugar del `do-while`, no estaremos tomando en cuenta el caso en que el numero ingresado sea 0, donde al evaluar la expresión resulta falso (0) **ANTES** de ejecutar el cuerpo de ciclo por lo que no incrementamos el valor de digitos y el resultado final será *“El numero tiene 0 digito(s)”* cuando en realidad tiene 1 dígito.
+                               Si usamos un ciclo `while` en lugar del `do-while`, no estaremos tomando en cuenta el caso en que el numero ingresado sea 0, donde al evaluar la expresión resulta falso (0) **ANTES** de ejecutar el cuerpo de ciclo por lo que no incrementamos el valor de digitos y el resultado final será *"El numero tiene 0 digito(s)"* cuando en realidad tiene 1 dígito.
                                ```c
                                while(valor>0){
                                    valor/=10;
@@ -2449,7 +2449,7 @@
                                
                                Consideremos por ejemplo, inicializar un arreglo de 5x5 para usar como una matriz identidad
 
-                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1’s en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0’s en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
+                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1's en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0's en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
                                
                                ![Matriz Identidad](assets/img/identity-array-image-lesson14.svg "Matriz Identidad")
                                
@@ -3298,7 +3298,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa ‘notas.txt’ el programa deberá guardar ‘notas’ en una variable llamada NOMBRE y ‘txt’ en una variable llamada EXTENSION.
+                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa 'notas.txt' el programa deberá guardar 'notas' en una variable llamada NOMBRE y 'txt' en una variable llamada EXTENSION.
 
                                      Nota: El nombre del archivo completo no tendrá más de 40 caracteres.
                                      ''',
@@ -3842,7 +3842,7 @@
                                  - Correo electrónico del usuario (string)
                                  - Precio del envío (número decimal)
 
-                                 Al terminar el registro cada paquete se debe mostrar un mensaje resumen del envío de dicho paquete de la forma “El usuario CORREO ha registrado un paquete con volumen VOLUMEN, peso volumetrico PESO_VOLUMETRICO y categoría CATEGORIA. El paquete será enviado desde CIUDAD_ORIGEN hasta CIUDAD_DESTINO en TIEMPO_ENTREGA días por un precio de PRECIO.”
+                                 Al terminar el registro cada paquete se debe mostrar un mensaje resumen del envío de dicho paquete de la forma "El usuario CORREO ha registrado un paquete con volumen VOLUMEN, peso volumetrico PESO_VOLUMETRICO y categoría CATEGORIA. El paquete será enviado desde CIUDAD_ORIGEN hasta CIUDAD_DESTINO en TIEMPO_ENTREGA días por un precio de PRECIO."
 
                                  En este caso el programa debe registrar la cantidad de paquetes que el usuario necesite, es decir, se le preguntará al usuario si tiene otro paquete por registrar y se continúa o detiene el proceso de registro de paquetes según la respuesta del mismo.
                                  ''',
@@ -4004,10 +4004,10 @@
                             ''',
                     "solutionSteps": [
                         '''
-                        Creamos un nuevo tipo de dato (estructura) al que llamaremos ‘paquete’ con todas las variables que guardarán la información asociada a un paquete. (Línea 5)
+                        Creamos un nuevo tipo de dato (estructura) al que llamaremos 'paquete' con todas las variables que guardarán la información asociada a un paquete. (Línea 5)
                         ''',
                         '''
-                        Declaramos una variable de tipo ‘paquete’ llamada ‘paquete actual’ (línea 82) para guardar la información de cada paquete durante el proceso de registro de los mismos. Para este proceso utilizamos un ciclo do-while que nos permite registrar paquetes hasta que el usuario decida detener las iteraciones.
+                        Declaramos una variable de tipo 'paquete' llamada 'paquete actual' (línea 82) para guardar la información de cada paquete durante el proceso de registro de los mismos. Para este proceso utilizamos un ciclo do-while que nos permite registrar paquetes hasta que el usuario decida detener las iteraciones.
                         ''',
                         '''
                         Dentro del ciclo do-while vamos solicitando y asignando la información de cada paquete. Recordemos que para acceder a cada miembro de la estructura utilizamos el operador '.' y todas las operaciones que conocemos hasta ahora se pueden aplicar de la misma forma a cada miembro según su tipo de dato.
@@ -4022,7 +4022,7 @@
                         "statement": '''
                                      Escriba un programa que solicite y guarde dos fechas de la forma 31/12/2016 (día, mes y año) para luego comparar e indicar cuál es la mayor entre ellas.
                                      Para comparar las fechas debe crear una función que reciba por parámetro las dos fechas y retorne un -1 si la fechaA es menor que la fechaB o +1 si la fechaA es mayor que la fechaB.
-                                     Al finalizar la comparación el programa debe mostrar el mensaje “La fecha dd/mm/yyyy es menor/mayor que la fecha dd/mm/yyyy”, defina una función para mostrar cada fecha con ese formato.
+                                     Al finalizar la comparación el programa debe mostrar el mensaje "La fecha dd/mm/yyyy es menor/mayor que la fecha dd/mm/yyyy", defina una función para mostrar cada fecha con ese formato.
 
                                      Nota: Si el día o mes de una fecha es menor que 10, se debe agregar un 0 al imprimir la fecha, es decir, la salida debe ser 01/03/2013 en lugar de 1/3/2014.
 
@@ -4074,7 +4074,7 @@
                     },
                     {
                         "statement": '''
-                                     Diseñe un programa en C capaz de recibir el número de segundos transcurridos desde la medianoche (desde 0 hasta 86399) y transformarlo al formato ‘hh:mm:ss’. Para esto cree una función que reciba por parámetro los segundos transcurridos y retorne una estructura que conste de 3 miembros: horas, minutos y segundos. Por último, imprimir un mensaje resumen “El tiempo expresado de la forma HH:MM:SS es equivalente a los SEG_MEDIANOCHE segundos contados desde la medianoche”.
+                                     Diseñe un programa en C capaz de recibir el número de segundos transcurridos desde la medianoche (desde 0 hasta 86399) y transformarlo al formato 'hh:mm:ss'. Para esto cree una función que reciba por parámetro los segundos transcurridos y retorne una estructura que conste de 3 miembros: horas, minutos y segundos. Por último, imprimir un mensaje resumen "El tiempo expresado de la forma HH:MM:SS es equivalente a los SEG_MEDIANOCHE segundos contados desde la medianoche".
 
                                      Nota: 
                                      - Si la hora, los minutos o los segundos son menor que 10, se debe agregar un 0 al imprimir el tiempo, es decir, la salida debe ser 03:04:34 en lugar de 3:4:34.
@@ -4122,7 +4122,7 @@
                         "statement": '''
                                      Complete el siguiente programa para realizar operaciones sobre la estructura 'color' declarada en la línea 5. Defina funciones para:
                                      - Generar una estructura de tipo color con base en los valores especificados por el usuario: red, green y blue. Si algún valor es menor que 0, el miembro correspondiente deberá ser 0. Si algún valor es mayor que 255 el miembro correspondiente deberá ser 255.
-                                     - Retornar el valor del miembro ‘red’ en una estructura de tipo color.
+                                     - Retornar el valor del miembro 'red' en una estructura de tipo color.
                                      - Indicar si dos colores son iguales, dos colores son iguales si todos sus miembros (red, green y blue) son exactamente iguales.
                                      - Generar y retornar una estructura de tipo color que represente una versión más clara de un color que reciba por parámetro. Para obtener el color más claro se divide cada miembro se entre 0.7 y el resultado es truncado a un número entero. Hay tres casos especiales:
                                          1) Si todos los miembros del color inicial son cero (0) entonces todos los miembros del color resultante tendrán como valor 3. 
@@ -4509,7 +4509,7 @@
                         Declaramos una variable que indique la cantidad de paquetes que serán registrados en el día (línea 85). Como el enunciado del ejemplo nos indica la cantidad de paquetes a registrar podemos utilizar un ciclo for, por lo tanto declaramos una variable que maneje las iteraciones de dicho ciclo for.
                         ''',
                         '''
-                        Recordemos que tenemos un nuevo tipo de dato declarado como una estructura en la línea 5, con este tipo de dato es posible declarar vectores como ya hemos visto anteriormente. En la línea 88 estamos declarando un vector de tipo ‘paquete‘ que tendrá 5 posiciones, es decir, 5 paquetes. 
+                        Recordemos que tenemos un nuevo tipo de dato declarado como una estructura en la línea 5, con este tipo de dato es posible declarar vectores como ya hemos visto anteriormente. En la línea 88 estamos declarando un vector de tipo 'paquete' que tendrá 5 posiciones, es decir, 5 paquetes. 
                         ''',
                         '''
                         Dentro del ciclo for declarado en la línea 91 solicitamos, calculamos y guardamos la información de cada paquete. Al finalizar el proceso de registro de paquetes declaramos otro ciclo for que recorra el vector de paquetes con la información previamente cargada para mostrar el mensaje resumen de cada paquete y calcular la información que nos solicitan en el enunciado.
@@ -5180,7 +5180,7 @@
                         La función que asigna categoría y retorna el precio de un paquete según su peso volumétrico recibe por parámetro el peso volumétrico y un puntero para modificar la categoría del paquete (línea 38). 
                         ''',
                         '''
-                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 176, no necesitamos utilizar el operador & al pasar por parámetros el miembro ‘categoría’ de un paquete. (Recordemos que ‘categoría’ es un string, es decir, un vector de caracteres)
+                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 176, no necesitamos utilizar el operador & al pasar por parámetros el miembro 'categoría' de un paquete. (Recordemos que 'categoría' es un string, es decir, un vector de caracteres)
                         ''',
                         '''
                         Para solicitar y guardar la ciudad de origen y destino creamos una función (línea 62) que reciba por parámetro los punteros que necesitamos: origen y destino del paquete actual, los cuales son enviados sin utilizar el operador & (línea 188), porque los nombres de las variables hacen referencia al primer elemento de las mismas(string, vector de caracteres). 
