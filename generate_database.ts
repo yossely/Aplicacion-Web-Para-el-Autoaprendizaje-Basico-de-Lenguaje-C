@@ -14,6 +14,10 @@ var HjsonOptions = {
 };
 
 // ----------------------------- GENERATE DATABASE FILE ON -------------------------------
+
+/* Clear database file before inserting the data from the HJson file */
+fs.truncateSync('database/aprendaC.database',0);
+
 var obj = Hjson.parse(hjsonText,HjsonOptions);
 // console.log("obj: ",obj);
 
