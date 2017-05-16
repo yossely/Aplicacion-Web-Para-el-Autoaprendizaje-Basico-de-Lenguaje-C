@@ -7,10 +7,18 @@ import path = require('path');
 // --------------------------------- VARIABLES INIT ON -----------------------------------
 var Datastore = require('nedb');
 
-// Persistent datastore with automatic loading
+// Persistent datastore with automatic loading UNITS
 var unitsDB = new Datastore(
                 {
                     filename: 'database/aprendaC.database',
+                    autoload: true
+                }
+            );
+
+// Persistent datastore with automatic loading TESTS
+var testsDB = new Datastore(
+                {
+                    filename: 'database/tests.database',
                     autoload: true
                 }
             );
@@ -182,6 +190,29 @@ app.get('/unit/:unitId', function (req, res) {
     console.log('GET unit with _id 1: ',requestedId);
 
     unitsDB.findOne({ _id: requestedId }, function (err, docs) {
+        // the findOne function returns only an object, not an array
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(docs));
+    });
+
+});
+
+// GET - return All Tests
+app.get('/tests', function (req: express.Request, res: express.Response){    
+    testsDB.find({}, function (err, docs) {
+        // console.log('all units result: ',docs);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(docs));
+    });
+});
+
+// GET - return the specified Test
+app.get('/test/:testId', function (req, res) {
+
+    var requestedId = parseInt(req.params.testId);
+    console.log('GET test with _id: ',requestedId);
+
+    testsDB.findOne({ _id: requestedId }, function (err, docs) {
         // the findOne function returns only an object, not an array
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(docs));

@@ -1,0 +1,209 @@
+[
+    {
+        "_id": 1,
+        "title": "Parcial I",
+        "problems": [
+            {
+                "statement": '''
+                             ### Statement Test I - Problem 1
+                             Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
+                             ''',
+                "code": '''
+                        /* Code Test I - Problem 1 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            /* Hacer: 
+                                - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test I - Problem 1 
+                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  '''
+            },
+            {
+                "statement": '''
+                             ### Statement Test I - Problem 2
+                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             ''',
+                "code": '''
+                        /* Code Test I - Problem 2 */
+                        /* Hacer: 
+                                - Incluir la librería stdio.h */ 
+
+                        int main()
+                        { 
+                            printf("¡Librería incluida con éxito!"); 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test I - Problem 2 
+                                  > ¡Librería incluida con éxito!
+                                  '''
+            },
+            {
+                "statement": '''
+                             ### Statement Test I - Problem 3
+                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             ''',
+                "code": '''
+                        /* Code Test I - Problem 3 */
+                        /* Hacer: 
+                                - Incluir la librería stdio.h */ 
+
+                        int main()
+                        { 
+                            printf("¡Librería incluida con éxito!"); 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test I - Problem 3 
+                                  > ¡Librería incluida con éxito!
+                                  '''
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "title": "Parcial II",
+        "problems": [
+            {
+                "statement": '''
+                             ### Statement Test II - Problem 1
+                             Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
+                             ''',
+                "code": '''
+                        /* Code Test II - Problem 1 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            /* Hacer: 
+                                - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": '''
+                                  > Expected ouput Test II - Problem 1 
+                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  '''
+            },
+            {
+                "statement": '''
+                             ### Statement Test II - Problem 2
+                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             ''',
+                "code": '''
+                        /* Code Test II - Problem 2 */
+                        /* Hacer: 
+                                - Incluir la librería stdio.h */ 
+
+                        int main()
+                        { 
+                            printf("¡Librería incluida con éxito!"); 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test II - Problem 2 
+                                  > ¡Librería incluida con éxito!
+                                  '''
+            },
+            {
+                "statement": '''
+                             ### Statement Test II - Problem 3
+                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             ''',
+                "code": '''
+                        /* Code Test II - Problem 3 */
+                        /* Hacer: 
+                                - Incluir la librería stdio.h */ 
+
+                        int main()
+                        { 
+                            printf("¡Librería incluida con éxito!"); 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test II - Problem 3 
+                                  > ¡Librería incluida con éxito!
+                                  '''
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "title": "Parcial III",
+        "problems": [
+            {
+                "statement": '''
+                             ### Statement Test III - Problem 1
+                             Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
+                             ''',
+                "code": '''
+                        /* Code Test III - Problem 1 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            /* Hacer: 
+                                - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 1 
+                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  '''
+            },
+            {
+                "statement": '''
+                             ### Statement Test III - Problem 2
+                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             ''',
+                "code": '''
+                        /* Code Test III - Problem 2 */
+                        /* Hacer: 
+                                - Incluir la librería stdio.h */ 
+
+                        int main()
+                        { 
+                            printf("¡Librería incluida con éxito!"); 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 2 
+                                  > ¡Librería incluida con éxito!
+                                  '''
+            },
+            {
+                "statement": '''
+                             ### Statement Test III - Problem 3
+                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             ''',
+                "code": '''
+                        /* Code Test III - Problem 3 */
+                        /* Hacer: 
+                                - Incluir la librería stdio.h */ 
+
+                        int main()
+                        { 
+                            printf("¡Librería incluida con éxito!"); 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 3 
+                                  > ¡Librería incluida con éxito!
+                                  '''
+            }
+        ]
+    }
+]
