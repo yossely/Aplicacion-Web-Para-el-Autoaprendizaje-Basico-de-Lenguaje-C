@@ -1,0 +1,13 @@
+@import "variables";
+
+/*----------------------------------- LOCAL VARIABLES ON -----------------------------------*/
+
+$test_content_background: #5DA7A6;
+
+/*----------------------------------- LOCAL VARIABLES OFF ----------------------------------*/
+
+.test-content {
+    background-color: $test_content_background;
+    padding-top: 10px;
+    border: 3px solid $color_1NavyBlue;   
+}

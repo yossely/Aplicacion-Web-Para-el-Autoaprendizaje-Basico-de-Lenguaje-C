@@ -1,16 +1,21 @@
-<ul *ngIf="this._userProgressService.getCurrentUserProgress()" class="nav navbar-nav pull-right progressbar">
-    <li *ngFor="let lesson of this._userProgressService.getCurrentUserProgress();
+<ul *ngIf="_currentUserProgressSteps?.length != 0" class="nav navbar-nav pull-right progressbar">
+    <li *ngFor="let step of _currentUserProgressSteps;
                 let isFirst = first;
                 let isLast = last;" 
-        [ngClass]="{'current': lesson.isCurrent, 'completed': lesson.isCompleted}" >
-        <a [ngClass]="{
+        [ngClass]="{
+            'current': step.isCurrent && !step.isTest, 
+            'completed': step.isCompleted, 
+            'blocked': step.isBlocked, 
+            'test': step.isTest, 
+            'current-test': step.isCurrent && step.isTest}" >
+        <a  [ngClass]="{
                 'hint--bottom-right': isFirst,
                 'hint--bottom-left': isLast,
                 'hint--bottom': !(isFirst || isLast),
                 'hint--medium': true
             }"
-           [attr.aria-label]="lesson.lessonTitle"
-           [routerLink]="['/unit', lesson.unitId, 'lesson', lesson.lessonId]">
+           [attr.aria-label]="step.lessonTitle? step.lessonTitle: step.testTitle"
+           [routerLink]="step.isBlocked ? [] : step.isTest ? ['/test',step.testId] : ['/unit', step.unitId, 'lesson', step.lessonId]">
         </a>
     </li>
 </ul>

@@ -39,6 +39,10 @@ import { CheckPrintfService } from '../problem/check-printf.service';
 import { MarkdownParserService } from '../markdown/markdown-parser.service';
 import { UserProgressService } from './user-progress.service';
 
+import { TestComponent } from '../test/test.component';
+import { TestDetailsComponent } from '../test/test-details.component';
+import { TestsService } from '../test/tests.service';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -56,14 +60,17 @@ import { UserProgressService } from './user-progress.service';
         ExercisesComponent,
         ProblemComponent,
         AceEditorComponent,
-        UserProgressComponent
+        UserProgressComponent,
+        TestComponent,
+        TestDetailsComponent
     ],
     providers: [
         UnitsService,
         MarkdownParserService,
         ErrorHandlingService,
         CheckPrintfService,
-        UserProgressService
+        UserProgressService,
+        TestsService
     ]
 })
 export class LessonsModule {}

@@ -1,6 +1,6 @@
 @import "variables";
 
-$light_gray: #999999;
+$light_gray: #626262;
 $light_green: #5fd35f;
 
 
@@ -17,7 +17,7 @@ $light_green: #5fd35f;
 
 	li {
 		list-style-type: none;
-		width: 5.55%;
+		width: 4.75%;
 		float: left;
 		font-family: $font_title;
 		font-size: 13px;
@@ -64,7 +64,7 @@ $light_green: #5fd35f;
 			background-color: $color_2DarkCyan;
 		}
 
-		/* Circle con current lesson */
+		/* Circle on current lesson */
 		&.current:before {
 			content: url('assets/img/arrow-current.svg');
 			background-color: $light_green;
@@ -72,6 +72,26 @@ $light_green: #5fd35f;
 
 		&.completed + li:after {
 			border-top: 2px dashed $color_2DarkCyan;
+		}
+
+		/* Padlock on blocked lesson */
+		&.blocked:before {
+			content: url('assets/img/lesson-blocked-padlock.svg');
+		}
+
+		&.blocked {
+			pointer-events: none;
+		    cursor: default;
+		}
+
+		/* Star on test */
+		&.test:before {
+			content: url('assets/img/star-test.svg');
+		}
+
+		/* Green border around circle on star when the test is current */
+		&.current-test:before{
+			border: 2px solid $light_green;
 		}
 
 		> a {

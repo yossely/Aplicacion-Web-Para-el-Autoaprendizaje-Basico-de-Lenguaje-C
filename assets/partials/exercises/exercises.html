@@ -29,14 +29,14 @@
             </button>
         </div>
         <div *ngIf="isSelectedExerciseLast">
-            <div *ngIf="!_userProgressService.isCurrentLessonLast()">
+            <div *ngIf="!isCurrentLessonLast">
                 <h3>¿Listo?</h3>
                 <p>Si has terminado con los ejercicios, ¡Sigue aprendiendo nuevos temas!</p>
                 <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">
                     Siguiente Lección
                 </button>
             </div>
-            <div *ngIf="_userProgressService.isCurrentLessonLast()">
+            <div *ngIf="isCurrentLessonLast">
                 <h3>¿Listo?</h3>
                 <p>¡Felicitaciones! Has llegado al final de AprendaC, recuerda.. Practicando C Aprende <i class="fa fa-smile-o" aria-hidden="true"></i> </p>
             </div>

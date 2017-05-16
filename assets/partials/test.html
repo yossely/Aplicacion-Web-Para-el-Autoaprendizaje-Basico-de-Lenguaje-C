@@ -1,0 +1,21 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="unit-title">{{_currentTest?.title}}</h1>
+        </div>
+        <div class="col-md-2 center">
+            TEST PROGRESS
+        </div>
+        <!-- <div *ngIf="!isCurrentLessonLast && !isTestNext" class="col-md-2 center">
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">Siguiente Lección</button>
+        </div>
+        <div *ngIf="isTestNext" class="col-md-2 center">
+            <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">Presentar Parcial {{nextTestId}}</button>
+        </div> -->
+    </div>
+
+    <div *ngIf="_currentTest" class="row test-content">
+        <exercises-outlet [exercises]="_currentTest?.problems"></exercises-outlet>
+    </div>
+</div>

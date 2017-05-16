@@ -23,6 +23,10 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
     private id_lesson: number;
     private lesson: Lesson;
 
+    private isCurrentLessonLast: boolean;
+    private isTestNext: boolean;
+    private nextTestId: number;
+
     // This array represents the sections tabs of the lessons and is created to be able to manipulate them in the components
     public sectionsTabs:Array<any>;
 
@@ -87,25 +91,6 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
         });
     }
 
-    /*goToUnitsList(){
-        let unitId = this.unit ? this.unit._id : null;
-         
-        // * Pass along the unit _id if available, so that the unitList component can highlight that unit.
-        // * The optional route parameters are not separated by "?" and "&" as they would be in the URL query string. 
-        // * They are separated by semicolons ";" This is matrix URL notation
-         
-        let link = ['/content',{id: unitId, foo: 'fooExampleIgnored'}];
-        this.router.navigate(link);
-    }*/
-
-    /*saveUnitDetails(){
-        console.log('saveUnitDetails called');
-        this._unitsService
-            .save(this.unit)
-            .subscribe( (r:Response) => {
-                console.log('success! unit saved');
-            });
-    }*/
 
     /**
      * Initialize lesson with the object got from the http request
@@ -124,6 +109,14 @@ export class LessonDetailsComponent implements OnInit, OnDestroy{
 
         this.selectSection(0);
         
+        this.isCurrentLessonLast = this._userProgressService.isCurrentLessonLast();
+        
+        /* This variables are used to show the correct message 'Siguiente Lección' or 'Presentar Parcial XXX' */
+        this.isTestNext = this._userProgressService.isTestNext();
+        if (this.isTestNext) {
+            this.nextTestId = this._userProgressService.getNextTestId();
+        }
+
         console.log("lesson ready! ",this.lesson);
     }
 

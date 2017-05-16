@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LessonsMainComponent }  from './lessons-main.component';
 import { LessonDetailsComponent }  from './lesson-details.component';
 
+import { TestComponent }  from '../test/test.component';
+import { TestDetailsComponent }  from '../test/test-details.component';
 
 const lessonsRoutes: Routes = [
     { 
@@ -16,6 +18,16 @@ const lessonsRoutes: Routes = [
                 component: LessonDetailsComponent  
             }
         ] 
+    },
+    { 
+        path: 'test/:id_test', 
+        component: TestComponent,
+        children: [
+            {
+                path: '',
+                component: TestDetailsComponent  
+            }
+        ]
     }
 ];
 
