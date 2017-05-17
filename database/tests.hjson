@@ -5,8 +5,20 @@
         "problems": [
             {
                 "statement": '''
-                             ### Statement Test I - Problem 1
-                             Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
+                             Una piscina construida para una urbanización cerrada tiene las siguientes dimensiones largo **(L)**, ancho **(A)** y alto **(T)**. El largo es ingresado en *milímetros*, el ancho en *centímetros* y la Altura en *metros*. 
+                             Se desea saber:  
+
+                              1. ¿Cuál es el volumen de la piscina en metros cúbicos?
+                              2. Sabiendo que el metro cúbico de agua es a **(X)** Bs. ¿Cuánto cuesta llenarla de agua?
+                              3. También sabiendo que en cada lluvia mensual caen **(Y)** metros cúbicos, ¿Cuántos meses se necesitaría para llenarla mediante agua lluvia?
+
+                             Diseñe un algoritmo, para que responda a las anteriores interrogantes, luego de que el usuario ingrese los valores de: **L**, **A**, **T**, **X** y **Y**. 
+
+                             #### Fórmulas y Equivalencias
+
+                             - **Volumen = Ancho  x  Largo  x  Alto**
+                             - 1 m = 1000mm
+                             - 1 m = 100cm
                              ''',
                 "code": '''
                         /* Code Test I - Problem 1 */
@@ -26,8 +38,22 @@
             },
             {
                 "statement": '''
-                             ### Statement Test I - Problem 2
-                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             Un centro clínico de la ciudad dispone de una caldera para producir, entre otras cosas, aire comprimido que es almacenado en un recipiente. 
+                             El recipiente recibe constantemente **presión** de la caldera, pero éste tiene una **capacidad máxima** y por lo tanto requiere de un control continuo, cuya *situación* es considerada de acuerdo a la siguiente escala:
+                             
+                             Presión Promedio | Situación 
+                             ---------- | ---------- 
+                             Entre 0 y 180 | *BAJA*
+                             Entre 181 y 350 | *MODERADA*
+                             Entre 351 y 590 | *ACEPTABLE*
+                             Entre 591 y 750 | *RIESGO*
+                             
+                             Durante un periodo de trabajo de la caldera, un operador toma **dos lecturas** de la presión, cada cierto tiempo, es decir varias veces. Considerando que el control no sea necesario siempre, por estar la caldera en mantenimiento, diseñe un programa para:
+                             
+                              1. Calcular, cada vez que el operador tome las dos lecturas, la presión promedio, y de acuerdo a la escala anterior **emitir la situación correspondiente** del recipiente.
+                              2. Calcular el **porcentaje de veces**, que la situación se mantuvo en situación **Moderada**.
+                              3. Considerando que las lecturas se toman en orden y que se debe llevar una numeración de las mismas; determinar: ¿En **qué número de las lecturas** se registró la **mayor presión promedio, solo dentro de la situación de Riesgo**? 
+                               - **Nota:** Si sucedió en varias ocasiones considere la última vez que ocurrió. Si nunca ocurrió la situación de riesgo, indicarlo.
                              ''',
                 "code": '''
                         /* Code Test I - Problem 2 */
@@ -47,8 +73,28 @@
             },
             {
                 "statement": '''
-                             ### Statement Test I - Problem 3
-                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             Desarrolle un algoritmo que simule la administración del disco duro de un computador. Para ello **se conoce inicialmente la capacidad total y la capacidad disponible** de dicho recurso, las cuales son medidas en **Mb** (*Megabytes*). 
+
+                             Es sabido que hay dos tipos de operaciones a realizar con un archivo: **almacenamiento ó eliminación** y asumiendo que siempre se hacen varias operaciones en este computador y que por cada operación se tienen los siguientes datos: **Tipo de archivo**, **operación** (1: Eliminación y 2: Almacenamiento), **tamaño del archivo** (en KB ). Por ejemplo:
+                             
+                             Tipo | Operación | Tamaño
+                             ---------- | ---------- | ---------- 
+                             Documento Word | 2 | 35
+                             Libro Excel | 1 | 22
+                             Archivo C | 2 | 0.80
+                             ... | ... | ...
+                             
+                             El algoritmo debe permitir lo siguiente: 
+                             
+                              1. A través de un menú, realizar las operaciones de almacenamiento y eliminación que requiera el usuario, es decir, el programa se detendrá cuando el usuario lo indique.
+                              2. **Indicar si cada operación se pudo realizar satisfactoriamente** e **indicar la capacidad disponible en KB después de efectuada tal operación**. Tome en cuenta que haya espacio suficiente para almacenar un archivo o si el disco este libre completamente y no haya archivo alguno por eliminar. 
+                              2. Indicar **cuál tipo de operación** fue más solicitada y efectuada satisfactoriamente, si la de eliminación o la de almacenamiento. 
+                              3. Finalizado el proceso, muestre el **espacio ocupado en bytes** y el **porcentaje de espacio libre** del disco duro del computador.
+                              
+                             #### Equivalencias 
+
+                             - 1Mb = 1024 Kb 
+                             - 1Kb = 1024 bytes
                              ''',
                 "code": '''
                         /* Code Test I - Problem 3 */
@@ -74,8 +120,16 @@
         "problems": [
             {
                 "statement": '''
-                             ### Statement Test II - Problem 1
-                             Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
+                             Una Institución de Educación Superior tiene sus 68 aulas de clase, distribuidas en tres edificios, identificados con las letras A, B y C. En cada edificio hay un número diferentes de aulas, identificadas con un número, cada una con una capacidad distinta, medida en puestos, y con un área diferente, medida en metros cuadrados. Esa información debe ser almacenada en arreglos unidimensionales (Vectores) paralelos, de tal forma que se puedan trabajar como se muestra, por ejemplo, en el esquema siguiente:
+
+                             ![Organización de las aulas de un edificio](assets/img/test2-exercise1.svg "Organización de las aulas de un edificio")
+                             
+                             Complete el siguiente programa en lenguaje C, para: 
+                             
+                              1. Calcular la **capacidad total**, en puestos, **de cada edificio**.
+                              2. Crear un **nuevo vector** con la relación (**metros cuadrados / alumno**), para **cada** una de las **aulas**. 
+                              3. Identificar, mediante el número y el edificio, **el aula o las aulas**, de **mayor capacidad de puestos**.
+                              4. Permitir la consulta de la capacidad de un aula, cuyo edificio y número de aula sean datos suministrados por el usuario. Primero se debe solicitar la identificación del edificio y validar el dato de entrada, para luego verificar la existencia o no del aula.
                              ''',
                 "code": '''
                         /* Code Test II - Problem 1 */
@@ -95,8 +149,16 @@
             },
             {
                 "statement": '''
-                             ### Statement Test II - Problem 2
-                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             En el comedor estudiantil de la Universidad Nacional Experimental del Táchira, se lleva un control manual sobre el consumo, en kilogramos, de seis (6) hortalizas, en cada uno de los cinco (5) días hábiles de una semana, así como se ejemplifica a continuación:
+
+                             ![Organización de las hortalizas del comedor](assets/img/test2-exercise2.svg "Organización de las hortalizas del comedor")
+                             
+                             En base a los datos disponibles, se necesita que usted elabore un programa en lenguaje C, que utilice arreglos: unidimensional (Vector) y bidimensional (Matriz), para que luego de dar entrada a los datos suministrados por el usuario y procesarlos responda a lo siguiente:
+                             
+                              1. **Almacenar** los datos (los kilogramos consumidos) en el **arreglo correspondiente**. 
+                              2. Si la administración compra **cada kilogramo** de hortaliza a un **precio fijo**, igual para todas ellas, cuyo valor lo conoce el usuario; Calcular el **total en bolívares** gastado en este tipo de alimento (hortalizas), en los cinco días hábiles de la semana. 
+                              3. Mostrar el **consumo de una de las hortalizas**, para un día cualquiera de la semana, de interés para el usuario. 
+                              4. Calcular y mostrar, **en porcentaje**, el **consumo** de hortalizas para **cada uno de los días** hábiles de la semana. Se sugiere crear un vector con el total consumido en cada uno de lo cinco días.
                              ''',
                 "code": '''
                         /* Code Test II - Problem 2 */
@@ -116,8 +178,16 @@
             },
             {
                 "statement": '''
-                             ### Statement Test II - Problem 3
-                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             Actualmente el Estado Táchira está experimentando un crecimiento constante en la generación de desechos sólidos. Se tienen las estadísticas de recolección, en toneladas, para el primer semestre del año pasado de 7 municipios y se organizaron como se muestra en el siguiente esquema:
+
+                             ![Organización de los desechos sólidos](assets/img/test2-exercise3.svg "Organización de los desechos sólidos")
+                             
+                             Se requiere que realice un programa en Lenguaje C para: 
+                             
+                              1. Completar la asignación de los datos en los arreglos correspondientes de acuerdo al esquema planteado. 
+                              2. Calcular el **total de toneladas** que se recolectaron en los **primeros 3 meses** del semestre, en los **primeros 4 municipios** registrados. 
+                              3. Se desea saber la cantidad de desechos recolectados en cada mes, para ello debe almacenar en un vector tales cantidades y mostrar organizadamente los datos.
+                              4. Determine en que meses del semestre, un determinado municipio genero la mayor cantidad de desechos. Además indique en cuantos meses ocurrió tal hecho. El municipio será el indicado por el usuario. Si el municipio solicitado no fue registrado en las estadísticas, se le debe informar al usuario.
                              ''',
                 "code": '''
                         /* Code Test II - Problem 3 */
@@ -143,8 +213,22 @@
         "problems": [
             {
                 "statement": '''
-                             ### Statement Test III - Problem 1
-                             Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
+                             Escriba un programa en C, que satisfaga los siguientes requerimientos:
+
+                              1. Calcular la superficie y el volumen de una esfera, mediante una **función que use solo paso de parámetros por referencia**. De la esfera, el usuario ingresará su diámetro.
+                              2. Indicar a que cuadrante pertenece un punto del que se conocen las coordenadas ( **x , y** ). Para ello debe usar una **función con parámetros, de tipo `int`**; pero debe mostrar el cuadrante de la forma ( *I, II, III o IV* ), de acuerdo al sistema de coordenadas cartesianas. Para mostrar la salida requerida se sugiere usar la función `switch`. Se debe validar que el punto no esté ubicado sobre los ejes **x** y **y**.
+                              3. Conocidas las coordenadas de dos puntos por donde pasa una recta. Calcular y mostrar la **pendiente de la recta**. Debe **validar** que las abscisas de ambos puntos sean diferentes.
+                             
+                             
+                             #### Fórmulas
+
+                             - **Volumen = (4/3)  x  π  x  r^3**
+                             - **Superficie = 4  x  π  x  r^2** 
+                             - **Pendiente = (y2 - y2) / (x2 - x1)**
+                             
+                             #### Coordenadas Cartesianas
+
+                             ![Coordenadas Cartesianas](assets/img/test3-exercise1.svg "Coordenadas Cartesianas")
                              ''',
                 "code": '''
                         /* Code Test III - Problem 1 */
@@ -164,8 +248,18 @@
             },
             {
                 "statement": '''
-                             ### Statement Test III - Problem 2
-                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             Se desea registrar la información sobre los miembros del coro de la Universidad Nacional Experimental del Táchira. La información que se tiene de cada uno es:
+
+                             - **Datos personales:** (nombres, edad, índice académico) 
+                             - **Voz:** soprano, mezzo-soprano, contralto, barítono, tenor ó bajo 
+                             - **Extensión de la voz:** alta o baja
+                             
+                             Se desea que Usted codifique un programa en lenguaje C para: 
+                             
+                              1. Almacenar en un arreglo (vector) de estructuras la información de cada integrante del coro. Este proceso debe hacerse usando una función con parámetros en donde se use la instrucción `return`.
+                              2. Mostrar la cantidad de integrantes con extensión alta de voz, sopranos o barítonos, que sean menores de 20 años. Utilice una función con parámetros.
+                              3. Calcular la cantidad de integrantes del coro que son tenores y la cantidad de integrantes que poseen la extensión de la voz baja. Utilice una única función con parámetros. Los resultados deben imprimirse en la función principal.
+                              4. Calcular y mostrar el porcentaje de mujeres que conforman el coro si se sabe que las mujeres son clasificadas como soprano, mezzo-soprano o contralto.
                              ''',
                 "code": '''
                         /* Code Test III - Problem 2 */
@@ -185,8 +279,21 @@
             },
             {
                 "statement": '''
-                             ### Statement Test III - Problem 3
-                             Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
+                             Una Academia de Paracaidismo, está llamando al proceso de inscripciones para el próximo curso, con un máximo de 36 cupos. A objeto de automatizar el proceso y generar algunas respuestas, se le pide a Usted que codifique un programa en Lenguaje C, de manera que a cada aspirante se le registren los siguientes datos: Ejemplo
+
+                             - **Apellidos y Nombres:** Tovar Pulido María Irene
+                             - **Características:** 
+                               - *Sexo:* femenino 
+                               - *Edad:* 22
+                               - *Clave:* XCP-028
+                             - **Peso:** 46.5
+                             - **Experiencia:** 1: Si --- 2: No
+                             
+                             La academia requiere que el programa permita: 
+                             
+                              1. Almacenar los datos, de cada aspirante que solicite inscripción en la Academia, en un arreglo de estructuras.
+                              2. Calcular del total de mujeres el porcentaje de las que tienen experiencia. 
+                              3. Calcular la edad promedio de los aspirantes sin experiencia y la cantidad de aspirantes cuyo peso excede al promedio general. Use una única función definida de tipo `void` que utilice punteros para manipular las variables pasadas por parámetros.
                              ''',
                 "code": '''
                         /* Code Test III - Problem 3 */
