@@ -26,14 +26,26 @@
 
                         int main()
                         { 
-                            /* Hacer: 
-                                - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+                            
                             return 0;
                         }
                         ''',
                 "expectedOutput": ''' 
-                                  > Expected ouput Test I - Problem 1 
-                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  > largo (mm): 50000
+                                  > 
+                                  > ancho (cm): 2500
+                                  > 
+                                  > alto (m): 2
+                                  > 
+                                  > costo del metro cúbico de agua en Bs: 7
+                                  > 
+                                  > metros cúbicos de agua de lluvia mensual: 350
+                                  > 
+                                  > volumen de la piscina: 2500.00
+                                  > 
+                                  > llenar la piscina tiene un costo de: 17500.00
+                                  > 
+                                  > 7.14 meses de lluvia llenan la piscina
                                   '''
             },
             {
@@ -57,18 +69,46 @@
                              ''',
                 "code": '''
                         /* Code Test I - Problem 2 */
-                        /* Hacer: 
-                                - Incluir la librería stdio.h */ 
+                        #include <stdio.h> 
 
                         int main()
                         { 
-                            printf("¡Librería incluida con éxito!"); 
+                            
                             return 0;
                         }
                         ''',
                 "expectedOutput": ''' 
-                                  > Expected ouput Test I - Problem 2 
-                                  > ¡Librería incluida con éxito!
+                                  > lectura 1: 179.2
+                                  > lectura 2: 160.3
+                                  > 
+                                  > BAJA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 1
+                                  > 
+                                  > lectura 1: 240.3
+                                  > lectura 2: 330.1
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 1
+                                  > 
+                                  > lectura 1: 630.4
+                                  > lectura 2: 723.4
+                                  > 
+                                  > RIESGO
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 1
+                                  > 
+                                  > lectura 1: 240.3
+                                  > lectura 2: 320.5
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 0
+                                  > 
+                                  > las lecturas se mantuvo MODERADA 50.00 porciento de las veces
+                                  > 
+                                  > En la lectura 3 se registra la mayor presión promedio de RIESGO de 676.90
                                   '''
             },
             {
@@ -98,18 +138,41 @@
                              ''',
                 "code": '''
                         /* Code Test I - Problem 3 */
-                        /* Hacer: 
-                                - Incluir la librería stdio.h */ 
+                        #include <stdio.h> 
 
                         int main()
                         { 
-                            printf("¡Librería incluida con éxito!"); 
+                            
                             return 0;
                         }
                         ''',
                 "expectedOutput": ''' 
-                                  > Expected ouput Test I - Problem 3 
-                                  > ¡Librería incluida con éxito!
+                                  > capacidad total del disco duro (MB): 5
+                                  > capacidad disponible del disco duro (MB): 2
+                                  > tipo de archivo: word
+                                  > tamaño del archivo (KB): 35
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 2
+                                  > el archivo word se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2013.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 1
+                                  > tipo de archivo: excel
+                                  > tamaño del archivo (KB): 22
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 1
+                                  > el archivo excel se ha eliminado satisfactoriamente
+                                  > capacidad disponible: 2035.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 1
+                                  > tipo de archivo: c
+                                  > tamaño del archivo (KB): 0.80
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 2
+                                  > el archivo c se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2034.20
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 0
+                                  > la operación de almacenar fue más solicitada y efectuada satisfactoriamente
+                                  > el espacio ocupado es: 3159859.25 bytes
+                                  > el porcentaje de espacio libre es: 39.73
                                   '''
             }
         ]
@@ -137,14 +200,46 @@
 
                         int main()
                         { 
-                            /* Hacer: 
-                                - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+
+                            char edificio[69] = {'B','B','A','C','C','A','A','A','B','C','B','B','C','A','C',
+                                                 'C','C','B','A','A','B','B','C','A','B','A','A','C','C','A',
+                                                 'A','A','C','B','B','C','C','A','A','C','C','B','B','A','B',
+                                                 'B','A','C','B','B','A','C','A','C','C','B','B','A','A','A',
+                                                 'C','B','B','C','C','A','B','B','\0'};
+
+                            int numero[68] = {3,6,18,6,4,6,5,14,4,5,18,13,14,4,18,
+                                              7,22,7,7,11,11,5,11,1,1,13,21,13,21,22,
+                                              15,3,1,12,8,15,12,19,10,3,10,17,14,17,15,
+                                              16,12,17,9,20,8,19,9,8,9,21,2,16,2,20,
+                                              2,10,23,20,16,23,22,19};
+
+                            int puestos[68] = {38,38,40,40,38,44,42,44,43,43,40,44,44,39,38,
+                                               38,41,42,45,44,42,44,43,40,45,42,45,44,39,38,
+                                               38,42,39,40,44,42,41,38,41,38,38,38,43,45,43,
+                                               44,40,45,41,43,45,42,38,39,39,44,43,44,41,39,
+                                               43,38,41,44,38,41,39,41};
+
+                            float area[68] = {62.89f,66.21f,55.32f,54.37f,57.21f,44.91f,43.13f,64.05f,69.49f,54.92f,44.13f,67.85f,41.31f,52.35f,66.21f,
+                                              66.21f,63.57f,42.53f,58.86f,37.24f,59.09f,47.76f,41.35f,39.64f,37.75f,31.66f,62.84f,54.3f,44.34f,38.55f,
+                                              36.44f,54.11f,38.03f,34.21f,33.23f,65.69f,45.87f,35.05f,37.94f,58.3f,62.57f,44.55f,63.37f,37.79f,67.24f,
+                                              59.71f,42.41f,50.76f,41.71f,36.72f,41.03f,54.84f,66.21f,40.7f,54.3f,47.44f,58.46f,55.43f,69.13f,44.61f,
+                                              50.35f,52.23f,41.9f,56.77f,31.24f,54.95f,50.92f,57.14f};
+                            
                             return 0;
                         }
                         ''',
                 "expectedOutput": '''
-                                  > Expected ouput Test II - Problem 1 
-                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  > puestos en edificio A: 955
+                                  > puestos en edificio B: 958
+                                  > puestos en edificio C: 896
+                                  > la mayor capacidad registrada es: 1.74 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #6 del edificio B
+                                  >   -aula #18 del edificio C
+                                  >   -aula #7 del edificio C
+                                  >   -aula #9 del edificio A
+                                  > edificio a consultar: 
+                                  > aula a consultar: 
+                                  > la capacidad del aula es 0.85
                                   '''
             },
             {
@@ -162,18 +257,31 @@
                              ''',
                 "code": '''
                         /* Code Test II - Problem 2 */
-                        /* Hacer: 
-                                - Incluir la librería stdio.h */ 
+                        #include <stdio.h>
 
                         int main()
-                        { 
-                            printf("¡Librería incluida con éxito!"); 
+                        {
+                            float consumo[6][5] = {41.55f,28.73f,34.51f,26.04f,26.67f,
+                                                   38.65f,32.88f,33.12f,39.2f,36.26f,
+                                                   25.96f,32.45f,32.2f,37.02f,29.11f,
+                                                   30.4f,30.63f,35.91f,40.35f,31.02f,
+                                                   47.93f,25.6f,31.65f,37.63f,47.76f,
+                                                   37.97f,36.25f,26.93f,35.2f,34.95f};
+
                             return 0;
                         }
                         ''',
                 "expectedOutput": ''' 
-                                  > Expected ouput Test II - Problem 2 
-                                  > ¡Librería incluida con éxito!
+                                  > precio por kilogramo de hortalizas: 1.2
+                                  > el precio total de las verduras en la semana es 1229.44 bs
+                                  > el porcentaje de consumo de hortalizas en el día 1 es 21.71
+                                  > el porcentaje de consumo de hortalizas en el día 2 es 18.21
+                                  > el porcentaje de consumo de hortalizas en el día 3 es 18.97
+                                  > el porcentaje de consumo de hortalizas en el día 4 es 21.03
+                                  > el porcentaje de consumo de hortalizas en el día 5 es 20.08
+                                  > hortaliza a consultar (1-6): 3
+                                  > día a consultar (1-5): 2
+                                  > el día 2 se consume un total de 32.45 de la hortaliza 3
                                   '''
             },
             {
@@ -191,18 +299,34 @@
                              ''',
                 "code": '''
                         /* Code Test II - Problem 3 */
-                        /* Hacer: 
-                                - Incluir la librería stdio.h */ 
+                        #include <stdio.h>
 
                         int main()
-                        { 
-                            printf("¡Librería incluida con éxito!"); 
+                        {
+                            float desechos[7][6] = {34.51f,45.8f,29.22f,44.77f,45.8f,45.8f,
+                                                   29.31f,33.99f,42.25f,46.92f,46.47f,48.27f,
+                                                   40.02f,28.4f,30.09f,47.87f,37.19f,47.87f,
+                                                   42.36f,27.02f,35.82f,25.84f,48.29f,44.83f,
+                                                   34.46f,29.62f,48.5f,46.43f,25.59f,32.26f,
+                                                   45.06f,44.55f,39.09f,37.01f,41.98f,31.24f,
+                                                   27.28f,33.68f,26.91f,40.52f,44.92f,37.24f};
+
                             return 0;
                         }
                         ''',
                 "expectedOutput": ''' 
-                                  > Expected ouput Test II - Problem 3 
-                                  > ¡Librería incluida con éxito!
+                                  > en los primeros 4 municipios durante los primeros 3 meses se recolectaron 418.79 ton
+                                  > cantidad de desechos mensual:
+                                  >   -mes: 1   -desechos:253.00
+                                  >   -mes: 2   -desechos:243.06
+                                  >   -mes: 3   -desechos:251.88
+                                  >   -mes: 4   -desechos:289.36
+                                  >   -mes: 5   -desechos:290.24
+                                  >   -mes: 6   -desechos:287.51
+                                  > municipio a consultar (1-7): 3
+                                  > la mayor cantidad de desechos del municipio 3 es 47.87, registrada en 2 mes(es):
+                                  >   mes: 4
+                                  >   mes: 6
                                   '''
             }
         ]
@@ -263,12 +387,11 @@
                              ''',
                 "code": '''
                         /* Code Test III - Problem 2 */
-                        /* Hacer: 
-                                - Incluir la librería stdio.h */ 
+                        #include <stdio.h> 
 
                         int main()
                         { 
-                            printf("¡Librería incluida con éxito!"); 
+                            
                             return 0;
                         }
                         ''',
@@ -297,12 +420,11 @@
                              ''',
                 "code": '''
                         /* Code Test III - Problem 3 */
-                        /* Hacer: 
-                                - Incluir la librería stdio.h */ 
+                        #include <stdio.h> 
 
                         int main()
                         { 
-                            printf("¡Librería incluida con éxito!"); 
+                            
                             return 0;
                         }
                         ''',
