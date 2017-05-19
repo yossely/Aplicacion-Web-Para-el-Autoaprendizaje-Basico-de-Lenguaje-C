@@ -46,6 +46,23 @@
                                   > llenar la piscina tiene un costo de: 17500.00
                                   > 
                                   > 7.14 meses de lluvia llenan la piscina
+                                  ''',
+                "realOutput": ''' 
+                                  > largo (mm): 
+                                  > 
+                                  > ancho (cm): 
+                                  > 
+                                  > alto (m): 
+                                  > 
+                                  > costo del metro cúbico de agua en Bs: 
+                                  > 
+                                  > metros cúbicos de agua de lluvia mensual: 
+                                  > 
+                                  > volumen de la piscina: 2500.00
+                                  > 
+                                  > llenar la piscina tiene un costo de: 17500.00
+                                  > 
+                                  > 7.14 meses de lluvia llenan la piscina
                                   '''
             },
             {
@@ -105,6 +122,39 @@
                                   > MODERADA
                                   > 
                                   > ¿existe otra lectura? 1:Si  2:No: 0
+                                  > 
+                                  > las lecturas se mantuvo MODERADA 50.00 porciento de las veces
+                                  > 
+                                  > En la lectura 3 se registra la mayor presión promedio de RIESGO de 676.90
+                                  ''',
+                "realOutput": ''' 
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > BAJA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > RIESGO
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
                                   > 
                                   > las lecturas se mantuvo MODERADA 50.00 porciento de las veces
                                   > 
@@ -173,6 +223,34 @@
                                   > la operación de almacenar fue más solicitada y efectuada satisfactoriamente
                                   > el espacio ocupado es: 3159859.25 bytes
                                   > el porcentaje de espacio libre es: 39.73
+                                  ''',
+                "expectedOutput": ''' 
+                                  > capacidad total del disco duro (MB): 
+                                  > capacidad disponible del disco duro (MB): 
+                                  > tipo de archivo: 
+                                  > tamaño del archivo (KB): 
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 
+                                  > el archivo word se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2013.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 
+                                  > tipo de archivo: 
+                                  > tamaño del archivo (KB): 
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 
+                                  > el archivo excel se ha eliminado satisfactoriamente
+                                  > capacidad disponible: 2035.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 
+                                  > tipo de archivo: 
+                                  > tamaño del archivo (KB): 
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 
+                                  > el archivo c se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2034.20
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 
+                                  > la operación de almacenar fue más solicitada y efectuada satisfactoriamente
+                                  > el espacio ocupado es: 3159859.25 bytes
+                                  > el porcentaje de espacio libre es: 39.73
                                   '''
             }
         ]
@@ -237,9 +315,22 @@
                                   >   -aula #18 del edificio C
                                   >   -aula #7 del edificio C
                                   >   -aula #9 del edificio A
+                                  > edificio a consultar: A
+                                  > aula a consultar: 3
+                                  > la capacidad del aula es 1.29
+                                  ''',
+                "expectedOutput": '''
+                                  > puestos en edificio A: 955
+                                  > puestos en edificio B: 958
+                                  > puestos en edificio C: 896
+                                  > la mayor capacidad registrada es: 1.74 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #6 del edificio B
+                                  >   -aula #18 del edificio C
+                                  >   -aula #7 del edificio C
+                                  >   -aula #9 del edificio A
                                   > edificio a consultar: 
                                   > aula a consultar: 
-                                  > la capacidad del aula es 0.85
+                                  > la capacidad del aula es 1.29
                                   '''
             },
             {
@@ -281,6 +372,18 @@
                                   > el porcentaje de consumo de hortalizas en el día 5 es 20.08
                                   > hortaliza a consultar (1-6): 3
                                   > día a consultar (1-5): 2
+                                  > el día 2 se consume un total de 32.45 de la hortaliza 3
+                                  ''',
+                "realOutput": ''' 
+                                  > precio por kilogramo de hortalizas: 
+                                  > el precio total de las verduras en la semana es 1229.44 bs
+                                  > el porcentaje de consumo de hortalizas en el día 1 es 21.71
+                                  > el porcentaje de consumo de hortalizas en el día 2 es 18.21
+                                  > el porcentaje de consumo de hortalizas en el día 3 es 18.97
+                                  > el porcentaje de consumo de hortalizas en el día 4 es 21.03
+                                  > el porcentaje de consumo de hortalizas en el día 5 es 20.08
+                                  > hortaliza a consultar (1-6): 
+                                  > día a consultar (1-5): 
                                   > el día 2 se consume un total de 32.45 de la hortaliza 3
                                   '''
             },
@@ -327,6 +430,20 @@
                                   > la mayor cantidad de desechos del municipio 3 es 47.87, registrada en 2 mes(es):
                                   >   mes: 4
                                   >   mes: 6
+                                  ''',
+                "realOutput": ''' 
+                                  > en los primeros 4 municipios durante los primeros 3 meses se recolectaron 418.79 ton
+                                  > cantidad de desechos mensual:
+                                  >   -mes: 1   -desechos:253.00
+                                  >   -mes: 2   -desechos:243.06
+                                  >   -mes: 3   -desechos:251.88
+                                  >   -mes: 4   -desechos:289.36
+                                  >   -mes: 5   -desechos:290.24
+                                  >   -mes: 6   -desechos:287.51
+                                  > municipio a consultar (1-7): 
+                                  > la mayor cantidad de desechos del municipio 3 es 47.87, registrada en 2 mes(es):
+                                  >   mes: 4
+                                  >   mes: 6
                                   '''
             }
         ]
@@ -368,6 +485,10 @@
                 "expectedOutput": ''' 
                                   > Expected ouput Test III - Problem 1 
                                   > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  ''',
+                "realOutput": ''' 
+                                  > Expected ouput Test III - Problem 1 
+                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
                                   '''
             },
             {
@@ -396,6 +517,10 @@
                         }
                         ''',
                 "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 2 
+                                  > ¡Librería incluida con éxito!
+                                  ''',
+                "realOutput": ''' 
                                   > Expected ouput Test III - Problem 2 
                                   > ¡Librería incluida con éxito!
                                   '''
@@ -429,6 +554,10 @@
                         }
                         ''',
                 "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 3 
+                                  > ¡Librería incluida con éxito!
+                                  ''',
+                "realOutput": ''' 
                                   > Expected ouput Test III - Problem 3 
                                   > ¡Librería incluida con éxito!
                                   '''
