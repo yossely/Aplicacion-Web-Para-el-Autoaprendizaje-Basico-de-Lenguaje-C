@@ -15,11 +15,11 @@ export class TestsService{
 
     }
 
-    getAll(): Observable<Test[]>{
+    getAll(): Observable<Test>{
         // console.log('GET request to: ',this.baseUrl);
         let tests$ = this._http
             .get(`${this.baseUrl}/tests`, {headers: this.getHeaders()})
-            .map(mapTests);
+            .flatMap(mapTests);
         
         return tests$;
     }

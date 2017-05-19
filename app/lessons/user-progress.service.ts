@@ -306,4 +306,13 @@ export class UserProgressService {
         return this._isTestNext;
     }
 
+    /**
+     * Get the current test id
+     *
+     * Useful when try to update the score of a test
+     */
+    public getCurrentTestId(): number{
+        return this._currentTestId;
+    }
+
 }

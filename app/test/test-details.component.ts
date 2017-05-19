@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Test } from '../data_structure/test';
 import { TestsService } from '../test/tests.service';
 import { UserProgressService } from '../lessons/user-progress.service';
+import { UserTestsInfoService } from './user-tests-info.service'
 
 
 @Component({
@@ -23,34 +24,17 @@ export class TestDetailsComponent implements OnInit{
     private isTestNext: boolean;
     private nextTestId: number;
 
+    /* Variables to hold, show in template and update the current test score */
+    private _currentTestScore: number;
+    private _scoreChangeSubscription: any;
+
     constructor(private route: ActivatedRoute,
                 private router: Router,
                 private _testsService:TestsService,
-                private _userProgressService:UserProgressService){}
+                private _userProgressService:UserProgressService,
+                private _userTestsInfoService: UserTestsInfoService){}
 
     ngOnInit(){
-
-        /*this._currentTest.problems.push(<Problem>({
-            statement: 'enunciado 1',
-            code: '#include <stdio.h>',
-            consoleId: 'console-problem-1',
-            consoleOutput: '>',
-            expectedOutput: '>Hola mundo 1'
-        }),
-        <Problem>({
-            statement: 'enunciado 2',
-            code: '#include <string.h>',
-            consoleId: 'console-problem-3',
-            consoleOutput: '>',
-            expectedOutput: '>Hola mundo 2'
-        }),
-        <Problem>({
-            statement: 'enunciado 3',
-            code: '#include <conio.h>',
-            consoleId: 'console-problem-3',
-            consoleOutput: '>',
-            expectedOutput: '>Hola mundo 3'
-        }));*/
 
         /**
          * General Notes:
@@ -92,6 +76,13 @@ export class TestDetailsComponent implements OnInit{
             this.nextTestId = this._userProgressService.getNextTestId();
         }
 
+        // Set the current test's score to the initialized by the _userTestsInfoService 
+        this._currentTestScore = this._userTestsInfoService.getTestScore(this._currentTest.id);
+        // Subscribe to the changes of the score hold in the _userTestsInfoService
+        this._scoreChangeSubscription = this._userTestsInfoService.scoreChange.subscribe((newScore) => { 
+            this._currentTestScore = newScore; 
+        });
+
         console.log("test ready! ",this._currentTest);
     }
 
@@ -109,6 +100,9 @@ export class TestDetailsComponent implements OnInit{
      */
     ngOnDestroy(){
         this.paramsSub.unsubscribe();
+        // Unsubscribe to the changes of the current test score
+        if(this._scoreChangeSubscription)
+            this._scoreChangeSubscription.unsubscribe();
     }
 
 }

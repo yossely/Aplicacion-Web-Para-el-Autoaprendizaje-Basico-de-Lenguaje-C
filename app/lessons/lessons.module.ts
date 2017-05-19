@@ -42,6 +42,7 @@ import { UserProgressService } from './user-progress.service';
 import { TestComponent } from '../test/test.component';
 import { TestDetailsComponent } from '../test/test-details.component';
 import { TestsService } from '../test/tests.service';
+import { UserTestsInfoService } from '../test/user-tests-info.service';
 
 @NgModule({
     imports: [
@@ -70,7 +71,8 @@ import { TestsService } from '../test/tests.service';
         ErrorHandlingService,
         CheckPrintfService,
         UserProgressService,
-        TestsService
+        TestsService,
+        UserTestsInfoService
     ]
 })
 export class LessonsModule {}

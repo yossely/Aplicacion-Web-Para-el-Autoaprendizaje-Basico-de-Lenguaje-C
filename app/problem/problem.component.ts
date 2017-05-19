@@ -8,6 +8,8 @@ import { CheckPrintfService } from './check-printf.service';
 import { Problem } from '../data_structure/problem';
 
 import { MarkdownParserService } from '../markdown/markdown-parser.service';
+import { UserProgressService } from '../lessons/user-progress.service';
+import { UserTestsInfoService } from '../test/user-tests-info.service';
 
 import 'brace';
 import 'brace/theme/clouds';
@@ -37,6 +39,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     isExpectedOutputHidden: boolean;
 
+    /* Solution's Steps */
     currentStep: string;
     currentStepIndex: number;
     isCurrentStepFirst: boolean;
@@ -54,7 +57,9 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
                 private _ngZone: NgZone,
                 private _errorHandlingService: ErrorHandlingService,
                 private _checkPrintfService: CheckPrintfService,
-                private md: MarkdownParserService){ }
+                private md: MarkdownParserService,
+                private _userProgressService: UserProgressService,
+                private _userTestsInfoService: UserTestsInfoService){ }
 
     
     ngOnInit(){
@@ -206,7 +211,32 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      */
     appendConsoleText(newValue: string){
         this.problem.consoleOutput += newValue;
+
+        /* If the user is on a test, check if its output is correct */
+        if (this._userProgressService.isOnTest) {
+            this.checkOutput();
+        }
         // console.log("this is the new output: ", this.problem.consoleOutput);
+    }
+
+    /**
+     * Check if the user's output is correct to update the score of the test
+     *
+     * The user's solution is compare against the real console output (strings stored in the tests database),
+     * the whitespaces are removed in both strings and then, are compared, if they're equal, the user's solution
+     * is considered correct
+     */
+    checkOutput(){
+
+        // replace all the whitespaces from the user solution output and the real expected output
+        let currentConsoleOutput = this.problem.consoleOutput.replace(/\s+/g, '');
+        let realConsoleOutput = this.problem.realOutput.replace(/\s+/g, '');
+        
+        // check if the user solution output is correct and update the score
+        if(currentConsoleOutput == realConsoleOutput){
+            console.log('Correct output!');
+            this._userTestsInfoService.updateScore(25);
+        }
     }
 
 

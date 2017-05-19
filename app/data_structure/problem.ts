@@ -5,4 +5,5 @@ export interface Problem {
     consoleId: string;
     consoleOutput: string;
     expectedOutput: string;
+    realOutput: string;
 }
