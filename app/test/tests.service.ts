@@ -86,14 +86,14 @@ function mapTests(response:Response): Test[]{
  * @return {Test}        The Test with all the data loaded
  */
 function toTest(result:any): Test{
-    console.log(result);
+    // console.log(result);
     let test = <Test>({
         id: result._id,
         title: result.title,
         problems: result.problems,
         userScore: 0
     });
-    console.log('Parsed test:', test);
+    // console.log('Parsed test:', test);
     return test;
 }
 

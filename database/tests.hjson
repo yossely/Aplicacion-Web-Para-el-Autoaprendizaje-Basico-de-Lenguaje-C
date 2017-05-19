@@ -63,7 +63,9 @@
                                   > llenar la piscina tiene un costo de: 17500.00
                                   > 
                                   > 7.14 meses de lluvia llenan la piscina
-                                  '''
+                                  ''',
+                "points": 30,
+                "completed": false
             },
             {
                 "statement": '''
@@ -159,7 +161,9 @@
                                   > las lecturas se mantuvo MODERADA 50.00 porciento de las veces
                                   > 
                                   > En la lectura 3 se registra la mayor presión promedio de RIESGO de 676.90
-                                  '''
+                                  ''',
+                "points": 35,
+                "completed": false
             },
             {
                 "statement": '''
@@ -224,7 +228,7 @@
                                   > el espacio ocupado es: 3159859.25 bytes
                                   > el porcentaje de espacio libre es: 39.73
                                   ''',
-                "expectedOutput": ''' 
+                "realOutput": ''' 
                                   > capacidad total del disco duro (MB): 
                                   > capacidad disponible del disco duro (MB): 
                                   > tipo de archivo: 
@@ -251,7 +255,9 @@
                                   > la operación de almacenar fue más solicitada y efectuada satisfactoriamente
                                   > el espacio ocupado es: 3159859.25 bytes
                                   > el porcentaje de espacio libre es: 39.73
-                                  '''
+                                  ''',
+                "points": 35,
+                "completed": false
             }
         ]
     },
@@ -319,7 +325,7 @@
                                   > aula a consultar: 3
                                   > la capacidad del aula es 1.29
                                   ''',
-                "expectedOutput": '''
+                "realOutput": '''
                                   > puestos en edificio A: 955
                                   > puestos en edificio B: 958
                                   > puestos en edificio C: 896
@@ -331,7 +337,9 @@
                                   > edificio a consultar: 
                                   > aula a consultar: 
                                   > la capacidad del aula es 1.29
-                                  '''
+                                  ''',
+                "points": 30,
+                "completed": false
             },
             {
                 "statement": '''
@@ -385,7 +393,9 @@
                                   > hortaliza a consultar (1-6): 
                                   > día a consultar (1-5): 
                                   > el día 2 se consume un total de 32.45 de la hortaliza 3
-                                  '''
+                                  ''',
+                "points": 35,
+                "completed": false
             },
             {
                 "statement": '''
@@ -444,7 +454,9 @@
                                   > la mayor cantidad de desechos del municipio 3 es 47.87, registrada en 2 mes(es):
                                   >   mes: 4
                                   >   mes: 6
-                                  '''
+                                  ''',
+                "points": 35,
+                "completed": false
             }
         ]
     },
@@ -489,7 +501,9 @@
                 "realOutput": ''' 
                                   > Expected ouput Test III - Problem 1 
                                   > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
-                                  '''
+                                  ''',
+                "points": 30,
+                "completed": false
             },
             {
                 "statement": '''
@@ -523,7 +537,9 @@
                 "realOutput": ''' 
                                   > Expected ouput Test III - Problem 2 
                                   > ¡Librería incluida con éxito!
-                                  '''
+                                  ''',
+                "points": 35,
+                "completed": false
             },
             {
                 "statement": '''
@@ -560,7 +576,9 @@
                 "realOutput": ''' 
                                   > Expected ouput Test III - Problem 3 
                                   > ¡Librería incluida con éxito!
-                                  '''
+                                  ''',
+                "points": 35,
+                "completed": false
             }
         ]
     }

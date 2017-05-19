@@ -11,3 +11,19 @@ $test_content_background: #5DA7A6;
     padding-top: 10px;
     border: 3px solid $color_1NavyBlue;   
 }
+
+#progress-bar-text{
+	font-family: $font_title;
+	font-weight: bold;
+	font-size: 13px;
+	white-space:nowrap;
+	
+	&.no-points{
+		color: $color_2DarkCyan; 
+	}
+
+	&.with-points{
+		color: $color_white; 
+	}
+}
+

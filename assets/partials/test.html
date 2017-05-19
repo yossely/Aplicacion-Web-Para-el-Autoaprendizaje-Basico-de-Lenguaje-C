@@ -5,7 +5,14 @@
             <h1 class="unit-title">{{_currentTest?.title}}</h1>
         </div>
         <div class="col-md-2 center">
-            TEST PROGRESS SCORE: {{_currentTestScore}}
+            <progressbar [max]="_maxScore" [value]="_currentTestScore" [type]="_typeProgressBar">
+                <span id="progress-bar-text"
+                      [ngClass]="{'no-points': _currentTestScore == 0, 
+                                  'with-points': _currentTestScore != 0
+                                 }" >
+                    {{_currentTestScore}} / {{_maxScore}}
+                </span>
+            </progressbar>
         </div>
         <!-- <div *ngIf="!isCurrentLessonLast && !isTestNext" class="col-md-2 center">
             <button class="btn btn-blue btn-sm btn-blue-next-lesson" (click)="nextLesson()" role="button">Siguiente Lección</button>

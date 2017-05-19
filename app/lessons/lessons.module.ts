@@ -2,6 +2,7 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 
 /**
@@ -49,7 +50,8 @@ import { UserTestsInfoService } from '../test/user-tests-info.service';
         CommonModule,
         FormsModule,
         TabsModule.forRoot(),
-        lessonsRoutingModule
+        lessonsRoutingModule,
+        ProgressbarModule.forRoot()
     ],
     declarations: [
         LessonDetailsComponent,

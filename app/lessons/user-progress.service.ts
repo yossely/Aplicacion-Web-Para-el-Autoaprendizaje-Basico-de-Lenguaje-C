@@ -137,11 +137,11 @@ export class UserProgressService {
      */
     updateProgress(){
 
-        console.log('this._previousUnitId: ',this._previousUnitId);
-        console.log('this._previousLessonId: ',this._previousLessonId);
-        console.log('this._currentUnitId: ',this._currentUnitId);
-        console.log('this._currentLessonId: ',this._currentLessonId);
-        console.log('this._currentTestId: ',this._currentTestId);
+        // console.log('this._previousUnitId: ',this._previousUnitId);
+        // console.log('this._previousLessonId: ',this._previousLessonId);
+        // console.log('this._currentUnitId: ',this._currentUnitId);
+        // console.log('this._currentLessonId: ',this._currentLessonId);
+        // console.log('this._currentTestId: ',this._currentTestId);
         
         /* This means that the user is currently on a test */
         if (this._currentUnitId==0 && this._currentLessonId==0) {
@@ -237,12 +237,12 @@ export class UserProgressService {
             }
         }
 
-        console.log('_currentUserProgress: ',this._currentUserProgress, ' currentLessonIndex ',currentLessonIndex);
+        // console.log('_currentUserProgress: ',this._currentUserProgress, ' currentLessonIndex ',currentLessonIndex);
         /* Check if the user is on a test */
         /*if (this._currentUserProgress[currentLessonIndex].isTest)
             this._isCurrentStepATest = true;*/
         
-        console.log('next lesson url: ',this._nextLessonRouterLink);
+        // console.log('next lesson url: ',this._nextLessonRouterLink);
     }
 
     isOnTest(){

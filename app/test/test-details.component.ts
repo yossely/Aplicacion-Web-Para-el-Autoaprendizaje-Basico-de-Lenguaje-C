@@ -7,6 +7,7 @@ import { TestsService } from '../test/tests.service';
 import { UserProgressService } from '../lessons/user-progress.service';
 import { UserTestsInfoService } from './user-tests-info.service'
 
+import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
     styleUrls: ['assets/css/lesson-details.css','assets/css/exercises.css', 'assets/css/test.css'],
@@ -28,6 +29,11 @@ export class TestDetailsComponent implements OnInit{
     private _currentTestScore: number;
     private _scoreChangeSubscription: any;
 
+    /* Progress Bar on Test */
+    private _maxScore:number = 100;
+    private _typeProgressBar:string;
+
+    
     constructor(private route: ActivatedRoute,
                 private router: Router,
                 private _testsService:TestsService,
@@ -78,12 +84,29 @@ export class TestDetailsComponent implements OnInit{
 
         // Set the current test's score to the initialized by the _userTestsInfoService 
         this._currentTestScore = this._userTestsInfoService.getTestScore(this._currentTest.id);
+        this.updateProgressBar();
         // Subscribe to the changes of the score hold in the _userTestsInfoService
         this._scoreChangeSubscription = this._userTestsInfoService.scoreChange.subscribe((newScore) => { 
             this._currentTestScore = newScore; 
+            this.updateProgressBar();
         });
 
         console.log("test ready! ",this._currentTest);
+    }
+
+
+    /**
+     * Update color and value of the Progress Bar when the test's socore is updated
+     */
+    updateProgressBar(){
+        console.log('UPDATE PROGRESS BAR: _currentTestScore in test-details',this._currentTestScore);
+
+        if (this._currentTestScore <= 35)
+          this._typeProgressBar = 'warning';
+        else if (this._currentTestScore <= 65)
+          this._typeProgressBar = 'info';
+        else
+          this._typeProgressBar = 'success';
     }
 
 

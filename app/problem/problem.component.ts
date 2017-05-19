@@ -232,10 +232,13 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         let currentConsoleOutput = this.problem.consoleOutput.replace(/\s+/g, '');
         let realConsoleOutput = this.problem.realOutput.replace(/\s+/g, '');
         
-        // check if the user solution output is correct and update the score
+        // console.log('currentConsoleOutput: ',currentConsoleOutput);
+        // console.log('realConsoleOutput: ',realConsoleOutput);
+
+        // check if the user solution output is correct and update the score of the current problem
         if(currentConsoleOutput == realConsoleOutput){
             console.log('Correct output!');
-            this._userTestsInfoService.updateScore(25);
+            this._userTestsInfoService.updateScore(this.problem);
         }
     }
 

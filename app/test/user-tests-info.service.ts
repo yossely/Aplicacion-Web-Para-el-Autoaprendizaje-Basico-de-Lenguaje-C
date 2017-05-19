@@ -3,6 +3,7 @@ import { Subject } from 'rxjs/Rx';
 
 import { TestsService } from '../test/tests.service';
 import { Test } from '../data_structure/test';
+import { Problem } from '../data_structure/problem';
 import { UserProgressService } from '../lessons/user-progress.service'
 
 
@@ -38,24 +39,31 @@ export class UserTestsInfoService{
     }
 
     /**
-     * Update the score of the current test
+     * Update the score of the current test based on the points of the problem solved
      * 
-     * @param {number} points Points to be added in the current test score
+     * @param {Problem} currentProblem Current problem solved
      */
-    public updateScore( points: number){
+    public updateScore( currentProblem: Problem){
 
-        let newScore: number;
-        let testId = this._userProgressService.getCurrentTestId();
+        /* Emit the new score of the test after adding the points indicated only if it's
+            the first time that the user completes the problem */
+        if (!currentProblem.completed) {
 
-        this._currentUserTestsInfo.filter( test => (test.id == testId))
+            let newScore: number;
+            let testId = this._userProgressService.getCurrentTestId();
+            
+            this._currentUserTestsInfo.filter( test => (test.id == testId))
                                   .map( test => {
-                                        test.userScore += points;
+                                        test.userScore += currentProblem.points;
                                         newScore = test.userScore;
                                         return test;
                                     });
-
-        /* New score of the test after adding the points indicated */
-        this.scoreChange.next(newScore);
+            
+            console.log('change problem property completed');
+            currentProblem.completed = true;
+            this.scoreChange.next(newScore);
+        }
+        
     }
 
     /**

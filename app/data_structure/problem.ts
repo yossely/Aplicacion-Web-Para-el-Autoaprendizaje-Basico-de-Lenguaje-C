@@ -5,5 +5,8 @@ export interface Problem {
     consoleId: string;
     consoleOutput: string;
     expectedOutput: string;
+    // To evaluate the problem of a test
     realOutput: string;
+    points: number;
+    completed: boolean;
 }
