@@ -1,0 +1,49 @@
+/* Editor */
+
+.code-editor {
+    background-color: #E4FDE1;
+    font-size: 14px;
+    margin: 10px 0px 0px 0px;
+    height: 365px;
+    width: 113%;
+}
+
+
+.btn-run-code {
+
+    font-size: 16px;
+    font-weight: bold;
+    position:absolute;
+    z-index:10;
+    margin-top: 20px;
+    margin-left: 98%;
+
+    &:after {
+        font-family: 'fontawesome';
+        content: "\f04b";   
+        margin-left: 5px;
+        padding-right: 0px;
+    }
+}
+
+
+.btn-compiling-code {
+
+    font-size: 16px;
+    font-weight: bold;
+    position:absolute;
+    z-index:10;
+    margin-top: 20px;
+    margin-left: 90%;
+}
+
+
+.btn-reset-code {
+
+    font-size: 16px;
+    font-weight: bold;
+    position:absolute;
+    z-index:10;
+    margin-top: 42%;
+    margin-left: 104%;
+}

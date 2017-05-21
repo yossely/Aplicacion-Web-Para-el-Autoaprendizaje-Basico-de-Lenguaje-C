@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-home navbar-fixed-top center">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" [routerLink]="['/']">
+				<img class="logo" alt="AprendaC" src="assets/img/logo-name.svg">
+			</a>
+		</div>
+
+		<div class="navbar-inner">
+			<div class="container center">				    
+				<a type="button" [routerLink]="['/unit/1/lesson/1']" class="btn btn-green btn-green-navbar navbar-btn pull-right">Comenzar</a>
+				<ul class="nav navbar-nav pull-right">
+					<li><a [routerLink]="['/home']" [routerLinkActive]="['current']" >Inicio</a></li>
+					<li><a [routerLink]="['/content']" [routerLinkActive]="['current']" >Contenido</a></li>
+					<li><a [routerLink]="['/about']" [routerLinkActive]="['current']" >Acerca de Lenguaje C</a></li>
+			    </ul>
+			</div>
+	    </div>
+		
+	</div>
+</nav>

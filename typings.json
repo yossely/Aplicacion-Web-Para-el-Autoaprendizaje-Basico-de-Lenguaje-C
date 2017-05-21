@@ -1,7 +1,11 @@
 {
-  "globalDevDependencies": {
+  "globalDependencies": {
     "ace": "registry:dt/ace#0.0.0+20160630235124",
-    "bootstrap": "registry:dt/bootstrap#3.3.5+20160619023404",
-    "jquery": "registry:dt/jquery#1.10.0+20160704162008"
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "node": "registry:dt/node#6.0.0+20160909174046"
+  },
+  "dependencies": {
+    "express": "registry:npm/express#4.14.0+20160925001530"
   }
 }

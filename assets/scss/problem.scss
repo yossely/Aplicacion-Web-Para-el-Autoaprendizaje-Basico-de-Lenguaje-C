@@ -1,0 +1,151 @@
+@import "variables";
+@import "./problem/data_table";
+@import "./problem/editor";
+@import "./problem/console";
+@import "./problem/tips";
+@import "./problem/expected_output_console";
+@import "./problem/problem_solution_steps";
+
+$color_explanation: #5DA7A6;
+$color_explanation_darker: #4A8685;
+$color_lightGrayDarker: #C3C1C0;
+$color_olive: #AA8800;
+
+$color_exercise_continue_box: #E1E6E2;
+$color_circle_exercise_number: #808080;
+
+$color_expected-output-tab: #883044;
+
+$color_comments_editor: #7D7B7B;
+
+/* Problem data */
+.problem-data-box {
+    background-color: $color_3Aquamarine;
+    border: 2px solid $color_1NavyBlue;
+    margin: 10px 10px 10px 20px;
+    color: $color_black;
+    padding-right: 0px;
+
+    h3 {
+        font-family: $font_title;
+        font-size: 28px;
+        text-align: center;
+        color: $color_black;
+        margin-top: 10px;
+    }
+
+    pre {
+        font-family: $font_main;
+        font-size: 18px;
+        
+        height: 264px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        width: 410px;
+        white-space: pre-line;
+        background: none;
+        border: none;
+
+        .key_words {
+            color: $color_olive;
+            font-weight: bold;
+        }
+    }
+
+    pre.long-text{
+        height: 593px;
+    }
+}
+
+/* hr used as separator line between statement and data table*/
+hr {
+    border: 0;
+    height: 2px;
+    margin: 0;
+    margin-top: 10px;
+    background: #333;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from($color_lightGrayDarker), to($color_lightGrayDarker), color-stop(50%, #646262));
+}
+
+
+.problem-code-box {
+    padding-left: 15px;
+}
+
+
+/* Tips and Expected Output box that holds each tab */
+.tips-output-box {
+    width: 120%;
+    display: inline-flex;
+
+    h4 {
+        width: 15%;
+        margin: 0px;
+        font-family: $font_title;
+        font-size: 20px;
+        font-weight: bold;
+        color: $color_white;
+        margin-bottom: 8px;
+    }
+
+    ul {
+        margin-left: 72%;
+        list-style: none;
+        margin-bottom: 0px;
+    }
+
+    li {
+        height: auto;
+        width: auto;
+        display: inline-block;
+        
+        border-top-right-radius: 15%;
+        border-top-left-radius: 15%;
+        
+        &.tips {
+            background-color: $color_2DarkCyan;
+            &:hover {
+                background-color: #026673;
+            }
+            img {
+                width: 20px;
+            }
+        }
+    
+        &.expected-output {
+            margin-left: 5px;
+            background-color: $color_expected-output-tab;
+            &:hover {
+                background-color: #6D2636;
+            }
+            img {
+                width: 30px;
+            }
+            
+        }
+
+        &.expected-output-on {
+            background-color: #6D2636;
+        }
+
+        img {
+            height: 20px;
+            margin: 5px;
+        }
+    }
+
+    a {
+        font-family: $font_title;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+:host /deep/ .code-editor {
+    .ace_comment{
+        color: $color_comments_editor;
+    }
+}

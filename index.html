@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Angular 2 routing expects you to have a base element 
+        This element enables the HTML 5 history.pushState api that let’s Angular 2 provide “HTML5 style” 
+        URLs (as opposed to using # prefixed ones)
+    -->
+    <base href="/">
+
+    <title>AprendaC 2.0</title>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    
+    <!-- Icon con browser tab -->
+    <link rel="shortcut icon" href="assets/img/logoIcon.ico"/>
+    
+    <!-- Bootstrap to use it with ng2-bootstrap node module -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font-awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Tooltips library -->
+    <link rel="stylesheet" href="node_modules/hint.css/hint.min.css">
+
+    <!-- Prismjs Syntax Highligthr -->
+    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-coy.css">
+
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
+</head>
+<!-- 3. Display the application -->
+<body>
+    <my-app>Loading...</my-app>
+
+
+    <!-- Bootstrap jquery and tab.js -->
+    <script src="assets/js/bootstrap/jquery-2.2.4.js"></script>
+    <script src="assets/js/bootstrap/tab.js"></script>
+    
+    <!-- Ace editor -->
+    <!-- <script src="assets/js/ace-editor/ace.js"></script> -->
+
+    <!-- Tips -->
+    <!-- <script src="assets/js/bootstrap/tooltip.js"></script>
+    <script src="assets/js/bootstrap/carousel.js"></script>
+    <script src="assets/js/bootstrap/popover.js"></script> -->
+    <!-- <script src="assets/js/tips.js"></script> -->
+</body>
+</html>

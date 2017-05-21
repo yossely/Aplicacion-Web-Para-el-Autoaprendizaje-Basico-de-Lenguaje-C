@@ -1,0 +1,85 @@
+@import "variables";
+
+$light_gray: #999999;
+$light_green: #5fd35f;
+
+
+.navbar-inverse {
+	background-color: $color_1NavyBlue;
+	border-color: $color_1NavyBlue;
+}
+
+
+.progressbar {
+	counter-reset: step;
+	width: 80%;
+	margin-top: 10px;
+
+	li {
+		list-style-type: none;
+		width: 5.55%;
+		float: left;
+		font-family: $font_title;
+		font-size: 13px;
+		font-weight: bold;
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		color: $light_gray;
+
+		/* Circles */
+		&:before {
+			width: 25px;
+			height: 25px;
+			content: counter(step);
+			counter-increment: step;
+			line-height: 23px;
+			border: 2px solid $color_3Aquamarine;
+			display: block;
+			text-align: center;
+			margin: 0 auto 10px auto;
+			border-radius: 50%;
+			background-color: $color_3Aquamarine;
+		}
+
+		/* Lines */
+		&:after {
+			width: 100%;
+			height: 2px;
+			content: '';
+			position: absolute;
+			top: 12px;
+			left: -50%;
+			z-index: -1;
+			border-top: 2px dashed $color_3Aquamarine;
+		}
+
+		&:first-child:after {
+			content: none;
+		}
+
+		/* Circle on completed lesson */
+		&.completed:before {
+			content: url('assets/img/check-round.svg');
+			background-color: $color_2DarkCyan;
+		}
+
+		/* Circle con current lesson */
+		&.current:before {
+			content: url('assets/img/arrow-current.svg');
+			background-color: $light_green;
+		}
+
+		&.completed + li:after {
+			border-top: 2px dashed $color_2DarkCyan;
+		}
+
+		> a {
+		    position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.problem-steps-solution{
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+
+    i{
+        cursor: pointer;
+        margin-top: 80px;
+    }
+
+    label{
+        color: $color_2DarkCyan;
+        font-family: $font_title;
+        font-size: 26px;
+        font-weight: 700;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+}
+
+.step-content{
+    color: $color_black;
+    font-family: $font_main;
+    font-size: 18px;
+    height: 264px;
+    margin-right: -15px;
+    overflow-y: auto;
+}

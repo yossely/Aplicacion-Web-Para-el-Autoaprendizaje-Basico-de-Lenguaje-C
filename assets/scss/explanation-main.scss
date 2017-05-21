@@ -1,0 +1,190 @@
+@import "variables";
+
+/*----------------------------------- LOCAL VARIABLES ON -----------------------------------*/
+
+$table_body_background: #eeeeee;
+$table_body_font_color: #6f6f6f;
+
+/*----------------------------------- LOCAL VARIABLES OFF ----------------------------------*/
+
+/*--------------------------- EXPLANATION NAVIGATION BUTTONS ON ----------------------------*/
+
+/*----------------- NEXT-PREVIOUS BUTTONS -----------------*/
+
+/* General button style (reset) */
+.btn-explanation {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-explanation:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn-explanation:before {
+    font-family: 'fontawesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-arrow-right:before {
+    content: "\f061";   
+}
+
+.icon-arrow-left:before {
+    content: "\f060";   
+}
+
+/* Button explanation */
+.btn-explanation {
+    border-radius: 50px;
+    border: 3px solid #fff;
+    color: #fff;
+    overflow: hidden;
+    margin-top: 70%;
+}
+
+.btn-explanation:active {
+    border-color: $color_1NavyBlue;
+    color: $color_1NavyBlue;
+}
+
+.btn-explanation:hover {
+    background: $color_explanation_darker;
+}
+
+.btn-explanation:before {
+    position: absolute;
+    height: 100%;
+    font-size: 125%;
+    line-height: 3.5;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-explanation:active:before {
+    color: $color_1NavyBlue;
+}
+
+
+/* Button -NEXT */
+.btn-explanation-next:before {
+    left: 70%;
+    opacity: 0;
+    top: 0;
+}
+
+.btn-explanation-next:hover:before {
+    left: 80%;
+    opacity: 1;
+}
+
+/* Button -PREVIOUS */
+.btn-explanation-previous:before {
+    left: 30%;
+    opacity: 0;
+    top: 0;
+}
+
+.btn-explanation-previous:hover:before {
+    left: 10%;
+    opacity: 1;
+}
+
+
+/* Navigate to the next section box */
+.nav-explanations {
+    background-color: $color_1NavyBlue;
+    margin-top: 30px;
+    width: 80%;
+}
+
+/*--------------------------- EXPLANATION NAVIGATION BUTTONS OFF ---------------------------*/
+
+/*------------------------------- EXPLANATION CONTENT BOX ON --------------------------------*/
+
+:host /deep/ .explanation-content-box{
+    padding: 20px 10px 20px 40px;
+
+    p, ul {
+        font-family: $font_main;
+        font-size: 22px;
+    }
+
+    table {
+        font-family: $font_main;
+        font-size: 20px;
+        margin: 15px;
+
+        th {
+            background-color: $color_green;
+            color: $color_white;
+            padding: 10px 15px;
+        }
+        td {
+            background-color: $table_body_background;
+            color: $table_body_font_color;
+            padding: 5px 15px;
+        }
+    }
+
+    pre {
+        height: auto;
+        display: inline-block; /* To make width no longer than its content  */
+        font-size: 16px;
+        width: 100%;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font_title;
+    }
+
+    blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+    }
+    blockquote p {
+        display: inline;
+    }
+}
+/*------------------------------- EXPLANATION CONTENT BOX OFF -------------------------------*/

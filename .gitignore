@@ -1,2 +1,12 @@
 /node_modules
 /typings
+npm-debug.log
+/assets/css/*.css
+/app/**/*.js
+/app/**/*.js.map
+/*.js
+/*.js.map
+
+/user_code_folder/user_code.c
+/user_code_folder/user_code_compiled.js
+/user_code_folder/user_code_compiled.js.mem

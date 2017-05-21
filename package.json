@@ -1,10 +1,20 @@
 {
   "name": "aprendac",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Herramienta para el autoaprendizaje basico del lenguaje de programacion C bajo un ambiente web",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "typings install",
+    "typings": "typings",
+    "start:dev": "npm run dev:all && concurrently \"npm run watch:scss\" \"npm run watch:tsc\" \"lite-server -c ./app/bs-config.json\" \"nodemon ./server.js --ignore user_code_folder\" ",
+    "dev:all": "npm run dev:scss && npm run dev:tsc",
+    "dev:tsc": "tsc",
+    "watch:tsc": "nodemon --ext ts -x \"npm run dev:tsc\"",
+    "dev:scss": "node-sass --indent-type space --indent-width 4 -r assets/scss/ -o assets/css/",
+    "watch:scss": "nodemon --ext scss -x \"npm run dev:scss\"",
+    "build:all": "npm run build:tsc && npm run build:scss",
+    "build:tsc": "echo \"Compile and minify the ts files\"",
+    "build:scss": "node-sass --output-style compressed assets/scss -o assets/css"
   },
   "repository": {
     "type": "git",
@@ -24,15 +34,40 @@
     "url": "https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C/issues"
   },
   "homepage": "https://github.com/yossely/Aplicacion-Web-Para-el-Autoaprendizaje-Basico-de-Lenguaje-C#readme",
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
+    "@angular/upgrade": "2.0.0",
+    "angular2-in-memory-web-api": "0.0.20",
+    "body-parser": "^1.16.0",
+    "bootstrap": "^3.3.6",
+    "buffer": "^5.0.1",
+    "core-js": "^2.4.1",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "hint.css": "^2.5.0",
+    "jsonfile": "^2.4.0",
+    "marked": "^0.3.6",
+    "nedb": "^1.8.0",
+    "ng2-ace-editor": "^0.1.3",
+    "ng2-bootstrap": "^1.1.16",
+    "prismjs": "^1.6.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "^5.2.0",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.23"
+  },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.6",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.13.6",
-    "gulp-webserver": "^0.9.1",
-    "hint.css": "^2.3.1",
-    "typings": "^1.3.1"
+    "concurrently": "^2.2.0",
+    "hjson": "^2.4.1",
+    "lite-server": "^2.2.2",
+    "node-sass": "^3.13.0",
+    "typings": "^1.3.2"
   }
 }
