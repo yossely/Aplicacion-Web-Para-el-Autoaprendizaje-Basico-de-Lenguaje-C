@@ -27,6 +27,12 @@ export class UserProgressService {
 
 
     constructor(){
+        /* Initialize values to handle future conditions */
+        this._previousUnitId    = 0;
+        this._previousLessonId  = 0;
+        this._currentUnitId     = 0;
+        this._currentLessonId   = 0;
+        this._currentTestId     = 0;
     }
 
     /**
@@ -100,6 +106,7 @@ export class UserProgressService {
         if (this._isCurrentStepATest) {
             this._isCurrentStepATest = false;
             this._isPreviousStepATest = true;
+            this._currentTestId = 0;
         }else{
             this._isPreviousStepATest = false;
         }
@@ -136,12 +143,6 @@ export class UserProgressService {
      * Update current user's progress based on the new step and the previous step
      */
     updateProgress(){
-
-        // console.log('this._previousUnitId: ',this._previousUnitId);
-        // console.log('this._previousLessonId: ',this._previousLessonId);
-        // console.log('this._currentUnitId: ',this._currentUnitId);
-        // console.log('this._currentLessonId: ',this._currentLessonId);
-        // console.log('this._currentTestId: ',this._currentTestId);
         
         /* This means that the user is currently on a test */
         if (this._currentUnitId==0 && this._currentLessonId==0) {
@@ -209,20 +210,27 @@ export class UserProgressService {
 
 
     /**
-     * Set the router link for the next lesson based on the current lesson
+     * Set the router link for the next step based on the current step
      */
     setNextStepRouterLink(){
-        var currentLessonIndex = this._currentUserProgress.findIndex( lesson => lesson.unitId == this._currentUnitId && lesson.lessonId == this._currentLessonId );
+
+        var currentStepIndex: number;
+
+        /* The user is currently on a test, so look for the index where the test is located */
+        if (this._currentTestId !== 0)
+            currentStepIndex = this._currentUserProgress.findIndex( step => step.testId == this._currentTestId );
+        else /* The user is currently on a lesson, so look for the index where the lesson is located */
+            currentStepIndex = this._currentUserProgress.findIndex( step => step.unitId == this._currentUnitId && step.lessonId == this._currentLessonId );
 
         /* Indicate if a test comes after the current lesson and set the correct router link for it */
-        if (this._currentUserProgress[currentLessonIndex+1].isTest) {
+        if (this._currentUserProgress[currentStepIndex+1].isTest) {
             this._isTestNext = true;
-            this._nextTestId = this._currentUserProgress[currentLessonIndex+1].testId;
+            this._nextTestId = this._currentUserProgress[currentStepIndex+1].testId;
             this._nextLessonRouterLink = '/test/' + this._nextTestId;
         }
         else{
             this._isTestNext = false;   
-            if(currentLessonIndex == this._currentUserProgress.length-1){
+            if(currentStepIndex == this._currentUserProgress.length-1){
                 this._isCurrentLessonLast = true;
                 /**
                  * TODO:
@@ -232,17 +240,12 @@ export class UserProgressService {
             }
             else{
                 this._isCurrentLessonLast = false;
-                this._nextLessonRouterLink = '/unit/' + this._currentUserProgress[currentLessonIndex+1].unitId 
-                                            + '/lesson/' + this._currentUserProgress[currentLessonIndex+1].lessonId;
+                this._nextLessonRouterLink = '/unit/' + this._currentUserProgress[currentStepIndex+1].unitId 
+                                            + '/lesson/' + this._currentUserProgress[currentStepIndex+1].lessonId;
             }
         }
-
-        // console.log('_currentUserProgress: ',this._currentUserProgress, ' currentLessonIndex ',currentLessonIndex);
-        /* Check if the user is on a test */
-        /*if (this._currentUserProgress[currentLessonIndex].isTest)
-            this._isCurrentStepATest = true;*/
         
-        // console.log('next lesson url: ',this._nextLessonRouterLink);
+        // console.log('next step url: ',this._nextLessonRouterLink);
     }
 
     isOnTest(){
@@ -313,6 +316,34 @@ export class UserProgressService {
      */
     public getCurrentTestId(): number{
         return this._currentTestId;
+    }
+
+
+    /**
+     * Unlock Forward Lessons (Lessons ahead of the current test)
+     */
+    public unlockForwardLessons(){
+
+        /* Get current test index */
+        let currentTestIndex: number = this._currentUserProgress
+                                           .findIndex( step => step.testId == this._currentTestId );
+
+        /* Get next test index */
+        let nextTestIndex: number =  this._currentUserProgress
+                                           .findIndex( step => {
+                                                           return (step.isTest == true && step.testId > this._currentTestId);
+                                                       }); 
+
+        /* if there is a next test, unlock the lessons between the current and the next test */
+        if (nextTestIndex) {
+            this._currentUserProgress.map( (step, index) => {
+                if (index > currentTestIndex && index < nextTestIndex)
+                    step.isBlocked = false;
+
+                return step;
+            });
+        }
+        // console.log('_currentUserProgress changed: ', this._currentUserProgress);
     }
 
 }

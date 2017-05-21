@@ -45,7 +45,7 @@ export class UserProgressComponent implements OnInit, OnDestroy{
     ngOnInit(){
         this.route.params.subscribe( params => {
 
-            console.log('params: ',params);
+            // console.log('params: ',params);
 
             if (params['id_unit'])
                 this._userProgressService.updateUnitLessonIds(+params['id_unit'], +params['id_lesson']);

@@ -91,7 +91,7 @@ export class TestDetailsComponent implements OnInit{
             this.updateProgressBar();
         });
 
-        console.log("test ready! ",this._currentTest);
+        // console.log("test ready! ",this._currentTest);
     }
 
 
@@ -99,7 +99,7 @@ export class TestDetailsComponent implements OnInit{
      * Update color and value of the Progress Bar when the test's socore is updated
      */
     updateProgressBar(){
-        console.log('UPDATE PROGRESS BAR: _currentTestScore in test-details',this._currentTestScore);
+        // console.log('UPDATE PROGRESS BAR: _currentTestScore in test-details',this._currentTestScore);
 
         if (this._currentTestScore <= 35)
           this._typeProgressBar = 'warning';
@@ -107,6 +107,11 @@ export class TestDetailsComponent implements OnInit{
           this._typeProgressBar = 'info';
         else
           this._typeProgressBar = 'success';
+
+        /* Unlock forward lessons if the user gets 65 points or more in the current test score */
+        if (this._currentTestScore >= 65)
+            this._userProgressService.unlockForwardLessons();
+        
     }
 
 
