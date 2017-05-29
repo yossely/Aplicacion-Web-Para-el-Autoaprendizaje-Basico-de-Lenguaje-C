@@ -16,6 +16,24 @@
 				<a class="fill-div"
 				   [routerLink]="lesson.isBlocked ? [] : ['/unit', unit._id, 'lesson', lesson._id]"></a>
 			</div>
+			<div class="row" *ngIf="unit._id == 3 || unit._id == 4">
+				<div class="test intermediate-test">
+					<a [routerLink]="['/test', testDisplay[unit._id].id]">
+						<img src="assets/img/star-test.svg" alt="parcial">
+						<h1>{{testDisplay[unit._id].title}}</h1>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="test final-test">
+					<a [routerLink]="['/test', testDisplay[5].id]">
+						<img src="assets/img/star-test.svg" alt="parcial">
+						<h1>{{testDisplay[5].title}}</h1>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

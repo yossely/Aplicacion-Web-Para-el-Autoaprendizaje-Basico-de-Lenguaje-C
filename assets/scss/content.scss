@@ -4,78 +4,124 @@ $light-gray: #ececec;
 $dark-gray: gray;
 
 .unit {
-	margin-bottom: 30px;	
+    margin-bottom: 30px;    
 
-	h1 {
-		font-family: $font_title;
-		font-size: 24px;
-		font-weight: bold;
-		color: $color_5Magenta;
-		margin-left: 10px;
-	}
+    h1 {
+        font-family: $font_title;
+        font-size: 24px;
+        font-weight: bold;
+        color: $color_5Magenta;
+        margin-left: 10px;
+    }
 
 }
 
 .lesson {
 
-	background-color: $light-gray;
-	margin: 5px 10px;
-	position: relative;
+    background-color: $light-gray;
+    margin: 5px 10px;
+    position: relative;
 
-	& > div[class*="col-"] {
-		padding-right: 0px;
-		padding-left: 10px;
-		padding-top: 5px;
-	}
+    & > div[class*="col-"] {
+        padding-right: 0px;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
 
-	p {
-		font-family: $font_main;
-		font-size: 17px;
-	}
+    p {
+        font-family: $font_main;
+        font-size: 17px;
+    }
 
-	p.lesson-number {
-		font-family: $font_main;
-		font-weight: 600;
-	}
+    p.lesson-number {
+        font-family: $font_main;
+        font-weight: 600;
+    }
 
-	&.unlocked {
+    &.unlocked {
 
-		&:hover {
-			background-color: $color_2DarkCyan;
-			& > div > p {
-				color: $color_white;
-			}
-		}
+        &:hover {
+            background-color: $color_2DarkCyan;
+            & > div > p {
+                color: $color_white;
+            }
+        }
 
-		p {
-			color: $color_black;
-		}
+        p {
+            color: $color_black;
+        }
 
-		p.lesson-number {
-			color: $color_1NavyBlue;
-		}
-	}
+        p.lesson-number {
+            color: $color_1NavyBlue;
+        }
+    }
 
-	&.blocked {
-		/* Remove pointer on blocked lessons */
-		pointer-events: none;
-	    cursor: default;
+    &.blocked {
+        /* Remove pointer on blocked lessons */
+        pointer-events: none;
+        cursor: default;
 
-		p {
-			color: $dark-gray;
-		}
+        p {
+            color: $dark-gray;
+        }
 
-		p.lesson-number {
-			color: $dark-gray;
-		}
-	}
+        p.lesson-number {
+            color: $dark-gray;
+        }
+    }
 }
 
 /* Make div row lesson clickable */
 a.fill-div {
     position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Create tests' stars in the middle of the units */
+.test{
+    text-align: center;
+
+    a {
+        min-width: 50px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1 {
+        margin-top: 0px;
+        color: $color_1NavyBlue;
+        display: inline-block;;
+    }
+
+    &.intermediate-test {
+        img {
+            width: 80px;
+            height: 80px;
+        }        
+    }
+
+    &.final-test {
+        margin-top: 100px;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        h1 {
+            font-family: $font_title;
+            font-size: 30px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    }
 }

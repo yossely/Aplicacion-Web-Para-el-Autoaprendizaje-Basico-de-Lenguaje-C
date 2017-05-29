@@ -28,6 +28,8 @@ export class ContentComponent implements OnInit, OnDestroy{
     isLoading: boolean = true;
     errorMsg: string = '';
 
+    testDisplay = [];
+
     constructor(
         private _unitsService:UnitsService,
         private route: ActivatedRoute,
@@ -36,6 +38,9 @@ export class ContentComponent implements OnInit, OnDestroy{
     ){}
 
     ngOnInit(){
+        /* Initialize the tests' information to render them in the middle of the units */
+        this.initializeTestDisplay();
+
 
         /**
          * Initialize current user progress only if it has not been initialized before and use it to
@@ -61,7 +66,30 @@ export class ContentComponent implements OnInit, OnDestroy{
             // If the user progress has already been initialized, get the content info
             this.getContentInfo();
 
-        
+    }
+
+    /**
+     * Set the tests' info in the testDisplay property in order to display the tests in the middle
+     * of the units in the content page
+     */
+    initializeTestDisplay(){
+
+        this.testDisplay = [
+            {},{},{},
+            {
+                id: 1,
+                title: 'Parcial I'
+            },
+            {
+                id: 2,
+                title: 'Parcial II'
+            }
+            ,
+            {
+                id: 3,
+                title: 'Parcial III'
+            }
+        ];
     }
 
     /**
