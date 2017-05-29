@@ -1618,7 +1618,7 @@
             {
                 "_id": 3,
                 "title": "Ciclos: for",
-                "content": "Estructura del ciclo for. Significado de cada una de sus sentencias. ¿Cuándo y cómo utilizarlo?",
+                "content": "Estructura del ciclo for. Significado de cada una de las sentencias en la declaración del for. Aprender a reconocer ¿Cuándo y cómo utilizarlo?",
                 "explanation": '''
                                El último ciclo de lenguaje C se denomina `for` y su estructura es la siguiente:
                                ```c
