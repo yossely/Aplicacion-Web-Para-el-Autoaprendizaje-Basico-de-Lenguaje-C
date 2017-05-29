@@ -79,7 +79,7 @@
                              Entre 351 y 590 | *ACEPTABLE*
                              Entre 591 y 750 | *RIESGO*
                              
-                             Durante un periodo de trabajo de la caldera, un operador toma **dos lecturas** de la presión, cada cierto tiempo, es decir varias veces. Considerando que el control no sea necesario siempre, por estar la caldera en mantenimiento, diseñe un programa para:
+                             Durante un periodo de trabajo de dos (2) días en la caldera, un operador toma **dos lecturas** de la presión, cada cierto tiempo, es decir varias veces. Considerando que el control no sea necesario siempre, por estar la caldera en mantenimiento, diseñe un programa para:
                              
                               1. Calcular, cada vez que el operador tome las dos lecturas, la presión promedio, y de acuerdo a la escala anterior **emitir la situación correspondiente** del recipiente.
                               2. Calcular el **porcentaje de veces**, que la situación se mantuvo en situación **Moderada**.
@@ -97,6 +97,7 @@
                         }
                         ''',
                 "expectedOutput": ''' 
+                                  > día 1
                                   > lectura 1: 179.2
                                   > lectura 2: 160.3
                                   > 
@@ -109,8 +110,9 @@
                                   > 
                                   > MODERADA
                                   > 
-                                  > ¿existe otra lectura? 1:Si  2:No: 1
+                                  > ¿existe otra lectura? 1:Si  2:No: 0
                                   > 
+                                  > día 2
                                   > lectura 1: 630.4
                                   > lectura 2: 723.4
                                   > 
@@ -130,6 +132,7 @@
                                   > En la lectura 3 se registra la mayor presión promedio de RIESGO de 676.90
                                   ''',
                 "realOutput": ''' 
+                                  > día 1
                                   > lectura 1: 
                                   > lectura 2: 
                                   > 
@@ -144,6 +147,7 @@
                                   > 
                                   > ¿existe otra lectura? 1:Si  2:No: 
                                   > 
+                                  > día 2
                                   > lectura 1: 
                                   > lectura 2: 
                                   > 
@@ -270,13 +274,13 @@
                              Una Institución de Educación Superior tiene sus 68 aulas de clase, distribuidas en tres edificios, identificados con las letras A, B y C. En cada edificio hay un número diferentes de aulas, identificadas con un número, cada una con una capacidad distinta, medida en puestos, y con un área diferente, medida en metros cuadrados. Esa información debe ser almacenada en arreglos unidimensionales (Vectores) paralelos, de tal forma que se puedan trabajar como se muestra, por ejemplo, en el esquema siguiente:
 
                              ![Organización de las aulas de un edificio](assets/img/test2-exercise1.svg "Organización de las aulas de un edificio")
-                             
+
                              Complete el siguiente programa en lenguaje C, para: 
-                             
+
                               1. Calcular la **capacidad total**, en puestos, **de cada edificio**.
-                              2. Crear un **nuevo vector** con la relación (**metros cuadrados / alumno**), para **cada** una de las **aulas**. 
-                              3. Identificar, mediante el número y el edificio, **el aula o las aulas**, de **mayor capacidad de puestos**.
-                              4. Permitir la consulta de la capacidad de un aula, cuyo edificio y número de aula sean datos suministrados por el usuario. Primero se debe solicitar la identificación del edificio y validar el dato de entrada, para luego verificar la existencia o no del aula.
+                              2. Identificar, mediante el número y el edificio, **el aula o las aulas**, de **mayor capacidad de puestos**.
+                              3. Crear un **nuevo vector** con la relación (**metros cuadrados/puestos**), para **cada una** de las aulas y **mostrar** el aula o las aulas de **mayor relación**. 
+                              4. Permitir la consulta de la relación (**metros cuadrados/puestos**) de un aula, cuyo edificio y número de aula sean datos suministrados por el usuario. Primero se debe solicitar la identificación del edificio y validar el dato de entrada, para luego verificar la existencia o no del aula.
                              ''',
                 "code": '''
                         /* Code Test II - Problem 1 */
@@ -316,7 +320,14 @@
                                   > puestos en edificio A: 955
                                   > puestos en edificio B: 958
                                   > puestos en edificio C: 896
-                                  > la mayor capacidad registrada es: 1.74 en la(s) siguiente(s) aula(s): 
+                                  > la mayor cantidad de puestos registrada es: 45 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #7 del edificio A
+                                  >   -aula #1 del edificio B
+                                  >   -aula #21 del edificio A
+                                  >   -aula #17 del edificio A
+                                  >   -aula #17 del edificio C
+                                  >   -aula #8 del edificio A
+                                  > la mayor relación registrada es: 1.74 en la(s) siguiente(s) aula(s): 
                                   >   -aula #6 del edificio B
                                   >   -aula #18 del edificio C
                                   >   -aula #7 del edificio C
@@ -329,7 +340,14 @@
                                   > puestos en edificio A: 955
                                   > puestos en edificio B: 958
                                   > puestos en edificio C: 896
-                                  > la mayor capacidad registrada es: 1.74 en la(s) siguiente(s) aula(s): 
+                                  > la mayor cantidad de puestos registrada es: 45 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #7 del edificio A
+                                  >   -aula #1 del edificio B
+                                  >   -aula #21 del edificio A
+                                  >   -aula #17 del edificio A
+                                  >   -aula #17 del edificio C
+                                  >   -aula #8 del edificio A
+                                  > la mayor relación registrada es: 1.74 en la(s) siguiente(s) aula(s): 
                                   >   -aula #6 del edificio B
                                   >   -aula #18 del edificio C
                                   >   -aula #7 del edificio C
