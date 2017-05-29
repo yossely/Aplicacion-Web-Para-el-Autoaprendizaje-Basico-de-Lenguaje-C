@@ -1,6 +1,7 @@
 @import "variables";
 
 $light-gray: #ececec;
+$dark-gray: gray;
 
 .unit {
 	margin-bottom: 30px;	
@@ -13,20 +14,10 @@ $light-gray: #ececec;
 		margin-left: 10px;
 	}
 
-	p {
-		font-family: $font_main;
-		font-size: 17px;
-		color: $color_black;
-	}
-
-	p.lesson-number {
-		font-family: $font_main;
-		font-weight: 600;
-		color: $color_1NavyBlue;
-	}
 }
 
 .lesson {
+
 	background-color: $light-gray;
 	margin: 5px 10px;
 	position: relative;
@@ -37,9 +28,46 @@ $light-gray: #ececec;
 		padding-top: 5px;
 	}
 
-	&:hover {
-		background-color: $color_2DarkCyan;
-		& > div > p {color: white;}
+	p {
+		font-family: $font_main;
+		font-size: 17px;
+	}
+
+	p.lesson-number {
+		font-family: $font_main;
+		font-weight: 600;
+	}
+
+	&.unlocked {
+
+		&:hover {
+			background-color: $color_2DarkCyan;
+			& > div > p {
+				color: $color_white;
+			}
+		}
+
+		p {
+			color: $color_black;
+		}
+
+		p.lesson-number {
+			color: $color_1NavyBlue;
+		}
+	}
+
+	&.blocked {
+		/* Remove pointer on blocked lessons */
+		pointer-events: none;
+	    cursor: default;
+
+		p {
+			color: $dark-gray;
+		}
+
+		p.lesson-number {
+			color: $dark-gray;
+		}
 	}
 }
 

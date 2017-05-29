@@ -7,6 +7,11 @@ import { Observable } from 'rxjs/Observable';
 import { UnitsService } from '../lessons/units.service';
 import { Unit } from '../data_structure/unit';
 
+
+import { Progress } from '../data_structure/progress';
+import { UserProgressService } from '../lessons/user-progress.service';
+
+
 // This component will render the content of the site, that means the units and their lessons
 
 @Component({
@@ -16,8 +21,7 @@ import { Unit } from '../data_structure/unit';
 export class ContentComponent implements OnInit, OnDestroy{
         
     unitsObs: any;
-
-    private selectedId: number;
+    progressObs: any;
 
     units: Unit[] = [];
     selectedUnit: Unit;
@@ -27,24 +31,68 @@ export class ContentComponent implements OnInit, OnDestroy{
     constructor(
         private _unitsService:UnitsService,
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private _userProgressService: UserProgressService
     ){}
 
     ngOnInit(){
-        this.unitsObs = this.route.params
-            .switchMap((params: Params) => {
-                this.selectedId = +params['id_unit'];
-                return this._unitsService.getAll();
-            }
-         ).subscribe(
-            u     => this.units = u,         // Happy path
-            error => this.errorMsg = error,  // Error path
-            ()    => this.isLoading = false  // onComplete
-        );
+
+        /**
+         * Initialize current user progress only if it has not been initialized before and use it to
+         * display the tests and the blocked lessons in the content page
+         */
+        if(!this._userProgressService.isProgressInitialized()) {
+
+            this.progressObs = this._unitsService
+                                   .getUnitIdLessonIdLessonTitle()
+                                   .subscribe(
+                                        progress => {
+                                            this._userProgressService.addNewLessonProgress(progress);
+                                        },                                // Happy path
+                                        error    => console.log('Error getting units in user progress component: ',error),      // Error path
+                                        ()       => {   // onComplete
+                                                        this._userProgressService.blockLessonsOnInit();
+                                                        this._userProgressService.updateProgress();
+                                                        // After having the user progress initialized, get the content info
+                                                        this.getContentInfo();
+                                                    }
+                                    );
+        }else
+            // If the user progress has already been initialized, get the content info
+            this.getContentInfo();
+
+        
     }
 
-    isSelected(unit: Unit){
-        return unit._id === this.selectedId;
+    /**
+     * Get the content information from the database through the unitsService
+     */
+    getContentInfo(){
+        this.unitsObs = this._unitsService.getAll()
+                        .subscribe(
+                            u     => this.initializeContent(u), // Happy path
+                            error => this.errorMsg = error,     // Error path
+                            ()    => this.isLoading = false     // onComplete
+                        );
+    }
+
+    /**
+     * Initialize Content based on the current user progress to display correctly the blocked lessons and the tests
+     * 
+     * @param {Unit[]} u  Units with its content to display
+     */
+    initializeContent(u: Unit[]){
+        let _currentUserProgressSteps: Array<Progress> = this._userProgressService.getCurrentUserProgressSteps();
+        
+        _currentUserProgressSteps.map(step => {
+
+            if (!step.isTest && step.isBlocked) {
+                // currentStepIndex = this._currentUserProgress.findIndex( step => step.unitId == this._currentUnitId && step.lessonId == this._currentLessonId );
+                u[step.unitId-1].lessons[step.lessonId-1]['isBlocked'] = true;
+            }
+        });
+        
+        this.units = u;
     }
 
     ngOnDestroy(){
