@@ -103,7 +103,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     setWindowCurrentProblemRef(){
         (<any>window).currentProblemRef = {
                 zone:                this._ngZone,
-                appendConsoleTextFn: (newValue) => this.appendConsoleText(newValue),
+                updateConsoleTextFn: (newValue) => this.updateConsoleText(newValue),
                 /*This property is for debug purposes*/
                 consoleId: this.problem.consoleId
             };
@@ -136,7 +136,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         // Variable to show the 'Compiling' message instead of the 'Run' button on the Ace Editor
         this.isCompiling = true;
 
-        var cCode = this._checkPrintfService.fixPrintfSentences(this.editor.getEditor().getValue());
+        var cCode = this._checkPrintfService.fixScanfSentences(this.editor.getEditor().getValue());
         
         this.compileCCodeSubscription = this._unitsService.compileCCode(cCode)
                                        .subscribe(
@@ -203,17 +203,17 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
 
     /**
-     * Append new text to the console text property of the current problem
+     * Update the text in the consoleOutput property of the current problem
      *
      * This method will be called outside the angular app, specifically in the module_configuration.js
      * 
-     * @param {string} newValue The new text to be appended at the end of the consoleOutput
+     * @param {string} newValue The new text of the consoleOutput
      */
-    appendConsoleText(newValue: string){
-        this.problem.consoleOutput += newValue;
+    updateConsoleText(newValue: string){
+        this.problem.consoleOutput = newValue;
 
         /* If the user is on a test, check if its output is correct */
-        if (this._userProgressService.isOnTest) {
+        if (this._userProgressService.isOnTest()) {
             this.checkOutput();
         }
         // console.log("this is the new output: ", this.problem.consoleOutput);

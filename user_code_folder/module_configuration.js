@@ -32,16 +32,16 @@ var Module = {
               consoleElement.value += newValue;
               consoleElement.scrollTop = consoleElement.scrollHeight; // focus on bottom
             }
-
+            
             /**
              * currentProblemRef is an object exposed in the problem component to be able to execute
-             * its appendConsoleTextFn function outside angular thanks to zone.run
+             * its updateConsoleTextFn function outside angular thanks to zone.run
              *
-             * The appendConsoleTextFn function receives the new text to be appended in the consoleOutput property,
+             * The updateConsoleTextFn function receives the new text of the consoleOutput property,
              * which render the proper output when navigating between sections tabs in a lesson
              */
             window.currentProblemRef.zone.run( () => {
-                                                    window.currentProblemRef.appendConsoleTextFn(newValue);
+                                                    window.currentProblemRef.updateConsoleTextFn(consoleElement.value);
                                                 });
         };
     })()
