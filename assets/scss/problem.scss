@@ -186,3 +186,28 @@ hr {
         color: $color_comments_editor;
     }
 }
+
+/* Solution feedback on test - Show message on correct or wrong solution */
+.solution-feedback{
+    position: absolute;
+    margin-left: 15%;
+    margin-top: -10%;
+}
+
+:host /deep/ .alert-wrong-exercise {
+    background-color: #D35F5F;
+    border-color: #873D3D;
+    color: $color_white;
+    font-family: $font_main;
+    font-size: 16px;
+    z-index: 999;
+}
+
+:host /deep/ .alert-exercise-correct {
+    background-color: #5FD35F;
+    border-color: #3D873D;
+    color: $color_white;
+    font-family: $font_main;
+    font-size: 16px;
+    z-index: 999;
+}

@@ -11,6 +11,8 @@ import { MarkdownParserService } from '../markdown/markdown-parser.service';
 import { UserProgressService } from '../lessons/user-progress.service';
 import { UserTestsInfoService } from '../test/user-tests-info.service';
 
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 import 'brace';
 import 'brace/theme/clouds';
 import 'brace/mode/c_cpp';
@@ -44,6 +46,9 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     currentStepIndex: number;
     isCurrentStepFirst: boolean;
     isCurrentStepLast: boolean;
+
+    /* Solution Feedback on test */
+    alerts: any = [];
 
     /**
      * @param {selector} 'editor' 
@@ -104,6 +109,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         (<any>window).currentProblemRef = {
                 zone:                this._ngZone,
                 updateConsoleTextFn: (newValue) => this.updateConsoleText(newValue),
+                checkOutputFn: () => this.checkOutput(),
                 /*This property is for debug purposes*/
                 consoleId: this.problem.consoleId
             };
@@ -212,10 +218,6 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     updateConsoleText(newValue: string){
         this.problem.consoleOutput = newValue;
 
-        /* If the user is on a test, check if its output is correct */
-        if (this._userProgressService.isOnTest()) {
-            this.checkOutput();
-        }
         // console.log("this is the new output: ", this.problem.consoleOutput);
     }
 
@@ -228,6 +230,10 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      */
     checkOutput(){
 
+        /* If the user is NOT on a test, do not check the solution */
+        if (!this._userProgressService.isOnTest())
+            return;
+
         // replace all the whitespaces from the user solution output and the real expected output
         let currentConsoleOutput = this.problem.consoleOutput.replace(/\s+/g, '');
         let realConsoleOutput = this.problem.realOutput.replace(/\s+/g, '');
@@ -239,6 +245,27 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         if(currentConsoleOutput == realConsoleOutput){
             console.log('Correct output!');
             this._userTestsInfoService.updateScore(this.problem);
+            
+            // Show message on correct solution
+            this.alerts.push({
+                type: 'exercise-correct',
+                messageText:{
+                                main: '¡Excelente!',
+                                body: 'Programa resuelto exitosamente.'
+                            },
+                timeout: 5000
+            });
+
+        }else{
+            // Show message on wrong solution
+            this.alerts.push({
+                type: 'wrong-exercise',
+                messageText:{
+                                main: '¡Ooops!',
+                                body: 'Revisa tu programa y vuelve a intentarlo.'
+                            },
+                timeout: 5000
+            });
         }
     }
 

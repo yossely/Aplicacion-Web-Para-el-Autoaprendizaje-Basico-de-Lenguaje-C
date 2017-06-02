@@ -44,5 +44,15 @@ var Module = {
                                                     window.currentProblemRef.updateConsoleTextFn(consoleElement.value);
                                                 });
         };
+    })(),
+    postRun: (function()  {
+        return function (argument) {
+          /**
+           * On execution finished check the solution given by the user
+           */
+          window.currentProblemRef.zone.run( () => {
+                                                    window.currentProblemRef.checkOutputFn();
+                                                });
+        };
     })()
 };

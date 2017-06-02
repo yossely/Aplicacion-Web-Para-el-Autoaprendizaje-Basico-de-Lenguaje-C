@@ -92,6 +92,12 @@
                     </ul>
                 </div>
                 <!-- Problem OUTPUT CONSOLE-->
+                <div class="solution-feedback" 
+                     *ngFor="let alert of alerts">                                                
+                    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">
+                        <strong>{{alert.messageText.main}}</strong> {{alert.messageText.body}}
+                    </alert>                    
+                </div>
                 <textarea class="row console" [id]="problem.consoleId" [(ngModel)]="problem.consoleOutput">{{problem.consoleOutput}}</textarea>
             </div>
         </div>

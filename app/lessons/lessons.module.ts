@@ -3,7 +3,7 @@ import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
-
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 /**
  * There can be only one owner for a declared component.
@@ -51,7 +51,8 @@ import { UserTestsInfoService } from '../test/user-tests-info.service';
         FormsModule,
         TabsModule.forRoot(),
         lessonsRoutingModule,
-        ProgressbarModule.forRoot()
+        ProgressbarModule.forRoot(),
+        AlertModule.forRoot()
     ],
     declarations: [
         LessonDetailsComponent,
