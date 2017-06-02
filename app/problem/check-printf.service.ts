@@ -20,6 +20,10 @@ export class CheckPrintfService{
         let regexp = /(scanf[\s]*?\()"((?:\\.|[^"\\])*)"/g;
         let occurrencesOriginal = cCode.match(regexp);
 
+        /* If there is no scanf statements in the code, then return the code with no changes */
+        if (occurrencesOriginal == null)
+            return cCode;
+
         /* Reduce duplicate occurrences */
         let uniqueOcurrences = [];
         uniqueOcurrences = occurrencesOriginal.filter(function(item, pos) {
