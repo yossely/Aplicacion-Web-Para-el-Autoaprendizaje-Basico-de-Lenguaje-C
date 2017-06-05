@@ -2382,9 +2382,9 @@
                         "statement": '''
                                      Diseñe un programa en lenguaje C que le permita a un usuario ingresar 10 números, luego determinar e informar si:
 
-                                     -La primera posición es positiva
-                                     -El número de la cuarta posición es impar 
-                                     -La última posición es diferente de cero.
+                                     - La primera posición es positiva
+                                     - El número de la cuarta posición es impar 
+                                     - La última posición es diferente de cero.
 
                                      **Nota:** los números siempre serán valores enteros.
                                      ''',
