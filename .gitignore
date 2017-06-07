@@ -10,3 +10,5 @@ npm-debug.log
 /user_code_folder/user_code.c
 /user_code_folder/user_code_compiled.js
 /user_code_folder/user_code_compiled.js.mem
+/validate_user_code.plist
+/user_code_folder/validate_user_code.c

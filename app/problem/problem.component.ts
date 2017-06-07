@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild, AfterViewInit, OnChanges, SimpleChange, 
          NgZone, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subject } from 'rxjs/Rx';
 
 import { UnitsService } from '../lessons/units.service';
 import { ErrorHandlingService } from './error-handling.service';
@@ -11,16 +11,20 @@ import { MarkdownParserService } from '../markdown/markdown-parser.service';
 import { UserProgressService } from '../lessons/user-progress.service';
 import { UserTestsInfoService } from '../test/user-tests-info.service';
 
+import { ValidateSyntaxService } from './validate-syntax.service';
+
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import 'brace';
 import 'brace/theme/clouds';
 import 'brace/mode/c_cpp';
 
+
 @Component({
     selector: 'problem-outlet',
     styleUrls: ['assets/css/problem.css'],
-    templateUrl: 'assets/partials/problem/problem.html'
+    templateUrl: 'assets/partials/problem/problem.html',
+    providers: [ValidateSyntaxService]
 })
 export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy{
     
@@ -50,6 +54,9 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     /* Solution Feedback on test */
     alerts: any = [];
 
+    /* Syntax Validation */
+    currentCCode = new Subject<string>();
+
     /**
      * @param {selector} 'editor' 
      *            selector - the directive type or the name used for querying.
@@ -64,7 +71,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
                 private _checkPrintfService: CheckPrintfService,
                 private md: MarkdownParserService,
                 private _userProgressService: UserProgressService,
-                private _userTestsInfoService: UserTestsInfoService){ }
+                private _userTestsInfoService: UserTestsInfoService,
+                private _validateSyntaxService: ValidateSyntaxService){ }
 
     
     ngOnInit(){
@@ -80,6 +88,27 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.isCompiling = false;
 
         this.originalCode = this.problem.code;
+
+        this._validateSyntaxService.validateSyntax(this.currentCCode)
+                .subscribe( 
+                    results => {
+                        // Display errors and warnings in the editor
+                        this.showErrorOnEditor(results);
+                    },
+                    error => {
+                        console.log('Error in the syntax validation process: ', error);
+                    },
+                    () => console.log('Syntax Validation finished')
+                );
+    }
+
+
+    showErrorOnEditor(annotations: any[]){
+
+        /* Set Annotations in the editor to indicate possible errors and warnings inside the editor */
+        this.editor.getEditor()
+                   .getSession()
+                   .setAnnotations(annotations);
     }
 
 
@@ -117,14 +146,13 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
 
     /**
-     * Perform XXXXX when the code inside Ace Editor change
-     *
-     *     -TODO: probably save the code into the database or something...
+     * Perform Syntax Validation process when the code inside Ace Editor change
      * 
      * @param {string} code New code inside the Ace Editor
      */
     onChangeCodeInsideEditor(code){
-        // console.log('on change code inside editor: ',code);
+        //pass the new code to the subject to validate its syntax
+        this.currentCCode.next(code);
     }
 
     
