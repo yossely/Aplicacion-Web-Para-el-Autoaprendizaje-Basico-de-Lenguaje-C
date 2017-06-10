@@ -12,6 +12,7 @@ import { UserProgressService } from '../lessons/user-progress.service';
 import { UserTestsInfoService } from '../test/user-tests-info.service';
 
 import { ValidateSyntaxService } from './validate-syntax.service';
+import { Annotation } from '../data_structure/editor-annotation'
 
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
@@ -91,7 +92,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         this._validateSyntaxService.validateSyntax(this.currentCCode)
                 .subscribe( 
-                    results => {
+                    (results: Annotation[]) => {
                         // Display errors and warnings in the editor
                         this.showErrorOnEditor(results);
                     },
@@ -103,7 +104,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     }
 
 
-    showErrorOnEditor(annotations: any[]){
+    showErrorOnEditor(annotations: Annotation[]){
 
         /* Set Annotations in the editor to indicate possible errors and warnings inside the editor */
         this.editor.getEditor()

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs/Rx';
 import { Http, Response, Headers } from '@angular/http';
 
+import { Annotation } from '../data_structure/editor-annotation'
 
 @Injectable()
 export class ValidateSyntaxService{
@@ -67,12 +68,12 @@ export class ValidateSyntaxService{
 
     /**
      * Transform the validation syntax error message to the array of annotations to be set in the editor
-     * @param  {string}        errorMessage Error message got from the syntax validation response
-     * @return {Array<Object>}              Array of annotations to be set in the editor
+     * @param  {string}            errorMessage Error message got from the syntax validation response
+     * @return {Array<Annotation>}              Array of annotations to be set in the editor
      */
     transformMessageToAnnotations(errorMessage: string): Array<Object>{
 
-        let annotations:any = [];
+        let annotations: Array<Annotation> = [];
 
         let lines = errorMessage.split("\n");
 
@@ -84,9 +85,15 @@ export class ValidateSyntaxService{
                 
                 // Separate the row, column, and type of annotation from the error message
                 let info = lines[i].split(':',4);
+
+                // convert 'note' type (clang) into 'info' type (Ace)
+                if (info[3].includes('note'))
+                    info[3] = 'info';
+
+                // Add the new annotations to the array
                 annotations.push({
                             row: parseInt(info[1])-1, //zero based
-                            column: info[2],
+                            column: parseInt(info[2]) -1, //zero based
                             text: lines[i].substring(info.join(':').length + 2),
                             type: info[3].replace(/\s+/g, '') // accepts: error, warning and info (although in C there's no 'info' type)
                         });
