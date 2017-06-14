@@ -2,6 +2,7 @@
   "globalDependencies": {
     "ace": "registry:dt/ace#0.0.0+20160630235124",
     "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+    "intro.js": "registry:dt/intro.js#2.4.0+20170310070322",
     "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
     "node": "registry:dt/node#6.0.0+20160909174046"
   },

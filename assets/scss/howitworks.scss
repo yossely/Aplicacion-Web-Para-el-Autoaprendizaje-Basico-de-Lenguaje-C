@@ -1,0 +1,96 @@
+@import "variables";
+
+
+.container-fluid {
+    padding-right: 0px; 
+    .row {
+        margin-right: 0px; 
+    }
+
+    .problem-example{
+        background-color: $color_2DarkCyan;
+        border: 2px solid $color_1NavyBlue;
+        padding-top: 10px;
+    }
+
+    .title{
+        margin-left: -5%;
+
+        h1{
+            font-family: $font_title;
+            font-size: 30px;
+            color: #000000;
+            margin-top: 0px;
+            margin-left: -10%;
+        }
+
+        .btn-blue-start-tutorial {
+            font-family: $font_main;
+            font-size: 20px;
+            padding: 2px 7px;
+        }
+    }
+
+    .tips-output-box {
+        width: 120%;
+        display: inline-flex;
+
+        h4 {
+            width: 15%;
+            margin: 0px;
+            font-family: $font_title;
+            font-size: 22px;
+            font-weight: bold;
+            color: $color_white;
+            margin-top: -10px;
+            margin-bottom: -5px;
+        }
+    }
+
+    .problem-code-box, .problem-code-box .col-md-12, 
+    .problem-output-box {
+        padding-left: 0px;
+    }
+
+    #code_editor {
+        margin: 10px 0px 0px 0px;
+        height: 365px;
+        width: 113%;
+    }
+
+    #run_button_image {
+        position:absolute;
+        z-index:10;
+        margin-top: -42%;
+        margin-left: 96%;
+    }
+
+    #restore_button_image {
+        position:absolute;
+        z-index:10;
+        margin-top: -8%;
+        margin-left: 103%;
+    }
+
+    #expected_output_console_image {
+        position: absolute;
+
+        margin-top: -37%;
+        margin-left: 57%;
+        z-index: 999;
+    }
+
+    #expected_output_tab_image {
+        margin-left: 77%;
+        margin-top: -16px;
+    }
+
+    #console_image {        
+        width: 120%;
+        height: 250px;
+        margin-bottom: 10px;
+        margin-left: -15px;
+        margin-top: -13px;
+        z-index: 999;
+    }
+}
