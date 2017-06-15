@@ -33,3 +33,7 @@ $test_content_background: #5DA7A6;
 	display: block;
 	margin-right: 5px;
 }
+
+:host /deep/ .nav-exercise {
+    color: $color_1NavyBlue;
+}
