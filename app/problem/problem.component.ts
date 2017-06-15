@@ -1,3 +1,4 @@
+/// <reference path="../../typings/globals/ace/index.d.ts" />
 import { Component, Input, OnInit, ViewChild, AfterViewInit, OnChanges, SimpleChange, 
          NgZone, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs/Rx';
@@ -20,6 +21,7 @@ import 'brace';
 import 'brace/theme/clouds';
 import 'brace/mode/c_cpp';
 
+import { UndoManager } from 'brace';
 
 @Component({
     selector: 'problem-outlet',
@@ -42,8 +44,6 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     compileCCodeSubscription: any;
 
-    originalCode: string;
-
     isExpectedOutputHidden: boolean;
 
     /* Solution's Steps */
@@ -57,6 +57,15 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     /* Syntax Validation */
     currentCCode = new Subject<string>();
+
+    /**
+     * Ctrl+Z Bug in the exercises' editor, so its Undo Manager will be reset everytime the user navigates
+     * between the exercises
+     * 
+     * Note: Default value must be true to prevent reset the editor undo manager for the example editor
+     * @type {boolean}
+     */
+    isUndoManagerReset: boolean = true;
 
     /**
      * @param {selector} 'editor' 
@@ -87,8 +96,6 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         this.cCompiledScriptId = 'cCompiledScript';
 
         this.isCompiling = false;
-
-        this.originalCode = this.problem.code;
 
         this._validateSyntaxService.validateSyntax(this.currentCCode)
                 .subscribe( 
@@ -154,6 +161,20 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     onChangeCodeInsideEditor(code){
         //pass the new code to the subject to validate its syntax
         this.currentCCode.next(code);
+
+        console.log('Code Inside Editor Change');
+
+        /**
+         * If the Undo Manager hasn't been reset, then proceed to reset it
+         *
+         * Note: when navigating between the exercises, the code inside the editor changes twice,
+         *       the first time is '' (empty) and the second time is set to the exercise code
+         */
+        if (!this.isUndoManagerReset && code !== '') {
+            this.resetUndoManagerEditor();
+
+            this.isUndoManagerReset = true;
+        }
     }
 
     
@@ -207,21 +228,46 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         // console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
 
+
+        // Reset the code editors' Undo Manager (example and exercises section) the first time the component view has been initialized
+        this.resetUndoManagerEditor();
+
+    }
+
+    /**
+     * Reset the UndoManager property for the editor
+     *
+     * This property controls the undo history that permits the 'Ctrl+Z' functionality in the editor
+     */
+    resetUndoManagerEditor(){
+        this.editor.getEditor()
+                   .getSession()
+                   .setUndoManager(new UndoManager());
     }
 
     /**
      * Angular calls its ngOnChanges method whenever it detects changes to input properties of the component (or directive)
      * 
-     * param {SimpleChange} changes 
+     * @param changes: {[propKey: string]: SimpleChange}
      *         Represents a basic change from a previous to a new value.
      */
-    ngOnChanges(changes: {[propKey: string]: SimpleChange}){
+    ngOnChanges(changes: any){
 
         this.isExpectedOutputHidden = true;
 
-        // Everytime the problem changes, initialize the solution steps to show the first one
+        // Every time the problem changes, initialize the solution steps to show the first one
         if(!this.isOnExercises)
             this.initializeStepsOnExample();
+
+        // Set original code to the code of the problem selected only if it has not been set yet
+        if (!this.problem.originalCode) 
+            this.problem.originalCode = this.problem.code;
+
+        
+        // When navigating between the exercises (changing problems), reset its Undo Manager
+        if (this.isOnExercises && !changes.isOnExercises)
+            this.isUndoManagerReset = false;
+        
 
         console.log('problem changed', changes);
         // console.log(this.problem.consoleOutput);        
@@ -341,7 +387,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      * Restore the original code of the problem if needed
      */
     restoreOriginalCode(){
-        this.problem.code = this.originalCode;
+        this.problem.code = this.problem.originalCode;
     }
 
 
