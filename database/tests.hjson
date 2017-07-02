@@ -19,6 +19,8 @@
                              - **Volumen = Ancho  x  Largo  x  Alto**
                              - 1 m = 1000mm
                              - 1 m = 100cm
+
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test I - Problem 1 */
@@ -85,6 +87,8 @@
                               2. Calcular el **porcentaje de veces**, que la situación se mantuvo en situación **Moderada**.
                               3. Considerando que las lecturas se toman en orden y que se debe llevar una numeración de las mismas; determinar: ¿En **qué número de las lecturas** se registró la **mayor presión promedio, solo dentro de la situación de Riesgo**? 
                                - **Nota:** Si sucedió en varias ocasiones considere la última vez que ocurrió. Si nunca ocurrió la situación de riesgo, indicarlo.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test I - Problem 2 */
@@ -193,6 +197,8 @@
 
                              - 1Mb = 1024 Kb 
                              - 1Kb = 1024 bytes
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test I - Problem 3 */
@@ -281,6 +287,8 @@
                               2. Identificar, mediante el número y el edificio, **el aula o las aulas**, de **mayor capacidad de puestos**.
                               3. Crear un **nuevo vector** con la relación (**metros cuadrados/puestos**), para **cada una** de las aulas y **mostrar** el aula o las aulas de **mayor relación**. 
                               4. Permitir la consulta de la relación (**metros cuadrados/puestos**) de un aula, cuyo edificio y número de aula sean datos suministrados por el usuario. Primero se debe solicitar la identificación del edificio y validar el dato de entrada, para luego verificar la existencia o no del aula.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test II - Problem 1 */
@@ -371,6 +379,8 @@
                               2. Si la administración compra **cada kilogramo** de hortaliza a un **precio fijo**, igual para todas ellas, cuyo valor lo conoce el usuario; Calcular el **total en bolívares** gastado en este tipo de alimento (hortalizas), en los cinco días hábiles de la semana. 
                               3. Mostrar el **consumo de una de las hortalizas**, para un día cualquiera de la semana, de interés para el usuario. 
                               4. Calcular y mostrar, **en porcentaje**, el **consumo** de hortalizas para **cada uno de los días** hábiles de la semana. Se sugiere crear un vector con el total consumido en cada uno de lo cinco días.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test II - Problem 2 */
@@ -427,6 +437,8 @@
                               2. Calcular el **total de toneladas** que se recolectaron en los **primeros 3 meses** del semestre, en los **primeros 4 municipios** registrados. 
                               3. Se desea saber la cantidad de desechos recolectados en cada mes, para ello debe almacenar en un vector tales cantidades y mostrar organizadamente los datos.
                               4. Determine en que meses del semestre, un determinado municipio genero la mayor cantidad de desechos. Además indique en cuantos meses ocurrió tal hecho. El municipio será el indicado por el usuario. Si el municipio solicitado no fue registrado en las estadísticas, se le debe informar al usuario.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test II - Problem 3 */
@@ -500,6 +512,8 @@
                              #### Coordenadas Cartesianas
 
                              ![Coordenadas Cartesianas](assets/img/test3-exercise1.svg "Coordenadas Cartesianas")
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test III - Problem 1 */
@@ -537,6 +551,8 @@
                               2. Mostrar la cantidad de integrantes con extensión alta de voz, sopranos o barítonos, que sean menores de 20 años. Utilice una función con parámetros.
                               3. Calcular la cantidad de integrantes del coro que son tenores y la cantidad de integrantes que poseen la extensión de la voz baja. Utilice una única función con parámetros. Los resultados deben imprimirse en la función principal.
                               4. Calcular y mostrar el porcentaje de mujeres que conforman el coro si se sabe que las mujeres son clasificadas como soprano, mezzo-soprano o contralto.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test III - Problem 2 */
@@ -576,6 +592,8 @@
                               1. Almacenar los datos, de cada aspirante que solicite inscripción en la Academia, en un arreglo de estructuras.
                               2. Calcular del total de mujeres el porcentaje de las que tienen experiencia. 
                               3. Calcular la edad promedio de los aspirantes sin experiencia y la cantidad de aspirantes cuyo peso excede al promedio general. Use una única función definida de tipo `void` que utilice punteros para manipular las variables pasadas por parámetros.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
                              ''',
                 "code": '''
                         /* Code Test III - Problem 3 */
