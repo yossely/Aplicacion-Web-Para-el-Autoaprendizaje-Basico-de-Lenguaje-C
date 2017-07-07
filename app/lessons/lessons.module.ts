@@ -2,7 +2,8 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
-
+import { ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 /**
  * There can be only one owner for a declared component.
@@ -39,12 +40,19 @@ import { CheckPrintfService } from '../problem/check-printf.service';
 import { MarkdownParserService } from '../markdown/markdown-parser.service';
 import { UserProgressService } from './user-progress.service';
 
+import { TestComponent } from '../test/test.component';
+import { TestDetailsComponent } from '../test/test-details.component';
+import { TestsService } from '../test/tests.service';
+import { UserTestsInfoService } from '../test/user-tests-info.service';
+
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         TabsModule.forRoot(),
-        lessonsRoutingModule
+        lessonsRoutingModule,
+        ProgressbarModule.forRoot(),
+        AlertModule.forRoot()
     ],
     declarations: [
         LessonDetailsComponent,
@@ -56,14 +64,18 @@ import { UserProgressService } from './user-progress.service';
         ExercisesComponent,
         ProblemComponent,
         AceEditorComponent,
-        UserProgressComponent
+        UserProgressComponent,
+        TestComponent,
+        TestDetailsComponent
     ],
     providers: [
         UnitsService,
         MarkdownParserService,
         ErrorHandlingService,
         CheckPrintfService,
-        UserProgressService
+        UserProgressService,
+        TestsService,
+        UserTestsInfoService
     ]
 })
 export class LessonsModule {}

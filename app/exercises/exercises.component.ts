@@ -24,7 +24,7 @@ export class ExercisesComponent implements OnInit, OnChanges{
     // Indicates if this component has been initialized or not
     hasBeenInit: boolean = false;
 
-
+    private isCurrentLessonLast: boolean;
 
     constructor(private router: Router, 
                 private _userProgressService: UserProgressService){}
@@ -51,6 +51,9 @@ export class ExercisesComponent implements OnInit, OnChanges{
 
         // Mark this component as initialized
         this.hasBeenInit = true;
+
+        // Is current Lesson the last one?
+        this.isCurrentLessonLast = this._userProgressService.isCurrentLessonLast();
     }
 
     selectExercise(exerciseNumber: number){

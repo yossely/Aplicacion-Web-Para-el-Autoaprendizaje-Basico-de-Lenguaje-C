@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h3>Enunciado</h3>
-                <!-- <span class="key_words">suscipit</span> -->
-                <pre [ngClass]="{'long-text': isOnExercises}">{{problem?.statement}}</pre>
+                <!-- md.convert(problem.statement) this sentence convert the statement markdown into html elements -->
+                <div class="problem-statement" [ngClass]="{'long-text': isOnExercises}" [innerHtml]="md.convert(problem.statement)"></div>
             </div>
         </div>
         <!-- 593px -->
@@ -92,6 +92,12 @@
                     </ul>
                 </div>
                 <!-- Problem OUTPUT CONSOLE-->
+                <div class="solution-feedback" 
+                     *ngFor="let alert of alerts">                                                
+                    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">
+                        <strong>{{alert.messageText.main}}</strong> {{alert.messageText.body}}
+                    </alert>                    
+                </div>
                 <textarea class="row console" [id]="problem.consoleId" [(ngModel)]="problem.consoleOutput">{{problem.consoleOutput}}</textarea>
             </div>
         </div>

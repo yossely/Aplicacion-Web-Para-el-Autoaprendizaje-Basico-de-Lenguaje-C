@@ -12,7 +12,7 @@ import { BaseComponent }    from './base.component';
 
 import { NavbarBaseComponent } from './navbar-base.component';
 import { HomeComponent }    from './home.component';
-import { AboutComponent }  from './about.component';
+import { HowItWorksComponent }  from './howitworks.component';
 import { ContentComponent }  from './content.component';
 
 /**
@@ -34,7 +34,7 @@ import { BaseRoutingModule } from './base-routing.module';
         BaseComponent,
         NavbarBaseComponent,
         HomeComponent,
-        AboutComponent,
+        HowItWorksComponent,
         ContentComponent
     ]
 })

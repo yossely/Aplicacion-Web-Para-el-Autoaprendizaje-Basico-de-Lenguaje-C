@@ -6,6 +6,12 @@
 @import "./problem/expected_output_console";
 @import "./problem/problem_solution_steps";
 
+
+/*----------------------------------- LOCAL VARIABLES ON -----------------------------------*/
+
+$table_body_background: #eeeeee;
+$table_body_font_color: #6f6f6f;
+
 $color_explanation: #5DA7A6;
 $color_explanation_darker: #4A8685;
 $color_lightGrayDarker: #C3C1C0;
@@ -34,7 +40,7 @@ $color_comments_editor: #7D7B7B;
         margin-top: 10px;
     }
 
-    pre {
+    div.problem-statement {
         font-family: $font_main;
         font-size: 18px;
         
@@ -46,17 +52,48 @@ $color_comments_editor: #7D7B7B;
         white-space: pre-line;
         background: none;
         border: none;
-
-        .key_words {
-            color: $color_olive;
-            font-weight: bold;
-        }
+        word-break: normal;                
     }
 
-    pre.long-text{
+    div.problem-statement.long-text{
         height: 593px;
     }
 }
+
+/*------------------------------ PROBLEM STATEMENT MARKDOWN ON -------------------------------*/
+
+/* Unordered and Ordered Lists inside a problem's statement */
+:host /deep/ .problem-statement{
+    ul, ol{
+        margin-top: -50px;
+        margin-bottom: 0px;
+
+        li{
+            margin-bottom: -10px;
+            ul{
+                margin-top: -10px;
+                margin-bottom: -40px;
+            }
+        }
+    }
+
+    table {
+        margin: -10px 0px;
+
+        th {
+            background-color: $color_explanation;
+            color: $color_white;
+            padding: 5px 5px;
+        }
+        td {
+            background-color: $table_body_background;
+            color: $table_body_font_color;
+            padding: 5px 5px;
+        }
+    }
+}
+/*------------------------------ PROBLEM STATEMENT MARKDOWN OFF ------------------------------*/
+
 
 /* hr used as separator line between statement and data table*/
 hr {
@@ -148,4 +185,29 @@ hr {
     .ace_comment{
         color: $color_comments_editor;
     }
+}
+
+/* Solution feedback on test - Show message on correct or wrong solution */
+.solution-feedback{
+    position: absolute;
+    margin-left: 15%;
+    margin-top: -10%;
+}
+
+:host /deep/ .alert-wrong-exercise {
+    background-color: #D35F5F;
+    border-color: #873D3D;
+    color: $color_white;
+    font-family: $font_main;
+    font-size: 16px;
+    z-index: 999;
+}
+
+:host /deep/ .alert-exercise-correct {
+    background-color: #5FD35F;
+    border-color: #3D873D;
+    color: $color_white;
+    font-family: $font_main;
+    font-size: 16px;
+    z-index: 999;
 }

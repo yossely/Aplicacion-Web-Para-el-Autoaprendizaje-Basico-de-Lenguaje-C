@@ -1,0 +1,621 @@
+[
+    {
+        "_id": 1,
+        "title": "Parcial I",
+        "problems": [
+            {
+                "statement": '''
+                             Una piscina construida para una urbanización cerrada tiene las siguientes dimensiones largo **(L)**, ancho **(A)** y alto **(T)**. El largo es ingresado en *milímetros*, el ancho en *centímetros* y la Altura en *metros*. 
+                             Se desea saber:  
+
+                              1. ¿Cuál es el volumen de la piscina en metros cúbicos?
+                              2. Sabiendo que el metro cúbico de agua es a **(X)** Bs. ¿Cuánto cuesta llenarla de agua?
+                              3. También sabiendo que en cada lluvia mensual caen **(Y)** metros cúbicos, ¿Cuántos meses se necesitaría para llenarla mediante agua lluvia?
+
+                             Diseñe un algoritmo, para que responda a las anteriores interrogantes, luego de que el usuario ingrese los valores de: **L**, **A**, **T**, **X** y **Y**. 
+
+                             #### Fórmulas y Equivalencias
+
+                             - **Volumen = Ancho  x  Largo  x  Alto**
+                             - 1 m = 1000mm
+                             - 1 m = 100cm
+
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test I - Problem 1 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > largo (mm): 50000
+                                  > 
+                                  > ancho (cm): 2500
+                                  > 
+                                  > alto (m): 2
+                                  > 
+                                  > costo del metro cúbico de agua en Bs: 7
+                                  > 
+                                  > metros cúbicos de agua de lluvia mensual: 350
+                                  > 
+                                  > volumen de la piscina: 2500.00
+                                  > 
+                                  > llenar la piscina tiene un costo de: 17500.00
+                                  > 
+                                  > 7.14 meses de lluvia llenan la piscina
+                                  ''',
+                "realOutput": ''' 
+                                  > largo (mm): 
+                                  > 
+                                  > ancho (cm): 
+                                  > 
+                                  > alto (m): 
+                                  > 
+                                  > costo del metro cúbico de agua en Bs: 
+                                  > 
+                                  > metros cúbicos de agua de lluvia mensual: 
+                                  > 
+                                  > volumen de la piscina: 2500.00
+                                  > 
+                                  > llenar la piscina tiene un costo de: 17500.00
+                                  > 
+                                  > 7.14 meses de lluvia llenan la piscina
+                                  ''',
+                "points": 30,
+                "completed": false
+            },
+            {
+                "statement": '''
+                             Un centro clínico de la ciudad dispone de una caldera para producir, entre otras cosas, aire comprimido que es almacenado en un recipiente. 
+                             El recipiente recibe constantemente **presión** de la caldera, pero éste tiene una **capacidad máxima** y por lo tanto requiere de un control continuo, cuya *situación* es considerada de acuerdo a la siguiente escala:
+                             
+                             Presión Promedio | Situación 
+                             ---------- | ---------- 
+                             Entre 0 y 180 | *BAJA*
+                             Entre 181 y 350 | *MODERADA*
+                             Entre 351 y 590 | *ACEPTABLE*
+                             Entre 591 y 750 | *RIESGO*
+                             
+                             Durante un periodo de trabajo de dos (2) días en la caldera, un operador toma **dos lecturas** de la presión, cada cierto tiempo, es decir varias veces. Considerando que el control no sea necesario siempre, por estar la caldera en mantenimiento, diseñe un programa para:
+                             
+                              1. Calcular, cada vez que el operador tome las dos lecturas, la presión promedio, y de acuerdo a la escala anterior **emitir la situación correspondiente** del recipiente.
+                              2. Calcular el **porcentaje de veces**, que la situación se mantuvo en situación **Moderada**.
+                              3. Considerando que las lecturas se toman en orden y que se debe llevar una numeración de las mismas; determinar: ¿En **qué número de las lecturas** se registró la **mayor presión promedio, solo dentro de la situación de Riesgo**? 
+                               - **Nota:** Si sucedió en varias ocasiones considere la última vez que ocurrió. Si nunca ocurrió la situación de riesgo, indicarlo.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test I - Problem 2 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > día 1
+                                  > lectura 1: 179.2
+                                  > lectura 2: 160.3
+                                  > 
+                                  > BAJA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 1
+                                  > 
+                                  > lectura 1: 240.3
+                                  > lectura 2: 330.1
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 0
+                                  > 
+                                  > día 2
+                                  > lectura 1: 630.4
+                                  > lectura 2: 723.4
+                                  > 
+                                  > RIESGO
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 1
+                                  > 
+                                  > lectura 1: 240.3
+                                  > lectura 2: 320.5
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 0
+                                  > 
+                                  > las lecturas se mantuvo MODERADA 50.00 porciento de las veces
+                                  > 
+                                  > En la lectura 3 se registra la mayor presión promedio de RIESGO de 676.90
+                                  ''',
+                "realOutput": ''' 
+                                  > día 1
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > BAJA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > día 2
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > RIESGO
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > lectura 1: 
+                                  > lectura 2: 
+                                  > 
+                                  > MODERADA
+                                  > 
+                                  > ¿existe otra lectura? 1:Si  2:No: 
+                                  > 
+                                  > las lecturas se mantuvo MODERADA 50.00 porciento de las veces
+                                  > 
+                                  > En la lectura 3 se registra la mayor presión promedio de RIESGO de 676.90
+                                  ''',
+                "points": 35,
+                "completed": false
+            },
+            {
+                "statement": '''
+                             Desarrolle un algoritmo que simule la administración del disco duro de un computador. Para ello **se conoce inicialmente la capacidad total y la capacidad disponible** de dicho recurso, las cuales son medidas en **Mb** (*Megabytes*). 
+
+                             Es sabido que hay dos tipos de operaciones a realizar con un archivo: **almacenamiento ó eliminación** y asumiendo que siempre se hacen varias operaciones en este computador y que por cada operación se tienen los siguientes datos: **Tipo de archivo**, **operación** (1: Eliminación y 2: Almacenamiento), **tamaño del archivo** (en KB ). Por ejemplo:
+                             
+                             Tipo | Operación | Tamaño
+                             ---------- | ---------- | ---------- 
+                             Documento Word | 2 | 35
+                             Libro Excel | 1 | 22
+                             Archivo C | 2 | 0.80
+                             ... | ... | ...
+                             
+                             El algoritmo debe permitir lo siguiente: 
+                             
+                              1. A través de un menú, realizar las operaciones de almacenamiento y eliminación que requiera el usuario, es decir, el programa se detendrá cuando el usuario lo indique.
+                              2. **Indicar si cada operación se pudo realizar satisfactoriamente** e **indicar la capacidad disponible en KB después de efectuada tal operación**. Tome en cuenta que haya espacio suficiente para almacenar un archivo o si el disco este libre completamente y no haya archivo alguno por eliminar. 
+                              2. Indicar **cuál tipo de operación** fue más solicitada y efectuada satisfactoriamente, si la de eliminación o la de almacenamiento. 
+                              3. Finalizado el proceso, muestre el **espacio ocupado en bytes** y el **porcentaje de espacio libre** del disco duro del computador.
+                              
+                             #### Equivalencias 
+
+                             - 1Mb = 1024 Kb 
+                             - 1Kb = 1024 bytes
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test I - Problem 3 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > capacidad total del disco duro (MB): 5
+                                  > capacidad disponible del disco duro (MB): 2
+                                  > tipo de archivo: word
+                                  > tamaño del archivo (KB): 35
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 2
+                                  > el archivo word se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2013.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 1
+                                  > tipo de archivo: excel
+                                  > tamaño del archivo (KB): 22
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 1
+                                  > el archivo excel se ha eliminado satisfactoriamente
+                                  > capacidad disponible: 2035.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 1
+                                  > tipo de archivo: c
+                                  > tamaño del archivo (KB): 0.80
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 2
+                                  > el archivo c se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2034.20
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 0
+                                  > la operación de almacenar fue más solicitada y efectuada satisfactoriamente
+                                  > el espacio ocupado es: 3159859.25 bytes
+                                  > el porcentaje de espacio libre es: 39.73
+                                  ''',
+                "realOutput": ''' 
+                                  > capacidad total del disco duro (MB): 
+                                  > capacidad disponible del disco duro (MB): 
+                                  > tipo de archivo: 
+                                  > tamaño del archivo (KB): 
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 
+                                  > el archivo word se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2013.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 
+                                  > tipo de archivo: 
+                                  > tamaño del archivo (KB): 
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 
+                                  > el archivo excel se ha eliminado satisfactoriamente
+                                  > capacidad disponible: 2035.00
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 
+                                  > tipo de archivo: 
+                                  > tamaño del archivo (KB): 
+                                  > tipo de operación 1:Eliminar  2:Almacenar: 
+                                  > el archivo c se ha almacenado satisfactoriamente
+                                  > capacidad disponible: 2034.20
+                                  > 
+                                  > ¿existe otra operación? 1:Si  2:No: 
+                                  > la operación de almacenar fue más solicitada y efectuada satisfactoriamente
+                                  > el espacio ocupado es: 3159859.25 bytes
+                                  > el porcentaje de espacio libre es: 39.73
+                                  ''',
+                "points": 35,
+                "completed": false
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "title": "Parcial II",
+        "problems": [
+            {
+                "statement": '''
+                             Una Institución de Educación Superior tiene sus 68 aulas de clase, distribuidas en tres edificios, identificados con las letras A, B y C. En cada edificio hay un número diferentes de aulas, identificadas con un número, cada una con una capacidad distinta, medida en puestos, y con un área diferente, medida en metros cuadrados. Esa información debe ser almacenada en arreglos unidimensionales (Vectores) paralelos, de tal forma que se puedan trabajar como se muestra, por ejemplo, en el esquema siguiente:
+
+                             ![Organización de las aulas de un edificio](assets/img/test2-exercise1.svg "Organización de las aulas de un edificio")
+
+                             Complete el siguiente programa en lenguaje C, para: 
+
+                              1. Calcular la **capacidad total**, en puestos, **de cada edificio**.
+                              2. Identificar, mediante el número y el edificio, **el aula o las aulas**, de **mayor capacidad de puestos**.
+                              3. Crear un **nuevo vector** con la relación (**metros cuadrados/puestos**), para **cada una** de las aulas y **mostrar** el aula o las aulas de **mayor relación**. 
+                              4. Permitir la consulta de la relación (**metros cuadrados/puestos**) de un aula, cuyo edificio y número de aula sean datos suministrados por el usuario. Primero se debe solicitar la identificación del edificio y validar el dato de entrada, para luego verificar la existencia o no del aula.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test II - Problem 1 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+
+                            char edificio[69] = {'B','B','A','C','C','A','A','A','B','C','B','B','C','A','C',
+                                                 'C','C','B','A','A','B','B','C','A','B','A','A','C','C','A',
+                                                 'A','A','C','B','B','C','C','A','A','C','C','B','B','A','B',
+                                                 'B','A','C','B','B','A','C','A','C','C','B','B','A','A','A',
+                                                 'C','B','B','C','C','A','B','B','\0'};
+
+                            int numero[68] = {3,6,18,6,4,6,5,14,4,5,18,13,14,4,18,
+                                              7,22,7,7,11,11,5,11,1,1,13,21,13,21,22,
+                                              15,3,1,12,8,15,12,19,10,3,10,17,14,17,15,
+                                              16,12,17,9,20,8,19,9,8,9,21,2,16,2,20,
+                                              2,10,23,20,16,23,22,19};
+
+                            int puestos[68] = {38,38,40,40,38,44,42,44,43,43,40,44,44,39,38,
+                                               38,41,42,45,44,42,44,43,40,45,42,45,44,39,38,
+                                               38,42,39,40,44,42,41,38,41,38,38,38,43,45,43,
+                                               44,40,45,41,43,45,42,38,39,39,44,43,44,41,39,
+                                               43,38,41,44,38,41,39,41};
+
+                            float area[68] = {62.89f,66.21f,55.32f,54.37f,57.21f,44.91f,43.13f,64.05f,69.49f,54.92f,44.13f,67.85f,41.31f,52.35f,66.21f,
+                                              66.21f,63.57f,42.53f,58.86f,37.24f,59.09f,47.76f,41.35f,39.64f,37.75f,31.66f,62.84f,54.3f,44.34f,38.55f,
+                                              36.44f,54.11f,38.03f,34.21f,33.23f,65.69f,45.87f,35.05f,37.94f,58.3f,62.57f,44.55f,63.37f,37.79f,67.24f,
+                                              59.71f,42.41f,50.76f,41.71f,36.72f,41.03f,54.84f,66.21f,40.7f,54.3f,47.44f,58.46f,55.43f,69.13f,44.61f,
+                                              50.35f,52.23f,41.9f,56.77f,31.24f,54.95f,50.92f,57.14f};
+                            
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": '''
+                                  > puestos en edificio A: 955
+                                  > puestos en edificio B: 958
+                                  > puestos en edificio C: 896
+                                  > la mayor cantidad de puestos registrada es: 45 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #7 del edificio A
+                                  >   -aula #1 del edificio B
+                                  >   -aula #21 del edificio A
+                                  >   -aula #17 del edificio A
+                                  >   -aula #17 del edificio C
+                                  >   -aula #8 del edificio A
+                                  > la mayor relación registrada es: 1.74 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #6 del edificio B
+                                  >   -aula #18 del edificio C
+                                  >   -aula #7 del edificio C
+                                  >   -aula #9 del edificio A
+                                  > edificio a consultar: A
+                                  > aula a consultar: 3
+                                  > la capacidad del aula es 1.29
+                                  ''',
+                "realOutput": '''
+                                  > puestos en edificio A: 955
+                                  > puestos en edificio B: 958
+                                  > puestos en edificio C: 896
+                                  > la mayor cantidad de puestos registrada es: 45 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #7 del edificio A
+                                  >   -aula #1 del edificio B
+                                  >   -aula #21 del edificio A
+                                  >   -aula #17 del edificio A
+                                  >   -aula #17 del edificio C
+                                  >   -aula #8 del edificio A
+                                  > la mayor relación registrada es: 1.74 en la(s) siguiente(s) aula(s): 
+                                  >   -aula #6 del edificio B
+                                  >   -aula #18 del edificio C
+                                  >   -aula #7 del edificio C
+                                  >   -aula #9 del edificio A
+                                  > edificio a consultar: 
+                                  > aula a consultar: 
+                                  > la capacidad del aula es 1.29
+                                  ''',
+                "points": 30,
+                "completed": false
+            },
+            {
+                "statement": '''
+                             En el comedor estudiantil de la Universidad Nacional Experimental del Táchira, se lleva un control manual sobre el consumo, en kilogramos, de seis (6) hortalizas, en cada uno de los cinco (5) días hábiles de una semana, así como se ejemplifica a continuación:
+
+                             ![Organización de las hortalizas del comedor](assets/img/test2-exercise2.svg "Organización de las hortalizas del comedor")
+                             
+                             En base a los datos disponibles, se necesita que usted elabore un programa en lenguaje C, que utilice arreglos: unidimensional (Vector) y bidimensional (Matriz), para que luego de dar entrada a los datos suministrados por el usuario y procesarlos responda a lo siguiente:
+                             
+                              1. **Almacenar** los datos (los kilogramos consumidos) en el **arreglo correspondiente**. 
+                              2. Si la administración compra **cada kilogramo** de hortaliza a un **precio fijo**, igual para todas ellas, cuyo valor lo conoce el usuario; Calcular el **total en bolívares** gastado en este tipo de alimento (hortalizas), en los cinco días hábiles de la semana. 
+                              3. Mostrar el **consumo de una de las hortalizas**, para un día cualquiera de la semana, de interés para el usuario. 
+                              4. Calcular y mostrar, **en porcentaje**, el **consumo** de hortalizas para **cada uno de los días** hábiles de la semana. Se sugiere crear un vector con el total consumido en cada uno de lo cinco días.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test II - Problem 2 */
+                        #include <stdio.h>
+
+                        int main()
+                        {
+                            float consumo[6][5] = {41.55f,28.73f,34.51f,26.04f,26.67f,
+                                                   38.65f,32.88f,33.12f,39.2f,36.26f,
+                                                   25.96f,32.45f,32.2f,37.02f,29.11f,
+                                                   30.4f,30.63f,35.91f,40.35f,31.02f,
+                                                   47.93f,25.6f,31.65f,37.63f,47.76f,
+                                                   37.97f,36.25f,26.93f,35.2f,34.95f};
+
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > precio por kilogramo de hortalizas: 1.2
+                                  > el precio total de las verduras en la semana es 1229.44 bs
+                                  > el porcentaje de consumo de hortalizas en el día 1 es 21.71
+                                  > el porcentaje de consumo de hortalizas en el día 2 es 18.21
+                                  > el porcentaje de consumo de hortalizas en el día 3 es 18.97
+                                  > el porcentaje de consumo de hortalizas en el día 4 es 21.03
+                                  > el porcentaje de consumo de hortalizas en el día 5 es 20.08
+                                  > hortaliza a consultar (1-6): 3
+                                  > día a consultar (1-5): 2
+                                  > el día 2 se consume un total de 32.45 de la hortaliza 3
+                                  ''',
+                "realOutput": ''' 
+                                  > precio por kilogramo de hortalizas: 
+                                  > el precio total de las verduras en la semana es 1229.44 bs
+                                  > el porcentaje de consumo de hortalizas en el día 1 es 21.71
+                                  > el porcentaje de consumo de hortalizas en el día 2 es 18.21
+                                  > el porcentaje de consumo de hortalizas en el día 3 es 18.97
+                                  > el porcentaje de consumo de hortalizas en el día 4 es 21.03
+                                  > el porcentaje de consumo de hortalizas en el día 5 es 20.08
+                                  > hortaliza a consultar (1-6): 
+                                  > día a consultar (1-5): 
+                                  > el día 2 se consume un total de 32.45 de la hortaliza 3
+                                  ''',
+                "points": 35,
+                "completed": false
+            },
+            {
+                "statement": '''
+                             Actualmente el Estado Táchira está experimentando un crecimiento constante en la generación de desechos sólidos. Se tienen las estadísticas de recolección, en toneladas, para el primer semestre del año pasado de 7 municipios y se organizaron como se muestra en el siguiente esquema:
+
+                             ![Organización de los desechos sólidos](assets/img/test2-exercise3.svg "Organización de los desechos sólidos")
+                             
+                             Se requiere que realice un programa en Lenguaje C para: 
+                             
+                              1. Completar la asignación de los datos en los arreglos correspondientes de acuerdo al esquema planteado. 
+                              2. Calcular el **total de toneladas** que se recolectaron en los **primeros 3 meses** del semestre, en los **primeros 4 municipios** registrados. 
+                              3. Se desea saber la cantidad de desechos recolectados en cada mes, para ello debe almacenar en un vector tales cantidades y mostrar organizadamente los datos.
+                              4. Determine en que meses del semestre, un determinado municipio genero la mayor cantidad de desechos. Además indique en cuantos meses ocurrió tal hecho. El municipio será el indicado por el usuario. Si el municipio solicitado no fue registrado en las estadísticas, se le debe informar al usuario.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test II - Problem 3 */
+                        #include <stdio.h>
+
+                        int main()
+                        {
+                            float desechos[7][6] = {34.51f,45.8f,29.22f,44.77f,45.8f,45.8f,
+                                                   29.31f,33.99f,42.25f,46.92f,46.47f,48.27f,
+                                                   40.02f,28.4f,30.09f,47.87f,37.19f,47.87f,
+                                                   42.36f,27.02f,35.82f,25.84f,48.29f,44.83f,
+                                                   34.46f,29.62f,48.5f,46.43f,25.59f,32.26f,
+                                                   45.06f,44.55f,39.09f,37.01f,41.98f,31.24f,
+                                                   27.28f,33.68f,26.91f,40.52f,44.92f,37.24f};
+
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > en los primeros 4 municipios durante los primeros 3 meses se recolectaron 418.79 ton
+                                  > cantidad de desechos mensual:
+                                  >   -mes: 1   -desechos:253.00
+                                  >   -mes: 2   -desechos:243.06
+                                  >   -mes: 3   -desechos:251.88
+                                  >   -mes: 4   -desechos:289.36
+                                  >   -mes: 5   -desechos:290.24
+                                  >   -mes: 6   -desechos:287.51
+                                  > municipio a consultar (1-7): 3
+                                  > la mayor cantidad de desechos del municipio 3 es 47.87, registrada en 2 mes(es):
+                                  >   mes: 4
+                                  >   mes: 6
+                                  ''',
+                "realOutput": ''' 
+                                  > en los primeros 4 municipios durante los primeros 3 meses se recolectaron 418.79 ton
+                                  > cantidad de desechos mensual:
+                                  >   -mes: 1   -desechos:253.00
+                                  >   -mes: 2   -desechos:243.06
+                                  >   -mes: 3   -desechos:251.88
+                                  >   -mes: 4   -desechos:289.36
+                                  >   -mes: 5   -desechos:290.24
+                                  >   -mes: 6   -desechos:287.51
+                                  > municipio a consultar (1-7): 
+                                  > la mayor cantidad de desechos del municipio 3 es 47.87, registrada en 2 mes(es):
+                                  >   mes: 4
+                                  >   mes: 6
+                                  ''',
+                "points": 35,
+                "completed": false
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "title": "Parcial III",
+        "problems": [
+            {
+                "statement": '''
+                             Escriba un programa en C, que satisfaga los siguientes requerimientos:
+
+                              1. Calcular la superficie y el volumen de una esfera, mediante una **función que use solo paso de parámetros por referencia**. De la esfera, el usuario ingresará su diámetro.
+                              2. Indicar a que cuadrante pertenece un punto del que se conocen las coordenadas ( **x , y** ). Para ello debe usar una **función con parámetros, de tipo `int`**; pero debe mostrar el cuadrante de la forma ( *I, II, III o IV* ), de acuerdo al sistema de coordenadas cartesianas. Para mostrar la salida requerida se sugiere usar la función `switch`. Se debe validar que el punto no esté ubicado sobre los ejes **x** y **y**.
+                              3. Conocidas las coordenadas de dos puntos por donde pasa una recta. Calcular y mostrar la **pendiente de la recta**. Debe **validar** que las abscisas de ambos puntos sean diferentes.
+                             
+                             
+                             #### Fórmulas
+
+                             - **Volumen = (4/3)  x  π  x  r^3**
+                             - **Superficie = 4  x  π  x  r^2** 
+                             - **Pendiente = (y2 - y2) / (x2 - x1)**
+                             
+                             #### Coordenadas Cartesianas
+
+                             ![Coordenadas Cartesianas](assets/img/test3-exercise1.svg "Coordenadas Cartesianas")
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test III - Problem 1 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            /* Hacer: 
+                                - Imprimir en pantalla: ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC */ 
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 1 
+                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  ''',
+                "realOutput": ''' 
+                                  > Expected ouput Test III - Problem 1 
+                                  > ¡Hola SU_NOMBRE! Bienvenid@ a AprendaC
+                                  ''',
+                "points": 30,
+                "completed": false
+            },
+            {
+                "statement": '''
+                             Se desea registrar la información sobre los miembros del coro de la Universidad Nacional Experimental del Táchira. La información que se tiene de cada uno es:
+
+                             - **Datos personales:** (nombres, edad, índice académico) 
+                             - **Voz:** soprano, mezzo-soprano, contralto, barítono, tenor ó bajo 
+                             - **Extensión de la voz:** alta o baja
+                             
+                             Se desea que Usted codifique un programa en lenguaje C para: 
+                             
+                              1. Almacenar en un arreglo (vector) de estructuras la información de cada integrante del coro. Este proceso debe hacerse usando una función con parámetros en donde se use la instrucción `return`.
+                              2. Mostrar la cantidad de integrantes con extensión alta de voz, sopranos o barítonos, que sean menores de 20 años. Utilice una función con parámetros.
+                              3. Calcular la cantidad de integrantes del coro que son tenores y la cantidad de integrantes que poseen la extensión de la voz baja. Utilice una única función con parámetros. Los resultados deben imprimirse en la función principal.
+                              4. Calcular y mostrar el porcentaje de mujeres que conforman el coro si se sabe que las mujeres son clasificadas como soprano, mezzo-soprano o contralto.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test III - Problem 2 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 2 
+                                  > ¡Librería incluida con éxito!
+                                  ''',
+                "realOutput": ''' 
+                                  > Expected ouput Test III - Problem 2 
+                                  > ¡Librería incluida con éxito!
+                                  ''',
+                "points": 35,
+                "completed": false
+            },
+            {
+                "statement": '''
+                             Una Academia de Paracaidismo, está llamando al proceso de inscripciones para el próximo curso, con un máximo de 36 cupos. A objeto de automatizar el proceso y generar algunas respuestas, se le pide a Usted que codifique un programa en Lenguaje C, de manera que a cada aspirante se le registren los siguientes datos: Ejemplo
+
+                             - **Apellidos y Nombres:** Tovar Pulido María Irene
+                             - **Características:** 
+                               - *Sexo:* femenino 
+                               - *Edad:* 22
+                               - *Clave:* XCP-028
+                             - **Peso:** 46.5
+                             - **Experiencia:** 1: Si --- 2: No
+                             
+                             La academia requiere que el programa permita: 
+                             
+                              1. Almacenar los datos, de cada aspirante que solicite inscripción en la Academia, en un arreglo de estructuras.
+                              2. Calcular del total de mujeres el porcentaje de las que tienen experiencia. 
+                              3. Calcular la edad promedio de los aspirantes sin experiencia y la cantidad de aspirantes cuyo peso excede al promedio general. Use una única función definida de tipo `void` que utilice punteros para manipular las variables pasadas por parámetros.
+                             
+                             **💡 ¡Importante!** La salida debe ser exactamente igual a la solución mostrada, presta mucha atención a las mayúsculas, minúsculas y acentuación en las palabras 🤔
+                             ''',
+                "code": '''
+                        /* Code Test III - Problem 3 */
+                        #include <stdio.h> 
+
+                        int main()
+                        { 
+                            
+                            return 0;
+                        }
+                        ''',
+                "expectedOutput": ''' 
+                                  > Expected ouput Test III - Problem 3 
+                                  > ¡Librería incluida con éxito!
+                                  ''',
+                "realOutput": ''' 
+                                  > Expected ouput Test III - Problem 3 
+                                  > ¡Librería incluida con éxito!
+                                  ''',
+                "points": 35,
+                "completed": false
+            }
+        ]
+    }
+]

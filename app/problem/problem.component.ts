@@ -1,20 +1,33 @@
+/// <reference path="../../typings/globals/ace/index.d.ts" />
 import { Component, Input, OnInit, ViewChild, AfterViewInit, OnChanges, SimpleChange, 
          NgZone, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subject } from 'rxjs/Rx';
 
 import { UnitsService } from '../lessons/units.service';
 import { ErrorHandlingService } from './error-handling.service';
 import { CheckPrintfService } from './check-printf.service';
 import { Problem } from '../data_structure/problem';
 
+import { MarkdownParserService } from '../markdown/markdown-parser.service';
+import { UserProgressService } from '../lessons/user-progress.service';
+import { UserTestsInfoService } from '../test/user-tests-info.service';
+
+import { ValidateSyntaxService } from './validate-syntax.service';
+import { Annotation } from '../data_structure/editor-annotation'
+
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 import 'brace';
 import 'brace/theme/clouds';
 import 'brace/mode/c_cpp';
 
+import { UndoManager } from 'brace';
+
 @Component({
     selector: 'problem-outlet',
     styleUrls: ['assets/css/problem.css'],
-    templateUrl: 'assets/partials/problem/problem.html'
+    templateUrl: 'assets/partials/problem/problem.html',
+    providers: [ValidateSyntaxService]
 })
 export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy{
     
@@ -31,14 +44,28 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
     compileCCodeSubscription: any;
 
-    originalCode: string;
-
     isExpectedOutputHidden: boolean;
 
+    /* Solution's Steps */
     currentStep: string;
     currentStepIndex: number;
     isCurrentStepFirst: boolean;
     isCurrentStepLast: boolean;
+
+    /* Solution Feedback on test */
+    alerts: any = [];
+
+    /* Syntax Validation */
+    currentCCode = new Subject<string>();
+
+    /**
+     * Ctrl+Z Bug in the exercises' editor, so its Undo Manager will be reset everytime the user navigates
+     * between the exercises
+     * 
+     * Note: Default value must be true to prevent reset the editor undo manager for the example editor
+     * @type {boolean}
+     */
+    isUndoManagerReset: boolean = true;
 
     /**
      * @param {selector} 'editor' 
@@ -51,7 +78,11 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     constructor(private _unitsService: UnitsService,
                 private _ngZone: NgZone,
                 private _errorHandlingService: ErrorHandlingService,
-                private _checkPrintfService: CheckPrintfService){ }
+                private _checkPrintfService: CheckPrintfService,
+                private md: MarkdownParserService,
+                private _userProgressService: UserProgressService,
+                private _userTestsInfoService: UserTestsInfoService,
+                private _validateSyntaxService: ValidateSyntaxService){ }
 
     
     ngOnInit(){
@@ -66,7 +97,26 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         this.isCompiling = false;
 
-        this.originalCode = this.problem.code;
+        this._validateSyntaxService.validateSyntax(this.currentCCode)
+                .subscribe( 
+                    (results: Annotation[]) => {
+                        // Display errors and warnings in the editor
+                        this.showErrorOnEditor(results);
+                    },
+                    error => {
+                        console.log('Error in the syntax validation process: ', error);
+                    },
+                    () => console.log('Syntax Validation finished')
+                );
+    }
+
+
+    showErrorOnEditor(annotations: Annotation[]){
+
+        /* Set Annotations in the editor to indicate possible errors and warnings inside the editor */
+        this.editor.getEditor()
+                   .getSession()
+                   .setAnnotations(annotations);
     }
 
 
@@ -95,7 +145,8 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
     setWindowCurrentProblemRef(){
         (<any>window).currentProblemRef = {
                 zone:                this._ngZone,
-                appendConsoleTextFn: (newValue) => this.appendConsoleText(newValue),
+                updateConsoleTextFn: (newValue) => this.updateConsoleText(newValue),
+                checkOutputFn: () => this.checkOutput(),
                 /*This property is for debug purposes*/
                 consoleId: this.problem.consoleId
             };
@@ -103,14 +154,27 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
 
     /**
-     * Perform XXXXX when the code inside Ace Editor change
-     *
-     *     -TODO: probably save the code into the database or something...
+     * Perform Syntax Validation process when the code inside Ace Editor change
      * 
      * @param {string} code New code inside the Ace Editor
      */
     onChangeCodeInsideEditor(code){
-        // console.log('on change code inside editor: ',code);
+        //pass the new code to the subject to validate its syntax
+        this.currentCCode.next(code);
+
+        console.log('Code Inside Editor Change');
+
+        /**
+         * If the Undo Manager hasn't been reset, then proceed to reset it
+         *
+         * Note: when navigating between the exercises, the code inside the editor changes twice,
+         *       the first time is '' (empty) and the second time is set to the exercise code
+         */
+        if (!this.isUndoManagerReset && code !== '') {
+            this.resetUndoManagerEditor();
+
+            this.isUndoManagerReset = true;
+        }
     }
 
     
@@ -128,7 +192,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
         // Variable to show the 'Compiling' message instead of the 'Run' button on the Ace Editor
         this.isCompiling = true;
 
-        var cCode = this._checkPrintfService.fixPrintfSentences(this.editor.getEditor().getValue());
+        var cCode = this._checkPrintfService.fixScanfSentences(this.editor.getEditor().getValue());
         
         this.compileCCodeSubscription = this._unitsService.compileCCode(cCode)
                                        .subscribe(
@@ -164,21 +228,46 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
         // console.log("code editor options: ",Object.keys(this.editor.getEditor().$options));
 
+
+        // Reset the code editors' Undo Manager (example and exercises section) the first time the component view has been initialized
+        this.resetUndoManagerEditor();
+
+    }
+
+    /**
+     * Reset the UndoManager property for the editor
+     *
+     * This property controls the undo history that permits the 'Ctrl+Z' functionality in the editor
+     */
+    resetUndoManagerEditor(){
+        this.editor.getEditor()
+                   .getSession()
+                   .setUndoManager(new UndoManager());
     }
 
     /**
      * Angular calls its ngOnChanges method whenever it detects changes to input properties of the component (or directive)
      * 
-     * param {SimpleChange} changes 
+     * @param changes: {[propKey: string]: SimpleChange}
      *         Represents a basic change from a previous to a new value.
      */
-    ngOnChanges(changes: {[propKey: string]: SimpleChange}){
+    ngOnChanges(changes: any){
 
         this.isExpectedOutputHidden = true;
 
-        // Everytime the problem changes, initialize the solution steps to show the first one
+        // Every time the problem changes, initialize the solution steps to show the first one
         if(!this.isOnExercises)
             this.initializeStepsOnExample();
+
+        // Set original code to the code of the problem selected only if it has not been set yet
+        if (!this.problem.originalCode) 
+            this.problem.originalCode = this.problem.code;
+
+        
+        // When navigating between the exercises (changing problems), reset its Undo Manager
+        if (this.isOnExercises && !changes.isOnExercises)
+            this.isUndoManagerReset = false;
+        
 
         console.log('problem changed', changes);
         // console.log(this.problem.consoleOutput);        
@@ -195,15 +284,64 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
 
 
     /**
-     * Append new text to the console text property of the current problem
+     * Update the text in the consoleOutput property of the current problem
      *
      * This method will be called outside the angular app, specifically in the module_configuration.js
      * 
-     * @param {string} newValue The new text to be appended at the end of the consoleOutput
+     * @param {string} newValue The new text of the consoleOutput
      */
-    appendConsoleText(newValue: string){
-        this.problem.consoleOutput += newValue;
+    updateConsoleText(newValue: string){
+        this.problem.consoleOutput = newValue;
+
         // console.log("this is the new output: ", this.problem.consoleOutput);
+    }
+
+    /**
+     * Check if the user's output is correct to update the score of the test
+     *
+     * The user's solution is compare against the real console output (strings stored in the tests database),
+     * the whitespaces are removed in both strings and then, are compared, if they're equal, the user's solution
+     * is considered correct
+     */
+    checkOutput(){
+
+        /* If the user is NOT on a test, do not check the solution */
+        if (!this._userProgressService.isOnTest())
+            return;
+
+        // replace all the whitespaces from the user solution output and the real expected output
+        let currentConsoleOutput = this.problem.consoleOutput.replace(/\s+/g, '');
+        let realConsoleOutput = this.problem.realOutput.replace(/\s+/g, '');
+        
+        // console.log('currentConsoleOutput: ',currentConsoleOutput);
+        // console.log('realConsoleOutput: ',realConsoleOutput);
+
+        // check if the user solution output is correct and update the score of the current problem
+        if(currentConsoleOutput == realConsoleOutput){
+            console.log('Correct output!');
+            this._userTestsInfoService.updateScore(this.problem);
+            
+            // Show message on correct solution
+            this.alerts.push({
+                type: 'exercise-correct',
+                messageText:{
+                                main: '¡Excelente!',
+                                body: 'Programa resuelto exitosamente.'
+                            },
+                timeout: 5000
+            });
+
+        }else{
+            // Show message on wrong solution
+            this.alerts.push({
+                type: 'wrong-exercise',
+                messageText:{
+                                main: '¡Ooops!',
+                                body: 'Revisa tu programa y vuelve a intentarlo.'
+                            },
+                timeout: 5000
+            });
+        }
     }
 
 
@@ -249,7 +387,7 @@ export class ProblemComponent implements OnInit, AfterViewInit, OnChanges, OnDes
      * Restore the original code of the problem if needed
      */
     restoreOriginalCode(){
-        this.problem.code = this.originalCode;
+        this.problem.code = this.problem.originalCode;
     }
 
 

@@ -7,10 +7,18 @@ import path = require('path');
 // --------------------------------- VARIABLES INIT ON -----------------------------------
 var Datastore = require('nedb');
 
-// Persistent datastore with automatic loading
+// Persistent datastore with automatic loading UNITS
 var unitsDB = new Datastore(
                 {
                     filename: 'database/aprendaC.database',
+                    autoload: true
+                }
+            );
+
+// Persistent datastore with automatic loading TESTS
+var testsDB = new Datastore(
+                {
+                    filename: 'database/tests.database',
                     autoload: true
                 }
             );
@@ -107,7 +115,12 @@ app.post('/compileCCode', function (req, res) {
              */
             if(!res.headersSent){
                 // Http 500 - Internal Server Error (For now)
-                res.writeHead(500);
+                res.writeHead(
+                        500,
+                        {
+                            'Content-Type': 'application/json'
+                        }
+                    );
             }
             // Send piece of error (each line invokes this error callback function)
             res.write(error);
@@ -187,6 +200,89 @@ app.get('/unit/:unitId', function (req, res) {
         res.send(JSON.stringify(docs));
     });
 
+});
+
+// GET - return All Tests
+app.get('/tests', function (req: express.Request, res: express.Response){    
+    testsDB.find({}, function (err, docs) {
+        // console.log('all units result: ',docs);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(docs));
+    });
+});
+
+// GET - return the specified Test
+app.get('/test/:testId', function (req, res) {
+
+    var requestedId = parseInt(req.params.testId);
+    console.log('GET test with _id: ',requestedId);
+
+    testsDB.findOne({ _id: requestedId }, function (err, docs) {
+        // the findOne function returns only an object, not an array
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(docs));
+    });
+
+});
+
+// POST - create a .c file with the user C Code and validate its syntax
+// POST method is used to submits data to be processed to a specified resource
+app.post('/validateSyntax', function (req, res) {
+    var cCode: String = req.body.cCode;
+
+    console.log('lets validate the syntax of this C Code: ',cCode );
+
+    fs.writeFile("user_code_folder/validate_user_code.c", cCode, function(err) {
+        // Error creating and writing into .c file
+        if(err) {
+            res.send(JSON.stringify('Error on validating C Code... (creating and writing into .c file)'));
+            // The return statement is needed for stop this callback and avoid continue with C Code compilation
+            return console.log('Error writing file: ',err);
+        }
+
+        console.log("The file was saved successfully!");
+
+        var clangCommand = spawn('clang',['--analyze','user_code_folder/validate_user_code.c']);
+
+              
+        clangCommand.stdout.on('data', (data) => {
+            console.log(`stdout: ${data}`);
+        });
+
+        clangCommand.stderr.on('data', (error) => {
+            if(!res.headersSent){
+                /**
+                 * Http 200 - It has to be an OK response because if an error is sent, no more validations 
+                 * will be perform in the future
+                 */
+                res.writeHead(
+                        200,
+                        {
+                            'Content-Type': 'text/html'
+                        }
+                    );
+            }
+            // Send piece of error (each line invokes this error callback function)
+            res.write(error);
+
+            console.log(`Syntax error in the C Code, stderr: ${error}`);
+            console.log('Piece of error printed!================================');
+        });
+
+        clangCommand.on('close', (code) => {
+            
+            // Error (piece) already sent
+            if(res.headersSent){
+                res.end();
+            }
+            else{
+                // No syntax errors - Note: Do NOT change the message sent ('no syntax errors')
+                res.send(JSON.stringify('no syntax errors')); 
+            }
+
+            console.log('Finish syntax validation process');
+        });
+    }); 
 });
 
 // GET - return the index.html file for all other requests

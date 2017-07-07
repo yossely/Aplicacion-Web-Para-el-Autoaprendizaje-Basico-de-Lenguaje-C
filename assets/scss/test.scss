@@ -1,0 +1,39 @@
+@import "variables";
+
+/*----------------------------------- LOCAL VARIABLES ON -----------------------------------*/
+
+$test_content_background: #5DA7A6;
+
+/*----------------------------------- LOCAL VARIABLES OFF ----------------------------------*/
+
+.test-content {
+    background-color: $test_content_background;
+    padding-top: 10px;
+    border: 3px solid $color_1NavyBlue;   
+}
+
+#progress-bar-text{
+	font-family: $font_title;
+	font-weight: bold;
+	font-size: 13px;
+	white-space:nowrap;
+	
+	&.no-points{
+		color: $color_2DarkCyan; 
+	}
+
+	&.with-points{
+		color: $color_white; 
+	}
+}
+
+#progress-bar{
+	margin-left: -30px;
+	padding-top: 5px;
+	display: block;
+	margin-right: 5px;
+}
+
+:host /deep/ .nav-exercise {
+    color: $color_1NavyBlue;
+}

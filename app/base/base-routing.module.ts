@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { BaseComponent }  from './base.component';
 import { HomeComponent }    from './home.component';
-import { AboutComponent }    from './about.component';
+import { HowItWorksComponent }    from './howitworks.component';
 import { ContentComponent }    from './content.component';
 
 
@@ -18,8 +18,8 @@ const baseRoutes: Routes = [
                 component: HomeComponent  
             },
             {
-                path: 'about',
-                component: AboutComponent  
+                path: 'howitworks',
+                component: HowItWorksComponent  
             },
             {
                 path: 'content',

@@ -63,7 +63,9 @@ export class UnitsService{
                             lessonId: lesson._id,
                             lessonTitle: lesson.title,
                             isCompleted: false,
-                            isCurrent: false
+                            isCurrent: false,
+                            isBlocked: false,
+                            isTest: false
                         });
                 });
             });
@@ -212,7 +214,7 @@ function toLesson(result:any): Lesson{
 function handleError (error: any) {
     // log error
     // could be something more sophisticated
-    let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your data!`
+    let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your UNITS data!`
     console.error(errorMsg);
 
     // throw an application level error

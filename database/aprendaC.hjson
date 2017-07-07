@@ -33,7 +33,7 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Aquí encontraremos el enunciado del problema que necesitamos resolver, es decir, se describen en detalle los datos que se conocen del problema y lo que debemos obtener como resultado. Basándonos en los requerimientos descritos construimos nuestro programa. En este primer ejemplo necesitamos un programa en C que imprima en pantalla la oración "¡Hola Mundo!".
+                                 Aquí encontraremos el enunciado del problema que necesitamos resolver, es decir, se describen en detalle los datos que se conocen del problema y lo que debemos obtener como resultado. Basándonos en los requerimientos descritos construimos nuestro programa. En este primer ejemplo necesitamos un programa en C que imprima en pantalla la oración *"¡Hola Mundo!"*.
                                  ''',
                     "code": '''
                             /* Incluir librería stdio.h */
@@ -55,7 +55,7 @@
                         Declaramos la función principal (main), recordemos que esta función debe estar presente en todo programa.
                         ''',
                         '''
-                        Imprimimos en pantalla la oración "¡Hola Mundo!” con la función printf.
+                        Imprimimos en pantalla la oración "¡Hola Mundo!" con la función printf.
                         ''',
                         '''
                         Ahora vamos a compilar y ejecutar nuestro programa haciendo click en el botón RUN que se encuentra en la esquina superior derecha del editor de código y visualizamos la salida del programa en la consola que está debajo del editor.
@@ -65,7 +65,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: "¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"
+                                     Complete el siguiente programa en C con la instrucción necesaria para imprimir en pantalla la oración: *"¡Hola SU_NOMBRE! Bienvenid@ a AprendaC"*
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -83,7 +83,7 @@
                     },
                     {
                         "statement": '''
-                                     Incluya la librería necesaria para utilizar la función printf en el siguiente programa en C.
+                                     Incluya la librería necesaria para utilizar la función `printf` en el siguiente programa en C.
                                      ''',
                         "code": '''
                                 /* Hacer: 
@@ -161,11 +161,11 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 La empresa de envío de paquetes Rapidash requiere calcular y mostrar el volumen y peso volumétrico de un paquete cuyas dimensiones son 14.4 cm de alto x 20.1 cm de largo x 15.7 cm de ancho. 
+                                 La empresa de envío de paquetes **Rapidash** requiere calcular y mostrar el volumen y peso volumétrico de un paquete cuyas dimensiones son 14.4 cm de alto x 20.1 cm de largo x 15.7 cm de ancho. 
 
-                                 Nota:
+                                 **Notas:**
                                  - El volumen de un paquete se calcula multiplicando el alto por largo y por ancho del cuerpo. 
-                                 - El peso volumétrico refleja la densidad de un paquete y se calcula con la fórmula: alto*largo*ancho/5000.
+                                 - El peso volumétrico refleja la densidad de un paquete y se calcula con la fórmula: `alto*largo*ancho/5000`.
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -206,7 +206,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Juan necesita hacer un programa en C para calcular la nota promedio de sus tres parciales, sabiendo que cada nota es 45.7, 70.3, y 85.2 respectivamente, calcular y mostrar el promedio de sus notas.
+                                     Juan necesita hacer un programa en lenguaje C para calcular la nota promedio de sus tres parciales, sabiendo que cada nota es 45.7, 70.3, y 85.2 respectivamente, se debe calcular y mostrar el promedio de sus notas.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -260,12 +260,12 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa en C que calcule el volumen de una esfera de 10 metros de radio con la fórmula v = 4/3*π*r^3. 
+                                     Escriba un programa en C que calcule el volumen de una esfera de 10 metros de radio con la fórmula `v = 4/3*π*r^3`. 
 
-                                     Tips: 
-                                     - Escriba la fracción 4/3 de la forma 4.0f/3.0f, es decir, de tipo float
-                                     - En lenguaje C no existe operador exponencial, por lo que la expresión r^3 se calcula multiplicando r tres veces por sí mismo.
-                                     - Utilice paréntesis ( ) si necesita agrupar operaciones matemáticas al aplicar la fórmula
+                                     **Tips:** 
+                                     - Escriba la fracción `4/3` de la forma `4.0f/3.0f`, es decir, de tipo `float`.
+                                     - En lenguaje C no existe operador exponencial, por lo que la expresión `r^3` se calcula multiplicando `r` tres veces por sí mismo.
+                                     - Utilice paréntesis `( )` si necesita agrupar operaciones matemáticas al aplicar la fórmula.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -366,8 +366,8 @@
                     {
                         "statement": '''
                                      Escribir un programa que solicite al usuario ingresar una cantidad de dinero, luego mostrar esta cantidad con un impuesto de 12% añadido. Por ejemplo, si el usuario ingresa 345.23 la salida será 386.658. 
-                                     
-                                     Nota: Se requiere que los valores decimales sean mostrados con 3 decimales.
+
+                                     **Nota:** Se requiere que los valores decimales sean mostrados con **3** decimales.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -392,12 +392,12 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que solicite un valor para 'x' y lo evalúe en la siguiente función polinómica: 5x^3 - x^2 +7x - 6. 
-                                     
-                                     Nota: 
-                                     - El valor de 'x' siempre será un número entero.
-                                     - Recuerde que C no tiene operador exponencial, así que es necesario multiplicar 'x' por sí misma tantas veces como lo indique el exponente, por ejemplo, x*x representa 'x' al cuadrado.
-                                     - Utilice los ( ) para agrupar cuando lo considere necesario.
+                                     Escriba un programa que solicite un valor para `x` y lo evalúe en la siguiente función polinómica: `5x^3 - x^2 +7x - 6`. 
+
+                                     **Notas:** 
+                                     - El valor de `x` siempre será un número entero.
+                                     - Recuerde que C no tiene operador exponencial, así que es necesario multiplicar `x` por sí misma tantas veces como lo indique el exponente, por ejemplo, `x*x` representa `x` al cuadrado.
+                                     - Utilice los `( )` para agrupar cuando lo considere necesario.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -425,8 +425,8 @@
                     {
                         "statement": '''
                                      Escriba un programa que solicite una temperatura en grados Fahrenheit y luego imprima en pantalla la temperatura equivalente en grados Celsius. 
-                                     
-                                     Nota: para convertir grados Fahrenheit a Celsius se emplea la fórmula °C = (°F  -  32)*5/9. 
+
+                                     **Nota:** para convertir grados Fahrenheit a Celsius se emplea la fórmula `°C = (°F  -  32)*5/9`. 
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -505,11 +505,12 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Continuando con el ejemplo de la empresa de envío de paquetes Rapidash, se requiere mostrar el tipo de paquete de acuerdo a su peso volumétrico, para esto la empresa establece tres categorías: 
+                                 Continuando con el ejemplo de la empresa de envío de paquetes **Rapidash**, se requiere mostrar el tipo de paquete de acuerdo a su peso volumétrico, para esto la empresa establece tres categorías: 
+
                                  - Grande (peso volumétrico mayor o igual que 10)
                                  - Mediano (peso volumétrico mayor que 5 y menor que 10) 
                                  - Pequeño (peso volumétrico menor o igual que 5)
-                                 
+
                                  Vamos a escribir las instrucciones necesarias para evaluar y clasificar un paquete con base en las dimensiones ingresadas por el usuario.
                                  ''',
                     "code": '''
@@ -572,12 +573,13 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     En el banco Golduck es posible realizar transferencias de dinero, según el monto de la transferencia se aplica una comisión de tasa fija más una tasa porcentual de la siguiente manera:
+                                     En el banco **Golduck** es posible realizar transferencias de dinero y según el monto de la transferencia se aplica una comisión de tasa fija más una tasa porcentual de la siguiente manera:
+
                                      - Si el monto es menor que 5000 la comisión será de 30 + 1.7%
                                      - Si el monto es mayor o igual que 5000 y menor que 30000 la comisión será de 56 + 0.66%
                                      - Si el monto es mayor o igual que 30000 y menor que 100000 la comisión será de 100 + 0.34%
                                      - Si el monto es mayor o igual que 100000 la comisión será de 155 + 0.09%
-                                     
+
                                      Se requiere escribir un programa que solicite al usuario el monto de la transferencia que desea realizar, luego evaluar y calcular la comisión que le corresponde según el monto e imprimir en pantalla el monto total con la comisión añadida.
                                      ''',
                         "code": '''
@@ -604,8 +606,8 @@
                     {
                         "statement": '''
                                      Escriba un programa para permitir que un usuario ingrese un número entero e indicar si ese número es par o impar.
-                                     
-                                     Tip: recuerde la función del operador %
+
+                                     **Tip:** recuerde la función del operador `%`
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -630,6 +632,7 @@
                     {
                         "statement": '''
                                      Complete el siguiente programa para que solicite la edad del usuario e indique en qué etapa de su edad biológica se encuentra según la siguiente clasificación:
+
                                      - Niño: de 5 a 12 años
                                      - Adolescente: de 13 a 19 años
                                      - Adulto Joven: de 20 a 24 años
@@ -663,7 +666,7 @@
             {
                 "_id": 2,
                 "title": "Cláusula else",
-                "content": "Estructura y uso de la cláusula else",
+                "content": "Definición, estructura y casos de uso de la cláusula else en conjunto con la sentencia if",
                 "explanation": '''
                                En algunas oportunidades es útil ejecutar ciertas instrucciones si *NO* se cumple una condición `if`, para estos casos existe la cláusula `else`:
                                ```c
@@ -680,7 +683,8 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Vamos a optimizar el programa del ejemplo visto en la lección anterior con el uso de la cláusula else. Recordemos las tres categorías establecidas por la empresa Rapidash: 
+                                 Vamos a optimizar el programa del ejemplo visto en la lección anterior con el uso de la cláusula `else`. Recordemos las tres categorías establecidas por la empresa **Rapidash**: 
+
                                  - Grande (peso volumétrico mayor o igual que 10), 
                                  - Mediano (peso volumétrico mayor que 5 y menor que 10) 
                                  - Pequeño (peso volumétrico menor o igual que 5)
@@ -744,11 +748,12 @@
                     {
                         "statement": '''
                                      Un estudiante desea saber el equivalente de su calificación en literal (A, B, C, D y F) conociendo los puntos obtenidos en una asignatura, por lo tanto se requiere escribir un programa en C que solicite la nota (siempre será un número entero) e indique la calificación equivalente según las siguientes condiciones:
-                                     - A: 90-100
-                                     - B: 80-89
-                                     - C: 70-79
-                                     - D: 60-69
-                                     - F: 0-59
+
+                                     - A: 90 — 100
+                                     - B: 80 — 89
+                                     - C: 70 — 79
+                                     - D: 60 — 69
+                                     - F: 0 — 59
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -773,7 +778,8 @@
                     {
                         "statement": '''
                                      Escriba un programa que solicite tres números enteros e indique cuál es el mayor y el menor número entre ellos. 
-                                     Nota: Intente utilizar la menor cantidad de condiciones (if-else) posibles
+
+                                     **Nota:** Intente utilizar la menor cantidad de condiciones (`if-else`) posibles
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -806,6 +812,7 @@
                     {
                         "statement": '''
                                      Imprimir en pantalla la ciudad correspondiente a un código de área ingresado por el usuario sabiendo que:
+
                                      - 229 es Buenos Aires
                                      - 404 es Cartagena
                                      - 470 es Cartagena
@@ -813,9 +820,10 @@
                                      - 762 es Quito
                                      - 770 es Cartagena
                                      - 912 es Buenos Aires
+
                                      Si el usuario ingresa un código de área que no está en la lista se debe imprimir un mensaje de error.
-                                     
-                                     Nota: Con 3 condiciones if es suficiente.
+
+                                     **Nota:** Con **3** condiciones `if` es suficiente.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -875,11 +883,12 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Sigamos con el ejemplo de la empresa Rapidash, esta vez la empresa define la tarifa correspondiente a cada plazo del tiempo de entrega de un paquete de la siguiente manera:
+                                 Sigamos con el ejemplo de la empresa **Rapidash**, esta vez la empresa define la tarifa correspondiente a cada plazo del tiempo de entrega de un paquete de la siguiente manera:
+
                                  - Entrega en 1 día, el costo será 1250 
                                  - Entrega en 2 días, el costo será 1000 
                                  - Entrega en 3 días, el costo será 300
-                                 
+
                                  Vamos a codificar las instrucciones necesarias para solicitar el tiempo de entrega que desea el usuario para un paquete. Luego evaluar, clasificar e informar la tarifa aplicada al plazo ingresado por el usuario.
                                  ''',
                     "code": '''
@@ -963,17 +972,21 @@
                     {
                         "statement": '''
                                      Un Boy Scout quiere aprender el código morse y decide empezar por los dígitos. Se requiere hacer un programa en C que dado un dígito muestre su correspondiente código morse. A continuación se muestran los dígitos del 0 al 9 en código morse:
-                                     - 0    _ _ _ _ _ 
-                                     - 1    . _ _ _ _ 
-                                     - 2    . . _ _ _
-                                     - 3    . . . _ _
-                                     - 4    . . . . _ 
-                                     - 5    . . . . . 
-                                     - 6    _ . . . .
-                                     - 7    _ _ . . .
-                                     - 8    _ _ _ . . 
-                                     - 9    _ _ _ _ .
-                                     Si un usuario introduce un dígito fuera del rango especificado (0-9) se debe mostrar el mensaje “El digito ingresado no se encuentra entre 0 y 9”
+
+                                     Dígito | Código
+                                     ------------ | -------------
+                                     0 | \_ _ _ _ _ 
+                                     1 | . _ _ _ _ 
+                                     2 | . . _ _ _
+                                     3 | . . . _ _
+                                     4 | . . . . _ 
+                                     5 | . . . . . 
+                                     6 | _ . . . .
+                                     7 |  _ _ . . .
+                                     8 | _ _ _ . . 
+                                     9 | _ _ _ _ .
+
+                                     Si un usuario introduce un dígito fuera del rango especificado (0-9) se debe mostrar el mensaje *"El dígito ingresado no se encuentra entre 0 y 9"*
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -999,14 +1012,15 @@
                     {
                         "statement": '''
                                      Se necesita un programa en C que solicite al usuario dos números decimales y permita sumar, restar, multiplicar o dividir esos valores según una opción ingresada por el usuario. Las opciones se pueden mostrar de la siguiente manera:
+
                                      - 1: Sumar
                                      - 2: Restar
                                      - 3: Multiplicar
                                      - 4: Dividir
-                                     
+
                                      El flujo del programa sería: solicitar dos valores decimales, mostrar opciones disponibles, guardar opción ingresada, evaluar la opción y aplicar la operación correspondiente mostrando el resultado de la misma. 
-                                     
-                                     En caso de que el usuario ingrese una opción que no está disponible se debe mostrar el mensaje "La opción OPCION no esta disponible"
+
+                                     En caso de que el usuario ingrese una opción que no está disponible se debe mostrar el mensaje *"La opción OPCION no esta disponible"*
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1049,11 +1063,11 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa en C que solicite la fecha en formato 31-3-17, es decir, solicitar el dia, luego el mes y por último el año. Después de recolectar esta información mostrar la misma fecha pero de la forma “31 de marzo del año 2017”
-                                     
-                                     Tip: Imprima la fecha final por partes, es decir, primero “31 de”, luego convierte 03 a “marzo” y por último “del año 2017”.
-                                     
-                                     Nota: En lenguaje C el nombre o identificador de una variable no puede contener el caracter ñ
+                                     Escriba un programa en C que solicite la fecha en formato **31-3-17**, es decir, solicitar el dia, luego el mes y por último el año. Después de recolectar esta información mostrar la misma fecha pero de la forma ***"31 de marzo del año 2017"***
+
+                                     **Tip:** Imprima la fecha final por partes, es decir, primero *"31 de"*, luego convierte 03 a *"marzo"* y por último *"del año 2017"*.
+
+                                     **Nota:** En lenguaje C el nombre o identificador de una variable **no** puede contener el caracter *ñ*
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1089,12 +1103,12 @@
     },
     {
         "_id": 3,
-        "title" : "Unidad III. Ciclos: while, do-while y for",
+        "title" : "Unidad III. Ciclos: while, do-while y for.  Contadores y acumuladores.",
         "lessons": [
             {
                 "_id": 1,
                 "title": "Ciclos: while",
-                "content": "Definición de ciclos, estructura y uso del ciclo while. ",
+                "content": "Definición de ciclos. Estructura y uso del ciclo while en lenguaje C.",
                 "explanation": '''
                                Un ciclo es una sentencia que se encarga de ejecutar repetidamente las instrucciones que se encuentran dentro del cuerpo del ciclo. En C, cada ciclo tiene una expresión de control. Dicha expresión de control es evaluada **ANTES** de cada ejecución del cuerpo del ciclo (a esto se le llama *iteración*) y si el resultado es verdadero, el ciclo continúa su ejecución.
                                
@@ -1125,7 +1139,7 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 La empresa de envíos Rapidash utiliza camionetas para transportar sus paquetes; el peso volumétrico disponible en la última camioneta que saldrá hoy es de 28.3, por esta razón la empresa necesita que su programa acepte nuevos paquetes mientras haya espacio disponible. 
+                                 La empresa de envíos **Rapidash** utiliza camionetas para transportar sus paquetes; el peso volumétrico disponible en la última camioneta que saldrá hoy es de 28.3, por esta razón la empresa necesita que su programa acepte nuevos paquetes mientras haya espacio disponible. 
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -1227,7 +1241,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Complete el siguiente programa para imprimir una tabla de números enteros junto a sus cuadrados. El programa primero debe solicitar al usuario un número entero (n), luego se imprimen n cantidad de líneas, donde cada una tendrá un número entre 1 y n junto a su cuadrado.
+                                     Complete el siguiente programa para imprimir una tabla de números enteros junto a sus cuadrados. El programa primero debe solicitar al usuario un número entero `n`, luego se imprimen `n` cantidad de líneas, donde cada una tendrá un número entre 1 y `n` junto a su cuadrado.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1265,8 +1279,8 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que solicite un número par entero (n) al usuario e imprima los números pares desde n hasta 0, es decir, de manera descendiente. 
-                                     Si el usuario ingresa un número impar se debe mostrar el mensaje error “Lo siento, el número ingresado es impar”.
+                                     Escriba un programa que solicite un número par entero `n` al usuario e imprima los números pares desde `n` hasta 0, es decir, de manera descendiente. 
+                                     Si el usuario ingresa un número impar se debe mostrar el mensaje error *"Lo siento, el número ingresado es impar"*.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1302,7 +1316,15 @@
                     },
                     {
                         "statement": '''
-                                     Desarrollar un programa para llevar y mantener el saldo de una cuenta bancaria. El programa debe ofrecer al usuario un menú de opciones: vaciar la cuenta, crédito para la cuenta(+), débito desde la cuenta(-), mostrar el saldo actual y salir del programa. Las opciones son representadas por los números enteros 0, 1, 2, 3 y 4 respectivamente. Al comenzar el programa se debe mostrar el saldo inicial de la cuenta (0.0)
+                                     Desarrollar un programa para llevar y mantener el saldo de una cuenta bancaria. El programa debe ofrecer al usuario un menú de opciones: 
+
+                                     - Vaciar la cuenta
+                                     - Crédito para la cuenta(+) 
+                                     - Débito desde la cuenta(-) 
+                                     - Mostrar el saldo actual 
+                                     - Salir del programa. 
+
+                                     Las opciones son representadas por los números enteros 0, 1, 2, 3 y 4 respectivamente. Al comenzar el programa se debe mostrar el saldo inicial de la cuenta: `0.0`
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1372,7 +1394,7 @@
                                
                                printf("El numero tiene %d digito(s)\n", digitos);
                                ```
-                               Si usamos un ciclo `while` en lugar del `do-while`, no estaremos tomando en cuenta el caso en que el numero ingresado sea 0, donde al evaluar la expresión resulta falso (0) **ANTES** de ejecutar el cuerpo de ciclo por lo que no incrementamos el valor de digitos y el resultado final será *“El numero tiene 0 digito(s)”* cuando en realidad tiene 1 dígito.
+                               Si usamos un ciclo `while` en lugar del `do-while`, no estaremos tomando en cuenta el caso en que el numero ingresado sea 0, donde al evaluar la expresión resulta falso (0) **ANTES** de ejecutar el cuerpo de ciclo por lo que no incrementamos el valor de digitos y el resultado final será *"El numero tiene 0 digito(s)"* cuando en realidad tiene 1 dígito.
                                ```c
                                while(valor>0){
                                    valor/=10;
@@ -1382,7 +1404,8 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 La empresa de envíos esta vez desea asegurar el registro de al menos un paquete y luego, basándose en la misma condición del ejemplo en la lección anterior continuar con el registro de los demás paquetes. Recordemos que la condición es registrar paquetes mientras haya espacio en la camioneta que saldrá hoy, teniendo como peso volumétrico disponible 28.3
+                                 La empresa de envíos esta vez desea asegurar el registro de al menos un paquete y luego, basándose en la misma condición del ejemplo en la lección anterior continuar con el registro de los demás paquetes. 
+                                 Recordemos que la condición es registrar paquetes mientras haya espacio en la camioneta que saldrá hoy, teniendo como peso volumétrico disponible 28.3
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -1482,9 +1505,9 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa que permita ingresar una serie de números hasta que el usuario ingrese 0, luego calcular y mostrar el promedio de dichos números.
+                                     Escriba un programa que permita ingresar una serie de números hasta que el usuario ingrese `0`, luego calcular y mostrar el promedio de dichos números.
 
-                                     Nota: los números pueden ser enteros o decimales.
+                                     **Nota:** los números pueden ser enteros o decimales.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1523,7 +1546,7 @@
                         "statement": '''
                                      Escriba un programa que solicite al usuario ingresar un número entero, luego imprimir dicho número con sus dígitos invertidos.
 
-                                     Tip: Recuerde que la función del operador % es retornar el residuo de una división.
+                                     **Tip:** Recuerde que la función del operador `%` es retornar el residuo de una división.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1549,11 +1572,11 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que encuentre el número más grande en una serie de números ingresada por el usuario. El programa debe solicitar los números uno por uno. La serie culmina cuando el usuario ingresa 0 o un número negativo. Al finalizar, el programa debe imprimir el número positivo más grande de la serie introducida.
+                                     Escriba un programa que encuentre el número más grande en una serie de números ingresada por el usuario. El programa debe solicitar los números uno por uno. La serie culmina cuando el usuario ingresa `0` o un número negativo. Al finalizar, el programa debe imprimir el número positivo más grande de la serie introducida.
 
-                                     Nota: Los números no son necesariamente enteros.
+                                     **Nota:** Los números no son necesariamente enteros.
 
-                                     Tip: Declare e inicialice una variable con un número muy pequeño (cero por ejemplo) para empezar a comparar con los números introducidos y encontrar el mayor.
+                                     **Tip:** Declare e inicialice una variable con un número muy pequeño (cero por ejemplo) para empezar a comparar con los números introducidos y encontrar el mayor.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1595,7 +1618,7 @@
             {
                 "_id": 3,
                 "title": "Ciclos: for",
-                "content": "Estructura del ciclo for. ¿Cuándo y cómo utilizarlo?",
+                "content": "Estructura del ciclo for. Significado de cada una de las sentencias en la declaración del for. Aprender a reconocer ¿Cuándo y cómo utilizarlo?",
                 "explanation": '''
                                El último ciclo de lenguaje C se denomina `for` y su estructura es la siguiente:
                                ```c
@@ -1625,7 +1648,7 @@
                 "example": {
                     "statement": '''
                                  Volviendo a nuestro ejemplo de la empresa de envíos, supongamos esta vez que la empresa desea registrar sólo 3 paquetes en lo que resta del día. Vamos a modificar el programa en C para solicitar, calcular y mostrar el volumen, peso volumétrico y costo de envío de solo 3 paquetes. 
-                                 Al finalizar el registro de los paquetes se requiere imprimir el mensaje "Registro de los 3 paquetes completado con éxito". 
+                                 Al finalizar el registro de los paquetes se requiere imprimir el mensaje *"Registro de los 3 paquetes completado con éxito"*.
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -1762,7 +1785,8 @@
                     {
                         "statement": '''
                                      Se necesita un programa que calcule el factorial de un número entero ingresado por el usuario. 
-                                     Recuerde que para calcular el factorial de número, por ejemplo 5, es 5! = 5 * 4 * 3 * 2 * 1 = 120
+
+                                     Recuerde que para calcular el factorial de número, por ejemplo 5, es `5! = 5 * 4 * 3 * 2 * 1 = 120`
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1793,9 +1817,9 @@
                         "statement": '''
                                      Complete el siguiente programa para imprimir un mes como en un calendario. El usuario ingresa la cantidad de días del mes y el día de la semana en el cual empieza dicho mes.
 
-                                     Tip: 
-                                     - El programa no es tan difícil como parece. La parte más importante es un ciclo for con la variable i que vaya desde 1 hasta la cantidad de días del mes, imprimiendo cada valor de i. Dentro del ciclo, habrá una sentencia if que evalúe si i es el último día de la semana, de ser así se imprime un salto de línea \n.
-                                     - Al igual que salto de línea (\n) existe la opción de imprimir con la función printf una tabulación (\t)
+                                     **Tips:** 
+                                     - El programa no es tan difícil como parece. La parte más importante es un ciclo `for` con la variable `i` que vaya desde 1 hasta la cantidad de días del mes, imprimiendo cada valor de `i`. Dentro del ciclo, habrá una sentencia `if` que evalúe si `i` es el último día de la semana, de ser así se imprime un salto de línea `\n`.
+                                     - Al igual que salto de línea `\n` existe la opción de imprimir con la función `printf` una tabulación `\t`
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -1842,15 +1866,9 @@
                                           '''
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "_id": 4,
-        "title" : "Unidad VI. Contadores, acumuladores, vectores y strings",
-        "lessons": [
+            },
             {
-                "_id": 1,
+                "_id": 4,
                 "title": "Contadores y Acumuladores",
                 "content": "Aumentar o disminuir valores progresivamente dentro de los ciclos. Acumular valores y guardarlos en una variable. Operadores abreviados para incrementar, disminuir y acumular valores.",
                 "explanation": '''
@@ -1870,14 +1888,19 @@
                 "example": {
                     "statement": '''
                                  La empresa de envíos Rapidash decide que el precio de un paquete se calcule de acuerdo a su categoría (pequeño, mediano, grande) y al tiempo de entrega elegido por el cliente (1, 2 o 3 días) como se muestra a continuación:
+
+                                 #### Categoría
+                                 
                                  - Paquete grande: 2196.43
                                  - Paquete mediano: 1523.86
                                  - Paquete pequeño: 1018.73
-
+                                 
+                                 #### Tiempo de entrega
+                                 
                                  - Tiempo de entrega 1 día: 1250
                                  - Tiempo de entrega 2 días: 1000
                                  - Tiempo de entrega 3 días: 300
-
+                                 
                                  Así pues, enviar un paquete mediano en 2 días tendrá un costo de 1523.86 + 1000 = 2523.86. La empresa desea visualizar el costo del envío de cada paquete registrado. También se requiere contar y mostrar la cantidad de paquetes enviados en un día, sumar y mostrar el costo de todos los paquetes enviados.
                                  ''',
                     "code": '''
@@ -2011,9 +2034,9 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Una ONG se encarga de realizar jornadas de vacunación en las escuelas primarias. Cada día empiezan con 1000 vacunas. Necesitan un programa que controle las entregas realizadas en cada escuela y avise si el inventario baja a menos de 200 unidades para regresar al centro principal y tomar más vacunas. Cuando el inventario se está agotando (menos de 200 vacunas) se debe mostrar cuántas escuelas fueron visitadas y la cantidad de vacunas restantes.
+                                     Una *ONG* se encarga de realizar jornadas de vacunación en las escuelas primarias. Cada día empiezan con 1000 vacunas. Necesitan un programa que controle las entregas realizadas en cada escuela y avise si el inventario baja a menos de 200 unidades para regresar al centro principal y tomar más vacunas. Cuando el inventario se está agotando (menos de 200 vacunas) se debe mostrar cuántas escuelas fueron visitadas y la cantidad de vacunas restantes.
 
-                                     Nota: Las escuelas visitadas no van a tener más de 200 alumnos.
+                                     **Nota:** Las escuelas visitadas no van a tener más de 200 alumnos.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2051,7 +2074,7 @@
                     },
                     {
                         "statement": '''
-                                     Escriba un programa que permita contar los números pares existentes dentro de un rango ingresado por el usuario. El flujo del programa sería: solicitar al usuario los números enteros (a y b) que delimitan el rango, codificar un ciclo que vaya desde a hasta b, contar y sumar los números pares. Por último mostrar la cantidad de números pares encontrados y la suma de ellos.
+                                     Escriba un programa que permita contar los números pares existentes dentro de un rango ingresado por el usuario. El flujo del programa sería: solicitar al usuario los números enteros `a` y `b` que delimitan el rango, codificar un ciclo que vaya desde `a` hasta `b`, contar y sumar los números pares. Por último mostrar la cantidad de números pares encontrados y la suma de ellos.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2086,7 +2109,7 @@
                         "statement": '''
                                      Se requiere un programa en C capaz de registrar temperaturas en ºF. Se necesita transformar cada temperatura a ºC, contar la cantidad de temperaturas positivas y negativas, calcular y mostrar el promedio de las temperaturas positivas y negativas. El programa le permitirá al usuario ingresar tantas temperaturas como sea necesario.
 
-                                     Nota: Para transformar una temperatura de ºF a ºC se utiliza la fórmula: °C = (°F  -  32)*5/9.
+                                     **Nota:** Para transformar una temperatura de ºF a ºC se utiliza la fórmula: `°C = (°F  -  32)*5/9`.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2129,13 +2152,19 @@
                                           '''
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "_id": 4,
+        "title" : "Unidad IV. Arreglos: vectores y matrices. Strings y operaciones con strings.",
+        "lessons": [
             {
-                "_id": 2,
+                "_id": 1,
                 "title": "Arreglos: vectores",
                 "content": "Definición de arreglos. Declaración de un vector. Condiciones en los arreglos. Acceso a los elementos de un vector. Asignación de valores en un vector.",
                 "explanation": '''
-                               Un arreglo es una estructura que contiene una cantidad X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión, se denomina arreglo unidimensional o vector.
+                               Un arreglo es una estructura que contiene una cantidad X de valores, siendo todos los valores del mismo tipo, estos valores son conocidos como elementos. La forma más simple de un arreglo tiene solo una dimensión y se denomina arreglo unidimensional o vector.
                                Para declarar un vector debemos especificar el tipo de dato de los elementos que vamos a guardar y la cantidad de elementos, por ejemplo:
                                ```c
                                int vector[10];
@@ -2171,11 +2200,11 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 El día de hoy, la empresa Rapidash necesita registrar sólo 3 paquetes y guardar el volumen, peso volumétrico y precio de cada uno para ser consultado más adelante. 
+                                 El día de hoy, la empresa **Rapidash** necesita registrar sólo 3 paquetes y guardar el volumen, peso volumétrico y precio de cada uno para ser consultado más adelante. 
 
                                  El flujo del programa será: registrar los 3 paquetes y guardar su respectiva información, luego mostrar un menú de opciones donde el usuario seleccione el paquete que desea consultar y mostrar el volumen, peso volumétrico y precio de dicho paquete. 
 
-                                 Una de las opciones en el menú será "Salir del sistema" (opción 0) para finalizar el programa. 
+                                 Una de las opciones en el menú será *"Salir del sistema"* (opción 0) para finalizar el programa.
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -2314,7 +2343,7 @@
                         "statement": '''
                                      Desarrolle un programa en C para solicitar al usuario 10 números enteros para luego imprimir en pantalla los mismo números pero en orden inverso.
 
-                                     Tip: Utilice un ciclo que solicite y guarde los números enteros en un vector y otro ciclo que recorra el mismo vector desde la última posición a la primera para imprimir cada número en orden inverso.
+                                     **Tip:** Utilice un ciclo que solicite y guarde los números enteros en un vector y otro ciclo que recorra el mismo vector desde la última posición a la primera para imprimir cada número en orden inverso.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2351,12 +2380,13 @@
                     },
                     {
                         "statement": '''
-                                     Diseñe un programa en lenguaje C que le permita a un usuario ingresar 10 números, luego determinar e informar si
-                                     -La primera posición es positiva.
-                                     -El número de la cuarta posición es impar.
-                                     -La última posición es diferente de cero.
+                                     Diseñe un programa en lenguaje C que le permita a un usuario ingresar 10 números, luego determinar e informar si:
 
-                                     Nota: los números siempre serán valores enteros.
+                                     - La primera posición es positiva
+                                     - El número de la cuarta posición es impar 
+                                     - La última posición es diferente de cero.
+
+                                     **Nota:** los números siempre serán valores enteros.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2401,9 +2431,9 @@
                     },
                     {
                         "statement": '''
-                                     Los números de la serie Fibonacci son 0, 1, 1, 2, 3, 5, 8, 13, …, donde cada número es el resultado de la suma de los dos números anteriores. Escriba un programa en C que declare un vector de 40 posiciones llamado numeros_fib y llene el vector con los 40 primeros números de la serie Fibonacci. Para finalizar el programa debe imprimir en pantalla los 40 números de la serie calculados.
+                                     Los números de la *Serie Fibonacci* son 0, 1, 1, 2, 3, 5, 8, 13, …, donde cada número es el resultado de la suma de los dos números anteriores. Escriba un programa en C que declare un vector de 40 posiciones llamado `numeros_fib` y llene el vector con los 40 primeros números de la *Serie Fibonacci*. Para finalizar el programa debe imprimir en pantalla los 40 números de la serie calculados.
 
-                                     Tip: Asigne los dos primeros números individualmente en el vector y luego utilice un ciclo para calcular los 38 números restantes de la serie.
+                                     **Tip:** Asigne los dos primeros números individualmente en el vector y luego utilice un ciclo para calcular los 38 números restantes de la serie.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2428,6 +2458,369 @@
                                 ''',
                         "expectedOutput": ''' 
                                           > Los 40 primeros números de la serie Fibonacci son: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 1346269 2178309 3524578 5702887 9227465 14930352 24157817 39088169 63245986
+                                          '''
+                    }
+                ]
+            },
+            {
+                "_id": 2,
+                "title": "Arreglos: matrices",
+                "content": "Declaración e inicialización de una matriz. Acceso a los elementos de una matriz. Recorrer cada elementos de una matriz utilizando el ciclo for.",
+                "explanation": '''
+                               Veamos cómo declarar un arreglo bidimensional o matriz:
+                               ```c
+                               float matriz[5][9];
+                               ```
+                                Aquí tenemos una matriz de tipo `float`, tiene 5 filas y 9 columnas. Recordemos que los índices de los arreglos comienzan por 0, por lo tanto nuestra matriz luce:
+                               
+                               ![Visualización de una matriz](assets/img/array-image-lesson14.svg "Arreglos: matrices")
+
+                               Para acceder a un elemento debemos especificar las coordenadas de la forma `matriz[fila][columna]`, es decir, si queremos acceder al elemento ubicado en la fila 3, columna 6, escribimos `matriz[3][6]`
+                               
+                               Consideremos por ejemplo, inicializar un arreglo de 5x5 para usar como una matriz identidad
+
+                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1's en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0's en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
+                               
+                               ![Matriz Identidad](assets/img/identity-array-image-lesson14.svg "Matriz Identidad")
+                               
+                               Necesitamos visitar cada elemento de la matriz, un par de ciclos `for` resulta perfecto, uno para recorrer cada fila y otro para recorrer cada columna:
+                               ```c
+                               for (fila = 0; fila < 10; ++fila)
+                               {
+                                   for (columna = 0; columna < 10; ++columna)
+                                   {
+                                       // Si estamos en la diagonal principal, asignar valor 1.0f
+                                       if (fila == columna)
+                                       {
+                                           matriz[fila][columna]=1.0f;
+                                       }else{
+                                           matriz[fila][columna]=0.0f;
+                                       }
+                                   }
+                               }
+                               ```
+                               Para inicializar una matriz podemos especificar los elementos de cada fila con la ayuda de `{ }` de la siguiente manera:
+                               ```c
+                               int matriz[4][6] = {{1,1,0,1,0,1},
+                                                   {0,0,1,1,0,0},
+                                                   {0,1,1,0}};
+                               ```
+                               Al no inicializar algún elemento, este tendrá como valor 0. En este ejemplo las últimas dos columnas de la 3º fila y la 4º fila completa tendrán 0.
+                               
+                               También podemos *omitir* los `{ }` y escribir todos los elementos separados solo por comas, una vez el compilador encuentre suficientes valores para llenar una fila, empieza con la siguiente:
+                               ```c
+                               int matriz[4][6] = {1,1,0,1,0,1,
+                                                   0,0,1,1,0,0,
+                                                   0,1,1,0};
+                               ```
+                               De la misma manera se completan los elementos faltantes con el valor 0.
+                               ''',
+                "example": {
+                    "statement": '''
+                                 La empresa **Rapidash** va a recibir dos (2) paquetes por día durante cuatro (4) días y desea registrar el volumen, peso volumétrico, tiempo de entrega y el precio del envío de cada uno. Al finalizar con el proceso de registro de los paquetes se requiere:
+
+                                 - Calcular y mostrar el volumen promedio de los paquetes durante los cuatro días.
+                                 - Calcular y mostrar el peso volumétrico promedio de los paquetes durante los cuatro días.
+                                 - Calcular y mostrar el precio total de los envíos por día.
+                                 - Calcular y mostrar el precio total de los envíos durante los cuatro días.
+                                 - Calcular y mostrar el precio promedio de los envíos por día.
+                                 - Calcular y mostrar el precio promedio de los envíos durante los cuatro días.
+                                 ''',
+                    "code": '''
+                            #include <stdio.h> 
+
+                            int main()
+                            {
+                                /* Declaración de las variables de tipo decimal:
+                                    - 3 variables para guardar dimensiones del paquete actual
+                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
+                                        por día durante cuatro (4) días 
+                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
+                                */
+                                float alto, largo, ancho, 
+                                      volumenes[4][2], 
+                                      pesos_volumetricos[4][2], 
+                                      precios[4][2],
+                                      volumen_promedio=0.0f,
+                                      peso_volumetrico_promedio=0.0f,
+                                      precio_total_por_dia=0.0f,
+                                      precio_total=0.0f;
+
+
+                                /* Declaración de variables enteras 
+                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Una para indicar la cantidad de días
+                                    - Una para indicar la cantidad de paquetes a registrar por días
+                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
+                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
+                                */
+                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
+
+                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
+
+                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
+                                    tiene 4 filas que representan la cantidad de días */
+                                for(filas=0; filas<cantidad_dias; filas++){
+
+                                    printf("Ingrese los paquetes del día #%d\n",filas+1);
+                                    
+                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
+                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        /* Solicitud de cada dimensión */
+                                        printf("**Paquete %d\n",columnas+1);
+                                        printf("-Alto:");
+                                        scanf("%f",&alto);
+                                        printf("-Largo:");
+                                        scanf("%f",&largo);
+                                        printf("-Ancho:");
+                                        scanf("%f",&ancho);
+
+                                        /* Cálculo y asignación del volumen y peso volumétrico en cada posición de las 
+                                            matrices volumenes y pesos_volumetricos respectivamente */
+                                        volumenes[filas][columnas] = alto*largo*ancho;
+                                        pesos_volumetricos[filas][columnas] = alto*largo*ancho/5000;
+                                        
+                                        /* Categoría y precio según el peso volumétrico de un paquete */
+                                        if ( pesos_volumetricos[filas][columnas] >= 10.0f )
+                                        {
+                                            printf("El paquete es grande\n");
+                                            precios[filas][columnas] = 2196.43f;
+                                        }
+                                        else{
+                                            if ( (pesos_volumetricos[filas][columnas] > 5)&&(pesos_volumetricos[filas][columnas] < 10.0f) )
+                                            {
+                                                printf("El paquete es mediano\n");
+                                                precios[filas][columnas] = 1523.86f;
+                                            }
+                                            else{
+                                                printf("El paquete es pequeño\n");
+                                                precios[filas][columnas] = 1018.73f;
+                                            }  
+                                        }
+
+                                        /* Solicitud del tiempo de entrega */
+                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
+                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
+
+                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
+                                            y sumar el costo a la matriz precios[filas][columnas]
+                                         */
+                                        switch(tiempo_entrega_dias[filas][columnas]){
+                                            case 1:
+                                                precios[filas][columnas] += 1250.0f;
+                                                break;
+                                            case 2:
+                                                precios[filas][columnas] += 1000.0f;
+                                                break;
+                                            case 3:
+                                                precios[filas][columnas] += 300.0f;
+                                                break;   
+                                        }
+
+                                    }
+
+                                }
+
+                                /* Calcular las estadísticas solicitadas en el enunciado */
+                                printf("\nDatos estadisticos de los envios registrados\n\n");    
+                                for(filas=0; filas<cantidad_dias; filas++){
+                                    
+                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
+                                    precio_total_por_dia=0.0f;
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        volumen_promedio+=volumenes[filas][columnas];
+                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
+
+                                        precio_total_por_dia+=precios[filas][columnas];
+                                    }
+
+                                    /* Mostrar las estadísticas requeridas por día */
+                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
+                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
+
+                                    precio_total+=precio_total_por_dia;
+                                }
+
+                                /* Mostrar precio total y precio promedio durante los 4 días */
+                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Precio total de los 4 días: %.2f\n", precio_total);
+                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
+                                
+                                return 0;
+                            }
+                            ''',
+                    "solutionSteps": [
+                        '''
+                        Declaramos las matrices necesarias para guardar el volumen, peso volumétrico, tiempo de entrega y precio del envío de cada paquete registrado, todas de tipo decimal menos el tiempo de entrega, el cual es de tipo entero. Todas las matrices tienen como dimensiones 4 filas y 2 columnas, representando los 4 días y 2 paquetes por día respectivamente.
+                        ''',
+                        '''
+                        Creamos dos ciclos for anidados para recorrer las filas y columnas de cada matriz. Las iteraciones del ciclo externo hacen referencia a los 4 días y las del ciclo interno a los 2 paquetes por día. De esta manera iremos registrando los dos paquetes del día 1, luego del día 2, después del día 3 y por último del día 4.
+                        ''',
+                        '''
+                        Recordemos que para acceder a los elementos de un arreglo utilizamos índices (comenzando en 0), por lo tanto, para guardar cada valor en las matrices lo hacemos dentro de los ciclos for y de la forma [filas][columnas]; por ejemplo, para guardar los valores del segundo paquete del tercer día los índices serán [2][1].
+                        ''',
+                        '''
+                        Luego, para calcular y mostrar los datos solicitados en el enunciado debemos recorrer nuevamente las matrices que contienen la información de cada paquete e ir acumulando los valores necesarios. Por ejemplo, para calcular el volumen promedio durante los 4 días, sumamos el volumen de cada uno de los paquetes (línea 155) y una vez finalizados los ciclos dividimos la sumatoria entre la cantidad de paquetes registrados en los 4 días (línea 169).
+                        '''
+                    ]
+                },
+                "exercises": [
+                    {
+                        "statement": '''
+                                     Escriba un programa que llene una matriz entera de dimensión 3x3 y muestre su transpuesta. La matriz transpuesta se obtiene al intercambiar filas por columnas ordenadamente.
+
+                                     Observe el siguiente ejemplo, donde *A* es la matriz original y *T* es la matriz transpuesta de A:
+                                     
+                                     **A**  
+                                     2 — 3 — 0 
+                                     1 — 2 — 0                      
+                                     3 — 5 — 6             
+                                     
+                                     **T**
+                                     2 — 1 — 3
+                                     3 — 2 — 5
+                                     0 — 0 — 6
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+
+                                int main()
+                                {
+                                    /* Declarar las matrices: inicial y transpuesta, de dimensiones 3x3 */
+                                    
+
+                                    /* Solicitar los valores de la matriz inicial */
+                                    
+
+                                    /* Hallar la matriz transpuesta */
+                                    
+
+                                    /* Mostrar la matriz inicial junto a la matriz transpuesta */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese los valores de la matriz inicial (por filas)
+                                          > Fila #1
+                                          >  *Columna #1: 1
+                                          >  *Columna #2: 2
+                                          >  *Columna #3: 3
+                                          > Fila #2
+                                          >  *Columna #1: 4
+                                          >  *Columna #2: 5
+                                          >  *Columna #3: 6
+                                          > Fila #3
+                                          >  *Columna #1: 7
+                                          >  *Columna #2: 8
+                                          >  *Columna #3: 9
+                                          >
+                                          > **Matriz inicial**       
+                                          > 1    2    3                       
+                                          > 4    5    6                       
+                                          > 7    8    9      
+                                          >              
+                                          > **Matriz transpuesta**
+                                          > 1    4    7 
+                                          > 2    5    8 
+                                          > 3    6    9
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Diseñe un programa en C que registre la ocurrencia de cada dígito en un número entero. De esta manera, si un usuario ingresa el número 2327 se debe mostrar que el dígito 2 tiene dos ocurrencias, los dígitos 3 y 7 tiene una y los demás no tienen ninguna ocurrencia. Mostrar estas ocurrencias en una tabla de la forma:
+
+                                     0 — 1 — 2 — 3 — 4 — 5 — 6 — 7 — 8 — 9
+                                     0 — 0 — 2 — 1 — 0 — 0 — 0 — 1 — 0 — 0
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+
+                                int main()
+                                {
+                                    /* Declarar las variables necesarias (Tip: solo necesita variables de tipo int) */
+                                    
+
+                                    /* Solicitar el número entero */
+                                    
+
+                                    /* Dividir el número dígito a dígito e ir marcando la ocurrencia de cada dígito */
+                                    
+
+                                    /* Imprimir en pantalla cada dígito junto a su ocurrencia */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese un numero entero: 43827723
+                                          > Ocurrencias:
+                                          > 0    1    2    3    4    5    6    7    8    9    
+                                          > 0    0    2    2    1    0    0    2    1    0
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Una empresa acaba de adquirir una nueva máquina de secado y necesita estudiar el comportamiento de la misma para encontrar su configuración ideal. Para esto la empresa desea llevar el registro de temperaturas durante tres (3) días. Cada día se tomará la temperatura dos (2) veces. 
+                                     Escriba un programa que permita guardar las temperaturas de estos días, calcular el promedio de cada día y el promedio de estos tres días.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+
+                                int main()
+                                {
+                                    /* Declaración de las variables de tipo decimal:
+                                        - 1 matriz para guardar las dos lecturas de los tres días a evaluar
+                                        - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
+                                        - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
+                                        - 1 vector de 3 posiciones para guardar el precio de cada paquete 
+                                    */
+                                    
+
+                                    /* Declaración de variables enteras 
+                                        - Una para recorrer las filas de la matriz en un ciclo for
+                                        - Una para recorrer las columnas de la matriz en un ciclo for
+                                        - Una para guardar la cantidad de días a evaluar
+                                        - Una para guardar las lecturas de temperatura por día
+                                    */
+
+
+                                    /* Registrar las temperaturas */
+                                    
+
+                                    /* Calcular y mostrar el promedio de temperaturas por día y durante los tres días*/
+                                    
+                                    
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese las temperatura del dia #1
+                                          > 1º: 32.3
+                                          > 2º: 41.5
+                                          >
+                                          > Ingrese las temperatura del dia #2
+                                          > 1º: 34.2
+                                          > 2º: 54.6
+                                          >
+                                          > Ingrese las temperatura del dia #3
+                                          > 1º: 12.3
+                                          > 2º: 24.5
+                                          > La temperatura promedio del 1º dia es 36.90
+                                          > La temperatura promedio del 2º dia es 44.40
+                                          > La temperatura promedio del 3º dia es 18.40
+                                          > La temperatura promedio de los tres días es 66.47
                                           '''
                     }
                 ]
@@ -2485,11 +2878,11 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Se necesita complementar el programa de la empresa Rapidash para solicitar al usuario la cuidad de origen y destino del paquete, permitiendo corregirlas si no fueron ingresadas correctamente. 
+                                 Se necesita complementar el programa de la empresa **Rapidash** para solicitar al usuario la ciudad de origen y destino del paquete, permitiendo corregirlas si no fueron ingresadas correctamente. 
 
                                  Para este ejemplo se le preguntará al usuario la cantidad de paquetes que desea registrar, se solicitan las dimensiones de cada paquete y el tiempo de entrega para calcular el volumen, peso volumétrico y precio del mismo. Luego se solicita la ciudad de origen y destino del paquete permitiendo que que el usuario corrija las ciudades en caso de indicar que no ha sido ingresadas correctamente. 
 
-                                 Después de solicitar y calcular toda la información de un paquete se debe mostrar un resumen del envío de la forma: El paquete #NUMERO con volumen VOLUMEN y peso volumétrico PESO_VOLUMETRICO será enviado desde CIUDAD_ORIGEN hasta CIUDAD_DESTINO con un costo de PRECIO
+                                 Después de solicitar y calcular toda la información de un paquete se debe mostrar un resumen del envío de la forma: *"El paquete #`NUMERO` con volumen `VOLUMEN` y peso volumétrico `PESO_VOLUMETRICO` será enviado desde `CIUDAD_ORIGEN` hasta `CIUDAD_DESTINO` con un costo de `PRECIO`"*
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -2620,7 +3013,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa en lenguaje C que solicite una palabra de 10 caracteres a un usuario, guarde la palabra en una variable de tipo string e imprima las posiciones de la misma que contienen una vocal.
+                                     Escriba un programa en lenguaje C que solicite una palabra de 10 caracteres a un usuario, guarde la palabra en una variable de tipo *string* (`char[]`) e imprima las posiciones de la misma que contienen una vocal.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2652,7 +3045,7 @@
                         "statement": '''
                                      Diseñe un programa en C para permitir que el usuario ingrese una oración de máximo 50 caracteres, luego el usuario indicará qué parte de la oración desea imprimir a través de índices. Estos índices son números enteros que indican el inicio y fin de la porción de la oración que desea imprimir.
 
-                                     Nota: Recuerde que la función scanf omite los espacios en blanco de una oración, por lo que es conveniente que utilice la función fgets para guardar la oración ingresada por el usuario.
+                                     **Nota:** Recuerde que la función `scanf` omite los espacios en blanco de una oración, por lo que es conveniente que utilice la función `fgets` para guardar la oración ingresada por el usuario.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -2685,15 +3078,14 @@
                     },
                     {
                         "statement": '''
-                                     Desarrolle un programa en C que permita ingresar una oración y reemplazar todas las vocales por el caracter 'a' en toda la oración. Por último se debe imprimir la oración después del proceso de reemplazo. 
+                                     Desarrolle un programa en C que permita ingresar una oración y reemplazar todas las vocales por el caracter *a* en toda la oración. Por último se debe imprimir la oración después del proceso de reemplazo. 
 
-                                     Nota: 
+                                     **Notas:** 
                                      - La oración tendrá un máximo de 30 caracteres.
-                                     - Recuerde utilizar la función fgets para leer oraciones
+                                     - Recuerde utilizar la función `fgets` para leer oraciones
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
-                                #include <stdlib.h>
 
                                 int main()
                                 {
@@ -2719,12 +3111,336 @@
                                           '''
                     }
                 ]
+            },
+            {
+                "_id": 4,
+                "title": "Operaciones con strings (strcpy, strlen, strcat y strcmp)",
+                "content": "Librería string.h. Copiar strings, calcular la longitud de un string, concatenar strings y comparar strings.",
+                "explanation": '''
+                               Los arreglos tienen algunas restricciones, por ejemplo, no es posible copiar un arreglo en otro con el operador de asignación `=`, ni comparar si dos vectores son iguales con el operador `==` 
+                               ### ERROR
+                               ```c
+                               char string1[10] = "cadena 1";
+                               char string2[10];
+                               string2 = string1;
+                               ```
+                               ### ERROR
+                               ```c
+                               if(string1 == string2)...
+                               ```
+                               Afortunadamente, en C tenemos la librería `string.h` que nos proporciona funciones para conseguir lo que necesitamos:
+                               
+                               - strcpy → `strcpy(string2, string1);` 
+                                 - **Copia** el contenido de la variable *string1* en la variable *string2*
+                                   
+                                   ```c
+                                   char string1[10] = "prueba",
+                                        string2[10];
+                                   strcpy(string2,string1);
+                                   // string2 = "prueba"
+                                   ```
+                               - strlen → `strlen(string);` 
+                                 - Calcula y devuelve la **longitud** (`int`) de la variable *string*
+                                   
+                                   ```c
+                                   char cadena[10] = "prueba";
+                                   int longitud = strlen(cadena);
+                                   // longitud = 6
+                                   ```
+                               - strcat → `strcat(string1, string2);` 
+                                 - **Añade** el contenido de la variable *string2* al final del contenido en la variable *string1*
+                                   
+                                   ```c
+                                   char cadena1[20] = "¡Hola ",
+                                        cadena2[10] = "mundo!";
+                                   strcat(cadena1, cadena2);
+                                   // cadena1 = "¡Hola mundo!"
+                                   ```
+                               - strcmp → `strcmp(string1, string2);` 
+                                 - **Compara** las cadenas de caracteres *string1* y *string2*, devuelve un valor menor que, igual que o mayor que 0 si string1 es menor que, igual que o mayor que string2
+                                   
+                                   ```c
+                                   if (strcmp(cadena1,cadena2) == 0)
+                                       // cadena1 es igual que cadena2 ??
+                                   
+                                   if (strcmp(cadena1,cadena2) < 0)
+                                       // cadena1 es menor que cadena2 ??
+                                   
+                                   if (strcmp(cadena1,cadena2) > 0)
+                                       // cadena1 es mayor que cadena2 ??
+                                   ```
+                               ''',
+                "example": {
+                    "statement": '''
+                                 Continuando con el ejemplo de la lección anterior, la empresa **Rapidash** ahora desea al momento de registrar el envío de un paquete, solicitar el correo electrónico del usuario dos veces con la intención de confirmar el mismo.  
+                                 ''',
+                    "code": '''
+                            #include <stdio.h> 
+                            #include <string.h> 
+
+                            int main()
+                            {
+                                /* Declaración de las variables de tipo decimal:
+                                    - 3 variables para guardar dimensiones del paquete actual
+                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
+                                        por día durante cuatro (4) días 
+                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
+                                */
+                                float alto, largo, ancho, 
+                                      volumenes[4][2], 
+                                      pesos_volumetricos[4][2], 
+                                      precios[4][2],
+                                      volumen_promedio=0.0f,
+                                      peso_volumetrico_promedio=0.0f,
+                                      precio_total_por_dia=0.0f,
+                                      precio_total=0.0f;
+
+
+                                /* Declaración de variables enteras 
+                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
+                                        por día durante cuatro (4) días
+                                    - Una para indicar la cantidad de días
+                                    - Una para indicar la cantidad de paquetes a registrar por días
+                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
+                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
+                                */
+                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
+
+                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
+
+                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
+                                    tiene 4 filas que representan la cantidad de días */
+                                for(filas=0; filas<cantidad_dias; filas++){
+
+                                    printf("\nIngrese los paquetes del día #%d\n",filas+1);
+                                    
+                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
+                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        /* Solicitud de cada dimension */
+                                        printf("**Paquete %d\n",columnas+1);
+                                        printf("-Alto:");
+                                        scanf("%f",&alto);
+                                        printf("-Largo:");
+                                        scanf("%f",&largo);
+                                        printf("-Ancho:");
+                                        scanf("%f",&ancho);
+
+                                        /* Calculo y asignación del volumen y peso volumétrico en cada posición de las 
+                                            matrices volumenes y pesos_volumetricos respectivamente */
+                                        volumenes[filas][columnas] = alto*largo*ancho;
+                                        pesos_volumetricos[filas][columnas] = alto*largo*ancho/5000;
+                                        
+                                        /* Categoría y precio según el peso volumétrico de un paquete */
+                                        if ( pesos_volumetricos[filas][columnas] >= 10.0f )
+                                        {
+                                            printf("El paquete es grande\n");
+                                            precios[filas][columnas] = 2196.43f;
+                                        }
+                                        else{
+                                            if ( (pesos_volumetricos[filas][columnas] > 5)&&(pesos_volumetricos[filas][columnas] < 10.0f) )
+                                            {
+                                                printf("El paquete es mediano\n");
+                                                precios[filas][columnas] = 1523.86f;
+                                            }
+                                            else{
+                                                printf("El paquete es pequeño\n");
+                                                precios[filas][columnas] = 1018.73f;
+                                            }  
+                                        }
+
+                                        /* Solicitud del tiempo de entrega */
+                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
+                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
+
+                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
+                                            y sumar el costo a la matriz precios[filas][columnas]
+                                         */
+                                        switch(tiempo_entrega_dias[filas][columnas]){
+                                            case 1:
+                                                precios[filas][columnas] += 1250.0f;
+                                                break;
+                                            case 2:
+                                                precios[filas][columnas] += 1000.0f;
+                                                break;
+                                            case 3:
+                                                precios[filas][columnas] += 300.0f;
+                                                break;
+                                        }
+
+                                        /* Solicitar y confirmar el correo electrónico del usuario */
+                                        char correo[40], confirmacion_correo[40];
+
+                                        do{
+                                            printf("Ingrese el correo electrónico: ");
+                                            scanf("%s",correo);
+                                            printf("Confirmación del correo electrónico: ");
+                                            scanf("%s",confirmacion_correo);
+                                        }while(strcmp(correo,confirmacion_correo)!=0);
+                                    }
+
+                                }
+
+                                /* Calcular las estadísticas solicitadas en el enunciado */
+                                printf("\nDatos estadisticos de los envios registrados\n\n");    
+                                for(filas=0; filas<cantidad_dias; filas++){
+                                    
+                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
+                                    precio_total_por_dia=0.0f;
+                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
+                                    {
+                                        volumen_promedio+=volumenes[filas][columnas];
+                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
+
+                                        precio_total_por_dia+=precios[filas][columnas];
+                                    }
+
+                                    /* Mostrar las estadísticas solicitadas por día */
+                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
+                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
+
+                                    precio_total+=precio_total_por_dia;
+                                }
+
+                                /* Mostrar precio total y precio promedio durante los 4 días */
+                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
+                                printf("Precio total de los 4 días: %.2f\n", precio_total);
+                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
+                                
+                                return 0;
+                            }
+                            ''',
+                    "solutionSteps": [
+                        '''
+                        Recordemos incluir la librería string.h para tener acceso a la función que nos permite comparar strings. (Línea 2)
+                        ''',
+                        '''
+                        Creamos una función para solicitar y confirmar el correo electrónico del usuario (Línea 81), dentro de esta función declaramos dos variables strings para guardar el correo y la confirmación del correo respectivamente. Luego, utilizando un ciclo do-while solicitamos y verificamos el correo electrónico ingresado por el usuario hasta que ambos coinciden.
+                        ''',
+                        '''
+                        Finalmente llamamos la función dentro del ciclo que solicita los datos de cada paquete. (Línea 163)
+                        '''
+                    ]
+                },
+                "exercises": [
+                    {
+                        "statement": '''
+                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa *'notas.txt'* el programa deberá guardar *'notas'* en una variable llamada `NOMBRE` y *'txt'* en una variable llamada `EXTENSION`.
+
+                                     **Nota:** El nombre del archivo completo no tendrá más de 40 caracteres.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+                                #include <string.h> 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Solicitar el nombre del archivo completo (con extensión incluida) */
+                                    
+
+                                    /* Extraer y guardar el nombre y la extensión del archivo en dos variables de tipo string */
+                                    
+
+                                    /* Mostrar el nombre y la extensión del archivo */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese el nombre del archivo: hola.txt
+                                          > Nombre: hola
+                                          > Extension: txt
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Escriba un programa en C que permita construir la dirección de una página web con base en el dominio y archivo principal indicado por el usuario, es decir, el usuario ingresa *dominio.com* e *index.html* y el programa debe construir la URL completa de la forma https://dominio.com/index.html. 
+
+                                     **Nota:** Tanto el dominio como el nombre del archivo principal no tendrán más de 40 caracteres.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+                                #include <string.h> 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Solicitar el dominio y el nombre del archivo principal */
+                                    
+
+                                    /* Construir la URL completa */
+                                    
+
+                                    /* Mostrar la URL completa */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese el dominio: aprendac.com
+                                          > Ingrese el nombre del archivo principal: index.html
+                                          > Url: https://aprendac.com/index.html
+                                          '''
+                    },
+                    {
+                        "statement": '''
+                                     Desarrolle un programa que encuentre la palabra más pequeña y más grande en una serie de palabras, es decir, después de que el usuario ingresa las palabras, el programa determinará cuál palabra se encuentra primero y cuál se encuentra de última si se listaran en orden alfabético. El programa se detendrá cuando el usuario ingrese una palabra de 4 letras. 
+
+                                     **Notas:**
+                                     - Asuma que ninguna palabra tiene más de 20 caracteres
+                                     - Utilice dos *strings* (`char[]`) para llevar un registro de la palabra más pequeña y más grande introducida hasta el momento. 
+                                     - Cada vez que el usuario ingrese una palabra, compare si ésta es menor que la más pequeña registrada hasta los momentos, de ser así, copie la nueva palabra en la variable correspondiente.
+                                     ''',
+                        "code": '''
+                                #include <stdio.h> 
+                                #include <string.h> 
+
+                                int main()
+                                {
+                                    /* Declarar de las variables necesarias */
+                                    
+
+                                    /* Solicitar palabras hasta que la palabra introducida tenga 4 letras */
+                                    
+                                    
+                                    /* Mostrar la palabra más pequeña y la más grande */
+                                    
+
+                                    return 0;
+                                }
+                                ''',
+                        "expectedOutput": ''' 
+                                          > Ingrese una palabra: dos
+                                          > Ingrese una palabra: zapato
+                                          > Ingrese una palabra: rueda
+                                          > Ingrese una palabra: cambio
+                                          > Ingrese una palabra: estado
+                                          > Ingrese una palabra: gato
+                                          >
+                                          > Palabra más pequeña: cambio
+                                          > Palabra más grande: zapato
+                                          '''
+                    }
+                ]
             }
         ]
     },
     {
         "_id": 5,
-        "title" : "Unidad V. Funciones, matrices y operaciones con strings",
+        "title" : "Unidad V. Funciones, estructuras y punteros",
         "lessons": [
             {
                 "_id": 1,
@@ -2761,14 +3477,15 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Hasta los momentos, el programa que hemos creado para la empresa Rapidash tiene todas las instrucciones dentro de la función principal main. Vamos a mejorar el programa utilizando funciones para que sea más fácil de entender y modificar. Crearemos las siguientes funciones para:
+                                 Hasta los momentos, el programa que hemos creado para la empresa **Rapidash** tiene todas las instrucciones dentro de la función principal `main`. Vamos a mejorar el programa utilizando funciones para que sea más fácil de entender y modificar. Crearemos las siguientes funciones para:
+
                                  - Calcular y retornar el volumen de un paquete dadas sus dimensiones.
                                  - Calcular y retornar el peso volumétrico de un paquete dadas sus dimensiones.
                                  - Mostrar la categoría de un paquete según su peso volumétrico y retornar el precio que corresponde según la categoría.
                                  - Calcular y retornar el precio de un envío según su plazo de entrega.
                                  - Solicitar y verificar la ciudad de origen y destino de un paquete.
-
-                                  Nota: Recordemos que las funciones se deben declarar antes de la función principal main
+                                 
+                                 **Nota:** Recordemos que las funciones se deben declarar antes de la función principal `main`
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -2966,9 +3683,9 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa en C que solicite tres números a, b y c, calcular y mostrar sus promedios tomando un par de números a la vez, es decir, primero mostrar el promedio entre a y b, luego entre b y c y luego entre a y c.
+                                     Escriba un programa en C que solicite tres números `a`, `b` y `c`, calcular y mostrar sus promedios tomando un par de números a la vez, es decir, primero mostrar el promedio entre `a` y `b`, luego entre `b` y `c` y por último entre `a` y `c`.
 
-                                     Nota: los números pueden ser decimales
+                                     **Nota:** los números pueden ser decimales
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -3085,799 +3802,6 @@
             },
             {
                 "_id": 2,
-                "title": "Arreglos: matrices",
-                "content": "Declaración e inicialización de una matriz. Acceso a los elementos de una matriz. Recorrer cada elementos de una matriz utilizando el ciclo for.",
-                "explanation": '''
-                               Veamos cómo declarar un arreglo bidimensional o matriz:
-                               ```c
-                               float matriz[5][9];
-                               ```
-                                Aquí tenemos una matriz de tipo `float`, tiene 5 filas y 9 columnas. Recordemos que los índices de los arreglos comienzan por 0, por lo tanto nuestra matriz luce:
-                               
-                               ![Visualización de una matriz](assets/img/array-image-lesson14.svg "Arreglos: matrices")
-
-                               Para acceder a un elemento debemos especificar las coordenadas de la forma `matriz[fila][columna]`, es decir, si queremos acceder al elemento ubicado en la fila 3, columna 6, escribimos `matriz[3][6]`
-                               
-                               Consideremos por ejemplo, inicializar un arreglo de 10x10 para usar como una matriz identidad
-
-                               > **Nota:** En matemáticas, la matriz identidad es aquella que tiene 1’s en la diagonal principal (donde el índice de la fila es igual al índice de la columna) y 0’s en el resto de la matriz. Por ejemplo, una matriz identidad de 5x5 se representa de la forma:
-                               
-                               ![Matriz Identidad](assets/img/identity-array-image-lesson14.svg "Matriz Identidad")
-                               
-                               Necesitamos visitar cada elemento de la matriz, un par de ciclos `for` resulta perfecto, uno para recorrer cada fila y otro para recorrer cada columna:
-                               ```c
-                               for (fila = 0; fila < 10; ++fila)
-                               {
-                                   for (columna = 0; columna < 10; ++columna)
-                                   {
-                                       // Si estamos en la diagonal principal, asignar valor 1.0f
-                                       if (fila == columna)
-                                       {
-                                           matriz[fila][columna]=1.0f;
-                                       }else{
-                                           matriz[fila][columna]=0.0f;
-                                       }
-                                   }
-                               }
-                               ```
-                               Para inicializar una matriz podemos especificar los elementos de cada fila con la ayuda de `{ }` de la siguiente manera:
-                               ```c
-                               int matriz[4][6] = {{1,1,0,1,0,1},
-                                                   {0,0,1,1,0,0},
-                                                   {0,1,1,0}};
-                               ```
-                               Al no inicializar algún elemento, este tendrá como valor 0. En este ejemplo las últimas dos columnas de la 3º fila y la 4º fila completa tendrán 0.
-                               
-                               También podemos *omitir* los `{ }` y escribir todos los elementos separados solo por comas, una vez el compilador encuentre suficientes valores para llenar una fila, empieza con la siguiente:
-                               ```c
-                               int matriz[4][6] = {1,1,0,1,0,1,
-                                                   0,0,1,1,0,0,
-                                                   0,1,1,0};
-                               ```
-                               De la misma manera se completan los elementos faltantes con el valor 0.
-                               ''',
-                "example": {
-                    "statement": '''
-                                 La empresa Rapidash va a recibir dos (2) paquetes por día durante cuatro (4) días y desea registrar el volumen, peso volumétrico, tiempo de entrega y el precio del envío de cada uno. Al finalizar con el proceso de registro de los paquetes se requiere:
-                                 - Calcular y mostrar el volumen promedio de los paquetes durante los cuatro días.
-                                 - Calcular y mostrar el peso volumétrico promedio de los paquetes durante los cuatro días.
-                                 - Calcular y mostrar el precio total de los envíos por día.
-                                 - Calcular y mostrar el precio total de los envíos durante los cuatro días.
-                                 - Calcular y mostrar el precio promedio de los envíos por día.
-                                 - Calcular y mostrar el precio promedio de los envíos durante los cuatro días.
-                                 ''',
-                    "code": '''
-                            #include <stdio.h> 
-
-                            /**
-                             * Calcular el volumen de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Volumen del paquete
-                             */
-                            float calcular_volumen(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho;
-                            }
-
-                            /**
-                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Peso Volumétrico del paquete
-                             */
-                            float calcular_peso_volumetrico(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho/5000;
-                            }
-
-                            /**
-                             * Mostrar la categoría de un paquete según su peso volumétrico y 
-                             * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumétrico del paquete
-                             * @return                  Precio según la categoría
-                             */
-                            float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
-                            {
-                                if ( peso_volumetrico >= 10.0f )
-                                {
-                                    printf("El paquete es grande\n");
-                                    return 2196.43f;
-                                }
-                                else{
-                                    if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
-                                    {
-                                        printf("El paquete es mediano\n");
-                                        return 1523.86f;
-                                    }
-                                    else{
-                                        printf("El paquete es pequeño\n");
-                                        return 1018.73f;
-                                    }  
-                                }
-                            }
-
-                            /**
-                             * Calcular y retornar el precio según el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en días
-                             * @return      Precio según plazo de entrego
-                             */
-                            float precio_segun_plazo(int dias)
-                            {
-                                switch(dias){
-                                    case 1:
-                                        return 1250.0f;
-                                        break;
-                                    case 2:
-                                        return 1000.0f;
-                                        break;
-                                    case 3:
-                                        return 300.0f;
-                                        break;
-                                    default:
-                                        return 0.0f;
-                                        break;
-                                }
-                            }
-
-
-                            int main()
-                            {
-                                /* Declaración de las variables de tipo decimal:
-                                    - 3 variables para guardar dimensiones del paquete actual
-                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
-                                        por día durante cuatro (4) días 
-                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
-                                */
-                                float alto, largo, ancho, 
-                                      volumenes[4][2], 
-                                      pesos_volumetricos[4][2], 
-                                      precios[4][2],
-                                      volumen_promedio=0.0f,
-                                      peso_volumetrico_promedio=0.0f,
-                                      precio_total_por_dia=0.0f,
-                                      precio_total=0.0f;
-
-
-                                /* Declaración de variables enteras 
-                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Una para indicar la cantidad de días
-                                    - Una para indicar la cantidad de paquetes a registrar por días
-                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
-                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
-                                */
-                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
-
-                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
-
-                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
-                                    tiene 4 filas que representan la cantidad de días */
-                                for(filas=0; filas<cantidad_dias; filas++){
-
-                                    printf("Ingrese los paquetes del día #%d\n",filas+1);
-                                    
-                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
-                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        /* Solicitud de cada dimensión */
-                                        printf("**Paquete %d\n",columnas+1);
-                                        printf("-Alto:");
-                                        scanf("%f",&alto);
-                                        printf("-Largo:");
-                                        scanf("%f",&largo);
-                                        printf("-Ancho:");
-                                        scanf("%f",&ancho);
-
-                                        /* Cálculo y asignación del volumen y peso volumétrico en cada posición de las 
-                                            matrices volumenes y pesos_volumetricos respectivamente */
-                                        volumenes[filas][columnas] = calcular_volumen(alto,largo,ancho);
-                                        pesos_volumetricos[filas][columnas] = calcular_peso_volumetrico(alto,largo,ancho);
-                                        
-                                        /* Categoría y precio según el peso volumétrico de un paquete */
-                                        precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
-
-                                        /* Solicitud del tiempo de entrega */
-                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
-                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
-
-                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
-                                            y sumar el costo a la matriz precios[filas][columnas]
-                                         */
-                                        precios[filas][columnas]+=precio_segun_plazo(tiempo_entrega_dias[filas][columnas]);
-                                    }
-
-                                }
-
-                                /* Calcular las estadísticas solicitadas en el enunciado */
-                                printf("\nDatos estadisticos de los envios registrados\n\n");    
-                                for(filas=0; filas<cantidad_dias; filas++){
-                                    
-                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
-                                    precio_total_por_dia=0.0f;
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        volumen_promedio+=volumenes[filas][columnas];
-                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
-
-                                        precio_total_por_dia+=precios[filas][columnas];
-                                    }
-
-                                    /* Mostrar las estadísticas requeridas por día */
-                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
-                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
-
-                                    precio_total+=precio_total_por_dia;
-                                }
-
-                                /* Mostrar precio total y precio promedio durante los 4 días */
-                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Precio total de los 4 días: %.2f\n", precio_total);
-                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
-                                
-                                return 0;
-                            }
-                            ''',
-                    "solutionSteps": [
-                        '''
-                        Declaramos las matrices necesarias para guardar el volumen, peso volumétrico, tiempo de entrega y precio del envío de cada paquete registrado, todas de tipo decimal menos el tiempo de entrega, el cual es de tipo entero. Todas las matrices tienen como dimensiones 4 filas y 2 columnas, representando los 4 días y 2 paquetes por día respectivamente.
-                        ''',
-                        '''
-                        Creamos dos ciclos for anidados para recorrer las filas y columnas de cada matriz. Las iteraciones del ciclo externo hacen referencia a los 4 días y las del ciclo interno a los 2 paquetes por día. De esta manera iremos registrando los dos paquetes del día 1, luego del día 2, después del día 3 y por último del día 4.
-                        ''',
-                        '''
-                        Recordemos que para acceder a los elementos de un arreglo utilizamos índices (comenzando en 0), por lo tanto, para guardar cada valor en las matrices lo hacemos dentro de los ciclos for y de la forma [filas][columnas]; por ejemplo, para guardar los valores del segundo paquete del tercer día los índices serán [2][1].
-                        ''',
-                        '''
-                        Luego, para calcular y mostrar los datos solicitados en el enunciado debemos recorrer nuevamente las matrices que contienen la información de cada paquete e ir acumulando los valores necesarios. Por ejemplo, para calcular el volumen promedio durante los 4 días, sumamos el volumen de cada uno de los paquetes (línea 155) y una vez finalizados los ciclos dividimos la sumatoria entre la cantidad de paquetes registrados en los 4 días (línea 169).
-                        '''
-                    ]
-                },
-                "exercises": [
-                    {
-                        "statement": '''
-                                     Escriba un programa que llene una matriz entera de dimensión 3x3 y muestre su transpuesta. La matriz transpuesta se obtiene al intercambiar filas por columnas ordenadamente.
-
-                                     Observe el siguiente ejemplo, donde A es la matriz original y T es la matriz transpuesta de A:
-
-                                     A 
-                                     2----3----0          
-                                     1----2----0              
-                                     3----5----6              
-
-                                     T 
-                                     2----1----3
-                                     3----2----5
-                                     0----0----6
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-
-                                int main()
-                                {
-                                    /* Declarar las matrices: inicial y transpuesta, de dimensiones 3x3 */
-                                    
-
-                                    /* Solicitar los valores de la matriz inicial */
-                                    
-
-                                    /* Hallar la matriz transpuesta */
-                                    
-
-                                    /* Mostrar la matriz inicial junto a la matriz transpuesta */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese los valores de la matriz inicial (por filas)
-                                          > Fila #1
-                                          >  *Columna #1: 1
-                                          >  *Columna #2: 2
-                                          >  *Columna #3: 3
-                                          > Fila #2
-                                          >  *Columna #1: 4
-                                          >  *Columna #2: 5
-                                          >  *Columna #3: 6
-                                          > Fila #3
-                                          >  *Columna #1: 7
-                                          >  *Columna #2: 8
-                                          >  *Columna #3: 9
-                                          >
-                                          > **Matriz inicial**       
-                                          > 1    2    3                       
-                                          > 4    5    6                       
-                                          > 7    8    9      
-                                          >              
-                                          > **Matriz transpuesta**
-                                          > 1    4    7 
-                                          > 2    5    8 
-                                          > 3    6    9
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Diseñe un programa en C que registre la ocurrencia de cada dígito en un número entero. De esta manera, si un usuario ingresa el número 2327 se debe mostrar que el dígito 2 tiene dos ocurrencias, los dígitos 3 y 7 tiene una y los demás no tienen ninguna ocurrencia. Mostrar estas ocurrencias en una tabla de la forma:
-                                     0    1    2    3    4    5    6    7    8    9
-                                     0    0    2    1    0    0    0    1    0    0
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-
-                                int main()
-                                {
-                                    /* Declarar las variables necesarias (Tip: solo necesita variables de tipo int) */
-                                    
-
-                                    /* Solicitar el número entero */
-                                    
-
-                                    /* Dividir el número dígito a dígito e ir marcando la ocurrencia de cada dígito */
-                                    
-
-                                    /* Imprimir en pantalla cada dígito junto a su ocurrencia */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese un numero entero: 43827723
-                                          > Ocurrencias:
-                                          > 0    1    2    3    4    5    6    7    8    9    
-                                          > 0    0    2    2    1    0    0    2    1    0
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Una empresa acaba de adquirir una nueva máquina de secado y necesita estudiar el comportamiento de la misma para encontrar su configuración ideal. Para esto la empresa desea llevar el registro de temperaturas durante tres (3) días. Cada día se tomará la temperatura dos (2) veces. Escriba un programa que permita guardar las temperaturas de estos días, calcular el promedio de cada día y el promedio de estos tres días.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-
-                                int main()
-                                {
-                                    /* Declaración de las variables de tipo decimal:
-                                        - 1 matriz para guardar las dos lecturas de los tres días a evaluar
-                                        - 1 vector de 3 posiciones para guardar el volumen de cada paquete 
-                                        - 1 vector de 3 posiciones para guardar el peso volumétrico de cada paquete
-                                        - 1 vector de 3 posiciones para guardar el precio de cada paquete 
-                                    */
-                                    
-
-                                    /* Declaración de variables enteras 
-                                        - Una para recorrer las filas de la matriz en un ciclo for
-                                        - Una para recorrer las columnas de la matriz en un ciclo for
-                                        - Una para guardar la cantidad de días a evaluar
-                                        - Una para guardar las lecturas de temperatura por día
-                                    */
-
-
-                                    /* Registrar las temperaturas */
-                                    
-
-                                    /* Calcular y mostrar el promedio de temperaturas por día y durante los tres días*/
-                                    
-                                    
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese las temperatura del dia #1
-                                          > 1º: 32.3
-                                          > 2º: 41.5
-                                          >
-                                          > Ingrese las temperatura del dia #2
-                                          > 1º: 34.2
-                                          > 2º: 54.6
-                                          >
-                                          > Ingrese las temperatura del dia #3
-                                          > 1º: 12.3
-                                          > 2º: 24.5
-                                          > La temperatura promedio del 1º dia es 36.90
-                                          > La temperatura promedio del 2º dia es 44.40
-                                          > La temperatura promedio del 3º dia es 18.40
-                                          > La temperatura promedio de los tres días es 66.47
-                                          '''
-                    }
-                ]
-            },
-            {
-                "_id": 3,
-                "title": "Operaciones con strings (strcpy, strlen, strcat y strcmp)",
-                "content": "Librería string.h. Copiar strings, calcular la longitud de un string, concatenar strings y comparar strings.",
-                "explanation": '''
-                               Los arreglos tienen algunas restricciones, por ejemplo, no es posible copiar un arreglo en otro con el operador de asignación `=`, ni comparar si dos vectores son iguales con el operador `==` 
-                               ### ERROR
-                               ```c
-                               char string1[10] = "cadena 1";
-                               char string2[10];
-                               string2 = string1;
-                               ```
-                               ### ERROR
-                               ```c
-                               if(string1 == string2)...
-                               ```
-                               Afortunadamente, en C tenemos la librería `string.h` que nos proporciona funciones para conseguir lo que necesitamos:
-                               
-                               - strcpy → `strcpy(string2, string1);` 
-                                 - **Copia** el contenido de la variable *string1* en la variable *string2*
-                                   
-                                   ```c
-                                   char string1[10] = "prueba",
-                                        string2[10];
-                                   strcpy(string2,string1);
-                                   // string2 = "prueba"
-                                   ```
-                               - strlen → `strlen(string);` 
-                                 - Calcula y devuelve la **longitud** (`int`) de la variable *string*
-                                   
-                                   ```c
-                                   char cadena[10] = "prueba";
-                                   int longitud = strlen(cadena);
-                                   // longitud = 6
-                                   ```
-                               - strcat → `strcat(string1, string2);` 
-                                 - **Añade** el contenido de la variable *string2* al final del contenido en la variable *string1*
-                                   
-                                   ```c
-                                   char cadena1[20] = "¡Hola ",
-                                        cadena2[10] = "mundo!";
-                                   strcat(cadena1, cadena2);
-                                   // cadena1 = "¡Hola mundo!"
-                                   ```
-                               - strcmp → `strcmp(string1, string2);` 
-                                 - **Compara** las cadenas de caracteres *string1* y *string2*, devuelve un valor menor que, igual que o mayor que 0 si string1 es menor que, igual que o mayor que string2
-                                   
-                                   ```c
-                                   if (strcmp(cadena1,cadena2) == 0)
-                                       // cadena1 es igual que cadena2 ??
-                                   
-                                   if (strcmp(cadena1,cadena2) < 0)
-                                       // cadena1 es menor que cadena2 ??
-                                   
-                                   if (strcmp(cadena1,cadena2) > 0)
-                                       // cadena1 es mayor que cadena2 ??
-                                   ```
-                               ''',
-                "example": {
-                    "statement": '''
-                                 Continuando con el ejemplo de la lección anterior, la empresa Rapidash ahora desea al momento de registrar el envío de un paquete, solicitar el correo electrónico del usuario dos veces con la intención de confirmar el mismo.  
-                                 ''',
-                    "code": '''
-                            #include <stdio.h> 
-                            #include <string.h> 
-
-                            /**
-                             * Calcular el volumen de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Volumen del paquete
-                             */
-                            float calcular_volumen(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho;
-                            }
-
-                            /**
-                             * Calcular el peso volumétrico de un paquete dadas sus dimensiones
-                             * @param  alto  Alto del paquete
-                             * @param  largo Largo del paquete
-                             * @param  ancho Ancho del paquete
-                             * @return       Peso Volumétrico del paquete
-                             */
-                            float calcular_peso_volumetrico(float alto, float largo, float ancho)
-                            {
-                                return alto*largo*ancho/5000;
-                            }
-
-                            /**
-                             * Mostrar la categoría de un paquete según su peso volumétrico y 
-                             * retornar el precio que corresponde a dicha categoría
-                             * @param  peso_volumetrico Peso Volumétrico del paquete
-                             * @return                  Precio según la categoría
-                             */
-                            float mostrar_categoria_paquete_calcular_precio(float peso_volumetrico)
-                            {
-                                if ( peso_volumetrico >= 10.0f )
-                                {
-                                    printf("El paquete es grande\n");
-                                    return 2196.43f;
-                                }
-                                else{
-                                    if ( (peso_volumetrico > 5)&&(peso_volumetrico < 10.0f) )
-                                    {
-                                        printf("El paquete es mediano\n");
-                                        return 1523.86f;
-                                    }
-                                    else{
-                                        printf("El paquete es pequeño\n");
-                                        return 1018.73f;
-                                    }  
-                                }
-                            }
-
-                            /**
-                             * Calcular y retornar el precio según el plazo de entrega 
-                             * @param  dias Plazo de entrega expresado en días
-                             * @return      Precio según plazo de entrega
-                             */
-                            float precio_segun_plazo(int dias)
-                            {
-                                switch(dias){
-                                    case 1:
-                                        return 1250.0f;
-                                        break;
-                                    case 2:
-                                        return 1000.0f;
-                                        break;
-                                    case 3:
-                                        return 300.0f;
-                                        break;
-                                    default:
-                                        return 0.0f;
-                                        break;
-                                }
-                            }
-
-                            /**
-                             * Solicitar y confirmar el correo electrónico de un usuario 
-                             */
-                            void solicitar_confirmar_correo(){
-                                char correo[40], confirmacion_correo[40];
-
-                                do{
-                                    printf("Ingrese el correo electrónico: ");
-                                    scanf("%s",correo);
-                                    printf("Confirmación del correo electrónico: ");
-                                    scanf("%s",confirmacion_correo);
-                                }while(strcmp(correo,confirmacion_correo)!=0);
-                            }
-
-                            int main()
-                            {
-                                /* Declaración de las variables de tipo decimal:
-                                    - 3 variables para guardar dimensiones del paquete actual
-                                    - 1 matriz de tipo decimal para guardar el volumen de dos (2) paquetes 
-                                        por día durante cuatro (4) días 
-                                    - 1 matriz de tipo decimal para guardar el peso volumétrico de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - 1 matriz de tipo decimal para guardar el costo de envío de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Las variables necesarias para mostrar las estadísticas solicitadas (promedios)
-                                */
-                                float alto, largo, ancho, 
-                                      volumenes[4][2], 
-                                      pesos_volumetricos[4][2], 
-                                      precios[4][2],
-                                      volumen_promedio=0.0f,
-                                      peso_volumetrico_promedio=0.0f,
-                                      precio_total_por_dia=0.0f,
-                                      precio_total=0.0f;
-
-
-                                /* Declaración de variables enteras 
-                                    - 1 matriz para guardar el tiempo de entrega de dos (2) paquetes 
-                                        por día durante cuatro (4) días
-                                    - Una para indicar la cantidad de días
-                                    - Una para indicar la cantidad de paquetes a registrar por días
-                                    - Una para recorrer las filas de la matriz 'precios' en un ciclo for
-                                    - Una para recorrer las columnas de la matriz 'precios' en un ciclo for
-                                */
-                                int tiempo_entrega_dias[4][2], cantidad_dias=4, paquetes_por_dia=2, filas=0, columnas=0;
-
-                                /* Registrar los 8 paquetes (2 paquetes por día durante 4 días)*/
-
-                                /* Ciclo que maneja las filas de la matriz 'precios', en nuestro caso la matriz 
-                                    tiene 4 filas que representan la cantidad de días */
-                                for(filas=0; filas<cantidad_dias; filas++){
-
-                                    printf("\nIngrese los paquetes del día #%d\n",filas+1);
-                                    
-                                    /* Ciclo que maneja las columnas de la matriz 'precios', en nuestro caso la matriz
-                                        tiene 2 columnas que representan la cantidad de paquetes a registrar por día */
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        /* Solicitud de cada dimension */
-                                        printf("**Paquete %d\n",columnas+1);
-                                        printf("-Alto:");
-                                        scanf("%f",&alto);
-                                        printf("-Largo:");
-                                        scanf("%f",&largo);
-                                        printf("-Ancho:");
-                                        scanf("%f",&ancho);
-
-                                        /* Calculo y asignación del volumen y peso volumétrico en cada posición de las 
-                                            matrices volumenes y pesos_volumetricos respectivamente */
-                                        volumenes[filas][columnas] = calcular_volumen(alto,largo,ancho);
-                                        pesos_volumetricos[filas][columnas] = calcular_peso_volumetrico(alto,largo,ancho);
-                                        
-                                        /* Categoría y precio según el peso volumétrico de un paquete */
-                                        precios[filas][columnas]=mostrar_categoria_paquete_calcular_precio(pesos_volumetricos[filas][columnas]);
-
-                                        /* Solicitud del tiempo de entrega */
-                                        printf("Ingrese el tiempo de entrega en días (1, 2 o 3): ");
-                                        scanf("%d",&tiempo_entrega_dias[filas][columnas]);
-
-                                        /* Evaluar la tarifa correspondiente al tiempo de entrega elegido por el usuario 
-                                            y sumar el costo a la matriz precios[filas][columnas]
-                                         */
-                                        precios[filas][columnas]+=precio_segun_plazo(tiempo_entrega_dias[filas][columnas]);
-
-                                        /* Solicitar y confirmar el correo electrónico del usuario */
-                                        solicitar_confirmar_correo();
-                                    }
-
-                                }
-
-                                /* Calcular las estadísticas solicitadas en el enunciado */
-                                printf("\nDatos estadisticos de los envios registrados\n\n");    
-                                for(filas=0; filas<cantidad_dias; filas++){
-                                    
-                                    /* Reiniciar la variable precio_total_por_dia al empezar un nuevo día (ciclo de las filas) */
-                                    precio_total_por_dia=0.0f;
-                                    for (columnas = 0; columnas < paquetes_por_dia; columnas++)
-                                    {
-                                        volumen_promedio+=volumenes[filas][columnas];
-                                        peso_volumetrico_promedio+=pesos_volumetricos[filas][columnas];
-
-                                        precio_total_por_dia+=precios[filas][columnas];
-                                    }
-
-                                    /* Mostrar las estadísticas solicitadas por día */
-                                    printf("Precio total del día #%d: %.2f\n", filas+1,precio_total_por_dia);
-                                    printf("Precio promedio del día #%d: %.2f\n\n", filas+1,precio_total_por_dia/cantidad_dias);
-
-                                    precio_total+=precio_total_por_dia;
-                                }
-
-                                /* Mostrar precio total y precio promedio durante los 4 días */
-                                printf("Volumen promedio de los 4 días: %.2f\n", volumen_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Peso volumétrico promedio de los 4 días: %.2f\n", peso_volumetrico_promedio/(cantidad_dias*paquetes_por_dia));
-                                printf("Precio total de los 4 días: %.2f\n", precio_total);
-                                printf("Precio promedio de los 4 días: %.2f\n", precio_total/(cantidad_dias*paquetes_por_dia));
-                                
-                                return 0;
-                            }
-                            ''',
-                    "solutionSteps": [
-                        '''
-                        Recordemos incluir la librería string.h para tener acceso a la función que nos permite comparar strings. (Línea 2)
-                        ''',
-                        '''
-                        Creamos una función para solicitar y confirmar el correo electrónico del usuario (Línea 81), dentro de esta función declaramos dos variables strings para guardar el correo y la confirmación del correo respectivamente. Luego, utilizando un ciclo do-while solicitamos y verificamos el correo electrónico ingresado por el usuario hasta que ambos coinciden.
-                        ''',
-                        '''
-                        Finalmente llamamos la función dentro del ciclo que solicita los datos de cada paquete. (Línea 163)
-                        '''
-                    ]
-                },
-                "exercises": [
-                    {
-                        "statement": '''
-                                     Diseñe un programa que solicite al usuario el nombre completo de un archivo para separar y mostrar el nombre y la extensión del mismo. Ejemplo: si el usuario ingresa ‘notas.txt’ el programa deberá guardar ‘notas’ en una variable llamada NOMBRE y ‘txt’ en una variable llamada EXTENSION.
-
-                                     Nota: El nombre del archivo completo no tendrá más de 40 caracteres.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-                                #include <string.h> 
-
-                                int main()
-                                {
-                                    /* Declarar de las variables necesarias */
-                                    
-
-                                    /* Solicitar el nombre del archivo completo (con extensión incluida) */
-                                    
-
-                                    /* Extraer y guardar el nombre y la extensión del archivo en dos variables de tipo string */
-                                    
-
-                                    /* Mostrar el nombre y la extensión del archivo */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese el nombre del archivo: hola.txt
-                                          > Nombre: hola
-                                          > Extension: txt
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Escriba un programa en C que permita construir la dirección de una página web con base en el dominio y archivo principal indicado por el usuario, es decir, el usuario ingresa dominio.com e index.html y el programa debe construir la url completa de la forma https://dominio.com/index.html. 
-
-                                     Nota: Tanto el dominio como el nombre del archivo principal no tendrán más de 40 caracteres.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-                                #include <string.h> 
-
-                                int main()
-                                {
-                                    /* Declarar de las variables necesarias */
-                                    
-
-                                    /* Solicitar el dominio y el nombre del archivo principal */
-                                    
-
-                                    /* Construir la URL completa */
-                                    
-
-                                    /* Mostrar la URL completa */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese el dominio: aprendac.com
-                                          > Ingrese el nombre del archivo principal: index.html
-                                          > Url: https://aprendac.com/index.html
-                                          '''
-                    },
-                    {
-                        "statement": '''
-                                     Desarrolle un programa que encuentre la palabra más pequeña y más grande en una serie de palabras, es decir, después de que el usuario ingresa las palabras, el programa determinará cuál palabra se encuentra primero y cuál se encuentra de última si se listaran en orden alfabético. El programa se detendrá cuando el usuario ingrese una palabra de 4 letras. 
-
-                                     Nota:
-                                     -Asuma que ninguna palabra tiene más de 20 caracteres
-                                     -Utilice dos string para llevar un registro de la palabra más pequeña y más grande introducida hasta el momento. 
-                                     -Cada vez que el usuario ingrese una palabra, compare si ésta es menor que la más pequeña registrada hasta los momentos, de ser así, copie la nueva palabra en la variable correspondiente.
-                                     ''',
-                        "code": '''
-                                #include <stdio.h> 
-                                #include <string.h> 
-
-                                int main()
-                                {
-                                    /* Declarar de las variables necesarias */
-                                    
-
-                                    /* Solicitar palabras hasta que la palabra introducida tenga 4 letras */
-                                    
-                                    
-                                    /* Mostrar la palabra más pequeña y la más grande */
-                                    
-
-                                    return 0;
-                                }
-                                ''',
-                        "expectedOutput": ''' 
-                                          > Ingrese una palabra: dos
-                                          > Ingrese una palabra: zapato
-                                          > Ingrese una palabra: rueda
-                                          > Ingrese una palabra: cambio
-                                          > Ingrese una palabra: estado
-                                          > Ingrese una palabra: gato
-                                          >
-                                          > Palabra más pequeña: cambio
-                                          > Palabra más grande: zapato
-                                          '''
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "_id": 6,
-        "title" : "Unidad VI. Estructuras y Punteros",
-        "lessons": [
-            {
-                "_id": 1,
                 "title": "Estructuras",
                 "content": "Definición y uso de las estructuras en lenguaje C. Creación e inicialización de una variable usando una estructura. Acceso a los miembros de una estructura.",
                 "explanation": '''
@@ -3942,7 +3866,8 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Sigamos con el programa manejado en las lecciones anteriores, la empresa de envíos Rapidash. Esta vez vamos a mejorar el programa declarando una estructura que represente un paquete. Dentro de esta estructura tendremos toda la información asociada a un paquete: 
+                                 Sigamos con el programa manejado en las lecciones anteriores, la empresa de envíos **Rapidash**. Esta vez vamos a mejorar el programa declarando una estructura que represente un paquete. Dentro de esta estructura tendremos toda la información asociada a un paquete: 
+
                                  - Volumen (número decimal) 
                                  - Peso Volumétrico (número decimal) 
                                  - Categoría del paquete (string: Pequeños, Medianos o Grandes)
@@ -3951,9 +3876,9 @@
                                  - Ciudad de destino (string)
                                  - Correo electrónico del usuario (string)
                                  - Precio del envío (número decimal)
-
-                                 Al terminar el registro cada paquete se debe mostrar un mensaje resumen del envío de dicho paquete de la forma “El usuario CORREO ha registrado un paquete con volumen VOLUMEN, peso volumetrico PESO_VOLUMETRICO y categoría CATEGORIA. El paquete será enviado desde CIUDAD_ORIGEN hasta CIUDAD_DESTINO en TIEMPO_ENTREGA días por un precio de PRECIO.”
-
+                                 
+                                 Al terminar el registro cada paquete se debe mostrar un mensaje resumen del envío de dicho paquete de la forma *"El usuario `CORREO` ha registrado un paquete con volumen `VOLUMEN`, peso volumetrico `PESO_VOLUMETRICO` y categoría `CATEGORIA`. El paquete será enviado desde `CIUDAD_ORIGEN` hasta `CIUDAD_DESTINO` en `TIEMPO_ENTREGA` días por un precio de `PRECIO`."*
+                                 
                                  En este caso el programa debe registrar la cantidad de paquetes que el usuario necesite, es decir, se le preguntará al usuario si tiene otro paquete por registrar y se continúa o detiene el proceso de registro de paquetes según la respuesta del mismo.
                                  ''',
                     "code": '''
@@ -4114,10 +4039,10 @@
                             ''',
                     "solutionSteps": [
                         '''
-                        Creamos un nuevo tipo de dato (estructura) al que llamaremos ‘paquete’ con todas las variables que guardarán la información asociada a un paquete. (Línea 5)
+                        Creamos un nuevo tipo de dato (estructura) al que llamaremos 'paquete' con todas las variables que guardarán la información asociada a un paquete. (Línea 5)
                         ''',
                         '''
-                        Declaramos una variable de tipo ‘paquete’ llamada ‘paquete actual’ (línea 82) para guardar la información de cada paquete durante el proceso de registro de los mismos. Para este proceso utilizamos un ciclo do-while que nos permite registrar paquetes hasta que el usuario decida detener las iteraciones.
+                        Declaramos una variable de tipo 'paquete' llamada 'paquete actual' (línea 82) para guardar la información de cada paquete durante el proceso de registro de los mismos. Para este proceso utilizamos un ciclo do-while que nos permite registrar paquetes hasta que el usuario decida detener las iteraciones.
                         ''',
                         '''
                         Dentro del ciclo do-while vamos solicitando y asignando la información de cada paquete. Recordemos que para acceder a cada miembro de la estructura utilizamos el operador '.' y todas las operaciones que conocemos hasta ahora se pueden aplicar de la misma forma a cada miembro según su tipo de dato.
@@ -4130,13 +4055,13 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa que solicite y guarde dos fechas de la forma 31/12/2016 (día, mes y año) para luego comparar e indicar cuál es la mayor entre ellas.
-                                     Para comparar las fechas debe crear una función que reciba por parámetro las dos fechas y retorne un -1 si la fechaA es menor que la fechaB o +1 si la fechaA es mayor que la fechaB.
-                                     Al finalizar la comparación el programa debe mostrar el mensaje “La fecha dd/mm/yyyy es menor/mayor que la fecha dd/mm/yyyy”, defina una función para mostrar cada fecha con ese formato.
-
-                                     Nota: Si el día o mes de una fecha es menor que 10, se debe agregar un 0 al imprimir la fecha, es decir, la salida debe ser 01/03/2013 en lugar de 1/3/2014.
-
-                                     Tip: Utilice una estructura para agrupar la información correspondiente a una fecha (día, mes y año).
+                                     Escriba un programa que solicite y guarde dos fechas de la forma **31/12/2016** (día, mes y año) para luego comparar e indicar cuál es la mayor entre ellas.
+                                     Para comparar las fechas debe crear una función que reciba por parámetro las dos fechas y retorne un **-1** si la `fechaA` es *menor que* la `fechaB` o **+1** si la `fechaA` es *mayor que* la `fechaB`.
+                                     Al finalizar la comparación el programa debe mostrar el mensaje "*La fecha dd/mm/yyyy es menor/mayor que la fecha dd/mm/yyyy"*, defina una función para mostrar cada fecha con ese formato.
+                                     
+                                     **Nota:** Si el día o mes de una fecha es menor que 10, se debe agregar un 0 al imprimir la fecha, es decir, la salida debe ser **01/03/2013** en lugar de **1/3/2014**.
+                                     
+                                     **Tip:** Utilice una estructura para agrupar la información correspondiente a una fecha (día, mes y año).
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4184,11 +4109,11 @@
                     },
                     {
                         "statement": '''
-                                     Diseñe un programa en C capaz de recibir el número de segundos transcurridos desde la medianoche (desde 0 hasta 86399) y transformarlo al formato ‘hh:mm:ss’. Para esto cree una función que reciba por parámetro los segundos transcurridos y retorne una estructura que conste de 3 miembros: horas, minutos y segundos. Por último, imprimir un mensaje resumen “El tiempo expresado de la forma HH:MM:SS es equivalente a los SEG_MEDIANOCHE segundos contados desde la medianoche”.
+                                     Diseñe un programa en C capaz de recibir el número de segundos transcurridos desde la medianoche (*desde 0 hasta 86399*) y transformarlo al formato **hh:mm:ss**. Para esto cree una función que reciba por parámetro los segundos transcurridos y retorne una estructura que conste de 3 miembros: horas, minutos y segundos. Por último, imprimir un mensaje resumen *"El tiempo expresado de la forma `HH:MM:SS` es equivalente a los `SEG_MEDIANOCHE` segundos contados desde la medianoche"*.
 
-                                     Nota: 
-                                     - Si la hora, los minutos o los segundos son menor que 10, se debe agregar un 0 al imprimir el tiempo, es decir, la salida debe ser 03:04:34 en lugar de 3:4:34.
-                                     - El programa debe validar que el usuario ingrese la cantidad de segundos contados desde la medianoche en el rango especificado (desde 0 hasta 86399)
+                                     **Notas:** 
+                                     - Si la hora, los minutos o los segundos son menor que 10, se debe agregar un 0 al imprimir el tiempo, es decir, la salida debe ser **03:04:34** en lugar de **3:4:34**.
+                                     - El programa debe validar que el usuario ingrese la cantidad de segundos contados desde la medianoche en el rango especificado (*desde 0 hasta 86399*)
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4230,18 +4155,19 @@
                     },
                     {
                         "statement": '''
-                                     Complete el siguiente programa para realizar operaciones sobre la estructura 'color' declarada en la línea 5. Defina funciones para:
-                                     - Generar una estructura de tipo color con base en los valores especificados por el usuario: red, green y blue. Si algún valor es menor que 0, el miembro correspondiente deberá ser 0. Si algún valor es mayor que 255 el miembro correspondiente deberá ser 255.
-                                     - Retornar el valor del miembro ‘red’ en una estructura de tipo color.
-                                     - Indicar si dos colores son iguales, dos colores son iguales si todos sus miembros (red, green y blue) son exactamente iguales.
+                                     Complete el siguiente programa para realizar operaciones sobre la estructura `color` declarada en la línea 5. Defina funciones para:
+
+                                     - Generar una estructura de tipo color con base en los valores especificados por el usuario: *red*, *green* y *blue*. Si algún valor es menor que 0, el miembro correspondiente deberá ser 0. Si algún valor es mayor que 255 el miembro correspondiente deberá ser 255.
+                                     - Retornar el valor del miembro *red* en una estructura de tipo color.
+                                     - Indicar si dos colores son iguales, dos colores son iguales si todos sus miembros (*red*, *green* y *blue*) son exactamente iguales.
                                      - Generar y retornar una estructura de tipo color que represente una versión más clara de un color que reciba por parámetro. Para obtener el color más claro se divide cada miembro se entre 0.7 y el resultado es truncado a un número entero. Hay tres casos especiales:
-                                         1) Si todos los miembros del color inicial son cero (0) entonces todos los miembros del color resultante tendrán como valor 3. 
-                                         2) Si alguno de los miembros del color inicial es mayor que 0 y menor que 3, debe ser reemplazado por 3 antes de dividirlo entre 0.7.
-                                         3) Si al dividir entre 0.7 el resultado es mayor que 255, el valor de ese miembro en el color resultante será reducido a 255.
+                                         - Si todos los miembros del color inicial son cero (0) entonces todos los miembros del color resultante tendrán como valor 3. 
+                                         - Si alguno de los miembros del color inicial es mayor que 0 y menor que 3, debe ser reemplazado por 3 antes de dividirlo entre 0.7.
+                                         - Si al dividir entre 0.7 el resultado es mayor que 255, el valor de ese miembro en el color resultante será reducido a 255.
                                      - Generar y retornar una estructura de tipo color que represente una versión más oscura de un color que reciba por parámetro. Para obtener el color más oscuro se multiplica cada miembro por 0.5 y el resultado es truncado a un número entero. 
                                      - Imprimir de manera ordenada un color, pudiendo visualizar el valor de cada uno de sus miembros.
-
-                                     Nota: Al dividir o multiplicar un número entero entre un número decimal y guardar el resultado en una variable de tipo entera, el resultado es truncado a entero automáticamente.
+                                     
+                                     **Nota:** Al dividir o multiplicar un número entero entre un número decimal y guardar el resultado en una variable de tipo entera, el resultado es truncado a entero automáticamente. 
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4335,7 +4261,7 @@
                 ]
             },
             {
-                "_id": 2,
+                "_id": 3,
                 "title": "Vectores de estructuras, estructura dentro de estructura (Carga y recorrido)",
                 "content": "Combinación de vectores y estructuras. Manejo de estructuras con vectores. Manejo de vectores de estructuras.",
                 "explanation": '''
@@ -4416,7 +4342,8 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 En este caso la empresa Rapidash desea registrar 5 paquetes en un día y al final de la jornada calcular y mostrar la siguiente información:
+                                 En este caso la empresa **Rapidash** desea registrar 5 paquetes en un día y al final de la jornada calcular y mostrar la siguiente información:
+
                                  - Mensaje resumen de cada paquete registrado.
                                  - Volumen promedio de los paquetes.
                                  - Menor volumen registrado durante el día. 
@@ -4619,7 +4546,7 @@
                         Declaramos una variable que indique la cantidad de paquetes que serán registrados en el día (línea 85). Como el enunciado del ejemplo nos indica la cantidad de paquetes a registrar podemos utilizar un ciclo for, por lo tanto declaramos una variable que maneje las iteraciones de dicho ciclo for.
                         ''',
                         '''
-                        Recordemos que tenemos un nuevo tipo de dato declarado como una estructura en la línea 5, con este tipo de dato es posible declarar vectores como ya hemos visto anteriormente. En la línea 88 estamos declarando un vector de tipo ‘paquete‘ que tendrá 5 posiciones, es decir, 5 paquetes. 
+                        Recordemos que tenemos un nuevo tipo de dato declarado como una estructura en la línea 5, con este tipo de dato es posible declarar vectores como ya hemos visto anteriormente. En la línea 88 estamos declarando un vector de tipo 'paquete' que tendrá 5 posiciones, es decir, 5 paquetes. 
                         ''',
                         '''
                         Dentro del ciclo for declarado en la línea 91 solicitamos, calculamos y guardamos la información de cada paquete. Al finalizar el proceso de registro de paquetes declaramos otro ciclo for que recorra el vector de paquetes con la información previamente cargada para mostrar el mensaje resumen de cada paquete y calcular la información que nos solicitan en el enunciado.
@@ -4632,42 +4559,42 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     La agencia de telecomunicaciones Zapdos desea ofrecer un programa a sus clientes para buscar los códigos de área a nivel internacional ofrecidos por la misma. Se requiere completar el siguiente programa en lenguaje C que solicite el código de área al usuario y lo busque en el vector codigos_paises. Si el código se encuentra registrado, el programa debe imprimir el país correspondiente; si no, el programa debería imprimir un mensaje de error. 
-
-                                     La lista de países junto a su código es la siguiente:
-                                     País                 Código
-                                     Argentina..............54
-                                     Bangladesh.............880
-                                     Brazil.................55
-                                     Burma (Myanmar)........95
-                                     China..................86
-                                     Colombia...............57
-                                     Congo, Dem. Rep. of....243
-                                     Egypt..................20
-                                     Ethiopia...............251
-                                     France.................33
-                                     Germany................49
-                                     India..................91
-                                     Indonesia..............62
-                                     Iran...................98
-                                     Italy..................39
-                                     Japan..................81
-                                     Mexico.................52
-                                     Nigeria................234
-                                     Pakistan...............92
-                                     Philippines............63
-                                     Poland.................48
-                                     Russia.................7
-                                     South Africa...........27
-                                     South Korea............82
-                                     Spain..................34
-                                     Sudan..................249
-                                     Thailand...............66
-                                     Turkey.................90
-                                     Ukraine................380
-                                     United Kingdom.........44
-                                     United States..........1
-                                     Vietnam................8
+                                     La agencia de telecomunicaciones **Zapdos** desea ofrecer un programa a sus clientes para buscar los códigos de área a nivel internacional ofrecidos por la misma. Se requiere completar el siguiente programa en lenguaje C que solicite el código de área al usuario y lo busque en el vector `codigos_paises`. Si el código se encuentra registrado, el programa debe imprimir el país correspondiente; si no, el programa debería imprimir un mensaje de error. La lista de países junto a su código es la siguiente:
+                                     
+                                     País | Código
+                                     ------------ | -------------
+                                     Argentina | 54
+                                     Bangladesh | 880
+                                     Brazil | 55
+                                     Burma (Myanmar) | 95
+                                     China | 86
+                                     Colombia | 57
+                                     Congo, Dem. Rep. of | 243
+                                     Egypt | 20
+                                     Ethiopia | 251
+                                     France | 33
+                                     Germany | 49
+                                     India | 91
+                                     Indonesia | 62
+                                     Iran | 98
+                                     Italy | 39
+                                     Japan | 81
+                                     Mexico | 52
+                                     Nigeria | 234
+                                     Pakistan | 92
+                                     Philippines | 63
+                                     Poland | 48
+                                     Russia | 7
+                                     South Africa | 27
+                                     South Korea | 82
+                                     Spain | 34
+                                     Sudan | 249
+                                     Thailand | 66
+                                     Turkey | 90
+                                     Ukraine | 380
+                                     United Kingdom | 44
+                                     United States | 1
+                                     Vietnam | 8
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4752,20 +4679,22 @@
                     },
                     {
                         "statement": '''
-                                     La siguiente información muestra los vuelos diarios desde una ciudad a otra ofrecidos por la aerolínea Moltres:
-                                     Hora Partida - Hora Llegada
-                                     8:00am - 10:16am
-                                     9:43am - 11:52am
-                                     11:19am - 1:31pm
-                                     12:47pm - 3:00pm
-                                     2:00pm - 4:08pm
-                                     3:45pm - 5:55pm
-                                     7:00pm - 9:20pm
-                                     9:45pm - 11:58pm
+                                     La siguiente información muestra los vuelos diarios desde una ciudad a otra ofrecidos por la aerolínea **Moltres**:
 
+                                     Hora Partida | Hora Llegada
+                                     ------------ | -------------
+                                     8:00am | 10:16am
+                                     9:43am | 11:52am
+                                     11:19am | 1:31pm
+                                     12:47pm | 3:00pm
+                                     2:00pm | 4:08pm
+                                     3:45pm | 5:55pm
+                                     7:00pm | 9:20pm
+                                     9:45pm | 11:58pm
+                                     
                                      Complete el siguiente programa en lenguaje C para permitir que un usuario ingrese el tiempo (expresado en horas y minutos usando formato 24 horas) y luego el programa le muestre la hora de partida y de llegada para el vuelo cuya hora de partida es la más cercana al tiempo ingresado por el usuario.
-
-                                     Tip: Convierta los tiempos en minutos transcurridos desde la medianoche para facilitar la comparación de las horas. De esta manera al ingresar 13:15 equivale a 13*60 + 15 = 795 minutos desde la medianoche y la hora de partida del vuelo más cercano es 12:47 pm (767 minutos desde la medianoche)
+                                     
+                                     **Tip:** Convierta los tiempos en minutos transcurridos desde la medianoche para facilitar la comparación de las horas. De esta manera al ingresar **13:15** equivale a `13*60 + 15 = 795` minutos desde la medianoche y la hora de partida del vuelo más cercano es **12:47 pm** (767 minutos desde la medianoche)
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4850,26 +4779,28 @@
                     {
                         "statement": '''
                                      Desarrollar un programa en lenguaje C para mantener la información necesaria de los artículos disponibles en un almacén. Cada artículo posee un código, nombre, precio por unidad, cantidad disponible y cantidad vendidos del mismo. Inicialmente el inventario consta de 10 artículos como se muestra a continuación:
-                                     Código     Nombre                Precio      Cantidad    Vendidos
-                                     4223       Disco duro 500GB      150.12      25          0
-                                     7324       Teclado Inalámbrico   25.3        30          0
-                                     1923       Mouse Inalámbrico     10.2        30          0
-                                     9201       Microfono             17.65       17          0
-                                     6945       Cornetas 2:1          65.78       20          0
-                                     3291       CPU Intel Core i3     230.4       15          0
-                                     6025       Monitor 16''          122.67      15          0
-                                     7342       Tarjeta de Video      82.35       25          0
-                                     1569       Pendrive 32GB         10.50       40          0
-                                     8327       Cable USB             8.34        50          0
-
-
-                                     El programa debe ofrecer un menú con las siguientes opciones:
+                                     
+                                     Código | Nombre | Precio | Cantidad | Vendidos
+                                     ------------ | ------------- | ------------- | ------------- | -------------
+                                     4223 | Disco duro 500GB | 150.12 | 25 | 0
+                                     7324 | Teclado Inalámbrico | 25.3 | 30 | 0
+                                     1923 | Mouse Inalámbrico | 10.2 | 30 | 0
+                                     9201 | Microfono | 17.65 | 17 | 0
+                                     6945 | Cornetas 2:1 | 65.78 | 20 | 0
+                                     3291 | CPU Intel Core i3 | 230.4 | 15 | 0
+                                     6025 | Monitor 16 | 122.67 | 15 | 0
+                                     7342 | Tarjeta de Video | 82.35 | 25 | 0
+                                     1569 | Pendrive 32GB | 10.50 | 40 | 0
+                                     8327 | Cable USB | 8.34 | 50 | 0
+                                     
+                                     El programa debe ofrecer un *menú* con las siguientes opciones:
+                                     
                                      1. Imprimir tabla de artículos: donde se muestre la información del inventario en forma de tabla.
-                                     2. Buscar artículo por código: solicitar el código de un artículo y si existe mostrar la información asociada al mismo (nombre, precio, cantidad y vendidos), de no existir se debe mostrar el mensaje "El artículo con código CODIGO no existe en el almacén".
+                                     2. Buscar artículo por código: solicitar el código de un artículo y si existe mostrar la información asociada al mismo (nombre, precio, cantidad y vendidos), de no existir se debe mostrar el mensaje "*El artículo con código `CODIGO` no existe en el almacén"*.
                                      3. Registrar venta de un artículo: solicitar el código del artículo y la cantidad vendida para registrar la venta del mismo.
                                      4. Calcular y mostrar las ganancias obtenidas con las ventas de un artículo en específico: solicitar el código del artículo que desea consultar y mostrar el total de ganancias obtenidas con las ventas del mismo.
-                                     5. Calcular y mostrar las ganancias obtenidas con las ventas de todos los artículos.
-                                     6. Finalizar programa.
+                                     5. Calcular y mostrar las ganancias obtenidas con las ventas de todos los artículos
+                                     6. Finalizar programa
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -4971,7 +4902,7 @@
                 ]
             },
             {
-                "_id": 3,
+                "_id": 4,
                 "title": "Punteros",
                 "content": "Definición, uso y manejo de punteros. Punteros como parámetros de una función para modificar el valor de una variable.",
                 "explanation": ''' 
@@ -5045,14 +4976,15 @@
                                ''',
                 "example": {
                     "statement": '''
-                                 Vamos a optimizar el programa que hemos construido para la empresa de envíos Rapidash utilizando punteros. Crearemos funciones para recibir por parámetro punteros y modificar la información de cada paquete, de esta manera nos quedará un código más legible y escalable. 
+                                 Vamos a optimizar el programa que hemos construido para la empresa de envíos **Rapidash** utilizando punteros. Crearemos funciones para recibir por parámetro punteros y modificar la información de cada paquete, de esta manera nos quedará un código más legible y escalable. 
 
                                  Las funciones a crear son:
-                                 - Cálculo y asignación del volumen y peso volumétrico en los miembros y en la posición correspondiente del vector 'paquetes'
+                                 
+                                 - Cálculo y asignación del volumen y peso volumétrico en los miembros y en la posición correspondiente del vector `paquetes`
                                  - Asignar categoría y retornar precio del paquete según el peso volumétrico
                                  - Solicitar y guardar la ciudad de origen y destino
                                  - Solicitar y confirmar el correo electrónico del usuario
-                                 - Buscar el menor volúmen y el mayor peso volumétrico de los paquetes registrados
+                                 - Buscar el menor volumen y el mayor peso volumétrico de los paquetes registrados
                                  ''',
                     "code": '''
                             #include <stdio.h> 
@@ -5290,7 +5222,7 @@
                         La función que asigna categoría y retorna el precio de un paquete según su peso volumétrico recibe por parámetro el peso volumétrico y un puntero para modificar la categoría del paquete (línea 38). 
                         ''',
                         '''
-                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 176, no necesitamos utilizar el operador & al pasar por parámetros el miembro ‘categoría’ de un paquete. (Recordemos que ‘categoría’ es un string, es decir, un vector de caracteres)
+                        Notemos algo muy importante, en lenguaje C, el nombre de un arreglo (vector-matriz) puede ser utilizado como un puntero que apunta al primer elemento del arreglo, por esta razón al llamar la función en la línea 176, no necesitamos utilizar el operador & al pasar por parámetros el miembro 'categoría' de un paquete. (Recordemos que 'categoría' es un string, es decir, un vector de caracteres)
                         ''',
                         '''
                         Para solicitar y guardar la ciudad de origen y destino creamos una función (línea 62) que reciba por parámetro los punteros que necesitamos: origen y destino del paquete actual, los cuales son enviados sin utilizar el operador & (línea 188), porque los nombres de las variables hacen referencia al primer elemento de las mismas(string, vector de caracteres). 
@@ -5309,7 +5241,7 @@
                 "exercises": [
                     {
                         "statement": '''
-                                     Escriba un programa en lenguaje C para determinar el menor y mayor número entero en un vector de números enteros utilizando una función de tipo void (vacío). 
+                                     Escriba un programa en lenguaje C para determinar el menor y mayor número entero en un vector de números enteros utilizando una función de tipo `void` (vacío). 
 
                                      El programa debe solicitar al usuario diez números enteros y almacenarlos en un vector, luego se determina y muestra el menor y mayor número de los números ingresados por el usuario.
                                      ''',
@@ -5373,10 +5305,12 @@
                     {
                         "statement": '''
                                      Escriba la siguiente función en lenguaje C:
-                                     void intercambiar(int *p, int *q)
 
-                                     Para intercambiar el valor de dos variables de tipo int dadas las direcciones en memoria de dichas variables:
-                                     intercambiar(&variable_uno, &variable_dos);
+                                     `void intercambiar(int *p, int *q)`
+
+                                     Para intercambiar el valor de dos variables de tipo `int` dadas las direcciones en memoria de dichas variables:
+
+                                     `intercambiar(&variable_uno, &variable_dos);`
                                      ''',
                         "code": '''
                                 #include <stdio.h> 
@@ -5410,9 +5344,11 @@
                     },
                     {
                         "statement": '''
-                                     Codifique la función separar_tiempo, donde segundos_total representa la cantidad de segundos transcurridos desde la medianoche y los punteros *hr, *min y *seg apuntan a las variables enteras que guardarán el tiempo en horas(0-23), minutos(0-59) y segundos(0-59) equivalente a los segundos contados desde la medianoche.
+                                     Codifique la función `separar_tiempo`, donde `segundos_total` representa la cantidad de segundos transcurridos desde la medianoche y los punteros `*hr`, `*min` y `*seg` apuntan a las variables enteras que guardarán el tiempo en horas(0-23), minutos(0-59) y segundos(0-59) equivalente a los segundos contados desde la medianoche.
 
-                                     Utilice la estructura tiempo para guardar la información necesaria. Defina una función que reciba el tiempo por parámetro y lo imprima en formato hh:mm:ss. Añada el dígito 0 si las horas, minutos o segundos son menores que 10.
+                                     Utilice la estructura `tiempo` para guardar la información necesaria. Defina una función que reciba el *tiempo* por parámetro y lo imprima en formato **hh:mm:ss**. 
+
+                                     **Nota:** Añada el dígito 0 si las horas, minutos o segundos son menores que 10.
                                      ''',
                         "code": '''
                                 #include <stdio.h> 

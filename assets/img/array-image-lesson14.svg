@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="455"
-   height="262"
-   viewBox="0 0 120.38547 69.320823"
+   width="585"
+   height="360"
+   viewBox="0 0 154.78124 95.249986"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r"
@@ -21,7 +21,83 @@
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
-     id="defs2" />
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4642"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4624"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4630"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4612"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4642-5"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -30,10 +106,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.90509668"
-     inkscape:cx="369.89394"
-     inkscape:cy="212.1443"
+     inkscape:cx="293.95565"
+     inkscape:cy="173.23952"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer6"
      showgrid="false"
      units="px"
      inkscape:window-width="1366"
@@ -57,31 +133,31 @@
      inkscape:label="Background"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-227.67925)"
+     transform="translate(0,-201.75008)"
      style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Boxes shadow"
      style="display:inline"
-     transform="translate(0,29.63333)">
+     transform="translate(0,55.562497)">
     <rect
        style="opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.70435202;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="rect5594"
        width="108.80372"
        height="57.186214"
-       x="9.0525875"
+       x="44.424038"
        y="-19.583456" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Boxes"
-     transform="translate(0,16.404159)"
+     transform="translate(0,42.333326)"
      style="display:inline">
     <g
        id="g4839"
-       transform="matrix(0.58409744,0,0,0.58409744,-3.6024403,-21.988852)">
+       transform="matrix(0.58409744,0,0,0.58409744,31.769011,-21.988852)">
       <g
          inkscape:tile-y0="11.787246"
          inkscape:tile-x0="20.289944"
@@ -512,11 +588,11 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Text"
-     transform="translate(0,16.404159)"
+     transform="translate(0,42.333326)"
      style="display:inline">
     <g
        id="g4925"
-       transform="matrix(0.58409744,0,0,0.58409744,0.6599307,22.576087)">
+       transform="matrix(0.58409744,0,0,0.58409744,36.031382,22.576087)">
       <text
          id="text5451"
          y="-37.864262"
@@ -575,7 +651,7 @@
     </g>
     <g
        id="g4961"
-       transform="matrix(0.58409744,0,0,0.58409744,0.04176095,23.194257)">
+       transform="matrix(0.58409744,0,0,0.58409744,35.413212,23.194257)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:2.53561497px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1014246px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -679,13 +755,51 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="Legend"
+     transform="translate(0,25.929167)">
+    <text
+       id="text5451-3"
+       y="33.168793"
+       x="8.7249136"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.3068428px;line-height:1.86581278px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.07463251px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:8.3068428px;stroke-width:0.07463251px"
+         y="33.168793"
+         x="8.7249136"
+         sodipodi:role="line"
+         id="tspan4585">Filas</tspan></text>
+    <text
+       id="text5451-3-7"
+       y="-10.166211"
+       x="87.902603"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.59340906px;line-height:1.70556724px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06822269px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:7.59340906px;stroke-width:0.06822269px"
+         y="-10.166211"
+         x="87.902603"
+         sodipodi:role="line"
+         id="tspan4585-5">Columnas</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.74694455;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send)"
+       d="M 2.0918295,37.074739 H 32.477571"
+       id="path4607"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.79374999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-3)"
+       d="M 83.94371,-22.694171 V -2.6360069"
+       id="path4607-6"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="Element"
-     transform="translate(0,-49.74167)">
+     transform="translate(0,-23.812503)">
     <circle
        style="opacity:1;fill:#c7254e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.6240322;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path4988"
-       cx="86.807449"
+       cx="122.1789"
        cy="98.900505"
        r="3.378377" />
   </g>
